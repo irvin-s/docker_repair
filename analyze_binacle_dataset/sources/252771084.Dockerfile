@@ -1,0 +1,3 @@
+FROM golang:onbuild  
+EXPOSE 4001 7001 2379 2380  
+

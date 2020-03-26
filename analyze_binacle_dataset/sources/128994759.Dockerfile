@@ -1,0 +1,30 @@
+FROM golang:1.12-stretch as builder
+RUN apt-get update && apt-get install -y \
+    git \
+ && rm -rf /var/lib/apt/lists/*
+WORKDIR /root/
+RUN go get github.com/google/pprof
+
+FROM debian:stretch
+
+ARG NODE_VERSION
+ARG NVM_NODEJS_ORG_MIRROR
+ARG ADDITIONAL_PACKAGES
+ARG VERIFY_TIME_LINE_NUMBERS
+
+RUN apt-get update && apt-get install -y curl $ADDITIONAL_PACKAGES \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV NVM_DIR /root/.nvm
+RUN mkdir -p $NVM_DIR
+
+
+# Install nvm with node and npm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION
+
+ENV BASH_ENV /root/.bashrc
+
+WORKDIR /root/
+COPY --from=builder /go/bin/pprof /bin

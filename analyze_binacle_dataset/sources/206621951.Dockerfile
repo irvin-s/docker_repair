@@ -1,0 +1,45 @@
+FROM latera/homs_base:latest
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+  libfreetype6 \
+  libfreetype6-dev \
+  libfontconfig1 \
+  libfontconfig1-dev \
+  libqtwebkit-dev \
+  zip
+
+RUN apt-get update && apt-get install -y \
+  gstreamer1.0-plugins-base \
+  gstreamer1.0-tools \
+  gstreamer1.0-x \
+  fonts-liberation \
+  libappindicator3-1 \
+  libasound2 \
+  libnspr4 \
+  libnss3 \
+  libxss1 \
+  libxtst6 \
+  xdg-utils \
+  unzip
+
+ARG CHROME_DEB_LINK
+
+RUN wget -O google-chrome.deb $CHROME_DEB_LINK && dpkg -i google-chrome.deb
+RUN chrome_version=$(google-chrome --version | grep -oE '[0-9]{2,}' | head -1) && \
+    chromedriver_version=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$chrome_version) && \
+    wget https://chromedriver.storage.googleapis.com/$chromedriver_version/chromedriver_linux64.zip && \
+    unzip chromedriver_linux64.zip chromedriver -d /usr/bin/ && \
+    chmod +x /usr/bin/chromedriver
+
+COPY ./run_tests.sh ./.rubocop.yml ./.rubocop_todo.yml /
+COPY ./.rubocop.yml ./.rubocop_todo.yml  /opt/homs/
+
+RUN chown -R homs:homs /run_tests.sh /opt/homs/config/
+RUN chmod +x /run_tests.sh
+
+USER homs
+RUN bundle --with test --without oracle
+
+ENTRYPOINT ["/run_tests.sh"]

@@ -1,0 +1,67 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/6 : FROM ruby:2.3
+2.3: Pulling from library/ruby
+e79bb959ec00: Pulling fs layer
+d4b7902036fe: Pulling fs layer
+1b2a72d4e030: Pulling fs layer
+d54db43011fd: Pulling fs layer
+69d473365bb3: Pulling fs layer
+84ed2a0dc034: Pulling fs layer
+8952ca0665c5: Pulling fs layer
+ef485f36c624: Pulling fs layer
+d54db43011fd: Waiting
+69d473365bb3: Waiting
+84ed2a0dc034: Waiting
+8952ca0665c5: Waiting
+ef485f36c624: Waiting
+1b2a72d4e030: Verifying Checksum
+1b2a72d4e030: Download complete
+d4b7902036fe: Verifying Checksum
+d4b7902036fe: Download complete
+e79bb959ec00: Verifying Checksum
+e79bb959ec00: Download complete
+84ed2a0dc034: Verifying Checksum
+84ed2a0dc034: Download complete
+e79bb959ec00: Pull complete
+d4b7902036fe: Pull complete
+1b2a72d4e030: Pull complete
+8952ca0665c5: Verifying Checksum
+8952ca0665c5: Download complete
+ef485f36c624: Verifying Checksum
+ef485f36c624: Download complete
+d54db43011fd: Verifying Checksum
+d54db43011fd: Download complete
+d54db43011fd: Pull complete
+69d473365bb3: Verifying Checksum
+69d473365bb3: Download complete
+69d473365bb3: Pull complete
+84ed2a0dc034: Pull complete
+8952ca0665c5: Pull complete
+ef485f36c624: Pull complete
+Digest: sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+Status: Downloaded newer image for ruby:2.3
+ ---> c0d23ebb3ed6
+Step 2/6 : RUN mkdir -p /code
+ ---> Running in b1fb5bd589b0
+ ---> c1ec4453624d
+Removing intermediate container b1fb5bd589b0
+Step 3/6 : WORKDIR /code
+ ---> fb9c97a3508e
+Removing intermediate container 5a51ffc5457a
+Step 4/6 : RUN apt-get update && apt-get install -y       npm       php-pear       python-setuptools       rpm     && rm -rf /var/lib/apt/lists/*
+ ---> Running in 32715072f7be
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://security.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [520 kB]
+Get:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages [27.9 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7083 kB]
+Fetched 7937 kB in 4s (1886 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+[91mE: Unable to locate package npm
+[0m

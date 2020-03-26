@@ -1,0 +1,31 @@
+# for ubuntu
+FROM ubuntu:bionic
+
+LABEL maintainer "Michihito Kato <mkato@zettant.com>"
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV PASSWORD=bbc1 PYTHONIOENCODING="utf-8"
+ENV SHARE_DIR=/root/.bbc1 VENV_DIR=/root/.pythonenv
+
+VOLUME ${SHARE_DIR}
+EXPOSE 22 9000 6641
+
+ADD requirements.txt /tmp/
+ADD entrypoint.sh /
+WORKDIR /root/
+
+#for ubuntu
+RUN apt-get update && apt-get install -y git tzdata openssh-server python3.6 python3.6-dev python3-pip python3-distutils python3.6-venv libffi-dev net-tools autoconf automake libtool libssl-dev make pkg-config
+
+RUN mkdir -p ${SHARE_DIR} && echo "root:${PASSWORD}" | chpasswd
+
+RUN rm /usr/bin/python3 && ln -s /usr/bin/python3.6 /usr/bin/python3 && ln -s /usr/bin/python3.6 /usr/bin/python
+
+# for ubuntu
+RUN sed -i 's/prohibit-password/yes/' /etc/ssh/sshd_config
+
+RUN /bin/bash -c "python3 -m venv ${VENV_DIR} && source ${VENV_DIR}/bin/activate && python3 -m pip install --upgrade pip setuptools && python3 -m pip install wheel && python3 -m pip install pystan && python3 -m pip install -r /tmp/requirements.txt && rm -r ~/.cache && deactivate && echo \"source ${VENV_DIR}/bin/activate\" >> /root/.bashrc"
+
+RUN mkdir -p ${SHARE_DIR}
+
+CMD bash /entrypoint.sh

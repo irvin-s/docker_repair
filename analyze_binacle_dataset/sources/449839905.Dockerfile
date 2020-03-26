@@ -1,0 +1,10 @@
+FROM registry.fedoraproject.org/f29/postgresql
+
+USER root
+
+# Adds the semver extension on top of the official image
+RUN dnf install -y wget pg-semver && \
+    dnf clean all
+
+# Run the container as user postgres
+USER 26

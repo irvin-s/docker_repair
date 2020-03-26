@@ -1,0 +1,6 @@
+# Runtime container for Mirage 'stackv4' example (qemu version).
+
+FROM mir-runner-qemu
+ADD mir-stackv4-virtio.tar.gz /unikernel/
+
+CMD ["/runtime/runner", "qemu", "/unikernel/stackv4.virtio"]

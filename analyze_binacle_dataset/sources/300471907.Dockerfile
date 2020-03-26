@@ -1,0 +1,1 @@
+FROM quay.io/coreos/flannel-cni:55047d942be69a7b146a6476f1ba3f8d585a7872

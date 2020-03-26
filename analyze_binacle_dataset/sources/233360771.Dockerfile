@@ -1,0 +1,60 @@
+FROM balenalib/%%RESIN_MACHINE_NAME%%-debian:latest AS buildstep
+
+# downloading utils
+RUN apt-get update && \
+    apt-get install wget build-essential libc6-dev git pkg-config protobuf-compiler libprotobuf-dev libprotoc-dev automake libtool autoconf python-dev python-rpi.gpio
+
+ENV UDEV=off
+
+WORKDIR /etc
+
+# versions
+ENV NODE_EXPORTER_VERSION 0.16.0
+ENV DIST_ARCH linux-armv6
+RUN wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.${DIST_ARCH}.tar.gz  \
+	&& tar xvfz node_exporter-${NODE_EXPORTER_VERSION}.${DIST_ARCH}.tar.gz \
+	&& rm node_exporter-${NODE_EXPORTER_VERSION}.${DIST_ARCH}.tar.gz
+
+COPY gwexporter.tgz /opt/ttn-gateway/gwexporter.tgz
+WORKDIR /opt/gwexporter
+RUN tar xvzf /opt/ttn-gateway/gwexporter.tgz
+RUN wget https://nodejs.org/dist/v8.8.1/node-v8.8.1-linux-armv6l.tar.gz \
+	&& tar xvzf node-v8.8.1-linux-armv6l.tar.gz \
+	&& mv node-v8.8.1-linux-armv6l/* . \
+	&& rm -rf node-v8.8.1-linux-armv6l
+
+WORKDIR /opt/ttn-gateway/
+COPY dev dev
+RUN ./dev/build.sh
+
+FROM balenalib/%%RESIN_MACHINE_NAME%%-debian:latest
+RUN apt-get update && \
+    apt-get install python-rpi.gpio && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+
+# Enable systemd
+ENV INITSYSTEM on
+
+# versions
+ENV NODE_EXPORTER_VERSION 0.16.0
+ENV DIST_ARCH linux-armv6
+
+WORKDIR /etc
+COPY --from=buildstep /etc/node_exporter-${NODE_EXPORTER_VERSION}.${DIST_ARCH} .
+
+WORKDIR /opt/gwexporter
+COPY --from=buildstep /opt/gwexporter .
+
+WORKDIR /opt/ttn-gateway
+COPY --from=buildstep /opt/ttn-gateway/mp_pkt_fwd .
+COPY --from=buildstep /usr/local/lib/libpaho-embed-* /usr/lib/
+COPY --from=buildstep /usr/lib/libttn* /usr/lib/
+COPY run.py run.py
+
+WORKDIR /
+
+COPY start.sh.metering start.sh
+
+# run when container lands on device
+CMD ["bash", "start.sh"]

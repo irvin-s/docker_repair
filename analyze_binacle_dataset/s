@@ -1,0 +1,38 @@
+#!/bin/bash
+
+NUM=7 # <~~~~ define how many images you want to build in one pass
+
+HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+mkdir -p ${HERE}/logs
+
+if [ ! -d ${HERE}/sources ];
+then
+    echo "please, download the dataset first"
+    exit
+fi
+
+for x in `ls -lt sources | grep Dockerfile | head -n $NUM | rev | awk '{print $1}' | rev`;
+do
+    # parse hashcode
+    hash=$(echo $x | cut -d\. -f1)
+    logfile=$HERE/logs/$hash.log
+    ## log file exists -> skip
+    if [ -f ${logfile} ];
+    then
+        echo "$hash already processed...skipping"
+        continue
+    fi
+    # create dir
+    mkdir -p $hash
+    (cd $hash;
+     cp ../sources/$hash.Dockerfile Dockerfile
+     echo "building image binacle:$hash"
+     ## build image, dump output and error streams to $logfile
+     docker build -t binacle:$hash . 2>&1 > $logfile
+     ## remove image
+     docker image rm binacle:$hash 2>&1 > /dev/null
+    )
+    # delete dir
+    rm -rf ${HERE}/$hash
+done 

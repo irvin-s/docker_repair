@@ -1,0 +1,5 @@
+FROM node:8-alpine
+
+WORKDIR /app
+
+EXPOSE 3001 3002 3003

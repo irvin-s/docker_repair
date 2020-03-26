@@ -1,0 +1,2 @@
+FROM jshimko/meteord:onbuild
+

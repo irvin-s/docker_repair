@@ -1,0 +1,24 @@
+FROM continuumio/miniconda3
+
+RUN apt-get -qq update --yes \
+ && apt-get -qq install --yes --no-install-recommends \
+    build-essential git make clang libboost-dev postgresql-client ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+ARG PYTHON
+ADD ci/requirements-$PYTHON-dev.yml /
+
+RUN conda config --add channels conda-forge \
+  && conda update --all --yes --quiet \
+  && conda env create --name ibis-env --file /requirements-$PYTHON-dev.yml \
+  && conda install --yes conda-build \
+  && conda clean --all --yes
+
+RUN echo 'source activate ibis-env && exec "$@"' > activate.sh
+
+COPY . /ibis
+WORKDIR /ibis
+
+RUN bash /activate.sh pip install -e . --no-deps --ignore-installed --no-cache-dir
+
+ENTRYPOINT ["bash", "/activate.sh"]

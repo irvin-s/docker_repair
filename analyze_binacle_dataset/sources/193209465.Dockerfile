@@ -1,0 +1,16 @@
+FROM haproxy:1
+LABEL maintainer "Nazar Mokrynskyi <nazar@mokrynskyi.com>"
+
+COPY webserver-common /webserver-common/
+
+RUN \
+
+	/webserver-common/apt-get-update.sh && \
+	/webserver-common/apt-get-install-common.sh && \
+	/webserver-common/apt-get-cleanup.sh
+
+
+COPY haproxy/haproxy.conf /usr/local/etc/haproxy/haproxy.conf.dist
+COPY haproxy/webserver-entrypoint.sh /
+
+ENTRYPOINT ["/webserver-entrypoint.sh"]

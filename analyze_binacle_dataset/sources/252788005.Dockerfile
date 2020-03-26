@@ -1,0 +1,2 @@
+FROM abernix/meteord:onbuild
+

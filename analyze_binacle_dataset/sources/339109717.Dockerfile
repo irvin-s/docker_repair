@@ -1,0 +1,11 @@
+# Heads-Up: This Dockerfile is *exclusively* used for CI. It is referenced by
+# Jenkinsfile and should not be used by any other means.
+
+FROM node:9.8.0
+
+USER root
+
+ADD package.json yarn.lock /
+RUN yarn install
+RUN ln -f -s /node_modules/.bin/* /usr/local/bin/
+RUN groupadd -g 993 docker

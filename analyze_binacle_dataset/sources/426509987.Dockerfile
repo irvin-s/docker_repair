@@ -1,0 +1,28 @@
+FROM openjdk:8-jdk
+
+USER root
+# install and cache sbt, python
+
+RUN echo 'deb http://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt.list && \
+    apt-get -qq update && \
+    apt-get install -y --force-yes python3 python3-pip python-pip sbt=1.1.6
+
+WORKDIR /usr/src/app/
+
+# install other ci deps
+COPY ci ci
+RUN ci/install-python-dependencies.sh && \
+    ci/install-spark.sh
+
+# add sbt and cache deps
+COPY project project
+COPY build.sbt .
+RUN sbt update
+
+# add the rest of the code
+COPY . .
+
+ENV SPARK_HOME /tmp/spark-2.3.2-bin-hadoop2.7
+ENV JAVA_OPTIONS "-Xmx1500m -XX:MaxPermSize=512m -Dakka.test.timefactor=3"
+
+CMD ["/usr/src/app/run_tests.sh"]

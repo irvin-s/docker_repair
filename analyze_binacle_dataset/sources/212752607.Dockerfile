@@ -1,0 +1,14 @@
+FROM registry.fedoraproject.org/fedora:29
+RUN dnf install -y /usr/sbin/ipa-client-install /usr/sbin/ipsilon-server-install ipsilon-authform ipsilon-saml2 ipsilon-infosssd python-sssdconfig python-dbus sqlite && dnf clean all
+COPY init-data ipa-client-enroll ipsilon-server-configure ipsilon-server-wait-for-sp populate-data-volume /usr/sbin/
+COPY ipa-client-enroll.service ipsilon-server-configure.service ipsilon-server-wait-for-sp.service populate-data-volume.service /usr/lib/systemd/system/
+RUN ln -s /usr/lib/systemd/system/ipa-client-enroll.service /usr/lib/systemd/system/default.target.wants/
+RUN ln -s /usr/lib/systemd/system/ipsilon-server-configure.service /usr/lib/systemd/system/default.target.wants/
+RUN ln -s /usr/lib/systemd/system/ipsilon-server-wait-for-sp.service /usr/lib/systemd/system/default.target.wants/
+RUN ln -s /usr/lib/systemd/system/populate-data-volume.service /usr/lib/systemd/system/default.target.wants/
+RUN ln -s /data /var/www/html/pub
+COPY app.pam-service /etc/pam.d/idp
+COPY volume-data-list /etc/
+ENV container docker
+VOLUME [ "/tmp", "/run", "/data" ]
+ENTRYPOINT /usr/sbin/init-data

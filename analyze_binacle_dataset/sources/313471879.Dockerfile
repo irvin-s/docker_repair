@@ -1,0 +1,48 @@
+# Parameters related to building rocSPARSE
+ARG base_image
+
+FROM ${base_image}
+MAINTAINER Nico Trost
+
+ARG user_uid
+
+# Install dependent packages
+# Dependencies: rocprim
+# * hcc-config.cmake: pkg-config
+# * rocsparse-test: googletest
+# * rocsparse-bench: libboost-program-options-dev
+# * libhsakmt.so: libnuma1
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    rock-dkms \
+    sudo \
+    build-essential \
+    ca-certificates \
+    git \
+    make \
+    cmake \
+    clang-format-3.8 \
+    pkg-config \
+    libboost-program-options-dev \
+    libnuma1 \
+    rocprim \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# docker pipeline runs containers with particular uid
+# create a jenkins user with this specific uid so it can use sudo priviledges
+# Grant any member of sudo group password-less sudo privileges
+RUN useradd --create-home -u ${user_uid} -o -G sudo --shell /bin/bash jenkins && \
+    mkdir -p /etc/sudoers.d/ && \
+    echo '%sudo   ALL=(ALL) NOPASSWD:ALL' | tee /etc/sudoers.d/sudo-nopasswd
+
+ARG ROCSPARSE_SRC_ROOT=/usr/local/src/rocSPARSE
+
+# Clone rocsparse repo
+# Build client dependencies and install into /usr/local
+RUN mkdir -p ${ROCSPARSE_SRC_ROOT} && cd ${ROCSPARSE_SRC_ROOT} && \
+    git clone -b develop --depth=1 https://github.com/ROCmSoftwarePlatform/rocSPARSE . && \
+    mkdir -p build/deps && cd build/deps && \
+    cmake -DBUILD_BOOST=OFF ${ROCSPARSE_SRC_ROOT}/deps && \
+    make -j $(nproc) install && \
+    rm -rf ${ROCSPARSE_SRC_ROOT}

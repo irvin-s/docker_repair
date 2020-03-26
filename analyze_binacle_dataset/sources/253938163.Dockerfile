@@ -1,0 +1,27 @@
+FROM digitalrebar/deploy-service-wrapper
+MAINTAINER Victor Lowther <victor@rackn.com>
+
+ENV SERVICE_NAME rev-proxy
+
+ARG DR_TAG
+
+# Set our command
+ENTRYPOINT ["/sbin/docker-entrypoint.sh"]
+
+ADD http://localhost:28569/${DR_TAG}/linux/amd64/rebar-rev-proxy /usr/local/bin/
+RUN apt-get -y update \
+    && apt-get install -y --no-install-recommends xmlsec1 nodejs nodejs-legacy npm \
+    && npm install -g brunch n \
+    && n stable \
+    && chmod 755 /usr/local/bin/* \
+    && mkdir -p /opt/digitalrebar-ux \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*    
+RUN git clone -b ${DR_TAG} https://github.com/rackn/digitalrebar-ux /opt/digitalrebar-ux \
+  && cd /opt/digitalrebar-ux \
+  && npm install --dev \
+  && brunch build \
+  && touch .using_prebuilt
+
+COPY entrypoint.d/*.sh /usr/local/entrypoint.d/
+

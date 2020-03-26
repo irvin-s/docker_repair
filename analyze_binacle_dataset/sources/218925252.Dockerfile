@@ -1,0 +1,40 @@
+#
+# PX4 docs build environment
+#
+
+FROM ubuntu:xenial
+LABEL maintainer="Daniel Agar <daniel@agar.ca>"
+
+RUN apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
+		build-essential \
+		ca-certificates \
+		git \
+		gosu \
+		libcurl4-openssl-dev \
+		libfontconfig \
+		nodejs \
+		nodejs-legacy \
+		npm \
+		ruby-dev \
+		zlib1g-dev \
+	&& apt-get -y autoremove \
+	&& apt-get clean autoclean \
+	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
+
+RUN npm config set registry http://registry.npmjs.org/ \
+	&& npm install gitbook-cli -g
+
+RUN gem install html-proofer
+
+# create user with id 1001 (jenkins docker workflow default)
+RUN useradd --shell /bin/bash -u 1001 -c "" -m user && usermod -a -G dialout user
+
+ENV TERM=xterm
+ENV TZ=UTC
+
+# create and start as LOCAL_USER_ID
+COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+CMD ["/bin/bash"]

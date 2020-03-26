@@ -1,0 +1,13 @@
+FROM openjdk:8-jre-alpine
+
+MAINTAINER delivery-engineering@netflix.com
+
+COPY ./fiat-web/build/install/fiat /opt/fiat
+
+RUN apk --no-cache add --update bash
+
+RUN adduser -D -S spinnaker
+
+USER spinnaker
+
+CMD ["/opt/fiat/bin/fiat"]

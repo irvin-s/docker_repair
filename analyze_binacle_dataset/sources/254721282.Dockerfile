@@ -1,0 +1,76 @@
+FROM alpine:3.9.4 as builder
+
+ARG perf_test_version="2.7.0"
+
+RUN set -eux; \
+	\
+	apk add --no-cache --virtual .build-deps \
+	    ca-certificates \
+		wget \
+		gnupg
+
+
+# change the JAVA_URL variable below as well
+ENV JAVA_VERSION="11.0.3"
+# not to be found on Azul website, computed manually
+ENV JAVA_SHA256="b80079a77e3be7bedaab67cb4005b51da429fc779cbbdd369a36ae1356d73273"
+
+RUN set -eux; \
+    \
+    JAVA_URL="https://cdn.azul.com/zulu/bin/zulu11.31.11-ca-jdk$JAVA_VERSION-linux_musl_x64.tar.gz"; \
+    JAVA_PATH="/usr/lib/jdk-$JAVA_VERSION"; \
+	\
+    wget --progress dot:giga --output-document "$JAVA_PATH.tar.gz" "$JAVA_URL"; \
+    echo "$JAVA_SHA256 *$JAVA_PATH.tar.gz" | sha256sum -c -; \
+	mkdir -p "$JAVA_PATH"; \
+	tar --extract --file "$JAVA_PATH.tar.gz" --directory "$JAVA_PATH" --strip-components 1; \
+	$JAVA_PATH/bin/jlink --compress=2 --output /jre --add-modules java.base,java.management,java.xml,java.naming,java.sql; \
+	/jre/bin/java -version
+
+# pgpkeys.uk is quite reliable, but allow for substitutions locally
+ARG PGP_KEYSERVER=pgpkeys.uk
+# If you are building this image locally and are getting `gpg: keyserver receive failed: No data` errors,
+# run the build with a different PGP_KEYSERVER, e.g. docker build --tag rabbitmq:3.7 --build-arg PGP_KEYSERVER=pgpkeys.eu 3.7/ubuntu
+# For context, see https://github.com/docker-library/official-images/issues/4252
+
+# https://www.rabbitmq.com/signatures.html#importing-gpg
+ENV RABBITMQ_PGP_KEY_ID="0x0A9AF2115F4687BD29803A206B73A36E6026DFCA"
+ENV PERF_TEST_HOME="/perf_test"
+
+RUN set -eux; \
+    \
+    PERF_TEST_URL=https://github.com/rabbitmq/rabbitmq-perf-test/releases/download/v$perf_test_version/rabbitmq-perf-test-$perf_test_version-bin.tar.gz; \
+    PERF_TEST_PATH="/usr/local/src/perf-test-$perf_test_version"; \
+    \
+# /usr/local/src doesn't exist in Alpine by default
+    mkdir /usr/local/src; \
+    \
+    wget --progress dot:giga --output-document "$PERF_TEST_PATH.tar.gz.asc" "$PERF_TEST_URL.asc"; \
+    wget --progress dot:giga --output-document "$PERF_TEST_PATH.tar.gz" "$PERF_TEST_URL"; \
+    PERF_TEST_SHA256="$(wget -qO- $PERF_TEST_URL.sha256)"; \
+    echo "$PERF_TEST_SHA256 *$PERF_TEST_PATH.tar.gz" | sha256sum -c -; \
+    \
+    export GNUPGHOME="$(mktemp -d)"; \
+    gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$RABBITMQ_PGP_KEY_ID"; \
+    gpg --batch --verify "$PERF_TEST_PATH.tar.gz.asc" "$PERF_TEST_PATH.tar.gz"; \
+    gpgconf --kill all; \
+    rm -rf "$GNUPGHOME"; \
+    \
+    mkdir -p "$PERF_TEST_HOME"; \
+    tar --extract --file "$PERF_TEST_PATH.tar.gz" --directory "$PERF_TEST_HOME" --strip-components 1
+
+FROM alpine:3.9.4
+
+RUN apk add --no-cache bash
+
+ENV JAVA_HOME=/usr/lib/jvm/java-1.11-zulu/jre
+RUN mkdir -p $JAVA_HOME
+COPY --from=builder /jre /usr/lib/jvm/java-1.11-zulu/jre/
+RUN ln -svT $JAVA_HOME/bin/java /usr/local/bin/java
+
+RUN mkdir -p /perf_test
+WORKDIR /perf_test
+COPY --from=builder /perf_test ./
+RUN bin/runjava com.rabbitmq.perf.PerfTest --help
+
+ENTRYPOINT ["bin/runjava", "com.rabbitmq.perf.PerfTest"]

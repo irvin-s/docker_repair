@@ -1,0 +1,9 @@
+FROM golang:1.11.1-alpine3.8
+
+RUN apk add --no-cache gcc musl-dev openssl git go expect curl docker
+
+COPY . /src
+WORKDIR /src
+RUN chmod +x /src/run-tests.sh
+
+CMD ["sh", "-c", "/src/run-tests.sh"]

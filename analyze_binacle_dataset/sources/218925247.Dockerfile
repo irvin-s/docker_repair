@@ -1,0 +1,18 @@
+#
+# PX4 build for arm-hf boards, such as
+# RPi, Parrot Bebop, and OcPoC-Zynq
+#
+# This contains the steps to build for the
+# POSIX Linux running on Raspberry Pi,
+# Parrot Bebop, or OcPoC-Zynq
+#
+
+FROM px4io/px4-dev-base-bionic:2019-06-02
+
+RUN apt-get update && apt-get -yy --quiet --no-install-recommends install \
+		g++-arm-linux-gnueabihf \
+		gcc-arm-linux-gnueabihf \
+		pkg-config-arm-linux-gnueabihf \
+	&& apt-get -y autoremove \
+	&& apt-get clean autoclean \
+	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*

@@ -1,0 +1,34 @@
+#
+# PX4 clang development environment
+#  px4-dev-base + latest clang
+#
+
+FROM px4io/px4-dev-base-bionic:2019-06-02
+LABEL maintainer="Daniel Agar <daniel@agar.ca>"
+
+RUN wget --quiet http://apt.llvm.org/llvm-snapshot.gpg.key -O - | apt-key add - \
+	&& sh -c 'echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" >> /etc/apt/sources.list' \
+	&& sh -c 'echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" >> /etc/apt/sources.list' \
+	&& apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
+		clang-6.0 \
+		clang-format-6.0 \
+		clang-tidy-6.0 \
+		lldb-6.0 \
+		llvm-6.0 \
+	&& apt-get -y autoremove \
+	&& apt-get clean autoclean \
+	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
+
+# clang-tidy version setup
+RUN	update-alternatives --install /usr/bin/clang clang /usr/bin/clang-6.0 1 \
+	&& update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-6.0 1 \
+	&& update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-6.0 1 \
+	&& update-alternatives --install /usr/bin/run-clang-tidy.py run-clang-tidy.py /usr/bin/run-clang-tidy-6.0.py 1 \
+	&& update-alternatives --install /usr/bin/scan-build scan-build /usr/bin/scan-build-6.0 1
+
+# manual ccache setup
+RUN	ln -s /usr/bin/ccache /usr/lib/ccache/clang \
+	&& ln -s /usr/bin/ccache /usr/lib/ccache/clang++
+
+ENV CCACHE_CPP2=1

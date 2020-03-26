@@ -1,0 +1,5 @@
+FROM scratch
+COPY lk2 /
+ENV PORT 9000
+WORKDIR /media
+ENTRYPOINT ["/lk2"]

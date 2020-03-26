@@ -1,0 +1,34 @@
+# Dockerfile to create an image for running OpenDaVINCI.
+# Copyright (C) 2016 Christian Berger
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+# Date: 2017-03-22
+FROM BASEIMAGE
+MAINTAINER Christian Berger "christian.berger@gu.se"
+
+# Add binaries.
+ADD opt.nonDev /opt
+
+# Change owner for binaries.
+RUN if [ "$(getent group|cut -f1 -d":"|grep 'odv')" != "odv" -a "x`which groupadd`" != "x" ]; then groupadd odv; fi && \
+    if [ "$(getent passwd|cut -f1 -d":"|grep 'odv')" != "odv" -a "x`which useradd`" != "x" ]; then useradd odv -g odv; fi && \
+    chown -R odv:odv /opt/od4
+
+# Environment parameters to allow GUIs.
+ENV QT_X11_NO_MITSHM=1
+ENV LD_LIBRARY_PATH=/opt/od4/lib:$LD_LIBRARY_PATH
+WORKDIR /opt/od4/bin
+

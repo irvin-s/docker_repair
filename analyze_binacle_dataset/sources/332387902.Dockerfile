@@ -1,0 +1,79 @@
+FROM openshift/jenkins-slave-base-centos7
+
+LABEL maintainer="Richard Attermeyer <richard.attermeyer@opitz-consulting.com>"
+
+ENV SONAR_SCANNER_VERSION=3.1.0.1141 \
+    OWASP_DEPENDENCY_CHECK_VERSION=3.2.1 \
+    CNES_REPORT_VERSION=2.0.0 \
+    TAILOR_VERSION=0.9.4 \
+    GIT_LFS_VERSION=2.6.1
+
+ARG APP_DNS=192.168.99.100.nip.io
+
+RUN yum -y install openssl
+RUN yum -y install gnutls-utils
+
+#set JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/jre
+
+RUN yum -y install java-1.8.0-openjdk-devel.x86_64
+
+# fetch certificates and store them in tmp directory
+RUN echo ${APP_DNS}
+RUN gnutls-cli --insecure --print-cert ${APP_DNS} </dev/null| sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/oc_app.crt
+
+# add root ca into cert store so OC can pick it up.
+RUN cat /tmp/oc_app.crt >> /etc/ssl/certs/ca-bundle.trust.crt && \
+	cat /tmp/oc_app.crt >> /etc/ssl/certs/ca-bundle.crt
+
+#Import base domain wildcard certificate
+RUN echo $JAVA_HOME
+RUN cat /tmp/oc_app.crt
+RUN $JAVA_HOME/bin/keytool -storepasswd -new mysecretpassword -keystore $JAVA_HOME/lib/security/cacerts -storepass changeit && \
+    echo "yes" | $JAVA_HOME/bin/keytool -import -trustcacerts -file /tmp/oc_app.crt -alias oc_app -keystore $JAVA_HOME/lib/security/cacerts -storepass mysecretpassword && \
+    echo "yes"
+
+# Install Sonar Scanner
+RUN cd /tmp && \
+    curl -LOv http://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/${SONAR_SCANNER_VERSION}/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip && \
+    unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip && \
+    mv sonar-scanner-${SONAR_SCANNER_VERSION} /usr/local/sonar-scanner-cli && \
+    rm -rf sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip
+ENV PATH=/usr/local/sonar-scanner-cli/bin:$PATH
+
+# Install OWASP Dependency Check CLI
+RUN cd /tmp && \
+    curl -LOv https://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip && \
+    unzip dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip && \
+    mv dependency-check /usr/local/dependency-check-cli && \
+    mv /usr/local/dependency-check-cli/bin/dependency-check.sh /usr/local/dependency-check-cli/bin/dependency-check && \
+    rm -rf dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip
+ENV PATH=/usr/local/dependency-check-cli/bin:$PATH
+
+# add sq cnes report jar
+RUN cd /tmp && \
+    curl -LOv https://github.com/lequal/sonar-cnes-report/releases/download/${CNES_REPORT_VERSION}/cnesreport.jar && \
+    mkdir /usr/local/cnes && \
+    mv cnesreport.jar /usr/local/cnes/ && \
+    chmod 777 /usr/local/cnes/cnesreport.jar
+
+# Install Tailor
+RUN cd /tmp && \
+	curl -LOv https://github.com/opendevstack/tailor/releases/download/v${TAILOR_VERSION}/tailor_linux_amd64 && \
+	mv tailor_linux_amd64 /usr/local/bin/tailor && \
+	chmod a+x /usr/local/bin/tailor && \
+	tailor version
+
+# Install GIT-LFS extension https://git-lfs.github.com/
+RUN cd /tmp && \
+    mkdir -p /tmp/git-lfs && \
+    curl -LOv https://github.com/git-lfs/git-lfs/releases/download/v${GIT_LFS_VERSION}/git-lfs-linux-amd64-v${GIT_LFS_VERSION}.tar.gz && \
+    tar -zxvf git-lfs-linux-amd64-v${GIT_LFS_VERSION}.tar.gz -C /tmp/git-lfs && \
+    bash  /tmp/git-lfs/install.sh && \
+    git lfs version && \
+    rm -rf /tmp/git-lfs*
+
+# set java proxy var
+COPY set_java_proxy.sh /tmp/set_java_proxy.sh
+RUN chmod 777 /tmp/set_java_proxy.sh
+RUN . /tmp/set_java_proxy.sh && echo $JAVA_OPTS

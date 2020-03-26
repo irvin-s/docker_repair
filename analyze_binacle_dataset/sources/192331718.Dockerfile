@@ -1,0 +1,3 @@
+FROM alpine
+
+VOLUME /root

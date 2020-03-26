@@ -1,0 +1,48 @@
+FROM scratch
+ADD rootfs.tar.xz /
+COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
+COPY 01_buildconfig /etc/apt/apt.conf.d/
+COPY entry.sh /usr/bin/entry.sh
+
+RUN mkdir -p /usr/share/man/man1
+
+ENV LC_ALL C.UTF-8
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV DEBIAN_FRONTEND noninteractive
+# For backward compatibility, udev is enabled by default
+ENV UDEV off
+LABEL io.balena.architecture="rpi" \
+	  io.balena.qemu.version="$RESIN_QEMU_VERSION" \
+	  io.balena.device-type="raspberrypi"
+
+ENV QEMU_CPU arm1176
+
+RUN echo '#!/bin/sh\n\
+set -e\n\
+set -u\n\
+export DEBIAN_FRONTEND=noninteractive\n\
+n=0\n\
+max=2\n\
+until [ $n -gt $max ]; do\n\
+  set +e\n\
+  (\n\
+    apt-get update -qq &&\n\
+    apt-get install -y --no-install-recommends "$@"\n\
+  )\n\
+  CODE=$?\n\
+  set -e\n\
+  if [ $CODE -eq 0 ]; then\n\
+    break\n\
+  fi\n\
+  if [ $n -eq $max ]; then\n\
+    exit $CODE\n\
+  fi\n\
+  echo "apt failed, retrying"\n\
+  n=$(($n + 1))\n\
+done\n\
+rm -r /var/lib/apt/lists/*' > /usr/sbin/install_packages \
+  && chmod 0755 "/usr/sbin/install_packages"
+
+RUN install_packages libraspberrypi-bin
+
+ENTRYPOINT ["/usr/bin/entry.sh"]

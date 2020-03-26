@@ -1,0 +1,49 @@
+FROM linuxkit/alpine:86cd4f51b49fb9a078b50201d892a3c7973d48ec AS kernel-build
+RUN apk add \
+    argp-standalone \
+    bison \
+    build-base \
+    curl \
+    diffutils \
+    flex \
+    gmp-dev \
+    libarchive-tools \
+    mpc1-dev \
+    mpfr-dev \
+    ncurses-dev \
+    patch \
+    xz
+
+ARG KERNEL_VERSIONS
+
+COPY / /
+
+# Unpack kernels (download if not present)
+RUN set -e && \
+    for VERSION in ${KERNEL_VERSIONS}; do \
+        MAJOR=$(echo ${VERSION} | cut -d . -f 1) && \
+        MAJOR=v${MAJOR}.x && \
+        echo "Downloading/Unpacking $VERSION" && \
+        KERNEL_SOURCE=https://www.kernel.org/pub/linux/kernel/${MAJOR}/linux-${VERSION}.tar.xz && \
+        [ -f sources/linux-${VERSION}.tar.xz ] || curl -fSLo sources/linux-${VERSION}.tar.xz ${KERNEL_SOURCE} && \
+        bsdtar xf sources/linux-${VERSION}.tar.xz; \
+    done
+
+# Apply patches to all kernels and move config files into place
+RUN set -e && \
+    for VERSION in ${KERNEL_VERSIONS}; do \
+        SERIES=${VERSION%.*}.x && \
+        echo "Patching $VERSION $SERIES" && \
+        cd /linux-${VERSION} && \
+        if [ -d /patches-${SERIES} ]; then \
+           for patch in /patches-${SERIES}/*.patch; do \
+               echo "Applying $patch" && \
+               patch -t -F0 -N -u -p1 < "$patch"; \
+           done; \
+        fi && \
+        [ ! -f /config-${SERIES}-x86_64 ] || mv /config-${SERIES}-x86_64 arch/x86/configs/x86_64_defconfig && \
+        [ ! -f /config-${SERIES}-aarch64 ] || mv /config-${SERIES}-aarch64 arch/arm64/configs/defconfig ; \
+        [ ! -f /config-${SERIES}-s390x ] || mv /config-${SERIES}-s390x arch/s390/defconfig; \
+    done
+
+ENTRYPOINT ["/bin/sh"]

@@ -1,0 +1,55 @@
+FROM redis_gpu:latest
+LABEL maintainer="Erwan BERNARD https://github.com/edmBernard/DockerFiles"
+
+RUN pip3 --no-cache-dir install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+RUN pip3 --no-cache-dir install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp36-cp36m-linux_x86_64.whl
+RUN pip3 --no-cache-dir install onnx protobuf future
+
+CMD ["/bin/bash"]
+
+# Build from source
+# /!\ Build from source work but result image is heavy as fuck 43Go instead of 17Go when build with pip
+
+# ENV MAGMA_DIR "$LIB_DIR/magma-2.2.0"
+# ENV PYTORCH_DIR "$LIB_DIR/pytorch"
+# ENV PYTORCHVISION_DIR "$LIB_DIR/vision"
+
+# # Install git and other dependencies
+# RUN apt-get update && apt-get install -y \
+#     libopenblas-dev
+
+# # install python3 tools
+# RUN pip3 --no-cache-dir install -U \
+#     pyyaml mkl cffi
+
+# RUN cd "$LIB_DIR" && \
+#     wget http://icl.cs.utk.edu/projectsfiles/magma/downloads/magma-2.2.0.tar.gz  && \
+#     tar xvzf magma-2.2.0.tar.gz && \
+#     rm magma-2.2.0.tar.gz
+
+# # Install Magma
+# # Magma add LAPACK support for the GPU
+# ENV CUDADIR "/usr/local/cuda"
+# ENV OPENBLASDIR "/usr/lib/openblas-base"
+
+# RUN cd "$MAGMA_DIR" && \
+#     cp make.inc-examples/make.inc.openblas make.inc && \
+#     sed -i "s|#GPU_TARGET ?= Fermi Kepler|GPU_TARGET ?= Fermi Kepler Maxwell|g" make.inc && \
+#     sed -i "s|FORT      = gfortran|#FORT      = gfortran|g" make.inc && \
+#     sed -i "s|cp include/\*.mod|#cp include/\*.mod|g" Makefile && \
+#     make shared -j"$(nproc)"&& \
+#     make test -j"$(nproc)"&& \
+#     make install prefix=/usr/local/magma
+
+# # Clone Pytorch repo and move into it
+# RUN cd "$LIB_DIR" && git clone --recursive https://github.com/pytorch/pytorch
+
+# # Install Python package
+# RUN cd "$PYTORCH_DIR" && python3 setup.py install
+
+# # Install pytorch_vision
+# RUN cd "$LIB_DIR" && git clone https://github.com/pytorch/vision.git
+
+# RUN cd "$PYTORCHVISION_DIR" && python3 setup.py install
+
+# CMD ["/bin/bash"]

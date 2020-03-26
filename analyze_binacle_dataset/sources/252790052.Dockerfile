@@ -1,0 +1,30 @@
+FROM rancher/confd-base:0.11.0-dev-rancher  
+  
+ADD ./conf.d /etc/confd/conf.d  
+ADD ./templates /etc/confd/templates  
+  
+VOLUME ["/app/gitea/custom/conf"]  
+  
+ENV GITEA_RUN_MODE=dev \  
+GITEA_SERVER_STATIC_ROOT_PATH=./ \  
+GITEA_DATABASE_DB_TYPE=mysql \  
+GITEA_DATABASE_HOST=127.0.0.1:3306 \  
+GITEA_DATABASE_NAME=gitea \  
+GITEA_DATABASE_USER=root \  
+GITEA_DATABASE_PASSD="" \  
+GITEA_DATABASE_SSL_MODE=disable \  
+GITEA_DATABASE_PATH=data/gitea.db \  
+GITEA_SECURITY_REVERSE_PROXY_AUTHENTICATION_USER=X-WEBAUTH-USER \  
+GITEA_SERVICE_DISABLE_REGISTRATION=false \  
+GITEA_SERVICE_ENABLE_REVERSE_PROXY_AUTHENTICATION=false \  
+GITEA_SERVICE_ENABLE_REVERSE_PROXY_AUTO_REGISTRATION=false \  
+GITEA_SESSION_PROVIDER=memory \  
+GITEA_SESSION_PROVIDER_CONFIG=data/sessions \  
+GITEA_SESSION_COOKIE_SECURE=false \  
+GITEA_SESSION_COOKIE_NAME=i_like_gitea \  
+GITEA_SESSION_GC_INTERVAL_TIME=86400 \  
+GITEA_LOG_LEVEL=Trace  
+  
+ENTRYPOINT ["/confd"]  
+CMD ["--backend", "env", "--onetime", "--log-level", "debug"]  
+

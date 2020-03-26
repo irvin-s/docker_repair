@@ -1,0 +1,2 @@
+FROM rockstat/theia-image
+

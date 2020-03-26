@@ -1,0 +1,10 @@
+FROM phusion/baseimage
+
+COPY ./id_insecure.pub /tmp/id_insecure.pub
+
+# We regenerate SSH host keys too. baseimage-docker does not contain any, so you
+# have to do that yourself. You may also comment out this instruction; the
+# init system will auto-generate one during boot.
+RUN cat /tmp/id_insecure.pub >> /root/.ssh/authorized_keys && \
+    rm -f /etc/service/sshd/down && \
+    /etc/my_init.d/00_regen_ssh_host_keys.sh

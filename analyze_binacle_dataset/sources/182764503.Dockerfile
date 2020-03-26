@@ -1,0 +1,1 @@
+FROM openjdk:11.0.3-slim@sha256:0954adb89fce4e70d87f0b7e2c587a3d67ccef1b1cd30e46191dd1327254d197
