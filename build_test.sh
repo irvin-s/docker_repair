@@ -4,7 +4,7 @@
 LOG_DIR="/home/irvin_b/"
 N=1
 
-#Filename with images
+#File with images
 images_file="images_list.txt"
 
  #Read the file with image names and try to execute
