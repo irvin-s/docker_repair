@@ -1,0 +1,2 @@
+hash, error, error category, repair description, vs docker extesion repair
+---------------------------------------------------------------
