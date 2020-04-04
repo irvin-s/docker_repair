@@ -1,84 +1,150 @@
 hash, error, error category, repair description, vs docker extesion repair
 ---------------------------------------------------------------
-483362401.log:COPY failed: stat /var/lib/docker/tmp/docker-builder224236630/bin: no such file or directory
-483363390.log:COPY failed: stat /var/lib/docker/tmp/docker-builder542361408/default: no such file or directory
-483623488.log:COPY failed: stat /var/lib/docker/tmp/docker-builder489723311/run.sh: no such file or directory
-483828662.log:COPY failed: stat /var/lib/docker/tmp/docker-builder661332650/go.mod: no such file or directory
-483946213.log:COPY failed: stat /var/lib/docker/tmp/docker-builder456804717/go.mod: no such file or directory
-483956196.log:COPY failed: stat /var/lib/docker/tmp/docker-builder058762878/docker-startup.sh: no such file or directory
-484006753.log:COPY failed: stat /var/lib/docker/tmp/docker-builder184480358/bin: no such file or directory
-484042424.log:COPY failed: stat /var/lib/docker/tmp/docker-builder203371986/app-web/package.json: no such file or directory
-484049497.log:COPY failed: stat /var/lib/docker/tmp/docker-builder065156120/go.mod: no such file or directory
-484065999.log:COPY failed: stat /var/lib/docker/tmp/docker-builder922676473/package.json: no such file or directory
-484096400.log:COPY failed: stat /var/lib/docker/tmp/docker-builder187780608/keys/launchpad-ppa-zfs.asc: no such file or directory
-484096405.log:COPY failed: stat /var/lib/docker/tmp/docker-builder061190740/hack/dockerfile/binaries-commits: no such file or directory
-484097305.log:COPY failed: stat /var/lib/docker/tmp/docker-builder281928472/httpserver: no such file or directory
-484097863.log:COPY failed: stat /var/lib/docker/tmp/docker-builder191465515/docs: no such file or directory
-483363398.log:ADD failed: no source files were specified
-483524197.log:ADD failed: no source files were specified
-483573177.log:ADD failed: stat /var/lib/docker/tmp/docker-builder503833628/src: no such file or directory
-483989985.log:ADD failed: failed to GET https://www.openssl.org/source/openssl-1.0.2h.tar.gz with status 404 Not Found: <!DOCTYPE html>
-484011162.log:ADD failed: stat /var/lib/docker/tmp/docker-builder667774408/cloud9.conf: no such file or directory
-484042001.log:ADD failed: stat /var/lib/docker/tmp/docker-builder146175047/entrypoint.sh: no such file or directory
-484042005.log:ADD failed: stat /var/lib/docker/tmp/docker-builder729315259/entrypoint.sh: no such file or directory
-484042009.log:ADD failed: stat /var/lib/docker/tmp/docker-builder438062447/entrypoint.sh: no such file or directory
-484042013.log:ADD failed: stat /var/lib/docker/tmp/docker-builder541730751/entrypoint.sh: no such file or directory
-484042017.log:ADD failed: stat /var/lib/docker/tmp/docker-builder521749023/entrypoint.sh: no such file or directory
-484096584.log:ADD failed: stat /var/lib/docker/tmp/docker-builder850245316/null: no such file or directory
-484096592.log:ADD failed: stat /var/lib/docker/tmp/docker-builder194895497/nagios.init: no such file or directory
-484096628.log:ADD failed: stat /var/lib/docker/tmp/docker-builder670448598/.muttrc: no such file or directory
-484096632.log:ADD failed: stat /var/lib/docker/tmp/docker-builder013859991/mumble-server.ini: no such file or directory
-484096634.log:ADD failed: stat /var/lib/docker/tmp/docker-builder172837889/etc: no such file or directory
-484096636.log:ADD failed: stat /var/lib/docker/tmp/docker-builder224980413/script: no such file or directory
-484096638.log:ADD failed: stat /var/lib/docker/tmp/docker-builder845626727/.weechat: no such file or directory
-484096640.log:ADD failed: stat /var/lib/docker/tmp/docker-builder946297169/conf: no such file or directory
-483424656.log:The command '/bin/sh -c pip install mkdocs mkdocs-material' returned a non-zero code: 1
-483444075.log:[0mThe command '/bin/sh -c CGO_ENABLED=0 GOOS=linux GOARCH=amd64     go build -a -tags netgo       -ldflags '-w -extldflags "-static"'       -mod vendor       -o env' returned a non-zero code: 1
-483569920.log:[0mThe command '/bin/sh -c apt-get update -q &&         apt-get install -qy         git=1:2.17.1-1ubuntu0.4         p7zip-full=16.02+dfsg-6         make=4.1-9.1ubuntu1         mingw-w64=5.0.3-1         autotools-dev=20180224.1         autoconf=2.69-11         libtool=2.4.6-2         gettext=0.19.8.1-6' returned a non-zero code: 100
-483616613.log:[0mThe command '/bin/sh -c curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 	&& curl -LsS https://phar.phpunit.de/phpunit-7.phar -o /usr/local/bin/phpunit && chmod a+x /usr/local/bin/phpunit 	&& composer create-project symfony/skeleton /var/www/kyela 3.4' returned a non-zero code: 1
-483853313.log:[0mThe command '/bin/sh -c apk add --no-cache graphicsmagick openssl nodejs npm python make g++ git      && cd "${PUMP_LOCATION}"      && npm install      && npm run build      && cd node_modules/databank      && npm install databank-mongodb@1 databank-disk@1 databank-leveldb@1 databank-redis@0.19 databank-memcached@0.15      && addgroup -S -g "${PUMPIO__GUID}" "pumpio"      && adduser -S -D -H -G "pumpio" -h "${PUMP_LOCATION}" -u "${PUMPIO__UID}" "pumpio"      && mkdir -p /usr/local/bin "${PUMP_DATADIR}"      && chown "pumpio:pumpio" "${PUMP_DATADIR}" -R      && ln -s "${PUMP_LOCATION}/bin/pump" /usr/local/bin/pump      && rm -rf /usr/lib/node_modules/npm      && rm -rf ~/.npm      && apk del --purge python make g++ git libc-utils' returned a non-zero code: 254
-483948057.log:The command '/bin/sh -c apt-get install -y python-pip aufs-tools' returned a non-zero code: 100
-483953662.log:[0mThe command '/bin/sh -c apt-get update &&   apt-get install -y --force-yes git make gcc g++ && apt-get clean &&   git clone --depth 1 https://github.com/ideawu/ssdb.git ssdb &&   cd ssdb && make && make install && cp ssdb-server /usr/bin &&   apt-get remove -y --force-yes git make gcc g++ &&   apt-get autoremove -y &&   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&   cp ssdb.conf /etc && cd .. && yes | rm -r ssdb' returned a non-zero code: 2
-483954673.log:[0mThe command '/bin/sh -c set -x     && curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz" -o docker.tgz     && echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c -     && tar -xzvf docker.tgz     && mv docker/* /usr/local/bin/     && rmdir docker     && rm docker.tgz     && docker -v' returned a non-zero code: 22
-483954674.log:The command '/bin/sh -c pip install buildbot' returned a non-zero code: 1
-483989984.log:[0mThe command '/bin/sh -c apt-get update &&     yes | apt-get install libgl1-mesa-glx' returned a non-zero code: 100
-484021496.log:[0mThe command '/bin/sh -c echo "deb http://deb.debian.org/debian stretch-backports main" >> /etc/apt/sources.list &&         apt-get update &&         apt-get -y install libz-dev libbz2-dev libsnappy-dev &&         apt-get -y -t stretch-backports install librocksdb-dev' returned a non-zero code: 100
-484065998.log:The command '/bin/sh -c yarn build' returned a non-zero code: 1
-484096006.log:[0mThe command '/bin/sh -c go build --ldflags '-extldflags "-static"' -o kafka-logdriver' returned a non-zero code: 1
-484096401.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y 	apparmor 	aufs-tools 	automake 	bash-completion 	btrfs-tools 	build-essential 	cmake 	createrepo 	curl 	dpkg-sig 	g++ 	gcc 	git 	iptables 	jq 	libapparmor-dev 	libc6-dev 	libcap-dev 	libltdl-dev 	libsystemd-dev 	libyaml-dev 	mercurial 	net-tools 	parallel 	pkg-config 	python-dev 	python-mock 	python-pip 	python-setuptools 	python-websocket 	golang-go 	iproute2 	iputils-ping 	vim-common 	--no-install-recommends' returned a non-zero code: 1
-484096402.log:[0mThe command '/bin/sh -c sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list' returned a non-zero code: 1
-484096403.log:[0mThe command '/bin/sh -c sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list' returned a non-zero code: 1
-484096404.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y 	apparmor 	apt-utils 	aufs-tools 	automake 	bash-completion 	btrfs-tools 	build-essential 	cmake 	createrepo 	curl 	dpkg-sig 	git 	iptables 	jq 	net-tools 	libapparmor-dev 	libcap-dev 	libltdl-dev 	libsystemd-journal-dev 	libtool 	mercurial 	pkg-config 	python-dev 	python-mock 	python-pip 	python-websocket 	xfsprogs 	tar 	vim-common 	--no-install-recommends' returned a non-zero code: 1
-484096581.log:[0mThe command '/bin/sh -c apt-get update 	&& dpkg -l | awk '/^ii/ {print $2}' > /tmp/dpkg.clean     && apt-get install -y --no-install-recommends git golang ca-certificates     && apt-get clean     && rm -rf /var/lib/apt/lists 	&& go get -v github.com/brimstone/consuldock     && mv $GOPATH/bin/consuldock /usr/local/bin/consuldock 	&& dpkg -l | awk '/^ii/ {print $2}' > /tmp/dpkg.dirty 	&& apt-get remove --purge -y $(diff /tmp/dpkg.clean /tmp/dpkg.dirty | awk '/^>/ {print $2}') 	&& rm /tmp/dpkg.* 	&& rm -rf $GOPATH' returned a non-zero code: 2
-484096586.log:[0mThe command '/bin/sh -c apt-get update 	&& dpkg -l | awk '/^ii/ {print $2}' > /tmp/dpkg.clean     && apt-get install -y --no-install-recommends git golang ca-certificates     && apt-get clean     && rm -rf /var/lib/apt/lists 	&& go get -v github.com/brimstone/consuldock     && mv $GOPATH/bin/consuldock /usr/local/bin/consuldock 	&& dpkg -l | awk '/^ii/ {print $2}' > /tmp/dpkg.dirty 	&& apt-get remove --purge -y $(diff /tmp/dpkg.clean /tmp/dpkg.dirty | awk '/^>/ {print $2}') 	&& rm /tmp/dpkg.* 	&& rm -rf $GOPATH' returned a non-zero code: 2
-484096588.log:[0mThe command '/bin/sh -c cd /tmp     && wget https://dl.bintray.com/mitchellh/consul/0.3.1_web_ui.zip        -O web_ui.zip     && unzip web_ui.zip     && mv dist /webui     && rm web_ui.zip' returned a non-zero code: 8
-484096594.log:[0mThe command '/bin/sh -c git clone --no-checkout https://git.fedorahosted.org/git/lvm2.git /usr/local/lvm2 && cd /usr/local/lvm2 && git checkout -q v2_02_103' returned a non-zero code: 128
-484096604.log:[0mThe command '/bin/sh -c apt-get \update &&   apt-get \"install znc -y' returned a non-zero code: 100
-484096610.log:[0mThe command '/bin/sh -c wget http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb' returned a non-zero code: 8
-484097236.log:[0mThe command '/bin/sh -c echo deb http://ftp.debian.org/debian jessie-backports main > /etc/apt/sources.list.d/backports.list' returned a non-zero code: 1
-484097237.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-dev golang-go libseccomp-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097239.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev golang-1.6-go --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097240.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-dev golang-go libseccomp-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097245.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y -t wheezy-backports btrfs-tools --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100
-484097249.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100
-484097250.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100
-484097251.log:[0mThe command '/bin/sh -c sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list' returned a non-zero code: 1
-484097253.log:[0mThe command '/bin/sh -c cat /.resin/deprecation-warning' returned a non-zero code: 1
-484097254.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev  pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097255.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097256.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097259.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097260.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libseccomp-dev libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097261.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libseccomp-dev libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097264.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config libsystemd-dev vim-common --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097265.log:[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config libsystemd-dev vim-common --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
-484097274.log:[0mThe command '/bin/sh -c yum install -y kernel-uek-devel-4.1.12-32.el6uek' returned a non-zero code: 1
-484097278.log:[0mThe command '/bin/sh -c yum install -y yum-plugin-ovl' returned a non-zero code: 1
-484097281.log:[0mThe command '/bin/sh -c dnf -y upgrade' returned a non-zero code: 1
-484097338.log:[0mThe command '/bin/sh -c gcc -g -Wall -static nnp-test.c -o /usr/bin/nnp-test' returned a non-zero code: 4
-484097375.log:[0mThe command '/bin/sh -c gcc -g -Wall -static userns.c -o /usr/bin/userns-test 	&& gcc -g -Wall -static ns.c -o /usr/bin/ns-test 	&& gcc -g -Wall -static acct.c -o /usr/bin/acct-test 	&& gcc -g -Wall -static setuid.c -o /usr/bin/setuid-test 	&& gcc -g -Wall -static setgid.c -o /usr/bin/setgid-test 	&& gcc -g -Wall -static socket.c -o /usr/bin/socket-test 	&& gcc -g -Wall -static raw.c -o /usr/bin/raw-test 	&& gcc -g -Wall -static appletalk.c -o /usr/bin/appletalk-test' returned a non-zero code: 4
-484097895.log:[0mThe command '/bin/sh -c go build -o /master github.com/docker/docker/hack/integration-cli-on-swarm/agent/master' returned a non-zero code: 1
-484136730.log:[0mThe command '/bin/sh -c cd /go/src/github.com/qri-io/qri && make build' returned a non-zero code: 2
-484144517.log:The command '/bin/sh -c curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs' returned a non-zero code: 1
-484203727.log:[0mThe command '/bin/sh -c apt-get install --no-install-recommends -y ant wget git cmake bison flex unzip zip expect lib32stdc++6 libc6-i386 lib32z1 openjdk-7-jdk patch make rsync' returned a non-zero code: 100
-484203728.log:[0mThe command '/bin/sh -c apt-get install --no-install-recommends -y ant wget git cmake bison flex unzip zip expect lib32stdc++6 libc6-i386 lib32z1 openjdk-7-jdk patch make rsync' returned a non-zero code: 100
+483197474.log:COPY failed
+483197475.log:COPY failed
+483197476.log:COPY failed
+483356014.log:COPY failed
+483360208.log:COPY failed
+483362401.log:COPY failed
+483363390.log:COPY failed
+483623488.log:COPY failed
+483644458.log:COPY failed
+483647825.log:COPY failed
+483647826.log:COPY failed
+483699945.log:COPY failed
+483711433.log:COPY failed
+483733303.log:COPY failed
+483734433.log:COPY failed
+483779175.log:COPY failed
+483825752.log:COPY failed
+483827257.log:COPY failed
+483827278.log:COPY failed
+483828662.log:COPY failed
+483946213.log:COPY failed
+483956196.log:COPY failed
+484006753.log:COPY failed
+484042424.log:COPY failed
+484049497.log:COPY failed
+484065999.log:COPY failed
+484096400.log:COPY failed
+484096405.log:COPY failed
+484097305.log:COPY failed
+484097863.log:COPY failed
+483363398.log:ADD failed
+483524197.log:ADD failed
+483573177.log:ADD failed
+483647844.log:ADD failed
+483647847.log:ADD failed
+483647854.log:ADD failed
+483651778.log:ADD failed
+483651785.log:ADD failed
+483719834.log:ADD failed
+483733048.log:ADD failed
+483733089.log:ADD failed
+483733093.log:ADD failed
+483733116.log:ADD failed
+483733129.log:ADD failed
+483733134.log:ADD failed
+483733144.log:ADD failed
+483733185.log:ADD failed
+483733197.log:ADD failed
+483733211.log:ADD failed
+483733251.log:ADD failed
+483733258.log:ADD failed
+483733286.log:ADD failed
+483733293.log:ADD failed
+483733299.log:ADD failed
+483989985.log:ADD failed
+484011162.log:ADD failed
+484042001.log:ADD failed
+484042005.log:ADD failed
+484042009.log:ADD failed
+484042013.log:ADD failed
+484042017.log:ADD failed
+484096584.log:ADD failed
+484096592.log:ADD failed
+484096628.log:ADD failed
+484096632.log:ADD failed
+484096634.log:ADD failed
+484096636.log:ADD failed
+484096638.log:ADD failed
+484096640.log:ADD failed
+483202780.log:returned a non-zero code
+483202781.log:returned a non-zero code
+483357603.log:returned a non-zero code
+483359537.log:returned a non-zero code
+483424656.log:returned a non-zero code
+483444075.log:returned a non-zero code
+483569920.log:returned a non-zero code
+483616613.log:returned a non-zero code
+483647836.log:returned a non-zero code
+483647845.log:returned a non-zero code
+483649750.log:returned a non-zero code
+483704138.log:returned a non-zero code
+483704139.log:returned a non-zero code
+483705926.log:returned a non-zero code
+483733140.log:returned a non-zero code
+483733150.log:returned a non-zero code
+483733158.log:returned a non-zero code
+483733165.log:returned a non-zero code
+483733171.log:returned a non-zero code
+483733225.log:returned a non-zero code
+483733229.log:returned a non-zero code
+483733234.log:returned a non-zero code
+483733237.log:returned a non-zero code
+483733279.log:returned a non-zero code
+483733284.log:returned a non-zero code
+483733309.log:returned a non-zero code
+483733315.log:returned a non-zero code
+483733323.log:returned a non-zero code
+483779177.log:returned a non-zero code
+483779178.log:returned a non-zero code
+483779179.log:returned a non-zero code
+483779180.log:returned a non-zero code
+483827279.log:returned a non-zero code
+483853313.log:returned a non-zero code
+483948057.log:returned a non-zero code
+483953662.log:returned a non-zero code
+483954673.log:returned a non-zero code
+483954674.log:returned a non-zero code
+483989984.log:returned a non-zero code
+484021496.log:returned a non-zero code
+484065998.log:returned a non-zero code
+484096006.log:returned a non-zero code
+484096401.log:returned a non-zero code
+484096402.log:returned a non-zero code
+484096403.log:returned a non-zero code
+484096404.log:returned a non-zero code
+484096581.log:returned a non-zero code
+484096586.log:returned a non-zero code
+484096588.log:returned a non-zero code
+484096594.log:returned a non-zero code
+484096604.log:returned a non-zero code
+484096610.log:returned a non-zero code
+484097236.log:returned a non-zero code
+484097237.log:returned a non-zero code
+484097239.log:returned a non-zero code
+484097240.log:returned a non-zero code
+484097245.log:returned a non-zero code
+484097249.log:returned a non-zero code
+484097250.log:returned a non-zero code
+484097251.log:returned a non-zero code
+484097253.log:returned a non-zero code
+484097254.log:returned a non-zero code
+484097255.log:returned a non-zero code
+484097256.log:returned a non-zero code
+484097259.log:returned a non-zero code
+484097260.log:returned a non-zero code
+484097261.log:returned a non-zero code
+484097264.log:returned a non-zero code
+484097265.log:returned a non-zero code
+484097274.log:returned a non-zero code
+484097278.log:returned a non-zero code
+484097281.log:returned a non-zero code
+484097338.log:returned a non-zero code
+484097375.log:returned a non-zero code
+484097895.log:returned a non-zero code
+484136730.log:returned a non-zero code
+484144517.log:returned a non-zero code
+484203727.log:returned a non-zero code
+484203728.log:returned a non-zero code
