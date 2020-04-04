@@ -1,3 +1,33 @@
-hash, binacle repair #, other repair description
-------------------------------------------------
-477708245, xxx, yyy
+#####
+## Use following script to analyze small files first:
+## 1. pick a small file from list of broken files
+##   $> (for x in `cat BROKEN_FILES.txt | grep "not repaired" | cut -f1 -d' ' | cut -f1 -d\.`; do name="sources/$x.Dockerfile"; wc -l $name; done) | sort -n
+##
+##  or from the original dataset (notice there is a lot of empty files and one-liners):
+##   $> gedit sortedlist-dockerfiles.txt
+##
+## 2. run the following script to create dir for Dockerfile and run docker build on it
+##   $> FILE=sources/484144517.Dockerfile
+##   $> ID=$(basename $FILE | cut -f1 -d\.); mkdir -p $ID; (cd $ID; cp ../$FILE Dockerfile; docker build -t binacle:$ID . 2>&1 | tee log.txt)
+##
+## 3. to rerun a docker after updating Dockerfile (to diagnose)
+##   $> docker build -t binacle:$ID . 2>&1 | tee log.txt
+##
+####
+
+483357603
+  Error message: "useradd: UID 1000 is not unique"
+  Diagnosis: A variable needed to be changed before using the Dockerfile
+  Repair: Change value of variable PERM_USER_ID at line 4
+
+483202780
+  Error message: No package * available
+  Diagnosis: yum cannot find requested package
+  Repair: Change line 124 to something like the following as per https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7
+    RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    RUN yum install -y mingw64-gcc
+
+484144517
+  Error message: apt-get: comand not found
+  Diagnosis: missing utility function (apt-get and possibly others to install it)
+  Repair: see https://askubuntu.com/questions/860375/installing-apt-get
