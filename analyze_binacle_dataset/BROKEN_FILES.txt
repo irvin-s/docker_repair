@@ -1,150 +1,150 @@
 hash, error, error category, repair description, vs docker extesion repair
 ---------------------------------------------------------------
-483197474.log:COPY failed
-483197475.log:COPY failed
-483197476.log:COPY failed
-483356014.log:COPY failed
-483360208.log:COPY failed
-483362401.log:COPY failed
-483363390.log:COPY failed
-483623488.log:COPY failed
-483644458.log:COPY failed
-483647825.log:COPY failed
-483647826.log:COPY failed
-483699945.log:COPY failed
-483711433.log:COPY failed
-483733303.log:COPY failed
-483734433.log:COPY failed
-483779175.log:COPY failed
-483825752.log:COPY failed
-483827257.log:COPY failed
-483827278.log:COPY failed
-483828662.log:COPY failed
-483946213.log:COPY failed
-483956196.log:COPY failed
-484006753.log:COPY failed
-484042424.log:COPY failed
-484049497.log:COPY failed
-484065999.log:COPY failed
-484096400.log:COPY failed
-484096405.log:COPY failed
-484097305.log:COPY failed
-484097863.log:COPY failed
-483363398.log:ADD failed
-483524197.log:ADD failed
-483573177.log:ADD failed
-483647844.log:ADD failed
-483647847.log:ADD failed
-483647854.log:ADD failed
-483651778.log:ADD failed
-483651785.log:ADD failed
-483719834.log:ADD failed
-483733048.log:ADD failed
-483733089.log:ADD failed
-483733093.log:ADD failed
-483733116.log:ADD failed
-483733129.log:ADD failed
-483733134.log:ADD failed
-483733144.log:ADD failed
-483733185.log:ADD failed
-483733197.log:ADD failed
-483733211.log:ADD failed
-483733251.log:ADD failed
-483733258.log:ADD failed
-483733286.log:ADD failed
-483733293.log:ADD failed
-483733299.log:ADD failed
-483989985.log:ADD failed
-484011162.log:ADD failed
-484042001.log:ADD failed
-484042005.log:ADD failed
-484042009.log:ADD failed
-484042013.log:ADD failed
-484042017.log:ADD failed
-484096584.log:ADD failed
-484096592.log:ADD failed
-484096628.log:ADD failed
-484096632.log:ADD failed
-484096634.log:ADD failed
-484096636.log:ADD failed
-484096638.log:ADD failed
-484096640.log:ADD failed
-483202780.log:returned a non-zero code
-483202781.log:returned a non-zero code
-483357603.log:returned a non-zero code
-483359537.log:returned a non-zero code
-483424656.log:returned a non-zero code
-483444075.log:returned a non-zero code
-483569920.log:returned a non-zero code
-483616613.log:returned a non-zero code
-483647836.log:returned a non-zero code
-483647845.log:returned a non-zero code
-483649750.log:returned a non-zero code
-483704138.log:returned a non-zero code
-483704139.log:returned a non-zero code
-483705926.log:returned a non-zero code
-483733140.log:returned a non-zero code
-483733150.log:returned a non-zero code
-483733158.log:returned a non-zero code
-483733165.log:returned a non-zero code
-483733171.log:returned a non-zero code
-483733225.log:returned a non-zero code
-483733229.log:returned a non-zero code
-483733234.log:returned a non-zero code
-483733237.log:returned a non-zero code
-483733279.log:returned a non-zero code
-483733284.log:returned a non-zero code
-483733309.log:returned a non-zero code
-483733315.log:returned a non-zero code
-483733323.log:returned a non-zero code
-483779177.log:returned a non-zero code
-483779178.log:returned a non-zero code
-483779179.log:returned a non-zero code
-483779180.log:returned a non-zero code
-483827279.log:returned a non-zero code
-483853313.log:returned a non-zero code
-483948057.log:returned a non-zero code
-483953662.log:returned a non-zero code
-483954673.log:returned a non-zero code
-483954674.log:returned a non-zero code
-483989984.log:returned a non-zero code
-484021496.log:returned a non-zero code
-484065998.log:returned a non-zero code
-484096006.log:returned a non-zero code
-484096401.log:returned a non-zero code
-484096402.log:returned a non-zero code
-484096403.log:returned a non-zero code
-484096404.log:returned a non-zero code
-484096581.log:returned a non-zero code
-484096586.log:returned a non-zero code
-484096588.log:returned a non-zero code
-484096594.log:returned a non-zero code
-484096604.log:returned a non-zero code
-484096610.log:returned a non-zero code
-484097236.log:returned a non-zero code
-484097237.log:returned a non-zero code
-484097239.log:returned a non-zero code
-484097240.log:returned a non-zero code
-484097245.log:returned a non-zero code
-484097249.log:returned a non-zero code
-484097250.log:returned a non-zero code
-484097251.log:returned a non-zero code
-484097253.log:returned a non-zero code
-484097254.log:returned a non-zero code
-484097255.log:returned a non-zero code
-484097256.log:returned a non-zero code
-484097259.log:returned a non-zero code
-484097260.log:returned a non-zero code
-484097261.log:returned a non-zero code
-484097264.log:returned a non-zero code
-484097265.log:returned a non-zero code
-484097274.log:returned a non-zero code
-484097278.log:returned a non-zero code
-484097281.log:returned a non-zero code
-484097338.log:returned a non-zero code
-484097375.log:returned a non-zero code
-484097895.log:returned a non-zero code
-484136730.log:returned a non-zero code
-484144517.log:returned a non-zero code
-484203727.log:returned a non-zero code
-484203728.log:returned a non-zero code
+483197474.log, COPY failed, misconfiguration, out of context, 
+483197475.log, COPY failed, misconfiguration, out of context, 
+483197476.log, COPY failed, misconfiguration, out of context, 
+483356014.log, COPY failed, misconfiguration, out of context, 
+483360208.log, COPY failed, misconfiguration, out of context, 
+483362401.log, COPY failed, misconfiguration, out of context, 
+483363390.log, COPY failed, misconfiguration, out of context, 
+483623488.log, COPY failed, misconfiguration, out of context, 
+483644458.log, COPY failed, misconfiguration, out of context, 
+483647825.log, COPY failed, misconfiguration, out of context, 
+483647826.log, COPY failed, misconfiguration, out of context, 
+483699945.log, COPY failed, misconfiguration, out of context, 
+483711433.log, COPY failed, misconfiguration, out of context, 
+483733303.log, COPY failed, misconfiguration, out of context, 
+483734433.log, COPY failed, misconfiguration, out of context, 
+483779175.log, COPY failed, misconfiguration, out of context, 
+483825752.log, COPY failed, misconfiguration, out of context, 
+483827257.log, COPY failed, misconfiguration, out of context, 
+483827278.log, COPY failed, misconfiguration, out of context, 
+483828662.log, COPY failed, misconfiguration, out of context, 
+483946213.log, COPY failed, misconfiguration, out of context, 
+483956196.log, COPY failed, misconfiguration, out of context, 
+484006753.log, COPY failed, misconfiguration, out of context, 
+484042424.log, COPY failed, misconfiguration, out of context, 
+484049497.log, COPY failed, misconfiguration, out of context, 
+484065999.log, COPY failed, misconfiguration, out of context, 
+484096400.log, COPY failed, misconfiguration, out of context, 
+484096405.log, COPY failed, misconfiguration, out of context, 
+484097305.log, COPY failed, misconfiguration, out of context, 
+484097863.log, COPY failed, misconfiguration, out of context, 
+483363398.log, ADD failed, misconfiguration, out of a context,
+483524197.log, ADD failed, misconfiguration, out of a context,
+483573177.log, ADD failed, misconfiguration, out of a context,
+483647844.log, ADD failed, misconfiguration, out of a context,
+483647847.log, ADD failed, misconfiguration, out of a context,
+483647854.log, ADD failed, misconfiguration, out of a context,
+483651778.log, ADD failed, misconfiguration, out of a context,
+483651785.log, ADD failed, misconfiguration, out of a context,
+483719834.log, ADD failed, misconfiguration, out of a context,
+483733048.log, ADD failed, misconfiguration, out of a context,
+483733089.log, ADD failed, misconfiguration, out of a context,
+483733093.log, ADD failed, misconfiguration, out of a context,
+483733116.log, ADD failed, misconfiguration, out of a context,
+483733129.log, ADD failed, misconfiguration, out of a context,
+483733134.log, ADD failed, misconfiguration, out of a context,
+483733144.log, ADD failed, misconfiguration, out of a context,
+483733185.log, ADD failed, misconfiguration, out of a context,
+483733197.log, ADD failed, misconfiguration, out of a context,
+483733211.log, ADD failed, misconfiguration, out of a context,
+483733251.log, ADD failed, misconfiguration, out of a context,
+483733258.log, ADD failed, misconfiguration, out of a context,
+483733286.log, ADD failed, misconfiguration, out of a context,
+483733293.log, ADD failed, misconfiguration, out of a context,
+483733299.log, ADD failed, misconfiguration, out of a context,
+483989985.log, ADD failed, misconfiguration, out of a context,
+484011162.log, ADD failed, misconfiguration, out of a context,
+484042001.log, ADD failed, misconfiguration, out of a context,
+484042005.log, ADD failed, misconfiguration, out of a context,
+484042009.log, ADD failed, misconfiguration, out of a context, 
+484042013.log, ADD failed, misconfiguration, out of a context, 
+484042017.log, ADD failed, misconfiguration, out of a context, 
+484096584.log, ADD failed, misconfiguration, out of a context, 
+484096592.log, ADD failed, misconfiguration, out of a context, 
+484096628.log, ADD failed, misconfiguration, out of a context, 
+484096632.log, ADD failed, misconfiguration, out of a context, 
+484096634.log, ADD failed, misconfiguration, out of a context, 
+484096636.log, ADD failed, misconfiguration, out of a context, 
+484096638.log, ADD failed, misconfiguration, out of a context, 
+484096640.log, ADD failed, misconfiguration, out of a context, 
+483202780.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483202781.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483357603.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483359537.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483424656.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483444075.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483569920.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483616613.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483647836.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483647845.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483649750.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483704138.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483704139.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483705926.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733140.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733150.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733158.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733165.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733171.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733225.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733229.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733234.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733237.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733279.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733284.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733309.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733315.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483733323.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483779177.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483779178.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483779179.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483779180.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483827279.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483853313.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483948057.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483953662.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483954673.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483954674.log, returned a non-zero code, syntax or malformed command, not repaired,  
+483989984.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484021496.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484065998.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096006.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096401.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096402.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096403.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096404.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096581.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096586.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096588.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096594.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096604.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484096610.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097236.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097237.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097239.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097240.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097245.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097249.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097250.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097251.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097253.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097254.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097255.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097256.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097259.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097260.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097261.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097264.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097265.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097274.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097278.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097281.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097338.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097375.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484097895.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484136730.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484144517.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484203727.log, returned a non-zero code, syntax or malformed command, not repaired,  
+484203728.log, returned a non-zero code, syntax or malformed command, not repaired, 
