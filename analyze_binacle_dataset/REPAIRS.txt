@@ -31,3 +31,8 @@
   Error message: apt-get: comand not found
   Diagnosis: missing utility function (apt-get and possibly others to install it)
   Repair: see https://askubuntu.com/questions/860375/installing-apt-get
+
+483733309
+  Error message: "Operation failed: No such file or directory" 
+  Diagnosis: using systemctl to enable libvirtd service, but a container there is no systemd-daemon.
+  Repair: see https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
