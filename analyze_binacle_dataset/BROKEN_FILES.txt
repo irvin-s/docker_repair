@@ -1,5 +1,5 @@
 hash, error, error category, repair description, vs docker extesion repair
----------------------------------------------------------------, 
+--------------------------------------------------------------- 
 483363398.log, ADD failed: no source files were specified, misconfiguration, out of context,
 483524197.log, ADD failed: no source files were specified, misconfiguration, out of context,
 483573177.log, ADD failed: stat /var/lib/docker/tmp/docker-builder503833628/src: no such file or directory, misconfiguration, out of context,
