@@ -1,0 +1,14 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/10 : FROM aarch64/debian:jessie
+jessie: Pulling from aarch64/debian
+7189468c6fc4: Pulling fs layer
+7189468c6fc4: Verifying Checksum
+7189468c6fc4: Download complete
+7189468c6fc4: Pull complete
+Digest: sha256:903b5655da8689b6cdc7465ea118f674d4f1820a52109aeb2623b1c8e6225420
+Status: Downloaded newer image for aarch64/debian:jessie
+ ---> ca135b1cb390
+Step 2/10 : RUN echo deb http://ftp.debian.org/debian jessie-backports main > /etc/apt/sources.list.d/backports.list
+ ---> Running in 27a80f692644
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c echo deb http://ftp.debian.org/debian jessie-backports main > /etc/apt/sources.list.d/backports.list' returned a non-zero code: 1

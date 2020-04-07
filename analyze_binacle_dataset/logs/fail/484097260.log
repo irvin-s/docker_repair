@@ -1,0 +1,27 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/8 : FROM ppc64le/ubuntu:xenial
+xenial: Pulling from ppc64le/ubuntu
+0abc6f550884: Pulling fs layer
+0741e5703c97: Pulling fs layer
+fed4e13c7b72: Pulling fs layer
+d9acb6be6f20: Pulling fs layer
+d9acb6be6f20: Waiting
+fed4e13c7b72: Verifying Checksum
+fed4e13c7b72: Download complete
+0741e5703c97: Verifying Checksum
+0741e5703c97: Download complete
+d9acb6be6f20: Verifying Checksum
+d9acb6be6f20: Download complete
+0abc6f550884: Verifying Checksum
+0abc6f550884: Download complete
+0abc6f550884: Pull complete
+0741e5703c97: Pull complete
+fed4e13c7b72: Pull complete
+d9acb6be6f20: Pull complete
+Digest: sha256:a2658945e589dd8ec52d7374cc5d4c0a3391a9d9d2a69ac91bcb558bd8da6a31
+Status: Downloaded newer image for ppc64le/ubuntu:xenial
+ ---> 3a12016288f2
+Step 2/8 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libseccomp-dev libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in 5290a34a3225
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libseccomp-dev libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

@@ -1,0 +1,18 @@
+Sending build context to Docker daemon  9.216kB
+Step 1/40 : FROM ppc64le/debian:jessie
+jessie: Pulling from ppc64le/debian
+39eaa4911263: Pulling fs layer
+39eaa4911263: Verifying Checksum
+39eaa4911263: Download complete
+39eaa4911263: Pull complete
+Digest: sha256:1d5171183a9eb1c6bcbb6fac96aef788f25e543285c990f92423a9f6c812ddca
+Status: Downloaded newer image for ppc64le/debian:jessie
+ ---> d05066896056
+Step 2/40 : ARG APT_MIRROR=deb.debian.org
+ ---> Running in f7c54dee91ed
+Removing intermediate container f7c54dee91ed
+ ---> 6e8c8d186ba3
+Step 3/40 : RUN sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list
+ ---> Running in d1a0fbcfcc7a
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list' returned a non-zero code: 1

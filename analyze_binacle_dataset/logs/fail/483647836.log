@@ -1,0 +1,32 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM ubuntu:latest
+latest: Pulling from library/ubuntu
+5bed26d33875: Pulling fs layer
+f11b29a9c730: Pulling fs layer
+930bda195c84: Pulling fs layer
+78bf9a5ad49e: Pulling fs layer
+78bf9a5ad49e: Waiting
+f11b29a9c730: Verifying Checksum
+f11b29a9c730: Download complete
+930bda195c84: Verifying Checksum
+930bda195c84: Download complete
+78bf9a5ad49e: Verifying Checksum
+78bf9a5ad49e: Download complete
+5bed26d33875: Verifying Checksum
+5bed26d33875: Download complete
+5bed26d33875: Pull complete
+f11b29a9c730: Pull complete
+930bda195c84: Pull complete
+78bf9a5ad49e: Pull complete
+Digest: sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
+Status: Downloaded newer image for ubuntu:latest
+ ---> 4e5021d210f6
+Step 2/7 : RUN apt-get install -y wget ruby ruby-dev
+ ---> Running in 23f921a23bd7
+Reading package lists...
+Building dependency tree...
+Reading state information...
+[91mE: Unable to locate package wget
+E: Unable to locate package ruby
+E: Unable to locate package ruby-dev
+[0mThe command '/bin/sh -c apt-get install -y wget ruby ruby-dev' returned a non-zero code: 100

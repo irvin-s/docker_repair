@@ -1,0 +1,32 @@
+Sending build context to Docker daemon  9.728kB
+Step 1/40 : FROM aarch64/ubuntu:xenial
+xenial: Pulling from aarch64/ubuntu
+299bdd84d3f3: Pulling fs layer
+cadf93ce5dd5: Pulling fs layer
+2a473b3f8d73: Pulling fs layer
+28159c33731e: Pulling fs layer
+4abe30292499: Pulling fs layer
+28159c33731e: Waiting
+4abe30292499: Waiting
+2a473b3f8d73: Verifying Checksum
+2a473b3f8d73: Download complete
+cadf93ce5dd5: Verifying Checksum
+cadf93ce5dd5: Download complete
+28159c33731e: Verifying Checksum
+28159c33731e: Download complete
+4abe30292499: Verifying Checksum
+4abe30292499: Download complete
+299bdd84d3f3: Verifying Checksum
+299bdd84d3f3: Download complete
+299bdd84d3f3: Pull complete
+cadf93ce5dd5: Pull complete
+2a473b3f8d73: Pull complete
+28159c33731e: Pull complete
+4abe30292499: Pull complete
+Digest: sha256:b1a4f680c0beda48f3319e104445cf66360c623a00c7d4b4f8f25dda2d9ee209
+Status: Downloaded newer image for aarch64/ubuntu:xenial
+ ---> a7d1ddc47ced
+Step 2/40 : RUN apt-get update && apt-get install -y 	apparmor 	aufs-tools 	automake 	bash-completion 	btrfs-tools 	build-essential 	cmake 	createrepo 	curl 	dpkg-sig 	g++ 	gcc 	git 	iptables 	jq 	libapparmor-dev 	libc6-dev 	libcap-dev 	libltdl-dev 	libsystemd-dev 	libyaml-dev 	mercurial 	net-tools 	parallel 	pkg-config 	python-dev 	python-mock 	python-pip 	python-setuptools 	python-websocket 	golang-go 	iproute2 	iputils-ping 	vim-common 	--no-install-recommends
+ ---> Running in 78c2142e70dd
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y 	apparmor 	aufs-tools 	automake 	bash-completion 	btrfs-tools 	build-essential 	cmake 	createrepo 	curl 	dpkg-sig 	g++ 	gcc 	git 	iptables 	jq 	libapparmor-dev 	libc6-dev 	libcap-dev 	libltdl-dev 	libsystemd-dev 	libyaml-dev 	mercurial 	net-tools 	parallel 	pkg-config 	python-dev 	python-mock 	python-pip 	python-setuptools 	python-websocket 	golang-go 	iproute2 	iputils-ping 	vim-common 	--no-install-recommends' returned a non-zero code: 1

@@ -1,0 +1,30 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/8 : FROM armhf/ubuntu:yakkety
+yakkety: Pulling from armhf/ubuntu
+250f2f14fd63: Pulling fs layer
+f107fb4ba50b: Pulling fs layer
+b2b9eb1e7747: Pulling fs layer
+5e17f70a28e8: Pulling fs layer
+80a704e0e8a9: Pulling fs layer
+5e17f70a28e8: Waiting
+80a704e0e8a9: Waiting
+f107fb4ba50b: Download complete
+b2b9eb1e7747: Verifying Checksum
+b2b9eb1e7747: Download complete
+5e17f70a28e8: Verifying Checksum
+5e17f70a28e8: Download complete
+80a704e0e8a9: Download complete
+250f2f14fd63: Verifying Checksum
+250f2f14fd63: Download complete
+250f2f14fd63: Pull complete
+f107fb4ba50b: Pull complete
+b2b9eb1e7747: Pull complete
+5e17f70a28e8: Pull complete
+80a704e0e8a9: Pull complete
+Digest: sha256:273c9341255b3676048a05d8bf6ec571348d60103ab373929c9d545f4065e24b
+Status: Downloaded newer image for armhf/ubuntu:yakkety
+ ---> 917f5ae0e756
+Step 2/8 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in 7a1309ec25a1
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config vim-common libsystemd-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

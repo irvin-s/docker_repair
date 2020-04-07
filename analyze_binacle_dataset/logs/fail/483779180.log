@@ -1,0 +1,26 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/16 : FROM    s390x/ubuntu:xenial
+xenial: Pulling from s390x/ubuntu
+5d1c06e617a8: Pulling fs layer
+014396d85ca8: Pulling fs layer
+6dd0d716f0f3: Pulling fs layer
+3bb96b2c9e76: Pulling fs layer
+3bb96b2c9e76: Waiting
+014396d85ca8: Verifying Checksum
+014396d85ca8: Download complete
+6dd0d716f0f3: Download complete
+3bb96b2c9e76: Verifying Checksum
+3bb96b2c9e76: Download complete
+5d1c06e617a8: Verifying Checksum
+5d1c06e617a8: Download complete
+5d1c06e617a8: Pull complete
+014396d85ca8: Pull complete
+6dd0d716f0f3: Pull complete
+3bb96b2c9e76: Pull complete
+Digest: sha256:fbbecfc4f9fc56b050d0a8617ff5e0aecfa1bfc6e23c041a574c19c90183bc48
+Status: Downloaded newer image for s390x/ubuntu:xenial
+ ---> 99098b69958a
+Step 2/16 : RUN     apt-get update && apt-get install -y         curl         gcc         git         make         tar
+ ---> Running in 1ddf10ae0234
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y         curl         gcc         git         make         tar' returned a non-zero code: 1

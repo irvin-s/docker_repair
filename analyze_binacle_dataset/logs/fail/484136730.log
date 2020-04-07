@@ -1,0 +1,52 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/9 : FROM golang:1.12.4
+1.12.4: Pulling from library/golang
+e79bb959ec00: Pulling fs layer
+d4b7902036fe: Pulling fs layer
+1b2a72d4e030: Pulling fs layer
+d54db43011fd: Pulling fs layer
+963c818ebafc: Pulling fs layer
+9eee6e7073aa: Pulling fs layer
+83e75b35417b: Pulling fs layer
+d54db43011fd: Waiting
+963c818ebafc: Waiting
+9eee6e7073aa: Waiting
+83e75b35417b: Waiting
+1b2a72d4e030: Verifying Checksum
+1b2a72d4e030: Download complete
+d4b7902036fe: Verifying Checksum
+d4b7902036fe: Download complete
+d54db43011fd: Verifying Checksum
+d54db43011fd: Download complete
+e79bb959ec00: Verifying Checksum
+e79bb959ec00: Download complete
+963c818ebafc: Verifying Checksum
+963c818ebafc: Download complete
+83e75b35417b: Verifying Checksum
+83e75b35417b: Download complete
+9eee6e7073aa: Verifying Checksum
+9eee6e7073aa: Download complete
+e79bb959ec00: Pull complete
+d4b7902036fe: Pull complete
+1b2a72d4e030: Pull complete
+d54db43011fd: Pull complete
+963c818ebafc: Pull complete
+9eee6e7073aa: Pull complete
+83e75b35417b: Pull complete
+Digest: sha256:83e8267be041b3ddf6a5792c7e464528408f75c446745642db08cfe4e8d58d18
+Status: Downloaded newer image for golang:1.12.4
+ ---> b860ab44e93e
+Step 2/9 : LABEL maintainer="sparkle_pony_2000@qri.io"
+ ---> Running in 2b134f9dc1dc
+Removing intermediate container 2b134f9dc1dc
+ ---> 3e5480470f09
+Step 3/9 : ADD . /go/src/github.com/qri-io/qri
+ ---> a0a14e5abe71
+Step 4/9 : ENV GO111MODULE=on
+ ---> Running in a92f06eda285
+Removing intermediate container a92f06eda285
+ ---> a572390d048d
+Step 5/9 : RUN cd /go/src/github.com/qri-io/qri && make build
+ ---> Running in 1c57d5e765f5
+[91mmake: *** No rule to make target 'build'.  Stop.
+[0mThe command '/bin/sh -c cd /go/src/github.com/qri-io/qri && make build' returned a non-zero code: 2

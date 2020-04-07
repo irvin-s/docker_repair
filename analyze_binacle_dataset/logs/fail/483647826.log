@@ -1,0 +1,33 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM williamyeh/ansible:ubuntu14.04
+ubuntu14.04: Pulling from williamyeh/ansible
+aa1a66b8583a: Pulling fs layer
+aaccc2e362b2: Pulling fs layer
+a53116a2808f: Pulling fs layer
+b3a7298e318c: Pulling fs layer
+997ba7900ef6: Pulling fs layer
+b3a7298e318c: Waiting
+997ba7900ef6: Waiting
+aaccc2e362b2: Download complete
+a53116a2808f: Verifying Checksum
+a53116a2808f: Download complete
+b3a7298e318c: Verifying Checksum
+b3a7298e318c: Download complete
+aa1a66b8583a: Verifying Checksum
+aa1a66b8583a: Download complete
+997ba7900ef6: Verifying Checksum
+997ba7900ef6: Download complete
+aa1a66b8583a: Pull complete
+aaccc2e362b2: Pull complete
+a53116a2808f: Pull complete
+b3a7298e318c: Pull complete
+997ba7900ef6: Pull complete
+Digest: sha256:a956a86d0e7b008b4fb65e9fcc0ef01c63c2c4098fbb6b83bb249bf4f7e5c267
+Status: Downloaded newer image for williamyeh/ansible:ubuntu14.04
+ ---> dcffc8ad900e
+Step 2/6 : WORKDIR /tmp
+ ---> Running in ea1fde11aed1
+Removing intermediate container ea1fde11aed1
+ ---> a2bc7b73817e
+Step 3/6 : COPY  ansible  /tmp
+COPY failed: stat /var/lib/docker/tmp/docker-builder551994800/ansible: no such file or directory

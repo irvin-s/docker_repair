@@ -1,0 +1,3 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/9 : FROM opensuse:13.2
+manifest for opensuse:13.2 not found: manifest unknown: manifest unknown

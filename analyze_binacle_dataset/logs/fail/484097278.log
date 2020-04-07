@@ -1,0 +1,15 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM multiarch/centos:7.2.1511-armhfp-clean
+7.2.1511-armhfp-clean: Pulling from multiarch/centos
+Image docker.io/multiarch/centos:7.2.1511-armhfp-clean uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+01c301143449: Pulling fs layer
+01c301143449: Verifying Checksum
+01c301143449: Download complete
+01c301143449: Pull complete
+Digest: sha256:0c7ef53272b7a574a1f924175a1d08442666de076a1d696c63346f285d8ef463
+Status: Downloaded newer image for multiarch/centos:7.2.1511-armhfp-clean
+ ---> 547ed30563cf
+Step 2/11 : RUN yum install -y yum-plugin-ovl
+ ---> Running in baba2212b5ee
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c yum install -y yum-plugin-ovl' returned a non-zero code: 1

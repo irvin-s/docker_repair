@@ -1,0 +1,108 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM index.docker.io/fedora
+latest: Pulling from library/fedora
+5c1b9e8d7bf7: Pulling fs layer
+5c1b9e8d7bf7: Download complete
+5c1b9e8d7bf7: Pull complete
+Digest: sha256:c97879f8bebe49744307ea5c77ffc76c7cc97f3ddec72fb9a394bd4e4519b388
+Status: Downloaded newer image for fedora:latest
+ ---> 536f3995adeb
+Step 2/11 : MAINTAINER Pavel Raiskup <praiskup@redhat.com>
+ ---> Running in 8ed9f76fd409
+Removing intermediate container 8ed9f76fd409
+ ---> 2a3d1c3f3586
+Step 3/11 : ENV container="docker"
+ ---> Running in 45402027ae03
+Removing intermediate container 45402027ae03
+ ---> 7a80600d5389
+Step 4/11 : RUN yum -y --setopt=tsflags=nodocs install postgresql-server     && yum -y --setopt=tsflags=nodocs reinstall glibc-common     && yum -y --setopt=tsflags=nodocs clean all --enablerepo='*'
+ ---> Running in 4a7067d9aa64
+Fedora Modular 31 - x86_64                      3.4 MB/s | 5.2 MB     00:01    
+Fedora Modular 31 - x86_64 - Updates            3.9 MB/s | 4.0 MB     00:01    
+Fedora 31 - x86_64 - Updates                     11 MB/s |  23 MB     00:02    
+Fedora 31 - x86_64                              5.2 MB/s |  71 MB     00:13    
+Last metadata expiration check: 0:00:01 ago on Sat Apr  4 01:10:01 2020.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture  Version            Repository      Size
+================================================================================
+Installing:
+ postgresql-server        x86_64        11.7-1.fc31        updates        5.2 M
+Installing dependencies:
+ libicu                   x86_64        63.2-3.fc31        fedora         9.3 M
+ libpq                    x86_64        12.2-1.fc31        updates        212 k
+ postgresql               x86_64        11.7-1.fc31        updates        1.5 M
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 16 M
+Installed size: 59 M
+Downloading Packages:
+(1/4): libpq-12.2-1.fc31.x86_64.rpm             674 kB/s | 212 kB     00:00    
+(2/4): postgresql-11.7-1.fc31.x86_64.rpm        3.5 MB/s | 1.5 MB     00:00    
+(3/4): postgresql-server-11.7-1.fc31.x86_64.rpm 8.8 MB/s | 5.2 MB     00:00    
+(4/4): libicu-63.2-3.fc31.x86_64.rpm             20 MB/s | 9.3 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            12 MB/s |  16 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libpq-12.2-1.fc31.x86_64                               1/4 
+  Installing       : postgresql-11.7-1.fc31.x86_64                          2/4 
+  Installing       : libicu-63.2-3.fc31.x86_64                              3/4 
+  Running scriptlet: postgresql-server-11.7-1.fc31.x86_64                   4/4 
+  Installing       : postgresql-server-11.7-1.fc31.x86_64                   4/4 
+  Running scriptlet: postgresql-server-11.7-1.fc31.x86_64                   4/4 
+  Verifying        : libpq-12.2-1.fc31.x86_64                               1/4 
+  Verifying        : postgresql-11.7-1.fc31.x86_64                          2/4 
+  Verifying        : postgresql-server-11.7-1.fc31.x86_64                   3/4 
+  Verifying        : libicu-63.2-3.fc31.x86_64                              4/4 
+
+Installed:
+  libicu-63.2-3.fc31.x86_64           libpq-12.2-1.fc31.x86_64                  
+  postgresql-11.7-1.fc31.x86_64       postgresql-server-11.7-1.fc31.x86_64      
+
+Complete!
+Last metadata expiration check: 0:00:41 ago on Sat Apr  4 01:10:01 2020.
+Dependencies resolved.
+================================================================================
+ Package              Architecture   Version              Repository       Size
+================================================================================
+Reinstalling:
+ glibc-common         x86_64         2.30-10.fc31         updates         640 k
+
+Transaction Summary
+================================================================================
+
+Total download size: 640 k
+Installed size: 2.6 M
+Downloading Packages:
+glibc-common-2.30-10.fc31.x86_64.rpm            1.3 MB/s | 640 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           994 kB/s | 640 kB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Reinstalling     : glibc-common-2.30-10.fc31.x86_64                       1/2 
+  Cleanup          : glibc-common-2.30-10.fc31.x86_64                       2/2 
+  Running scriptlet: glibc-common-2.30-10.fc31.x86_64                       2/2 
+  Verifying        : glibc-common-2.30-10.fc31.x86_64                       1/2 
+  Verifying        : glibc-common-2.30-10.fc31.x86_64                       2/2 
+
+Reinstalled:
+  glibc-common-2.30-10.fc31.x86_64                                              
+
+Complete!
+33 files removed
+Removing intermediate container 4a7067d9aa64
+ ---> bb95d13414fd
+Step 5/11 : ADD root /
+ADD failed: stat /var/lib/docker/tmp/docker-builder925112207/root: no such file or directory

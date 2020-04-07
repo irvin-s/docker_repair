@@ -1,0 +1,112 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/5 : FROM ubuntu:14.04
+14.04: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+30bb187ac3fc: Download complete
+b7a5bcc4a58a: Verifying Checksum
+b7a5bcc4a58a: Download complete
+2e6e20c8e2e6: Verifying Checksum
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:14.04
+ ---> 6e4f1fe62ff1
+Step 2/5 : MAINTAINER Erik Hollensbe <erik@hollensbe.org>
+ ---> Running in 6eab20d792af
+Removing intermediate container 6eab20d792af
+ ---> 780446907e5c
+Step 3/5 : RUN apt-get update && apt-get install znc -y
+ ---> Running in 3e5ccb0f892d
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:2 http://security.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:4 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:5 http://security.ubuntu.com trusty-security/universe amd64 Packages [377 kB]
+Get:6 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4730 B]
+Get:7 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:8 https://esm.ubuntu.com trusty-infra-updates InRelease
+Get:9 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Get:10 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Get:11 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:12 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.1 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:17 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:18 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:20 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:21 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:22 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:23 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 13.7 MB in 3s (3858 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libperl5.18 libpython3.4 libtcl8.5 znc-perl znc-python znc-tcl
+Suggested packages:
+  tcl8.5
+The following NEW packages will be installed:
+  libperl5.18 libpython3.4 libtcl8.5 znc znc-perl znc-python znc-tcl
+0 upgraded, 7 newly installed, 0 to remove and 1 not upgraded.
+Need to get 4412 kB of archives.
+After this operation, 19.0 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython3.4 amd64 3.4.3-1ubuntu1~14.04.7 [1303 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libtcl8.5 amd64 8.5.15-2ubuntu1 [684 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libperl5.18 amd64 5.18.2-2ubuntu1.7 [1330 B]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe znc amd64 1.2-3ubuntu0.1 [1236 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe znc-perl amd64 1.2-3ubuntu0.1 [559 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe znc-python amd64 1.2-3ubuntu0.1 [597 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe znc-tcl amd64 1.2-3ubuntu0.1 [31.6 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 4412 kB in 1s (2791 kB/s)
+Selecting previously unselected package libpython3.4:amd64.
+(Reading database ... 12097 files and directories currently installed.)
+Preparing to unpack .../libpython3.4_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking libpython3.4:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Selecting previously unselected package libtcl8.5:amd64.
+Preparing to unpack .../libtcl8.5_8.5.15-2ubuntu1_amd64.deb ...
+Unpacking libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Selecting previously unselected package libperl5.18.
+Preparing to unpack .../libperl5.18_5.18.2-2ubuntu1.7_amd64.deb ...
+Unpacking libperl5.18 (5.18.2-2ubuntu1.7) ...
+Selecting previously unselected package znc.
+Preparing to unpack .../znc_1.2-3ubuntu0.1_amd64.deb ...
+Unpacking znc (1.2-3ubuntu0.1) ...
+Selecting previously unselected package znc-perl.
+Preparing to unpack .../znc-perl_1.2-3ubuntu0.1_amd64.deb ...
+Unpacking znc-perl (1.2-3ubuntu0.1) ...
+Selecting previously unselected package znc-python.
+Preparing to unpack .../znc-python_1.2-3ubuntu0.1_amd64.deb ...
+Unpacking znc-python (1.2-3ubuntu0.1) ...
+Selecting previously unselected package znc-tcl.
+Preparing to unpack .../znc-tcl_1.2-3ubuntu0.1_amd64.deb ...
+Unpacking znc-tcl (1.2-3ubuntu0.1) ...
+Setting up libpython3.4:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Setting up libperl5.18 (5.18.2-2ubuntu1.7) ...
+Setting up znc (1.2-3ubuntu0.1) ...
+Setting up znc-perl (1.2-3ubuntu0.1) ...
+Setting up znc-python (1.2-3ubuntu0.1) ...
+Setting up znc-tcl (1.2-3ubuntu0.1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Removing intermediate container 3e5ccb0f892d
+ ---> 900f4ae8d382
+Step 4/5 : ADD conf /.znc
+ADD failed: stat /var/lib/docker/tmp/docker-builder946297169/conf: no such file or directory

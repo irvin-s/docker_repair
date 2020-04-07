@@ -1,0 +1,241 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM ubuntu:14.04
+14.04: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+b7a5bcc4a58a: Verifying Checksum
+b7a5bcc4a58a: Download complete
+30bb187ac3fc: Download complete
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:14.04
+ ---> 6e4f1fe62ff1
+Step 2/6 : RUN apt-get update -qy && apt-get install tmux zsh weechat-curses -y
+ ---> Running in 4cb45c9c4aac
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 http://security.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Get:4 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:5 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Get:6 https://esm.ubuntu.com trusty-infra-updates InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:7 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Get:8 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:9 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:10 http://security.ubuntu.com trusty-security/universe amd64 Packages [377 kB]
+Get:11 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4730 B]
+Get:12 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.1 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:17 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:18 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:20 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:21 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:22 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:23 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 13.7 MB in 3s (3757 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  aspell aspell-en dictionaries-common libaspell15 libevent-2.0-5 liblua5.1-0
+  libperl5.18 libpython2.7 libpython2.7-minimal libpython2.7-stdlib
+  libruby1.9.1 libtcl8.5 ruby ruby1.9.1 weechat-core weechat-plugins
+  zsh-common
+Suggested packages:
+  aspell-doc spellutils wordlist emacsen-common jed-extra tcl8.5 ri ruby-dev
+  ruby1.9.1-examples ri1.9.1 graphviz ruby1.9.1-dev ruby-switch weechat-doc
+  weechat-scripts zsh-doc
+The following NEW packages will be installed:
+  aspell aspell-en dictionaries-common libaspell15 libevent-2.0-5 liblua5.1-0
+  libperl5.18 libpython2.7 libpython2.7-minimal libpython2.7-stdlib
+  libruby1.9.1 libtcl8.5 ruby ruby1.9.1 tmux weechat-core weechat-curses
+  weechat-plugins zsh zsh-common
+0 upgraded, 20 newly installed, 0 to remove and 1 not upgraded.
+Need to get 11.8 MB of archives.
+After this operation, 52.9 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libevent-2.0-5 amd64 2.0.21-stable-1ubuntu1.14.04.2 [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main liblua5.1-0 amd64 5.1.5-5ubuntu0.1 [99.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7-minimal amd64 2.7.6-8ubuntu0.5 [308 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7-stdlib amd64 2.7.6-8ubuntu0.5 [1872 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7 amd64 2.7.6-8ubuntu0.5 [1041 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main libtcl8.5 amd64 8.5.15-2ubuntu1 [684 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main zsh-common all 5.0.2-3ubuntu6.3 [2115 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main zsh amd64 5.0.2-3ubuntu6.3 [606 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main libaspell15 amd64 0.60.7~20110707-1ubuntu1 [335 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main dictionaries-common all 1.20.5 [232 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty/main aspell amd64 0.60.7~20110707-1ubuntu1 [78.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty/main aspell-en all 7.1-0-1 [267 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libperl5.18 amd64 5.18.2-2ubuntu1.7 [1330 B]
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty/main ruby all 1:1.9.3.4 [5334 B]
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1 amd64 1.9.3.484-2ubuntu1.14 [35.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libruby1.9.1 amd64 1.9.3.484-2ubuntu1.14 [2648 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty/main tmux amd64 1.8-5 [247 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe weechat-core amd64 0.4.2-3ubuntu0.1 [549 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe weechat-curses amd64 0.4.2-3ubuntu0.1 [289 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe weechat-plugins amd64 0.4.2-3ubuntu0.1 [295 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 11.8 MB in 3s (3755 kB/s)
+Selecting previously unselected package libevent-2.0-5:amd64.
+(Reading database ... 12097 files and directories currently installed.)
+Preparing to unpack .../libevent-2.0-5_2.0.21-stable-1ubuntu1.14.04.2_amd64.deb ...
+Unpacking libevent-2.0-5:amd64 (2.0.21-stable-1ubuntu1.14.04.2) ...
+Selecting previously unselected package liblua5.1-0:amd64.
+Preparing to unpack .../liblua5.1-0_5.1.5-5ubuntu0.1_amd64.deb ...
+Unpacking liblua5.1-0:amd64 (5.1.5-5ubuntu0.1) ...
+Selecting previously unselected package libpython2.7-minimal:amd64.
+Preparing to unpack .../libpython2.7-minimal_2.7.6-8ubuntu0.5_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.6-8ubuntu0.5) ...
+Selecting previously unselected package libpython2.7-stdlib:amd64.
+Preparing to unpack .../libpython2.7-stdlib_2.7.6-8ubuntu0.5_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.6-8ubuntu0.5) ...
+Selecting previously unselected package libpython2.7:amd64.
+Preparing to unpack .../libpython2.7_2.7.6-8ubuntu0.5_amd64.deb ...
+Unpacking libpython2.7:amd64 (2.7.6-8ubuntu0.5) ...
+Selecting previously unselected package libtcl8.5:amd64.
+Preparing to unpack .../libtcl8.5_8.5.15-2ubuntu1_amd64.deb ...
+Unpacking libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Selecting previously unselected package zsh-common.
+Preparing to unpack .../zsh-common_5.0.2-3ubuntu6.3_all.deb ...
+Unpacking zsh-common (5.0.2-3ubuntu6.3) ...
+Selecting previously unselected package zsh.
+Preparing to unpack .../zsh_5.0.2-3ubuntu6.3_amd64.deb ...
+Unpacking zsh (5.0.2-3ubuntu6.3) ...
+Selecting previously unselected package libaspell15.
+Preparing to unpack .../libaspell15_0.60.7~20110707-1ubuntu1_amd64.deb ...
+Unpacking libaspell15 (0.60.7~20110707-1ubuntu1) ...
+Selecting previously unselected package dictionaries-common.
+Preparing to unpack .../dictionaries-common_1.20.5_all.deb ...
+Adding 'diversion of /usr/share/dict/words to /usr/share/dict/words.pre-dictionaries-common by dictionaries-common'
+Unpacking dictionaries-common (1.20.5) ...
+Selecting previously unselected package aspell.
+Preparing to unpack .../aspell_0.60.7~20110707-1ubuntu1_amd64.deb ...
+Unpacking aspell (0.60.7~20110707-1ubuntu1) ...
+Selecting previously unselected package aspell-en.
+Preparing to unpack .../aspell-en_7.1-0-1_all.deb ...
+Unpacking aspell-en (7.1-0-1) ...
+Selecting previously unselected package libperl5.18.
+Preparing to unpack .../libperl5.18_5.18.2-2ubuntu1.7_amd64.deb ...
+Unpacking libperl5.18 (5.18.2-2ubuntu1.7) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_1%3a1.9.3.4_all.deb ...
+Unpacking ruby (1:1.9.3.4) ...
+Selecting previously unselected package ruby1.9.1.
+Preparing to unpack .../ruby1.9.1_1.9.3.484-2ubuntu1.14_amd64.deb ...
+Unpacking ruby1.9.1 (1.9.3.484-2ubuntu1.14) ...
+Selecting previously unselected package libruby1.9.1.
+Preparing to unpack .../libruby1.9.1_1.9.3.484-2ubuntu1.14_amd64.deb ...
+Unpacking libruby1.9.1 (1.9.3.484-2ubuntu1.14) ...
+Selecting previously unselected package tmux.
+Preparing to unpack .../archives/tmux_1.8-5_amd64.deb ...
+Unpacking tmux (1.8-5) ...
+Selecting previously unselected package weechat-core.
+Preparing to unpack .../weechat-core_0.4.2-3ubuntu0.1_amd64.deb ...
+Unpacking weechat-core (0.4.2-3ubuntu0.1) ...
+Selecting previously unselected package weechat-curses.
+Preparing to unpack .../weechat-curses_0.4.2-3ubuntu0.1_amd64.deb ...
+Unpacking weechat-curses (0.4.2-3ubuntu0.1) ...
+Selecting previously unselected package weechat-plugins.
+Preparing to unpack .../weechat-plugins_0.4.2-3ubuntu0.1_amd64.deb ...
+Unpacking weechat-plugins (0.4.2-3ubuntu0.1) ...
+Setting up libevent-2.0-5:amd64 (2.0.21-stable-1ubuntu1.14.04.2) ...
+Setting up liblua5.1-0:amd64 (5.1.5-5ubuntu0.1) ...
+Setting up libpython2.7-minimal:amd64 (2.7.6-8ubuntu0.5) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.6-8ubuntu0.5) ...
+Setting up libpython2.7:amd64 (2.7.6-8ubuntu0.5) ...
+Setting up libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Setting up zsh-common (5.0.2-3ubuntu6.3) ...
+Setting up zsh (5.0.2-3ubuntu6.3) ...
+update-alternatives: using /bin/zsh5 to provide /bin/zsh (zsh) in auto mode
+update-alternatives: using /bin/zsh5 to provide /bin/rzsh (rzsh) in auto mode
+[91mupdate-alternatives: warning: skip creation of /usr/share/man/man1/rzsh.1.gz because associated file /usr/share/man/man1/zsh.1.gz (of link group rzsh) doesn't exist
+[0mSetting up libaspell15 (0.60.7~20110707-1ubuntu1) ...
+Setting up dictionaries-common (1.20.5) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mSetting up libperl5.18 (5.18.2-2ubuntu1.7) ...
+Setting up tmux (1.8-5) ...
+Setting up weechat-core (0.4.2-3ubuntu0.1) ...
+Setting up weechat-curses (0.4.2-3ubuntu0.1) ...
+Processing triggers for dictionaries-common (1.20.5) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91maspell-autobuildhash: processing: en [en-common]
+[0m[91maspell-autobuildhash: processing: en [en-variant_0]
+[0m[91maspell-autobuildhash: processing: en [en-variant_1]
+[0m[91maspell-autobuildhash: processing: en [en-variant_2]
+[0m[91maspell-autobuildhash: processing: en [en-w_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en-wo_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_CA-variant_0]
+[0m[91maspell-autobuildhash: processing: en [en_CA-variant_1]
+[0m[91maspell-autobuildhash: processing: en [en_CA-w_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_CA-wo_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_GB-ise-w_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_GB-ise-wo_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_GB-ize-w_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_GB-ize-wo_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_GB-variant_0]
+[0m[91maspell-autobuildhash: processing: en [en_GB-variant_1]
+[0m[91maspell-autobuildhash: processing: en [en_US-w_accents-only]
+[0m[91maspell-autobuildhash: processing: en [en_US-wo_accents-only]
+[0mSetting up aspell (0.60.7~20110707-1ubuntu1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mProcessing triggers for dictionaries-common (1.20.5) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mSetting up aspell-en (7.1-0-1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mProcessing triggers for dictionaries-common (1.20.5) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mSetting up libruby1.9.1 (1.9.3.484-2ubuntu1.14) ...
+Setting up weechat-plugins (0.4.2-3ubuntu0.1) ...
+Setting up ruby (1:1.9.3.4) ...
+Setting up ruby1.9.1 (1.9.3.484-2ubuntu1.14) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Removing intermediate container 4cb45c9c4aac
+ ---> 4d1603918624
+Step 3/6 : ADD .weechat /.weechat
+ADD failed: stat /var/lib/docker/tmp/docker-builder845626727/.weechat: no such file or directory

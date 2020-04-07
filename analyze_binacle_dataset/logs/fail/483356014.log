@@ -1,0 +1,20 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM registry.opensuse.org/devel/openqa/containers/openqa_dev:latest
+latest: Pulling from devel/openqa/containers/openqa_dev
+860d65d235d0: Pulling fs layer
+8424533d744b: Pulling fs layer
+860d65d235d0: Verifying Checksum
+860d65d235d0: Download complete
+860d65d235d0: Pull complete
+8424533d744b: Verifying Checksum
+8424533d744b: Download complete
+8424533d744b: Pull complete
+Digest: sha256:c0fc93c59d693a1562f3b57d65adcb8479c707a0c2475c0eb224b82740efffc3
+Status: Downloaded newer image for registry.opensuse.org/devel/openqa/containers/openqa_dev:latest
+ ---> b3bd16f15999
+Step 2/6 : ENV LANG en_US.UTF-8
+ ---> Running in 10066df02794
+Removing intermediate container 10066df02794
+ ---> 9fa658d6a68e
+Step 3/6 : COPY entrypoint.sh /usr/bin/entrypoint
+COPY failed: stat /var/lib/docker/tmp/docker-builder123862403/entrypoint.sh: no such file or directory

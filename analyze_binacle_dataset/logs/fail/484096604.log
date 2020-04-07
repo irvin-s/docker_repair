@@ -1,0 +1,56 @@
+Sending build context to Docker daemon  2.048kB
+[91m[WARNING]: Empty continuation line found in:
+    RUN foo bar baz
+[WARNING]: Empty continuation lines will become errors in a future release.
+[0mStep 1/6 : FROM ubuntu:14.04
+14.04: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+30bb187ac3fc: Download complete
+b7a5bcc4a58a: Verifying Checksum
+b7a5bcc4a58a: Download complete
+2e6e20c8e2e6: Verifying Checksum
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:14.04
+ ---> 6e4f1fe62ff1
+Step 2/6 : MAINTAINER Erik \\Hollensbe <erik@hollensbe.org>\"
+ ---> Running in e2f003c8664c
+Removing intermediate container e2f003c8664c
+ ---> 4bd04a2abbdf
+Step 3/6 : RUN apt-get \update &&   apt-get \"install znc -y
+ ---> Running in fcab97167b97
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://security.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:4 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:5 http://security.ubuntu.com trusty-security/universe amd64 Packages [377 kB]
+Get:6 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:7 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4730 B]
+Get:8 https://esm.ubuntu.com trusty-infra-updates InRelease
+Get:9 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Get:10 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Get:11 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:12 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.1 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:17 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:18 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:20 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:21 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:22 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:23 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 13.7 MB in 3s (3892 kB/s)
+Reading package lists...
+[91mE: Command line option 'y' [from -y] is not known.
+[0mThe command '/bin/sh -c apt-get \update &&   apt-get \"install znc -y' returned a non-zero code: 100

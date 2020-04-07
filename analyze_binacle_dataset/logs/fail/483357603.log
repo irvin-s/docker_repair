@@ -1,0 +1,56 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM malera/es6:dev
+dev: Pulling from malera/es6
+f189db1b88b3: Pulling fs layer
+3d06cf2f1b5e: Pulling fs layer
+687ebdda822c: Pulling fs layer
+99119ca3f34e: Pulling fs layer
+e771d6006054: Pulling fs layer
+b0cc28d0be2c: Pulling fs layer
+e53d3077403f: Pulling fs layer
+917636bae75d: Pulling fs layer
+eca1dabc9f9c: Pulling fs layer
+99119ca3f34e: Waiting
+917636bae75d: Waiting
+e771d6006054: Waiting
+eca1dabc9f9c: Waiting
+b0cc28d0be2c: Waiting
+e53d3077403f: Waiting
+3d06cf2f1b5e: Verifying Checksum
+3d06cf2f1b5e: Download complete
+687ebdda822c: Verifying Checksum
+687ebdda822c: Download complete
+f189db1b88b3: Verifying Checksum
+f189db1b88b3: Download complete
+e771d6006054: Verifying Checksum
+e771d6006054: Download complete
+b0cc28d0be2c: Verifying Checksum
+b0cc28d0be2c: Download complete
+917636bae75d: Verifying Checksum
+917636bae75d: Download complete
+e53d3077403f: Verifying Checksum
+e53d3077403f: Download complete
+99119ca3f34e: Verifying Checksum
+99119ca3f34e: Download complete
+f189db1b88b3: Pull complete
+eca1dabc9f9c: Verifying Checksum
+eca1dabc9f9c: Download complete
+3d06cf2f1b5e: Pull complete
+687ebdda822c: Pull complete
+99119ca3f34e: Pull complete
+e771d6006054: Pull complete
+b0cc28d0be2c: Pull complete
+e53d3077403f: Pull complete
+917636bae75d: Pull complete
+eca1dabc9f9c: Pull complete
+Digest: sha256:f436d2796b853b3c1a5a68b7e14f6d7f1c9258f8ccd1566a3dad5b499d155622
+Status: Downloaded newer image for malera/es6:dev
+ ---> 2291ab71de9c
+Step 2/11 : ENV PERM_USER_ID 1000
+ ---> Running in 6612535cfc0f
+Removing intermediate container 6612535cfc0f
+ ---> 4894c69715ac
+Step 3/11 : RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&     useradd -u ${PERM_USER_ID} -G users,www-data,sudo -d /htmling --shell /bin/bash -m htmling &&     echo "secret\nsecret" | passwd htmling
+ ---> Running in f71d7fd886ce
+[91museradd: UID 1000 is not unique
+[0mThe command '/bin/sh -c echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&     useradd -u ${PERM_USER_ID} -G users,www-data,sudo -d /htmling --shell /bin/bash -m htmling &&     echo "secret\nsecret" | passwd htmling' returned a non-zero code: 4

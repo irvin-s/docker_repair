@@ -1,0 +1,59 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM openjdk:latest
+latest: Pulling from library/openjdk
+cd17e56c322c: Pulling fs layer
+ecdd73bb9922: Pulling fs layer
+e742458088f5: Pulling fs layer
+ecdd73bb9922: Verifying Checksum
+ecdd73bb9922: Download complete
+cd17e56c322c: Download complete
+e742458088f5: Verifying Checksum
+e742458088f5: Download complete
+cd17e56c322c: Pull complete
+ecdd73bb9922: Pull complete
+e742458088f5: Pull complete
+Digest: sha256:85e34d6934d5b00048e31e93ee7abef73307cf0524d4205dcce4c9b2a5870128
+Status: Downloaded newer image for openjdk:latest
+ ---> e2b050e4e3da
+Step 2/3 : RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs
+ ---> Running in 070978f6fd8d
+
+================================================================================
+================================================================================
+
+                              DEPRECATION WARNING                            
+
+  Node.js 9.x is no longer actively supported!
+
+  You will not receive security or critical stability updates for this version.
+
+  You should migrate to a supported version of Node.js as soon as possible.
+  Use the installation script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * https://deb.nodesource.com/setup_10.x — Node.js 10 LTS "Dubnium" (recommended)
+   * https://deb.nodesource.com/setup_12.x — Node.js 12 LTS "Erbium"
+
+  Please see https://github.com/nodejs/Release for details about which
+  version may be appropriate for you.
+
+  The NodeSource Node.js distributions repository contains
+  information both about supported versions of Node.js and supported Linux
+  distributions. To learn more about usage, see the repository:
+    https://github.com/nodesource/distributions
+
+================================================================================
+================================================================================
+
+Continuing in 20 seconds ...
+
+
+## Installing the NodeSource Node.js 9.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+[91mbash: apt-get: command not found
+[0mError executing command, exiting
+The command '/bin/sh -c curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs' returned a non-zero code: 1

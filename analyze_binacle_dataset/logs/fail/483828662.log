@@ -1,0 +1,62 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/18 : FROM golang:1.12-alpine as builder
+1.12-alpine: Pulling from library/golang
+c9b1b535fdd9: Pulling fs layer
+cbb0d8da1b30: Pulling fs layer
+d909eff28200: Pulling fs layer
+665fbbf998e4: Pulling fs layer
+4985b1919860: Pulling fs layer
+665fbbf998e4: Waiting
+4985b1919860: Waiting
+d909eff28200: Verifying Checksum
+d909eff28200: Download complete
+cbb0d8da1b30: Download complete
+c9b1b535fdd9: Verifying Checksum
+c9b1b535fdd9: Download complete
+c9b1b535fdd9: Pull complete
+4985b1919860: Verifying Checksum
+4985b1919860: Download complete
+cbb0d8da1b30: Pull complete
+d909eff28200: Pull complete
+665fbbf998e4: Verifying Checksum
+665fbbf998e4: Download complete
+665fbbf998e4: Pull complete
+4985b1919860: Pull complete
+Digest: sha256:3f8e3ad3e7c128d29ac3004ac8314967c5ddbfa5bfa7caa59b0de493fc01686a
+Status: Downloaded newer image for golang:1.12-alpine
+ ---> 76bddfb5e55e
+Step 2/18 : RUN apk add --no-cache --update git gcc musl-dev
+ ---> Running in ffdd369f8068
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+(1/17) Upgrading musl (1.1.24-r0 -> 1.1.24-r2)
+(2/17) Installing libgcc (9.2.0-r4)
+(3/17) Installing libstdc++ (9.2.0-r4)
+(4/17) Installing binutils (2.33.1-r0)
+(5/17) Installing gmp (6.1.2-r1)
+(6/17) Installing isl (0.18-r0)
+(7/17) Installing libgomp (9.2.0-r4)
+(8/17) Installing libatomic (9.2.0-r4)
+(9/17) Installing mpfr4 (4.0.2-r1)
+(10/17) Installing mpc1 (1.1.0-r1)
+(11/17) Installing gcc (9.2.0-r4)
+(12/17) Installing nghttp2-libs (1.40.0-r0)
+(13/17) Installing libcurl (7.67.0-r0)
+(14/17) Installing expat (2.2.9-r1)
+(15/17) Installing pcre2 (10.34-r1)
+(16/17) Installing git (2.24.1-r0)
+(17/17) Installing musl-dev (1.1.24-r2)
+Executing busybox-1.31.1-r9.trigger
+OK: 128 MiB in 31 packages
+Removing intermediate container ffdd369f8068
+ ---> 7bc560a2f85d
+Step 3/18 : ARG LNTOP_SRC_PATH
+ ---> Running in 8c6113ee25f6
+Removing intermediate container 8c6113ee25f6
+ ---> 1dde61da870d
+Step 4/18 : WORKDIR /root/_build
+ ---> Running in b99fa9a75edc
+Removing intermediate container b99fa9a75edc
+ ---> bd3460b580d9
+Step 5/18 : COPY "$LNTOP_SRC_PATH/go.mod" .
+COPY failed: stat /var/lib/docker/tmp/docker-builder661332650/go.mod: no such file or directory

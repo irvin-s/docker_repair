@@ -1,0 +1,134 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/13 : FROM alpine:3.6
+3.6: Pulling from library/alpine
+5a3ea8efae5d: Pulling fs layer
+5a3ea8efae5d: Verifying Checksum
+5a3ea8efae5d: Download complete
+5a3ea8efae5d: Pull complete
+Digest: sha256:66790a2b79e1ea3e1dabac43990c54aca5d1ddf268d9a5a0285e4167c8b24475
+Status: Downloaded newer image for alpine:3.6
+ ---> 43773d1dba76
+Step 2/13 : WORKDIR /usr
+ ---> Running in 7450ab3de941
+Removing intermediate container 7450ab3de941
+ ---> ab6614c8afdd
+Step 3/13 : RUN apk --no-cache add gcc         g++         make         perl         perl-dev         curl     && curl -sL --compressed https://git.io/cpm > cpm && chmod +x cpm     && ./cpm install Plack     && ./cpm install Dancer Plack::Middleware::ReverseProxy         Net::DNS::Resolver JSON         YAML         List::MoreUtils         Net::CIDR::Lite         Plack::Handler::Twiggy     && mkdir -p /app/logs
+ ---> Running in 7fc2d8db1888
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/APKINDEX.tar.gz
+(1/24) Installing ca-certificates (20161130-r3)
+(2/24) Installing libssh2 (1.8.2-r0)
+(3/24) Installing libcurl (7.61.1-r2)
+(4/24) Installing curl (7.61.1-r2)
+(5/24) Installing libgcc (6.3.0-r4)
+(6/24) Installing libstdc++ (6.3.0-r4)
+(7/24) Installing binutils-libs (2.30-r1)
+(8/24) Installing binutils (2.30-r1)
+(9/24) Installing gmp (6.1.2-r0)
+(10/24) Installing isl (0.17.1-r0)
+(11/24) Installing libgomp (6.3.0-r4)
+(12/24) Installing libatomic (6.3.0-r4)
+(13/24) Installing pkgconf (1.3.7-r0)
+(14/24) Installing mpfr3 (3.1.5-r0)
+(15/24) Installing mpc1 (1.0.3-r0)
+(16/24) Installing gcc (6.3.0-r4)
+(17/24) Installing musl-dev (1.1.16-r15)
+(18/24) Installing libc-dev (0.7.1-r0)
+(19/24) Installing g++ (6.3.0-r4)
+(20/24) Installing make (4.2.1-r0)
+(21/24) Installing libbz2 (1.0.6-r5)
+(22/24) Installing perl (5.24.4-r2)
+(23/24) Installing perl-utils (5.24.4-r2)
+(24/24) Installing perl-dev (5.24.4-r2)
+Executing busybox-1.26.2-r11.trigger
+Executing ca-certificates-20161130-r3.trigger
+OK: 201 MiB in 37 packages
+[91mDONE install File-ShareDir-Install-0.13
+[0m[91mDONE install Stream-Buffered-0.03
+[0m[91mDONE install Devel-StackTrace-2.04
+[0m[91mDONE install Filesys-Notify-Simple-0.14
+[0m[91mDONE install URI-1.76
+[0m[91mDONE install Hash-MultiValue-0.16
+[0m[91mDONE install Cookie-Baker-0.11
+[0m[91mDONE install Class-Inspector-1.36
+[0m[91mDONE install Devel-StackTrace-AsHTML-0.15
+[0m[91mDONE install Try-Tiny-0.30
+[0m[91mDONE install Test-SharedFork-0.35
+[0m[91mDONE install Module-Build-0.4231
+[0m[91mDONE install File-ShareDir-1.116
+[0m[91mDONE install ExtUtils-Config-0.008
+[0m[91mDONE install Test-TCP-2.22
+[0m[91mDONE install ExtUtils-Helpers-0.026
+[0m[91mDONE install Encode-Locale-1.05
+[0m[91mDONE install LWP-MediaTypes-6.04
+[0m[91mDONE install IO-HTML-1.001
+[0m[91mDONE install ExtUtils-InstallPaths-0.012
+[0m[91mDONE install WWW-Form-UrlEncoded-0.26
+[0m[91mDONE install POSIX-strftime-Compiler-0.42
+[0m[91mDONE install Apache-LogFormat-Compiler-0.36
+[0m[91mDONE install Module-Build-Tiny-0.039
+[0m[91mDONE install TimeDate-2.32
+[0m[91mDONE install Time-Local-1.30
+[0m[91mDONE install HTTP-Date-6.05
+[0m[91mDONE install HTTP-Headers-Fast-0.22
+[0m[91mDONE install Test-Deep-1.130
+[0m[91mDONE install HTTP-MultiPartParser-0.02
+[0m[91mDONE install Cpanel-JSON-XS-4.19
+[0m[91mDONE install JSON-MaybeXS-1.004000
+[0m[91mDONE install HTTP-Entity-Parser-0.22
+[0m[91mDONE install Encode-3.05
+[0m[91mDONE install HTTP-Message-6.22
+[0m[91mDONE install Plack-1.0047
+[0m[91m36 distributions installed.
+[0m[91mDONE install Net-CIDR-Lite-0.21
+[0m[91mDONE install Plack-Middleware-ReverseProxy-0.16
+[0m[91mDONE install JSON-4.02
+[0m[91mDONE install YAML-1.30
+[0m[91mDONE install MIME-Types-2.17
+[0m[91mDONE install Exporter-Tiny-1.002001
+[0m[91mDONE install HTTP-Body-1.22
+[0m[91mDONE install Module-Runtime-0.016
+[0m[91mDONE install IO-Socket-IP-0.39
+[0m[91mDONE install Digest-HMAC-1.03
+[0m[91mDONE install Canary-Stability-2013
+[0m[91mDONE install Net-DNS-1.23
+[0m[91mDONE install Clone-0.43
+[0m[91mDONE install AnyEvent-7.17
+[0m[91mDONE install Test-Simple-1.302174
+[0m[91mDONE install Twiggy-0.1025
+[0m[91mDONE install Sub-Uplevel-0.2800
+[0m[91mDONE install Capture-Tiny-0.48
+[0m[91mDONE install List-MoreUtils-XS-0.428
+[0m[91mDONE install Class-Data-Inheritable-0.08
+[0m[91mDONE install HTML-Tagset-3.20
+[0m[91mDONE install List-MoreUtils-0.428
+[0m[91mDONE install Test-Warn-0.36
+[0m[91mDONE install Test-Exception-0.43
+[0m[91mDONE install Exception-Class-1.44
+[0m[91mDONE install Algorithm-Diff-1.1903
+[0m[91mDONE install Text-Diff-1.45
+[0m[91mDONE install HTML-Parser-3.72
+[0m[91mDONE install Test-Differences-0.67
+[0m[91mDONE install Test-Most-0.35
+[0m[91mDONE install CGI-4.46
+[0m[91mDONE install Hash-Merge-Simple-0.051
+[0m[91mDONE install HTTP-Server-Simple-0.52
+[0m[91mDONE install HTTP-Server-Simple-PSGI-0.16
+[0m[91mDONE install Dancer-1.3513
+[0m[91m35 distributions installed.
+[0mRemoving intermediate container 7fc2d8db1888
+ ---> ed0b1d2428bb
+Step 4/13 : ENV PERL5LIB=/usr/local/lib/perl5
+ ---> Running in 09c2f5c87fc1
+Removing intermediate container 09c2f5c87fc1
+ ---> 6deb7ae30a0e
+Step 5/13 : ENV PATH=/usr/local/bin:$PATH
+ ---> Running in 85f6473be6d4
+Removing intermediate container 85f6473be6d4
+ ---> 529e8dce75e6
+Step 6/13 : WORKDIR /app
+ ---> Running in 0eec023485bb
+Removing intermediate container 0eec023485bb
+ ---> 1863d0a4ae50
+Step 7/13 : COPY bin/ bin/
+COPY failed: stat /var/lib/docker/tmp/docker-builder184480358/bin: no such file or directory

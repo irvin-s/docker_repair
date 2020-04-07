@@ -1,0 +1,109 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM openjdk:8u171-jre
+8u171-jre: Pulling from library/openjdk
+55cbf04beb70: Pulling fs layer
+1607093a898c: Pulling fs layer
+9a8ea045c926: Pulling fs layer
+1290813abd9d: Pulling fs layer
+8a6b982ad6d7: Pulling fs layer
+abb029e68402: Pulling fs layer
+8cd067dc06dc: Pulling fs layer
+1b9ce2097b98: Pulling fs layer
+8a6b982ad6d7: Waiting
+abb029e68402: Waiting
+8cd067dc06dc: Waiting
+1b9ce2097b98: Waiting
+1290813abd9d: Waiting
+9a8ea045c926: Verifying Checksum
+9a8ea045c926: Download complete
+1607093a898c: Verifying Checksum
+1607093a898c: Download complete
+1290813abd9d: Verifying Checksum
+1290813abd9d: Download complete
+55cbf04beb70: Verifying Checksum
+55cbf04beb70: Download complete
+8a6b982ad6d7: Verifying Checksum
+8a6b982ad6d7: Download complete
+abb029e68402: Verifying Checksum
+abb029e68402: Download complete
+1b9ce2097b98: Verifying Checksum
+1b9ce2097b98: Download complete
+55cbf04beb70: Pull complete
+8cd067dc06dc: Verifying Checksum
+8cd067dc06dc: Download complete
+1607093a898c: Pull complete
+9a8ea045c926: Pull complete
+1290813abd9d: Pull complete
+8a6b982ad6d7: Pull complete
+abb029e68402: Pull complete
+8cd067dc06dc: Pull complete
+1b9ce2097b98: Pull complete
+Digest: sha256:1821bce0eb8636647166c618106c171687cb69c205d46859f3504e409aa917e2
+Status: Downloaded newer image for openjdk:8u171-jre
+ ---> 79f051dbf8c1
+Step 2/7 : MAINTAINER Clement Escoffier <clement@apache.org>
+ ---> Running in 0d0d36a06f18
+Removing intermediate container 0d0d36a06f18
+ ---> 25be45ad7ede
+Step 3/7 : RUN apt-get update && apt-get install -y procps
+ ---> Running in 20cf32a45a3f
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:3 http://security.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://deb.debian.org/debian stretch-updates/main amd64 Packages [27.9 kB]
+Get:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [521 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7083 kB]
+Fetched 7938 kB in 1s (4514 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgpm2 libncurses5 libprocps6 psmisc
+Suggested packages:
+  gpm
+The following NEW packages will be installed:
+  libgpm2 libncurses5 libprocps6 procps psmisc
+0 upgraded, 5 newly installed, 0 to remove and 54 not upgraded.
+Need to get 559 kB of archives.
+After this operation, 1789 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 libprocps6 amd64 2:3.3.12-3+deb9u1 [58.5 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 libncurses5 amd64 6.0+20161126-1+deb9u2 [93.4 kB]
+Get:3 http://deb.debian.org/debian stretch/main amd64 procps amd64 2:3.3.12-3+deb9u1 [250 kB]
+Get:4 http://deb.debian.org/debian stretch/main amd64 libgpm2 amd64 1.20.4-6.2+b1 [34.2 kB]
+Get:5 http://deb.debian.org/debian stretch/main amd64 psmisc amd64 22.21-2.1+b2 [123 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 559 kB in 0s (4641 kB/s)
+Selecting previously unselected package libprocps6:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16567 files and directories currently installed.)
+Preparing to unpack .../libprocps6_2%3a3.3.12-3+deb9u1_amd64.deb ...
+Unpacking libprocps6:amd64 (2:3.3.12-3+deb9u1) ...
+Selecting previously unselected package libncurses5:amd64.
+Preparing to unpack .../libncurses5_6.0+20161126-1+deb9u2_amd64.deb ...
+Unpacking libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+Selecting previously unselected package procps.
+Preparing to unpack .../procps_2%3a3.3.12-3+deb9u1_amd64.deb ...
+Unpacking procps (2:3.3.12-3+deb9u1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../libgpm2_1.20.4-6.2+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.4-6.2+b1) ...
+Selecting previously unselected package psmisc.
+Preparing to unpack .../psmisc_22.21-2.1+b2_amd64.deb ...
+Unpacking psmisc (22.21-2.1+b2) ...
+Setting up libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+Setting up psmisc (22.21-2.1+b2) ...
+Setting up libgpm2:amd64 (1.20.4-6.2+b1) ...
+Setting up libprocps6:amd64 (2:3.3.12-3+deb9u1) ...
+Setting up procps (2:3.3.12-3+deb9u1) ...
+update-alternatives: using /usr/bin/w.procps to provide /usr/bin/w (w) in auto mode
+Processing triggers for libc-bin (2.24-11+deb9u3) ...
+Removing intermediate container 20cf32a45a3f
+ ---> a439e03552b8
+Step 4/7 : COPY ./ /usr/local/
+ ---> a8b93759ccf6
+Step 5/7 : RUN chmod +x /usr/local/vertx/bin/vertx
+ ---> Running in 088c10e99612
+[91mchmod: cannot access '/usr/local/vertx/bin/vertx': No such file or directory
+[0mThe command '/bin/sh -c chmod +x /usr/local/vertx/bin/vertx' returned a non-zero code: 1

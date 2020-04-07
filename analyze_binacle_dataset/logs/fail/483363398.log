@@ -1,0 +1,12 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/5 : FROM mcr.microsoft.com/mssql/server:2017-latest
+ ---> a8343d3ce21c
+Step 2/5 : ENV ACCEPT_EULA y
+ ---> Using cache
+ ---> 9cfd398c66e1
+Step 3/5 : ENV SA_PASSWORD QIUHDI13hqssiuaQDHsaaseglpduac
+ ---> Running in 6a23077f5c60
+Removing intermediate container 6a23077f5c60
+ ---> ea024bc5349e
+Step 4/5 : ADD *.sql /tmp/
+ADD failed: no source files were specified

@@ -1,0 +1,4 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : ARG BUILD_FROM
+Step 2/8 : FROM $BUILD_FROM
+base name ($BUILD_FROM) should not be blank

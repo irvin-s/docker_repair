@@ -1,0 +1,1734 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM       fedora:21
+21: Pulling from library/fedora
+fced6e4a4c06: Pulling fs layer
+fced6e4a4c06: Verifying Checksum
+fced6e4a4c06: Download complete
+fced6e4a4c06: Pull complete
+Digest: sha256:a268e5e12257c7770eb44c24041baf5e728fba2eed1a84f007b81845ded0a485
+Status: Downloaded newer image for fedora:21
+ ---> ba6369d667d1
+Step 2/10 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in d15869056c26
+Removing intermediate container d15869056c26
+ ---> 2745d78054b5
+Step 3/10 : RUN yum -y update && yum clean all
+ ---> Running in bab697ac6b9e
+Resolving Dependencies
+--> Running transaction check
+---> Package audit-libs.x86_64 0:2.4.1-1.fc21 will be updated
+---> Package audit-libs.x86_64 0:2.4.4-1.fc21 will be an update
+---> Package bash.x86_64 0:4.3.30-2.fc21 will be updated
+---> Package bash.x86_64 0:4.3.42-1.fc21 will be an update
+---> Package ca-certificates.noarch 0:2014.2.1-1.5.fc21 will be updated
+---> Package ca-certificates.noarch 0:2015.2.5-1.0.fc21 will be an update
+---> Package coreutils.x86_64 0:8.22-19.fc21 will be updated
+---> Package coreutils.x86_64 0:8.22-22.fc21 will be an update
+---> Package cpio.x86_64 0:2.11-30.fc21 will be updated
+---> Package cpio.x86_64 0:2.11-33.fc21 will be an update
+---> Package crypto-policies.noarch 0:20140905-1.git4649b7d.fc21 will be updated
+---> Package crypto-policies.noarch 0:20150305-1.gitf618101.fc21 will be an update
+---> Package cryptsetup-libs.x86_64 0:1.6.6-1.fc21 will be updated
+---> Package cryptsetup-libs.x86_64 0:1.6.8-2.fc21 will be an update
+---> Package curl.x86_64 0:7.37.0-9.fc21 will be updated
+---> Package curl.x86_64 0:7.37.0-14.fc21 will be an update
+---> Package dbus.x86_64 1:1.8.6-3.fc21 will be updated
+---> Package dbus.x86_64 1:1.8.20-1.fc21 will be an update
+---> Package dbus-glib.x86_64 0:0.100.2-4.fc21 will be updated
+---> Package dbus-glib.x86_64 0:0.104-1.fc21 will be an update
+---> Package dbus-libs.x86_64 1:1.8.6-3.fc21 will be updated
+---> Package dbus-libs.x86_64 1:1.8.20-1.fc21 will be an update
+---> Package device-mapper.x86_64 0:1.02.90-1.fc21 will be updated
+---> Package device-mapper.x86_64 0:1.02.93-3.fc21 will be an update
+---> Package device-mapper-libs.x86_64 0:1.02.90-1.fc21 will be updated
+---> Package device-mapper-libs.x86_64 0:1.02.93-3.fc21 will be an update
+---> Package dracut.x86_64 0:038-30.git20140903.fc21 will be updated
+---> Package dracut.x86_64 0:038-39.git20150518.fc21 will be an update
+---> Package e2fsprogs.x86_64 0:1.42.11-4.fc21 will be updated
+---> Package e2fsprogs.x86_64 0:1.42.12-4.fc21 will be an update
+---> Package e2fsprogs-libs.x86_64 0:1.42.11-4.fc21 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.42.12-4.fc21 will be an update
+---> Package elfutils-libelf.x86_64 0:0.160-1.fc21 will be updated
+---> Package elfutils-libelf.x86_64 0:0.163-4.fc21 will be an update
+---> Package elfutils-libs.x86_64 0:0.160-1.fc21 will be updated
+---> Package elfutils-libs.x86_64 0:0.163-4.fc21 will be an update
+---> Package fedora-repos.noarch 0:21-2 will be updated
+---> Package fedora-repos.noarch 0:21-3 will be an update
+---> Package file.x86_64 0:5.19-7.fc21 will be updated
+---> Package file.x86_64 0:5.22-4.fc21 will be an update
+---> Package file-libs.x86_64 0:5.19-7.fc21 will be updated
+---> Package file-libs.x86_64 0:5.22-4.fc21 will be an update
+---> Package filesystem.x86_64 0:3.2-27.fc21 will be updated
+---> Package filesystem.x86_64 0:3.2-28.fc21 will be an update
+---> Package findutils.x86_64 1:4.5.12-7.fc21 will be updated
+---> Package findutils.x86_64 1:4.5.12-8.fc21 will be an update
+---> Package firewalld.noarch 0:0.3.12-1.fc21 will be updated
+---> Package firewalld.noarch 0:0.3.14.2-2.fc21 will be an update
+--> Processing Dependency: python-firewall = 0.3.14.2-2.fc21 for package: firewalld-0.3.14.2-2.fc21.noarch
+--> Processing Dependency: firewalld-filesystem = 0.3.14.2-2.fc21 for package: firewalld-0.3.14.2-2.fc21.noarch
+---> Package firewalld-config-standard.noarch 0:0.3.12-1.fc21 will be updated
+---> Package firewalld-config-standard.noarch 0:0.3.14.2-2.fc21 will be an update
+---> Package freetype.x86_64 0:2.5.3-11.fc21 will be updated
+---> Package freetype.x86_64 0:2.5.3-16.fc21 will be an update
+---> Package gawk.x86_64 0:4.1.1-5.fc21 will be updated
+---> Package gawk.x86_64 0:4.1.1-6.fc21 will be an update
+---> Package gettext.x86_64 0:0.19.2-6.fc21 will be updated
+---> Package gettext.x86_64 0:0.19.4-2.fc21 will be an update
+---> Package gettext-libs.x86_64 0:0.19.2-6.fc21 will be updated
+---> Package gettext-libs.x86_64 0:0.19.4-2.fc21 will be an update
+---> Package glib2.x86_64 0:2.42.1-1.fc21 will be updated
+---> Package glib2.x86_64 0:2.42.2-1.fc21 will be an update
+---> Package glibc.x86_64 0:2.20-5.fc21 will be updated
+---> Package glibc.x86_64 0:2.20-8.fc21 will be an update
+---> Package glibc-common.x86_64 0:2.20-5.fc21 will be updated
+---> Package glibc-common.x86_64 0:2.20-8.fc21 will be an update
+---> Package gmp.x86_64 1:6.0.0-7.fc21 will be updated
+---> Package gmp.x86_64 1:6.0.0-9.fc21 will be an update
+---> Package gnupg2.x86_64 0:2.0.25-2.fc21 will be updated
+---> Package gnupg2.x86_64 0:2.0.29-1.fc21 will be an update
+---> Package gpgme.x86_64 0:1.4.3-4.fc21 will be updated
+---> Package gpgme.x86_64 0:1.4.3-5.fc21 will be an update
+---> Package grep.x86_64 0:2.20-6.fc21 will be updated
+---> Package grep.x86_64 0:2.21-3.fc21 will be an update
+---> Package grub2.x86_64 1:2.02-0.11.fc21 will be updated
+---> Package grub2.x86_64 1:2.02-0.13.fc21 will be an update
+---> Package grub2-tools.x86_64 1:2.02-0.11.fc21 will be updated
+---> Package grub2-tools.x86_64 1:2.02-0.13.fc21 will be an update
+---> Package gzip.x86_64 0:1.6-5.fc21 will be updated
+---> Package gzip.x86_64 0:1.6-8.fc21 will be an update
+---> Package kmod.x86_64 0:18-4.fc21 will be updated
+---> Package kmod.x86_64 0:19-1.fc21 will be an update
+---> Package kmod-libs.x86_64 0:18-4.fc21 will be updated
+---> Package kmod-libs.x86_64 0:19-1.fc21 will be an update
+---> Package kpartx.x86_64 0:0.4.9-68.fc21.1 will be updated
+---> Package kpartx.x86_64 0:0.4.9-68.fc21.3 will be an update
+---> Package krb5-libs.x86_64 0:1.12.2-9.fc21 will be updated
+---> Package krb5-libs.x86_64 0:1.12.2-19.fc21 will be an update
+---> Package libarchive.x86_64 0:3.1.2-10.fc21 will be updated
+---> Package libarchive.x86_64 0:3.1.2-11.fc21 will be an update
+---> Package libassuan.x86_64 0:2.1.0-5.fc21 will be updated
+---> Package libassuan.x86_64 0:2.3.0-1.fc21 will be an update
+---> Package libattr.x86_64 0:2.4.47-9.fc21 will be updated
+---> Package libattr.x86_64 0:2.4.47-10.fc21 will be an update
+---> Package libblkid.x86_64 0:2.25.2-1.fc21 will be updated
+---> Package libblkid.x86_64 0:2.25.2-3.fc21 will be an update
+---> Package libcap-ng.x86_64 0:0.7.4-7.fc21 will be updated
+---> Package libcap-ng.x86_64 0:0.7.5-2.fc21 will be an update
+---> Package libcom_err.x86_64 0:1.42.11-4.fc21 will be updated
+---> Package libcom_err.x86_64 0:1.42.12-4.fc21 will be an update
+---> Package libcurl.x86_64 0:7.37.0-9.fc21 will be updated
+---> Package libcurl.x86_64 0:7.37.0-14.fc21 will be an update
+---> Package libdb.x86_64 0:5.3.28-9.fc21 will be updated
+---> Package libdb.x86_64 0:5.3.28-12.fc21 will be an update
+---> Package libdb-utils.x86_64 0:5.3.28-9.fc21 will be updated
+---> Package libdb-utils.x86_64 0:5.3.28-12.fc21 will be an update
+---> Package libffi.x86_64 0:3.1-6.fc21 will be updated
+---> Package libffi.x86_64 0:3.1-7.fc21 will be an update
+---> Package libgcc.x86_64 0:4.9.2-1.fc21 will be updated
+---> Package libgcc.x86_64 0:4.9.2-6.fc21 will be an update
+---> Package libgcrypt.x86_64 0:1.6.1-7.fc21 will be updated
+---> Package libgcrypt.x86_64 0:1.6.3-4.fc21 will be an update
+---> Package libgomp.x86_64 0:4.9.2-1.fc21 will be updated
+---> Package libgomp.x86_64 0:4.9.2-6.fc21 will be an update
+---> Package libgpg-error.x86_64 0:1.13-3.fc21 will be updated
+---> Package libgpg-error.x86_64 0:1.17-2.fc21 will be an update
+---> Package libidn.x86_64 0:1.28-5.fc21 will be updated
+---> Package libidn.x86_64 0:1.32-1.fc21 will be an update
+---> Package libmount.x86_64 0:2.25.2-1.fc21 will be updated
+---> Package libmount.x86_64 0:2.25.2-3.fc21 will be an update
+---> Package libpwquality.x86_64 0:1.2.4-2.fc21 will be updated
+---> Package libpwquality.x86_64 0:1.2.4-3.fc21 will be an update
+---> Package libseccomp.x86_64 0:2.1.1-5.fc21 will be updated
+---> Package libseccomp.x86_64 0:2.2.3-0.fc21 will be an update
+---> Package libselinux.x86_64 0:2.3-5.fc21 will be updated
+---> Package libselinux.x86_64 0:2.3-10.fc21 will be an update
+---> Package libselinux-python.x86_64 0:2.3-5.fc21 will be updated
+---> Package libselinux-python.x86_64 0:2.3-10.fc21 will be an update
+---> Package libsmartcols.x86_64 0:2.25.2-1.fc21 will be updated
+---> Package libsmartcols.x86_64 0:2.25.2-3.fc21 will be an update
+---> Package libss.x86_64 0:1.42.11-4.fc21 will be updated
+---> Package libss.x86_64 0:1.42.12-4.fc21 will be an update
+---> Package libssh2.x86_64 0:1.4.3-16.fc21 will be updated
+---> Package libssh2.x86_64 0:1.5.0-1.fc21 will be an update
+---> Package libstdc++.x86_64 0:4.9.2-1.fc21 will be updated
+---> Package libstdc++.x86_64 0:4.9.2-6.fc21 will be an update
+---> Package libtasn1.x86_64 0:4.2-1.fc21 will be updated
+---> Package libtasn1.x86_64 0:4.5-1.fc21 will be an update
+---> Package libuser.x86_64 0:0.60-6.fc21 will be updated
+---> Package libuser.x86_64 0:0.62-1.fc21 will be an update
+---> Package libuuid.x86_64 0:2.25.2-1.fc21 will be updated
+---> Package libuuid.x86_64 0:2.25.2-3.fc21 will be an update
+---> Package libxml2.x86_64 0:2.9.1-6.fc21 will be updated
+---> Package libxml2.x86_64 0:2.9.1-7.fc21 will be an update
+---> Package nspr.x86_64 0:4.10.7-1.fc21 will be updated
+---> Package nspr.x86_64 0:4.10.10-1.fc21 will be an update
+---> Package nss.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package nss-softokn.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss-softokn.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package nss-softokn-freebl.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss-softokn-freebl.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package nss-sysinit.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss-sysinit.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package nss-tools.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss-tools.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package nss-util.x86_64 0:3.17.2-1.fc21 will be updated
+---> Package nss-util.x86_64 0:3.20.1-1.0.fc21 will be an update
+---> Package openldap.x86_64 0:2.4.40-2.fc21 will be updated
+---> Package openldap.x86_64 0:2.4.40-3.fc21 will be an update
+---> Package openssl-libs.x86_64 1:1.0.1j-1.fc21 will be updated
+---> Package openssl-libs.x86_64 1:1.0.1k-12.fc21 will be an update
+---> Package os-prober.x86_64 0:1.58-11.fc21 will be updated
+---> Package os-prober.x86_64 0:1.68-1.fc21 will be an update
+---> Package pam.x86_64 0:1.1.8-16.fc21 will be updated
+---> Package pam.x86_64 0:1.1.8-19.fc21 will be an update
+---> Package pcre.x86_64 0:8.35-7.fc21 will be updated
+---> Package pcre.x86_64 0:8.35-14.fc21 will be an update
+---> Package pkgconfig.x86_64 1:0.28-6.fc21 will be updated
+---> Package pkgconfig.x86_64 1:0.28-8.fc21 will be an update
+---> Package procps-ng.x86_64 0:3.3.10-4.fc21 will be updated
+---> Package procps-ng.x86_64 0:3.3.10-8.fc21 will be an update
+---> Package python.x86_64 0:2.7.8-7.fc21 will be updated
+---> Package python.x86_64 0:2.7.8-15.fc21 will be an update
+---> Package python-libs.x86_64 0:2.7.8-7.fc21 will be updated
+---> Package python-libs.x86_64 0:2.7.8-15.fc21 will be an update
+---> Package python-pycurl.x86_64 0:7.19.3.1-5.fc21 will be updated
+---> Package python-pycurl.x86_64 0:7.19.3.1-6.fc21 will be an update
+---> Package python-six.noarch 0:1.7.3-2.fc21 will be updated
+---> Package python-six.noarch 0:1.9.0-1.fc21 will be an update
+---> Package python-slip.noarch 0:0.6.0-3.fc21 will be updated
+---> Package python-slip.noarch 0:0.6.4-1.fc21 will be an update
+---> Package python-slip-dbus.noarch 0:0.6.0-3.fc21 will be updated
+---> Package python-slip-dbus.noarch 0:0.6.4-1.fc21 will be an update
+---> Package rpm.x86_64 0:4.12.0.1-3.fc21 will be updated
+---> Package rpm.x86_64 0:4.12.0.1-7.fc21 will be an update
+---> Package rpm-build-libs.x86_64 0:4.12.0.1-3.fc21 will be updated
+---> Package rpm-build-libs.x86_64 0:4.12.0.1-7.fc21 will be an update
+---> Package rpm-libs.x86_64 0:4.12.0.1-3.fc21 will be updated
+---> Package rpm-libs.x86_64 0:4.12.0.1-7.fc21 will be an update
+---> Package rpm-plugin-selinux.x86_64 0:4.12.0.1-3.fc21 will be updated
+---> Package rpm-plugin-selinux.x86_64 0:4.12.0.1-7.fc21 will be an update
+---> Package rpm-python.x86_64 0:4.12.0.1-3.fc21 will be updated
+---> Package rpm-python.x86_64 0:4.12.0.1-7.fc21 will be an update
+---> Package setup.noarch 0:2.9.0-2.fc21 will be updated
+---> Package setup.noarch 0:2.9.0-4.fc21 will be an update
+---> Package sqlite.x86_64 0:3.8.7-1.fc21 will be updated
+---> Package sqlite.x86_64 0:3.8.11.1-1.fc21 will be an update
+---> Package systemd.x86_64 0:216-12.fc21 will be updated
+---> Package systemd.x86_64 0:216-25.fc21 will be an update
+---> Package systemd-libs.x86_64 0:216-12.fc21 will be updated
+---> Package systemd-libs.x86_64 0:216-25.fc21 will be an update
+---> Package tzdata.noarch 0:2014i-1.fc21 will be updated
+---> Package tzdata.noarch 0:2015g-1.fc21 will be an update
+---> Package util-linux.x86_64 0:2.25.2-1.fc21 will be updated
+---> Package util-linux.x86_64 0:2.25.2-3.fc21 will be an update
+---> Package vim-minimal.x86_64 2:7.4.475-2.fc21 will be updated
+---> Package vim-minimal.x86_64 2:7.4.827-1.fc21 will be an update
+--> Running transaction check
+---> Package firewalld-filesystem.noarch 0:0.3.14.2-2.fc21 will be installed
+---> Package python-firewall.noarch 0:0.3.14.2-2.fc21 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                    Arch    Version                      Repository
+                                                                           Size
+================================================================================
+Updating:
+ audit-libs                 x86_64  2.4.4-1.fc21                 updates   94 k
+ bash                       x86_64  4.3.42-1.fc21                updates  1.6 M
+ ca-certificates            noarch  2015.2.5-1.0.fc21            updates  442 k
+ coreutils                  x86_64  8.22-22.fc21                 updates  2.8 M
+ cpio                       x86_64  2.11-33.fc21                 updates  216 k
+ crypto-policies            noarch  20150305-1.gitf618101.fc21   updates   24 k
+ cryptsetup-libs            x86_64  1.6.8-2.fc21                 updates  209 k
+ curl                       x86_64  7.37.0-14.fc21               updates  270 k
+ dbus                       x86_64  1:1.8.20-1.fc21              updates  354 k
+ dbus-glib                  x86_64  0.104-1.fc21                 updates  120 k
+ dbus-libs                  x86_64  1:1.8.20-1.fc21              updates  167 k
+ device-mapper              x86_64  1.02.93-3.fc21               updates  235 k
+ device-mapper-libs         x86_64  1.02.93-3.fc21               updates  298 k
+ dracut                     x86_64  038-39.git20150518.fc21      updates  316 k
+ e2fsprogs                  x86_64  1.42.12-4.fc21               updates  799 k
+ e2fsprogs-libs             x86_64  1.42.12-4.fc21               updates  171 k
+ elfutils-libelf            x86_64  0.163-4.fc21                 updates  207 k
+ elfutils-libs              x86_64  0.163-4.fc21                 updates  268 k
+ fedora-repos               noarch  21-3                         updates   25 k
+ file                       x86_64  5.22-4.fc21                  updates   65 k
+ file-libs                  x86_64  5.22-4.fc21                  updates  423 k
+ filesystem                 x86_64  3.2-28.fc21                  updates  1.1 M
+ findutils                  x86_64  1:4.5.12-8.fc21              updates  482 k
+ firewalld                  noarch  0.3.14.2-2.fc21              updates  335 k
+ firewalld-config-standard  noarch  0.3.14.2-2.fc21              updates   49 k
+ freetype                   x86_64  2.5.3-16.fc21                updates  410 k
+ gawk                       x86_64  4.1.1-6.fc21                 updates  1.0 M
+ gettext                    x86_64  0.19.4-2.fc21                updates  1.0 M
+ gettext-libs               x86_64  0.19.4-2.fc21                updates  272 k
+ glib2                      x86_64  2.42.2-1.fc21                updates  2.2 M
+ glibc                      x86_64  2.20-8.fc21                  updates  3.5 M
+ glibc-common               x86_64  2.20-8.fc21                  updates   11 M
+ gmp                        x86_64  1:6.0.0-9.fc21               updates  282 k
+ gnupg2                     x86_64  2.0.29-1.fc21                updates  1.6 M
+ gpgme                      x86_64  1.4.3-5.fc21                 updates  157 k
+ grep                       x86_64  2.21-3.fc21                  updates  364 k
+ grub2                      x86_64  1:2.02-0.13.fc21             updates  3.8 M
+ grub2-tools                x86_64  1:2.02-0.13.fc21             updates  7.3 M
+ gzip                       x86_64  1.6-8.fc21                   updates  155 k
+ kmod                       x86_64  19-1.fc21                    updates  108 k
+ kmod-libs                  x86_64  19-1.fc21                    updates   60 k
+ kpartx                     x86_64  0.4.9-68.fc21.3              updates   56 k
+ krb5-libs                  x86_64  1.12.2-19.fc21               updates  835 k
+ libarchive                 x86_64  3.1.2-11.fc21                updates  325 k
+ libassuan                  x86_64  2.3.0-1.fc21                 updates   72 k
+ libattr                    x86_64  2.4.47-10.fc21               updates   23 k
+ libblkid                   x86_64  2.25.2-3.fc21                updates  175 k
+ libcap-ng                  x86_64  0.7.5-2.fc21                 updates   30 k
+ libcom_err                 x86_64  1.42.12-4.fc21               updates   45 k
+ libcurl                    x86_64  7.37.0-14.fc21               updates  242 k
+ libdb                      x86_64  5.3.28-12.fc21               updates  735 k
+ libdb-utils                x86_64  5.3.28-12.fc21               updates  108 k
+ libffi                     x86_64  3.1-7.fc21                   updates   34 k
+ libgcc                     x86_64  4.9.2-6.fc21                 updates   89 k
+ libgcrypt                  x86_64  1.6.3-4.fc21                 updates  374 k
+ libgomp                    x86_64  4.9.2-6.fc21                 updates  127 k
+ libgpg-error               x86_64  1.17-2.fc21                  updates  120 k
+ libidn                     x86_64  1.32-1.fc21                  updates  228 k
+ libmount                   x86_64  2.25.2-3.fc21                updates  190 k
+ libpwquality               x86_64  1.2.4-3.fc21                 updates   89 k
+ libseccomp                 x86_64  2.2.3-0.fc21                 updates   54 k
+ libselinux                 x86_64  2.3-10.fc21                  updates  150 k
+ libselinux-python          x86_64  2.3-10.fc21                  updates  301 k
+ libsmartcols               x86_64  2.25.2-3.fc21                updates  134 k
+ libss                      x86_64  1.42.12-4.fc21               updates   49 k
+ libssh2                    x86_64  1.5.0-1.fc21                 updates  145 k
+ libstdc++                  x86_64  4.9.2-6.fc21                 updates  299 k
+ libtasn1                   x86_64  4.5-1.fc21                   updates  324 k
+ libuser                    x86_64  0.62-1.fc21                  updates  398 k
+ libuuid                    x86_64  2.25.2-3.fc21                updates   78 k
+ libxml2                    x86_64  2.9.1-7.fc21                 updates  667 k
+ nspr                       x86_64  4.10.10-1.fc21               updates  133 k
+ nss                        x86_64  3.20.1-1.0.fc21              updates  858 k
+ nss-softokn                x86_64  3.20.1-1.0.fc21              updates  309 k
+ nss-softokn-freebl         x86_64  3.20.1-1.0.fc21              updates  207 k
+ nss-sysinit                x86_64  3.20.1-1.0.fc21              updates   54 k
+ nss-tools                  x86_64  3.20.1-1.0.fc21              updates  486 k
+ nss-util                   x86_64  3.20.1-1.0.fc21              updates   81 k
+ openldap                   x86_64  2.4.40-3.fc21                updates  343 k
+ openssl-libs               x86_64  1:1.0.1k-12.fc21             updates  945 k
+ os-prober                  x86_64  1.68-1.fc21                  updates   47 k
+ pam                        x86_64  1.1.8-19.fc21                updates  726 k
+ pcre                       x86_64  8.35-14.fc21                 updates  480 k
+ pkgconfig                  x86_64  1:0.28-8.fc21                updates   59 k
+ procps-ng                  x86_64  3.3.10-8.fc21                updates  382 k
+ python                     x86_64  2.7.8-15.fc21                updates   93 k
+ python-libs                x86_64  2.7.8-15.fc21                updates  5.7 M
+ python-pycurl              x86_64  7.19.3.1-6.fc21              updates  149 k
+ python-six                 noarch  1.9.0-1.fc21                 updates   34 k
+ python-slip                noarch  0.6.4-1.fc21                 updates   36 k
+ python-slip-dbus           noarch  0.6.4-1.fc21                 updates   36 k
+ rpm                        x86_64  4.12.0.1-7.fc21              updates  500 k
+ rpm-build-libs             x86_64  4.12.0.1-7.fc21              updates  110 k
+ rpm-libs                   x86_64  4.12.0.1-7.fc21              updates  275 k
+ rpm-plugin-selinux         x86_64  4.12.0.1-7.fc21              updates   48 k
+ rpm-python                 x86_64  4.12.0.1-7.fc21              updates   90 k
+ setup                      noarch  2.9.0-4.fc21                 updates  171 k
+ sqlite                     x86_64  3.8.11.1-1.fc21              updates  465 k
+ systemd                    x86_64  216-25.fc21                  updates  5.1 M
+ systemd-libs               x86_64  216-25.fc21                  updates  323 k
+ tzdata                     noarch  2015g-1.fc21                 updates  422 k
+ util-linux                 x86_64  2.25.2-3.fc21                updates  2.0 M
+ vim-minimal                x86_64  2:7.4.827-1.fc21             updates  461 k
+Installing for dependencies:
+ firewalld-filesystem       noarch  0.3.14.2-2.fc21              updates   48 k
+ python-firewall            noarch  0.3.14.2-2.fc21              updates  236 k
+
+Transaction Summary
+================================================================================
+Install               ( 2 Dependent packages)
+Upgrade  103 Packages
+
+Total download size: 72 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+--------------------------------------------------------------------------------
+Total                                               16 MB/s |  72 MB  00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libgcc-4.9.2-6.fc21.x86_64                                 1/208 
+  Installing : firewalld-filesystem-0.3.14.2-2.fc21.noarch                2/208 
+  Updating   : setup-2.9.0-4.fc21.noarch                                  3/208 
+warning: /etc/shadow created as /etc/shadow.rpmnew
+  Updating   : filesystem-3.2-28.fc21.x86_64                              4/208 
+  Updating   : tzdata-2015g-1.fc21.noarch                                 5/208 
+  Updating   : bash-4.3.42-1.fc21.x86_64                                  6/208 
+  Updating   : nss-softokn-freebl-3.20.1-1.0.fc21.x86_64                  7/208 
+  Updating   : glibc-common-2.20-8.fc21.x86_64                            8/208 
+  Updating   : glibc-2.20-8.fc21.x86_64                                   9/208 
+  Updating   : libstdc++-4.9.2-6.fc21.x86_64                             10/208 
+  Updating   : pcre-8.35-14.fc21.x86_64                                  11/208 
+  Updating   : libselinux-2.3-10.fc21.x86_64                             12/208 
+  Updating   : nspr-4.10.10-1.fc21.x86_64                                13/208 
+  Updating   : nss-util-3.20.1-1.0.fc21.x86_64                           14/208 
+  Updating   : libdb-5.3.28-12.fc21.x86_64                               15/208 
+  Updating   : libcom_err-1.42.12-4.fc21.x86_64                          16/208 
+  Updating   : elfutils-libelf-0.163-4.fc21.x86_64                       17/208 
+  Updating   : libgpg-error-1.17-2.fc21.x86_64                           18/208 
+  Updating   : libuuid-2.25.2-3.fc21.x86_64                              19/208 
+  Updating   : libgcrypt-1.6.3-4.fc21.x86_64                             20/208 
+  Updating   : grep-2.21-3.fc21.x86_64                                   21/208 
+install-info: No such file or directory for /usr/share/info/grep.info.gz
+  Updating   : audit-libs-2.4.4-1.fc21.x86_64                            22/208 
+  Updating   : libxml2-2.9.1-7.fc21.x86_64                               23/208 
+  Updating   : libidn-1.32-1.fc21.x86_64                                 24/208 
+install-info: No such file or directory for /usr/share/info/libidn.info.gz
+  Updating   : libassuan-2.3.0-1.fc21.x86_64                             25/208 
+  Updating   : elfutils-libs-0.163-4.fc21.x86_64                         26/208 
+  Updating   : kmod-libs-19-1.fc21.x86_64                                27/208 
+  Updating   : kmod-19-1.fc21.x86_64                                     28/208 
+  Updating   : file-libs-5.22-4.fc21.x86_64                              29/208 
+  Updating   : file-5.22-4.fc21.x86_64                                   30/208 
+  Updating   : libcap-ng-0.7.5-2.fc21.x86_64                             31/208 
+  Updating   : libgomp-4.9.2-6.fc21.x86_64                               32/208 
+  Updating   : libffi-3.1-7.fc21.x86_64                                  33/208 
+  Updating   : glib2-2.42.2-1.fc21.x86_64                                34/208 
+  Updating   : 1:dbus-libs-1.8.20-1.fc21.x86_64                          35/208 
+  Updating   : libattr-2.4.47-10.fc21.x86_64                             36/208 
+  Updating   : sqlite-3.8.11.1-1.fc21.x86_64                             37/208 
+  Updating   : nss-softokn-3.20.1-1.0.fc21.x86_64                        38/208 
+  Updating   : gettext-libs-0.19.4-2.fc21.x86_64                         39/208 
+  Updating   : e2fsprogs-libs-1.42.12-4.fc21.x86_64                      40/208 
+  Updating   : libss-1.42.12-4.fc21.x86_64                               41/208 
+  Updating   : libdb-utils-5.3.28-12.fc21.x86_64                         42/208 
+  Updating   : 1:findutils-4.5.12-8.fc21.x86_64                          43/208 
+  Updating   : 1:gmp-6.0.0-9.fc21.x86_64                                 44/208 
+  Updating   : gawk-4.1.1-6.fc21.x86_64                                  45/208 
+  Updating   : krb5-libs-1.12.2-19.fc21.x86_64                           46/208 
+  Updating   : 1:openssl-libs-1.0.1k-12.fc21.x86_64                      47/208 
+  Updating   : coreutils-8.22-22.fc21.x86_64                             48/208 
+  Updating   : ca-certificates-2015.2.5-1.0.fc21.noarch                  49/208 
+  Updating   : crypto-policies-20150305-1.gitf618101.fc21.noarch         50/208 
+  Updating   : libpwquality-1.2.4-3.fc21.x86_64                          51/208 
+  Updating   : pam-1.1.8-19.fc21.x86_64                                  52/208 
+  Updating   : systemd-libs-216-25.fc21.x86_64                           53/208 
+  Updating   : libblkid-2.25.2-3.fc21.x86_64                             54/208 
+  Updating   : python-libs-2.7.8-15.fc21.x86_64                          55/208 
+  Updating   : python-2.7.8-15.fc21.x86_64                               56/208 
+  Updating   : python-six-1.9.0-1.fc21.noarch                            57/208 
+  Updating   : gettext-0.19.4-2.fc21.x86_64                              58/208 
+install-info: No such file or directory for /usr/share/info/gettext.info.gz
+  Updating   : libssh2-1.5.0-1.fc21.x86_64                               59/208 
+  Updating   : libselinux-python-2.3-10.fc21.x86_64                      60/208 
+  Updating   : python-slip-0.6.4-1.fc21.noarch                           61/208 
+  Updating   : python-slip-dbus-0.6.4-1.fc21.noarch                      62/208 
+  Installing : python-firewall-0.3.14.2-2.fc21.noarch                    63/208 
+  Updating   : libmount-2.25.2-3.fc21.x86_64                             64/208 
+  Updating   : procps-ng-3.3.10-8.fc21.x86_64                            65/208 
+  Updating   : nss-3.20.1-1.0.fc21.x86_64                                66/208 
+  Updating   : nss-sysinit-3.20.1-1.0.fc21.x86_64                        67/208 
+  Updating   : nss-tools-3.20.1-1.0.fc21.x86_64                          68/208 
+  Updating   : openldap-2.4.40-3.fc21.x86_64                             69/208 
+  Updating   : libcurl-7.37.0-14.fc21.x86_64                             70/208 
+  Updating   : gnupg2-2.0.29-1.fc21.x86_64                               71/208 
+install-info: No such file or directory for /usr/share/info/gnupg.info
+  Updating   : curl-7.37.0-14.fc21.x86_64                                72/208 
+  Updating   : libuser-0.62-1.fc21.x86_64                                73/208 
+  Updating   : gzip-1.6-8.fc21.x86_64                                    74/208 
+  Updating   : libarchive-3.1.2-11.fc21.x86_64                           75/208 
+  Updating   : rpm-plugin-selinux-4.12.0.1-7.fc21.x86_64                 76/208 
+  Updating   : rpm-libs-4.12.0.1-7.fc21.x86_64                           77/208 
+  Updating   : rpm-4.12.0.1-7.fc21.x86_64                                78/208 
+  Updating   : rpm-build-libs-4.12.0.1-7.fc21.x86_64                     79/208 
+  Updating   : libseccomp-2.2.3-0.fc21.x86_64                            80/208 
+  Updating   : libsmartcols-2.25.2-3.fc21.x86_64                         81/208 
+  Updating   : util-linux-2.25.2-3.fc21.x86_64                           82/208 
+  Updating   : device-mapper-1.02.93-3.fc21.x86_64                       83/208 
+  Updating   : device-mapper-libs-1.02.93-3.fc21.x86_64                  84/208 
+  Updating   : cryptsetup-libs-1.6.8-2.fc21.x86_64                       85/208 
+  Updating   : systemd-216-25.fc21.x86_64                                86/208 
+  Updating   : 1:dbus-1.8.20-1.fc21.x86_64                               87/208 
+  Updating   : os-prober-1.68-1.fc21.x86_64                              88/208 
+  Updating   : firewalld-config-standard-0.3.14.2-2.fc21.noarch          89/208 
+  Updating   : firewalld-0.3.14.2-2.fc21.noarch                          90/208 
+  Updating   : kpartx-0.4.9-68.fc21.3.x86_64                             91/208 
+  Updating   : freetype-2.5.3-16.fc21.x86_64                             92/208 
+  Updating   : 1:grub2-tools-2.02-0.13.fc21.x86_64                       93/208 
+  Updating   : cpio-2.11-33.fc21.x86_64                                  94/208 
+  Updating   : dracut-038-39.git20150518.fc21.x86_64                     95/208 
+  Updating   : 1:grub2-2.02-0.13.fc21.x86_64                             96/208 
+  Updating   : rpm-python-4.12.0.1-7.fc21.x86_64                         97/208 
+  Updating   : gpgme-1.4.3-5.fc21.x86_64                                 98/208 
+  Updating   : python-pycurl-7.19.3.1-6.fc21.x86_64                      99/208 
+  Updating   : e2fsprogs-1.42.12-4.fc21.x86_64                          100/208 
+  Updating   : dbus-glib-0.104-1.fc21.x86_64                            101/208 
+  Updating   : 1:pkgconfig-0.28-8.fc21.x86_64                           102/208 
+  Updating   : 2:vim-minimal-7.4.827-1.fc21.x86_64                      103/208 
+  Updating   : libtasn1-4.5-1.fc21.x86_64                               104/208 
+  Updating   : fedora-repos-21-3.noarch                                 105/208 
+  Cleanup    : firewalld-config-standard-0.3.12-1.fc21.noarch           106/208 
+  Cleanup    : firewalld-0.3.12-1.fc21.noarch                           107/208 
+  Cleanup    : 1:grub2-2.02-0.11.fc21.x86_64                            108/208 
+  Cleanup    : dracut-038-30.git20140903.fc21.x86_64                    109/208 
+  Cleanup    : rpm-python-4.12.0.1-3.fc21.x86_64                        110/208 
+  Cleanup    : rpm-build-libs-4.12.0.1-3.fc21.x86_64                    111/208 
+  Cleanup    : rpm-4.12.0.1-3.fc21.x86_64                               112/208 
+  Cleanup    : rpm-libs-4.12.0.1-3.fc21.x86_64                          113/208 
+  Cleanup    : rpm-plugin-selinux-4.12.0.1-3.fc21.x86_64                114/208 
+  Cleanup    : curl-7.37.0-9.fc21.x86_64                                115/208 
+  Cleanup    : 1:grub2-tools-2.02-0.11.fc21.x86_64                      116/208 
+  Cleanup    : gettext-0.19.2-6.fc21.x86_64                             117/208 
+  Cleanup    : gettext-libs-0.19.2-6.fc21.x86_64                        118/208 
+  Cleanup    : e2fsprogs-1.42.11-4.fc21.x86_64                          119/208 
+  Cleanup    : python-pycurl-7.19.3.1-5.fc21.x86_64                     120/208 
+  Cleanup    : os-prober-1.58-11.fc21.x86_64                            121/208 
+  Cleanup    : libarchive-3.1.2-10.fc21.x86_64                          122/208 
+  Cleanup    : gpgme-1.4.3-4.fc21.x86_64                                123/208 
+  Cleanup    : gnupg2-2.0.25-2.fc21.x86_64                              124/208 
+  Cleanup    : file-5.19-7.fc21.x86_64                                  125/208 
+  Cleanup    : 1:findutils-4.5.12-7.fc21.x86_64                         126/208 
+  Cleanup    : dbus-glib-0.100.2-4.fc21.x86_64                          127/208 
+  Cleanup    : python-slip-dbus-0.6.0-3.fc21.noarch                     128/208 
+  Cleanup    : python-slip-0.6.0-3.fc21.noarch                          129/208 
+  Cleanup    : libselinux-python-2.3-5.fc21.x86_64                      130/208 
+  Cleanup    : libassuan-2.1.0-5.fc21.x86_64                            131/208 
+  Cleanup    : e2fsprogs-libs-1.42.11-4.fc21.x86_64                     132/208 
+  Cleanup    : libss-1.42.11-4.fc21.x86_64                              133/208 
+  Cleanup    : libdb-utils-5.3.28-9.fc21.x86_64                         134/208 
+  Cleanup    : gzip-1.6-5.fc21.x86_64                                   135/208 
+  Cleanup    : kpartx-0.4.9-68.fc21.1.x86_64                            136/208 
+  Cleanup    : cryptsetup-libs-1.6.6-1.fc21.x86_64                      137/208 
+  Cleanup    : device-mapper-libs-1.02.90-1.fc21.x86_64                 138/208 
+  Cleanup    : device-mapper-1.02.90-1.fc21.x86_64                      139/208 
+  Cleanup    : 1:dbus-1.8.6-3.fc21.x86_64                               140/208 
+  Cleanup    : systemd-216-12.fc21.x86_64                               141/208 
+  Cleanup    : util-linux-2.25.2-1.fc21.x86_64                          142/208 
+  Cleanup    : libcurl-7.37.0-9.fc21.x86_64                             143/208 
+  Cleanup    : libuser-0.60-6.fc21.x86_64                               144/208 
+  Cleanup    : openldap-2.4.40-2.fc21.x86_64                            145/208 
+  Cleanup    : nss-tools-3.17.2-1.fc21.x86_64                           146/208 
+  Cleanup    : nss-sysinit-3.17.2-1.fc21.x86_64                         147/208 
+  Cleanup    : nss-3.17.2-1.fc21.x86_64                                 148/208 
+  Cleanup    : nss-softokn-3.17.2-1.fc21.x86_64                         149/208 
+  Cleanup    : libmount-2.25.2-1.fc21.x86_64                            150/208 
+  Cleanup    : libblkid-2.25.2-1.fc21.x86_64                            151/208 
+  Cleanup    : nss-util-3.17.2-1.fc21.x86_64                            152/208 
+  Cleanup    : kmod-18-4.fc21.x86_64                                    153/208 
+  Cleanup    : kmod-libs-18-4.fc21.x86_64                               154/208 
+  Cleanup    : libssh2-1.4.3-16.fc21.x86_64                             155/208 
+  Cleanup    : procps-ng-3.3.10-4.fc21.x86_64                           156/208 
+  Cleanup    : systemd-libs-216-12.fc21.x86_64                          157/208 
+  Cleanup    : libpwquality-1.2.4-2.fc21.x86_64                         158/208 
+  Cleanup    : pam-1.1.8-16.fc21.x86_64                                 159/208 
+  Cleanup    : elfutils-libs-0.160-1.fc21.x86_64                        160/208 
+  Cleanup    : libgcrypt-1.6.1-7.fc21.x86_64                            161/208 
+  Cleanup    : 1:pkgconfig-0.28-6.fc21.x86_64                           162/208 
+  Cleanup    : glib2-2.42.1-1.fc21.x86_64                               163/208 
+  Cleanup    : 2:vim-minimal-7.4.475-2.fc21.x86_64                      164/208 
+  Cleanup    : python-six-1.7.3-2.fc21.noarch                           165/208 
+  Cleanup    : filesystem-3.2-27.fc21.x86_64                            166/208 
+  Cleanup    : python-2.7.8-7.fc21.x86_64                               167/208 
+  Cleanup    : python-libs-2.7.8-7.fc21.x86_64                          168/208 
+  Cleanup    : ca-certificates-2014.2.1-1.5.fc21.noarch                 169/208 
+  Cleanup    : crypto-policies-20140905-1.git4649b7d.fc21.noarch        170/208 
+  Cleanup    : krb5-libs-1.12.2-9.fc21.x86_64                           171/208 
+  Cleanup    : coreutils-8.22-19.fc21.x86_64                            172/208 
+  Cleanup    : 1:openssl-libs-1.0.1j-1.fc21.x86_64                      173/208 
+  Cleanup    : 1:gmp-6.0.0-7.fc21.x86_64                                174/208 
+  Cleanup    : grep-2.20-6.fc21.x86_64                                  175/208 
+  Cleanup    : gawk-4.1.1-5.fc21.x86_64                                 176/208 
+  Cleanup    : libidn-1.28-5.fc21.x86_64                                177/208 
+  Cleanup    : libgomp-4.9.2-1.fc21.x86_64                              178/208 
+  Cleanup    : freetype-2.5.3-11.fc21.x86_64                            179/208 
+  Cleanup    : cpio-2.11-30.fc21.x86_64                                 180/208 
+  Cleanup    : libcom_err-1.42.11-4.fc21.x86_64                         181/208 
+  Cleanup    : libattr-2.4.47-9.fc21.x86_64                             182/208 
+  Cleanup    : libdb-5.3.28-9.fc21.x86_64                               183/208 
+  Cleanup    : libffi-3.1-6.fc21.x86_64                                 184/208 
+  Cleanup    : sqlite-3.8.7-1.fc21.x86_64                               185/208 
+  Cleanup    : libgpg-error-1.13-3.fc21.x86_64                          186/208 
+  Cleanup    : elfutils-libelf-0.160-1.fc21.x86_64                      187/208 
+  Cleanup    : audit-libs-2.4.1-1.fc21.x86_64                           188/208 
+  Cleanup    : nspr-4.10.7-1.fc21.x86_64                                189/208 
+  Cleanup    : libuuid-2.25.2-1.fc21.x86_64                             190/208 
+  Cleanup    : libcap-ng-0.7.4-7.fc21.x86_64                            191/208 
+  Cleanup    : libsmartcols-2.25.2-1.fc21.x86_64                        192/208 
+  Cleanup    : libseccomp-2.1.1-5.fc21.x86_64                           193/208 
+  Cleanup    : 1:dbus-libs-1.8.6-3.fc21.x86_64                          194/208 
+  Cleanup    : file-libs-5.19-7.fc21.x86_64                             195/208 
+  Cleanup    : libxml2-2.9.1-6.fc21.x86_64                              196/208 
+  Cleanup    : libtasn1-4.2-1.fc21.x86_64                               197/208 
+  Cleanup    : setup-2.9.0-2.fc21.noarch                                198/208 
+  Cleanup    : fedora-repos-21-2.noarch                                 199/208 
+  Cleanup    : bash-4.3.30-2.fc21.x86_64                                200/208 
+  Cleanup    : libstdc++-4.9.2-1.fc21.x86_64                            201/208 
+  Cleanup    : pcre-8.35-7.fc21.x86_64                                  202/208 
+  Cleanup    : libselinux-2.3-5.fc21.x86_64                             203/208 
+  Cleanup    : glibc-common-2.20-5.fc21.x86_64                          204/208 
+  Cleanup    : nss-softokn-freebl-3.17.2-1.fc21.x86_64                  205/208 
+  Cleanup    : glibc-2.20-5.fc21.x86_64                                 206/208 
+  Cleanup    : tzdata-2014i-1.fc21.noarch                               207/208 
+  Cleanup    : libgcc-4.9.2-1.fc21.x86_64                               208/208 
+  Verifying  : 1:grub2-2.02-0.13.fc21.x86_64                              1/208 
+  Verifying  : python-six-1.9.0-1.fc21.noarch                             2/208 
+  Verifying  : gawk-4.1.1-6.fc21.x86_64                                   3/208 
+  Verifying  : kmod-libs-19-1.fc21.x86_64                                 4/208 
+  Verifying  : libdb-5.3.28-12.fc21.x86_64                                5/208 
+  Verifying  : python-slip-0.6.4-1.fc21.noarch                            6/208 
+  Verifying  : libselinux-2.3-10.fc21.x86_64                              7/208 
+  Verifying  : nspr-4.10.10-1.fc21.x86_64                                 8/208 
+  Verifying  : filesystem-3.2-28.fc21.x86_64                              9/208 
+  Verifying  : pcre-8.35-14.fc21.x86_64                                  10/208 
+  Verifying  : file-libs-5.22-4.fc21.x86_64                              11/208 
+  Verifying  : util-linux-2.25.2-3.fc21.x86_64                           12/208 
+  Verifying  : libgcc-4.9.2-6.fc21.x86_64                                13/208 
+  Verifying  : nss-sysinit-3.20.1-1.0.fc21.x86_64                        14/208 
+  Verifying  : 2:vim-minimal-7.4.827-1.fc21.x86_64                       15/208 
+  Verifying  : tzdata-2015g-1.fc21.noarch                                16/208 
+  Verifying  : python-firewall-0.3.14.2-2.fc21.noarch                    17/208 
+  Verifying  : device-mapper-1.02.93-3.fc21.x86_64                       18/208 
+  Verifying  : procps-ng-3.3.10-8.fc21.x86_64                            19/208 
+  Verifying  : 1:dbus-1.8.20-1.fc21.x86_64                               20/208 
+  Verifying  : coreutils-8.22-22.fc21.x86_64                             21/208 
+  Verifying  : rpm-plugin-selinux-4.12.0.1-7.fc21.x86_64                 22/208 
+  Verifying  : python-2.7.8-15.fc21.x86_64                               23/208 
+  Verifying  : firewalld-0.3.14.2-2.fc21.noarch                          24/208 
+  Verifying  : glibc-2.20-8.fc21.x86_64                                  25/208 
+  Verifying  : dracut-038-39.git20150518.fc21.x86_64                     26/208 
+  Verifying  : setup-2.9.0-4.fc21.noarch                                 27/208 
+  Verifying  : rpm-build-libs-4.12.0.1-7.fc21.x86_64                     28/208 
+  Verifying  : 1:pkgconfig-0.28-8.fc21.x86_64                            29/208 
+  Verifying  : glibc-common-2.20-8.fc21.x86_64                           30/208 
+  Verifying  : audit-libs-2.4.4-1.fc21.x86_64                            31/208 
+  Verifying  : cryptsetup-libs-1.6.8-2.fc21.x86_64                       32/208 
+  Verifying  : python-libs-2.7.8-15.fc21.x86_64                          33/208 
+  Verifying  : rpm-4.12.0.1-7.fc21.x86_64                                34/208 
+  Verifying  : libcom_err-1.42.12-4.fc21.x86_64                          35/208 
+  Verifying  : libarchive-3.1.2-11.fc21.x86_64                           36/208 
+  Verifying  : 1:gmp-6.0.0-9.fc21.x86_64                                 37/208 
+  Verifying  : libassuan-2.3.0-1.fc21.x86_64                             38/208 
+  Verifying  : libdb-utils-5.3.28-12.fc21.x86_64                         39/208 
+  Verifying  : gzip-1.6-8.fc21.x86_64                                    40/208 
+  Verifying  : libselinux-python-2.3-10.fc21.x86_64                      41/208 
+  Verifying  : python-slip-dbus-0.6.4-1.fc21.noarch                      42/208 
+  Verifying  : 1:findutils-4.5.12-8.fc21.x86_64                          43/208 
+  Verifying  : 1:grub2-tools-2.02-0.13.fc21.x86_64                       44/208 
+  Verifying  : 1:openssl-libs-1.0.1k-12.fc21.x86_64                      45/208 
+  Verifying  : grep-2.21-3.fc21.x86_64                                   46/208 
+  Verifying  : firewalld-config-standard-0.3.14.2-2.fc21.noarch          47/208 
+  Verifying  : file-5.22-4.fc21.x86_64                                   48/208 
+  Verifying  : nss-util-3.20.1-1.0.fc21.x86_64                           49/208 
+  Verifying  : ca-certificates-2015.2.5-1.0.fc21.noarch                  50/208 
+  Verifying  : kmod-19-1.fc21.x86_64                                     51/208 
+  Verifying  : gettext-libs-0.19.4-2.fc21.x86_64                         52/208 
+  Verifying  : nss-tools-3.20.1-1.0.fc21.x86_64                          53/208 
+  Verifying  : nss-softokn-freebl-3.20.1-1.0.fc21.x86_64                 54/208 
+  Verifying  : libssh2-1.5.0-1.fc21.x86_64                               55/208 
+  Verifying  : libcurl-7.37.0-14.fc21.x86_64                             56/208 
+  Verifying  : libcap-ng-0.7.5-2.fc21.x86_64                             57/208 
+  Verifying  : glib2-2.42.2-1.fc21.x86_64                                58/208 
+  Verifying  : libgcrypt-1.6.3-4.fc21.x86_64                             59/208 
+  Verifying  : libgomp-4.9.2-6.fc21.x86_64                               60/208 
+  Verifying  : libseccomp-2.2.3-0.fc21.x86_64                            61/208 
+  Verifying  : gnupg2-2.0.29-1.fc21.x86_64                               62/208 
+  Verifying  : python-pycurl-7.19.3.1-6.fc21.x86_64                      63/208 
+  Verifying  : libsmartcols-2.25.2-3.fc21.x86_64                         64/208 
+  Verifying  : freetype-2.5.3-16.fc21.x86_64                             65/208 
+  Verifying  : e2fsprogs-libs-1.42.12-4.fc21.x86_64                      66/208 
+  Verifying  : libffi-3.1-7.fc21.x86_64                                  67/208 
+  Verifying  : kpartx-0.4.9-68.fc21.3.x86_64                             68/208 
+  Verifying  : systemd-216-25.fc21.x86_64                                69/208 
+  Verifying  : dbus-glib-0.104-1.fc21.x86_64                             70/208 
+  Verifying  : gpgme-1.4.3-5.fc21.x86_64                                 71/208 
+  Verifying  : gettext-0.19.4-2.fc21.x86_64                              72/208 
+  Verifying  : 1:dbus-libs-1.8.20-1.fc21.x86_64                          73/208 
+  Verifying  : libuuid-2.25.2-3.fc21.x86_64                              74/208 
+  Verifying  : elfutils-libs-0.163-4.fc21.x86_64                         75/208 
+  Verifying  : libmount-2.25.2-3.fc21.x86_64                             76/208 
+  Verifying  : libxml2-2.9.1-7.fc21.x86_64                               77/208 
+  Verifying  : elfutils-libelf-0.163-4.fc21.x86_64                       78/208 
+  Verifying  : rpm-python-4.12.0.1-7.fc21.x86_64                         79/208 
+  Verifying  : libtasn1-4.5-1.fc21.x86_64                                80/208 
+  Verifying  : systemd-libs-216-25.fc21.x86_64                           81/208 
+  Verifying  : libstdc++-4.9.2-6.fc21.x86_64                             82/208 
+  Verifying  : nss-softokn-3.20.1-1.0.fc21.x86_64                        83/208 
+  Verifying  : os-prober-1.68-1.fc21.x86_64                              84/208 
+  Verifying  : libblkid-2.25.2-3.fc21.x86_64                             85/208 
+  Verifying  : libattr-2.4.47-10.fc21.x86_64                             86/208 
+  Verifying  : openldap-2.4.40-3.fc21.x86_64                             87/208 
+  Verifying  : libss-1.42.12-4.fc21.x86_64                               88/208 
+  Verifying  : libgpg-error-1.17-2.fc21.x86_64                           89/208 
+  Verifying  : libidn-1.32-1.fc21.x86_64                                 90/208 
+  Verifying  : firewalld-filesystem-0.3.14.2-2.fc21.noarch               91/208 
+  Verifying  : krb5-libs-1.12.2-19.fc21.x86_64                           92/208 
+  Verifying  : sqlite-3.8.11.1-1.fc21.x86_64                             93/208 
+  Verifying  : curl-7.37.0-14.fc21.x86_64                                94/208 
+  Verifying  : bash-4.3.42-1.fc21.x86_64                                 95/208 
+  Verifying  : e2fsprogs-1.42.12-4.fc21.x86_64                           96/208 
+  Verifying  : device-mapper-libs-1.02.93-3.fc21.x86_64                  97/208 
+  Verifying  : nss-3.20.1-1.0.fc21.x86_64                                98/208 
+  Verifying  : rpm-libs-4.12.0.1-7.fc21.x86_64                           99/208 
+  Verifying  : fedora-repos-21-3.noarch                                 100/208 
+  Verifying  : pam-1.1.8-19.fc21.x86_64                                 101/208 
+  Verifying  : cpio-2.11-33.fc21.x86_64                                 102/208 
+  Verifying  : libpwquality-1.2.4-3.fc21.x86_64                         103/208 
+  Verifying  : crypto-policies-20150305-1.gitf618101.fc21.noarch        104/208 
+  Verifying  : libuser-0.62-1.fc21.x86_64                               105/208 
+  Verifying  : curl-7.37.0-9.fc21.x86_64                                106/208 
+  Verifying  : gettext-0.19.2-6.fc21.x86_64                             107/208 
+  Verifying  : cryptsetup-libs-1.6.6-1.fc21.x86_64                      108/208 
+  Verifying  : firewalld-0.3.12-1.fc21.noarch                           109/208 
+  Verifying  : rpm-build-libs-4.12.0.1-3.fc21.x86_64                    110/208 
+  Verifying  : python-slip-0.6.0-3.fc21.noarch                          111/208 
+  Verifying  : tzdata-2014i-1.fc21.noarch                               112/208 
+  Verifying  : libtasn1-4.2-1.fc21.x86_64                               113/208 
+  Verifying  : elfutils-libs-0.160-1.fc21.x86_64                        114/208 
+  Verifying  : setup-2.9.0-2.fc21.noarch                                115/208 
+  Verifying  : rpm-plugin-selinux-4.12.0.1-3.fc21.x86_64                116/208 
+  Verifying  : crypto-policies-20140905-1.git4649b7d.fc21.noarch        117/208 
+  Verifying  : pam-1.1.8-16.fc21.x86_64                                 118/208 
+  Verifying  : e2fsprogs-libs-1.42.11-4.fc21.x86_64                     119/208 
+  Verifying  : python-pycurl-7.19.3.1-5.fc21.x86_64                     120/208 
+  Verifying  : coreutils-8.22-19.fc21.x86_64                            121/208 
+  Verifying  : gzip-1.6-5.fc21.x86_64                                   122/208 
+  Verifying  : libcurl-7.37.0-9.fc21.x86_64                             123/208 
+  Verifying  : libseccomp-2.1.1-5.fc21.x86_64                           124/208 
+  Verifying  : libdb-utils-5.3.28-9.fc21.x86_64                         125/208 
+  Verifying  : 1:findutils-4.5.12-7.fc21.x86_64                         126/208 
+  Verifying  : libselinux-python-2.3-5.fc21.x86_64                      127/208 
+  Verifying  : fedora-repos-21-2.noarch                                 128/208 
+  Verifying  : python-slip-dbus-0.6.0-3.fc21.noarch                     129/208 
+  Verifying  : glibc-common-2.20-5.fc21.x86_64                          130/208 
+  Verifying  : firewalld-config-standard-0.3.12-1.fc21.noarch           131/208 
+  Verifying  : libsmartcols-2.25.2-1.fc21.x86_64                        132/208 
+  Verifying  : nss-3.17.2-1.fc21.x86_64                                 133/208 
+  Verifying  : libmount-2.25.2-1.fc21.x86_64                            134/208 
+  Verifying  : rpm-python-4.12.0.1-3.fc21.x86_64                        135/208 
+  Verifying  : libffi-3.1-6.fc21.x86_64                                 136/208 
+  Verifying  : sqlite-3.8.7-1.fc21.x86_64                               137/208 
+  Verifying  : krb5-libs-1.12.2-9.fc21.x86_64                           138/208 
+  Verifying  : libssh2-1.4.3-16.fc21.x86_64                             139/208 
+  Verifying  : dbus-glib-0.100.2-4.fc21.x86_64                          140/208 
+  Verifying  : libstdc++-4.9.2-1.fc21.x86_64                            141/208 
+  Verifying  : glibc-2.20-5.fc21.x86_64                                 142/208 
+  Verifying  : libgpg-error-1.13-3.fc21.x86_64                          143/208 
+  Verifying  : audit-libs-2.4.1-1.fc21.x86_64                           144/208 
+  Verifying  : elfutils-libelf-0.160-1.fc21.x86_64                      145/208 
+  Verifying  : file-libs-5.19-7.fc21.x86_64                             146/208 
+  Verifying  : python-libs-2.7.8-7.fc21.x86_64                          147/208 
+  Verifying  : 1:openssl-libs-1.0.1j-1.fc21.x86_64                      148/208 
+  Verifying  : python-six-1.7.3-2.fc21.noarch                           149/208 
+  Verifying  : systemd-216-12.fc21.x86_64                               150/208 
+  Verifying  : glib2-2.42.1-1.fc21.x86_64                               151/208 
+  Verifying  : ca-certificates-2014.2.1-1.5.fc21.noarch                 152/208 
+  Verifying  : kmod-libs-18-4.fc21.x86_64                               153/208 
+  Verifying  : file-5.19-7.fc21.x86_64                                  154/208 
+  Verifying  : e2fsprogs-1.42.11-4.fc21.x86_64                          155/208 
+  Verifying  : device-mapper-libs-1.02.90-1.fc21.x86_64                 156/208 
+  Verifying  : cpio-2.11-30.fc21.x86_64                                 157/208 
+  Verifying  : libxml2-2.9.1-6.fc21.x86_64                              158/208 
+  Verifying  : nss-softokn-3.17.2-1.fc21.x86_64                         159/208 
+  Verifying  : os-prober-1.58-11.fc21.x86_64                            160/208 
+  Verifying  : libpwquality-1.2.4-2.fc21.x86_64                         161/208 
+  Verifying  : systemd-libs-216-12.fc21.x86_64                          162/208 
+  Verifying  : 1:dbus-1.8.6-3.fc21.x86_64                               163/208 
+  Verifying  : libarchive-3.1.2-10.fc21.x86_64                          164/208 
+  Verifying  : nspr-4.10.7-1.fc21.x86_64                                165/208 
+  Verifying  : openldap-2.4.40-2.fc21.x86_64                            166/208 
+  Verifying  : pcre-8.35-7.fc21.x86_64                                  167/208 
+  Verifying  : libgomp-4.9.2-1.fc21.x86_64                              168/208 
+  Verifying  : libselinux-2.3-5.fc21.x86_64                             169/208 
+  Verifying  : libgcrypt-1.6.1-7.fc21.x86_64                            170/208 
+  Verifying  : util-linux-2.25.2-1.fc21.x86_64                          171/208 
+  Verifying  : rpm-libs-4.12.0.1-3.fc21.x86_64                          172/208 
+  Verifying  : kmod-18-4.fc21.x86_64                                    173/208 
+  Verifying  : filesystem-3.2-27.fc21.x86_64                            174/208 
+  Verifying  : gawk-4.1.1-5.fc21.x86_64                                 175/208 
+  Verifying  : libuuid-2.25.2-1.fc21.x86_64                             176/208 
+  Verifying  : 1:pkgconfig-0.28-6.fc21.x86_64                           177/208 
+  Verifying  : freetype-2.5.3-11.fc21.x86_64                            178/208 
+  Verifying  : libidn-1.28-5.fc21.x86_64                                179/208 
+  Verifying  : kpartx-0.4.9-68.fc21.1.x86_64                            180/208 
+  Verifying  : gnupg2-2.0.25-2.fc21.x86_64                              181/208 
+  Verifying  : python-2.7.8-7.fc21.x86_64                               182/208 
+  Verifying  : 1:grub2-tools-2.02-0.11.fc21.x86_64                      183/208 
+  Verifying  : 1:dbus-libs-1.8.6-3.fc21.x86_64                          184/208 
+  Verifying  : procps-ng-3.3.10-4.fc21.x86_64                           185/208 
+  Verifying  : gettext-libs-0.19.2-6.fc21.x86_64                        186/208 
+  Verifying  : dracut-038-30.git20140903.fc21.x86_64                    187/208 
+  Verifying  : libss-1.42.11-4.fc21.x86_64                              188/208 
+  Verifying  : nss-softokn-freebl-3.17.2-1.fc21.x86_64                  189/208 
+  Verifying  : libassuan-2.1.0-5.fc21.x86_64                            190/208 
+  Verifying  : libgcc-4.9.2-1.fc21.x86_64                               191/208 
+  Verifying  : 1:grub2-2.02-0.11.fc21.x86_64                            192/208 
+  Verifying  : grep-2.20-6.fc21.x86_64                                  193/208 
+  Verifying  : nss-util-3.17.2-1.fc21.x86_64                            194/208 
+  Verifying  : rpm-4.12.0.1-3.fc21.x86_64                               195/208 
+  Verifying  : nss-tools-3.17.2-1.fc21.x86_64                           196/208 
+  Verifying  : device-mapper-1.02.90-1.fc21.x86_64                      197/208 
+  Verifying  : libdb-5.3.28-9.fc21.x86_64                               198/208 
+  Verifying  : libcap-ng-0.7.4-7.fc21.x86_64                            199/208 
+  Verifying  : 1:gmp-6.0.0-7.fc21.x86_64                                200/208 
+  Verifying  : nss-sysinit-3.17.2-1.fc21.x86_64                         201/208 
+  Verifying  : libuser-0.60-6.fc21.x86_64                               202/208 
+  Verifying  : libblkid-2.25.2-1.fc21.x86_64                            203/208 
+  Verifying  : libcom_err-1.42.11-4.fc21.x86_64                         204/208 
+  Verifying  : libattr-2.4.47-9.fc21.x86_64                             205/208 
+  Verifying  : bash-4.3.30-2.fc21.x86_64                                206/208 
+  Verifying  : 2:vim-minimal-7.4.475-2.fc21.x86_64                      207/208 
+  Verifying  : gpgme-1.4.3-4.fc21.x86_64                                208/208 
+
+Dependency Installed:
+  firewalld-filesystem.noarch 0:0.3.14.2-2.fc21                                 
+  python-firewall.noarch 0:0.3.14.2-2.fc21                                      
+
+Updated:
+  audit-libs.x86_64 0:2.4.4-1.fc21                                              
+  bash.x86_64 0:4.3.42-1.fc21                                                   
+  ca-certificates.noarch 0:2015.2.5-1.0.fc21                                    
+  coreutils.x86_64 0:8.22-22.fc21                                               
+  cpio.x86_64 0:2.11-33.fc21                                                    
+  crypto-policies.noarch 0:20150305-1.gitf618101.fc21                           
+  cryptsetup-libs.x86_64 0:1.6.8-2.fc21                                         
+  curl.x86_64 0:7.37.0-14.fc21                                                  
+  dbus.x86_64 1:1.8.20-1.fc21                                                   
+  dbus-glib.x86_64 0:0.104-1.fc21                                               
+  dbus-libs.x86_64 1:1.8.20-1.fc21                                              
+  device-mapper.x86_64 0:1.02.93-3.fc21                                         
+  device-mapper-libs.x86_64 0:1.02.93-3.fc21                                    
+  dracut.x86_64 0:038-39.git20150518.fc21                                       
+  e2fsprogs.x86_64 0:1.42.12-4.fc21                                             
+  e2fsprogs-libs.x86_64 0:1.42.12-4.fc21                                        
+  elfutils-libelf.x86_64 0:0.163-4.fc21                                         
+  elfutils-libs.x86_64 0:0.163-4.fc21                                           
+  fedora-repos.noarch 0:21-3                                                    
+  file.x86_64 0:5.22-4.fc21                                                     
+  file-libs.x86_64 0:5.22-4.fc21                                                
+  filesystem.x86_64 0:3.2-28.fc21                                               
+  findutils.x86_64 1:4.5.12-8.fc21                                              
+  firewalld.noarch 0:0.3.14.2-2.fc21                                            
+  firewalld-config-standard.noarch 0:0.3.14.2-2.fc21                            
+  freetype.x86_64 0:2.5.3-16.fc21                                               
+  gawk.x86_64 0:4.1.1-6.fc21                                                    
+  gettext.x86_64 0:0.19.4-2.fc21                                                
+  gettext-libs.x86_64 0:0.19.4-2.fc21                                           
+  glib2.x86_64 0:2.42.2-1.fc21                                                  
+  glibc.x86_64 0:2.20-8.fc21                                                    
+  glibc-common.x86_64 0:2.20-8.fc21                                             
+  gmp.x86_64 1:6.0.0-9.fc21                                                     
+  gnupg2.x86_64 0:2.0.29-1.fc21                                                 
+  gpgme.x86_64 0:1.4.3-5.fc21                                                   
+  grep.x86_64 0:2.21-3.fc21                                                     
+  grub2.x86_64 1:2.02-0.13.fc21                                                 
+  grub2-tools.x86_64 1:2.02-0.13.fc21                                           
+  gzip.x86_64 0:1.6-8.fc21                                                      
+  kmod.x86_64 0:19-1.fc21                                                       
+  kmod-libs.x86_64 0:19-1.fc21                                                  
+  kpartx.x86_64 0:0.4.9-68.fc21.3                                               
+  krb5-libs.x86_64 0:1.12.2-19.fc21                                             
+  libarchive.x86_64 0:3.1.2-11.fc21                                             
+  libassuan.x86_64 0:2.3.0-1.fc21                                               
+  libattr.x86_64 0:2.4.47-10.fc21                                               
+  libblkid.x86_64 0:2.25.2-3.fc21                                               
+  libcap-ng.x86_64 0:0.7.5-2.fc21                                               
+  libcom_err.x86_64 0:1.42.12-4.fc21                                            
+  libcurl.x86_64 0:7.37.0-14.fc21                                               
+  libdb.x86_64 0:5.3.28-12.fc21                                                 
+  libdb-utils.x86_64 0:5.3.28-12.fc21                                           
+  libffi.x86_64 0:3.1-7.fc21                                                    
+  libgcc.x86_64 0:4.9.2-6.fc21                                                  
+  libgcrypt.x86_64 0:1.6.3-4.fc21                                               
+  libgomp.x86_64 0:4.9.2-6.fc21                                                 
+  libgpg-error.x86_64 0:1.17-2.fc21                                             
+  libidn.x86_64 0:1.32-1.fc21                                                   
+  libmount.x86_64 0:2.25.2-3.fc21                                               
+  libpwquality.x86_64 0:1.2.4-3.fc21                                            
+  libseccomp.x86_64 0:2.2.3-0.fc21                                              
+  libselinux.x86_64 0:2.3-10.fc21                                               
+  libselinux-python.x86_64 0:2.3-10.fc21                                        
+  libsmartcols.x86_64 0:2.25.2-3.fc21                                           
+  libss.x86_64 0:1.42.12-4.fc21                                                 
+  libssh2.x86_64 0:1.5.0-1.fc21                                                 
+  libstdc++.x86_64 0:4.9.2-6.fc21                                               
+  libtasn1.x86_64 0:4.5-1.fc21                                                  
+  libuser.x86_64 0:0.62-1.fc21                                                  
+  libuuid.x86_64 0:2.25.2-3.fc21                                                
+  libxml2.x86_64 0:2.9.1-7.fc21                                                 
+  nspr.x86_64 0:4.10.10-1.fc21                                                  
+  nss.x86_64 0:3.20.1-1.0.fc21                                                  
+  nss-softokn.x86_64 0:3.20.1-1.0.fc21                                          
+  nss-softokn-freebl.x86_64 0:3.20.1-1.0.fc21                                   
+  nss-sysinit.x86_64 0:3.20.1-1.0.fc21                                          
+  nss-tools.x86_64 0:3.20.1-1.0.fc21                                            
+  nss-util.x86_64 0:3.20.1-1.0.fc21                                             
+  openldap.x86_64 0:2.4.40-3.fc21                                               
+  openssl-libs.x86_64 1:1.0.1k-12.fc21                                          
+  os-prober.x86_64 0:1.68-1.fc21                                                
+  pam.x86_64 0:1.1.8-19.fc21                                                    
+  pcre.x86_64 0:8.35-14.fc21                                                    
+  pkgconfig.x86_64 1:0.28-8.fc21                                                
+  procps-ng.x86_64 0:3.3.10-8.fc21                                              
+  python.x86_64 0:2.7.8-15.fc21                                                 
+  python-libs.x86_64 0:2.7.8-15.fc21                                            
+  python-pycurl.x86_64 0:7.19.3.1-6.fc21                                        
+  python-six.noarch 0:1.9.0-1.fc21                                              
+  python-slip.noarch 0:0.6.4-1.fc21                                             
+  python-slip-dbus.noarch 0:0.6.4-1.fc21                                        
+  rpm.x86_64 0:4.12.0.1-7.fc21                                                  
+  rpm-build-libs.x86_64 0:4.12.0.1-7.fc21                                       
+  rpm-libs.x86_64 0:4.12.0.1-7.fc21                                             
+  rpm-plugin-selinux.x86_64 0:4.12.0.1-7.fc21                                   
+  rpm-python.x86_64 0:4.12.0.1-7.fc21                                           
+  setup.noarch 0:2.9.0-4.fc21                                                   
+  sqlite.x86_64 0:3.8.11.1-1.fc21                                               
+  systemd.x86_64 0:216-25.fc21                                                  
+  systemd-libs.x86_64 0:216-25.fc21                                             
+  tzdata.noarch 0:2015g-1.fc21                                                  
+  util-linux.x86_64 0:2.25.2-3.fc21                                             
+  vim-minimal.x86_64 2:7.4.827-1.fc21                                           
+
+Complete!
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container bab697ac6b9e
+ ---> 5779ee0144c2
+Step 4/10 : RUN yum install -y owncloud{,-httpd,-sqlite} && yum clean all
+ ---> Running in 4e1b5aa92a57
+Resolving Dependencies
+--> Running transaction check
+---> Package owncloud.noarch 0:8.0.9-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/routing) < 3.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/console) < 3.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(pimple/pimple) < 4.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(kriswallsmith/assetic) < 1.3 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/dbal) < 2.6 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-sabre-dav >= 1.8.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-pear(pear.sabredav.org/Sabre_VObject) >= 2.0.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-opencloud >= 1.9.2 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-google-apiclient >= 1.0.3 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/routing) >= 2.5.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/console) >= 2.5.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(pimple/pimple) >= 3.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(natxet/CssMin) >= 3.0.2 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(kriswallsmith/assetic) >= 1.2 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(ircmaxell/random-lib) >= 1.0.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/dbal) >= 2.5.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(bantu/ini-get-wrapper) >= 1.0.1 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-aws-sdk >= 2.7.0 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-zip for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-xmlwriter for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-spl for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-simplexml for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-session for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Net_SFTP) for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-pear(pear.dropbox-php.com/Dropbox) for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-pdo for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-pcre for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-openssl for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-opencloud for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-mbstring for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-ldap for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-json for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-iconv for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-getid3 for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-gd for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-filter for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-fileinfo for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-exif for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-dom for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-curl for package: owncloud-8.0.9-1.fc21.noarch
+--> Processing Dependency: php-composer(phpmailer/phpmailer) for package: owncloud-8.0.9-1.fc21.noarch
+---> Package owncloud-httpd.noarch 0:8.0.9-1.fc21 will be installed
+--> Processing Dependency: php for package: owncloud-httpd-8.0.9-1.fc21.noarch
+---> Package owncloud-sqlite.noarch 0:8.0.9-1.fc21 will be installed
+--> Running transaction check
+---> Package php.x86_64 0:5.6.15-1.fc21 will be installed
+--> Processing Dependency: php-cli(x86-64) = 5.6.15-1.fc21 for package: php-5.6.15-1.fc21.x86_64
+--> Processing Dependency: httpd-mmn = 20120211x8664 for package: php-5.6.15-1.fc21.x86_64
+--> Processing Dependency: httpd-filesystem for package: php-5.6.15-1.fc21.x86_64
+---> Package php-Assetic.noarch 0:1.2.1-1.fc21 will be installed
+--> Processing Dependency: php-pear(pear.twig-project.org/Twig) < 2.0 for package: php-Assetic-1.2.1-1.fc21.noarch
+--> Processing Dependency: php-pear(pear.symfony.com/Process) < 3.0 for package: php-Assetic-1.2.1-1.fc21.noarch
+--> Processing Dependency: php-pear(pear.twig-project.org/Twig) >= 1.6 for package: php-Assetic-1.2.1-1.fc21.noarch
+--> Processing Dependency: php-pear(pear.symfony.com/Process) >= 2.1 for package: php-Assetic-1.2.1-1.fc21.noarch
+--> Processing Dependency: php-scssphp for package: php-Assetic-1.2.1-1.fc21.noarch
+--> Processing Dependency: php-lessphp for package: php-Assetic-1.2.1-1.fc21.noarch
+---> Package php-PHPMailer.noarch 0:5.2.9-1.fc21 will be installed
+---> Package php-aws-sdk.noarch 0:2.8.21-1.fc21 will be installed
+--> Processing Dependency: php-composer(guzzle/guzzle) < 4.0 for package: php-aws-sdk-2.8.21-1.fc21.noarch
+--> Processing Dependency: php-composer(guzzle/guzzle) >= 3.7 for package: php-aws-sdk-2.8.21-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/class-loader) for package: php-aws-sdk-2.8.21-1.fc21.noarch
+---> Package php-bantu-ini-get-wrapper.noarch 0:1.0.1-1.fc21 will be installed
+---> Package php-common.x86_64 0:5.6.15-1.fc21 will be installed
+---> Package php-doctrine-dbal.noarch 0:2.5.1-1.fc21 will be installed
+--> Processing Dependency: php-composer(doctrine/common) < 2.6 for package: php-doctrine-dbal-2.5.1-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/common) >= 2.4 for package: php-doctrine-dbal-2.5.1-1.fc21.noarch
+---> Package php-dropbox-php-Dropbox.noarch 0:1.0.0-6.fc21 will be installed
+--> Processing Dependency: php-pecl(oauth) for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+--> Processing Dependency: php-pear(PEAR) for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+--> Processing Dependency: php-pear(HTTP_OAuth) for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+--> Processing Dependency: php-channel(pear.dropbox-php.com) for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+--> Processing Dependency: /usr/bin/pear for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+--> Processing Dependency: /usr/bin/pear for package: php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch
+---> Package php-gd.x86_64 0:5.6.15-1.fc21 will be installed
+--> Processing Dependency: libvpx.so.1()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libt1.so.5()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libjpeg.so.62()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libgd.so.3()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libXpm.so.4()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libX11.so.6()(64bit) for package: php-gd-5.6.15-1.fc21.x86_64
+---> Package php-getid3.noarch 1:1.9.8-1.fc21 will be installed
+---> Package php-google-apiclient.noarch 0:1.1.5-1.fc21 will be installed
+---> Package php-ircmaxell-random-lib.noarch 0:1.1.0-1.fc21 will be installed
+--> Processing Dependency: php-composer(ircmaxell/security-lib) >= 1.0 for package: php-ircmaxell-random-lib-1.1.0-1.fc21.noarch
+--> Processing Dependency: php-posix for package: php-ircmaxell-random-lib-1.1.0-1.fc21.noarch
+---> Package php-ldap.x86_64 0:5.6.15-1.fc21 will be installed
+---> Package php-mbstring.x86_64 0:5.6.15-1.fc21 will be installed
+---> Package php-natxet-cssmin.noarch 0:3.0.3-1.fc21 will be installed
+---> Package php-opencloud.noarch 0:1.12.1-1.fc21 will be installed
+--> Processing Dependency: php-composer(psr/log) < 2.0 for package: php-opencloud-1.12.1-1.fc21.noarch
+--> Processing Dependency: php-composer(psr/log) >= 1.0 for package: php-opencloud-1.12.1-1.fc21.noarch
+---> Package php-pdo.x86_64 0:5.6.15-1.fc21 will be installed
+---> Package php-pecl-jsonc.x86_64 0:1.3.9-1.fc21 will be installed
+---> Package php-pecl-zip.x86_64 0:1.12.5-1.fc21 will be installed
+--> Processing Dependency: libzip.so.2()(64bit) for package: php-pecl-zip-1.12.5-1.fc21.x86_64
+---> Package php-phpseclib-net-sftp.noarch 0:0.3.9-1.fc21 will be installed
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Net_SSH2) >= 0.3.0 for package: php-phpseclib-net-sftp-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-channel(phpseclib.sourceforge.net) for package: php-phpseclib-net-sftp-0.3.9-1.fc21.noarch
+---> Package php-pimple-lib.noarch 0:3.0.2-1.fc21 will be installed
+---> Package php-sabre-dav.noarch 0:1.8.10-2.fc21 will be installed
+--> Processing Dependency: php-sabre-vobject > 2.1 for package: php-sabre-dav-1.8.10-2.fc21.noarch
+---> Package php-sabredav-Sabre_VObject.noarch 0:2.1.4-2.fc21 will be installed
+--> Processing Dependency: php-pear(pear.sabredav.org/Sabre) >= 1.0.0 for package: php-sabredav-Sabre_VObject-2.1.4-2.fc21.noarch
+--> Processing Dependency: php-channel(pear.sabredav.org) for package: php-sabredav-Sabre_VObject-2.1.4-2.fc21.noarch
+---> Package php-symfony-console.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/event-dispatcher) = 2.7.5 for package: php-symfony-console-2.7.5-1.fc21.noarch
+---> Package php-symfony-routing.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/yaml) = 2.7.5 for package: php-symfony-routing-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/expression-language) = 2.7.5 for package: php-symfony-routing-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/config) = 2.7.5 for package: php-symfony-routing-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/annotations) < 2.0 for package: php-symfony-routing-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/annotations) >= 1.0 for package: php-symfony-routing-2.7.5-1.fc21.noarch
+---> Package php-xml.x86_64 0:5.6.15-1.fc21 will be installed
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.24)(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.22)(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.18)(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.13)(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.11)(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libxslt.so.1()(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libexslt.so.0()(64bit) for package: php-xml-5.6.15-1.fc21.x86_64
+--> Running transaction check
+---> Package gd.x86_64 0:2.1.0-8.fc21 will be installed
+--> Processing Dependency: libtiff.so.5(LIBTIFF_4.0)(64bit) for package: gd-2.1.0-8.fc21.x86_64
+--> Processing Dependency: libtiff.so.5()(64bit) for package: gd-2.1.0-8.fc21.x86_64
+--> Processing Dependency: libfontconfig.so.1()(64bit) for package: gd-2.1.0-8.fc21.x86_64
+---> Package httpd.x86_64 0:2.4.16-1.fc21 will be installed
+--> Processing Dependency: httpd-tools = 2.4.16-1.fc21 for package: httpd-2.4.16-1.fc21.x86_64
+--> Processing Dependency: system-logos-httpd for package: httpd-2.4.16-1.fc21.x86_64
+--> Processing Dependency: /etc/mime.types for package: httpd-2.4.16-1.fc21.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.16-1.fc21.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.16-1.fc21.x86_64
+---> Package httpd-filesystem.noarch 0:2.4.16-1.fc21 will be installed
+---> Package libX11.x86_64 0:1.6.2-2.fc21 will be installed
+--> Processing Dependency: libX11-common >= 1.6.2-2.fc21 for package: libX11-1.6.2-2.fc21.x86_64
+--> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.2-2.fc21.x86_64
+---> Package libXpm.x86_64 0:3.5.11-3.fc21 will be installed
+---> Package libjpeg-turbo.x86_64 0:1.3.1-5.fc21 will be installed
+---> Package libvpx.x86_64 0:1.3.0-7.fc21 will be installed
+---> Package libxslt.x86_64 0:1.1.28-8.fc21 will be installed
+---> Package libzip.x86_64 0:0.11.2-5.fc21 will be installed
+---> Package php-PsrLog.noarch 0:1.0.0-6.fc21 will be installed
+---> Package php-channel-dropbox-php.noarch 0:1.3-5.fc21 will be installed
+---> Package php-channel-phpseclib.noarch 0:1.3-2.fc21 will be installed
+---> Package php-channel-sabredav.noarch 0:1.3-6.fc21 will be installed
+---> Package php-cli.x86_64 0:5.6.15-1.fc21 will be installed
+--> Processing Dependency: libedit.so.0()(64bit) for package: php-cli-5.6.15-1.fc21.x86_64
+---> Package php-doctrine-annotations.noarch 0:1.2.7-1.fc21 will be installed
+--> Processing Dependency: php-composer(doctrine/lexer) < 2.0 for package: php-doctrine-annotations-1.2.7-1.fc21.noarch
+--> Processing Dependency: php-doctrine-lexer >= 1.0.1-4 for package: php-doctrine-annotations-1.2.7-1.fc21.noarch
+---> Package php-doctrine-common.noarch 0:2.5.0-1.fc21 will be installed
+--> Processing Dependency: php-composer(doctrine/inflector) < 2.0 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/collections) < 2.0 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/cache) < 2.0 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+--> Processing Dependency: php-doctrine-inflector >= 1.0.1-4 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/collections) >= 1.3.0 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+--> Processing Dependency: php-composer(doctrine/cache) >= 1.4.1 for package: php-doctrine-common-2.5.0-1.fc21.noarch
+---> Package php-guzzle-Guzzle.noarch 0:3.9.3-5.fc21 will be installed
+---> Package php-ircmaxell-security-lib.noarch 0:1.1.0-1.fc21 will be installed
+---> Package php-lessphp.noarch 0:0.5.0-2.fc21 will be installed
+---> Package php-pear.noarch 1:1.10.1-1.fc21 will be installed
+---> Package php-pear-HTTP-OAuth.noarch 0:0.3.1-2.fc21 will be installed
+--> Processing Dependency: php-pear(HTTP_Request2) >= 0.5.1 for package: php-pear-HTTP-OAuth-0.3.1-2.fc21.noarch
+--> Processing Dependency: php-pear(Log) for package: php-pear-HTTP-OAuth-0.3.1-2.fc21.noarch
+--> Processing Dependency: php-pear(Cache_Lite) for package: php-pear-HTTP-OAuth-0.3.1-2.fc21.noarch
+---> Package php-pecl-oauth.x86_64 0:1.2.3-8.fc21 will be installed
+---> Package php-phpseclib-net-ssh2.noarch 0:0.3.9-1.fc21 will be installed
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Math_BigInteger) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Twofish) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_TripleDES) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Random) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_RC4) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Hash) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Blowfish) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_AES) >= 0.3.0 for package: php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch
+---> Package php-process.x86_64 0:5.6.15-1.fc21 will be installed
+---> Package php-sabre-vobject.noarch 0:3.2.4-1.fc21 will be installed
+---> Package php-sabredav-Sabre.noarch 0:1.0.0-13.fc21 will be installed
+---> Package php-scssphp.noarch 0:0.3.2-1.fc21 will be installed
+---> Package php-symfony-class-loader.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-symfony-common = 2.7.5-1.fc21 for package: php-symfony-class-loader-2.7.5-1.fc21.noarch
+---> Package php-symfony-config.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/filesystem) = 2.7.5 for package: php-symfony-config-2.7.5-1.fc21.noarch
+---> Package php-symfony-event-dispatcher.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/http-kernel) = 2.7.5 for package: php-symfony-event-dispatcher-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/dependency-injection) = 2.7.5 for package: php-symfony-event-dispatcher-2.7.5-1.fc21.noarch
+---> Package php-symfony-expression-language.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-process.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-yaml.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-twig.x86_64 0:1.22.2-1.fc21 will be installed
+---> Package t1lib.x86_64 0:5.1.2-16.fc21 will be installed
+--> Running transaction check
+---> Package apr.x86_64 0:1.5.1-3.fc21 will be installed
+---> Package apr-util.x86_64 0:1.5.4-1.fc21 will be installed
+---> Package fedora-logos-httpd.noarch 0:21.0.5-1.fc21 will be installed
+---> Package fontconfig.x86_64 0:2.11.1-5.fc21 will be installed
+--> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.11.1-5.fc21.x86_64
+--> Processing Dependency: font(:lang=en) for package: fontconfig-2.11.1-5.fc21.x86_64
+---> Package httpd-tools.x86_64 0:2.4.16-1.fc21 will be installed
+---> Package libX11-common.noarch 0:1.6.2-2.fc21 will be installed
+---> Package libedit.x86_64 0:3.1-12.20150325cvs.fc21 will be installed
+---> Package libtiff.x86_64 0:4.0.3-20.fc21 will be installed
+--> Processing Dependency: libjbig.so.2.1()(64bit) for package: libtiff-4.0.3-20.fc21.x86_64
+---> Package libxcb.x86_64 0:1.11-5.fc21 will be installed
+--> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.11-5.fc21.x86_64
+---> Package mailcap.noarch 0:2.1.43-1.fc21 will be installed
+---> Package php-doctrine-cache.noarch 0:1.4.2-1.fc21 will be installed
+---> Package php-doctrine-collections.noarch 0:1.3.0-2.fc21 will be installed
+---> Package php-doctrine-inflector.noarch 0:1.0.1-4.fc21 will be installed
+---> Package php-doctrine-lexer.noarch 0:1.0.1-4.fc21 will be installed
+---> Package php-pear-Cache-Lite.noarch 0:1.7.16-2.fc21 will be installed
+---> Package php-pear-HTTP-Request2.noarch 0:2.2.1-2.fc21 will be installed
+--> Processing Dependency: php-pear(Net_URL2) >= 2.0.0 for package: php-pear-HTTP-Request2-2.2.1-2.fc21.noarch
+---> Package php-pear-Log.noarch 0:1.12.8-1.fc21 will be installed
+--> Processing Dependency: php-pear(MDB2) >= 2.0.0 for package: php-pear-Log-1.12.8-1.fc21.noarch
+--> Processing Dependency: php-pear(DB) >= 1.3 for package: php-pear-Log-1.12.8-1.fc21.noarch
+--> Processing Dependency: php-pear(Mail) for package: php-pear-Log-1.12.8-1.fc21.noarch
+---> Package php-phpseclib-crypt-aes.noarch 0:0.3.9-1.fc21 will be installed
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Rijndael) >= 0.3.0 for package: php-phpseclib-crypt-aes-0.3.9-1.fc21.noarch
+---> Package php-phpseclib-crypt-blowfish.noarch 0:0.3.9-2.fc21 will be installed
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_Base) = 0.3.9 for package: php-phpseclib-crypt-blowfish-0.3.9-2.fc21.noarch
+---> Package php-phpseclib-crypt-hash.noarch 0:0.3.9-1.fc21 will be installed
+---> Package php-phpseclib-crypt-random.noarch 0:0.3.9-1.fc21 will be installed
+---> Package php-phpseclib-crypt-rc4.noarch 0:0.3.9-2.fc21 will be installed
+---> Package php-phpseclib-crypt-tripledes.noarch 0:0.3.9-2.fc21 will be installed
+--> Processing Dependency: php-pear(phpseclib.sourceforge.net/Crypt_DES) >= 0.3.0 for package: php-phpseclib-crypt-tripledes-0.3.9-2.fc21.noarch
+---> Package php-phpseclib-crypt-twofish.noarch 0:0.3.9-2.fc21 will be installed
+---> Package php-phpseclib-math-biginteger.noarch 0:0.3.9-1.fc21 will be installed
+---> Package php-symfony-common.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-dependency-injection.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-filesystem.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-http-kernel.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/var-dumper) = 2.7.5 for package: php-symfony-http-kernel-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/http-foundation) = 2.7.5 for package: php-symfony-http-kernel-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/finder) = 2.7.5 for package: php-symfony-http-kernel-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/debug) = 2.7.5 for package: php-symfony-http-kernel-2.7.5-1.fc21.noarch
+--> Processing Dependency: php-composer(symfony/browser-kit) = 2.7.5 for package: php-symfony-http-kernel-2.7.5-1.fc21.noarch
+--> Running transaction check
+---> Package fontpackages-filesystem.noarch 0:1.44-10.fc21 will be installed
+---> Package jbigkit-libs.x86_64 0:2.1-2.fc21 will be installed
+---> Package libXau.x86_64 0:1.0.8-4.fc21 will be installed
+---> Package lyx-fonts.noarch 0:2.1.4-1.fc21 will be installed
+---> Package php-pear-DB.noarch 0:1.8.2-1.fc21 will be installed
+---> Package php-pear-MDB2.noarch 0:2.5.0-0.11.b5.fc21 will be installed
+---> Package php-pear-Mail.noarch 0:1.2.0-10.fc21 will be installed
+--> Processing Dependency: php-pear(Net_SMTP) >= 1.4.1 for package: php-pear-Mail-1.2.0-10.fc21.noarch
+---> Package php-pear-Net-URL2.noarch 0:2.1.1-1.fc21 will be installed
+---> Package php-phpseclib-crypt-base.noarch 0:0.3.9-1.fc21 will be installed
+---> Package php-phpseclib-crypt-des.noarch 0:0.3.9-2.fc21 will be installed
+---> Package php-phpseclib-crypt-rijndael.noarch 0:0.3.9-2.fc21 will be installed
+---> Package php-symfony-browser-kit.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/dom-crawler) = 2.7.5 for package: php-symfony-browser-kit-2.7.5-1.fc21.noarch
+---> Package php-symfony-debug.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-finder.noarch 0:2.7.5-1.fc21 will be installed
+---> Package php-symfony-http-foundation.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-intl for package: php-symfony-http-foundation-2.7.5-1.fc21.noarch
+---> Package php-symfony-var-dumper.noarch 0:2.7.5-1.fc21 will be installed
+--> Running transaction check
+---> Package php-intl.x86_64 0:5.6.15-1.fc21 will be installed
+--> Processing Dependency: libicuuc.so.52()(64bit) for package: php-intl-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libicuio.so.52()(64bit) for package: php-intl-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libicui18n.so.52()(64bit) for package: php-intl-5.6.15-1.fc21.x86_64
+--> Processing Dependency: libicudata.so.52()(64bit) for package: php-intl-5.6.15-1.fc21.x86_64
+---> Package php-pear-Net-SMTP.noarch 0:1.7.1-1.fc21 will be installed
+--> Processing Dependency: php-pear(Net_Socket) for package: php-pear-Net-SMTP-1.7.1-1.fc21.noarch
+--> Processing Dependency: php-pear(Auth_SASL) for package: php-pear-Net-SMTP-1.7.1-1.fc21.noarch
+---> Package php-symfony-dom-crawler.noarch 0:2.7.5-1.fc21 will be installed
+--> Processing Dependency: php-composer(symfony/css-selector) = 2.7.5 for package: php-symfony-dom-crawler-2.7.5-1.fc21.noarch
+--> Running transaction check
+---> Package libicu.x86_64 0:52.1-6.fc21 will be installed
+---> Package php-pear-Auth-SASL.noarch 0:1.0.6-7.fc21 will be installed
+---> Package php-pear-Net-Socket.noarch 0:1.0.14-3.fc21 will be installed
+---> Package php-symfony-css-selector.noarch 0:2.7.5-1.fc21 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                          Arch   Version                  Repository
+                                                                           Size
+================================================================================
+Installing:
+ owncloud                         noarch 8.0.9-1.fc21             updates  20 M
+ owncloud-httpd                   noarch 8.0.9-1.fc21             updates  21 k
+ owncloud-sqlite                  noarch 8.0.9-1.fc21             updates  17 k
+Installing for dependencies:
+ apr                              x86_64 1.5.1-3.fc21             fedora  111 k
+ apr-util                         x86_64 1.5.4-1.fc21             fedora   96 k
+ fedora-logos-httpd               noarch 21.0.5-1.fc21            fedora   33 k
+ fontconfig                       x86_64 2.11.1-5.fc21            fedora  235 k
+ fontpackages-filesystem          noarch 1.44-10.fc21             fedora   10 k
+ gd                               x86_64 2.1.0-8.fc21             updates 143 k
+ httpd                            x86_64 2.4.16-1.fc21            updates 1.2 M
+ httpd-filesystem                 noarch 2.4.16-1.fc21            updates  24 k
+ httpd-tools                      x86_64 2.4.16-1.fc21            updates  85 k
+ jbigkit-libs                     x86_64 2.1-2.fc21               fedora   51 k
+ libX11                           x86_64 1.6.2-2.fc21             fedora  608 k
+ libX11-common                    noarch 1.6.2-2.fc21             fedora  187 k
+ libXau                           x86_64 1.0.8-4.fc21             fedora   33 k
+ libXpm                           x86_64 3.5.11-3.fc21            fedora   54 k
+ libedit                          x86_64 3.1-12.20150325cvs.fc21  updates 100 k
+ libicu                           x86_64 52.1-6.fc21              updates 7.4 M
+ libjpeg-turbo                    x86_64 1.3.1-5.fc21             updates 142 k
+ libtiff                          x86_64 4.0.3-20.fc21            updates 172 k
+ libvpx                           x86_64 1.3.0-7.fc21             updates 513 k
+ libxcb                           x86_64 1.11-5.fc21              updates 191 k
+ libxslt                          x86_64 1.1.28-8.fc21            fedora  245 k
+ libzip                           x86_64 0.11.2-5.fc21            updates  64 k
+ lyx-fonts                        noarch 2.1.4-1.fc21             updates 170 k
+ mailcap                          noarch 2.1.43-1.fc21            fedora   36 k
+ php                              x86_64 5.6.15-1.fc21            updates 2.6 M
+ php-Assetic                      noarch 1.2.1-1.fc21             updates  70 k
+ php-PHPMailer                    noarch 5.2.9-1.fc21             fedora  136 k
+ php-PsrLog                       noarch 1.0.0-6.fc21             fedora   10 k
+ php-aws-sdk                      noarch 2.8.21-1.fc21            updates 558 k
+ php-bantu-ini-get-wrapper        noarch 1.0.1-1.fc21             updates  11 k
+ php-channel-dropbox-php          noarch 1.3-5.fc21               fedora  4.8 k
+ php-channel-phpseclib            noarch 1.3-2.fc21               fedora  4.6 k
+ php-channel-sabredav             noarch 1.3-6.fc21               fedora  4.9 k
+ php-cli                          x86_64 5.6.15-1.fc21            updates 4.0 M
+ php-common                       x86_64 5.6.15-1.fc21            updates 1.1 M
+ php-doctrine-annotations         noarch 1.2.7-1.fc21             updates  31 k
+ php-doctrine-cache               noarch 1.4.2-1.fc21             updates  26 k
+ php-doctrine-collections         noarch 1.3.0-2.fc21             updates  20 k
+ php-doctrine-common              noarch 2.5.0-1.fc21             updates  55 k
+ php-doctrine-dbal                noarch 2.5.1-1.fc21             updates 205 k
+ php-doctrine-inflector           noarch 1.0.1-4.fc21             updates  15 k
+ php-doctrine-lexer               noarch 1.0.1-4.fc21             updates  13 k
+ php-dropbox-php-Dropbox          noarch 1.0.0-6.fc21             fedora   20 k
+ php-gd                           x86_64 5.6.15-1.fc21            updates  96 k
+ php-getid3                       noarch 1:1.9.8-1.fc21           fedora  419 k
+ php-google-apiclient             noarch 1.1.5-1.fc21             updates 454 k
+ php-guzzle-Guzzle                noarch 3.9.3-5.fc21             updates 210 k
+ php-intl                         x86_64 5.6.15-1.fc21            updates 233 k
+ php-ircmaxell-random-lib         noarch 1.1.0-1.fc21             updates  20 k
+ php-ircmaxell-security-lib       noarch 1.1.0-1.fc21             updates  17 k
+ php-ldap                         x86_64 5.6.15-1.fc21            updates  76 k
+ php-lessphp                      noarch 0.5.0-2.fc21             updates  60 k
+ php-mbstring                     x86_64 5.6.15-1.fc21            updates 577 k
+ php-natxet-cssmin                noarch 3.0.3-1.fc21             updates  30 k
+ php-opencloud                    noarch 1.12.1-1.fc21            updates 158 k
+ php-pdo                          x86_64 5.6.15-1.fc21            updates 149 k
+ php-pear                         noarch 1:1.10.1-1.fc21          updates 352 k
+ php-pear-Auth-SASL               noarch 1.0.6-7.fc21             fedora   17 k
+ php-pear-Cache-Lite              noarch 1.7.16-2.fc21            fedora   44 k
+ php-pear-DB                      noarch 1.8.2-1.fc21             updates 109 k
+ php-pear-HTTP-OAuth              noarch 0.3.1-2.fc21             fedora   68 k
+ php-pear-HTTP-Request2           noarch 2.2.1-2.fc21             fedora  112 k
+ php-pear-Log                     noarch 1.12.8-1.fc21            fedora   63 k
+ php-pear-MDB2                    noarch 2.5.0-0.11.b5.fc21       fedora  126 k
+ php-pear-Mail                    noarch 1.2.0-10.fc21            fedora   30 k
+ php-pear-Net-SMTP                noarch 1.7.1-1.fc21             updates  28 k
+ php-pear-Net-Socket              noarch 1.0.14-3.fc21            fedora   13 k
+ php-pear-Net-URL2                noarch 2.1.1-1.fc21             updates  30 k
+ php-pecl-jsonc                   x86_64 1.3.9-1.fc21             updates  58 k
+ php-pecl-oauth                   x86_64 1.2.3-8.fc21             fedora   84 k
+ php-pecl-zip                     x86_64 1.12.5-1.fc21            updates 248 k
+ php-phpseclib-crypt-aes          noarch 0.3.9-1.fc21             updates  11 k
+ php-phpseclib-crypt-base         noarch 0.3.9-1.fc21             updates  22 k
+ php-phpseclib-crypt-blowfish     noarch 0.3.9-2.fc21             updates  20 k
+ php-phpseclib-crypt-des          noarch 0.3.9-2.fc21             updates  19 k
+ php-phpseclib-crypt-hash         noarch 0.3.9-1.fc21             updates  17 k
+ php-phpseclib-crypt-random       noarch 0.3.9-1.fc21             updates  14 k
+ php-phpseclib-crypt-rc4          noarch 0.3.9-2.fc21             updates  12 k
+ php-phpseclib-crypt-rijndael     noarch 0.3.9-2.fc21             updates  23 k
+ php-phpseclib-crypt-tripledes    noarch 0.3.9-2.fc21             updates  13 k
+ php-phpseclib-crypt-twofish      noarch 0.3.9-2.fc21             updates  19 k
+ php-phpseclib-math-biginteger    noarch 0.3.9-1.fc21             updates  33 k
+ php-phpseclib-net-sftp           noarch 0.3.9-1.fc21             updates  30 k
+ php-phpseclib-net-ssh2           noarch 0.3.9-1.fc21             updates  32 k
+ php-pimple-lib                   noarch 3.0.2-1.fc21             updates  15 k
+ php-process                      x86_64 5.6.15-1.fc21            updates  86 k
+ php-sabre-dav                    noarch 1.8.10-2.fc21            fedora  205 k
+ php-sabre-vobject                noarch 3.2.4-1.fc21             fedora   79 k
+ php-sabredav-Sabre               noarch 1.0.0-13.fc21            fedora  7.9 k
+ php-sabredav-Sabre_VObject       noarch 2.1.4-2.fc21             fedora   43 k
+ php-scssphp                      noarch 0.3.2-1.fc21             updates  53 k
+ php-symfony-browser-kit          noarch 2.7.5-1.fc21             updates  24 k
+ php-symfony-class-loader         noarch 2.7.5-1.fc21             updates  27 k
+ php-symfony-common               noarch 2.7.5-1.fc21             updates 101 k
+ php-symfony-config               noarch 2.7.5-1.fc21             updates  49 k
+ php-symfony-console              noarch 2.7.5-1.fc21             updates  85 k
+ php-symfony-css-selector         noarch 2.7.5-1.fc21             updates  38 k
+ php-symfony-debug                noarch 2.7.5-1.fc21             updates  35 k
+ php-symfony-dependency-injection noarch 2.7.5-1.fc21             updates  79 k
+ php-symfony-dom-crawler          noarch 2.7.5-1.fc21             updates  31 k
+ php-symfony-event-dispatcher     noarch 2.7.5-1.fc21             updates  25 k
+ php-symfony-expression-language  noarch 2.7.5-1.fc21             updates  28 k
+ php-symfony-filesystem           noarch 2.7.5-1.fc21             updates  22 k
+ php-symfony-finder               noarch 2.7.5-1.fc21             updates  39 k
+ php-symfony-http-foundation      noarch 2.7.5-1.fc21             updates  94 k
+ php-symfony-http-kernel          noarch 2.7.5-1.fc21             updates  98 k
+ php-symfony-process              noarch 2.7.5-1.fc21             updates  33 k
+ php-symfony-routing              noarch 2.7.5-1.fc21             updates  56 k
+ php-symfony-var-dumper           noarch 2.7.5-1.fc21             updates  44 k
+ php-symfony-yaml                 noarch 2.7.5-1.fc21             updates  28 k
+ php-twig                         x86_64 1.22.2-1.fc21            updates 134 k
+ php-xml                          x86_64 5.6.15-1.fc21            updates 259 k
+ t1lib                            x86_64 5.1.2-16.fc21            fedora  169 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages (+113 Dependent packages)
+
+Total download size: 46 M
+Installed size: 159 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.6 MB/s |  46 MB  00:10     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : php-pecl-jsonc-1.3.9-1.fc21.x86_64                         1/116 
+  Installing : php-common-5.6.15-1.fc21.x86_64                            2/116 
+  Installing : php-mbstring-5.6.15-1.fc21.x86_64                          3/116 
+  Installing : php-symfony-class-loader-2.7.5-1.fc21.noarch               4/116 
+  Installing : php-symfony-common-2.7.5-1.fc21.noarch                     5/116 
+  Installing : php-pdo-5.6.15-1.fc21.x86_64                               6/116 
+  Installing : php-PsrLog-1.0.0-6.fc21.noarch                             7/116 
+  Installing : php-process-5.6.15-1.fc21.x86_64                           8/116 
+  Installing : apr-1.5.1-3.fc21.x86_64                                    9/116 
+  Installing : httpd-filesystem-2.4.16-1.fc21.noarch                     10/116 
+  Installing : libjpeg-turbo-1.3.1-5.fc21.x86_64                         11/116 
+  Installing : apr-util-1.5.4-1.fc21.x86_64                              12/116 
+  Installing : php-symfony-yaml-2.7.5-1.fc21.noarch                      13/116 
+  Installing : php-doctrine-lexer-1.0.1-4.fc21.noarch                    14/116 
+  Installing : php-doctrine-annotations-1.2.7-1.fc21.noarch              15/116 
+  Installing : libvpx-1.3.0-7.fc21.x86_64                                16/116 
+  Installing : fontpackages-filesystem-1.44-10.fc21.noarch               17/116 
+  Installing : lyx-fonts-2.1.4-1.fc21.noarch                             18/116 
+  Installing : fontconfig-2.11.1-5.fc21.x86_64                           19/116 
+  Installing : httpd-tools-2.4.16-1.fc21.x86_64                          20/116 
+  Installing : php-symfony-debug-2.7.5-1.fc21.noarch                     21/116 
+  Installing : php-doctrine-cache-1.4.2-1.fc21.noarch                    22/116 
+  Installing : php-symfony-css-selector-2.7.5-1.fc21.noarch              23/116 
+  Installing : php-symfony-expression-language-2.7.5-1.fc21.noarch       24/116 
+  Installing : php-symfony-filesystem-2.7.5-1.fc21.noarch                25/116 
+  Installing : php-symfony-finder-2.7.5-1.fc21.noarch                    26/116 
+  Installing : php-doctrine-collections-1.3.0-2.fc21.noarch              27/116 
+  Installing : php-doctrine-inflector-1.0.1-4.fc21.noarch                28/116 
+  Installing : php-doctrine-common-2.5.0-1.fc21.noarch                   29/116 
+  Installing : php-PHPMailer-5.2.9-1.fc21.noarch                         30/116 
+  Installing : php-pimple-lib-3.0.2-1.fc21.noarch                        31/116 
+  Installing : php-natxet-cssmin-3.0.3-1.fc21.noarch                     32/116 
+  Installing : php-google-apiclient-1.1.5-1.fc21.noarch                  33/116 
+  Installing : php-bantu-ini-get-wrapper-1.0.1-1.fc21.noarch             34/116 
+  Installing : php-ldap-5.6.15-1.fc21.x86_64                             35/116 
+  Installing : php-ircmaxell-security-lib-1.1.0-1.fc21.noarch            36/116 
+  Installing : php-ircmaxell-random-lib-1.1.0-1.fc21.noarch              37/116 
+  Installing : libXau-1.0.8-4.fc21.x86_64                                38/116 
+  Installing : libxcb-1.11-5.fc21.x86_64                                 39/116 
+  Installing : libicu-52.1-6.fc21.x86_64                                 40/116 
+  Installing : php-intl-5.6.15-1.fc21.x86_64                             41/116 
+  Installing : php-symfony-http-foundation-2.7.5-1.fc21.noarch           42/116 
+  Installing : mailcap-2.1.43-1.fc21.noarch                              43/116 
+  Installing : libzip-0.11.2-5.fc21.x86_64                               44/116 
+  Installing : fedora-logos-httpd-21.0.5-1.fc21.noarch                   45/116 
+  Installing : httpd-2.4.16-1.fc21.x86_64                                46/116 
+  Installing : libxslt-1.1.28-8.fc21.x86_64                              47/116 
+  Installing : php-xml-5.6.15-1.fc21.x86_64                              48/116 
+  Installing : php-symfony-config-2.7.5-1.fc21.noarch                    49/116 
+  Installing : php-symfony-dependency-injection-2.7.5-1.fc21.noarch      50/116 
+  Installing : php-symfony-routing-2.7.5-1.fc21.noarch                   51/116 
+  Installing : php-twig-1.22.2-1.fc21.x86_64                             52/116 
+  Installing : php-symfony-dom-crawler-2.7.5-1.fc21.noarch               53/116 
+  Installing : libedit-3.1-12.20150325cvs.fc21.x86_64                    54/116 
+  Installing : php-cli-5.6.15-1.fc21.x86_64                              55/116 
+  Installing : 1:php-pear-1.10.1-1.fc21.noarch                           56/116 
+  Installing : php-channel-phpseclib-1.3-2.fc21.noarch                   57/116 
+  Installing : php-phpseclib-crypt-base-0.3.9-1.fc21.noarch              58/116 
+  Installing : php-symfony-process-2.7.5-1.fc21.noarch                   59/116 
+  Installing : php-phpseclib-math-biginteger-0.3.9-1.fc21.noarch         60/116 
+  Installing : php-phpseclib-crypt-hash-0.3.9-1.fc21.noarch              61/116 
+  Installing : php-channel-sabredav-1.3-6.fc21.noarch                    62/116 
+  Installing : php-sabredav-Sabre-1.0.0-13.fc21.noarch                   63/116 
+  Installing : php-sabredav-Sabre_VObject-2.1.4-2.fc21.noarch            64/116 
+  Installing : php-phpseclib-crypt-des-0.3.9-2.fc21.noarch               65/116 
+  Installing : php-phpseclib-crypt-tripledes-0.3.9-2.fc21.noarch         66/116 
+  Installing : php-phpseclib-crypt-twofish-0.3.9-2.fc21.noarch           67/116 
+  Installing : php-phpseclib-crypt-blowfish-0.3.9-2.fc21.noarch          68/116 
+  Installing : php-symfony-browser-kit-2.7.5-1.fc21.noarch               69/116 
+  Installing : php-phpseclib-crypt-rc4-0.3.9-2.fc21.noarch               70/116 
+  Installing : php-phpseclib-crypt-rijndael-0.3.9-2.fc21.noarch          71/116 
+  Installing : php-phpseclib-crypt-aes-0.3.9-1.fc21.noarch               72/116 
+  Installing : php-phpseclib-crypt-random-0.3.9-1.fc21.noarch            73/116 
+  Installing : php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch                74/116 
+  Installing : php-phpseclib-net-sftp-0.3.9-1.fc21.noarch                75/116 
+  Installing : php-pear-Cache-Lite-1.7.16-2.fc21.noarch                  76/116 
+  Installing : php-pear-DB-1.8.2-1.fc21.noarch                           77/116 
+  Installing : php-pear-Net-Socket-1.0.14-3.fc21.noarch                  78/116 
+  Installing : php-pear-Net-URL2-2.1.1-1.fc21.noarch                     79/116 
+  Installing : php-pear-HTTP-Request2-2.2.1-2.fc21.noarch                80/116 
+  Installing : php-channel-dropbox-php-1.3-5.fc21.noarch                 81/116 
+  Installing : php-pear-MDB2-2.5.0-0.11.b5.fc21.noarch                   82/116 
+  Installing : php-pear-Auth-SASL-1.0.6-7.fc21.noarch                    83/116 
+  Installing : php-pear-Net-SMTP-1.7.1-1.fc21.noarch                     84/116 
+  Installing : php-pear-Mail-1.2.0-10.fc21.noarch                        85/116 
+  Installing : php-pear-Log-1.12.8-1.fc21.noarch                         86/116 
+  Installing : php-pear-HTTP-OAuth-0.3.1-2.fc21.noarch                   87/116 
+  Installing : php-pecl-zip-1.12.5-1.fc21.x86_64                         88/116 
+  Installing : php-pecl-oauth-1.2.3-8.fc21.x86_64                        89/116 
+  Installing : php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch               90/116 
+  Installing : php-sabre-vobject-3.2.4-1.fc21.noarch                     91/116 
+  Installing : php-sabre-dav-1.8.10-2.fc21.noarch                        92/116 
+  Installing : php-scssphp-0.3.2-1.fc21.noarch                           93/116 
+  Installing : php-5.6.15-1.fc21.x86_64                                  94/116 
+  Installing : php-lessphp-0.5.0-2.fc21.noarch                           95/116 
+  Installing : php-Assetic-1.2.1-1.fc21.noarch                           96/116 
+  Installing : libX11-common-1.6.2-2.fc21.noarch                         97/116 
+  Installing : libX11-1.6.2-2.fc21.x86_64                                98/116 
+  Installing : libXpm-3.5.11-3.fc21.x86_64                               99/116 
+  Installing : t1lib-5.1.2-16.fc21.x86_64                               100/116 
+  Installing : jbigkit-libs-2.1-2.fc21.x86_64                           101/116 
+  Installing : libtiff-4.0.3-20.fc21.x86_64                             102/116 
+  Installing : gd-2.1.0-8.fc21.x86_64                                   103/116 
+  Installing : php-gd-5.6.15-1.fc21.x86_64                              104/116 
+  Installing : php-symfony-var-dumper-2.7.5-1.fc21.noarch               105/116 
+  Installing : php-symfony-console-2.7.5-1.fc21.noarch                  106/116 
+  Installing : php-symfony-event-dispatcher-2.7.5-1.fc21.noarch         107/116 
+  Installing : php-symfony-http-kernel-2.7.5-1.fc21.noarch              108/116 
+  Installing : php-guzzle-Guzzle-3.9.3-5.fc21.noarch                    109/116 
+  Installing : php-aws-sdk-2.8.21-1.fc21.noarch                         110/116 
+  Installing : php-opencloud-1.12.1-1.fc21.noarch                       111/116 
+  Installing : php-doctrine-dbal-2.5.1-1.fc21.noarch                    112/116 
+  Installing : 1:php-getid3-1.9.8-1.fc21.noarch                         113/116 
+  Installing : owncloud-sqlite-8.0.9-1.fc21.noarch                      114/116 
+  Installing : owncloud-httpd-8.0.9-1.fc21.noarch                       115/116 
+  Installing : owncloud-8.0.9-1.fc21.noarch                             116/116 
+/var/tmp/rpm-tmp.UnNhur: line 4: restorecon: command not found
+/var/tmp/rpm-tmp.UnNhur: line 5: restorecon: command not found
+  Verifying  : php-pear-HTTP-OAuth-0.3.1-2.fc21.noarch                    1/116 
+  Verifying  : php-symfony-var-dumper-2.7.5-1.fc21.noarch                 2/116 
+  Verifying  : php-symfony-common-2.7.5-1.fc21.noarch                     3/116 
+  Verifying  : lyx-fonts-2.1.4-1.fc21.noarch                              4/116 
+  Verifying  : php-pear-Cache-Lite-1.7.16-2.fc21.noarch                   5/116 
+  Verifying  : php-phpseclib-crypt-des-0.3.9-2.fc21.noarch                6/116 
+  Verifying  : php-doctrine-collections-1.3.0-2.fc21.noarch               7/116 
+  Verifying  : php-common-5.6.15-1.fc21.x86_64                            8/116 
+  Verifying  : php-pimple-lib-3.0.2-1.fc21.noarch                         9/116 
+  Verifying  : php-symfony-routing-2.7.5-1.fc21.noarch                   10/116 
+  Verifying  : php-sabredav-Sabre-1.0.0-13.fc21.noarch                   11/116 
+  Verifying  : php-pear-DB-1.8.2-1.fc21.noarch                           12/116 
+  Verifying  : libXpm-3.5.11-3.fc21.x86_64                               13/116 
+  Verifying  : php-phpseclib-net-sftp-0.3.9-1.fc21.noarch                14/116 
+  Verifying  : jbigkit-libs-2.1-2.fc21.x86_64                            15/116 
+  Verifying  : php-pdo-5.6.15-1.fc21.x86_64                              16/116 
+  Verifying  : php-symfony-http-kernel-2.7.5-1.fc21.noarch               17/116 
+  Verifying  : 1:php-pear-1.10.1-1.fc21.noarch                           18/116 
+  Verifying  : httpd-2.4.16-1.fc21.x86_64                                19/116 
+  Verifying  : php-phpseclib-crypt-random-0.3.9-1.fc21.noarch            20/116 
+  Verifying  : php-channel-sabredav-1.3-6.fc21.noarch                    21/116 
+  Verifying  : php-pear-Net-Socket-1.0.14-3.fc21.noarch                  22/116 
+  Verifying  : php-sabre-vobject-3.2.4-1.fc21.noarch                     23/116 
+  Verifying  : libjpeg-turbo-1.3.1-5.fc21.x86_64                         24/116 
+  Verifying  : httpd-filesystem-2.4.16-1.fc21.noarch                     25/116 
+  Verifying  : fontconfig-2.11.1-5.fc21.x86_64                           26/116 
+  Verifying  : php-Assetic-1.2.1-1.fc21.noarch                           27/116 
+  Verifying  : php-pear-Net-URL2-2.1.1-1.fc21.noarch                     28/116 
+  Verifying  : php-twig-1.22.2-1.fc21.x86_64                             29/116 
+  Verifying  : php-sabredav-Sabre_VObject-2.1.4-2.fc21.noarch            30/116 
+  Verifying  : php-symfony-config-2.7.5-1.fc21.noarch                    31/116 
+  Verifying  : php-natxet-cssmin-3.0.3-1.fc21.noarch                     32/116 
+  Verifying  : php-phpseclib-crypt-rc4-0.3.9-2.fc21.noarch               33/116 
+  Verifying  : php-symfony-console-2.7.5-1.fc21.noarch                   34/116 
+  Verifying  : php-channel-dropbox-php-1.3-5.fc21.noarch                 35/116 
+  Verifying  : php-xml-5.6.15-1.fc21.x86_64                              36/116 
+  Verifying  : php-doctrine-lexer-1.0.1-4.fc21.noarch                    37/116 
+  Verifying  : libX11-1.6.2-2.fc21.x86_64                                38/116 
+  Verifying  : libX11-common-1.6.2-2.fc21.noarch                         39/116 
+  Verifying  : php-doctrine-dbal-2.5.1-1.fc21.noarch                     40/116 
+  Verifying  : php-phpseclib-crypt-tripledes-0.3.9-2.fc21.noarch         41/116 
+  Verifying  : php-dropbox-php-Dropbox-1.0.0-6.fc21.noarch               42/116 
+  Verifying  : php-pear-Log-1.12.8-1.fc21.noarch                         43/116 
+  Verifying  : php-phpseclib-crypt-twofish-0.3.9-2.fc21.noarch           44/116 
+  Verifying  : owncloud-sqlite-8.0.9-1.fc21.noarch                       45/116 
+  Verifying  : php-symfony-class-loader-2.7.5-1.fc21.noarch              46/116 
+  Verifying  : 1:php-getid3-1.9.8-1.fc21.noarch                          47/116 
+  Verifying  : php-phpseclib-crypt-aes-0.3.9-1.fc21.noarch               48/116 
+  Verifying  : libtiff-4.0.3-20.fc21.x86_64                              49/116 
+  Verifying  : php-gd-5.6.15-1.fc21.x86_64                               50/116 
+  Verifying  : php-symfony-debug-2.7.5-1.fc21.noarch                     51/116 
+  Verifying  : libedit-3.1-12.20150325cvs.fc21.x86_64                    52/116 
+  Verifying  : php-symfony-browser-kit-2.7.5-1.fc21.noarch               53/116 
+  Verifying  : libxslt-1.1.28-8.fc21.x86_64                              54/116 
+  Verifying  : php-pear-MDB2-2.5.0-0.11.b5.fc21.noarch                   55/116 
+  Verifying  : php-phpseclib-crypt-base-0.3.9-1.fc21.noarch              56/116 
+  Verifying  : owncloud-httpd-8.0.9-1.fc21.noarch                        57/116 
+  Verifying  : php-symfony-process-2.7.5-1.fc21.noarch                   58/116 
+  Verifying  : php-phpseclib-crypt-blowfish-0.3.9-2.fc21.noarch          59/116 
+  Verifying  : php-google-apiclient-1.1.5-1.fc21.noarch                  60/116 
+  Verifying  : php-pear-Mail-1.2.0-10.fc21.noarch                        61/116 
+  Verifying  : php-symfony-yaml-2.7.5-1.fc21.noarch                      62/116 
+  Verifying  : php-doctrine-common-2.5.0-1.fc21.noarch                   63/116 
+  Verifying  : fedora-logos-httpd-21.0.5-1.fc21.noarch                   64/116 
+  Verifying  : php-phpseclib-math-biginteger-0.3.9-1.fc21.noarch         65/116 
+  Verifying  : php-scssphp-0.3.2-1.fc21.noarch                           66/116 
+  Verifying  : php-guzzle-Guzzle-3.9.3-5.fc21.noarch                     67/116 
+  Verifying  : php-symfony-css-selector-2.7.5-1.fc21.noarch              68/116 
+  Verifying  : php-PHPMailer-5.2.9-1.fc21.noarch                         69/116 
+  Verifying  : libxcb-1.11-5.fc21.x86_64                                 70/116 
+  Verifying  : php-aws-sdk-2.8.21-1.fc21.noarch                          71/116 
+  Verifying  : php-symfony-dom-crawler-2.7.5-1.fc21.noarch               72/116 
+  Verifying  : apr-1.5.1-3.fc21.x86_64                                   73/116 
+  Verifying  : fontpackages-filesystem-1.44-10.fc21.noarch               74/116 
+  Verifying  : libzip-0.11.2-5.fc21.x86_64                               75/116 
+  Verifying  : owncloud-8.0.9-1.fc21.noarch                              76/116 
+  Verifying  : php-5.6.15-1.fc21.x86_64                                  77/116 
+  Verifying  : php-cli-5.6.15-1.fc21.x86_64                              78/116 
+  Verifying  : php-mbstring-5.6.15-1.fc21.x86_64                         79/116 
+  Verifying  : php-symfony-dependency-injection-2.7.5-1.fc21.noarch      80/116 
+  Verifying  : php-symfony-expression-language-2.7.5-1.fc21.noarch       81/116 
+  Verifying  : php-symfony-http-foundation-2.7.5-1.fc21.noarch           82/116 
+  Verifying  : php-bantu-ini-get-wrapper-1.0.1-1.fc21.noarch             83/116 
+  Verifying  : php-ircmaxell-random-lib-1.1.0-1.fc21.noarch              84/116 
+  Verifying  : libvpx-1.3.0-7.fc21.x86_64                                85/116 
+  Verifying  : php-pear-Auth-SASL-1.0.6-7.fc21.noarch                    86/116 
+  Verifying  : php-doctrine-annotations-1.2.7-1.fc21.noarch              87/116 
+  Verifying  : php-phpseclib-crypt-rijndael-0.3.9-2.fc21.noarch          88/116 
+  Verifying  : php-symfony-filesystem-2.7.5-1.fc21.noarch                89/116 
+  Verifying  : php-doctrine-cache-1.4.2-1.fc21.noarch                    90/116 
+  Verifying  : t1lib-5.1.2-16.fc21.x86_64                                91/116 
+  Verifying  : mailcap-2.1.43-1.fc21.noarch                              92/116 
+  Verifying  : libicu-52.1-6.fc21.x86_64                                 93/116 
+  Verifying  : httpd-tools-2.4.16-1.fc21.x86_64                          94/116 
+  Verifying  : gd-2.1.0-8.fc21.x86_64                                    95/116 
+  Verifying  : apr-util-1.5.4-1.fc21.x86_64                              96/116 
+  Verifying  : php-pecl-zip-1.12.5-1.fc21.x86_64                         97/116 
+  Verifying  : php-ldap-5.6.15-1.fc21.x86_64                             98/116 
+  Verifying  : php-symfony-event-dispatcher-2.7.5-1.fc21.noarch          99/116 
+  Verifying  : php-lessphp-0.5.0-2.fc21.noarch                          100/116 
+  Verifying  : php-pecl-oauth-1.2.3-8.fc21.x86_64                       101/116 
+  Verifying  : php-opencloud-1.12.1-1.fc21.noarch                       102/116 
+  Verifying  : php-sabre-dav-1.8.10-2.fc21.noarch                       103/116 
+  Verifying  : php-pear-Net-SMTP-1.7.1-1.fc21.noarch                    104/116 
+  Verifying  : php-PsrLog-1.0.0-6.fc21.noarch                           105/116 
+  Verifying  : php-pecl-jsonc-1.3.9-1.fc21.x86_64                       106/116 
+  Verifying  : libXau-1.0.8-4.fc21.x86_64                               107/116 
+  Verifying  : php-channel-phpseclib-1.3-2.fc21.noarch                  108/116 
+  Verifying  : php-process-5.6.15-1.fc21.x86_64                         109/116 
+  Verifying  : php-symfony-finder-2.7.5-1.fc21.noarch                   110/116 
+  Verifying  : php-phpseclib-net-ssh2-0.3.9-1.fc21.noarch               111/116 
+  Verifying  : php-intl-5.6.15-1.fc21.x86_64                            112/116 
+  Verifying  : php-phpseclib-crypt-hash-0.3.9-1.fc21.noarch             113/116 
+  Verifying  : php-doctrine-inflector-1.0.1-4.fc21.noarch               114/116 
+  Verifying  : php-ircmaxell-security-lib-1.1.0-1.fc21.noarch           115/116 
+  Verifying  : php-pear-HTTP-Request2-2.2.1-2.fc21.noarch               116/116 
+
+Installed:
+  owncloud.noarch 0:8.0.9-1.fc21          owncloud-httpd.noarch 0:8.0.9-1.fc21  
+  owncloud-sqlite.noarch 0:8.0.9-1.fc21  
+
+Dependency Installed:
+  apr.x86_64 0:1.5.1-3.fc21                                                     
+  apr-util.x86_64 0:1.5.4-1.fc21                                                
+  fedora-logos-httpd.noarch 0:21.0.5-1.fc21                                     
+  fontconfig.x86_64 0:2.11.1-5.fc21                                             
+  fontpackages-filesystem.noarch 0:1.44-10.fc21                                 
+  gd.x86_64 0:2.1.0-8.fc21                                                      
+  httpd.x86_64 0:2.4.16-1.fc21                                                  
+  httpd-filesystem.noarch 0:2.4.16-1.fc21                                       
+  httpd-tools.x86_64 0:2.4.16-1.fc21                                            
+  jbigkit-libs.x86_64 0:2.1-2.fc21                                              
+  libX11.x86_64 0:1.6.2-2.fc21                                                  
+  libX11-common.noarch 0:1.6.2-2.fc21                                           
+  libXau.x86_64 0:1.0.8-4.fc21                                                  
+  libXpm.x86_64 0:3.5.11-3.fc21                                                 
+  libedit.x86_64 0:3.1-12.20150325cvs.fc21                                      
+  libicu.x86_64 0:52.1-6.fc21                                                   
+  libjpeg-turbo.x86_64 0:1.3.1-5.fc21                                           
+  libtiff.x86_64 0:4.0.3-20.fc21                                                
+  libvpx.x86_64 0:1.3.0-7.fc21                                                  
+  libxcb.x86_64 0:1.11-5.fc21                                                   
+  libxslt.x86_64 0:1.1.28-8.fc21                                                
+  libzip.x86_64 0:0.11.2-5.fc21                                                 
+  lyx-fonts.noarch 0:2.1.4-1.fc21                                               
+  mailcap.noarch 0:2.1.43-1.fc21                                                
+  php.x86_64 0:5.6.15-1.fc21                                                    
+  php-Assetic.noarch 0:1.2.1-1.fc21                                             
+  php-PHPMailer.noarch 0:5.2.9-1.fc21                                           
+  php-PsrLog.noarch 0:1.0.0-6.fc21                                              
+  php-aws-sdk.noarch 0:2.8.21-1.fc21                                            
+  php-bantu-ini-get-wrapper.noarch 0:1.0.1-1.fc21                               
+  php-channel-dropbox-php.noarch 0:1.3-5.fc21                                   
+  php-channel-phpseclib.noarch 0:1.3-2.fc21                                     
+  php-channel-sabredav.noarch 0:1.3-6.fc21                                      
+  php-cli.x86_64 0:5.6.15-1.fc21                                                
+  php-common.x86_64 0:5.6.15-1.fc21                                             
+  php-doctrine-annotations.noarch 0:1.2.7-1.fc21                                
+  php-doctrine-cache.noarch 0:1.4.2-1.fc21                                      
+  php-doctrine-collections.noarch 0:1.3.0-2.fc21                                
+  php-doctrine-common.noarch 0:2.5.0-1.fc21                                     
+  php-doctrine-dbal.noarch 0:2.5.1-1.fc21                                       
+  php-doctrine-inflector.noarch 0:1.0.1-4.fc21                                  
+  php-doctrine-lexer.noarch 0:1.0.1-4.fc21                                      
+  php-dropbox-php-Dropbox.noarch 0:1.0.0-6.fc21                                 
+  php-gd.x86_64 0:5.6.15-1.fc21                                                 
+  php-getid3.noarch 1:1.9.8-1.fc21                                              
+  php-google-apiclient.noarch 0:1.1.5-1.fc21                                    
+  php-guzzle-Guzzle.noarch 0:3.9.3-5.fc21                                       
+  php-intl.x86_64 0:5.6.15-1.fc21                                               
+  php-ircmaxell-random-lib.noarch 0:1.1.0-1.fc21                                
+  php-ircmaxell-security-lib.noarch 0:1.1.0-1.fc21                              
+  php-ldap.x86_64 0:5.6.15-1.fc21                                               
+  php-lessphp.noarch 0:0.5.0-2.fc21                                             
+  php-mbstring.x86_64 0:5.6.15-1.fc21                                           
+  php-natxet-cssmin.noarch 0:3.0.3-1.fc21                                       
+  php-opencloud.noarch 0:1.12.1-1.fc21                                          
+  php-pdo.x86_64 0:5.6.15-1.fc21                                                
+  php-pear.noarch 1:1.10.1-1.fc21                                               
+  php-pear-Auth-SASL.noarch 0:1.0.6-7.fc21                                      
+  php-pear-Cache-Lite.noarch 0:1.7.16-2.fc21                                    
+  php-pear-DB.noarch 0:1.8.2-1.fc21                                             
+  php-pear-HTTP-OAuth.noarch 0:0.3.1-2.fc21                                     
+  php-pear-HTTP-Request2.noarch 0:2.2.1-2.fc21                                  
+  php-pear-Log.noarch 0:1.12.8-1.fc21                                           
+  php-pear-MDB2.noarch 0:2.5.0-0.11.b5.fc21                                     
+  php-pear-Mail.noarch 0:1.2.0-10.fc21                                          
+  php-pear-Net-SMTP.noarch 0:1.7.1-1.fc21                                       
+  php-pear-Net-Socket.noarch 0:1.0.14-3.fc21                                    
+  php-pear-Net-URL2.noarch 0:2.1.1-1.fc21                                       
+  php-pecl-jsonc.x86_64 0:1.3.9-1.fc21                                          
+  php-pecl-oauth.x86_64 0:1.2.3-8.fc21                                          
+  php-pecl-zip.x86_64 0:1.12.5-1.fc21                                           
+  php-phpseclib-crypt-aes.noarch 0:0.3.9-1.fc21                                 
+  php-phpseclib-crypt-base.noarch 0:0.3.9-1.fc21                                
+  php-phpseclib-crypt-blowfish.noarch 0:0.3.9-2.fc21                            
+  php-phpseclib-crypt-des.noarch 0:0.3.9-2.fc21                                 
+  php-phpseclib-crypt-hash.noarch 0:0.3.9-1.fc21                                
+  php-phpseclib-crypt-random.noarch 0:0.3.9-1.fc21                              
+  php-phpseclib-crypt-rc4.noarch 0:0.3.9-2.fc21                                 
+  php-phpseclib-crypt-rijndael.noarch 0:0.3.9-2.fc21                            
+  php-phpseclib-crypt-tripledes.noarch 0:0.3.9-2.fc21                           
+  php-phpseclib-crypt-twofish.noarch 0:0.3.9-2.fc21                             
+  php-phpseclib-math-biginteger.noarch 0:0.3.9-1.fc21                           
+  php-phpseclib-net-sftp.noarch 0:0.3.9-1.fc21                                  
+  php-phpseclib-net-ssh2.noarch 0:0.3.9-1.fc21                                  
+  php-pimple-lib.noarch 0:3.0.2-1.fc21                                          
+  php-process.x86_64 0:5.6.15-1.fc21                                            
+  php-sabre-dav.noarch 0:1.8.10-2.fc21                                          
+  php-sabre-vobject.noarch 0:3.2.4-1.fc21                                       
+  php-sabredav-Sabre.noarch 0:1.0.0-13.fc21                                     
+  php-sabredav-Sabre_VObject.noarch 0:2.1.4-2.fc21                              
+  php-scssphp.noarch 0:0.3.2-1.fc21                                             
+  php-symfony-browser-kit.noarch 0:2.7.5-1.fc21                                 
+  php-symfony-class-loader.noarch 0:2.7.5-1.fc21                                
+  php-symfony-common.noarch 0:2.7.5-1.fc21                                      
+  php-symfony-config.noarch 0:2.7.5-1.fc21                                      
+  php-symfony-console.noarch 0:2.7.5-1.fc21                                     
+  php-symfony-css-selector.noarch 0:2.7.5-1.fc21                                
+  php-symfony-debug.noarch 0:2.7.5-1.fc21                                       
+  php-symfony-dependency-injection.noarch 0:2.7.5-1.fc21                        
+  php-symfony-dom-crawler.noarch 0:2.7.5-1.fc21                                 
+  php-symfony-event-dispatcher.noarch 0:2.7.5-1.fc21                            
+  php-symfony-expression-language.noarch 0:2.7.5-1.fc21                         
+  php-symfony-filesystem.noarch 0:2.7.5-1.fc21                                  
+  php-symfony-finder.noarch 0:2.7.5-1.fc21                                      
+  php-symfony-http-foundation.noarch 0:2.7.5-1.fc21                             
+  php-symfony-http-kernel.noarch 0:2.7.5-1.fc21                                 
+  php-symfony-process.noarch 0:2.7.5-1.fc21                                     
+  php-symfony-routing.noarch 0:2.7.5-1.fc21                                     
+  php-symfony-var-dumper.noarch 0:2.7.5-1.fc21                                  
+  php-symfony-yaml.noarch 0:2.7.5-1.fc21                                        
+  php-twig.x86_64 0:1.22.2-1.fc21                                               
+  php-xml.x86_64 0:5.6.15-1.fc21                                                
+  t1lib.x86_64 0:5.1.2-16.fc21                                                  
+
+Complete!
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container 4e1b5aa92a57
+ ---> 460f51f076bb
+Step 5/10 : RUN yum install -y mod_ssl && yum clean all
+ ---> Running in e9b06e159d68
+Resolving Dependencies
+--> Running transaction check
+---> Package mod_ssl.x86_64 1:2.4.16-1.fc21 will be installed
+--> Processing Dependency: openssl for package: 1:mod_ssl-2.4.16-1.fc21.x86_64
+--> Processing Dependency: hostname for package: 1:mod_ssl-2.4.16-1.fc21.x86_64
+--> Running transaction check
+---> Package hostname.x86_64 0:3.15-4.fc21 will be installed
+---> Package openssl.x86_64 1:1.0.1k-12.fc21 will be installed
+--> Processing Dependency: make for package: 1:openssl-1.0.1k-12.fc21.x86_64
+--> Running transaction check
+---> Package make.x86_64 1:4.0-3.fc21 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch           Version                  Repository       Size
+================================================================================
+Installing:
+ mod_ssl          x86_64         1:2.4.16-1.fc21          updates         106 k
+Installing for dependencies:
+ hostname         x86_64         3.15-4.fc21              fedora           28 k
+ make             x86_64         1:4.0-3.fc21             fedora          446 k
+ openssl          x86_64         1:1.0.1k-12.fc21         updates         497 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 1.1 M
+Installed size: 2.2 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              773 kB/s | 1.1 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : hostname-3.15-4.fc21.x86_64                                  1/4 
+  Installing : 1:make-4.0-3.fc21.x86_64                                     2/4 
+  Installing : 1:openssl-1.0.1k-12.fc21.x86_64                              3/4 
+  Installing : 1:mod_ssl-2.4.16-1.fc21.x86_64                               4/4 
+  Verifying  : 1:mod_ssl-2.4.16-1.fc21.x86_64                               1/4 
+  Verifying  : 1:openssl-1.0.1k-12.fc21.x86_64                              2/4 
+  Verifying  : 1:make-4.0-3.fc21.x86_64                                     3/4 
+  Verifying  : hostname-3.15-4.fc21.x86_64                                  4/4 
+
+Installed:
+  mod_ssl.x86_64 1:2.4.16-1.fc21                                                
+
+Dependency Installed:
+  hostname.x86_64 0:3.15-4.fc21              make.x86_64 1:4.0-3.fc21           
+  openssl.x86_64 1:1.0.1k-12.fc21           
+
+Complete!
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container e9b06e159d68
+ ---> f1e9de2d5ec8
+Step 6/10 : ADD ./forcessl.config.php /etc/owncloud/forcessl.config.php
+ADD failed: stat /var/lib/docker/tmp/docker-builder879942226/forcessl.config.php: no such file or directory

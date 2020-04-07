@@ -1,0 +1,496 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM fedora
+latest: Pulling from library/fedora
+5c1b9e8d7bf7: Pulling fs layer
+5c1b9e8d7bf7: Verifying Checksum
+5c1b9e8d7bf7: Download complete
+5c1b9e8d7bf7: Pull complete
+Digest: sha256:c97879f8bebe49744307ea5c77ffc76c7cc97f3ddec72fb9a394bd4e4519b388
+Status: Downloaded newer image for fedora:latest
+ ---> 536f3995adeb
+Step 2/10 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in 487fa7d3ff84
+Removing intermediate container 487fa7d3ff84
+ ---> d0c0f6d4e6f8
+Step 3/10 : RUN yum -y update && yum clean all
+ ---> Running in fc828b87312b
+Fedora Modular 31 - x86_64                      5.6 MB/s | 5.2 MB     00:00    
+Fedora Modular 31 - x86_64 - Updates            3.5 MB/s | 4.0 MB     00:01    
+Fedora 31 - x86_64 - Updates                     16 MB/s |  23 MB     00:01    
+Fedora 31 - x86_64                               19 MB/s |  71 MB     00:03    
+Last metadata expiration check: 0:00:01 ago on Sat Apr  4 01:15:11 2020.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version               Repository   Size
+================================================================================
+Upgrading:
+ coreutils                   x86_64     8.31-9.fc31           updates     1.1 M
+ coreutils-common            x86_64     8.31-9.fc31           updates     1.9 M
+ glib2                       x86_64     2.62.6-1.fc31         updates     2.6 M
+ gnutls                      x86_64     3.6.12-2.fc31         updates     975 k
+ libarchive                  x86_64     3.4.2-1.fc31          updates     384 k
+ libdnf                      x86_64     0.43.1-5.fc31         updates     633 k
+ libgcc                      x86_64     9.3.1-1.fc31          updates     101 k
+ libgomp                     x86_64     9.3.1-1.fc31          updates     237 k
+ libpcap                     x86_64     14:1.9.1-2.fc31       updates     168 k
+ libsss_idmap                x86_64     2.2.3-13.fc31         updates      46 k
+ libsss_nss_idmap            x86_64     2.2.3-13.fc31         updates      53 k
+ libstdc++                   x86_64     9.3.1-1.fc31          updates     633 k
+ libtirpc                    x86_64     1.2.5-1.rc2.fc31      updates      98 k
+ libxcrypt                   x86_64     4.4.15-1.fc31         updates     126 k
+ pcre                        x86_64     8.44-1.fc31           updates     192 k
+ pcre2                       x86_64     10.34-8.fc31          updates     222 k
+ python-setuptools-wheel     noarch     41.6.0-1.fc31         updates     281 k
+ python3-hawkey              x86_64     0.43.1-5.fc31         updates     101 k
+ python3-libdnf              x86_64     0.43.1-5.fc31         updates     702 k
+ shadow-utils                x86_64     2:4.6-17.fc31         updates     1.2 M
+ sssd-client                 x86_64     2.2.3-13.fc31         updates     110 k
+ sudo                        x86_64     1.9.0-0.1.b1.fc31     updates     1.0 M
+ systemd                     x86_64     243.8-1.fc31          updates     3.8 M
+ systemd-libs                x86_64     243.8-1.fc31          updates     523 k
+ systemd-pam                 x86_64     243.8-1.fc31          updates     165 k
+ systemd-rpm-macros          noarch     243.8-1.fc31          updates      20 k
+ vim-minimal                 x86_64     2:8.2.480-1.fc31      updates     647 k
+Installing dependencies:
+ pcre2-syntax                noarch     10.34-8.fc31          updates     140 k
+ trousers-lib                x86_64     0.3.13-13.fc31        fedora      171 k
+ whois-nls                   noarch     5.5.6-1.fc31          updates      34 k
+ xkeyboard-config            noarch     2.28-1.fc31           updates     753 k
+Installing weak dependencies:
+ diffutils                   x86_64     3.7-3.fc31            fedora      401 k
+ libxkbcommon                x86_64     0.9.1-3.fc31          updates     120 k
+ mkpasswd                    x86_64     5.5.6-1.fc31          updates      41 k
+ shared-mime-info            x86_64     1.15-1.fc31           updates     303 k
+ trousers                    x86_64     0.3.13-13.fc31        fedora      150 k
+
+Transaction Summary
+================================================================================
+Install   9 Packages
+Upgrade  27 Packages
+
+Total download size: 20 M
+Downloading Packages:
+(1/36): mkpasswd-5.5.6-1.fc31.x86_64.rpm        205 kB/s |  41 kB     00:00    
+(2/36): pcre2-syntax-10.34-8.fc31.noarch.rpm    559 kB/s | 140 kB     00:00    
+(3/36): libxkbcommon-0.9.1-3.fc31.x86_64.rpm    458 kB/s | 120 kB     00:00    
+(4/36): whois-nls-5.5.6-1.fc31.noarch.rpm       981 kB/s |  34 kB     00:00    
+(5/36): shared-mime-info-1.15-1.fc31.x86_64.rpm 2.2 MB/s | 303 kB     00:00    
+(6/36): xkeyboard-config-2.28-1.fc31.noarch.rpm 6.5 MB/s | 753 kB     00:00    
+(7/36): trousers-lib-0.3.13-13.fc31.x86_64.rpm  689 kB/s | 171 kB     00:00    
+(8/36): trousers-0.3.13-13.fc31.x86_64.rpm      520 kB/s | 150 kB     00:00    
+(9/36): diffutils-3.7-3.fc31.x86_64.rpm         833 kB/s | 401 kB     00:00    
+(10/36): coreutils-8.31-9.fc31.x86_64.rpm       7.6 MB/s | 1.1 MB     00:00    
+(11/36): gnutls-3.6.12-2.fc31.x86_64.rpm         21 MB/s | 975 kB     00:00    
+(12/36): coreutils-common-8.31-9.fc31.x86_64.rp 8.9 MB/s | 1.9 MB     00:00    
+(13/36): libarchive-3.4.2-1.fc31.x86_64.rpm     9.3 MB/s | 384 kB     00:00    
+(14/36): libdnf-0.43.1-5.fc31.x86_64.rpm         15 MB/s | 633 kB     00:00    
+(15/36): libgcc-9.3.1-1.fc31.x86_64.rpm         2.7 MB/s | 101 kB     00:00    
+(16/36): libgomp-9.3.1-1.fc31.x86_64.rpm        6.2 MB/s | 237 kB     00:00    
+(17/36): libpcap-1.9.1-2.fc31.x86_64.rpm        4.5 MB/s | 168 kB     00:00    
+(18/36): libsss_idmap-2.2.3-13.fc31.x86_64.rpm  1.3 MB/s |  46 kB     00:00    
+(19/36): libsss_nss_idmap-2.2.3-13.fc31.x86_64. 1.5 MB/s |  53 kB     00:00    
+(20/36): libstdc++-9.3.1-1.fc31.x86_64.rpm       14 MB/s | 633 kB     00:00    
+(21/36): glib2-2.62.6-1.fc31.x86_64.rpm          10 MB/s | 2.6 MB     00:00    
+(22/36): libtirpc-1.2.5-1.rc2.fc31.x86_64.rpm   2.1 MB/s |  98 kB     00:00    
+(23/36): libxcrypt-4.4.15-1.fc31.x86_64.rpm     3.4 MB/s | 126 kB     00:00    
+(24/36): pcre-8.44-1.fc31.x86_64.rpm            5.2 MB/s | 192 kB     00:00    
+(25/36): pcre2-10.34-8.fc31.x86_64.rpm          5.7 MB/s | 222 kB     00:00    
+(26/36): python-setuptools-wheel-41.6.0-1.fc31. 7.4 MB/s | 281 kB     00:00    
+(27/36): python3-hawkey-0.43.1-5.fc31.x86_64.rp 2.8 MB/s | 101 kB     00:00    
+(28/36): python3-libdnf-0.43.1-5.fc31.x86_64.rp  16 MB/s | 702 kB     00:00    
+(29/36): sssd-client-2.2.3-13.fc31.x86_64.rpm   3.1 MB/s | 110 kB     00:00    
+(30/36): sudo-1.9.0-0.1.b1.fc31.x86_64.rpm       22 MB/s | 1.0 MB     00:00    
+(31/36): shadow-utils-4.6-17.fc31.x86_64.rpm     16 MB/s | 1.2 MB     00:00    
+(32/36): systemd-libs-243.8-1.fc31.x86_64.rpm    13 MB/s | 523 kB     00:00    
+(33/36): systemd-pam-243.8-1.fc31.x86_64.rpm    4.3 MB/s | 165 kB     00:00    
+(34/36): systemd-rpm-macros-243.8-1.fc31.noarch 588 kB/s |  20 kB     00:00    
+(35/36): vim-minimal-8.2.480-1.fc31.x86_64.rpm   16 MB/s | 647 kB     00:00    
+(36/36): systemd-243.8-1.fc31.x86_64.rpm         30 MB/s | 3.8 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            12 MB/s |  20 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                             1/1 
+  Upgrading        : libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Upgrading        : libstdc++-9.3.1-1.fc31.x86_64                         2/63 
+  Upgrading        : vim-minimal-2:8.2.480-1.fc31.x86_64                   3/63 
+  Upgrading        : systemd-rpm-macros-243.8-1.fc31.noarch                4/63 
+  Upgrading        : pcre-8.44-1.fc31.x86_64                               5/63 
+  Upgrading        : glib2-2.62.6-1.fc31.x86_64                            6/63 
+  Installing       : shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Running scriptlet: shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Upgrading        : libdnf-0.43.1-5.fc31.x86_64                           8/63 
+  Upgrading        : python3-libdnf-0.43.1-5.fc31.x86_64                   9/63 
+  Upgrading        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                10/63 
+  Upgrading        : libsss_idmap-2.2.3-13.fc31.x86_64                    11/63 
+  Upgrading        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Upgrading        : coreutils-8.31-9.fc31.x86_64                         13/63 
+  Upgrading        : systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Running scriptlet: systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Installing       : trousers-lib-0.3.13-13.fc31.x86_64                   15/63 
+  Installing       : diffutils-3.7-3.fc31.x86_64                          16/63 
+  Installing       : xkeyboard-config-2.28-1.fc31.noarch                  17/63 
+  Installing       : libxkbcommon-0.9.1-3.fc31.x86_64                     18/63 
+  Installing       : whois-nls-5.5.6-1.fc31.noarch                        19/63 
+  Upgrading        : libxcrypt-4.4.15-1.fc31.x86_64                       20/63 
+  Installing       : mkpasswd-5.5.6-1.fc31.x86_64                         21/63 
+  Upgrading        : shadow-utils-2:4.6-17.fc31.x86_64                    22/63 
+  Installing       : pcre2-syntax-10.34-8.fc31.noarch                     23/63 
+  Upgrading        : pcre2-10.34-8.fc31.x86_64                            24/63 
+  Upgrading        : gnutls-3.6.12-2.fc31.x86_64                          25/63 
+  Upgrading        : systemd-pam-243.8-1.fc31.x86_64                      26/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Upgrading        : systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Installing       : trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Upgrading        : sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Running scriptlet: sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Upgrading        : sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Running scriptlet: sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Upgrading        : python3-hawkey-0.43.1-5.fc31.x86_64                  31/63 
+  Upgrading        : python-setuptools-wheel-41.6.0-1.fc31.noarch         32/63 
+  Upgrading        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     33/63 
+  Upgrading        : libpcap-14:1.9.1-2.fc31.x86_64                       34/63 
+  Upgrading        : libgomp-9.3.1-1.fc31.x86_64                          35/63 
+  Upgrading        : libarchive-3.4.2-1.fc31.x86_64                       36/63 
+  Cleanup          : python-setuptools-wheel-41.2.0-1.fc31.noarch         37/63 
+  Running scriptlet: systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : python3-hawkey-0.43.1-2.fc31.x86_64                  39/63 
+  Cleanup          : python3-libdnf-0.43.1-2.fc31.x86_64                  40/63 
+  Cleanup          : libdnf-0.43.1-2.fc31.x86_64                          41/63 
+  Cleanup          : libstdc++-9.2.1-1.fc31.x86_64                        42/63 
+  Running scriptlet: sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : systemd-libs-243.7-1.fc31.x86_64                     44/63 
+  Cleanup          : systemd-pam-243.7-1.fc31.x86_64                      45/63 
+  Cleanup          : shadow-utils-2:4.6-16.fc31.x86_64                    46/63 
+  Cleanup          : sudo-1.8.29-1.fc31.x86_64                            47/63 
+  Cleanup          : systemd-rpm-macros-243.7-1.fc31.noarch               48/63 
+  Cleanup          : coreutils-8.31-6.fc31.x86_64                         49/63 
+  Cleanup          : glib2-2.62.4-2.fc31.x86_64                           50/63 
+  Cleanup          : coreutils-common-8.31-6.fc31.x86_64                  51/63 
+  Cleanup          : pcre-8.43-2.fc31.1.x86_64                            52/63 
+  Cleanup          : vim-minimal-2:8.2.236-1.fc31.x86_64                  53/63 
+  Cleanup          : libxcrypt-4.4.12-1.fc31.x86_64                       54/63 
+  Cleanup          : libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Running scriptlet: libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Cleanup          : libsss_idmap-2.2.2-3.fc31.x86_64                     56/63 
+  Cleanup          : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 57/63 
+  Cleanup          : gnutls-3.6.11-1.fc31.x86_64                          58/63 
+  Cleanup          : pcre2-10.34-5.fc31.x86_64                            59/63 
+  Cleanup          : libtirpc-1.2.5-0.fc31.x86_64                         60/63 
+  Cleanup          : libpcap-14:1.9.1-1.fc31.x86_64                       61/63 
+  Cleanup          : libgomp-9.2.1-1.fc31.x86_64                          62/63 
+  Cleanup          : libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Running scriptlet: libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Verifying        : libxkbcommon-0.9.1-3.fc31.x86_64                      1/63 
+  Verifying        : mkpasswd-5.5.6-1.fc31.x86_64                          2/63 
+  Verifying        : pcre2-syntax-10.34-8.fc31.noarch                      3/63 
+  Verifying        : shared-mime-info-1.15-1.fc31.x86_64                   4/63 
+  Verifying        : whois-nls-5.5.6-1.fc31.noarch                         5/63 
+  Verifying        : xkeyboard-config-2.28-1.fc31.noarch                   6/63 
+  Verifying        : diffutils-3.7-3.fc31.x86_64                           7/63 
+  Verifying        : trousers-0.3.13-13.fc31.x86_64                        8/63 
+  Verifying        : trousers-lib-0.3.13-13.fc31.x86_64                    9/63 
+  Verifying        : coreutils-8.31-9.fc31.x86_64                         10/63 
+  Verifying        : coreutils-8.31-6.fc31.x86_64                         11/63 
+  Verifying        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Verifying        : coreutils-common-8.31-6.fc31.x86_64                  13/63 
+  Verifying        : glib2-2.62.6-1.fc31.x86_64                           14/63 
+  Verifying        : glib2-2.62.4-2.fc31.x86_64                           15/63 
+  Verifying        : gnutls-3.6.12-2.fc31.x86_64                          16/63 
+  Verifying        : gnutls-3.6.11-1.fc31.x86_64                          17/63 
+  Verifying        : libarchive-3.4.2-1.fc31.x86_64                       18/63 
+  Verifying        : libarchive-3.4.0-1.fc31.x86_64                       19/63 
+  Verifying        : libdnf-0.43.1-5.fc31.x86_64                          20/63 
+  Verifying        : libdnf-0.43.1-2.fc31.x86_64                          21/63 
+  Verifying        : libgcc-9.3.1-1.fc31.x86_64                           22/63 
+  Verifying        : libgcc-9.2.1-1.fc31.x86_64                           23/63 
+  Verifying        : libgomp-9.3.1-1.fc31.x86_64                          24/63 
+  Verifying        : libgomp-9.2.1-1.fc31.x86_64                          25/63 
+  Verifying        : libpcap-14:1.9.1-2.fc31.x86_64                       26/63 
+  Verifying        : libpcap-14:1.9.1-1.fc31.x86_64                       27/63 
+  Verifying        : libsss_idmap-2.2.3-13.fc31.x86_64                    28/63 
+  Verifying        : libsss_idmap-2.2.2-3.fc31.x86_64                     29/63 
+  Verifying        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                30/63 
+  Verifying        : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 31/63 
+  Verifying        : libstdc++-9.3.1-1.fc31.x86_64                        32/63 
+  Verifying        : libstdc++-9.2.1-1.fc31.x86_64                        33/63 
+  Verifying        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     34/63 
+  Verifying        : libtirpc-1.2.5-0.fc31.x86_64                         35/63 
+  Verifying        : libxcrypt-4.4.15-1.fc31.x86_64                       36/63 
+  Verifying        : libxcrypt-4.4.12-1.fc31.x86_64                       37/63 
+  Verifying        : pcre-8.44-1.fc31.x86_64                              38/63 
+  Verifying        : pcre-8.43-2.fc31.1.x86_64                            39/63 
+  Verifying        : pcre2-10.34-8.fc31.x86_64                            40/63 
+  Verifying        : pcre2-10.34-5.fc31.x86_64                            41/63 
+  Verifying        : python-setuptools-wheel-41.6.0-1.fc31.noarch         42/63 
+  Verifying        : python-setuptools-wheel-41.2.0-1.fc31.noarch         43/63 
+  Verifying        : python3-hawkey-0.43.1-5.fc31.x86_64                  44/63 
+  Verifying        : python3-hawkey-0.43.1-2.fc31.x86_64                  45/63 
+  Verifying        : python3-libdnf-0.43.1-5.fc31.x86_64                  46/63 
+  Verifying        : python3-libdnf-0.43.1-2.fc31.x86_64                  47/63 
+  Verifying        : shadow-utils-2:4.6-17.fc31.x86_64                    48/63 
+  Verifying        : shadow-utils-2:4.6-16.fc31.x86_64                    49/63 
+  Verifying        : sssd-client-2.2.3-13.fc31.x86_64                     50/63 
+  Verifying        : sssd-client-2.2.2-3.fc31.x86_64                      51/63 
+  Verifying        : sudo-1.9.0-0.1.b1.fc31.x86_64                        52/63 
+  Verifying        : sudo-1.8.29-1.fc31.x86_64                            53/63 
+  Verifying        : systemd-243.8-1.fc31.x86_64                          54/63 
+  Verifying        : systemd-243.7-1.fc31.x86_64                          55/63 
+  Verifying        : systemd-libs-243.8-1.fc31.x86_64                     56/63 
+  Verifying        : systemd-libs-243.7-1.fc31.x86_64                     57/63 
+  Verifying        : systemd-pam-243.8-1.fc31.x86_64                      58/63 
+  Verifying        : systemd-pam-243.7-1.fc31.x86_64                      59/63 
+  Verifying        : systemd-rpm-macros-243.8-1.fc31.noarch               60/63 
+  Verifying        : systemd-rpm-macros-243.7-1.fc31.noarch               61/63 
+  Verifying        : vim-minimal-2:8.2.480-1.fc31.x86_64                  62/63 
+  Verifying        : vim-minimal-2:8.2.236-1.fc31.x86_64                  63/63 
+
+Upgraded:
+  coreutils-8.31-9.fc31.x86_64                                                  
+  coreutils-common-8.31-9.fc31.x86_64                                           
+  glib2-2.62.6-1.fc31.x86_64                                                    
+  gnutls-3.6.12-2.fc31.x86_64                                                   
+  libarchive-3.4.2-1.fc31.x86_64                                                
+  libdnf-0.43.1-5.fc31.x86_64                                                   
+  libgcc-9.3.1-1.fc31.x86_64                                                    
+  libgomp-9.3.1-1.fc31.x86_64                                                   
+  libpcap-14:1.9.1-2.fc31.x86_64                                                
+  libsss_idmap-2.2.3-13.fc31.x86_64                                             
+  libsss_nss_idmap-2.2.3-13.fc31.x86_64                                         
+  libstdc++-9.3.1-1.fc31.x86_64                                                 
+  libtirpc-1.2.5-1.rc2.fc31.x86_64                                              
+  libxcrypt-4.4.15-1.fc31.x86_64                                                
+  pcre-8.44-1.fc31.x86_64                                                       
+  pcre2-10.34-8.fc31.x86_64                                                     
+  python-setuptools-wheel-41.6.0-1.fc31.noarch                                  
+  python3-hawkey-0.43.1-5.fc31.x86_64                                           
+  python3-libdnf-0.43.1-5.fc31.x86_64                                           
+  shadow-utils-2:4.6-17.fc31.x86_64                                             
+  sssd-client-2.2.3-13.fc31.x86_64                                              
+  sudo-1.9.0-0.1.b1.fc31.x86_64                                                 
+  systemd-243.8-1.fc31.x86_64                                                   
+  systemd-libs-243.8-1.fc31.x86_64                                              
+  systemd-pam-243.8-1.fc31.x86_64                                               
+  systemd-rpm-macros-243.8-1.fc31.noarch                                        
+  vim-minimal-2:8.2.480-1.fc31.x86_64                                           
+
+Installed:
+  diffutils-3.7-3.fc31.x86_64              libxkbcommon-0.9.1-3.fc31.x86_64     
+  mkpasswd-5.5.6-1.fc31.x86_64             pcre2-syntax-10.34-8.fc31.noarch     
+  shared-mime-info-1.15-1.fc31.x86_64      trousers-0.3.13-13.fc31.x86_64       
+  trousers-lib-0.3.13-13.fc31.x86_64       whois-nls-5.5.6-1.fc31.noarch        
+  xkeyboard-config-2.28-1.fc31.noarch     
+
+Complete!
+33 files removed
+Removing intermediate container fc828b87312b
+ ---> 778433078dc1
+Step 4/10 : RUN yum -y install pwgen wget logrotate rabbitmq-server && yum clean all
+ ---> Running in 3b5beceac85c
+Fedora Modular 31 - x86_64                      5.5 MB/s | 5.2 MB     00:00    
+Fedora Modular 31 - x86_64 - Updates            5.0 MB/s | 4.0 MB     00:00    
+Fedora 31 - x86_64 - Updates                    2.8 MB/s |  23 MB     00:08    
+Fedora 31 - x86_64                               18 MB/s |  71 MB     00:04    
+Last metadata expiration check: 0:00:01 ago on Sat Apr  4 01:16:15 2020.
+Dependencies resolved.
+================================================================================
+ Package                   Arch        Version               Repository    Size
+================================================================================
+Installing:
+ logrotate                 x86_64      3.15.1-1.fc31         fedora        73 k
+ pwgen                     x86_64      2.08-3.fc31           fedora        30 k
+ rabbitmq-server           x86_64      3.7.23-2.fc31         updates      9.5 M
+ wget                      x86_64      1.20.3-2.fc31         fedora       795 k
+Installing dependencies:
+ emacs-filesystem          noarch      1:26.3-1.fc31         updates      8.5 k
+ erlang-asn1               x86_64      22.2.8-1.fc31         updates      744 k
+ erlang-compiler           x86_64      22.2.8-1.fc31         updates      1.4 M
+ erlang-crypto             x86_64      22.2.8-1.fc31         updates      170 k
+ erlang-eldap              x86_64      22.2.8-1.fc31         updates      115 k
+ erlang-erts               x86_64      22.2.8-1.fc31         updates      2.3 M
+ erlang-hipe               x86_64      22.2.8-1.fc31         updates      2.7 M
+ erlang-inets              x86_64      22.2.8-1.fc31         updates      639 k
+ erlang-kernel             x86_64      22.2.8-1.fc31         updates      1.4 M
+ erlang-mnesia             x86_64      22.2.8-1.fc31         updates      767 k
+ erlang-os_mon             x86_64      22.2.8-1.fc31         updates      102 k
+ erlang-public_key         x86_64      22.2.8-1.fc31         updates      637 k
+ erlang-runtime_tools      x86_64      22.2.8-1.fc31         updates      217 k
+ erlang-sasl               x86_64      22.2.8-1.fc31         updates      280 k
+ erlang-sd_notify          x86_64      1.0-14.fc31.1         updates       15 k
+ erlang-snmp               x86_64      22.2.8-1.fc31         updates      1.7 M
+ erlang-ssl                x86_64      22.2.8-1.fc31         updates      1.1 M
+ erlang-stdlib             x86_64      22.2.8-1.fc31         updates      3.1 M
+ erlang-syntax_tools       x86_64      22.2.8-1.fc31         updates      416 k
+ erlang-tools              x86_64      22.2.8-1.fc31         updates      619 k
+ erlang-xmerl              x86_64      22.2.8-1.fc31         updates      1.2 M
+ lksctp-tools              x86_64      1.0.18-3.fc31         updates       95 k
+
+Transaction Summary
+================================================================================
+Install  26 Packages
+
+Total download size: 30 M
+Installed size: 48 M
+Downloading Packages:
+(1/26): emacs-filesystem-26.3-1.fc31.noarch.rpm  79 kB/s | 8.5 kB     00:00    
+(2/26): erlang-crypto-22.2.8-1.fc31.x86_64.rpm  527 kB/s | 170 kB     00:00    
+(3/26): erlang-eldap-22.2.8-1.fc31.x86_64.rpm   715 kB/s | 115 kB     00:00    
+(4/26): erlang-asn1-22.2.8-1.fc31.x86_64.rpm    702 kB/s | 744 kB     00:01    
+(5/26): erlang-compiler-22.2.8-1.fc31.x86_64.rp 999 kB/s | 1.4 MB     00:01    
+(6/26): erlang-inets-22.2.8-1.fc31.x86_64.rpm   1.3 MB/s | 639 kB     00:00    
+(7/26): erlang-erts-22.2.8-1.fc31.x86_64.rpm    1.3 MB/s | 2.3 MB     00:01    
+(8/26): erlang-mnesia-22.2.8-1.fc31.x86_64.rpm  1.6 MB/s | 767 kB     00:00    
+(9/26): erlang-kernel-22.2.8-1.fc31.x86_64.rpm  1.6 MB/s | 1.4 MB     00:00    
+(10/26): erlang-os_mon-22.2.8-1.fc31.x86_64.rpm 1.0 MB/s | 102 kB     00:00    
+(11/26): erlang-runtime_tools-22.2.8-1.fc31.x86 1.5 MB/s | 217 kB     00:00    
+(12/26): erlang-hipe-22.2.8-1.fc31.x86_64.rpm   1.3 MB/s | 2.7 MB     00:02    
+(13/26): erlang-sasl-22.2.8-1.fc31.x86_64.rpm   1.4 MB/s | 280 kB     00:00    
+(14/26): erlang-public_key-22.2.8-1.fc31.x86_64 1.5 MB/s | 637 kB     00:00    
+(15/26): erlang-sd_notify-1.0-14.fc31.1.x86_64. 185 kB/s |  15 kB     00:00    
+(16/26): erlang-ssl-22.2.8-1.fc31.x86_64.rpm    1.8 MB/s | 1.1 MB     00:00    
+(17/26): erlang-syntax_tools-22.2.8-1.fc31.x86_ 1.9 MB/s | 416 kB     00:00    
+(18/26): erlang-snmp-22.2.8-1.fc31.x86_64.rpm   1.7 MB/s | 1.7 MB     00:00    
+(19/26): erlang-tools-22.2.8-1.fc31.x86_64.rpm  1.7 MB/s | 619 kB     00:00    
+(20/26): lksctp-tools-1.0.18-3.fc31.x86_64.rpm  1.1 MB/s |  95 kB     00:00    
+(21/26): erlang-stdlib-22.2.8-1.fc31.x86_64.rpm 2.0 MB/s | 3.1 MB     00:01    
+(22/26): erlang-xmerl-22.2.8-1.fc31.x86_64.rpm  1.8 MB/s | 1.2 MB     00:00    
+(23/26): pwgen-2.08-3.fc31.x86_64.rpm           323 kB/s |  30 kB     00:00    
+(24/26): logrotate-3.15.1-1.fc31.x86_64.rpm     575 kB/s |  73 kB     00:00    
+(25/26): wget-1.20.3-2.fc31.x86_64.rpm          4.9 MB/s | 795 kB     00:00    
+(26/26): rabbitmq-server-3.7.23-2.fc31.x86_64.r 2.5 MB/s | 9.5 MB     00:03    
+--------------------------------------------------------------------------------
+Total                                           3.4 MB/s |  30 MB     00:08     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: logrotate-3.15.1-1.fc31.x86_64                        1/26 
+  Installing       : logrotate-3.15.1-1.fc31.x86_64                        1/26 
+  Running scriptlet: logrotate-3.15.1-1.fc31.x86_64                        1/26 
+  Installing       : lksctp-tools-1.0.18-3.fc31.x86_64                     2/26 
+  Running scriptlet: lksctp-tools-1.0.18-3.fc31.x86_64                     2/26 
+  Installing       : erlang-crypto-22.2.8-1.fc31.x86_64                    3/26 
+  Running scriptlet: erlang-erts-22.2.8-1.fc31.x86_64                      4/26 
+  Installing       : erlang-erts-22.2.8-1.fc31.x86_64                      4/26 
+  Installing       : erlang-kernel-22.2.8-1.fc31.x86_64                    5/26 
+  Installing       : erlang-stdlib-22.2.8-1.fc31.x86_64                    6/26 
+  Installing       : erlang-hipe-22.2.8-1.fc31.x86_64                      7/26 
+  Installing       : erlang-compiler-22.2.8-1.fc31.x86_64                  8/26 
+  Installing       : erlang-syntax_tools-22.2.8-1.fc31.x86_64              9/26 
+  Installing       : erlang-mnesia-22.2.8-1.fc31.x86_64                   10/26 
+  Installing       : erlang-runtime_tools-22.2.8-1.fc31.x86_64            11/26 
+  Installing       : erlang-asn1-22.2.8-1.fc31.x86_64                     12/26 
+  Installing       : erlang-public_key-22.2.8-1.fc31.x86_64               13/26 
+  Installing       : erlang-inets-22.2.8-1.fc31.x86_64                    14/26 
+  Installing       : erlang-ssl-22.2.8-1.fc31.x86_64                      15/26 
+  Installing       : erlang-eldap-22.2.8-1.fc31.x86_64                    16/26 
+  Installing       : erlang-snmp-22.2.8-1.fc31.x86_64                     17/26 
+  Installing       : erlang-sd_notify-1.0-14.fc31.1.x86_64                18/26 
+  Installing       : erlang-xmerl-22.2.8-1.fc31.x86_64                    19/26 
+  Installing       : emacs-filesystem-1:26.3-1.fc31.noarch                20/26 
+  Installing       : erlang-tools-22.2.8-1.fc31.x86_64                    21/26 
+  Installing       : erlang-sasl-22.2.8-1.fc31.x86_64                     22/26 
+  Installing       : erlang-os_mon-22.2.8-1.fc31.x86_64                   23/26 
+  Running scriptlet: rabbitmq-server-3.7.23-2.fc31.x86_64                 24/26 
+  Installing       : rabbitmq-server-3.7.23-2.fc31.x86_64                 24/26 
+  Running scriptlet: rabbitmq-server-3.7.23-2.fc31.x86_64                 24/26 
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+warning: %post(rabbitmq-server-3.7.23-2.fc31.x86_64) scriptlet failed, exit status 1
+
+[91mError in POSTIN scriptlet in rpm package rabbitmq-server
+[0m  Installing       : wget-1.20.3-2.fc31.x86_64                            25/26 
+  Installing       : pwgen-2.08-3.fc31.x86_64                             26/26 
+  Running scriptlet: pwgen-2.08-3.fc31.x86_64                             26/26 
+  Verifying        : emacs-filesystem-1:26.3-1.fc31.noarch                 1/26 
+  Verifying        : erlang-asn1-22.2.8-1.fc31.x86_64                      2/26 
+  Verifying        : erlang-compiler-22.2.8-1.fc31.x86_64                  3/26 
+  Verifying        : erlang-crypto-22.2.8-1.fc31.x86_64                    4/26 
+  Verifying        : erlang-eldap-22.2.8-1.fc31.x86_64                     5/26 
+  Verifying        : erlang-erts-22.2.8-1.fc31.x86_64                      6/26 
+  Verifying        : erlang-hipe-22.2.8-1.fc31.x86_64                      7/26 
+  Verifying        : erlang-inets-22.2.8-1.fc31.x86_64                     8/26 
+  Verifying        : erlang-kernel-22.2.8-1.fc31.x86_64                    9/26 
+  Verifying        : erlang-mnesia-22.2.8-1.fc31.x86_64                   10/26 
+  Verifying        : erlang-os_mon-22.2.8-1.fc31.x86_64                   11/26 
+  Verifying        : erlang-public_key-22.2.8-1.fc31.x86_64               12/26 
+  Verifying        : erlang-runtime_tools-22.2.8-1.fc31.x86_64            13/26 
+  Verifying        : erlang-sasl-22.2.8-1.fc31.x86_64                     14/26 
+  Verifying        : erlang-sd_notify-1.0-14.fc31.1.x86_64                15/26 
+  Verifying        : erlang-snmp-22.2.8-1.fc31.x86_64                     16/26 
+  Verifying        : erlang-ssl-22.2.8-1.fc31.x86_64                      17/26 
+  Verifying        : erlang-stdlib-22.2.8-1.fc31.x86_64                   18/26 
+  Verifying        : erlang-syntax_tools-22.2.8-1.fc31.x86_64             19/26 
+  Verifying        : erlang-tools-22.2.8-1.fc31.x86_64                    20/26 
+  Verifying        : erlang-xmerl-22.2.8-1.fc31.x86_64                    21/26 
+  Verifying        : lksctp-tools-1.0.18-3.fc31.x86_64                    22/26 
+  Verifying        : rabbitmq-server-3.7.23-2.fc31.x86_64                 23/26 
+  Verifying        : logrotate-3.15.1-1.fc31.x86_64                       24/26 
+  Verifying        : pwgen-2.08-3.fc31.x86_64                             25/26 
+  Verifying        : wget-1.20.3-2.fc31.x86_64                            26/26 
+
+Installed:
+  emacs-filesystem-1:26.3-1.fc31.noarch                                         
+  erlang-asn1-22.2.8-1.fc31.x86_64                                              
+  erlang-compiler-22.2.8-1.fc31.x86_64                                          
+  erlang-crypto-22.2.8-1.fc31.x86_64                                            
+  erlang-eldap-22.2.8-1.fc31.x86_64                                             
+  erlang-erts-22.2.8-1.fc31.x86_64                                              
+  erlang-hipe-22.2.8-1.fc31.x86_64                                              
+  erlang-inets-22.2.8-1.fc31.x86_64                                             
+  erlang-kernel-22.2.8-1.fc31.x86_64                                            
+  erlang-mnesia-22.2.8-1.fc31.x86_64                                            
+  erlang-os_mon-22.2.8-1.fc31.x86_64                                            
+  erlang-public_key-22.2.8-1.fc31.x86_64                                        
+  erlang-runtime_tools-22.2.8-1.fc31.x86_64                                     
+  erlang-sasl-22.2.8-1.fc31.x86_64                                              
+  erlang-sd_notify-1.0-14.fc31.1.x86_64                                         
+  erlang-snmp-22.2.8-1.fc31.x86_64                                              
+  erlang-ssl-22.2.8-1.fc31.x86_64                                               
+  erlang-stdlib-22.2.8-1.fc31.x86_64                                            
+  erlang-syntax_tools-22.2.8-1.fc31.x86_64                                      
+  erlang-tools-22.2.8-1.fc31.x86_64                                             
+  erlang-xmerl-22.2.8-1.fc31.x86_64                                             
+  lksctp-tools-1.0.18-3.fc31.x86_64                                             
+  logrotate-3.15.1-1.fc31.x86_64                                                
+  pwgen-2.08-3.fc31.x86_64                                                      
+  rabbitmq-server-3.7.23-2.fc31.x86_64                                          
+  wget-1.20.3-2.fc31.x86_64                                                     
+
+Complete!
+33 files removed
+Removing intermediate container 3b5beceac85c
+ ---> d1f998eab691
+Step 5/10 : RUN /usr/lib/rabbitmq/bin/rabbitmq-plugins enable rabbitmq_management
+ ---> Running in 0cbd34d04cfb
+[91mwarning: the VM is running with native name encoding of latin1 which may cause Elixir to malfunction as it expects utf8. Please ensure your locale is set to UTF-8 (which can be verified by running "locale" in your shell)
+[0mEnabling plugins on node rabbit@0cbd34d04cfb:
+rabbitmq_management
+The following plugins have been configured:
+  rabbitmq_management
+  rabbitmq_management_agent
+  rabbitmq_web_dispatch
+Applying plugin configuration to rabbit@0cbd34d04cfb...
+The following plugins have been enabled:
+  rabbitmq_management
+  rabbitmq_management_agent
+  rabbitmq_web_dispatch
+
+set 3 plugins.
+Offline change; changes will take effect at broker restart.
+Removing intermediate container 0cbd34d04cfb
+ ---> c1fb8ced4006
+Step 6/10 : ADD run-rabbitmq-server.sh /run-rabbitmq-server.sh
+ADD failed: stat /var/lib/docker/tmp/docker-builder275658820/run-rabbitmq-server.sh: no such file or directory
