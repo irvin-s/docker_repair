@@ -1,0 +1,73 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM alpine:3.7
+3.7: Pulling from library/alpine
+5d20c808ce19: Pulling fs layer
+5d20c808ce19: Verifying Checksum
+5d20c808ce19: Download complete
+5d20c808ce19: Pull complete
+Digest: sha256:8421d9a84432575381bfabd248f1eb56f3aa21d9d7cd2511583c68c9b7511d10
+Status: Downloaded newer image for alpine:3.7
+ ---> 6d1ef012b567
+Step 2/8 : MAINTAINER Josh VanderLinden <codekoala@gmail.com>
+ ---> Running in b25f1dabe6a6
+Removing intermediate container b25f1dabe6a6
+ ---> ac29e624ded7
+Step 3/8 : RUN apk update &&     apk add py-pip &&     pip install --upgrade pip &&     mkdir -p /srv/pypi
+ ---> Running in b9e6bc55e0f2
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/community/x86_64/APKINDEX.tar.gz
+v3.7.3-180-g5372bc29f3 [http://dl-cdn.alpinelinux.org/alpine/v3.7/main]
+v3.7.3-165-g0f7ecd696d [http://dl-cdn.alpinelinux.org/alpine/v3.7/community]
+OK: 9054 distinct packages available
+(1/12) Installing libbz2 (1.0.6-r7)
+(2/12) Installing expat (2.2.8-r0)
+(3/12) Installing libffi (3.2.1-r4)
+(4/12) Installing gdbm (1.13-r1)
+(5/12) Installing ncurses-terminfo-base (6.0_p20171125-r1)
+(6/12) Installing ncurses-terminfo (6.0_p20171125-r1)
+(7/12) Installing ncurses-libs (6.0_p20171125-r1)
+(8/12) Installing readline (7.0.003-r0)
+(9/12) Installing sqlite-libs (3.25.3-r2)
+(10/12) Installing python2 (2.7.15-r3)
+(11/12) Installing py-setuptools (33.1.1-r1)
+(12/12) Installing py2-pip (9.0.1-r1)
+Executing busybox-1.27.2-r11.trigger
+OK: 62 MiB in 25 packages
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl (1.4MB)
+Installing collected packages: pip
+  Found existing installation: pip 9.0.1
+    Uninstalling pip-9.0.1:
+      Successfully uninstalled pip-9.0.1
+Successfully installed pip-20.0.2
+Removing intermediate container b9e6bc55e0f2
+ ---> 85a583de16dd
+Step 4/8 : RUN pip install -U passlib pypiserver[cache]==1.2.1
+ ---> Running in 3496f349d1c2
+[91mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+[0mCollecting passlib
+  Downloading passlib-1.7.2-py2.py3-none-any.whl (507 kB)
+Collecting pypiserver[cache]==1.2.1
+  Downloading pypiserver-1.2.1-py2.py3-none-any.whl (83 kB)
+Collecting watchdog; extra == "cache"
+  Downloading watchdog-0.10.2.tar.gz (95 kB)
+Collecting pathtools>=0.1.1
+  Downloading pathtools-0.1.2.tar.gz (11 kB)
+Installing collected packages: passlib, pathtools, watchdog, pypiserver
+    Running setup.py install for pathtools: started
+    Running setup.py install for pathtools: finished with status 'done'
+    Running setup.py install for watchdog: started
+    Running setup.py install for watchdog: finished with status 'done'
+Successfully installed passlib-1.7.2 pathtools-0.1.2 pypiserver-1.2.1 watchdog-0.10.2
+Removing intermediate container 3496f349d1c2
+ ---> e28de7bf679e
+Step 5/8 : EXPOSE 80
+ ---> Running in 346bd2915ebc
+Removing intermediate container 346bd2915ebc
+ ---> 5f89f20393cb
+Step 6/8 : VOLUME ["/srv/pypi"]
+ ---> Running in 15d27d445b7e
+Removing intermediate container 15d27d445b7e
+ ---> ad22e6f963d8
+Step 7/8 : ADD entrypoint.sh /
+ADD failed: stat /var/lib/docker/tmp/docker-builder825119442/entrypoint.sh: no such file or directory

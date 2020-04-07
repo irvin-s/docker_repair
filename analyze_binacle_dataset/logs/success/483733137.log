@@ -1,0 +1,535 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/10 : FROM fedora
+latest: Pulling from library/fedora
+5c1b9e8d7bf7: Pulling fs layer
+5c1b9e8d7bf7: Verifying Checksum
+5c1b9e8d7bf7: Download complete
+5c1b9e8d7bf7: Pull complete
+Digest: sha256:c97879f8bebe49744307ea5c77ffc76c7cc97f3ddec72fb9a394bd4e4519b388
+Status: Downloaded newer image for fedora:latest
+ ---> 536f3995adeb
+Step 2/10 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in d12693252f6c
+Removing intermediate container d12693252f6c
+ ---> 7c4aa0b6040b
+Step 3/10 : RUN yum -y update && yum clean all
+ ---> Running in 2acc56f661ae
+Fedora Modular 31 - x86_64                      6.2 MB/s | 5.2 MB     00:00    
+Fedora Modular 31 - x86_64 - Updates            3.0 MB/s | 4.0 MB     00:01    
+Fedora 31 - x86_64 - Updates                    7.0 MB/s |  23 MB     00:03    
+Fedora 31 - x86_64                               20 MB/s |  71 MB     00:03    
+Last metadata expiration check: 0:00:01 ago on Fri Apr  3 23:54:46 2020.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version               Repository   Size
+================================================================================
+Upgrading:
+ coreutils                   x86_64     8.31-9.fc31           updates     1.1 M
+ coreutils-common            x86_64     8.31-9.fc31           updates     1.9 M
+ glib2                       x86_64     2.62.6-1.fc31         updates     2.6 M
+ gnutls                      x86_64     3.6.12-2.fc31         updates     975 k
+ libarchive                  x86_64     3.4.2-1.fc31          updates     384 k
+ libdnf                      x86_64     0.43.1-5.fc31         updates     633 k
+ libgcc                      x86_64     9.3.1-1.fc31          updates     101 k
+ libgomp                     x86_64     9.3.1-1.fc31          updates     237 k
+ libpcap                     x86_64     14:1.9.1-2.fc31       updates     168 k
+ libsss_idmap                x86_64     2.2.3-13.fc31         updates      46 k
+ libsss_nss_idmap            x86_64     2.2.3-13.fc31         updates      53 k
+ libstdc++                   x86_64     9.3.1-1.fc31          updates     633 k
+ libtirpc                    x86_64     1.2.5-1.rc2.fc31      updates      98 k
+ libxcrypt                   x86_64     4.4.15-1.fc31         updates     126 k
+ pcre                        x86_64     8.44-1.fc31           updates     192 k
+ pcre2                       x86_64     10.34-8.fc31          updates     222 k
+ python-setuptools-wheel     noarch     41.6.0-1.fc31         updates     281 k
+ python3-hawkey              x86_64     0.43.1-5.fc31         updates     101 k
+ python3-libdnf              x86_64     0.43.1-5.fc31         updates     702 k
+ shadow-utils                x86_64     2:4.6-17.fc31         updates     1.2 M
+ sssd-client                 x86_64     2.2.3-13.fc31         updates     110 k
+ sudo                        x86_64     1.9.0-0.1.b1.fc31     updates     1.0 M
+ systemd                     x86_64     243.8-1.fc31          updates     3.8 M
+ systemd-libs                x86_64     243.8-1.fc31          updates     523 k
+ systemd-pam                 x86_64     243.8-1.fc31          updates     165 k
+ systemd-rpm-macros          noarch     243.8-1.fc31          updates      20 k
+ vim-minimal                 x86_64     2:8.2.348-1.fc31      updates     645 k
+Installing dependencies:
+ pcre2-syntax                noarch     10.34-8.fc31          updates     140 k
+ trousers-lib                x86_64     0.3.13-13.fc31        fedora      171 k
+ whois-nls                   noarch     5.5.6-1.fc31          updates      34 k
+ xkeyboard-config            noarch     2.28-1.fc31           updates     753 k
+Installing weak dependencies:
+ diffutils                   x86_64     3.7-3.fc31            fedora      401 k
+ libxkbcommon                x86_64     0.9.1-3.fc31          updates     120 k
+ mkpasswd                    x86_64     5.5.6-1.fc31          updates      41 k
+ shared-mime-info            x86_64     1.15-1.fc31           updates     303 k
+ trousers                    x86_64     0.3.13-13.fc31        fedora      150 k
+
+Transaction Summary
+================================================================================
+Install   9 Packages
+Upgrade  27 Packages
+
+Total download size: 20 M
+Downloading Packages:
+(1/36): mkpasswd-5.5.6-1.fc31.x86_64.rpm        257 kB/s |  41 kB     00:00    
+(2/36): libxkbcommon-0.9.1-3.fc31.x86_64.rpm    453 kB/s | 120 kB     00:00    
+(3/36): pcre2-syntax-10.34-8.fc31.noarch.rpm    523 kB/s | 140 kB     00:00    
+(4/36): whois-nls-5.5.6-1.fc31.noarch.rpm       617 kB/s |  34 kB     00:00    
+(5/36): shared-mime-info-1.15-1.fc31.x86_64.rpm 1.8 MB/s | 303 kB     00:00    
+(6/36): xkeyboard-config-2.28-1.fc31.noarch.rpm 4.4 MB/s | 753 kB     00:00    
+(7/36): diffutils-3.7-3.fc31.x86_64.rpm         1.7 MB/s | 401 kB     00:00    
+(8/36): trousers-0.3.13-13.fc31.x86_64.rpm      633 kB/s | 150 kB     00:00    
+(9/36): trousers-lib-0.3.13-13.fc31.x86_64.rpm  864 kB/s | 171 kB     00:00    
+(10/36): glib2-2.62.6-1.fc31.x86_64.rpm          19 MB/s | 2.6 MB     00:00    
+(11/36): coreutils-common-8.31-9.fc31.x86_64.rp 8.5 MB/s | 1.9 MB     00:00    
+(12/36): coreutils-8.31-9.fc31.x86_64.rpm       4.3 MB/s | 1.1 MB     00:00    
+(13/36): gnutls-3.6.12-2.fc31.x86_64.rpm         14 MB/s | 975 kB     00:00    
+(14/36): libarchive-3.4.2-1.fc31.x86_64.rpm     6.2 MB/s | 384 kB     00:00    
+(15/36): libdnf-0.43.1-5.fc31.x86_64.rpm        9.7 MB/s | 633 kB     00:00    
+(16/36): libgcc-9.3.1-1.fc31.x86_64.rpm         1.8 MB/s | 101 kB     00:00    
+(17/36): libgomp-9.3.1-1.fc31.x86_64.rpm        4.1 MB/s | 237 kB     00:00    
+(18/36): libpcap-1.9.1-2.fc31.x86_64.rpm        2.9 MB/s | 168 kB     00:00    
+(19/36): libsss_idmap-2.2.3-13.fc31.x86_64.rpm  856 kB/s |  46 kB     00:00    
+(20/36): libsss_nss_idmap-2.2.3-13.fc31.x86_64. 990 kB/s |  53 kB     00:00    
+(21/36): libstdc++-9.3.1-1.fc31.x86_64.rpm      9.6 MB/s | 633 kB     00:00    
+(22/36): libtirpc-1.2.5-1.rc2.fc31.x86_64.rpm   1.7 MB/s |  98 kB     00:00    
+(23/36): libxcrypt-4.4.15-1.fc31.x86_64.rpm     2.2 MB/s | 126 kB     00:00    
+(24/36): pcre-8.44-1.fc31.x86_64.rpm            3.3 MB/s | 192 kB     00:00    
+(25/36): pcre2-10.34-8.fc31.x86_64.rpm          3.8 MB/s | 222 kB     00:00    
+(26/36): python-setuptools-wheel-41.6.0-1.fc31. 4.8 MB/s | 281 kB     00:00    
+(27/36): python3-hawkey-0.43.1-5.fc31.x86_64.rp 1.8 MB/s | 101 kB     00:00    
+(28/36): python3-libdnf-0.43.1-5.fc31.x86_64.rp  11 MB/s | 702 kB     00:00    
+(29/36): shadow-utils-4.6-17.fc31.x86_64.rpm     17 MB/s | 1.2 MB     00:00    
+(30/36): sssd-client-2.2.3-13.fc31.x86_64.rpm   1.9 MB/s | 110 kB     00:00    
+(31/36): sudo-1.9.0-0.1.b1.fc31.x86_64.rpm       14 MB/s | 1.0 MB     00:00    
+(32/36): systemd-libs-243.8-1.fc31.x86_64.rpm   8.3 MB/s | 523 kB     00:00    
+(33/36): systemd-pam-243.8-1.fc31.x86_64.rpm    2.9 MB/s | 165 kB     00:00    
+(34/36): systemd-243.8-1.fc31.x86_64.rpm         27 MB/s | 3.8 MB     00:00    
+(35/36): systemd-rpm-macros-243.8-1.fc31.noarch 382 kB/s |  20 kB     00:00    
+(36/36): vim-minimal-8.2.348-1.fc31.x86_64.rpm  9.6 MB/s | 645 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            12 MB/s |  20 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                             1/1 
+  Upgrading        : libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Upgrading        : libstdc++-9.3.1-1.fc31.x86_64                         2/63 
+  Upgrading        : vim-minimal-2:8.2.348-1.fc31.x86_64                   3/63 
+  Upgrading        : systemd-rpm-macros-243.8-1.fc31.noarch                4/63 
+  Upgrading        : pcre-8.44-1.fc31.x86_64                               5/63 
+  Upgrading        : glib2-2.62.6-1.fc31.x86_64                            6/63 
+  Installing       : shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Running scriptlet: shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Upgrading        : libdnf-0.43.1-5.fc31.x86_64                           8/63 
+  Upgrading        : python3-libdnf-0.43.1-5.fc31.x86_64                   9/63 
+  Upgrading        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                10/63 
+  Upgrading        : libsss_idmap-2.2.3-13.fc31.x86_64                    11/63 
+  Upgrading        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Upgrading        : coreutils-8.31-9.fc31.x86_64                         13/63 
+  Upgrading        : systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Running scriptlet: systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Installing       : trousers-lib-0.3.13-13.fc31.x86_64                   15/63 
+  Installing       : diffutils-3.7-3.fc31.x86_64                          16/63 
+  Installing       : xkeyboard-config-2.28-1.fc31.noarch                  17/63 
+  Installing       : libxkbcommon-0.9.1-3.fc31.x86_64                     18/63 
+  Installing       : whois-nls-5.5.6-1.fc31.noarch                        19/63 
+  Upgrading        : libxcrypt-4.4.15-1.fc31.x86_64                       20/63 
+  Installing       : mkpasswd-5.5.6-1.fc31.x86_64                         21/63 
+  Upgrading        : shadow-utils-2:4.6-17.fc31.x86_64                    22/63 
+  Installing       : pcre2-syntax-10.34-8.fc31.noarch                     23/63 
+  Upgrading        : pcre2-10.34-8.fc31.x86_64                            24/63 
+  Upgrading        : gnutls-3.6.12-2.fc31.x86_64                          25/63 
+  Upgrading        : systemd-pam-243.8-1.fc31.x86_64                      26/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Upgrading        : systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Installing       : trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Upgrading        : sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Running scriptlet: sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Upgrading        : sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Running scriptlet: sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Upgrading        : python3-hawkey-0.43.1-5.fc31.x86_64                  31/63 
+  Upgrading        : python-setuptools-wheel-41.6.0-1.fc31.noarch         32/63 
+  Upgrading        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     33/63 
+  Upgrading        : libpcap-14:1.9.1-2.fc31.x86_64                       34/63 
+  Upgrading        : libgomp-9.3.1-1.fc31.x86_64                          35/63 
+  Upgrading        : libarchive-3.4.2-1.fc31.x86_64                       36/63 
+  Cleanup          : python-setuptools-wheel-41.2.0-1.fc31.noarch         37/63 
+  Running scriptlet: systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : python3-hawkey-0.43.1-2.fc31.x86_64                  39/63 
+  Cleanup          : python3-libdnf-0.43.1-2.fc31.x86_64                  40/63 
+  Cleanup          : libdnf-0.43.1-2.fc31.x86_64                          41/63 
+  Cleanup          : libstdc++-9.2.1-1.fc31.x86_64                        42/63 
+  Running scriptlet: sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : systemd-libs-243.7-1.fc31.x86_64                     44/63 
+  Cleanup          : systemd-pam-243.7-1.fc31.x86_64                      45/63 
+  Cleanup          : shadow-utils-2:4.6-16.fc31.x86_64                    46/63 
+  Cleanup          : sudo-1.8.29-1.fc31.x86_64                            47/63 
+  Cleanup          : systemd-rpm-macros-243.7-1.fc31.noarch               48/63 
+  Cleanup          : coreutils-8.31-6.fc31.x86_64                         49/63 
+  Cleanup          : glib2-2.62.4-2.fc31.x86_64                           50/63 
+  Cleanup          : coreutils-common-8.31-6.fc31.x86_64                  51/63 
+  Cleanup          : pcre-8.43-2.fc31.1.x86_64                            52/63 
+  Cleanup          : vim-minimal-2:8.2.236-1.fc31.x86_64                  53/63 
+  Cleanup          : libxcrypt-4.4.12-1.fc31.x86_64                       54/63 
+  Cleanup          : libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Running scriptlet: libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Cleanup          : libsss_idmap-2.2.2-3.fc31.x86_64                     56/63 
+  Cleanup          : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 57/63 
+  Cleanup          : gnutls-3.6.11-1.fc31.x86_64                          58/63 
+  Cleanup          : pcre2-10.34-5.fc31.x86_64                            59/63 
+  Cleanup          : libtirpc-1.2.5-0.fc31.x86_64                         60/63 
+  Cleanup          : libpcap-14:1.9.1-1.fc31.x86_64                       61/63 
+  Cleanup          : libgomp-9.2.1-1.fc31.x86_64                          62/63 
+  Cleanup          : libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Running scriptlet: libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Verifying        : libxkbcommon-0.9.1-3.fc31.x86_64                      1/63 
+  Verifying        : mkpasswd-5.5.6-1.fc31.x86_64                          2/63 
+  Verifying        : pcre2-syntax-10.34-8.fc31.noarch                      3/63 
+  Verifying        : shared-mime-info-1.15-1.fc31.x86_64                   4/63 
+  Verifying        : whois-nls-5.5.6-1.fc31.noarch                         5/63 
+  Verifying        : xkeyboard-config-2.28-1.fc31.noarch                   6/63 
+  Verifying        : diffutils-3.7-3.fc31.x86_64                           7/63 
+  Verifying        : trousers-0.3.13-13.fc31.x86_64                        8/63 
+  Verifying        : trousers-lib-0.3.13-13.fc31.x86_64                    9/63 
+  Verifying        : coreutils-8.31-9.fc31.x86_64                         10/63 
+  Verifying        : coreutils-8.31-6.fc31.x86_64                         11/63 
+  Verifying        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Verifying        : coreutils-common-8.31-6.fc31.x86_64                  13/63 
+  Verifying        : glib2-2.62.6-1.fc31.x86_64                           14/63 
+  Verifying        : glib2-2.62.4-2.fc31.x86_64                           15/63 
+  Verifying        : gnutls-3.6.12-2.fc31.x86_64                          16/63 
+  Verifying        : gnutls-3.6.11-1.fc31.x86_64                          17/63 
+  Verifying        : libarchive-3.4.2-1.fc31.x86_64                       18/63 
+  Verifying        : libarchive-3.4.0-1.fc31.x86_64                       19/63 
+  Verifying        : libdnf-0.43.1-5.fc31.x86_64                          20/63 
+  Verifying        : libdnf-0.43.1-2.fc31.x86_64                          21/63 
+  Verifying        : libgcc-9.3.1-1.fc31.x86_64                           22/63 
+  Verifying        : libgcc-9.2.1-1.fc31.x86_64                           23/63 
+  Verifying        : libgomp-9.3.1-1.fc31.x86_64                          24/63 
+  Verifying        : libgomp-9.2.1-1.fc31.x86_64                          25/63 
+  Verifying        : libpcap-14:1.9.1-2.fc31.x86_64                       26/63 
+  Verifying        : libpcap-14:1.9.1-1.fc31.x86_64                       27/63 
+  Verifying        : libsss_idmap-2.2.3-13.fc31.x86_64                    28/63 
+  Verifying        : libsss_idmap-2.2.2-3.fc31.x86_64                     29/63 
+  Verifying        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                30/63 
+  Verifying        : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 31/63 
+  Verifying        : libstdc++-9.3.1-1.fc31.x86_64                        32/63 
+  Verifying        : libstdc++-9.2.1-1.fc31.x86_64                        33/63 
+  Verifying        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     34/63 
+  Verifying        : libtirpc-1.2.5-0.fc31.x86_64                         35/63 
+  Verifying        : libxcrypt-4.4.15-1.fc31.x86_64                       36/63 
+  Verifying        : libxcrypt-4.4.12-1.fc31.x86_64                       37/63 
+  Verifying        : pcre-8.44-1.fc31.x86_64                              38/63 
+  Verifying        : pcre-8.43-2.fc31.1.x86_64                            39/63 
+  Verifying        : pcre2-10.34-8.fc31.x86_64                            40/63 
+  Verifying        : pcre2-10.34-5.fc31.x86_64                            41/63 
+  Verifying        : python-setuptools-wheel-41.6.0-1.fc31.noarch         42/63 
+  Verifying        : python-setuptools-wheel-41.2.0-1.fc31.noarch         43/63 
+  Verifying        : python3-hawkey-0.43.1-5.fc31.x86_64                  44/63 
+  Verifying        : python3-hawkey-0.43.1-2.fc31.x86_64                  45/63 
+  Verifying        : python3-libdnf-0.43.1-5.fc31.x86_64                  46/63 
+  Verifying        : python3-libdnf-0.43.1-2.fc31.x86_64                  47/63 
+  Verifying        : shadow-utils-2:4.6-17.fc31.x86_64                    48/63 
+  Verifying        : shadow-utils-2:4.6-16.fc31.x86_64                    49/63 
+  Verifying        : sssd-client-2.2.3-13.fc31.x86_64                     50/63 
+  Verifying        : sssd-client-2.2.2-3.fc31.x86_64                      51/63 
+  Verifying        : sudo-1.9.0-0.1.b1.fc31.x86_64                        52/63 
+  Verifying        : sudo-1.8.29-1.fc31.x86_64                            53/63 
+  Verifying        : systemd-243.8-1.fc31.x86_64                          54/63 
+  Verifying        : systemd-243.7-1.fc31.x86_64                          55/63 
+  Verifying        : systemd-libs-243.8-1.fc31.x86_64                     56/63 
+  Verifying        : systemd-libs-243.7-1.fc31.x86_64                     57/63 
+  Verifying        : systemd-pam-243.8-1.fc31.x86_64                      58/63 
+  Verifying        : systemd-pam-243.7-1.fc31.x86_64                      59/63 
+  Verifying        : systemd-rpm-macros-243.8-1.fc31.noarch               60/63 
+  Verifying        : systemd-rpm-macros-243.7-1.fc31.noarch               61/63 
+  Verifying        : vim-minimal-2:8.2.348-1.fc31.x86_64                  62/63 
+  Verifying        : vim-minimal-2:8.2.236-1.fc31.x86_64                  63/63 
+
+Upgraded:
+  coreutils-8.31-9.fc31.x86_64                                                  
+  coreutils-common-8.31-9.fc31.x86_64                                           
+  glib2-2.62.6-1.fc31.x86_64                                                    
+  gnutls-3.6.12-2.fc31.x86_64                                                   
+  libarchive-3.4.2-1.fc31.x86_64                                                
+  libdnf-0.43.1-5.fc31.x86_64                                                   
+  libgcc-9.3.1-1.fc31.x86_64                                                    
+  libgomp-9.3.1-1.fc31.x86_64                                                   
+  libpcap-14:1.9.1-2.fc31.x86_64                                                
+  libsss_idmap-2.2.3-13.fc31.x86_64                                             
+  libsss_nss_idmap-2.2.3-13.fc31.x86_64                                         
+  libstdc++-9.3.1-1.fc31.x86_64                                                 
+  libtirpc-1.2.5-1.rc2.fc31.x86_64                                              
+  libxcrypt-4.4.15-1.fc31.x86_64                                                
+  pcre-8.44-1.fc31.x86_64                                                       
+  pcre2-10.34-8.fc31.x86_64                                                     
+  python-setuptools-wheel-41.6.0-1.fc31.noarch                                  
+  python3-hawkey-0.43.1-5.fc31.x86_64                                           
+  python3-libdnf-0.43.1-5.fc31.x86_64                                           
+  shadow-utils-2:4.6-17.fc31.x86_64                                             
+  sssd-client-2.2.3-13.fc31.x86_64                                              
+  sudo-1.9.0-0.1.b1.fc31.x86_64                                                 
+  systemd-243.8-1.fc31.x86_64                                                   
+  systemd-libs-243.8-1.fc31.x86_64                                              
+  systemd-pam-243.8-1.fc31.x86_64                                               
+  systemd-rpm-macros-243.8-1.fc31.noarch                                        
+  vim-minimal-2:8.2.348-1.fc31.x86_64                                           
+
+Installed:
+  diffutils-3.7-3.fc31.x86_64              libxkbcommon-0.9.1-3.fc31.x86_64     
+  mkpasswd-5.5.6-1.fc31.x86_64             pcre2-syntax-10.34-8.fc31.noarch     
+  shared-mime-info-1.15-1.fc31.x86_64      trousers-0.3.13-13.fc31.x86_64       
+  trousers-lib-0.3.13-13.fc31.x86_64       whois-nls-5.5.6-1.fc31.noarch        
+  xkeyboard-config-2.28-1.fc31.noarch     
+
+Complete!
+33 files removed
+Removing intermediate container 2acc56f661ae
+ ---> 294f031ab92c
+Step 4/10 : RUN yum -y install openssl-devel openssl readline readline-devel gcc gcc-c++ rubygems rubygems-devel ruby ruby-devel && yum clean all
+ ---> Running in 3c036ca54fa7
+Fedora Modular 31 - x86_64                      4.1 MB/s | 5.2 MB     00:01    
+Fedora Modular 31 - x86_64 - Updates            5.8 MB/s | 4.0 MB     00:00    
+Fedora 31 - x86_64 - Updates                     17 MB/s |  23 MB     00:01    
+Fedora 31 - x86_64                               17 MB/s |  71 MB     00:04    
+Last metadata expiration check: 0:00:01 ago on Fri Apr  3 23:55:43 2020.
+Package openssl-1:1.1.1d-2.fc31.x86_64 is already installed.
+Package readline-8.0-3.fc31.x86_64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                  Arch       Version                  Repository   Size
+================================================================================
+Installing:
+ gcc                      x86_64     9.3.1-1.fc31             updates      21 M
+ gcc-c++                  x86_64     9.3.1-1.fc31             updates      12 M
+ openssl-devel            x86_64     1:1.1.1d-2.fc31          fedora      2.2 M
+ readline-devel           x86_64     8.0-3.fc31               fedora      193 k
+ ruby                     x86_64     2.6.5-124.fc31           updates      42 k
+ ruby-devel               x86_64     2.6.5-124.fc31           updates     184 k
+ rubygems                 noarch     3.0.3-124.fc31           updates     247 k
+ rubygems-devel           noarch     3.0.3-124.fc31           updates      15 k
+Installing dependencies:
+ binutils                 x86_64     2.32-31.fc31             updates     5.2 M
+ binutils-gold            x86_64     2.32-31.fc31             updates     842 k
+ cpp                      x86_64     9.3.1-1.fc31             updates     9.8 M
+ glibc-devel              x86_64     2.30-10.fc31             updates     1.0 M
+ glibc-headers            x86_64     2.30-10.fc31             updates     450 k
+ isl                      x86_64     0.16.1-9.fc31            fedora      871 k
+ kernel-headers           x86_64     5.5.9-200.fc31           updates     1.2 M
+ libmpc                   x86_64     1.1.0-4.fc31             fedora       60 k
+ libpkgconf               x86_64     1.6.3-2.fc31             fedora       37 k
+ libstdc++-devel          x86_64     9.3.1-1.fc31             updates     1.9 M
+ libxcrypt-devel          x86_64     4.4.15-1.fc31            updates      34 k
+ ncurses-c++-libs         x86_64     6.1-12.20190803.fc31     fedora       37 k
+ ncurses-devel            x86_64     6.1-12.20190803.fc31     fedora      503 k
+ pkgconf                  x86_64     1.6.3-2.fc31             fedora       41 k
+ pkgconf-m4               noarch     1.6.3-2.fc31             fedora       15 k
+ pkgconf-pkg-config       x86_64     1.6.3-2.fc31             fedora       11 k
+ ruby-libs                x86_64     2.6.5-124.fc31           updates     3.0 M
+ rubygem-io-console       x86_64     0.4.7-124.fc31           updates      22 k
+ rubygem-irb              noarch     1.0.0-124.fc31           updates      64 k
+ rubygem-json             x86_64     2.2.0-201.fc31           fedora       57 k
+ rubygem-openssl          x86_64     2.1.2-124.fc31           updates     154 k
+ rubygem-psych            x86_64     3.1.0-124.fc31           updates      51 k
+ rubygem-rdoc             noarch     6.1.2-124.fc31           updates     408 k
+ rubypick                 noarch     1.1.1-11.fc31            fedora      9.8 k
+Installing weak dependencies:
+ rubygem-bigdecimal       x86_64     1.4.1-124.fc31           updates      57 k
+ rubygem-did_you_mean     noarch     1.3.0-124.fc31           updates      37 k
+
+Transaction Summary
+================================================================================
+Install  34 Packages
+
+Total download size: 62 M
+Installed size: 185 M
+Downloading Packages:
+(1/34): binutils-gold-2.32-31.fc31.x86_64.rpm   2.1 MB/s | 842 kB     00:00    
+(2/34): binutils-2.32-31.fc31.x86_64.rpm        9.0 MB/s | 5.2 MB     00:00    
+(3/34): cpp-9.3.1-1.fc31.x86_64.rpm              14 MB/s | 9.8 MB     00:00    
+(4/34): glibc-devel-2.30-10.fc31.x86_64.rpm      14 MB/s | 1.0 MB     00:00    
+(5/34): glibc-headers-2.30-10.fc31.x86_64.rpm   7.2 MB/s | 450 kB     00:00    
+(6/34): gcc-c++-9.3.1-1.fc31.x86_64.rpm          35 MB/s |  12 MB     00:00    
+(7/34): kernel-headers-5.5.9-200.fc31.x86_64.rp  12 MB/s | 1.2 MB     00:00    
+(8/34): gcc-9.3.1-1.fc31.x86_64.rpm              32 MB/s |  21 MB     00:00    
+(9/34): libxcrypt-devel-4.4.15-1.fc31.x86_64.rp 247 kB/s |  34 kB     00:00    
+(10/34): libstdc++-devel-9.3.1-1.fc31.x86_64.rp  12 MB/s | 1.9 MB     00:00    
+(11/34): ruby-2.6.5-124.fc31.x86_64.rpm         779 kB/s |  42 kB     00:00    
+(12/34): ruby-devel-2.6.5-124.fc31.x86_64.rpm   3.2 MB/s | 184 kB     00:00    
+(13/34): rubygem-bigdecimal-1.4.1-124.fc31.x86_ 1.0 MB/s |  57 kB     00:00    
+(14/34): rubygem-did_you_mean-1.3.0-124.fc31.no 688 kB/s |  37 kB     00:00    
+(15/34): ruby-libs-2.6.5-124.fc31.x86_64.rpm     26 MB/s | 3.0 MB     00:00    
+(16/34): rubygem-io-console-0.4.7-124.fc31.x86_ 414 kB/s |  22 kB     00:00    
+(17/34): rubygem-irb-1.0.0-124.fc31.noarch.rpm  1.2 MB/s |  64 kB     00:00    
+(18/34): rubygem-openssl-2.1.2-124.fc31.x86_64. 2.7 MB/s | 154 kB     00:00    
+(19/34): rubygem-psych-3.1.0-124.fc31.x86_64.rp 949 kB/s |  51 kB     00:00    
+(20/34): rubygem-rdoc-6.1.2-124.fc31.noarch.rpm 6.7 MB/s | 408 kB     00:00    
+(21/34): rubygems-3.0.3-124.fc31.noarch.rpm     4.2 MB/s | 247 kB     00:00    
+(22/34): rubygems-devel-3.0.3-124.fc31.noarch.r 270 kB/s |  15 kB     00:00    
+(23/34): libpkgconf-1.6.3-2.fc31.x86_64.rpm     297 kB/s |  37 kB     00:00    
+(24/34): libmpc-1.1.0-4.fc31.x86_64.rpm         304 kB/s |  60 kB     00:00    
+(25/34): ncurses-c++-libs-6.1-12.20190803.fc31. 809 kB/s |  37 kB     00:00    
+(26/34): isl-0.16.1-9.fc31.x86_64.rpm           2.4 MB/s | 871 kB     00:00    
+(27/34): ncurses-devel-6.1-12.20190803.fc31.x86 3.2 MB/s | 503 kB     00:00    
+(28/34): pkgconf-1.6.3-2.fc31.x86_64.rpm        888 kB/s |  41 kB     00:00    
+(29/34): pkgconf-m4-1.6.3-2.fc31.noarch.rpm     355 kB/s |  15 kB     00:00    
+(30/34): pkgconf-pkg-config-1.6.3-2.fc31.x86_64 235 kB/s |  11 kB     00:00    
+(31/34): openssl-devel-1.1.1d-2.fc31.x86_64.rpm 8.3 MB/s | 2.2 MB     00:00    
+(32/34): readline-devel-8.0-3.fc31.x86_64.rpm   2.3 MB/s | 193 kB     00:00    
+(33/34): rubygem-json-2.2.0-201.fc31.x86_64.rpm 1.3 MB/s |  57 kB     00:00    
+(34/34): rubypick-1.1.1-11.fc31.noarch.rpm      212 kB/s | 9.8 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            28 MB/s |  62 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : ruby-libs-2.6.5-124.fc31.x86_64                       1/34 
+  Installing       : libmpc-1.1.0-4.fc31.x86_64                            2/34 
+  Installing       : rubygem-bigdecimal-1.4.1-124.fc31.x86_64              3/34 
+  Installing       : rubygem-did_you_mean-1.3.0-124.fc31.noarch            4/34 
+  Installing       : rubygem-io-console-0.4.7-124.fc31.x86_64              5/34 
+  Installing       : rubygem-irb-1.0.0-124.fc31.noarch                     6/34 
+  Installing       : rubygem-openssl-2.1.2-124.fc31.x86_64                 7/34 
+  Installing       : rubygem-psych-3.1.0-124.fc31.x86_64                   8/34 
+  Installing       : rubygem-rdoc-6.1.2-124.fc31.noarch                    9/34 
+  Installing       : rubygem-json-2.2.0-201.fc31.x86_64                   10/34 
+  Installing       : rubygems-3.0.3-124.fc31.noarch                       11/34 
+  Installing       : rubypick-1.1.1-11.fc31.noarch                        12/34 
+  Installing       : ruby-2.6.5-124.fc31.x86_64                           13/34 
+  Installing       : binutils-gold-2.32-31.fc31.x86_64                    14/34 
+  Installing       : binutils-2.32-31.fc31.x86_64                         15/34 
+  Running scriptlet: binutils-2.32-31.fc31.x86_64                         15/34 
+  Installing       : cpp-9.3.1-1.fc31.x86_64                              16/34 
+  Installing       : pkgconf-m4-1.6.3-2.fc31.noarch                       17/34 
+  Installing       : ncurses-c++-libs-6.1-12.20190803.fc31.x86_64         18/34 
+  Installing       : libpkgconf-1.6.3-2.fc31.x86_64                       19/34 
+  Installing       : pkgconf-1.6.3-2.fc31.x86_64                          20/34 
+  Installing       : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               21/34 
+  Installing       : ncurses-devel-6.1-12.20190803.fc31.x86_64            22/34 
+  Installing       : isl-0.16.1-9.fc31.x86_64                             23/34 
+  Installing       : libstdc++-devel-9.3.1-1.fc31.x86_64                  24/34 
+  Installing       : kernel-headers-5.5.9-200.fc31.x86_64                 25/34 
+  Running scriptlet: glibc-headers-2.30-10.fc31.x86_64                    26/34 
+  Installing       : glibc-headers-2.30-10.fc31.x86_64                    26/34 
+  Installing       : libxcrypt-devel-4.4.15-1.fc31.x86_64                 27/34 
+  Installing       : glibc-devel-2.30-10.fc31.x86_64                      28/34 
+  Installing       : gcc-9.3.1-1.fc31.x86_64                              29/34 
+  Installing       : gcc-c++-9.3.1-1.fc31.x86_64                          30/34 
+  Installing       : readline-devel-8.0-3.fc31.x86_64                     31/34 
+  Installing       : ruby-devel-2.6.5-124.fc31.x86_64                     32/34 
+  Installing       : openssl-devel-1:1.1.1d-2.fc31.x86_64                 33/34 
+  Installing       : rubygems-devel-3.0.3-124.fc31.noarch                 34/34 
+  Running scriptlet: rubygems-devel-3.0.3-124.fc31.noarch                 34/34 
+  Verifying        : binutils-2.32-31.fc31.x86_64                          1/34 
+  Verifying        : binutils-gold-2.32-31.fc31.x86_64                     2/34 
+  Verifying        : cpp-9.3.1-1.fc31.x86_64                               3/34 
+  Verifying        : gcc-9.3.1-1.fc31.x86_64                               4/34 
+  Verifying        : gcc-c++-9.3.1-1.fc31.x86_64                           5/34 
+  Verifying        : glibc-devel-2.30-10.fc31.x86_64                       6/34 
+  Verifying        : glibc-headers-2.30-10.fc31.x86_64                     7/34 
+  Verifying        : kernel-headers-5.5.9-200.fc31.x86_64                  8/34 
+  Verifying        : libstdc++-devel-9.3.1-1.fc31.x86_64                   9/34 
+  Verifying        : libxcrypt-devel-4.4.15-1.fc31.x86_64                 10/34 
+  Verifying        : ruby-2.6.5-124.fc31.x86_64                           11/34 
+  Verifying        : ruby-devel-2.6.5-124.fc31.x86_64                     12/34 
+  Verifying        : ruby-libs-2.6.5-124.fc31.x86_64                      13/34 
+  Verifying        : rubygem-bigdecimal-1.4.1-124.fc31.x86_64             14/34 
+  Verifying        : rubygem-did_you_mean-1.3.0-124.fc31.noarch           15/34 
+  Verifying        : rubygem-io-console-0.4.7-124.fc31.x86_64             16/34 
+  Verifying        : rubygem-irb-1.0.0-124.fc31.noarch                    17/34 
+  Verifying        : rubygem-openssl-2.1.2-124.fc31.x86_64                18/34 
+  Verifying        : rubygem-psych-3.1.0-124.fc31.x86_64                  19/34 
+  Verifying        : rubygem-rdoc-6.1.2-124.fc31.noarch                   20/34 
+  Verifying        : rubygems-3.0.3-124.fc31.noarch                       21/34 
+  Verifying        : rubygems-devel-3.0.3-124.fc31.noarch                 22/34 
+  Verifying        : isl-0.16.1-9.fc31.x86_64                             23/34 
+  Verifying        : libmpc-1.1.0-4.fc31.x86_64                           24/34 
+  Verifying        : libpkgconf-1.6.3-2.fc31.x86_64                       25/34 
+  Verifying        : ncurses-c++-libs-6.1-12.20190803.fc31.x86_64         26/34 
+  Verifying        : ncurses-devel-6.1-12.20190803.fc31.x86_64            27/34 
+  Verifying        : openssl-devel-1:1.1.1d-2.fc31.x86_64                 28/34 
+  Verifying        : pkgconf-1.6.3-2.fc31.x86_64                          29/34 
+  Verifying        : pkgconf-m4-1.6.3-2.fc31.noarch                       30/34 
+  Verifying        : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               31/34 
+  Verifying        : readline-devel-8.0-3.fc31.x86_64                     32/34 
+  Verifying        : rubygem-json-2.2.0-201.fc31.x86_64                   33/34 
+  Verifying        : rubypick-1.1.1-11.fc31.noarch                        34/34 
+
+Installed:
+  binutils-2.32-31.fc31.x86_64                                                  
+  binutils-gold-2.32-31.fc31.x86_64                                             
+  cpp-9.3.1-1.fc31.x86_64                                                       
+  gcc-9.3.1-1.fc31.x86_64                                                       
+  gcc-c++-9.3.1-1.fc31.x86_64                                                   
+  glibc-devel-2.30-10.fc31.x86_64                                               
+  glibc-headers-2.30-10.fc31.x86_64                                             
+  isl-0.16.1-9.fc31.x86_64                                                      
+  kernel-headers-5.5.9-200.fc31.x86_64                                          
+  libmpc-1.1.0-4.fc31.x86_64                                                    
+  libpkgconf-1.6.3-2.fc31.x86_64                                                
+  libstdc++-devel-9.3.1-1.fc31.x86_64                                           
+  libxcrypt-devel-4.4.15-1.fc31.x86_64                                          
+  ncurses-c++-libs-6.1-12.20190803.fc31.x86_64                                  
+  ncurses-devel-6.1-12.20190803.fc31.x86_64                                     
+  openssl-devel-1:1.1.1d-2.fc31.x86_64                                          
+  pkgconf-1.6.3-2.fc31.x86_64                                                   
+  pkgconf-m4-1.6.3-2.fc31.noarch                                                
+  pkgconf-pkg-config-1.6.3-2.fc31.x86_64                                        
+  readline-devel-8.0-3.fc31.x86_64                                              
+  ruby-2.6.5-124.fc31.x86_64                                                    
+  ruby-devel-2.6.5-124.fc31.x86_64                                              
+  ruby-libs-2.6.5-124.fc31.x86_64                                               
+  rubygem-bigdecimal-1.4.1-124.fc31.x86_64                                      
+  rubygem-did_you_mean-1.3.0-124.fc31.noarch                                    
+  rubygem-io-console-0.4.7-124.fc31.x86_64                                      
+  rubygem-irb-1.0.0-124.fc31.noarch                                             
+  rubygem-json-2.2.0-201.fc31.x86_64                                            
+  rubygem-openssl-2.1.2-124.fc31.x86_64                                         
+  rubygem-psych-3.1.0-124.fc31.x86_64                                           
+  rubygem-rdoc-6.1.2-124.fc31.noarch                                            
+  rubygems-3.0.3-124.fc31.noarch                                                
+  rubygems-devel-3.0.3-124.fc31.noarch                                          
+  rubypick-1.1.1-11.fc31.noarch                                                 
+
+Complete!
+33 files removed
+Removing intermediate container 3c036ca54fa7
+ ---> 825692bf4379
+Step 5/10 : RUN gem install earthquake
+ ---> Running in 7d4a95a7fa09
+Successfully installed slop-3.4.7
+Successfully installed mime-types-data-3.2019.1009
+Successfully installed mime-types-3.3.1
+Building native extensions. This could take a while...
+[91mERROR:  Error installing earthquake:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /usr/local/share/gems/gems/json-2.3.0/ext/json/ext/generator
+/usr/bin/ruby -I /usr/share/rubygems -r ./siteconf20200403-1-149kh0t.rb extconf.rb
+creating Makefile
+
+current directory: /usr/local/share/gems/gems/json-2.3.0/ext/json/ext/generator
+make "DESTDIR=" clean
+sh: make: command not found
+
+current directory: /usr/local/share/gems/gems/json-2.3.0/ext/json/ext/generator
+make "DESTDIR="
+sh: make: command not found
+
+make failed, exit code 127
+
+Gem files will remain installed in /usr/local/share/gems/gems/json-2.3.0 for inspection.
+Results logged to /usr/local/lib64/gems/ruby/json-2.3.0/gem_make.out
+[0mThe command '/bin/sh -c gem install earthquake' returned a non-zero code: 1

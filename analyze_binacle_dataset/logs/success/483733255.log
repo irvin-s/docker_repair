@@ -1,0 +1,624 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM       fedora:20
+20: Pulling from library/fedora
+4abd98c7489c: Pulling fs layer
+4abd98c7489c: Verifying Checksum
+4abd98c7489c: Download complete
+4abd98c7489c: Pull complete
+Digest: sha256:5d5a02b873d298da9bca4b84440c5cd698b0832560c850d92cf389cef58bc549
+Status: Downloaded newer image for fedora:20
+ ---> ba74bddb630e
+Step 2/6 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in 869bfcf99f7d
+Removing intermediate container 869bfcf99f7d
+ ---> 6d4e86d13729
+Step 3/6 : RUN yum -y update && yum clean all
+ ---> Running in 704c74db6c19
+No packages marked for update
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container 704c74db6c19
+ ---> 348952cdbcc3
+Step 4/6 : RUN yum install -y pdftk && yum clean all
+ ---> Running in b22b4e50e63a
+Resolving Dependencies
+--> Running transaction check
+---> Package pdftk.x86_64 0:1.44-11.fc19 will be installed
+--> Processing Dependency: itext(x86-64) >= 2.1.7-6 for package: pdftk-1.44-11.fc19.x86_64
+--> Processing Dependency: libgcj.so.14()(64bit) for package: pdftk-1.44-11.fc19.x86_64
+--> Running transaction check
+---> Package itext.x86_64 0:2.1.7-21.fc20 will be installed
+--> Processing Dependency: itext-core = 2.1.7-21.fc20 for package: itext-2.1.7-21.fc20.x86_64
+--> Processing Dependency: java-gcj-compat for package: itext-2.1.7-21.fc20.x86_64
+--> Processing Dependency: java-gcj-compat for package: itext-2.1.7-21.fc20.x86_64
+--> Processing Dependency: java-1.5.0-gcj for package: itext-2.1.7-21.fc20.x86_64
+---> Package libgcj.x86_64 0:4.8.3-7.fc20 will be installed
+--> Processing Dependency: zip >= 2.1 for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libart_lgpl >= 2.1.0 for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: gtk2 >= 2.4.0 for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libpangoft2-1.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libpangocairo-1.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libpango-1.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libgtk-x11-2.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libgdk-x11-2.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libfreetype.so.6()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libfontconfig.so.1()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libcairo.so.2()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libatk-1.0.so.0()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libasound.so.2()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libXtst.so.6()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libXrender.so.1()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libXrandr.so.2()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libSM.so.6()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Processing Dependency: libICE.so.6()(64bit) for package: libgcj-4.8.3-7.fc20.x86_64
+--> Running transaction check
+---> Package alsa-lib.x86_64 0:1.0.27.2-2.fc20 will be installed
+---> Package atk.x86_64 0:2.10.0-1.fc20 will be installed
+---> Package cairo.x86_64 0:1.14.0-2.fc20 will be installed
+--> Processing Dependency: libpng16.so.16(PNG16_0)(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libxcb.so.1()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libxcb-shm.so.0()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libxcb-render.so.0()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libpng16.so.16()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libpixman-1.so.0()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libXext.so.6()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libX11.so.6()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libGL.so.1()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+--> Processing Dependency: libEGL.so.1()(64bit) for package: cairo-1.14.0-2.fc20.x86_64
+---> Package fontconfig.x86_64 0:2.11.0-2.fc20 will be installed
+--> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.11.0-2.fc20.x86_64
+---> Package freetype.x86_64 0:2.5.0-10.fc20 will be installed
+---> Package gdk-pixbuf2.x86_64 0:2.30.3-1.fc20 will be installed
+--> Processing Dependency: libtiff.so.5(LIBTIFF_4.0)(64bit) for package: gdk-pixbuf2-2.30.3-1.fc20.x86_64
+--> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: gdk-pixbuf2-2.30.3-1.fc20.x86_64
+--> Processing Dependency: libtiff.so.5()(64bit) for package: gdk-pixbuf2-2.30.3-1.fc20.x86_64
+--> Processing Dependency: libjpeg.so.62()(64bit) for package: gdk-pixbuf2-2.30.3-1.fc20.x86_64
+--> Processing Dependency: libjasper.so.1()(64bit) for package: gdk-pixbuf2-2.30.3-1.fc20.x86_64
+---> Package gtk2.x86_64 0:2.24.27-1.fc20 will be installed
+--> Processing Dependency: hicolor-icon-theme for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libcups.so.2()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXinerama.so.1()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXi.so.6()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXfixes.so.3()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXdamage.so.1()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXcursor.so.1()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+--> Processing Dependency: libXcomposite.so.1()(64bit) for package: gtk2-2.24.27-1.fc20.x86_64
+---> Package itext-core.noarch 0:2.1.7-21.fc20 will be installed
+--> Processing Dependency: java >= 1.5 for package: itext-core-2.1.7-21.fc20.noarch
+--> Processing Dependency: bouncycastle-tsp >= 1.46-4 for package: itext-core-2.1.7-21.fc20.noarch
+--> Processing Dependency: jpackage-utils for package: itext-core-2.1.7-21.fc20.noarch
+---> Package java-1.5.0-gcj.x86_64 0:1.5.0.0-45.fc20 will be installed
+--> Processing Dependency: sinjdoc for package: java-1.5.0-gcj-1.5.0.0-45.fc20.x86_64
+---> Package libICE.x86_64 0:1.0.8-6.fc20 will be installed
+---> Package libSM.x86_64 0:1.2.1-6.fc20 will be installed
+---> Package libXrandr.x86_64 0:1.4.1-2.fc20 will be installed
+---> Package libXrender.x86_64 0:0.9.8-2.fc20 will be installed
+---> Package libXtst.x86_64 0:1.2.2-2.fc20 will be installed
+---> Package libart_lgpl.x86_64 0:2.3.21-8.fc20 will be installed
+---> Package pango.x86_64 0:1.36.1-3.fc20 will be installed
+--> Processing Dependency: libthai >= 0.1.9 for package: pango-1.36.1-3.fc20.x86_64
+--> Processing Dependency: libthai.so.0(LIBTHAI_0.1)(64bit) for package: pango-1.36.1-3.fc20.x86_64
+--> Processing Dependency: libthai.so.0()(64bit) for package: pango-1.36.1-3.fc20.x86_64
+--> Processing Dependency: libharfbuzz.so.0()(64bit) for package: pango-1.36.1-3.fc20.x86_64
+--> Processing Dependency: libXft.so.2()(64bit) for package: pango-1.36.1-3.fc20.x86_64
+---> Package zip.x86_64 0:3.0-10.fc20 will be installed
+--> Running transaction check
+---> Package bouncycastle-tsp.noarch 0:1.46-6.fc19 will be installed
+--> Processing Dependency: bouncycastle-mail = 1.46 for package: bouncycastle-tsp-1.46-6.fc19.noarch
+--> Processing Dependency: bouncycastle-mail >= 1.46-4 for package: bouncycastle-tsp-1.46-6.fc19.noarch
+---> Package cups-libs.x86_64 1:1.7.5-13.fc20 will be installed
+--> Processing Dependency: libavahi-common.so.3()(64bit) for package: 1:cups-libs-1.7.5-13.fc20.x86_64
+--> Processing Dependency: libavahi-client.so.3()(64bit) for package: 1:cups-libs-1.7.5-13.fc20.x86_64
+---> Package fontpackages-filesystem.noarch 0:1.44-9.fc20 will be installed
+---> Package harfbuzz.x86_64 0:0.9.27-1.fc20 will be installed
+--> Processing Dependency: libgraphite2.so.3()(64bit) for package: harfbuzz-0.9.27-1.fc20.x86_64
+---> Package hicolor-icon-theme.noarch 0:0.14-1.fc20 will be installed
+---> Package jasper-libs.x86_64 0:1.900.1-28.fc20 will be installed
+---> Package java-1.7.0-openjdk.x86_64 1:1.7.0.79-2.5.5.0.fc20 will be installed
+--> Processing Dependency: java-1.7.0-openjdk-headless = 1:1.7.0.79-2.5.5.0.fc20 for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: xorg-x11-fonts-Type1 for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libpulse.so.0(PULSE_0)(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libjvm.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libjli.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libjava.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libpulse.so.0()(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libjli.so()(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libjava.so()(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libgif.so.4()(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: libawt.so()(64bit) for package: 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64
+---> Package javapackages-tools.noarch 0:3.4.1-3.fc20 will be installed
+--> Processing Dependency: python-javapackages = 3.4.1-3.fc20 for package: javapackages-tools-3.4.1-3.fc20.noarch
+--> Processing Dependency: libxslt for package: javapackages-tools-3.4.1-3.fc20.noarch
+---> Package libX11.x86_64 0:1.6.1-1.fc20 will be installed
+--> Processing Dependency: libX11-common = 1.6.1-1.fc20 for package: libX11-1.6.1-1.fc20.x86_64
+---> Package libXcomposite.x86_64 0:0.4.4-4.fc20 will be installed
+---> Package libXcursor.x86_64 0:1.1.14-2.fc20 will be installed
+---> Package libXdamage.x86_64 0:1.1.4-4.fc20 will be installed
+---> Package libXext.x86_64 0:1.3.2-2.fc20 will be installed
+---> Package libXfixes.x86_64 0:5.0.1-2.fc20 will be installed
+---> Package libXft.x86_64 0:2.3.1-5.fc20 will be installed
+---> Package libXi.x86_64 0:1.7.4-1.fc20 will be installed
+---> Package libXinerama.x86_64 0:1.1.3-2.fc20 will be installed
+---> Package libjpeg-turbo.x86_64 0:1.3.1-3.fc20 will be installed
+---> Package libpng.x86_64 2:1.6.6-3.fc20 will be installed
+---> Package libthai.x86_64 0:0.1.20-1.fc20 will be installed
+---> Package libtiff.x86_64 0:4.0.3-15.fc20 will be installed
+--> Processing Dependency: libjbig.so.2.0()(64bit) for package: libtiff-4.0.3-15.fc20.x86_64
+---> Package libxcb.x86_64 0:1.9.1-3.fc20 will be installed
+--> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.9.1-3.fc20.x86_64
+---> Package mesa-libEGL.x86_64 0:10.3.3-1.20141110.fc20 will be installed
+--> Processing Dependency: libwayland-server.so.0()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libwayland-client.so.0()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libglapi.so.0()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libgbm.so.1()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libdrm_radeon.so.1()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libdrm_nouveau.so.2()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libdrm.so.2()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+--> Processing Dependency: libLLVM-3.4.so()(64bit) for package: mesa-libEGL-10.3.3-1.20141110.fc20.x86_64
+---> Package mesa-libGL.x86_64 0:10.3.3-1.20141110.fc20 will be installed
+--> Processing Dependency: libXxf86vm.so.1()(64bit) for package: mesa-libGL-10.3.3-1.20141110.fc20.x86_64
+---> Package pixman.x86_64 0:0.30.0-5.fc20 will be installed
+---> Package sinjdoc.x86_64 0:0.5-16.fc20 will be installed
+--> Processing Dependency: java_cup >= 0.10 for package: sinjdoc-0.5-16.fc20.x86_64
+--> Running transaction check
+---> Package avahi-libs.x86_64 0:0.6.31-21.fc20 will be installed
+---> Package bouncycastle-mail.noarch 0:1.46-11.fc20 will be installed
+--> Processing Dependency: bouncycastle = 1.46 for package: bouncycastle-mail-1.46-11.fc20.noarch
+--> Processing Dependency: bouncycastle >= 1.46-5 for package: bouncycastle-mail-1.46-11.fc20.noarch
+--> Processing Dependency: javamail for package: bouncycastle-mail-1.46-11.fc20.noarch
+---> Package giflib.x86_64 0:4.1.6-9.fc20 will be installed
+---> Package graphite2.x86_64 0:1.2.2-4.fc20 will be installed
+---> Package java-1.7.0-openjdk-headless.x86_64 1:1.7.0.79-2.5.5.0.fc20 will be installed
+--> Processing Dependency: lcms2 >= 2.5 for package: 1:java-1.7.0-openjdk-headless-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: tzdata-java for package: 1:java-1.7.0-openjdk-headless-1.7.0.79-2.5.5.0.fc20.x86_64
+--> Processing Dependency: liblcms2.so.2()(64bit) for package: 1:java-1.7.0-openjdk-headless-1.7.0.79-2.5.5.0.fc20.x86_64
+---> Package java_cup.noarch 1:0.11a-15.fc20 will be installed
+---> Package jbigkit-libs.x86_64 0:2.0-10.fc20 will be installed
+---> Package libX11-common.noarch 0:1.6.1-1.fc20 will be installed
+---> Package libXau.x86_64 0:1.0.8-2.fc20 will be installed
+---> Package libXxf86vm.x86_64 0:1.1.3-2.fc20 will be installed
+---> Package libdrm.x86_64 0:2.4.58-1.fc20 will be installed
+--> Processing Dependency: libpciaccess.so.0()(64bit) for package: libdrm-2.4.58-1.fc20.x86_64
+---> Package libwayland-client.x86_64 0:1.2.0-3.fc20 will be installed
+---> Package libwayland-server.x86_64 0:1.2.0-3.fc20 will be installed
+---> Package libxslt.x86_64 0:1.1.28-5.fc20 will be installed
+---> Package llvm-libs.x86_64 0:3.4-12.fc20 will be installed
+---> Package mesa-libgbm.x86_64 0:10.3.3-1.20141110.fc20 will be installed
+---> Package mesa-libglapi.x86_64 0:10.3.3-1.20141110.fc20 will be installed
+---> Package pulseaudio-libs.x86_64 0:5.0-25.fc20 will be installed
+--> Processing Dependency: libsndfile.so.1(libsndfile.so.1.0)(64bit) for package: pulseaudio-libs-5.0-25.fc20.x86_64
+--> Processing Dependency: libsndfile.so.1()(64bit) for package: pulseaudio-libs-5.0-25.fc20.x86_64
+--> Processing Dependency: libjson-c.so.2()(64bit) for package: pulseaudio-libs-5.0-25.fc20.x86_64
+--> Processing Dependency: libasyncns.so.0()(64bit) for package: pulseaudio-libs-5.0-25.fc20.x86_64
+---> Package python-javapackages.noarch 0:3.4.1-3.fc20 will be installed
+--> Processing Dependency: python-lxml for package: python-javapackages-3.4.1-3.fc20.noarch
+---> Package xorg-x11-fonts-Type1.noarch 0:7.5-10.fc20 will be installed
+--> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-10.fc20.noarch
+--> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-10.fc20.noarch
+--> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-10.fc20.noarch
+--> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-10.fc20.noarch
+--> Running transaction check
+---> Package bouncycastle.noarch 0:1.46-11.fc20 will be installed
+---> Package javamail.noarch 0:1.5.0-6.fc20 will be installed
+---> Package json-c.x86_64 0:0.11-6.fc20 will be installed
+---> Package lcms2.x86_64 0:2.6-1.fc20 will be installed
+---> Package libasyncns.x86_64 0:0.8-6.fc20 will be installed
+---> Package libpciaccess.x86_64 0:0.13.3-0.1.fc20 will be installed
+--> Processing Dependency: hwdata for package: libpciaccess-0.13.3-0.1.fc20.x86_64
+---> Package libsndfile.x86_64 0:1.0.25-9.fc20 will be installed
+--> Processing Dependency: libvorbisenc.so.2()(64bit) for package: libsndfile-1.0.25-9.fc20.x86_64
+--> Processing Dependency: libgsm.so.1()(64bit) for package: libsndfile-1.0.25-9.fc20.x86_64
+--> Processing Dependency: libFLAC.so.8()(64bit) for package: libsndfile-1.0.25-9.fc20.x86_64
+---> Package python-lxml.x86_64 0:3.3.6-1.fc20 will be installed
+--> Processing Dependency: python-cssselect for package: python-lxml-3.3.6-1.fc20.x86_64
+---> Package ttmkfdir.x86_64 0:3.0.9-40.fc20 will be installed
+---> Package tzdata-java.noarch 0:2015d-1.fc20 will be installed
+---> Package xorg-x11-font-utils.x86_64 1:7.5-18.fc20 will be installed
+--> Processing Dependency: libfontenc.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.5-18.fc20.x86_64
+--> Processing Dependency: libXfont.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.5-18.fc20.x86_64
+--> Running transaction check
+---> Package flac-libs.x86_64 0:1.3.1-1.fc20 will be installed
+--> Processing Dependency: libogg.so.0()(64bit) for package: flac-libs-1.3.1-1.fc20.x86_64
+---> Package gsm.x86_64 0:1.0.13-10.fc20 will be installed
+---> Package hwdata.noarch 0:0.276-1.fc20 will be installed
+---> Package libXfont.x86_64 0:1.4.8-1.fc20 will be installed
+---> Package libfontenc.x86_64 0:1.1.1-4.fc20 will be installed
+---> Package libvorbis.x86_64 1:1.3.4-1.fc20 will be installed
+---> Package python-cssselect.noarch 0:0.9.1-1.fc20 will be installed
+--> Running transaction check
+---> Package libogg.x86_64 2:1.3.0-6.fc20 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                      Arch    Version                    Repository
+                                                                           Size
+================================================================================
+Installing:
+ pdftk                        x86_64  1.44-11.fc19               fedora    88 k
+Installing for dependencies:
+ alsa-lib                     x86_64  1.0.27.2-2.fc20            fedora   388 k
+ atk                          x86_64  2.10.0-1.fc20              fedora   235 k
+ avahi-libs                   x86_64  0.6.31-21.fc20             fedora    57 k
+ bouncycastle                 noarch  1.46-11.fc20               fedora   2.4 M
+ bouncycastle-mail            noarch  1.46-11.fc20               fedora   567 k
+ bouncycastle-tsp             noarch  1.46-6.fc19                fedora    94 k
+ cairo                        x86_64  1.14.0-2.fc20              updates  710 k
+ cups-libs                    x86_64  1:1.7.5-13.fc20            updates  371 k
+ flac-libs                    x86_64  1.3.1-1.fc20               updates  193 k
+ fontconfig                   x86_64  2.11.0-2.fc20              updates  228 k
+ fontpackages-filesystem      noarch  1.44-9.fc20                fedora    10 k
+ freetype                     x86_64  2.5.0-10.fc20              updates  393 k
+ gdk-pixbuf2                  x86_64  2.30.3-1.fc20              updates  536 k
+ giflib                       x86_64  4.1.6-9.fc20               fedora    40 k
+ graphite2                    x86_64  1.2.2-4.fc20               fedora    80 k
+ gsm                          x86_64  1.0.13-10.fc20             fedora    29 k
+ gtk2                         x86_64  2.24.27-1.fc20             updates  3.4 M
+ harfbuzz                     x86_64  0.9.27-1.fc20              updates  149 k
+ hicolor-icon-theme           noarch  0.14-1.fc20                updates   45 k
+ hwdata                       noarch  0.276-1.fc20               updates  1.3 M
+ itext                        x86_64  2.1.7-21.fc20              fedora   1.6 M
+ itext-core                   noarch  2.1.7-21.fc20              fedora   1.4 M
+ jasper-libs                  x86_64  1.900.1-28.fc20            updates  146 k
+ java-1.5.0-gcj               x86_64  1.5.0.0-45.fc20            fedora   161 k
+ java-1.7.0-openjdk           x86_64  1:1.7.0.79-2.5.5.0.fc20    updates  234 k
+ java-1.7.0-openjdk-headless  x86_64  1:1.7.0.79-2.5.5.0.fc20    updates   25 M
+ java_cup                     noarch  1:0.11a-15.fc20            fedora   107 k
+ javamail                     noarch  1.5.0-6.fc20               fedora   606 k
+ javapackages-tools           noarch  3.4.1-3.fc20               updates   72 k
+ jbigkit-libs                 x86_64  2.0-10.fc20                updates   46 k
+ json-c                       x86_64  0.11-6.fc20                updates   30 k
+ lcms2                        x86_64  2.6-1.fc20                 updates  149 k
+ libICE                       x86_64  1.0.8-6.fc20               fedora    95 k
+ libSM                        x86_64  1.2.1-6.fc20               fedora    38 k
+ libX11                       x86_64  1.6.1-1.fc20               fedora   597 k
+ libX11-common                noarch  1.6.1-1.fc20               fedora   181 k
+ libXau                       x86_64  1.0.8-2.fc20               fedora    29 k
+ libXcomposite                x86_64  0.4.4-4.fc20               fedora    22 k
+ libXcursor                   x86_64  1.1.14-2.fc20              fedora    29 k
+ libXdamage                   x86_64  1.1.4-4.fc20               fedora    20 k
+ libXext                      x86_64  1.3.2-2.fc20               fedora    37 k
+ libXfixes                    x86_64  5.0.1-2.fc20               fedora    18 k
+ libXfont                     x86_64  1.4.8-1.fc20               updates  148 k
+ libXft                       x86_64  2.3.1-5.fc20               fedora    57 k
+ libXi                        x86_64  1.7.4-1.fc20               updates   39 k
+ libXinerama                  x86_64  1.1.3-2.fc20               fedora    14 k
+ libXrandr                    x86_64  1.4.1-2.fc20               fedora    25 k
+ libXrender                   x86_64  0.9.8-2.fc20               fedora    25 k
+ libXtst                      x86_64  1.2.2-2.fc20               fedora    20 k
+ libXxf86vm                   x86_64  1.1.3-2.fc20               fedora    17 k
+ libart_lgpl                  x86_64  2.3.21-8.fc20              fedora    66 k
+ libasyncns                   x86_64  0.8-6.fc20                 fedora    26 k
+ libdrm                       x86_64  2.4.58-1.fc20              updates  121 k
+ libfontenc                   x86_64  1.1.1-4.fc20               fedora    29 k
+ libgcj                       x86_64  4.8.3-7.fc20               updates   18 M
+ libjpeg-turbo                x86_64  1.3.1-3.fc20               updates  137 k
+ libogg                       x86_64  2:1.3.0-6.fc20             fedora    24 k
+ libpciaccess                 x86_64  0.13.3-0.1.fc20            updates   25 k
+ libpng                       x86_64  2:1.6.6-3.fc20             updates  253 k
+ libsndfile                   x86_64  1.0.25-9.fc20              updates  149 k
+ libthai                      x86_64  0.1.20-1.fc20              updates  195 k
+ libtiff                      x86_64  4.0.3-15.fc20              updates  165 k
+ libvorbis                    x86_64  1:1.3.4-1.fc20             updates  187 k
+ libwayland-client            x86_64  1.2.0-3.fc20               fedora    24 k
+ libwayland-server            x86_64  1.2.0-3.fc20               fedora    29 k
+ libxcb                       x86_64  1.9.1-3.fc20               fedora   167 k
+ libxslt                      x86_64  1.1.28-5.fc20              fedora   241 k
+ llvm-libs                    x86_64  3.4-12.fc20                updates  7.0 M
+ mesa-libEGL                  x86_64  10.3.3-1.20141110.fc20     updates  2.7 M
+ mesa-libGL                   x86_64  10.3.3-1.20141110.fc20     updates  174 k
+ mesa-libgbm                  x86_64  10.3.3-1.20141110.fc20     updates  1.4 M
+ mesa-libglapi                x86_64  10.3.3-1.20141110.fc20     updates   39 k
+ pango                        x86_64  1.36.1-3.fc20              updates  285 k
+ pixman                       x86_64  0.30.0-5.fc20              updates  252 k
+ pulseaudio-libs              x86_64  5.0-25.fc20                updates  510 k
+ python-cssselect             noarch  0.9.1-1.fc20               updates   58 k
+ python-javapackages          noarch  3.4.1-3.fc20               updates   31 k
+ python-lxml                  x86_64  3.3.6-1.fc20               updates  792 k
+ sinjdoc                      x86_64  0.5-16.fc20                fedora   707 k
+ ttmkfdir                     x86_64  3.0.9-40.fc20              fedora    47 k
+ tzdata-java                  noarch  2015d-1.fc20               updates  144 k
+ xorg-x11-font-utils          x86_64  1:7.5-18.fc20              fedora    87 k
+ xorg-x11-fonts-Type1         noarch  7.5-10.fc20                updates  521 k
+ zip                          x86_64  3.0-10.fc20                updates  260 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+84 Dependent packages)
+
+Total download size: 77 M
+Installed size: 255 M
+Downloading packages:
+[91mwarning: /var/cache/yum/x86_64/20/fedora/packages/alsa-lib-1.0.27.2-2.fc20.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 246110c1: NOKEY
+[0mPublic key for alsa-lib-1.0.27.2-2.fc20.x86_64.rpm is not installed
+Public key for cairo-1.14.0-2.fc20.x86_64.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                              9.5 MB/s |  77 MB  00:08     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-20-x86_64
+[91mImporting GPG key 0x246110C1:
+ Userid     : "Fedora (20) <fedora@fedoraproject.org>"
+ Fingerprint: c7c9 a9c8 9153 f201 83ce 7cba 2eb1 61fa 2461 10c1
+ Package    : fedora-release-20-4.noarch (@fedora-updates/$releasever)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-20-x86_64
+[0mRunning transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libjpeg-turbo-1.3.1-3.fc20.x86_64                           1/85 
+  Installing : 2:libpng-1.6.6-3.fc20.x86_64                                2/85 
+  Installing : freetype-2.5.0-10.fc20.x86_64                               3/85 
+  Installing : libICE-1.0.8-6.fc20.x86_64                                  4/85 
+  Installing : libSM-1.2.1-6.fc20.x86_64                                   5/85 
+  Installing : atk-2.10.0-1.fc20.x86_64                                    6/85 
+  Installing : mesa-libglapi-10.3.3-1.20141110.fc20.x86_64                 7/85 
+  Installing : libwayland-client-1.2.0-3.fc20.x86_64                       8/85 
+  Installing : 2:libogg-1.3.0-6.fc20.x86_64                                9/85 
+  Installing : llvm-libs-3.4-12.fc20.x86_64                               10/85 
+  Installing : alsa-lib-1.0.27.2-2.fc20.x86_64                            11/85 
+  Installing : libfontenc-1.1.1-4.fc20.x86_64                             12/85 
+  Installing : libxslt-1.1.28-5.fc20.x86_64                               13/85 
+  Installing : libwayland-server-1.2.0-3.fc20.x86_64                      14/85 
+  Installing : libXfont-1.4.8-1.fc20.x86_64                               15/85 
+  Installing : 1:xorg-x11-font-utils-7.5-18.fc20.x86_64                   16/85 
+  Installing : 1:libvorbis-1.3.4-1.fc20.x86_64                            17/85 
+  Installing : flac-libs-1.3.1-1.fc20.x86_64                              18/85 
+  Installing : ttmkfdir-3.0.9-40.fc20.x86_64                              19/85 
+  Installing : jasper-libs-1.900.1-28.fc20.x86_64                         20/85 
+  Installing : avahi-libs-0.6.31-21.fc20.x86_64                           21/85 
+  Installing : 1:cups-libs-1.7.5-13.fc20.x86_64                           22/85 
+  Installing : zip-3.0-10.fc20.x86_64                                     23/85 
+  Installing : hwdata-0.276-1.fc20.noarch                                 24/85 
+  Installing : libpciaccess-0.13.3-0.1.fc20.x86_64                        25/85 
+  Installing : libdrm-2.4.58-1.fc20.x86_64                                26/85 
+  Installing : mesa-libgbm-10.3.3-1.20141110.fc20.x86_64                  27/85 
+  Installing : gsm-1.0.13-10.fc20.x86_64                                  28/85 
+  Installing : libsndfile-1.0.25-9.fc20.x86_64                            29/85 
+  Installing : libX11-common-1.6.1-1.fc20.noarch                          30/85 
+  Installing : libthai-0.1.20-1.fc20.x86_64                               31/85 
+  Installing : libart_lgpl-2.3.21-8.fc20.x86_64                           32/85 
+  Installing : json-c-0.11-6.fc20.x86_64                                  33/85 
+  Installing : python-cssselect-0.9.1-1.fc20.noarch                       34/85 
+  Installing : python-lxml-3.3.6-1.fc20.x86_64                            35/85 
+  Installing : python-javapackages-3.4.1-3.fc20.noarch                    36/85 
+  Installing : javapackages-tools-3.4.1-3.fc20.noarch                     37/85 
+  Installing : jbigkit-libs-2.0-10.fc20.x86_64                            38/85 
+  Installing : libtiff-4.0.3-15.fc20.x86_64                               39/85 
+  Installing : fontpackages-filesystem-1.44-9.fc20.noarch                 40/85 
+  Installing : fontconfig-2.11.0-2.fc20.x86_64                            41/85 
+  Installing : xorg-x11-fonts-Type1-7.5-10.fc20.noarch                    42/85 
+  Installing : graphite2-1.2.2-4.fc20.x86_64                              43/85 
+  Installing : harfbuzz-0.9.27-1.fc20.x86_64                              44/85 
+  Installing : hicolor-icon-theme-0.14-1.fc20.noarch                      45/85 
+  Installing : pixman-0.30.0-5.fc20.x86_64                                46/85 
+  Installing : lcms2-2.6-1.fc20.x86_64                                    47/85 
+  Installing : tzdata-java-2015d-1.fc20.noarch                            48/85 
+  Installing : 1:java-1.7.0-openjdk-headless-1.7.0.79-2.5.5.0.fc20.x86_   49/85 
+  Installing : libasyncns-0.8-6.fc20.x86_64                               50/85 
+  Installing : libXau-1.0.8-2.fc20.x86_64                                 51/85 
+  Installing : libxcb-1.9.1-3.fc20.x86_64                                 52/85 
+  Installing : libX11-1.6.1-1.fc20.x86_64                                 53/85 
+  Installing : libXext-1.3.2-2.fc20.x86_64                                54/85 
+  Installing : libXrender-0.9.8-2.fc20.x86_64                             55/85 
+  Installing : libXfixes-5.0.1-2.fc20.x86_64                              56/85 
+  Installing : libXi-1.7.4-1.fc20.x86_64                                  57/85 
+  Installing : libXtst-1.2.2-2.fc20.x86_64                                58/85 
+  Installing : gdk-pixbuf2-2.30.3-1.fc20.x86_64                           59/85 
+  Installing : libXdamage-1.1.4-4.fc20.x86_64                             60/85 
+  Installing : libXrandr-1.4.1-2.fc20.x86_64                              61/85 
+  Installing : pulseaudio-libs-5.0-25.fc20.x86_64                         62/85 
+  Installing : libXcursor-1.1.14-2.fc20.x86_64                            63/85 
+  Installing : mesa-libEGL-10.3.3-1.20141110.fc20.x86_64                  64/85 
+  Installing : libXft-2.3.1-5.fc20.x86_64                                 65/85 
+  Installing : libXxf86vm-1.1.3-2.fc20.x86_64                             66/85 
+  Installing : mesa-libGL-10.3.3-1.20141110.fc20.x86_64                   67/85 
+  Installing : cairo-1.14.0-2.fc20.x86_64                                 68/85 
+  Installing : pango-1.36.1-3.fc20.x86_64                                 69/85 
+  Installing : libXinerama-1.1.3-2.fc20.x86_64                            70/85 
+  Installing : giflib-4.1.6-9.fc20.x86_64                                 71/85 
+  Installing : libXcomposite-0.4.4-4.fc20.x86_64                          72/85 
+  Installing : gtk2-2.24.27-1.fc20.x86_64                                 73/85 
+  Installing : 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64          74/85 
+  Installing : libgcj-4.8.3-7.fc20.x86_64                                 75/85 
+  Installing : 1:java_cup-0.11a-15.fc20.noarch                            76/85 
+  Installing : java-1.5.0-gcj-1.5.0.0-45.fc20.x86_64                      77/85 
+  Installing : sinjdoc-0.5-16.fc20.x86_64                                 78/85 
+  Installing : bouncycastle-1.46-11.fc20.noarch                           79/85 
+  Installing : javamail-1.5.0-6.fc20.noarch                               80/85 
+  Installing : bouncycastle-mail-1.46-11.fc20.noarch                      81/85 
+  Installing : bouncycastle-tsp-1.46-6.fc19.noarch                        82/85 
+  Installing : itext-core-2.1.7-21.fc20.noarch                            83/85 
+  Installing : itext-2.1.7-21.fc20.x86_64                                 84/85 
+  Installing : pdftk-1.44-11.fc19.x86_64                                  85/85 
+  Verifying  : 1:cups-libs-1.7.5-13.fc20.x86_64                            1/85 
+  Verifying  : libXau-1.0.8-2.fc20.x86_64                                  2/85 
+  Verifying  : libICE-1.0.8-6.fc20.x86_64                                  3/85 
+  Verifying  : 2:libpng-1.6.6-3.fc20.x86_64                                4/85 
+  Verifying  : libXcursor-1.1.14-2.fc20.x86_64                             5/85 
+  Verifying  : bouncycastle-tsp-1.46-6.fc19.noarch                         6/85 
+  Verifying  : libwayland-server-1.2.0-3.fc20.x86_64                       7/85 
+  Verifying  : libasyncns-0.8-6.fc20.x86_64                                8/85 
+  Verifying  : libXft-2.3.1-5.fc20.x86_64                                  9/85 
+  Verifying  : 1:java-1.7.0-openjdk-headless-1.7.0.79-2.5.5.0.fc20.x86_   10/85 
+  Verifying  : libjpeg-turbo-1.3.1-3.fc20.x86_64                          11/85 
+  Verifying  : tzdata-java-2015d-1.fc20.noarch                            12/85 
+  Verifying  : libXxf86vm-1.1.3-2.fc20.x86_64                             13/85 
+  Verifying  : harfbuzz-0.9.27-1.fc20.x86_64                              14/85 
+  Verifying  : mesa-libEGL-10.3.3-1.20141110.fc20.x86_64                  15/85 
+  Verifying  : itext-core-2.1.7-21.fc20.noarch                            16/85 
+  Verifying  : libxslt-1.1.28-5.fc20.x86_64                               17/85 
+  Verifying  : libXrender-0.9.8-2.fc20.x86_64                             18/85 
+  Verifying  : jasper-libs-1.900.1-28.fc20.x86_64                         19/85 
+  Verifying  : lcms2-2.6-1.fc20.x86_64                                    20/85 
+  Verifying  : pango-1.36.1-3.fc20.x86_64                                 21/85 
+  Verifying  : cairo-1.14.0-2.fc20.x86_64                                 22/85 
+  Verifying  : libXfixes-5.0.1-2.fc20.x86_64                              23/85 
+  Verifying  : 1:libvorbis-1.3.4-1.fc20.x86_64                            24/85 
+  Verifying  : pixman-0.30.0-5.fc20.x86_64                                25/85 
+  Verifying  : hicolor-icon-theme-0.14-1.fc20.noarch                      26/85 
+  Verifying  : libfontenc-1.1.1-4.fc20.x86_64                             27/85 
+  Verifying  : pdftk-1.44-11.fc19.x86_64                                  28/85 
+  Verifying  : python-lxml-3.3.6-1.fc20.x86_64                            29/85 
+  Verifying  : pulseaudio-libs-5.0-25.fc20.x86_64                         30/85 
+  Verifying  : 1:xorg-x11-font-utils-7.5-18.fc20.x86_64                   31/85 
+  Verifying  : 1:java_cup-0.11a-15.fc20.noarch                            32/85 
+  Verifying  : gtk2-2.24.27-1.fc20.x86_64                                 33/85 
+  Verifying  : libXfont-1.4.8-1.fc20.x86_64                               34/85 
+  Verifying  : mesa-libglapi-10.3.3-1.20141110.fc20.x86_64                35/85 
+  Verifying  : graphite2-1.2.2-4.fc20.x86_64                              36/85 
+  Verifying  : libdrm-2.4.58-1.fc20.x86_64                                37/85 
+  Verifying  : xorg-x11-fonts-Type1-7.5-10.fc20.noarch                    38/85 
+  Verifying  : sinjdoc-0.5-16.fc20.x86_64                                 39/85 
+  Verifying  : fontpackages-filesystem-1.44-9.fc20.noarch                 40/85 
+  Verifying  : jbigkit-libs-2.0-10.fc20.x86_64                            41/85 
+  Verifying  : bouncycastle-mail-1.46-11.fc20.noarch                      42/85 
+  Verifying  : java-1.5.0-gcj-1.5.0.0-45.fc20.x86_64                      43/85 
+  Verifying  : libtiff-4.0.3-15.fc20.x86_64                               44/85 
+  Verifying  : libXinerama-1.1.3-2.fc20.x86_64                            45/85 
+  Verifying  : ttmkfdir-3.0.9-40.fc20.x86_64                              46/85 
+  Verifying  : python-javapackages-3.4.1-3.fc20.noarch                    47/85 
+  Verifying  : python-cssselect-0.9.1-1.fc20.noarch                       48/85 
+  Verifying  : alsa-lib-1.0.27.2-2.fc20.x86_64                            49/85 
+  Verifying  : libpciaccess-0.13.3-0.1.fc20.x86_64                        50/85 
+  Verifying  : json-c-0.11-6.fc20.x86_64                                  51/85 
+  Verifying  : libart_lgpl-2.3.21-8.fc20.x86_64                           52/85 
+  Verifying  : libsndfile-1.0.25-9.fc20.x86_64                            53/85 
+  Verifying  : javapackages-tools-3.4.1-3.fc20.noarch                     54/85 
+  Verifying  : libthai-0.1.20-1.fc20.x86_64                               55/85 
+  Verifying  : libX11-1.6.1-1.fc20.x86_64                                 56/85 
+  Verifying  : freetype-2.5.0-10.fc20.x86_64                              57/85 
+  Verifying  : mesa-libGL-10.3.3-1.20141110.fc20.x86_64                   58/85 
+  Verifying  : flac-libs-1.3.1-1.fc20.x86_64                              59/85 
+  Verifying  : libXi-1.7.4-1.fc20.x86_64                                  60/85 
+  Verifying  : libX11-common-1.6.1-1.fc20.noarch                          61/85 
+  Verifying  : libXdamage-1.1.4-4.fc20.x86_64                             62/85 
+  Verifying  : giflib-4.1.6-9.fc20.x86_64                                 63/85 
+  Verifying  : gdk-pixbuf2-2.30.3-1.fc20.x86_64                           64/85 
+  Verifying  : libXrandr-1.4.1-2.fc20.x86_64                              65/85 
+  Verifying  : libXcomposite-0.4.4-4.fc20.x86_64                          66/85 
+  Verifying  : itext-2.1.7-21.fc20.x86_64                                 67/85 
+  Verifying  : gsm-1.0.13-10.fc20.x86_64                                  68/85 
+  Verifying  : libgcj-4.8.3-7.fc20.x86_64                                 69/85 
+  Verifying  : llvm-libs-3.4-12.fc20.x86_64                               70/85 
+  Verifying  : atk-2.10.0-1.fc20.x86_64                                   71/85 
+  Verifying  : hwdata-0.276-1.fc20.noarch                                 72/85 
+  Verifying  : bouncycastle-1.46-11.fc20.noarch                           73/85 
+  Verifying  : libxcb-1.9.1-3.fc20.x86_64                                 74/85 
+  Verifying  : mesa-libgbm-10.3.3-1.20141110.fc20.x86_64                  75/85 
+  Verifying  : 1:java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64          76/85 
+  Verifying  : 2:libogg-1.3.0-6.fc20.x86_64                               77/85 
+  Verifying  : zip-3.0-10.fc20.x86_64                                     78/85 
+  Verifying  : libwayland-client-1.2.0-3.fc20.x86_64                      79/85 
+  Verifying  : fontconfig-2.11.0-2.fc20.x86_64                            80/85 
+  Verifying  : libXext-1.3.2-2.fc20.x86_64                                81/85 
+  Verifying  : libXtst-1.2.2-2.fc20.x86_64                                82/85 
+  Verifying  : avahi-libs-0.6.31-21.fc20.x86_64                           83/85 
+  Verifying  : javamail-1.5.0-6.fc20.noarch                               84/85 
+  Verifying  : libSM-1.2.1-6.fc20.x86_64                                  85/85 
+
+Installed:
+  pdftk.x86_64 0:1.44-11.fc19                                                   
+
+Dependency Installed:
+  alsa-lib.x86_64 0:1.0.27.2-2.fc20                                             
+  atk.x86_64 0:2.10.0-1.fc20                                                    
+  avahi-libs.x86_64 0:0.6.31-21.fc20                                            
+  bouncycastle.noarch 0:1.46-11.fc20                                            
+  bouncycastle-mail.noarch 0:1.46-11.fc20                                       
+  bouncycastle-tsp.noarch 0:1.46-6.fc19                                         
+  cairo.x86_64 0:1.14.0-2.fc20                                                  
+  cups-libs.x86_64 1:1.7.5-13.fc20                                              
+  flac-libs.x86_64 0:1.3.1-1.fc20                                               
+  fontconfig.x86_64 0:2.11.0-2.fc20                                             
+  fontpackages-filesystem.noarch 0:1.44-9.fc20                                  
+  freetype.x86_64 0:2.5.0-10.fc20                                               
+  gdk-pixbuf2.x86_64 0:2.30.3-1.fc20                                            
+  giflib.x86_64 0:4.1.6-9.fc20                                                  
+  graphite2.x86_64 0:1.2.2-4.fc20                                               
+  gsm.x86_64 0:1.0.13-10.fc20                                                   
+  gtk2.x86_64 0:2.24.27-1.fc20                                                  
+  harfbuzz.x86_64 0:0.9.27-1.fc20                                               
+  hicolor-icon-theme.noarch 0:0.14-1.fc20                                       
+  hwdata.noarch 0:0.276-1.fc20                                                  
+  itext.x86_64 0:2.1.7-21.fc20                                                  
+  itext-core.noarch 0:2.1.7-21.fc20                                             
+  jasper-libs.x86_64 0:1.900.1-28.fc20                                          
+  java-1.5.0-gcj.x86_64 0:1.5.0.0-45.fc20                                       
+  java-1.7.0-openjdk.x86_64 1:1.7.0.79-2.5.5.0.fc20                             
+  java-1.7.0-openjdk-headless.x86_64 1:1.7.0.79-2.5.5.0.fc20                    
+  java_cup.noarch 1:0.11a-15.fc20                                               
+  javamail.noarch 0:1.5.0-6.fc20                                                
+  javapackages-tools.noarch 0:3.4.1-3.fc20                                      
+  jbigkit-libs.x86_64 0:2.0-10.fc20                                             
+  json-c.x86_64 0:0.11-6.fc20                                                   
+  lcms2.x86_64 0:2.6-1.fc20                                                     
+  libICE.x86_64 0:1.0.8-6.fc20                                                  
+  libSM.x86_64 0:1.2.1-6.fc20                                                   
+  libX11.x86_64 0:1.6.1-1.fc20                                                  
+  libX11-common.noarch 0:1.6.1-1.fc20                                           
+  libXau.x86_64 0:1.0.8-2.fc20                                                  
+  libXcomposite.x86_64 0:0.4.4-4.fc20                                           
+  libXcursor.x86_64 0:1.1.14-2.fc20                                             
+  libXdamage.x86_64 0:1.1.4-4.fc20                                              
+  libXext.x86_64 0:1.3.2-2.fc20                                                 
+  libXfixes.x86_64 0:5.0.1-2.fc20                                               
+  libXfont.x86_64 0:1.4.8-1.fc20                                                
+  libXft.x86_64 0:2.3.1-5.fc20                                                  
+  libXi.x86_64 0:1.7.4-1.fc20                                                   
+  libXinerama.x86_64 0:1.1.3-2.fc20                                             
+  libXrandr.x86_64 0:1.4.1-2.fc20                                               
+  libXrender.x86_64 0:0.9.8-2.fc20                                              
+  libXtst.x86_64 0:1.2.2-2.fc20                                                 
+  libXxf86vm.x86_64 0:1.1.3-2.fc20                                              
+  libart_lgpl.x86_64 0:2.3.21-8.fc20                                            
+  libasyncns.x86_64 0:0.8-6.fc20                                                
+  libdrm.x86_64 0:2.4.58-1.fc20                                                 
+  libfontenc.x86_64 0:1.1.1-4.fc20                                              
+  libgcj.x86_64 0:4.8.3-7.fc20                                                  
+  libjpeg-turbo.x86_64 0:1.3.1-3.fc20                                           
+  libogg.x86_64 2:1.3.0-6.fc20                                                  
+  libpciaccess.x86_64 0:0.13.3-0.1.fc20                                         
+  libpng.x86_64 2:1.6.6-3.fc20                                                  
+  libsndfile.x86_64 0:1.0.25-9.fc20                                             
+  libthai.x86_64 0:0.1.20-1.fc20                                                
+  libtiff.x86_64 0:4.0.3-15.fc20                                                
+  libvorbis.x86_64 1:1.3.4-1.fc20                                               
+  libwayland-client.x86_64 0:1.2.0-3.fc20                                       
+  libwayland-server.x86_64 0:1.2.0-3.fc20                                       
+  libxcb.x86_64 0:1.9.1-3.fc20                                                  
+  libxslt.x86_64 0:1.1.28-5.fc20                                                
+  llvm-libs.x86_64 0:3.4-12.fc20                                                
+  mesa-libEGL.x86_64 0:10.3.3-1.20141110.fc20                                   
+  mesa-libGL.x86_64 0:10.3.3-1.20141110.fc20                                    
+  mesa-libgbm.x86_64 0:10.3.3-1.20141110.fc20                                   
+  mesa-libglapi.x86_64 0:10.3.3-1.20141110.fc20                                 
+  pango.x86_64 0:1.36.1-3.fc20                                                  
+  pixman.x86_64 0:0.30.0-5.fc20                                                 
+  pulseaudio-libs.x86_64 0:5.0-25.fc20                                          
+  python-cssselect.noarch 0:0.9.1-1.fc20                                        
+  python-javapackages.noarch 0:3.4.1-3.fc20                                     
+  python-lxml.x86_64 0:3.3.6-1.fc20                                             
+  sinjdoc.x86_64 0:0.5-16.fc20                                                  
+  ttmkfdir.x86_64 0:3.0.9-40.fc20                                               
+  tzdata-java.noarch 0:2015d-1.fc20                                             
+  xorg-x11-font-utils.x86_64 1:7.5-18.fc20                                      
+  xorg-x11-fonts-Type1.noarch 0:7.5-10.fc20                                     
+  zip.x86_64 0:3.0-10.fc20                                                      
+
+Complete!
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container b22b4e50e63a
+ ---> 88bda0cd2957
+Step 5/6 : ENTRYPOINT ["/usr/bin/pdftk"]
+ ---> Running in ebb36a2c5c24
+Removing intermediate container ebb36a2c5c24
+ ---> f8536adb5182
+Step 6/6 : CMD ["--help"]
+ ---> Running in f75c33ba5316
+Removing intermediate container f75c33ba5316
+ ---> 698b595d8b30
+Successfully built 698b595d8b30
+Successfully tagged binacle:483733255

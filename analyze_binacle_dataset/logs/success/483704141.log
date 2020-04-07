@@ -1,0 +1,67 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM vertx/vertx3
+latest: Pulling from vertx/vertx3
+55cbf04beb70: Pulling fs layer
+1607093a898c: Pulling fs layer
+9a8ea045c926: Pulling fs layer
+1290813abd9d: Pulling fs layer
+8a6b982ad6d7: Pulling fs layer
+abb029e68402: Pulling fs layer
+8cd067dc06dc: Pulling fs layer
+1b9ce2097b98: Pulling fs layer
+6f9b8891c967: Pulling fs layer
+0591b16f00cb: Pulling fs layer
+1290813abd9d: Waiting
+4211dd1064b3: Pulling fs layer
+8a6b982ad6d7: Waiting
+abb029e68402: Waiting
+8cd067dc06dc: Waiting
+1b9ce2097b98: Waiting
+6f9b8891c967: Waiting
+0591b16f00cb: Waiting
+4211dd1064b3: Waiting
+9a8ea045c926: Verifying Checksum
+9a8ea045c926: Download complete
+1607093a898c: Download complete
+1290813abd9d: Verifying Checksum
+1290813abd9d: Download complete
+8a6b982ad6d7: Verifying Checksum
+8a6b982ad6d7: Download complete
+55cbf04beb70: Verifying Checksum
+55cbf04beb70: Download complete
+abb029e68402: Verifying Checksum
+abb029e68402: Download complete
+1b9ce2097b98: Verifying Checksum
+1b9ce2097b98: Download complete
+6f9b8891c967: Verifying Checksum
+6f9b8891c967: Download complete
+4211dd1064b3: Verifying Checksum
+4211dd1064b3: Download complete
+8cd067dc06dc: Verifying Checksum
+8cd067dc06dc: Download complete
+0591b16f00cb: Verifying Checksum
+0591b16f00cb: Download complete
+55cbf04beb70: Pull complete
+1607093a898c: Pull complete
+9a8ea045c926: Pull complete
+1290813abd9d: Pull complete
+8a6b982ad6d7: Pull complete
+abb029e68402: Pull complete
+8cd067dc06dc: Pull complete
+1b9ce2097b98: Pull complete
+6f9b8891c967: Pull complete
+0591b16f00cb: Pull complete
+4211dd1064b3: Pull complete
+Digest: sha256:df9cf6c6170a07ad2e6c8fa3621578242ca34ad57fbb8e6dd227d884c591fbce
+Status: Downloaded newer image for vertx/vertx3:latest
+ ---> d705b435c7ec
+Step 2/3 : ENTRYPOINT ["vertx"]
+ ---> Running in 51cb1231040c
+Removing intermediate container 51cb1231040c
+ ---> b0dbebf34e3e
+Step 3/3 : CMD ["--help"]
+ ---> Running in a6bbe10d7d0a
+Removing intermediate container a6bbe10d7d0a
+ ---> 26035182dd1d
+Successfully built 26035182dd1d
+Successfully tagged binacle:483704141

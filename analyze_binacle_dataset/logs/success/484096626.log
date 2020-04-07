@@ -1,0 +1,153 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/29 : FROM busybox:buildroot-2014.02
+buildroot-2014.02: Pulling from library/busybox
+Image docker.io/library/busybox:buildroot-2014.02 uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+a3ed95caeb02: Pulling fs layer
+1db09adb5ddd: Pulling fs layer
+a3ed95caeb02: Verifying Checksum
+a3ed95caeb02: Download complete
+1db09adb5ddd: Verifying Checksum
+1db09adb5ddd: Download complete
+a3ed95caeb02: Pull complete
+1db09adb5ddd: Pull complete
+Digest: sha256:f8cdcf3eb8fac77a9b24f37bc440feea024a5d3ec9a33f1d0a4c42c5df6a49c3
+Status: Downloaded newer image for busybox:buildroot-2014.02
+ ---> 9875fb006e07
+Step 2/29 : MAINTAINER docker <docker@docker.io>
+ ---> Running in 5fcf0ac4b13c
+Removing intermediate container 5fcf0ac4b13c
+ ---> 71661dbe87c5
+Step 3/29 : ONBUILD RUN ["echo", "test"]
+ ---> Running in fc846a47a966
+Removing intermediate container fc846a47a966
+ ---> 6005ff3d5d31
+Step 4/29 : ONBUILD RUN echo test
+ ---> Running in 09002500a859
+Removing intermediate container 09002500a859
+ ---> 7bd33cd0cc72
+Step 5/29 : ONBUILD COPY . /
+ ---> Running in 969851d49580
+Removing intermediate container 969851d49580
+ ---> b8aa8556ebdd
+Step 6/29 : RUN ["ls", "-la"]
+ ---> Running in 9753725d625e
+total 56
+drwxr-xr-x    1 root     root          4096 Apr  2 15:26 .
+drwxr-xr-x    1 root     root          4096 Apr  2 15:26 ..
+-rwxr-xr-x    1 root     root             0 Apr  2 15:26 .dockerenv
+drwxrwxr-x    2 root     root          4096 May 22  2014 bin
+drwxr-xr-x    5 root     root           340 Apr  2 15:26 dev
+drwxr-xr-x    1 root     root          4096 Apr  2 15:26 etc
+drwxrwxr-x    4 root     root          4096 May 22  2014 home
+drwxrwxr-x    2 root     root          4096 May 22  2014 lib
+lrwxrwxrwx    1 root     root             3 May 22  2014 lib64 -> lib
+lrwxrwxrwx    1 root     root            11 May 22  2014 linuxrc -> bin/busybox
+drwxrwxr-x    2 root     root          4096 Feb 27  2014 media
+drwxrwxr-x    2 root     root          4096 Feb 27  2014 mnt
+drwxrwxr-x    2 root     root          4096 Feb 27  2014 opt
+dr-xr-xr-x  152 root     root             0 Apr  2 15:26 proc
+drwx------    2 root     root          4096 Feb 27  2014 root
+lrwxrwxrwx    1 root     root             3 Feb 27  2014 run -> tmp
+drwxr-xr-x    2 root     root          4096 May 22  2014 sbin
+dr-xr-xr-x   13 root     root             0 Apr  2 15:26 sys
+drwxrwxrwt    3 root     root          4096 May 22  2014 tmp
+drwxrwxr-x    6 root     root          4096 May 22  2014 usr
+drwxrwxr-x    4 root     root          4096 May 22  2014 var
+Removing intermediate container 9753725d625e
+ ---> 1c2ac5276a65
+Step 7/29 : RUN ["echo", "'1234'"]
+ ---> Running in cdb17dedb8f7
+'1234'
+Removing intermediate container cdb17dedb8f7
+ ---> 4a1de4f19f59
+Step 8/29 : RUN echo "1234"
+ ---> Running in 225f5572f5db
+1234
+Removing intermediate container 225f5572f5db
+ ---> d8d703306884
+Step 9/29 : RUN echo 1234
+ ---> Running in 531abe3bd6d3
+1234
+Removing intermediate container 531abe3bd6d3
+ ---> 73e25874d6f4
+Step 10/29 : RUN echo '1234' &&     echo "456" &&     echo 789
+ ---> Running in eebdb243ea60
+1234
+456
+789
+Removing intermediate container eebdb243ea60
+ ---> 8933a77c89d7
+Step 11/29 : RUN    sh -c 'echo root:testpass         > /tmp/passwd'
+ ---> Running in a4e0bb65a694
+Removing intermediate container a4e0bb65a694
+ ---> f80f09b59230
+Step 12/29 : RUN mkdir -p /test /test2 /test3/test
+ ---> Running in cc6ebac14d6a
+Removing intermediate container cc6ebac14d6a
+ ---> 9aa18d7c203f
+Step 13/29 : ENV SCUBA 1 DUBA 3
+ ---> Running in 94d57d5c71da
+Removing intermediate container 94d57d5c71da
+ ---> 75eab6c319b1
+Step 14/29 : ENV SCUBA "1 DUBA 3"
+ ---> Running in 69851ddbe01b
+Removing intermediate container 69851ddbe01b
+ ---> a8e1128031bc
+Step 15/29 : CMD ["echo", "test"]
+ ---> Running in 65bbb3abedef
+Removing intermediate container 65bbb3abedef
+ ---> dbf145610b70
+Step 16/29 : CMD echo test
+ ---> Running in cf0caeb30aa6
+Removing intermediate container cf0caeb30aa6
+ ---> c8aae73d0378
+Step 17/29 : CMD echo "test"
+ ---> Running in 2eb7f931b39a
+Removing intermediate container 2eb7f931b39a
+ ---> 0bf1ee21225b
+Step 18/29 : CMD echo 'test'
+ ---> Running in ed8ab6d7c431
+Removing intermediate container ed8ab6d7c431
+ ---> a8680fa73f3d
+Step 19/29 : CMD echo 'test' | wc -
+ ---> Running in 31563842059a
+Removing intermediate container 31563842059a
+ ---> b5b6cbbbcce8
+Step 20/29 : EXPOSE 3000
+ ---> Running in 5096fa0505d6
+Removing intermediate container 5096fa0505d6
+ ---> e12565683692
+Step 21/29 : EXPOSE 9000 5000 6000
+ ---> Running in 88dd636d16dd
+Removing intermediate container 88dd636d16dd
+ ---> 3187fed9e022
+Step 22/29 : USER docker
+ ---> Running in 3a5363c826e7
+Removing intermediate container 3a5363c826e7
+ ---> 46750db1b5d1
+Step 23/29 : USER docker:root
+ ---> Running in 979160c86c5c
+Removing intermediate container 979160c86c5c
+ ---> 5301164713fd
+Step 24/29 : VOLUME ["/test"]
+ ---> Running in c9183fe54c8c
+Removing intermediate container c9183fe54c8c
+ ---> 8bf92e66ee96
+Step 25/29 : VOLUME ["/test", "/test2"]
+ ---> Running in 71a00c7ab55a
+Removing intermediate container 71a00c7ab55a
+ ---> 4559f2653ae3
+Step 26/29 : VOLUME /test3
+ ---> Running in b0dd625d8ada
+Removing intermediate container b0dd625d8ada
+ ---> 0e0b35b52987
+Step 27/29 : WORKDIR /test
+ ---> Running in 1bdb411486f6
+Removing intermediate container 1bdb411486f6
+ ---> b1c6bfedc2f0
+Step 28/29 : ADD . /
+ ---> 692eee5cd9ba
+Step 29/29 : COPY . copy
+ ---> 6fa994371ece
+Successfully built 6fa994371ece
+Successfully tagged binacle:484096626
