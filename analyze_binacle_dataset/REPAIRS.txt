@@ -19,50 +19,49 @@
   Error message: "useradd: UID 1000 is not unique"
   Diagnosis: A variable needed to be changed before using the Dockerfile
   Repair: Change value of variable PERM_USER_ID at line 4
-  Source: ""
+  Source: "N/A"
+  Hadolint: "??"
 
 483202780
-  Error message: No package * available
+  Error message: "No package mingw32-[binutils,crt,nsis] available"
   Diagnosis: yum cannot find requested package
-  Repair: Change line 124 to something like the following as per https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7
-    RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    RUN yum install -y mingw64-gcc
-  Source: ""
-  Hadolint: ""
+  Repair: "??"
+  Source: https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7
+  Hadolint: "??"
 
 484144517
   Error message: apt-get: comand not found
-  Diagnosis: missing utility function (apt-get and possibly others to install it)
-  Repair: see https://askubuntu.com/questions/860375/installing-apt-get
-  Source: ""
-  Hadolint: ""
+  Diagnosis: missing utility function (apt-get and possibly others)
+  Repair: "??"
+  Source: https://askubuntu.com/questions/860375/installing-apt-get
+  Hadolint: "??"
 
-483733309
-  Error message: "Operation failed: No such file or directory" 
-  Diagnosis: using systemctl to enable libvirtd service, but a container there is no systemd-daemon.
-  Repair: see https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
-  Source: ""
-  Hadolint: ""
+483733309xs
+  Error message: "Operation failed: No such file or directory. The command '/bin/sh -c systemctl enable libvirtd' returned a non-zero code: 1" 
+  Diagnosis: There is no systemd-daemon running in the container
+  Repair: "??" 
+  Source: https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
+  Hadolint: "??"
 
 154176094
   Error message: "The repository 'http://security.ubuntu.com/ubuntu artful-security Release' does not have a Release file."
   Diagnosis: "The 17.04 repositories have been closed and withdrawn"
-  Repair: "Change ubuntu version from 17.10 to 18.04"
-  Sourece: "https://ubuntuforums.org/showthread.php?t=2382832"
-  Hadolint: "Several warnings"
+  Repair: "Change ubuntu version from 17.10 to 18.04"   <---- if you really repaired, show me the patch. don't explain in plain english
+  Source: https://ubuntuforums.org/showthread.php?t=2382832
+  Hadolint: Several warnings, but none related.
 
 169561074
   Error message: "gpg: no valid OpenPGP data found."
-  Diagnosis: "Was found older links to tor project resources"
-  Repair: "Comment lines 9 and 12"
-  Sourece: "https://2019.www.torproject.org/docs/debian.html.en"
+  Diagnosis: "Dockerfile using broken links to install/dowload/configure"
+  Repair: "Comment lines 9 and 12" <--- see comment above
+  Source: https://2019.www.torproject.org/docs/debian.html.en
   Hadolint: "Only 1 warning on line 31"
 
 176578348
   Error message: "gpg: no valid OpenPGP data found."
   Diagnosis: "Using older version of Ubuntu"
-  Repair: "Change ubuntu version from 14.10 to 18.04"
-  Sourece: "https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used"
+  Repair: "Change ubuntu version from 14.10 to 18.04" <--- se comment above
+  Source: https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used
   Hadolint: "Only 1 warning on line 28"
 
 180704908
