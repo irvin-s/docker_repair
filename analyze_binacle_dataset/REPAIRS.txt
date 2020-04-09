@@ -49,7 +49,7 @@
   Diagnosis: "The 17.04 repositories have been closed and withdrawn"
   Repair: "Change ubuntu version from 17.10 to 18.04"
   Sourece: "https://ubuntuforums.org/showthread.php?t=2382832"
-  Hadolint: "Several alerts"
+  Hadolint: "Several warnings"
 
 169561074
   Error message: "gpg: no valid OpenPGP data found."
@@ -57,3 +57,24 @@
   Repair: "Comment lines 9 and 12"
   Sourece: "https://2019.www.torproject.org/docs/debian.html.en"
   Hadolint: "Only 1 warning on line 31"
+
+176578348
+  Error message: "gpg: no valid OpenPGP data found."
+  Diagnosis: "Using older version of Ubuntu"
+  Repair: "Change ubuntu version from 14.10 to 18.04"
+  Sourece: "https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used"
+  Hadolint: "Only 1 warning on line 28"
+
+180704908
+  Error message: "E: Unable to locate package libboost1.55-all-dev"
+  Diagnosis: "libboost1.55-all-dev not found in the apt repository"
+  Repair: "Change value from libboost1.55-all-dev to libboost-all-dev in line 12"
+  Sourece: "https://askubuntu.com/questions/806478/xenial-16-04-cannot-find-package-libboost-all-dev"
+  Hadolint: "Only 1 warning on line 30"
+
+185296869
+  Error message: "pull access denied for freeradius/debian8-deps, repository does not exist or may require 'docker login': denied: requested access to the resource is denied"
+  Diagnosis: "Using a non existent dockerhub resource"
+  Repair: "Change line 1 from ARG from=freeradius/debian8-deps to ARG from=debian:jessie"
+  Sourece: "https://hub.docker.com/_/debian?tab=tags&page=1&name=jessie"
+  Hadolint: "Line 1 Always tag the version of an image explicitly"
