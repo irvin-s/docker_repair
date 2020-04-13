@@ -36,7 +36,7 @@
   Source: https://askubuntu.com/questions/860375/installing-apt-get
   Hadolint: "??"
 
-483733309xs
+483733309
   Error message: "Operation failed: No such file or directory. The command '/bin/sh -c systemctl enable libvirtd' returned a non-zero code: 1" 
   Diagnosis: There is no systemd-daemon running in the container
   Repair: "??" 
@@ -73,7 +73,14 @@
 
 185296869
   Error message: "pull access denied for freeradius/debian8-deps, repository does not exist or may require 'docker login': denied: requested access to the resource is denied"
-  Diagnosis: "Using a non existent dockerhub resource"
+  Diagnosis: "Using a non existent dockerhub image in line 1"
   Repair: "Change line 1 from ARG from=freeradius/debian8-deps to ARG from=debian:jessie"
   Sourece: "https://hub.docker.com/_/debian?tab=tags&page=1&name=jessie"
   Hadolint: "Line 1 Always tag the version of an image explicitly"
+
+282262279
+  Error message: "manifest for base/archlinux:latest not found: manifest unknown: manifest unknown"
+  Diagnosis: "Obsolete name for docker image in line 1"
+  Repair: "Change in line 1 value from base/archlinux to archlinux/base"
+  Sourece: "https://hub.docker.com/r/base/archlinux/"
+  Hadolint:  "Line 1 warning to Always tag the version of an image explicitly"
