@@ -81,6 +81,6 @@
 282262279
   Error message: "manifest for base/archlinux:latest not found: manifest unknown: manifest unknown"
   Diagnosis: "Obsolete name for docker image in line 1"
-  Repair: "Change in line 1 value from base/archlinux to archlinux/base"
+  Repair: "FROM archlinux/base"
   Sourece: "https://hub.docker.com/r/base/archlinux/"
   Hadolint:  "Line 1 warning to Always tag the version of an image explicitly"
