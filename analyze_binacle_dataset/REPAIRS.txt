@@ -17,70 +17,70 @@
 
 483357603
   Error message: "useradd: UID 1000 is not unique"
-  Diagnosis: A variable needed to be changed before using the Dockerfile
-  Repair: Change value of variable PERM_USER_ID at line 4
-  Source: "N/A"
-  Hadolint: "??"
+  Diagnosis: "A variable needed to be changed before using the Dockerfile"
+  Repair: "Change value of variable PERM_USER_ID from 1000 to 1001 at line 4"
+  Source: "https://github.com/nodejs/docker-node/issues/289"
+  Hadolint: "Two warnings, but none related."
 
 483202780
   Error message: "No package mingw32-[binutils,crt,nsis] available"
-  Diagnosis: yum cannot find requested package
-  Repair: "??"
-  Source: https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7
-  Hadolint: "??"
+  Diagnosis: "yum cannot find requested package, this package are no longer supported by the OS"
+  Repair: "There are no repairs available"
+  Source: "https://forums.centos.org/viewtopic.php?t=68772","https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7"
+  Hadolint: "Several warnings, but none related."
 
 484144517
   Error message: apt-get: comand not found
-  Diagnosis: missing utility function (apt-get and possibly others)
-  Repair: "??"
-  Source: https://askubuntu.com/questions/860375/installing-apt-get
-  Hadolint: "??"
+  Diagnosis: "The openjdk:latest image is derived from Alpine"
+  Repair: "FROM openjdk:12-jdk-oraclelinux7 at line 1", "RUN bash - && yum -y install nodej at line 3"
+  Source: "https://forums.docker.com/t/openjdk-bin-sh-apt-command-not-found/72606", "https://deb.nodesource.com/setup_9.x"
+  Hadolint: "Olny 1 warnig, Set the SHELL option -o pipefail before RUN with a pipe in it at line 3"
 
 483733309
   Error message: "Operation failed: No such file or directory. The command '/bin/sh -c systemctl enable libvirtd' returned a non-zero code: 1" 
-  Diagnosis: There is no systemd-daemon running in the container
-  Repair: "??" 
-  Source: https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
-  Hadolint: "??"
+  Diagnosis: "There is no systemd-daemon running in the container, use a image that comes with systemd"
+  Repair: "FROM unop/fedora-systemd at line 1" 
+  Source: "https://github.com/geerlingguy/docker-fedora27-ansible/issues/2", "https://hub.docker.com/r/unop/fedora-systemd/"
+  Hadolint: "Always tag the version of an image explicitly at line 1"
 
 154176094
   Error message: "The repository 'http://security.ubuntu.com/ubuntu artful-security Release' does not have a Release file."
-  Diagnosis: "The 17.04 repositories have been closed and withdrawn"
-  Repair: "Change ubuntu version from 17.10 to 18.04"   <---- if you really repaired, show me the patch. don't explain in plain english
+  Diagnosis: "The 17.04 repositories have been closed and withdrawn, use a newer image version"
+  Repair: "FROM ubuntu:18.04 at line 2"
   Source: https://ubuntuforums.org/showthread.php?t=2382832
-  Hadolint: Several warnings, but none related.
+  Hadolint: "Several warnings, but none related."
 
 169561074
   Error message: "gpg: no valid OpenPGP data found."
   Diagnosis: "Dockerfile using broken links to install/dowload/configure"
-  Repair: "Comment lines 9 and 12" <--- see comment above
-  Source: https://2019.www.torproject.org/docs/debian.html.en
-  Hadolint: "Only 1 warning on line 31"
+  Repair: "Add # at the beginning of lines 9 and 12"
+  Source: "https://2019.www.torproject.org/docs/debian.html.en"
+  Hadolint: "echo may not expand escape sequences. Use printf. at line 9"
 
 176578348
-  Error message: "gpg: no valid OpenPGP data found."
+  Error message: "E: Some index files failed to download. They have been ignored, or old ones used instead."
   Diagnosis: "Using older version of Ubuntu"
-  Repair: "Change ubuntu version from 14.10 to 18.04" <--- se comment above
+  Repair: "FROM ubuntu:18.04 at line 2"
   Source: https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used
-  Hadolint: "Only 1 warning on line 28"
+  Hadolint: "Several warnings, but none related."
 
 180704908
   Error message: "E: Unable to locate package libboost1.55-all-dev"
-  Diagnosis: "libboost1.55-all-dev not found in the apt repository"
-  Repair: "Change value from libboost1.55-all-dev to libboost-all-dev in line 12"
+  Diagnosis: "libboost1.55-all-dev not found in the apt repository at line 12"
+  Repair: "Change value from libboost1.55-all-dev to libboost-all-dev"
   Sourece: "https://askubuntu.com/questions/806478/xenial-16-04-cannot-find-package-libboost-all-dev"
-  Hadolint: "Only 1 warning on line 30"
+  Hadolint: "Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` at line 12", "The fix, is ​​to do the opposite of what the lint suggests"
 
 185296869
   Error message: "pull access denied for freeradius/debian8-deps, repository does not exist or may require 'docker login': denied: requested access to the resource is denied"
-  Diagnosis: "Using a non existent dockerhub image in line 1"
-  Repair: "Change line 1 from ARG from=freeradius/debian8-deps to ARG from=debian:jessie"
+  Diagnosis: "Using a non existent dockerhub image at line 1"
+  Repair: "ARG from=debian:jessie"
   Sourece: "https://hub.docker.com/_/debian?tab=tags&page=1&name=jessie"
   Hadolint: "Line 1 Always tag the version of an image explicitly"
 
 282262279
   Error message: "manifest for base/archlinux:latest not found: manifest unknown: manifest unknown"
-  Diagnosis: "Obsolete name for docker image in line 1"
+  Diagnosis: "Obsolete name for docker image at line 1"
   Repair: "FROM archlinux/base"
   Sourece: "https://hub.docker.com/r/base/archlinux/"
   Hadolint:  "Line 1 warning to Always tag the version of an image explicitly"
