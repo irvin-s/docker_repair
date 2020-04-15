@@ -84,3 +84,31 @@
   Repair: "FROM archlinux/base"
   Sourece: "https://hub.docker.com/r/base/archlinux/"
   Hadolint:  "Line 1 warning to Always tag the version of an image explicitly"
+
+286707117
+  Error message: "Error message: ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'"
+  Diagnosis: "The developer trying to copy a file out of a context at line 7"
+  Repair: "There are no repairs available"
+  Sourece: "https://stackoverflow.com/questions/55826941/run-pip-install-r-requirements-txt-not-working"
+  Hadolint: "Use 'cd ... || exit' or 'cd ... || return' in case cd fails. at line 7"
+
+317341044
+  Error message: "pull access denied for docker-base-image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied"
+  Diagnosis: "Using a non existent docker image at line "
+  Repair: "FROM openjdk:oraclelinux7"
+  Sourece: "https://hub.docker.com/_/openjdk"
+  Hadolint: "Always tag the version of an image explicitly at line 1"
+
+320733641
+  Message error: "E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file."
+  Diagnosis: "Ubuntu 17.04 reached End of Life last week. Time to upgrade to 18.04"
+  Repair: "FROM ubuntu:18.04 at line 1"
+  Source: "https://ubuntuforums.org/showthread.php?t=2382832"
+  Hadolint: "Few warnings but not related with repair"
+
+323821268
+    Message error: "pull access denied for frolvlad/alpine-oraclejdk8, repository does not exist or may require 'docker login': denied: requested access to the resource is denied"
+    Diagnosis: "Incorrect docker image name"
+    Repair: "FROM frolvlad/alpine-java at line 1"
+    Source: "https://hub.docker.com/r/frolvlad/alpine-oraclejre8"
+    Hadolint: "Only 1 warning but not related"
