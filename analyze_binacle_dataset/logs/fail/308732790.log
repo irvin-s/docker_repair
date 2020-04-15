@@ -1,0 +1,104 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM jenkins/jenkins:lts
+lts: Pulling from jenkins/jenkins
+3192219afd04: Pulling fs layer
+17c160265e75: Pulling fs layer
+cc4fe40d0e61: Pulling fs layer
+9d647f502a07: Pulling fs layer
+d108b8c498aa: Pulling fs layer
+1bfe918b8aa5: Pulling fs layer
+dafa1a7c0751: Pulling fs layer
+204b3ae87dcc: Pulling fs layer
+e7df9c239d2f: Pulling fs layer
+6bc3c4bab84d: Pulling fs layer
+0fddb90aaa59: Pulling fs layer
+f2fe379c9cae: Pulling fs layer
+41f205609aa3: Pulling fs layer
+44894459a77c: Pulling fs layer
+33abd1ee296e: Pulling fs layer
+0246d2531788: Pulling fs layer
+0265cbd0a929: Pulling fs layer
+ea9bcd7318c4: Pulling fs layer
+688e1959a331: Pulling fs layer
+9d647f502a07: Waiting
+d108b8c498aa: Waiting
+1bfe918b8aa5: Waiting
+dafa1a7c0751: Waiting
+204b3ae87dcc: Waiting
+e7df9c239d2f: Waiting
+6bc3c4bab84d: Waiting
+0fddb90aaa59: Waiting
+f2fe379c9cae: Waiting
+41f205609aa3: Waiting
+44894459a77c: Waiting
+33abd1ee296e: Waiting
+0246d2531788: Waiting
+0265cbd0a929: Waiting
+ea9bcd7318c4: Waiting
+688e1959a331: Waiting
+cc4fe40d0e61: Verifying Checksum
+cc4fe40d0e61: Download complete
+17c160265e75: Verifying Checksum
+17c160265e75: Download complete
+d108b8c498aa: Verifying Checksum
+d108b8c498aa: Download complete
+3192219afd04: Verifying Checksum
+3192219afd04: Download complete
+1bfe918b8aa5: Verifying Checksum
+1bfe918b8aa5: Download complete
+9d647f502a07: Verifying Checksum
+9d647f502a07: Download complete
+204b3ae87dcc: Verifying Checksum
+204b3ae87dcc: Download complete
+e7df9c239d2f: Verifying Checksum
+e7df9c239d2f: Download complete
+6bc3c4bab84d: Verifying Checksum
+6bc3c4bab84d: Download complete
+0fddb90aaa59: Verifying Checksum
+0fddb90aaa59: Download complete
+dafa1a7c0751: Verifying Checksum
+dafa1a7c0751: Download complete
+f2fe379c9cae: Verifying Checksum
+f2fe379c9cae: Download complete
+44894459a77c: Verifying Checksum
+44894459a77c: Download complete
+33abd1ee296e: Verifying Checksum
+33abd1ee296e: Download complete
+0246d2531788: Verifying Checksum
+0246d2531788: Download complete
+0265cbd0a929: Verifying Checksum
+0265cbd0a929: Download complete
+ea9bcd7318c4: Verifying Checksum
+ea9bcd7318c4: Download complete
+688e1959a331: Verifying Checksum
+688e1959a331: Download complete
+41f205609aa3: Verifying Checksum
+41f205609aa3: Download complete
+3192219afd04: Pull complete
+17c160265e75: Pull complete
+cc4fe40d0e61: Pull complete
+9d647f502a07: Pull complete
+d108b8c498aa: Pull complete
+1bfe918b8aa5: Pull complete
+dafa1a7c0751: Pull complete
+204b3ae87dcc: Pull complete
+e7df9c239d2f: Pull complete
+6bc3c4bab84d: Pull complete
+0fddb90aaa59: Pull complete
+f2fe379c9cae: Pull complete
+41f205609aa3: Pull complete
+44894459a77c: Pull complete
+33abd1ee296e: Pull complete
+0246d2531788: Pull complete
+0265cbd0a929: Pull complete
+ea9bcd7318c4: Pull complete
+688e1959a331: Pull complete
+Digest: sha256:af0110d8f70d2fbaf9429c321dc4e3bc5aae12f708c655f4018e7ed4be0974f5
+Status: Downloaded newer image for jenkins/jenkins:lts
+ ---> 7e250da768ed
+Step 2/7 : LABEL maintainer="ewe@praqma.net"
+ ---> Running in 4ad47bb5634a
+Removing intermediate container 4ad47bb5634a
+ ---> f46a0b84be13
+Step 3/7 : COPY plugins_extra.txt /usr/share/jenkins/ref/plugins_extra.txt
+COPY failed: stat /var/lib/docker/tmp/docker-builder599997255/plugins_extra.txt: no such file or directory
