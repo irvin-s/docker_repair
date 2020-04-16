@@ -107,7 +107,7 @@
   Hadolint: "Few warnings but not related with repair"
 
 323821268
-  Query: "pdocker hub image frolvlad/alpine-oraclejdk8"
+  Query: "docker hub image frolvlad/alpine-oraclejdk8"
   Diagnosis: "Incorrect docker image name"
   Repair: "FROM frolvlad/alpine-java at line 1"
   Url "https://hub.docker.com/r/frolvlad/alpine-oraclejre8"
