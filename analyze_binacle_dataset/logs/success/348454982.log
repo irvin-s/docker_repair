@@ -1,0 +1,114 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/12 : FROM node:8.11.1-alpine
+8.11.1-alpine: Pulling from library/node
+605ce1bd3f31: Pulling fs layer
+0511902e1bcd: Pulling fs layer
+343e34c41f87: Pulling fs layer
+343e34c41f87: Verifying Checksum
+343e34c41f87: Download complete
+605ce1bd3f31: Verifying Checksum
+605ce1bd3f31: Download complete
+0511902e1bcd: Verifying Checksum
+0511902e1bcd: Download complete
+605ce1bd3f31: Pull complete
+0511902e1bcd: Pull complete
+343e34c41f87: Pull complete
+Digest: sha256:d0febbb04c15f58a28888618cf5c3f1d475261e25702741622f375d0a82e050d
+Status: Downloaded newer image for node:8.11.1-alpine
+ ---> e707e7ad7186
+Step 2/12 : ENV PATH /root/.yarn/bin:$PATH
+ ---> Running in 496f6fbe1f76
+Removing intermediate container 496f6fbe1f76
+ ---> 5605ccb894f5
+Step 3/12 : RUN apk update   && apk add make g++ curl bash binutils tar git python2 python3   && rm -rf /var/cache/apk/*   && /bin/bash   && touch ~/.bashrc
+ ---> Running in a38b0e37ec7d
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/APKINDEX.tar.gz
+v3.6.5-44-gda55e27396 [http://dl-cdn.alpinelinux.org/alpine/v3.6/main]
+v3.6.5-34-gf0ba0b43d5 [http://dl-cdn.alpinelinux.org/alpine/v3.6/community]
+OK: 8448 distinct packages available
+(1/36) Upgrading musl (1.1.16-r14 -> 1.1.16-r15)
+(2/36) Installing ncurses-terminfo-base (6.0_p20171125-r1)
+(3/36) Installing ncurses-terminfo (6.0_p20171125-r1)
+(4/36) Installing ncurses-libs (6.0_p20171125-r1)
+(5/36) Installing readline (6.3.008-r5)
+(6/36) Installing bash (4.3.48-r1)
+Executing bash-4.3.48-r1.post-install
+(7/36) Installing binutils-libs (2.30-r1)
+(8/36) Installing binutils (2.30-r1)
+(9/36) Installing ca-certificates (20161130-r3)
+(10/36) Installing libssh2 (1.8.2-r0)
+(11/36) Installing libcurl (7.61.1-r2)
+(12/36) Installing curl (7.61.1-r2)
+(13/36) Installing gmp (6.1.2-r0)
+(14/36) Installing isl (0.17.1-r0)
+(15/36) Installing libgomp (6.3.0-r4)
+(16/36) Installing libatomic (6.3.0-r4)
+(17/36) Installing pkgconf (1.3.7-r0)
+(18/36) Installing mpfr3 (3.1.5-r0)
+(19/36) Installing mpc1 (1.0.3-r0)
+(20/36) Installing gcc (6.3.0-r4)
+(21/36) Installing musl-dev (1.1.16-r15)
+(22/36) Installing libc-dev (0.7.1-r0)
+(23/36) Installing g++ (6.3.0-r4)
+(24/36) Installing expat (2.2.0-r1)
+(25/36) Installing pcre (8.41-r0)
+(26/36) Installing git (2.13.7-r2)
+(27/36) Upgrading musl-utils (1.1.16-r14 -> 1.1.16-r15)
+(28/36) Installing make (4.2.1-r0)
+(29/36) Installing libbz2 (1.0.6-r5)
+(30/36) Installing libffi (3.2.1-r3)
+(31/36) Installing gdbm (1.12-r0)
+(32/36) Installing sqlite-libs (3.25.3-r0)
+(33/36) Installing python2 (2.7.15-r0)
+(34/36) Installing xz-libs (5.2.3-r0)
+(35/36) Installing python3 (3.6.8-r0)
+(36/36) Installing tar (1.32-r0)
+Executing busybox-1.26.2-r9.trigger
+Executing ca-certificates-20161130-r3.trigger
+OK: 289 MiB in 47 packages
+Removing intermediate container a38b0e37ec7d
+ ---> f5042db5a5e7
+Step 4/12 : RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+ ---> Running in 0b08a823f016
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0    [0m[91m 0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100    54  100    54    0     0    357      0 --:--:-- --:--:-- --:--:--   357
+[0m[91m100  7152  100  7152    0     0  22996[0m[91m      0 --:--:-- --:--:-- --:--:-- 22996
+[0m[37mInstalling Yarn![0m
+[36m> Downloading tarball...[0m
+[91m
+[1/2]: https://yarnpkg.com/latest.tar.gz --> /tmp/yarn.tar[0m[91m.gz.XXXXaFEcoI
+[0m[91m  % T[0m[91motal    % Received % Xferd  Average Speed   Tim[0m[91me    Time     Time  Current
+                                 Dlo[0m[91mad  Upload   Total   Spent    Left  Speed
+[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --[0m[91m:--:-- --:--:--     0[0m[91m100    57  100    57    0     0    448      0 --:--:-- --:--:-- --:--:--   448
+[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--[0m[91m     0[0m[91m100    93  100    93    0     0    322      0 --:--:-- --:--:-- --:--:--  3321
+[0m[91m100   630  100   630    0     0   1521      0 --:--:-- --:--:-- --:--:--  1521
+[0m[91m100 1215k  100 1215k    0  [0m[91m   0  1538k      0 --:--:-- --:--:-- --:--:-- 1538k
+[0m[91m
+[2/2]: https://yarnpkg.com/latest.tar.gz.asc --> /tmp/yarn.tar.gz.XXXXaFEcoI.asc
+[0m[91m100    61  100    61    0     0   2259      0 --:--:-- --:--:-- --:--:--  2259[0m[91m
+[0m[91m100    97  100    97    0     0   1763      0 --:--:-- --:--:-- --:--:--  1763
+[0m[91m100   634  100   634    0     0   7123      0 --:--:-- --:--:-- --:--:--  7123
+[0m[91m100  1028  100  1028    0     0   7907      0 --:--:-- --:--:-- --:--:--  7907
+[0m[33m> WARNING: GPG is not installed, integrity can not be verified![0m
+[36m> Extracting to ~/.yarn...[0m
+[36m> Adding to $PATH...[0m
+[36m> We've added the following to your /root/.bashrc
+> If this isn't the profile of your current shell then please add the following to your correct profile:
+   
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[0m
+[32m> Successfully installed Yarn 1.22.4! Please open another terminal where the `yarn` command will now be available.[0m
+Removing intermediate container 0b08a823f016
+ ---> 4fa0f2ffcc98
+Step 5/12 : RUN mkdir -p /frontend
+ ---> Running in 014c978d92ab
+Removing intermediate container 014c978d92ab
+ ---> d7e96ef19bf8
+Step 6/12 : WORKDIR /frontend
+ ---> Running in 52dbee7e7c45
+Removing intermediate container 52dbee7e7c45
+ ---> 830b03bc9aa6
+Step 7/12 : COPY package.json yarn.lock ./
+COPY failed: stat /var/lib/docker/tmp/docker-builder244500060/package.json: no such file or directory
