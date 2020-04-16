@@ -1,0 +1,79 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM golang:latest
+latest: Pulling from library/golang
+f15005b0235f: Pulling fs layer
+41ebfd3d2fd0: Pulling fs layer
+b998346ba308: Pulling fs layer
+f01ec562c947: Pulling fs layer
+c5e092b8639b: Pulling fs layer
+7fed6f4b8731: Pulling fs layer
+cbd4e18df7cd: Pulling fs layer
+c5e092b8639b: Waiting
+7fed6f4b8731: Waiting
+cbd4e18df7cd: Waiting
+f01ec562c947: Waiting
+41ebfd3d2fd0: Verifying Checksum
+41ebfd3d2fd0: Download complete
+b998346ba308: Verifying Checksum
+b998346ba308: Download complete
+f15005b0235f: Verifying Checksum
+f15005b0235f: Download complete
+f01ec562c947: Verifying Checksum
+f01ec562c947: Download complete
+cbd4e18df7cd: Verifying Checksum
+cbd4e18df7cd: Download complete
+c5e092b8639b: Verifying Checksum
+c5e092b8639b: Download complete
+7fed6f4b8731: Verifying Checksum
+7fed6f4b8731: Download complete
+f15005b0235f: Pull complete
+41ebfd3d2fd0: Pull complete
+b998346ba308: Pull complete
+f01ec562c947: Pull complete
+c5e092b8639b: Pull complete
+7fed6f4b8731: Pull complete
+cbd4e18df7cd: Pull complete
+Digest: sha256:6266189673dfab8e9a160c5f8c42aabc05070c2d2a75ccf2366e99868f7b2aed
+Status: Downloaded newer image for golang:latest
+ ---> 315fc470b445
+Step 2/11 : ENV PATH="/mattermost-load-test/bin:${PATH}"
+ ---> Running in c58a72879fe7
+Removing intermediate container c58a72879fe7
+ ---> bfc7f418e8ea
+Step 3/11 : ENV PATH="/mattermost/bin:${PATH}"
+ ---> Running in e71db57a6041
+Removing intermediate container e71db57a6041
+ ---> 1fc9ed229f82
+Step 4/11 : ARG LOADTEST_BINARY
+ ---> Running in 7a4098d0624c
+Removing intermediate container 7a4098d0624c
+ ---> 635c94f4fa5b
+Step 5/11 : ARG MM_BINARY
+ ---> Running in 9c6ab3637fe4
+Removing intermediate container 9c6ab3637fe4
+ ---> 2c8285742078
+Step 6/11 : WORKDIR /
+ ---> Running in 3efff4092f38
+Removing intermediate container 3efff4092f38
+ ---> c386fe353fb9
+Step 7/11 : RUN apt-get update     && apt-get -y install       curl       jq       netcat       net-tools       iproute       dnsutils       graphviz
+ ---> Running in fd2f6470b7f2
+Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+Get:2 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
+Get:3 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
+Get:4 http://security.debian.org/debian-security buster/updates/main amd64 Packages [187 kB]
+Get:5 http://deb.debian.org/debian buster/main amd64 Packages [7907 kB]
+Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [7380 B]
+Fetched 8338 kB in 2s (3659 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package iproute is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  iproute2
+
+[91mE: Package 'iproute' has no installation candidate
+[0mThe command '/bin/sh -c apt-get update     && apt-get -y install       curl       jq       netcat       net-tools       iproute       dnsutils       graphviz' returned a non-zero code: 100

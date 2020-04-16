@@ -1,0 +1,3 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM pywps/flask-alpine:latest
+manifest for pywps/flask-alpine:latest not found: manifest unknown: manifest unknown

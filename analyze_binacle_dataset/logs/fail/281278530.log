@@ -1,0 +1,189 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM ruby:2.3
+2.3: Pulling from library/ruby
+e79bb959ec00: Pulling fs layer
+d4b7902036fe: Pulling fs layer
+1b2a72d4e030: Pulling fs layer
+d54db43011fd: Pulling fs layer
+69d473365bb3: Pulling fs layer
+84ed2a0dc034: Pulling fs layer
+8952ca0665c5: Pulling fs layer
+ef485f36c624: Pulling fs layer
+d54db43011fd: Waiting
+69d473365bb3: Waiting
+84ed2a0dc034: Waiting
+8952ca0665c5: Waiting
+ef485f36c624: Waiting
+1b2a72d4e030: Verifying Checksum
+1b2a72d4e030: Download complete
+d4b7902036fe: Verifying Checksum
+d4b7902036fe: Download complete
+e79bb959ec00: Verifying Checksum
+e79bb959ec00: Download complete
+84ed2a0dc034: Verifying Checksum
+84ed2a0dc034: Download complete
+d54db43011fd: Verifying Checksum
+d54db43011fd: Download complete
+ef485f36c624: Verifying Checksum
+ef485f36c624: Download complete
+8952ca0665c5: Verifying Checksum
+8952ca0665c5: Download complete
+69d473365bb3: Verifying Checksum
+69d473365bb3: Download complete
+e79bb959ec00: Pull complete
+d4b7902036fe: Pull complete
+1b2a72d4e030: Pull complete
+d54db43011fd: Pull complete
+69d473365bb3: Pull complete
+84ed2a0dc034: Pull complete
+8952ca0665c5: Pull complete
+ef485f36c624: Pull complete
+Digest: sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+Status: Downloaded newer image for ruby:2.3
+ ---> c0d23ebb3ed6
+Step 2/11 : MAINTAINER Mateusz Koszutowski <mkoszutowski@divante.pl>
+ ---> Running in 886419ecf629
+Removing intermediate container 886419ecf629
+ ---> 882d54275919
+Step 3/11 : WORKDIR /usr/src/anonymizer
+ ---> Running in c2eb07e12c45
+Removing intermediate container c2eb07e12c45
+ ---> 41ea3a330b83
+Step 4/11 : ARG UID=1000
+ ---> Running in 6208a76f06c5
+Removing intermediate container 6208a76f06c5
+ ---> 7016b9bb2ed0
+Step 5/11 : ARG GID=1000
+ ---> Running in 17576b4c0088
+Removing intermediate container 17576b4c0088
+ ---> 7329afb72837
+Step 6/11 : USER root
+ ---> Running in fb9738627d33
+Removing intermediate container fb9738627d33
+ ---> 91efff1a393d
+Step 7/11 : RUN apt-get update     && apt-get install -y         mysql-client         rsync     && apt-get clean     && rm -rf /var/lib/apt/lists/*
+ ---> Running in 519db2dbccf5
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://security.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [521 kB]
+Get:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages [27.9 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7083 kB]
+Fetched 7937 kB in 2s (3449 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  default-mysql-client libaio1 libconfig-inifiles-perl libdbd-mysql-perl
+  libdbi-perl libjemalloc1 libpopt0 libreadline5 libterm-readkey-perl
+  mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common
+Suggested packages:
+  libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl
+  openssh-server
+The following NEW packages will be installed:
+  default-mysql-client libaio1 libconfig-inifiles-perl libdbd-mysql-perl
+  libdbi-perl libjemalloc1 libpopt0 libreadline5 libterm-readkey-perl
+  mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common mysql-client
+  rsync
+0 upgraded, 14 newly installed, 0 to remove and 81 not upgraded.
+Need to get 12.7 MB of archives.
+After this operation, 76.3 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 libpopt0 amd64 1.16-10+b2 [49.4 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 mariadb-common all 10.1.44-0+deb9u1 [28.6 kB]
+Get:3 http://deb.debian.org/debian stretch/main amd64 libaio1 amd64 0.3.110-3 [9412 B]
+Get:4 http://deb.debian.org/debian stretch/main amd64 libreadline5 amd64 5.2+dfsg-3+b1 [119 kB]
+Get:5 http://deb.debian.org/debian stretch/main amd64 mariadb-client-core-10.1 amd64 10.1.44-0+deb9u1 [5125 kB]
+Get:6 http://deb.debian.org/debian stretch/main amd64 libconfig-inifiles-perl all 2.94-1 [53.4 kB]
+Get:7 http://deb.debian.org/debian stretch/main amd64 libjemalloc1 amd64 3.6.0-9.1 [89.8 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 mariadb-client-10.1 amd64 10.1.44-0+deb9u1 [5930 kB]
+Get:9 http://deb.debian.org/debian stretch/main amd64 default-mysql-client all 1.0.2 [3050 B]
+Get:10 http://deb.debian.org/debian stretch/main amd64 libdbi-perl amd64 1.636-1+b1 [766 kB]
+Get:11 http://deb.debian.org/debian stretch/main amd64 libdbd-mysql-perl amd64 4.041-2 [114 kB]
+Get:12 http://deb.debian.org/debian stretch/main amd64 libterm-readkey-perl amd64 2.37-1 [27.2 kB]
+Get:13 http://deb.debian.org/debian stretch/main amd64 mysql-client amd64 5.5.9999+default [1698 B]
+Get:14 http://deb.debian.org/debian stretch/main amd64 rsync amd64 3.1.2-1+deb9u2 [393 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 12.7 MB in 0s (46.7 MB/s)
+Selecting previously unselected package libpopt0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 29619 files and directories currently installed.)
+Preparing to unpack .../00-libpopt0_1.16-10+b2_amd64.deb ...
+Unpacking libpopt0:amd64 (1.16-10+b2) ...
+Selecting previously unselected package mariadb-common.
+Preparing to unpack .../01-mariadb-common_10.1.44-0+deb9u1_all.deb ...
+Unpacking mariadb-common (10.1.44-0+deb9u1) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../02-libaio1_0.3.110-3_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.110-3) ...
+Selecting previously unselected package libreadline5:amd64.
+Preparing to unpack .../03-libreadline5_5.2+dfsg-3+b1_amd64.deb ...
+Unpacking libreadline5:amd64 (5.2+dfsg-3+b1) ...
+Selecting previously unselected package mariadb-client-core-10.1.
+Preparing to unpack .../04-mariadb-client-core-10.1_10.1.44-0+deb9u1_amd64.deb ...
+Unpacking mariadb-client-core-10.1 (10.1.44-0+deb9u1) ...
+Selecting previously unselected package libconfig-inifiles-perl.
+Preparing to unpack .../05-libconfig-inifiles-perl_2.94-1_all.deb ...
+Unpacking libconfig-inifiles-perl (2.94-1) ...
+Selecting previously unselected package libjemalloc1.
+Preparing to unpack .../06-libjemalloc1_3.6.0-9.1_amd64.deb ...
+Unpacking libjemalloc1 (3.6.0-9.1) ...
+Selecting previously unselected package mariadb-client-10.1.
+Preparing to unpack .../07-mariadb-client-10.1_10.1.44-0+deb9u1_amd64.deb ...
+Unpacking mariadb-client-10.1 (10.1.44-0+deb9u1) ...
+Selecting previously unselected package default-mysql-client.
+Preparing to unpack .../08-default-mysql-client_1.0.2_all.deb ...
+Unpacking default-mysql-client (1.0.2) ...
+Selecting previously unselected package libdbi-perl.
+Preparing to unpack .../09-libdbi-perl_1.636-1+b1_amd64.deb ...
+Unpacking libdbi-perl (1.636-1+b1) ...
+Selecting previously unselected package libdbd-mysql-perl.
+Preparing to unpack .../10-libdbd-mysql-perl_4.041-2_amd64.deb ...
+Unpacking libdbd-mysql-perl (4.041-2) ...
+Selecting previously unselected package libterm-readkey-perl.
+Preparing to unpack .../11-libterm-readkey-perl_2.37-1_amd64.deb ...
+Unpacking libterm-readkey-perl (2.37-1) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../12-mysql-client_5.5.9999+default_amd64.deb ...
+Unpacking mysql-client (5.5.9999+default) ...
+Selecting previously unselected package rsync.
+Preparing to unpack .../13-rsync_3.1.2-1+deb9u2_amd64.deb ...
+Unpacking rsync (3.1.2-1+deb9u2) ...
+Setting up mariadb-common (10.1.44-0+deb9u1) ...
+update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up libpopt0:amd64 (1.16-10+b2) ...
+Setting up libconfig-inifiles-perl (2.94-1) ...
+Setting up libjemalloc1 (3.6.0-9.1) ...
+Setting up libterm-readkey-perl (2.37-1) ...
+Setting up rsync (3.1.2-1+deb9u2) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Setting up libaio1:amd64 (0.3.110-3) ...
+Setting up libreadline5:amd64 (5.2+dfsg-3+b1) ...
+Setting up libdbi-perl (1.636-1+b1) ...
+Setting up mariadb-client-core-10.1 (10.1.44-0+deb9u1) ...
+Setting up libdbd-mysql-perl (4.041-2) ...
+Setting up mariadb-client-10.1 (10.1.44-0+deb9u1) ...
+Setting up default-mysql-client (1.0.2) ...
+Setting up mysql-client (5.5.9999+default) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Removing intermediate container 519db2dbccf5
+ ---> fdbdafa5010d
+Step 8/11 : RUN if [ ! `id -g anonymizer &> /dev/null` ]; then groupadd -f -g ${GID} anonymizer; fi     && if [ ! `id -u anonymizer &> /dev/null` ]; then useradd --shell /bin/bash -u ${UID} -g ${GID} -m anonymizer; fi
+ ---> Running in a5e29e49178e
+[91mid: 'anonymizer': no such user
+[0m[91mid: 'anonymizer': no such user
+[0mRemoving intermediate container a5e29e49178e
+ ---> 6419c5f193fc
+Step 9/11 : COPY --chown=1000:1000 . .
+ ---> 7b32f6cf21a4
+Step 10/11 : USER anonymizer
+ ---> Running in 2113eac87140
+Removing intermediate container 2113eac87140
+ ---> 9af7b4a54bf4
+Step 11/11 : RUN bundle install --deployment --force
+ ---> Running in 5fc719cf55c1
+Could not locate Gemfile
+The command '/bin/sh -c bundle install --deployment --force' returned a non-zero code: 10

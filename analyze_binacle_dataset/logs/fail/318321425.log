@@ -1,0 +1,60 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/14 : FROM node:alpine
+alpine: Pulling from library/node
+aad63a933944: Pulling fs layer
+3ce96fb50a59: Pulling fs layer
+2223b4a743f6: Pulling fs layer
+adea9cae4121: Pulling fs layer
+adea9cae4121: Waiting
+aad63a933944: Verifying Checksum
+aad63a933944: Download complete
+2223b4a743f6: Verifying Checksum
+2223b4a743f6: Download complete
+adea9cae4121: Verifying Checksum
+adea9cae4121: Download complete
+aad63a933944: Pull complete
+3ce96fb50a59: Verifying Checksum
+3ce96fb50a59: Download complete
+3ce96fb50a59: Pull complete
+2223b4a743f6: Pull complete
+adea9cae4121: Pull complete
+Digest: sha256:69aa28f8a555cbc5b01d30e43a7fb4ab0485fa16a3b4a6d220564a8ecf68c8e0
+Status: Downloaded newer image for node:alpine
+ ---> bcfeabd22749
+Step 2/14 : RUN apk update && apk add libc6-compat
+ ---> Running in 286d7f9bf20e
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+v3.11.5-53-ga12cc12667 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+v3.11.5-52-g704ace2837 [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+OK: 11271 distinct packages available
+(1/1) Installing libc6-compat (1.1.24-r2)
+OK: 7 MiB in 17 packages
+Removing intermediate container 286d7f9bf20e
+ ---> 86943a23babf
+Step 3/14 : RUN GRPC_HEALTH_PROBE_VERSION=v0.2.0 &&   wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 &&   chmod +x /bin/grpc_health_probe
+ ---> Running in 4fa618edd190
+Removing intermediate container 4fa618edd190
+ ---> 103ff9ea014f
+Step 4/14 : RUN npm install -g typescript
+ ---> Running in e6cb22a102fa
+/usr/local/bin/tsc -> /usr/local/lib/node_modules/typescript/bin/tsc
+/usr/local/bin/tsserver -> /usr/local/lib/node_modules/typescript/bin/tsserver
++ typescript@3.8.3
+added 1 package from 1 contributor in 1.989s
+Removing intermediate container e6cb22a102fa
+ ---> 912641d41162
+Step 5/14 : ARG service_version
+ ---> Running in 21e720c5b8cb
+Removing intermediate container 21e720c5b8cb
+ ---> 76ea6c815793
+Step 6/14 : ENV SERVICE_VERSION ${service_version:-v1}
+ ---> Running in ec66ae6e64ff
+Removing intermediate container ec66ae6e64ff
+ ---> c21f318b02c3
+Step 7/14 : WORKDIR /app
+ ---> Running in d4befd893b23
+Removing intermediate container d4befd893b23
+ ---> 498fdcc85198
+Step 8/14 : COPY ./src/grpc/v1/catalog.proto ./proto/
+COPY failed: stat /var/lib/docker/tmp/docker-builder955063213/src/grpc/v1/catalog.proto: no such file or directory

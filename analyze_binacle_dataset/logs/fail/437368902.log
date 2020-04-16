@@ -1,0 +1,397 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/13 : FROM ubuntu:12.04
+12.04: Pulling from library/ubuntu
+d8868e50ac4c: Pulling fs layer
+83251ac64627: Pulling fs layer
+589bba2f1b36: Pulling fs layer
+d62ecaceda39: Pulling fs layer
+6d93b41cfc6b: Pulling fs layer
+d62ecaceda39: Waiting
+6d93b41cfc6b: Waiting
+589bba2f1b36: Verifying Checksum
+589bba2f1b36: Download complete
+83251ac64627: Verifying Checksum
+83251ac64627: Download complete
+d62ecaceda39: Verifying Checksum
+d62ecaceda39: Download complete
+6d93b41cfc6b: Verifying Checksum
+6d93b41cfc6b: Download complete
+d8868e50ac4c: Verifying Checksum
+d8868e50ac4c: Download complete
+d8868e50ac4c: Pull complete
+83251ac64627: Pull complete
+589bba2f1b36: Pull complete
+d62ecaceda39: Pull complete
+6d93b41cfc6b: Pull complete
+Digest: sha256:18305429afa14ea462f810146ba44d4363ae76e4c8dfc38288cf73aa07485005
+Status: Downloaded newer image for ubuntu:12.04
+ ---> 5b117edd0b76
+Step 2/13 : RUN apt-get update
+ ---> Running in cb1671336cd3
+Get:1 http://archive.ubuntu.com precise Release.gpg [198 B]
+Get:2 http://archive.ubuntu.com precise-updates Release.gpg [198 B]
+Get:3 http://archive.ubuntu.com precise-security Release.gpg [181 B]
+Get:4 http://archive.ubuntu.com precise Release [49.6 kB]
+Get:5 http://archive.ubuntu.com precise-updates Release [55.4 kB]
+Get:6 http://archive.ubuntu.com precise-security Release [55.5 kB]
+Get:7 http://archive.ubuntu.com precise/main Sources [1175 kB]
+Get:8 http://archive.ubuntu.com precise/restricted Sources [5306 B]
+Get:9 http://archive.ubuntu.com precise/universe Sources [6239 kB]
+Get:10 http://archive.ubuntu.com precise/main amd64 Packages [1640 kB]
+Get:11 http://archive.ubuntu.com precise/restricted amd64 Packages [9098 B]
+Get:12 http://archive.ubuntu.com precise/universe amd64 Packages [6167 kB]
+Get:13 http://archive.ubuntu.com precise/main i386 Packages [1641 kB]
+Get:14 http://archive.ubuntu.com precise/restricted i386 Packages [9108 B]
+Get:15 http://archive.ubuntu.com precise/universe i386 Packages [6180 kB]
+Get:16 http://archive.ubuntu.com precise-updates/main Sources [618 kB]
+Get:17 http://archive.ubuntu.com precise-updates/restricted Sources [9232 B]
+Get:18 http://archive.ubuntu.com precise-updates/universe Sources [169 kB]
+Get:19 http://archive.ubuntu.com precise-updates/main amd64 Packages [960 kB]
+Get:20 http://archive.ubuntu.com precise-updates/restricted amd64 Packages [19.6 kB]
+Get:21 http://archive.ubuntu.com precise-updates/universe amd64 Packages [372 kB]
+Get:22 http://archive.ubuntu.com precise-updates/main i386 Packages [964 kB]
+Get:23 http://archive.ubuntu.com precise-updates/restricted i386 Packages [19.5 kB]
+Get:24 http://archive.ubuntu.com precise-updates/universe i386 Packages [382 kB]
+Get:25 http://archive.ubuntu.com precise-security/main Sources [190 kB]
+Get:26 http://archive.ubuntu.com precise-security/restricted Sources [4579 B]
+Get:27 http://archive.ubuntu.com precise-security/universe Sources [68.4 kB]
+Get:28 http://archive.ubuntu.com precise-security/main amd64 Packages [481 kB]
+Get:29 http://archive.ubuntu.com precise-security/restricted amd64 Packages [13.8 kB]
+Get:30 http://archive.ubuntu.com precise-security/universe amd64 Packages [187 kB]
+Get:31 http://archive.ubuntu.com precise-security/main i386 Packages [483 kB]
+Get:32 http://archive.ubuntu.com precise-security/restricted i386 Packages [13.8 kB]
+Get:33 http://archive.ubuntu.com precise-security/universe i386 Packages [197 kB]
+Fetched 28.4 MB in 4s (7017 kB/s)
+Reading package lists...
+Removing intermediate container cb1671336cd3
+ ---> b8c074369d97
+Step 3/13 : RUN apt-get install -y apache2 php5 libapache2-mod-php5 unzip
+ ---> Running in 082839e87576
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common file
+  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+  libasn1-8-heimdal libbsd0 libcap2 libclass-isa-perl libedit2 libexpat1
+  libgcrypt11 libgdbm3 libgnutls26 libgpg-error0 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libkrb5-26-heimdal libldap-2.4-2 libmagic1 libp11-kit0
+  libroken18-heimdal libsasl2-2 libsasl2-modules libsqlite3-0 libswitch-perl
+  libtasn1-3 libwind0-heimdal libxml2 mime-support netbase openssl perl
+  perl-modules php5-cli php5-common sgml-base ssl-cert ucf xml-core
+Suggested packages:
+  www-browser apache2-doc apache2-suexec apache2-suexec-custom ufw php-pear
+  rng-tools gnutls-bin libsasl2-modules-otp libsasl2-modules-ldap
+  libsasl2-modules-sql libsasl2-modules-gssapi-mit
+  libsasl2-modules-gssapi-heimdal ca-certificates perl-doc
+  libterm-readline-gnu-perl libterm-readline-perl-perl make
+  libpod-plainer-perl php5-suhosin sgml-base-doc openssl-blacklist zip
+  debhelper
+The following NEW packages will be installed:
+  apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common
+  file libapache2-mod-php5 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libasn1-8-heimdal libbsd0 libcap2 libclass-isa-perl
+  libedit2 libexpat1 libgcrypt11 libgdbm3 libgnutls26 libgpg-error0
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libkrb5-26-heimdal libldap-2.4-2
+  libmagic1 libp11-kit0 libroken18-heimdal libsasl2-2 libsasl2-modules
+  libsqlite3-0 libswitch-perl libtasn1-3 libwind0-heimdal libxml2 mime-support
+  netbase openssl perl perl-modules php5 php5-cli php5-common sgml-base
+  ssl-cert ucf unzip xml-core
+0 upgraded, 51 newly installed, 0 to remove and 0 not upgraded.
+Need to get 22.2 MB of archives.
+After this operation, 71.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsqlite3-0 amd64 3.7.9-2ubuntu1.2 [349 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ precise-updates/main libroken18-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [46.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ precise-updates/main libasn1-8-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [220 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ precise/main libbsd0 amd64 0.3.0-2 [31.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ precise/main libedit2 amd64 2.11-20080614-3ubuntu2 [70.3 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ precise/main libgpg-error0 amd64 1.10-2ubuntu1 [14.5 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgcrypt11 amd64 1.5.0-3ubuntu0.6 [282 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ precise/main libgdbm3 amd64 1.8.3-10 [35.3 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ precise/main libp11-kit0 amd64 0.12-2ubuntu1 [34.3 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ precise-updates/main libtasn1-3 amd64 2.10-1ubuntu1.5 [43.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgnutls26 amd64 2.12.14-5ubuntu3.14 [461 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhcrypto4-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [103 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimbase1-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [33.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ precise-updates/main libwind0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [77.8 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhx509-5-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [125 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-26-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [234 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimntlm0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [16.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi3-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [108 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-2 amd64 2.1.25.dfsg1-3ubuntu0.1 [69.1 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ precise-updates/main libldap-2.4-2 amd64 2.4.28-1.1ubuntu4.6 [185 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ precise-updates/main libxml2 amd64 2.7.8.dfsg-5.1ubuntu4.17 [678 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ precise/main libcap2 amd64 1:2.22-1ubuntu3 [12.0 kB]
+Get:23 http://archive.ubuntu.com/ubuntu/ precise-updates/main libexpat1 amd64 2.0.1-7.2ubuntu1.4 [131 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ precise-updates/main libmagic1 amd64 5.09-2ubuntu0.6 [218 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ precise-updates/main file amd64 5.09-2ubuntu0.6 [20.0 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ precise-updates/main mime-support all 3.51-1ubuntu1.1 [30.4 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ precise/main netbase all 4.47ubuntu1 [15.0 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ precise/main ucf all 3.0025+nmu2ubuntu1 [54.4 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-modules amd64 2.1.25.dfsg1-3ubuntu0.1 [63.2 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ precise-updates/main openssl amd64 1.0.1-4ubuntu5.39 [524 kB]
+Get:31 http://archive.ubuntu.com/ubuntu/ precise/main sgml-base all 1.26+nmu1ubuntu1 [8360 B]
+Get:32 http://archive.ubuntu.com/ubuntu/ precise/main xml-core all 0.13 [23.4 kB]
+Get:33 http://archive.ubuntu.com/ubuntu/ precise/main libapr1 amd64 1.4.6-1 [89.6 kB]
+Get:34 http://archive.ubuntu.com/ubuntu/ precise/main libaprutil1 amd64 1.3.12+dfsg-3 [74.6 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ precise/main libaprutil1-dbd-sqlite3 amd64 1.3.12+dfsg-3 [10.4 kB]
+Get:36 http://archive.ubuntu.com/ubuntu/ precise/main libaprutil1-ldap amd64 1.3.12+dfsg-3 [8044 B]
+Get:37 http://archive.ubuntu.com/ubuntu/ precise-updates/main apache2.2-bin amd64 2.2.22-1ubuntu1.11 [1345 kB]
+Get:38 http://archive.ubuntu.com/ubuntu/ precise-updates/main apache2-utils amd64 2.2.22-1ubuntu1.11 [92.2 kB]
+Get:39 http://archive.ubuntu.com/ubuntu/ precise/main libswitch-perl all 2.16-2 [19.2 kB]
+Get:40 http://archive.ubuntu.com/ubuntu/ precise/main libclass-isa-perl all 0.36-3 [11.9 kB]
+Get:41 http://archive.ubuntu.com/ubuntu/ precise-updates/main perl-modules all 5.14.2-6ubuntu2.5 [3397 kB]
+Get:42 http://archive.ubuntu.com/ubuntu/ precise-updates/main perl amd64 5.14.2-6ubuntu2.5 [4412 kB]
+Get:43 http://archive.ubuntu.com/ubuntu/ precise-updates/main apache2.2-common amd64 2.2.22-1ubuntu1.11 [228 kB]
+Get:44 http://archive.ubuntu.com/ubuntu/ precise-updates/main apache2-mpm-prefork amd64 2.2.22-1ubuntu1.11 [2412 B]
+Get:45 http://archive.ubuntu.com/ubuntu/ precise-updates/main apache2 amd64 2.2.22-1ubuntu1.11 [1490 B]
+Get:46 http://archive.ubuntu.com/ubuntu/ precise-updates/main php5-common amd64 5.3.10-1ubuntu3.26 [1778 kB]
+Get:47 http://archive.ubuntu.com/ubuntu/ precise-updates/main libapache2-mod-php5 amd64 5.3.10-1ubuntu3.26 [3140 kB]
+Get:48 http://archive.ubuntu.com/ubuntu/ precise-updates/main php5 all 5.3.10-1ubuntu3.26 [1076 B]
+Get:49 http://archive.ubuntu.com/ubuntu/ precise-updates/main php5-cli amd64 5.3.10-1ubuntu3.26 [3056 kB]
+Get:50 http://archive.ubuntu.com/ubuntu/ precise-updates/main ssl-cert all 1.0.28ubuntu0.1 [12.3 kB]
+Get:51 http://archive.ubuntu.com/ubuntu/ precise-updates/main unzip amd64 6.0-4ubuntu2.5 [193 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 22.2 MB in 2s (10.8 MB/s)
+Selecting previously unselected package libsqlite3-0.
+(Reading database ... 7590 files and directories currently installed.)
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.7.9-2ubuntu1.2_amd64.deb) ...
+Selecting previously unselected package libroken18-heimdal.
+Unpacking libroken18-heimdal (from .../libroken18-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libasn1-8-heimdal.
+Unpacking libasn1-8-heimdal (from .../libasn1-8-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libbsd0.
+Unpacking libbsd0 (from .../libbsd0_0.3.0-2_amd64.deb) ...
+Selecting previously unselected package libedit2.
+Unpacking libedit2 (from .../libedit2_2.11-20080614-3ubuntu2_amd64.deb) ...
+Selecting previously unselected package libgpg-error0.
+Unpacking libgpg-error0 (from .../libgpg-error0_1.10-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libgcrypt11.
+Unpacking libgcrypt11 (from .../libgcrypt11_1.5.0-3ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package libgdbm3.
+Unpacking libgdbm3 (from .../libgdbm3_1.8.3-10_amd64.deb) ...
+Selecting previously unselected package libp11-kit0.
+Unpacking libp11-kit0 (from .../libp11-kit0_0.12-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libtasn1-3.
+Unpacking libtasn1-3 (from .../libtasn1-3_2.10-1ubuntu1.5_amd64.deb) ...
+Selecting previously unselected package libgnutls26.
+Unpacking libgnutls26 (from .../libgnutls26_2.12.14-5ubuntu3.14_amd64.deb) ...
+Selecting previously unselected package libhcrypto4-heimdal.
+Unpacking libhcrypto4-heimdal (from .../libhcrypto4-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimbase1-heimdal.
+Unpacking libheimbase1-heimdal (from .../libheimbase1-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libwind0-heimdal.
+Unpacking libwind0-heimdal (from .../libwind0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libhx509-5-heimdal.
+Unpacking libhx509-5-heimdal (from .../libhx509-5-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libkrb5-26-heimdal.
+Unpacking libkrb5-26-heimdal (from .../libkrb5-26-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimntlm0-heimdal.
+Unpacking libheimntlm0-heimdal (from .../libheimntlm0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libgssapi3-heimdal.
+Unpacking libgssapi3-heimdal (from .../libgssapi3-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libsasl2-2.
+Unpacking libsasl2-2 (from .../libsasl2-2_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libldap-2.4-2.
+Unpacking libldap-2.4-2 (from .../libldap-2.4-2_2.4.28-1.1ubuntu4.6_amd64.deb) ...
+Selecting previously unselected package libxml2.
+Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-5.1ubuntu4.17_amd64.deb) ...
+Selecting previously unselected package libcap2.
+Unpacking libcap2 (from .../libcap2_1%3a2.22-1ubuntu3_amd64.deb) ...
+Selecting previously unselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-7.2ubuntu1.4_amd64.deb) ...
+Selecting previously unselected package libmagic1.
+Unpacking libmagic1 (from .../libmagic1_5.09-2ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package file.
+Unpacking file (from .../file_5.09-2ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package mime-support.
+Unpacking mime-support (from .../mime-support_3.51-1ubuntu1.1_all.deb) ...
+Selecting previously unselected package netbase.
+Unpacking netbase (from .../netbase_4.47ubuntu1_all.deb) ...
+Selecting previously unselected package ucf.
+Unpacking ucf (from .../ucf_3.0025+nmu2ubuntu1_all.deb) ...
+[91mMoving old data out of the way
+[0mSelecting previously unselected package libsasl2-modules.
+Unpacking libsasl2-modules (from .../libsasl2-modules_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package openssl.
+Unpacking openssl (from .../openssl_1.0.1-4ubuntu5.39_amd64.deb) ...
+Selecting previously unselected package sgml-base.
+Unpacking sgml-base (from .../sgml-base_1.26+nmu1ubuntu1_all.deb) ...
+Selecting previously unselected package xml-core.
+Unpacking xml-core (from .../archives/xml-core_0.13_all.deb) ...
+Selecting previously unselected package libapr1.
+Unpacking libapr1 (from .../libapr1_1.4.6-1_amd64.deb) ...
+Selecting previously unselected package libaprutil1.
+Unpacking libaprutil1 (from .../libaprutil1_1.3.12+dfsg-3_amd64.deb) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3.
+Unpacking libaprutil1-dbd-sqlite3 (from .../libaprutil1-dbd-sqlite3_1.3.12+dfsg-3_amd64.deb) ...
+Selecting previously unselected package libaprutil1-ldap.
+Unpacking libaprutil1-ldap (from .../libaprutil1-ldap_1.3.12+dfsg-3_amd64.deb) ...
+Selecting previously unselected package apache2.2-bin.
+Unpacking apache2.2-bin (from .../apache2.2-bin_2.2.22-1ubuntu1.11_amd64.deb) ...
+Selecting previously unselected package apache2-utils.
+Unpacking apache2-utils (from .../apache2-utils_2.2.22-1ubuntu1.11_amd64.deb) ...
+Selecting previously unselected package libswitch-perl.
+Unpacking libswitch-perl (from .../libswitch-perl_2.16-2_all.deb) ...
+Selecting previously unselected package libclass-isa-perl.
+Unpacking libclass-isa-perl (from .../libclass-isa-perl_0.36-3_all.deb) ...
+Selecting previously unselected package perl-modules.
+Unpacking perl-modules (from .../perl-modules_5.14.2-6ubuntu2.5_all.deb) ...
+Selecting previously unselected package perl.
+Unpacking perl (from .../perl_5.14.2-6ubuntu2.5_amd64.deb) ...
+Selecting previously unselected package apache2.2-common.
+Unpacking apache2.2-common (from .../apache2.2-common_2.2.22-1ubuntu1.11_amd64.deb) ...
+Selecting previously unselected package apache2-mpm-prefork.
+Unpacking apache2-mpm-prefork (from .../apache2-mpm-prefork_2.2.22-1ubuntu1.11_amd64.deb) ...
+Selecting previously unselected package apache2.
+Unpacking apache2 (from .../apache2_2.2.22-1ubuntu1.11_amd64.deb) ...
+Selecting previously unselected package php5-common.
+Unpacking php5-common (from .../php5-common_5.3.10-1ubuntu3.26_amd64.deb) ...
+Selecting previously unselected package libapache2-mod-php5.
+Unpacking libapache2-mod-php5 (from .../libapache2-mod-php5_5.3.10-1ubuntu3.26_amd64.deb) ...
+Selecting previously unselected package php5.
+Unpacking php5 (from .../php5_5.3.10-1ubuntu3.26_all.deb) ...
+Selecting previously unselected package php5-cli.
+Unpacking php5-cli (from .../php5-cli_5.3.10-1ubuntu3.26_amd64.deb) ...
+Selecting previously unselected package ssl-cert.
+Unpacking ssl-cert (from .../ssl-cert_1.0.28ubuntu0.1_all.deb) ...
+Selecting previously unselected package unzip.
+Unpacking unzip (from .../unzip_6.0-4ubuntu2.5_amd64.deb) ...
+Setting up libsqlite3-0 (3.7.9-2ubuntu1.2) ...
+Setting up libroken18-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libasn1-8-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libbsd0 (0.3.0-2) ...
+Setting up libedit2 (2.11-20080614-3ubuntu2) ...
+Setting up libgpg-error0 (1.10-2ubuntu1) ...
+Setting up libgcrypt11 (1.5.0-3ubuntu0.6) ...
+Setting up libgdbm3 (1.8.3-10) ...
+Setting up libp11-kit0 (0.12-2ubuntu1) ...
+Setting up libtasn1-3 (2.10-1ubuntu1.5) ...
+Setting up libgnutls26 (2.12.14-5ubuntu3.14) ...
+Setting up libhcrypto4-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimbase1-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libwind0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libhx509-5-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libkrb5-26-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimntlm0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libgssapi3-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libsasl2-2 (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up libldap-2.4-2 (2.4.28-1.1ubuntu4.6) ...
+Setting up libxml2 (2.7.8.dfsg-5.1ubuntu4.17) ...
+Setting up libcap2 (1:2.22-1ubuntu3) ...
+Setting up libexpat1 (2.0.1-7.2ubuntu1.4) ...
+Setting up libmagic1 (5.09-2ubuntu0.6) ...
+Setting up file (5.09-2ubuntu0.6) ...
+Setting up mime-support (3.51-1ubuntu1.1) ...
+update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+Setting up netbase (4.47ubuntu1) ...
+Setting up ucf (3.0025+nmu2ubuntu1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mSetting up libsasl2-modules (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up openssl (1.0.1-4ubuntu5.39) ...
+Setting up sgml-base (1.26+nmu1ubuntu1) ...
+Setting up xml-core (0.13) ...
+Setting up libapr1 (1.4.6-1) ...
+Setting up libaprutil1 (1.3.12+dfsg-3) ...
+Setting up libaprutil1-dbd-sqlite3 (1.3.12+dfsg-3) ...
+Setting up libaprutil1-ldap (1.3.12+dfsg-3) ...
+Setting up apache2.2-bin (2.2.22-1ubuntu1.11) ...
+Setting up apache2-utils (2.2.22-1ubuntu1.11) ...
+Setting up libclass-isa-perl (0.36-3) ...
+Setting up php5-common (5.3.10-1ubuntu3.26) ...
+Setting up php5-cli (5.3.10-1ubuntu3.26) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91m
+Creating config file /etc/php5/cli/php.ini with new version
+[0mupdate-alternatives: using /usr/bin/php5 to provide /usr/bin/php (php) in auto mode.
+Setting up ssl-cert (1.0.28ubuntu0.1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0mSetting up unzip (6.0-4ubuntu2.5) ...
+Setting up libswitch-perl (2.16-2) ...
+Setting up perl-modules (5.14.2-6ubuntu2.5) ...
+Setting up perl (5.14.2-6ubuntu2.5) ...
+update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode.
+Setting up apache2.2-common (2.2.22-1ubuntu1.11) ...
+Enabling site default.
+Enabling module alias.
+Enabling module autoindex.
+Enabling module dir.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module status.
+Enabling module auth_basic.
+Enabling module deflate.
+Enabling module authz_default.
+Enabling module authz_user.
+Enabling module authz_groupfile.
+Enabling module authn_file.
+Enabling module authz_host.
+Enabling module reqtimeout.
+Setting up apache2-mpm-prefork (2.2.22-1ubuntu1.11) ...
+[91minvoke-rc.d: policy-rc.d denied execution of start.
+[0mSetting up apache2 (2.2.22-1ubuntu1.11) ...
+Setting up libapache2-mod-php5 (5.3.10-1ubuntu3.26) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91m
+Creating config file /etc/php5/apache2/php.ini with new version
+[0m[91minvoke-rc.d: policy-rc.d denied execution of restart.
+[0mSetting up php5 (5.3.10-1ubuntu3.26) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Removing intermediate container 082839e87576
+ ---> f377eb0d1d45
+Step 4/13 : ENV APACHE_RUN_USER www-data
+ ---> Running in f0b3431152f7
+Removing intermediate container f0b3431152f7
+ ---> c21171ce55d5
+Step 5/13 : ENV APACHE_RUN_GROUP www-data
+ ---> Running in 85a499c54f46
+Removing intermediate container 85a499c54f46
+ ---> 5c4f94e344ab
+Step 6/13 : ENV APACHE_LOG_DIR /var/log/apache2
+ ---> Running in dfd6d4102204
+Removing intermediate container dfd6d4102204
+ ---> e46d01936995
+Step 7/13 : EXPOSE 80
+ ---> Running in 09227f7483e8
+Removing intermediate container 09227f7483e8
+ ---> ce90d3319111
+Step 8/13 : ADD http://icecoder.net/download-zip?version=3.0beta /var/www/icecoder.zip
+Downloading
+
+
+ ---> 690129552ac4
+Step 9/13 : RUN cd /var/www && unzip -o  icecoder.zip
+ ---> Running in dab6318e6897
+[91m  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of icecoder.zip or
+        icecoder.zip.zip, and cannot find icecoder.zip.ZIP, period.
+[0mArchive:  icecoder.zip
+The command '/bin/sh -c cd /var/www && unzip -o  icecoder.zip' returned a non-zero code: 9
