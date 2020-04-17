@@ -169,4 +169,23 @@
   Url: "https://github.com/strapi/strapi-docker/issues/125"
   Hadolint: "Few warnings, but none related"
 
+319089290
+  Query: "docker juliagpu/julia"
+  Diagnosis: "Invalid name to docker hub image"
+  Repair: "FROM juliagpu/julia:v1.3-plain at line 3", "Add # at line 1"
+  Url: "https://hub.docker.com/r/juliagpu/julia/tags"
+  Hadolint: "Only 1 warning, not no related"
 
+337127517
+  Query: "docker hub openrasp/php5.4"
+  Diagnosis: "openrasp/php5.4 repository does not exist"
+  Repair: "FROM vixns/php5.4 at line 1"
+  Url: "https://hub.docker.com/r/vixns/php5.4/"
+  Hadolint: "Always tag the version of an image explicitly at line 1"
+
+340529927
+  Query: "pywps/flask-alpine:latest"
+  Diagnosis: "pywps/flask-alpine:latest repository using a wrong name"
+  Repair: "FROM pywps/flask-alpine:3.6 at line 1"
+  Url: "https://hub.docker.com/r/pywps/flask-alpine"
+  Hadolint: "Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag at line 1"
