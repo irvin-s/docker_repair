@@ -23,7 +23,7 @@
   Hadolint: "Two warnings, but none related."
 
 483202780
-  Query: "No package mingw32-[binutils,crt,nsis] available centos 7"
+  Query: "No package mingw32-[binutils,crt,nsis] available centos 7", "gcc, mingw cent os"
   Diagnosis: "yum cannot find requested package, this package are no longer supported by the OS"
   Repair: "There are no repairs available"
   Url "https://forums.centos.org/viewtopic.php?t=68772","https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7"
@@ -36,11 +36,11 @@
   Url "https://forums.docker.com/t/openjdk-bin-sh-apt-command-not-found/72606", "https://deb.nodesource.com/setup_9.x"
   Hadolint: "Olny 1 warnig, Set the SHELL option -o pipefail before RUN with a pipe in it at line 3"
 
-483733309*
-  Query: "Operation failed: No such file or directory. The command '/bin/sh -c systemctl enable libvirtd' returned a non-zero code: 1" 
+483733309
+  Query: "systemctl enable libvirtd Operation failed: No such file or directory" 
   Diagnosis: "There is no systemd-daemon running in the container, use a image that comes with systemd"
   Repair: "FROM unop/fedora-systemd at line 1" 
-  Url "https://github.com/geerlingguy/docker-fedora27-ansible/issues/2", "https://hub.docker.com/r/unop/fedora-systemd/"
+  Url "https://unix.stackexchange.com/questions/225319/i-cant-enable-or-disable-a-user-service-failed-to-execute-operation-no-such-f", "https://github.com/geerlingguy/docker-fedora27-ansible/issues/2", "https://hub.docker.com/r/unop/fedora-systemd/"
   Hadolint: "Always tag the version of an image explicitly at line 1"
 
 154176094
@@ -80,16 +80,16 @@
 
 282262279
   Query: "base/archlinux:latest"
-  Diagnosis: "Obsolete name for docker image at line 1"
+  Diagonosis: "Obsolete name for docker image at line 1"
   Repair: "FROM archlinux/base"
   Url: "https://hub.docker.com/r/base/archlinux/"
   Hadolint:  "Line 1 warning to Always tag the version of an image explicitly"
 
-286707117*
-  Query: "Query: ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'"
+286707117
+  Query: "[Errno 2] No such file or directory: 'requirements.txt' hkube"
   Diagnosis: "The developer trying to copy a file out of a context at line 7"
   Repair: "There are no repairs available"
-  Url: "https://stackoverflow.com/questions/55826941/run-pip-install-r-requirements-txt-not-working"
+  Url: "https://stackoverflow.com/questions/46854451/pip-install-r-requirements-txt-errno-2-no-such-file-or-directory-requiremen"
   Hadolint: "Use 'cd ... || exit' or 'cd ... || return' in case cd fails. at line 7"
 
 317341044
@@ -103,12 +103,70 @@
   Query: "E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file. ubuntu 17.04"
   Diagnosis: "Ubuntu 17.04 reached End of Life last week. Time to upgrade to 18.04"
   Repair: "FROM ubuntu:18.04 at line 1"
-  Url "https://ubuntuforums.org/showthread.php?t=2382832"
+  Url: "https://ubuntuforums.org/showthread.php?t=2382832"
   Hadolint: "Few warnings but not related with repair"
 
 323821268
   Query: "docker hub image frolvlad/alpine-oraclejdk8"
   Diagnosis: "Incorrect docker image name"
   Repair: "FROM frolvlad/alpine-java at line 1"
-  Url "https://hub.docker.com/r/frolvlad/alpine-oraclejre8"
+  Url: "https://hub.docker.com/r/frolvlad/alpine-oraclejre8"
   Hadolint: "Only 1 warning but not related"
+
+256564368
+  Query: "Error getting repository data for rhel-7-server-rpms, repository not found"
+  Diagnosis: "The are no available repos using RHEL latest"
+  Repair: "Couldn`t repair"
+  Url: "https://github.com/puppetlabs/puppetlabs-docker/issues/290"
+  Hadolint: "Few warnings, but none related"
+
+278524126
+  Query: "dep ensure could not find project Gopkg.toml, use dep init to initiate a manifest"
+  Diagnosis: "Using an wrong dep command parameter"
+  Repair: "RUN dep init at line 7"
+  Url: "https://github.com/decred/dcrd/issues/1462"
+  Hadolint: "Only 1 warnig at line 1, but none related"
+
+281278528
+  Query: "Could not locate Gemfile bundle install --deployment --force"
+  Diagnosis: "Trying to execute a command in wrong dir"
+  Repair: "You just need to change directories to your app, THEN run bundle install"
+  Url: "https://stackoverflow.com/questions/10012181/bundle-install-returns-could-not-locate-gemfile"
+  Hadolint: "Two related warning at line 20"
+
+282864414
+  Query: "(Connection reset by peer)  https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz"
+  Diagnosis: "Trying to download an corrupted link"
+  Repair: "Add https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz to line 13","add go1.14.2.linux-amd64.tar.gz to line 14 and 15"
+  Url: "https://golang.org/dl/"
+  Hadolint: "Several warnings, but none related"
+
+289918736
+  Query: "devops/base:latest"
+  Diagnosis: "Using a non existent dockerhub image"
+  Repair: "No available repair"
+  Url: "https://hub.docker.com/search/?type=image"
+  Hadolint: "Using latest is prone to errors if the image will ever update at line 1"
+
+299061624
+  Query: "E: Package 'iproute' has no installation candidate"
+  Diagnosis: "Obsolete package"
+  Repair: "iproute2 at line 16"
+  Url: "https://github.com/mininet/mininet/issues/812"
+  Hadolint: "Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` at line 10"
+
+302258726
+  Query: "ERROR: The 'build' command is only supported from within a workspace (below a directory having a WORKSPACE file)."
+  Diagnosis: "To execute a successfully build, WORKSPACE is needed"
+  Repair: "RUN touch WORKSPACE between line 13 and 14"
+  Url: "https://github.com/tensorflow/models/issues/497"
+  Hadolint: "Few warnings, but none related"
+
+317956129
+  Query: "npm run pkg-docker && npm run pkg-docker-healthcheck"
+  Diagnosis: "npm command doesn't run"
+  Repair: "FROM node:slim as build_job at line 1"
+  Url: "https://github.com/strapi/strapi-docker/issues/125"
+  Hadolint: "Few warnings, but none related"
+
+
