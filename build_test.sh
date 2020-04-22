@@ -35,7 +35,7 @@ images_file=$"images_list.txt"
      	msg_log=$(docker build -t binacle:$hash . 2>&1 )
 
 	## removes all images and test the built was successfully or failed
-	if [[ $msg_log == *"Successfully"* ]];
+	if [[ $msg_log == *"Successfully tagged"* ]];
     	then
        		echo "$msg_log" > ${HERE}/analyze_binacle_dataset/logs/success/$hash.log 
        		docker system prune -af
