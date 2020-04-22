@@ -17,16 +17,23 @@
 
 483357603
   Query: "UID 1000 is not unique"
+  URL: "https://github.com/nodejs/docker-node/issues/289"
+  
   Diagnosis: "A variable needed to be changed before using the Dockerfile"
   Repair: "Change value of variable PERM_USER_ID from 1000 to 1001 at line 4"
-  Url: "https://github.com/nodejs/docker-node/issues/289"
+
   Hadolint: "Two warnings, but none related."
 
 483202780
-  Query: "No package mingw32-[binutils,crt,nsis] available centos 7", "gcc, mingw cent os"
+  Query: "No package mingw32-[binutils,crt,nsis] available (centos 7)
+  <------------- nao posso usar o centos 7 porque nao sei de onde ele veio"
+  URL: "https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7"
+
+  Query: ">>>gcc,<<< mingw >>>cent os<<<  (nao sei de onde isto veio)"
+  URL: "https://forums.centos.org/viewtopic.php?t=68772",
+---
   Diagnosis: "yum cannot find requested package, this package are no longer supported by the OS"
   Repair: "There are no repairs available"
-  Url "https://forums.centos.org/viewtopic.php?t=68772","https://unix.stackexchange.com/questions/327156/where-can-i-find-and-install-the-mingw-w64-packages-for-centos-7"
   Hadolint: "Several warnings, but none related."
 
 484144517
@@ -37,17 +44,22 @@
   Hadolint: "Olny 1 warnig, Set the SHELL option -o pipefail before RUN with a pipe in it at line 3"
 
 483733309
-  Query: "systemctl enable libvirtd Operation failed: No such file or directory" 
+  Query: "systemctl enable libvirtd Operation failed: No such file or directory"
+  Url
+  "https://unix.stackexchange.com/questions/225319/i-cant-enable-or-disable-a-user-service-failed-to-execute-operation-no-such-f"
+  (Google answered this #5)
+
+"https://github.com/geerlingguy/docker-fedora27-ansible/issues/2", "https://hub.docker.com/r/unop/fedora-systemd/"  
   Diagnosis: "There is no systemd-daemon running in the container, use a image that comes with systemd"
   Repair: "FROM unop/fedora-systemd at line 1" 
-  Url "https://unix.stackexchange.com/questions/225319/i-cant-enable-or-disable-a-user-service-failed-to-execute-operation-no-such-f", "https://github.com/geerlingguy/docker-fedora27-ansible/issues/2", "https://hub.docker.com/r/unop/fedora-systemd/"
+
   Hadolint: "Always tag the version of an image explicitly at line 1"
 
 154176094
   Query: "The repository 'http://security.ubuntu.com/ubuntu artful-security Release' does not have a Release file."
+  URL: https://ubuntuforums.org/showthread.php?t=2382832  
   Diagnosis: "The 17.04 repositories have been closed and withdrawn, use a newer image version"
   Repair: "FROM ubuntu:18.04 at line 2"
-  Url https://ubuntuforums.org/showthread.php?t=2382832
   Hadolint: "Several warnings, but none related."
 
 169561074
