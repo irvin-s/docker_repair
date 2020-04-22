@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUM=2 # <~~~~ define how many images you want to build in one pass
+NUM=250 # <~~~~ define how many images you want to build in one pass
 
 HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
@@ -34,7 +34,7 @@ do
      ## build image, dump output and error streams to $logfile
      tmp_logfile=$(docker build -t binacle:$hash . 2>&1 )
     ## removes all images and test the built was successfully or failed
-    if [[ $tmp_logfile == *"Successfully"* ]];
+    if [[ $tmp_logfile == *"Successfully tagged"* ]];
     then
        echo "$tmp_logfile" > ${HERE}/logs/success/$hash.log 
        docker system prune -af
