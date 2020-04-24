@@ -201,3 +201,10 @@
   Repair: "FROM pywps/flask-alpine:3.6 at line 1"
   Url: "https://hub.docker.com/r/pywps/flask-alpine"
   Hadolint: "Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag at line 1"
+
+395127788
+  Query: "Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-4noqEu/numpy/"
+  Diagnosis: "Using and older version of pip installer"
+  Repair: "pip install --upgrade pip && \ between line 20 and 21"
+  Url: "https://github.com/facebook/prophet/issues/418"
+  Hadolint: "Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag at line 1"
