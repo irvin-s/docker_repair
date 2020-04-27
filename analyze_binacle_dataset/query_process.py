@@ -13,18 +13,22 @@ def lastNlines(f,n):
 #Function to convert list to string
 def listToString(s):
     str1 = " "
-    return (str1.join(map(str, s)))
+    return (str1.join(s))
 
 #Read log file
 log_file = open("logs/fail/484144517.log","r")
-query = lastNlines(log_file,5)
+query = lastNlines(log_file,3)
 #for p in query:
 #    print(p)
 
 #Googling error log and show de results, convert lines from list to string before use the query
 query_s = listToString(query)
-try:
-   for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
-        print(g)
-except:
-        print("Error")
+for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
+    url = g
+
+#Testing query seach on google and show the results
+if ('url' not in locals()):
+    print("No results found using searching terms: ", query_s)
+else:
+    print("Query: ", query_s)
+    print("URL: ", url)
