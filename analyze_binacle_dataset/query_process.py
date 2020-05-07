@@ -1,17 +1,22 @@
-#Before execute the script, use pip to install google lib
+#Before execute the script, see requirements.txt
+#This script reads a log file from a dockerfile build, and then use logs from failure build
+#Get the error from the log and search on google to find URL's that contain the bug fix  
+#Script usage: python query_process.py log_to_analyze
+
 #Import googlesearch for URL requests 
 from googlesearch import search
 import sys
+import json
 
 #Initializing variables
 url = []
 lines = []
+dataJ = {}
 
 #File to store query_log
-query_log = open("analyzed_query.log", "a")
+query_log = open("analyzed_query.json", "a")
 
 #Function to read log file last lines
-
 def lastNlines(f,n):
     with f as file:
         for line in (file.readlines()[-n:]):
@@ -23,6 +28,10 @@ def listToString(s):
     str1 = " "
     return (str1.join(s))
 
+#Function to conver list to dict
+def listToDict(lst):
+    lst = { i : lst[i] for i in range(0, len(lst) ) }
+    return lst
 
 if __name__ == "__main__":
 
@@ -49,14 +58,17 @@ if __name__ == "__main__":
     #Testing query seach on google and show the results
     if not url:
         url.append("No results found!!")
-    print("Process finished, for log check analyzed_query.log")
+    print("Process finished, for log check analyzed_query.json")
 
 #Write query_log
-n_hash = ("Hash: ", n_hash[10:-4], "\n")
-query_s = ("Query: ", query_s, "\n")
-url = ("URL: ", url, "\n")
-query_log.writelines(n_hash)
-query_log.writelines(query_s)
-query_log.writelines("%s" % url_list for url_list in url)
+dataJ['Hash: '+n_hash[10:-4]] = []
+dataJ['Hash: '+n_hash[10:-4]].append({
+    'Inicial query': query_s,
+    'Inicial URL': ( listToDict(url) ),
+    'Revised query': '',
+    'Revised URL': ''
+}) 
+json.dump(dataJ, query_log, indent=4)
+query_log.write("\n")
 query_log.write("\n")
 query_log.close
