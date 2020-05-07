@@ -1,0 +1,358 @@
+{
+    "Hash: 395127788": [
+        {
+            "Inicial query": "\u001b[0m\u001b[91mYou are using pip version 8.1.1, however version 20.0.2 is available.  You should consider upgrading via the 'pip install --upgrade pip' command.  \u001b[0mThe command '/bin/sh -c apt-get update &&     apt-get install --yes               $BUILD_PACKAGES               python-pip &&     pip install ont-fast5-api==$PACKAGE_VERSION &&     apt clean &&     rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "pip install --upgrade pip dockerfile crash",
+            "Revised URL": {
+                "0": "https://stackoverflow.com/questions/37014848/unable-to-upgrade-pip-in-docker-build",
+                "1": "https://stackoverflow.com/questions/52221590/how-can-i-upgrade-pip-inside-a-venv-inside-a-dockerfile/52221698"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 340529927": [
+        {
+            "Inicial query": "  Step 1/10 : FROM pywps/flask-alpine:latest  manifest for pywps/flask-alpine:latest not found: manifest unknown: manifest unknown ",
+            "Inicial URL": {
+                "0": "https://github.com/geopython/pywps-flask",
+                "1": "https://github.com/geopython/pywps-flask/blob/master/docker/alpine/flask/Dockerfile",
+                "2": "https://pywps.readthedocs.io/en/latest/deployment.html",
+                "3": "https://pywps.readthedocs.io/en/latest/install.html",
+                "4": "https://hub.docker.com/u/pywps/",
+                "5": "https://pypi.doubanio.com/simple"
+            },
+            "Revised query": "pywps/flask-alpine:latest not found dockerfile",
+            "Revised URL": {
+                "0": "None Related!"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 337127517": [
+        {
+            "Inicial query": "  Step 1/8 : FROM openrasp/php5.4  pull access denied for openrasp/php5.4, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Inicial URL": {
+                "0": "https://github.com/docker-library/php/issues/91",
+                "1": "https://github.com/owncloud/documentation/issues/2172",
+                "2": "https://hub.docker.com/r/centos/php-56-centos7/",
+                "3": "https://hub.docker.com/r/vixns/php5.4/",
+                "4": "https://discuss.circleci.com/t/launchpad-connections-times-out/31608",
+                "5": "https://www.tecmint.com/install-php-5-4-php-5-5-or-php-5-6-on-centos-6/"
+            },
+            "Revised query": "openrasp/php5.4 epository does not exist dockerfile crash",
+            "Revised URL": {
+                "0": "None Related!"
+                }
+        }
+    ]
+}
+
+{
+    "Hash: 319089290": [
+        {
+            "Inicial query": "Step 1/6 : ARG base  Step 2/6 : FROM juliagpu/julia:${base} as base  invalid reference format ",
+            "Inicial URL": {
+                "0": "https://stackoverflow.com/questions/55074707/error-invalid-reference-format-in-dockerfile-ubuntu-14-04-cuda-8-0-cudnn-6-0",
+                "1": "https://gitlab.com/nvidia/cuda/issues/30",
+                "2": "https://github.com/anowacki/julia/pull/1/files",
+                "3": "https://raw.githubusercontent.com/JuliaLang/docs.julialang.org/assets/julia-1.1.0.pdf",
+                "4": "https://www.scribd.com/document/399247086/julia-1-1-0",
+                "5": "https://hn.nuxtjs.org/item/17723404"
+            },
+            "Revised query": "juliagpu/julia:${base} dockerfile problem",
+            "Revised URL": {
+                "0": "None Related!"
+                }
+        }
+    ]
+}
+
+{
+    "Hash: 317956129": [
+        {
+            "Inicial query": "\u001b[0m\u001b[91mnpm ERR! Please include the following file with any support request:  npm ERR!\u001b[0m\u001b[91m     /src/npm-debug.log  \u001b[0mThe command '/bin/sh -c npm run pkg-docker && npm run pkg-docker-healthcheck' returned a non-zero code: 254 ",
+            "Inicial URL": {
+                "0": "https://github.com/Shippable/support/issues/1413",
+                "1": "https://unix.stackexchange.com/questions/381902/permission-denied-when-we-use-npm-start-using-webpack",
+                "2": "https://gitmemory.com/arthurlogilab",
+                "3": "http://149.202.229.162/build/result/gotoBuildResult.action?buildKey=WZNDEV-CI-JOB1&buildNumber=427&returnUrl=%2Fbrowse%2FWZNDEV-CI-JOB1-424%2Flog"
+            },
+            "Revised query": "npm run pkg-docker && npm run pkg-docker-healthcheck dockerfile error",
+            "Revised URL": {
+                "0": "https://github.com/strapi/strapi-docker/issues/125"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 302258726": [
+        {
+            "Inicial query": "\u001b[0m\u001b[91mERROR: The 'build' command is only supported from within a workspace (below a directory having a WORKSPACE file).  See documentation at https://docs.bazel.build/versions/master/build-ref.html#workspace  \u001b[0mThe command '/bin/sh -c bazel build quitsies' returned a non-zero code: 2 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "bazel build quitsies dockerfile crash",
+            "Revised URL": "None Related!"
+        }
+    ]
+}
+
+{
+    "Hash: 299061624": [
+        {
+            "Inicial query": "  \u001b[91mE: Package 'iproute' has no installation candidate  \u001b[0mThe command '/bin/sh -c apt-get update     && apt-get -y install       curl       jq       netcat       net-tools       iproute       dnsutils       graphviz' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "Package 'iproute' has no installation candidate",
+            "Revised URL": {
+                "0": "https://github.com/mininet/mininet/issues/812"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 289918736": [
+        {
+            "Inicial query": "  Step 1/8 : FROM devops/base:latest  pull access denied for devops/base, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Inicial URL": {
+                "0": "https://github.com/docker/hub-feedback/issues/1222",
+                "1": "https://www.reddit.com/r/devops/comments/bzlz6a/docker_pull_access_denied_repository_does_not/",
+                "2": "https://stackoverflow.com/questions/57067970/azure-devops-ci-pull-access-denied-for-builder-repository-does-not-exist-or-may",
+                "3": "https://stackoverflow.com/questions/55421635/resource-access-denied-when-pushing-container-to-azure-container-registry",
+                "4": "https://stackoverflow.com/questions/60146484/unable-to-get-the-service-connection-for-azure-container-registry-in-azure-devop",
+                "5": "https://stackoverflow.com/questions/57198864/pusing-docker-image-to-docker-hub-from-azure-devops-pipeline"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 282864414": [
+        {
+            "Inicial query": " 31350K ..\u001b[0m\u001b[91m                                                     51% 3815G=0.5s    \u001b[0m\u001b[91m2020-04-16 01:39:10 (61.6 MB/s) - Read error at byte 32104448/62442704 (Connection reset by peer). \u001b[0mThe command '/bin/sh -c wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz' returned a non-zero code: 1 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz dockerfile crash",
+            "Revised URL": {
+                "0": "None Related!"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 281278528": [
+        {
+            "Inicial query": " ---> Running in 1f75f89bbd52  Could not locate Gemfile  The command '/bin/sh -c bundle install --deployment --force' returned a non-zero code: 10 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "bundle install --deployment --force dockerfile error",
+            "Revised URL": {
+                "0": "https://github.com/docker-library/ruby/issues/288",
+                "1": "https://stackoverflow.com/questions/36411789/bundle-install-fails-in-rails-docker-container"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 278524126": [
+        {
+            "Inicial query": " ---> Running in fd4cd5f92b81  \u001b[91mcould not find project Gopkg.toml, use dep init to initiate a manifest  \u001b[0mThe command '/bin/sh -c dep ensure' returned a non-zero code: 1 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "dep ensure dockerfile error",
+            "Revised URL": {
+                "0": "https://github.com/golang/dep/issues/1769",
+                "1": "https://stackoverflow.com/questions/52578581/trying-to-install-dependencies-using-dep-in-docker"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 256564368": [
+        {
+            "Inicial query": "  Error getting repository data for rhel-7-server-rpms, repository not found  \u001b[0mThe command '/bin/sh -c yum --disablerepo=*         --enablerepo=rhel-7-server-rpms         --enablerepo=rhel-7-server-extras-rpms         --enablerepo=rhel-7-server-optional-rpms         --enablerepo=rhel-7-server-thirdparty-oracle-java-rpms       install -y       java-${JAVA_VERSION}-${JAVA_TYPE}-devel       java-${JAVA_VERSION}-${JAVA_TYPE}-jdbc &&     yum clean all' returned a non-zero code: 1 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "Error getting repository data for rhel-7-server-rpms dockerfile crash",
+            "Revised URL": {
+                "0": "https://github.com/puppetlabs/puppetlabs-docker/issues/290"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 323821268": [
+        {
+            "Inicial query": "  Step 1/8 : FROM frolvlad/alpine-oraclejdk8:slim  pull access denied for frolvlad/alpine-oraclejdk8, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Inicial URL": {
+                "0": "https://github.com/pterodactyl/images/issues/38",
+                "1": "https://github.com/vert-x3/vertx-scala.g8/issues/6",
+                "2": "https://stackoverflow.com/questions/47711145/pull-access-denied-for-oracle-serverjre",
+                "3": "https://stackoverflow.com/questions/53708110/problem-using-oracle-serverjre8-in-dockerfile",
+                "4": "https://stackoverflow.com/questions/57654998/pull-access-denied-for-8u162-jdk-in-maven-project",
+                "5": "https://stackoverflow.com/questions/60564733/docker-tag-not-working-for-alpine-openjdk-11"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 320733641": [
+        {
+            "Inicial query": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get -y update && apt-get -y install     clang     g++     libcap-ng-dev     libglib2.0-dev     libicecc-dev     liblzo2-dev     libncursesw5-dev     meson     ninja-build' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-error-e-the-repository-http-ir-archive-ubuntu",
+                "1": "https://askubuntu.com/questions/1141501/i-cant-run-sudo-apt-get-update-in-ubuntu-17-10",
+                "2": "https://askubuntu.com/questions/998044/cant-update-from-official-repositories",
+                "3": "https://askubuntu.com/questions/996718/ubuntu-repository-does-not-have-a-release-file",
+                "4": "https://askubuntu.com/questions/973520/apt-update-error-the-repository-http-us-archive-ubuntu-com-ubuntu-saucy-rele",
+                "5": "https://ubuntuforums.org/showthread.php?t=2382845"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 317341044": [
+        {
+            "Inicial query": "  Step 1/9 : FROM docker-base-image  pull access denied for docker-base-image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Inicial URL": {
+                "0": "https://github.com/moby/moby/issues/33252",
+                "1": "https://github.com/IBM/build-blockchain-insurance-app/issues/68",
+                "2": "https://stackoverflow.com/questions/48719921/pull-access-denied-repository-does-not-exist-or-may-require-docker-login",
+                "3": "https://stackoverflow.com/questions/48824905/access-denied-when-pulling-docker-image-from-a-repository-i-own",
+                "4": "https://stackoverflow.com/questions/41984399/denied-requested-access-to-the-resource-is-denied-docker",
+                "5": "https://stackoverflow.com/questions/56512769/unable-to-find-docker-image-locally"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 154176094": [
+        {
+            "Inicial query": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get update -qq -y' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-error-e-the-repository-http-ir-archive-ubuntu",
+                "1": "https://askubuntu.com/questions/1141501/i-cant-run-sudo-apt-get-update-in-ubuntu-17-10",
+                "2": "https://askubuntu.com/questions/998044/cant-update-from-official-repositories",
+                "3": "https://askubuntu.com/questions/996718/ubuntu-repository-does-not-have-a-release-file",
+                "4": "https://askubuntu.com/questions/973520/apt-update-error-the-repository-http-us-archive-ubuntu-com-ubuntu-saucy-rele",
+                "5": "https://ubuntuforums.org/showthread.php?t=2382845"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 176578348": [
+        {
+            "Inicial query": "  E: Some index files failed to download. They have been ignored, or old ones used instead.  \u001b[0mThe command '/bin/sh -c apt-get update' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "https://edoc.bike/documents/the-black-isle-8m1kyl0do1l8"
+            },
+            "Revised query": "E: Some index files failed to download. They have been ignored, or old ones used instead.",
+            "Revised URL": {
+                "0": "https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 180704908": [
+        {
+            "Inicial query": "E: Couldn't find any package by glob 'libboost1.55-all-dev'  E: Couldn't find any package by regex 'libboost1.55-all-dev'  \u001b[0mThe command '/bin/sh -c apt-get -y install git scons pkg-config protobuf-compiler libprotobuf-dev libssl-dev libboost1.55-all-dev' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "No results found!!"
+            },
+            "Revised query": "Couldn't find any package by glob 'libboost1.55-all-dev'",
+            "Revised URL": {
+                "0": "https://github.com/yjxiong/temporal-segment-networks/issues/174"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 282262279": [
+        {
+            "Inicial query": "  Step 1/6 : FROM base/archlinux  manifest for base/archlinux:latest not found: manifest unknown: manifest unknown ",
+            "Inicial URL": {
+                "0": "https://success.docker.com/article/error-pulling-image-no-matching-manifest",
+                "1": "https://github.com/docker/hub-feedback/issues/1460",
+                "2": "https://github.com/sylabs/singularity/issues/2825",
+                "3": "https://aur.archlinux.org/packages/docker-app/",
+                "4": "https://stackoverflow.com/questions/50478077/pulling-docker-images-manifest-not-found/50481024",
+                "5": "https://www.reddit.com/r/archlinux/comments/djgm47/podman_as_nonroot_user/"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 282262279": [
+        {
+            "Inicial query": "  Step 1/6 : FROM base/archlinux  manifest for base/archlinux:latest not found: manifest unknown: manifest unknown ",
+            "Inicial URL": {
+                "0": "https://success.docker.com/article/error-pulling-image-no-matching-manifest",
+                "1": "https://github.com/docker/hub-feedback/issues/1460",
+                "2": "https://github.com/sylabs/singularity/issues/2825",
+                "3": "https://aur.archlinux.org/packages/docker-app/",
+                "4": "https://stackoverflow.com/questions/50478077/pulling-docker-images-manifest-not-found/50481024",
+                "5": "https://www.reddit.com/r/archlinux/comments/djgm47/podman_as_nonroot_user/"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
+{
+    "Hash: 320733641": [
+        {
+            "Inicial query": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get -y update && apt-get -y install     clang     g++     libcap-ng-dev     libglib2.0-dev     libicecc-dev     liblzo2-dev     libncursesw5-dev     meson     ninja-build' returned a non-zero code: 100 ",
+            "Inicial URL": {
+                "0": "https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-error-e-the-repository-http-ir-archive-ubuntu",
+                "1": "https://askubuntu.com/questions/1141501/i-cant-run-sudo-apt-get-update-in-ubuntu-17-10",
+                "2": "https://askubuntu.com/questions/998044/cant-update-from-official-repositories",
+                "3": "https://askubuntu.com/questions/996718/ubuntu-repository-does-not-have-a-release-file",
+                "4": "https://askubuntu.com/questions/973520/apt-update-error-the-repository-http-us-archive-ubuntu-com-ubuntu-saucy-rele",
+                "5": "https://ubuntuforums.org/showthread.php?t=2382845"
+            },
+            "Revised query": "",
+            "Revised URL": ""
+        }
+    ]
+}
+
