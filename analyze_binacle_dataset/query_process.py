@@ -63,8 +63,8 @@ if __name__ == "__main__":
 #Write query_log
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
-    'Inicial query': query_s,
-    'Inicial URL': ( listToDict(url) ),
+    'Initial query': query_s,
+    'Initial URL': ( listToDict(url) ),
     'Revised query': '',
     'Revised URL': ''
 }) 
