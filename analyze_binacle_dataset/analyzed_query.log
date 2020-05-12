@@ -2,7 +2,7 @@ Hash: *395127788
 Inicial query: [0m[91mYou are using pip version 8.1.1, however version 20.0.2 is available.  You should consider upgrading via the 'pip install --upgrade pip' command.  [0mThe command '/bin/sh -c apt-get update &&     apt-get install --yes               $BUILD_PACKAGES               python-pip &&     pip install ont-fast5-api==$PACKAGE_VERSION &&     apt clean &&     rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1 
 URL: ['No results found!!']
 Revised query: pip install --upgrade pip dockerfile crash
-URL: https://stackoverflow.com/questions/37014848/unable-to-upgrade-pip-in-docker-build, https://stackoverflow.com/questions/52221590/how-can-i-upgrade-pip-inside-a-venv-inside-a-dockerfile/52221698,  
+URL: https://stackoverflow.com/questions/37014848/unable-to-upgrade-pip-in-docker-build, https://stackoverflow.com/questions/52221590/how-can-i-upgrade-pip-inside-a-venv-inside-a-dockerfile/52221698
 
 Hash: 340529927
 Inicial query:   Step 1/10 : FROM pywps/flask-alpine:latest  manifest for pywps/flask-alpine:latest not found: manifest unknown: manifest unknown 
@@ -79,4 +79,3 @@ URL: ['*https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-er
 Hash: *317341044
 Inicial query:   Step 1/9 : FROM docker-base-image  pull access denied for docker-base-image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied 
 URL: ['https://github.com/moby/moby/issues/33252', 'https://github.com/IBM/build-blockchain-insurance-app/issues/68', '*https://stackoverflow.com/questions/48719921/pull-access-denied-repository-does-not-exist-or-may-require-docker-login', '*https://stackoverflow.com/questions/48824905/access-denied-when-pulling-docker-image-from-a-repository-i-own', 'https://stackoverflow.com/questions/41984399/denied-requested-access-to-the-resource-is-denied-docker', 'https://success.docker.com/article/requested-access-to-the-resource-is-denied-when-pushing-image-via-cli']
-

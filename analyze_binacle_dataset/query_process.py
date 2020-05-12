@@ -57,13 +57,14 @@ if __name__ == "__main__":
 
     #Testing query seach on google and show the results
     if not url:
-        url.append("No results found!!")
+        url.append("")
     print("Process finished, for log check analyzed_query.json")
 
 #Write query_log
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
-    'Initial query': query_s,
+    'Log fragment': query_s,
+    'Initial query': '',
     'Initial URL': ( listToDict(url) ),
     'Revised query': '',
     'Revised URL': ''
