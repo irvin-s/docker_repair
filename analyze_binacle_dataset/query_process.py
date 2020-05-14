@@ -7,11 +7,17 @@
 from googlesearch import search
 import sys
 import json
+import re
+import keyword_creator
+
+#Define the url white list
+url_white_lst = ['stackoverflow.com','github.com','issues','reddit.com', 'askubuntu.com', 'ubuntuforums.org', 'gitlab.com', 'medium.com', 'devops.stackexchange.com']
 
 #Initializing variables
 url = []
 lines = []
 dataJ = {}
+i = 0
 
 #File to store query_log
 query_log = open("analyzed_query.json", "a")
@@ -52,8 +58,16 @@ if __name__ == "__main__":
     #Googling error log and show de results, convert lines from list to string before use the query
     query_s = listToString(query)
     query_s = query_s.replace("\n"," ")
-    for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
-        url.append(g)
+
+    #Gerenating keyword
+    keyword = keyword_creator.keyGen(query_s)
+    while not url:
+        used_keyword = keyword[i]
+        for g in search(keyword[i], tld="com", lang="en", num=5, start=0, stop=6, pause=2):
+            url.append(g)
+            i += 1
+    #for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
+    #    url.append(g)
 
     #Testing query seach on google and show the results
     if not url:
@@ -64,7 +78,7 @@ if __name__ == "__main__":
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
     'Log fragment': query_s,
-    'Initial query': '',
+    'Initial query': used_keyword,
     'Initial URL': ( listToDict(url) ),
     'Revised query': '',
     'Revised URL': ''

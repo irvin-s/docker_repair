@@ -1,18 +1,27 @@
 #Before using this scpript run requirements.txt
 #This script uses RAKE algorithm to extract keyword from dockerfiles build crashes log.
-from rake_nltk import Rake
+from rake_nltk import Metric, Rake
+import re
+
+#Pre_processing the text to remove noise, punctuation, tags and stopwords
+def removeNoise(s):
+    s = re.sub('[^a-zA-Z]', ' ', s)
+    return s
 
 #Instantiate rake
-r= Rake()
+r= Rake(language="",
+ranking_metric=Metric.WORD_FREQUENCY,
+stopwords=('step', 'bin', 'sh', 'returned', 'non', 'zero', 'code', 'manifest', 'unknown', 'pull', 'access', 'denied','invalid', 'reference', 'format', 'failed', 'process', 'command', 'me', 'mthe', 'for', 'from'), 
+punctuations=("", "'\'", "") )
 
-#Input the log fragment
-mytext = '''\u001b[0m\u001b[91mnpm ERR! Please include the following file with any support request:  npm ERR!\u001b[0m\u001b[91m     /src/npm-debug.log  \u001b[0mThe command '/bin/sh -c npm run pkg-docker && npm run pkg-docker-healthcheck' returned a non-zero code: 254'''
+def keyGen(mytext):
+    #Sanitize the log fragment
+    mytext = removeNoise(mytext)
 
-#Extract the keywords
-r.extract_keywords_from_text(mytext)
+    #Extract the keywords
+    r.extract_keywords_from_text(mytext)
 
-#Rank keywords from log fragment
-result = r.get_ranked_phrases_with_scores()
-
-#Show the results
-print (*result, sep = '\n')
+    #Rank keywords from log fragment
+    mytext = r.get_ranked_phrases()
+    
+    return mytext
