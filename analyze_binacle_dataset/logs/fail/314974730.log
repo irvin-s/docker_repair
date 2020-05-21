@@ -1,0 +1,70 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM tensorflow/tensorflow:1.10.0
+1.10.0: Pulling from tensorflow/tensorflow
+8ee29e426c26: Pulling fs layer
+6e83b260b73b: Pulling fs layer
+e26b65fd1143: Pulling fs layer
+40dca07f8222: Pulling fs layer
+b420ae9e10b3: Pulling fs layer
+91bd4861698b: Pulling fs layer
+eb7fa39f11a1: Pulling fs layer
+377bcf4cd77f: Pulling fs layer
+9a9d21359ea2: Pulling fs layer
+2597e63e35d2: Pulling fs layer
+db5d788188eb: Pulling fs layer
+8aa4e84fe910: Pulling fs layer
+66cf7abb5492: Pulling fs layer
+40dca07f8222: Waiting
+b420ae9e10b3: Waiting
+91bd4861698b: Waiting
+eb7fa39f11a1: Waiting
+377bcf4cd77f: Waiting
+9a9d21359ea2: Waiting
+2597e63e35d2: Waiting
+db5d788188eb: Waiting
+8aa4e84fe910: Waiting
+66cf7abb5492: Waiting
+e26b65fd1143: Verifying Checksum
+e26b65fd1143: Download complete
+6e83b260b73b: Verifying Checksum
+6e83b260b73b: Download complete
+40dca07f8222: Verifying Checksum
+40dca07f8222: Download complete
+b420ae9e10b3: Verifying Checksum
+b420ae9e10b3: Download complete
+8ee29e426c26: Verifying Checksum
+8ee29e426c26: Download complete
+eb7fa39f11a1: Verifying Checksum
+eb7fa39f11a1: Download complete
+377bcf4cd77f: Verifying Checksum
+377bcf4cd77f: Download complete
+91bd4861698b: Verifying Checksum
+91bd4861698b: Download complete
+9a9d21359ea2: Verifying Checksum
+9a9d21359ea2: Download complete
+db5d788188eb: Verifying Checksum
+db5d788188eb: Download complete
+8aa4e84fe910: Verifying Checksum
+8aa4e84fe910: Download complete
+66cf7abb5492: Verifying Checksum
+66cf7abb5492: Download complete
+2597e63e35d2: Verifying Checksum
+2597e63e35d2: Download complete
+8ee29e426c26: Pull complete
+6e83b260b73b: Pull complete
+e26b65fd1143: Pull complete
+40dca07f8222: Pull complete
+b420ae9e10b3: Pull complete
+91bd4861698b: Pull complete
+eb7fa39f11a1: Pull complete
+377bcf4cd77f: Pull complete
+9a9d21359ea2: Pull complete
+2597e63e35d2: Pull complete
+db5d788188eb: Pull complete
+8aa4e84fe910: Pull complete
+66cf7abb5492: Pull complete
+Digest: sha256:f73015504e3af53e9f747defdc2e2d857baa1140dd3cfdf92136051072502a67
+Status: Downloaded newer image for tensorflow/tensorflow:1.10.0
+ ---> 2c8d1fd8bde4
+Step 2/3 : COPY main.py /app/main.py
+COPY failed: stat /var/lib/docker/tmp/docker-builder033763543/main.py: no such file or directory

@@ -1,0 +1,34 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM gcr.io/google_containers/heapster:v1.0.2
+v1.0.2: Pulling from google_containers/heapster
+56b26193e0fa: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+f215c8b87666: Pulling fs layer
+92bdaa3c406e: Pulling fs layer
+715b61202b02: Pulling fs layer
+92bdaa3c406e: Waiting
+715b61202b02: Waiting
+a3ed95caeb02: Verifying Checksum
+a3ed95caeb02: Download complete
+92bdaa3c406e: Verifying Checksum
+92bdaa3c406e: Download complete
+56b26193e0fa: Verifying Checksum
+56b26193e0fa: Download complete
+f215c8b87666: Verifying Checksum
+f215c8b87666: Download complete
+56b26193e0fa: Pull complete
+715b61202b02: Verifying Checksum
+715b61202b02: Download complete
+a3ed95caeb02: Pull complete
+f215c8b87666: Pull complete
+92bdaa3c406e: Pull complete
+715b61202b02: Pull complete
+Digest: sha256:0346e9a67f5168763de12dc611e646ad547302e6639be47104ff4728dac62a3f
+Status: Downloaded newer image for gcr.io/google_containers/heapster:v1.0.2
+ ---> b29cc0f09ac3
+Step 2/2 : MAINTAINER fushouhai
+ ---> Running in 839e895795fd
+Removing intermediate container 839e895795fd
+ ---> 8cd06e4ef092
+Successfully built 8cd06e4ef092
+Successfully tagged binacle:252799772

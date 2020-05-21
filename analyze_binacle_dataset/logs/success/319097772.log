@@ -1,0 +1,20 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.10
+1.14.10: Pulling from google_containers/k8s-dns-kube-dns-amd64
+ff3a5c916c92: Pulling fs layer
+aa3354361d35: Pulling fs layer
+ff3a5c916c92: Verifying Checksum
+ff3a5c916c92: Download complete
+aa3354361d35: Verifying Checksum
+aa3354361d35: Download complete
+ff3a5c916c92: Pull complete
+aa3354361d35: Pull complete
+Digest: sha256:b99fc3eee2a9f052f7eb4cc00f15eb12fc405fa41019baa2d6b79847ae7284a8
+Status: Downloaded newer image for gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.10
+ ---> 55ffe31ac578
+Step 2/2 : MAINTAINER mritd <piml.lui@gmail.com>
+ ---> Running in 980f90797f0f
+Removing intermediate container 980f90797f0f
+ ---> 6f970e7f50a1
+Successfully built 6f970e7f50a1
+Successfully tagged binacle:319097772

@@ -1,0 +1,24 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM registry.access.redhat.com/ubi7-dev-preview/ubi-minimal:latest
+latest: Pulling from ubi7-dev-preview/ubi-minimal
+6788ecb5da55: Pulling fs layer
+9549001d5f53: Pulling fs layer
+9549001d5f53: Verifying Checksum
+9549001d5f53: Download complete
+6788ecb5da55: Verifying Checksum
+6788ecb5da55: Download complete
+6788ecb5da55: Pull complete
+9549001d5f53: Pull complete
+Digest: sha256:a572439e8d7ddced4565e2703c940b13a7a8087807db4b6fbbb9889dbfb731e8
+Status: Downloaded newer image for registry.access.redhat.com/ubi7-dev-preview/ubi-minimal:latest
+ ---> 1f8526ca508d
+Step 2/8 : LABEL com.redhat.delivery.appregistry=true
+ ---> Running in ce85d46d3a67
+Removing intermediate container ce85d46d3a67
+ ---> f545b1398b2d
+Step 3/8 : ARG version=0.1.0
+ ---> Running in 8e63124dcced
+Removing intermediate container 8e63124dcced
+ ---> da0b59ddb4bc
+Step 4/8 : COPY manifests /manifests
+COPY failed: stat /var/lib/docker/tmp/docker-builder924246327/manifests: no such file or directory

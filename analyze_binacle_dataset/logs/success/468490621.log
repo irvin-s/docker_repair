@@ -1,0 +1,60 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM python:3
+3: Pulling from library/python
+376057ac6fa1: Pulling fs layer
+5a63a0a859d8: Pulling fs layer
+496548a8c952: Pulling fs layer
+2adae3950d4d: Pulling fs layer
+0ed5a9824906: Pulling fs layer
+bb94ffe72389: Pulling fs layer
+241ada007777: Pulling fs layer
+be68aa7d1eeb: Pulling fs layer
+820ffc2e28ca: Pulling fs layer
+2adae3950d4d: Waiting
+0ed5a9824906: Waiting
+bb94ffe72389: Waiting
+241ada007777: Waiting
+be68aa7d1eeb: Waiting
+820ffc2e28ca: Waiting
+5a63a0a859d8: Verifying Checksum
+5a63a0a859d8: Download complete
+496548a8c952: Verifying Checksum
+496548a8c952: Download complete
+376057ac6fa1: Verifying Checksum
+376057ac6fa1: Download complete
+bb94ffe72389: Verifying Checksum
+bb94ffe72389: Download complete
+2adae3950d4d: Verifying Checksum
+2adae3950d4d: Download complete
+be68aa7d1eeb: Verifying Checksum
+be68aa7d1eeb: Download complete
+241ada007777: Verifying Checksum
+241ada007777: Download complete
+820ffc2e28ca: Verifying Checksum
+820ffc2e28ca: Download complete
+0ed5a9824906: Verifying Checksum
+0ed5a9824906: Download complete
+376057ac6fa1: Pull complete
+5a63a0a859d8: Pull complete
+496548a8c952: Pull complete
+2adae3950d4d: Pull complete
+0ed5a9824906: Pull complete
+bb94ffe72389: Pull complete
+241ada007777: Pull complete
+be68aa7d1eeb: Pull complete
+820ffc2e28ca: Pull complete
+Digest: sha256:6fcd27ebeb1a5b4fd289ff15cb666e619c060c7b76f5a1b1a99d7cddb6de337a
+Status: Downloaded newer image for python:3
+ ---> 659f826fabf4
+Step 2/4 : WORKDIR /usr/src/app
+ ---> Running in 98011c51d4db
+Removing intermediate container 98011c51d4db
+ ---> 6270873662eb
+Step 3/4 : COPY . .
+ ---> 5c27cff90509
+Step 4/4 : CMD [ "python", "./add-utterances-3-6.py" ]
+ ---> Running in 4bde5ef5491d
+Removing intermediate container 4bde5ef5491d
+ ---> 9e012171af8b
+Successfully built 9e012171af8b
+Successfully tagged binacle:468490621

@@ -1,0 +1,45 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM python:2.7.13
+2.7.13: Pulling from library/python
+aa18ad1a0d33: Pulling fs layer
+15a33158a136: Pulling fs layer
+f67323742a64: Pulling fs layer
+c4b45e832c38: Pulling fs layer
+b71152c33fd2: Pulling fs layer
+b68cdd645c50: Pulling fs layer
+bd0a7793dd26: Pulling fs layer
+27309968e0a7: Pulling fs layer
+c4b45e832c38: Waiting
+b71152c33fd2: Waiting
+b68cdd645c50: Waiting
+bd0a7793dd26: Waiting
+27309968e0a7: Waiting
+15a33158a136: Verifying Checksum
+15a33158a136: Download complete
+f67323742a64: Verifying Checksum
+f67323742a64: Download complete
+aa18ad1a0d33: Verifying Checksum
+aa18ad1a0d33: Download complete
+b71152c33fd2: Verifying Checksum
+b71152c33fd2: Download complete
+b68cdd645c50: Verifying Checksum
+b68cdd645c50: Download complete
+bd0a7793dd26: Verifying Checksum
+bd0a7793dd26: Download complete
+27309968e0a7: Verifying Checksum
+27309968e0a7: Download complete
+c4b45e832c38: Verifying Checksum
+c4b45e832c38: Download complete
+aa18ad1a0d33: Pull complete
+15a33158a136: Pull complete
+f67323742a64: Pull complete
+c4b45e832c38: Pull complete
+b71152c33fd2: Pull complete
+b68cdd645c50: Pull complete
+bd0a7793dd26: Pull complete
+27309968e0a7: Pull complete
+Digest: sha256:ac21ec6277f7da89c32f977b25224abbbbb0f4d3d10ce37461210c14019bc955
+Status: Downloaded newer image for python:2.7.13
+ ---> ac9424878b8f
+Step 2/4 : ADD snippet.py snippet.py
+ADD failed: stat /var/lib/docker/tmp/docker-builder721992886/snippet.py: no such file or directory

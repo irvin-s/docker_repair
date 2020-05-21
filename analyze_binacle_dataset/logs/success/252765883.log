@@ -1,0 +1,28 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/5 : FROM fedora
+latest: Pulling from library/fedora
+4c69497db035: Pulling fs layer
+4c69497db035: Verifying Checksum
+4c69497db035: Download complete
+4c69497db035: Pull complete
+Digest: sha256:ee55117b3058f2f12961184fae4b9c392586e400487626c6bd0d15b4eae94ecc
+Status: Downloaded newer image for fedora:latest
+ ---> adfbfa4a115a
+Step 2/5 : RUN date > /date
+ ---> Running in eeb02ec14811
+Removing intermediate container eeb02ec14811
+ ---> 2288f291726e
+Step 3/5 : EXPOSE 80
+ ---> Running in 97e934f92be6
+Removing intermediate container 97e934f92be6
+ ---> fbf073e835eb
+Step 4/5 : EXPOSE 443
+ ---> Running in bcb003966f42
+Removing intermediate container bcb003966f42
+ ---> 59f8c922ab22
+Step 5/5 : EXPOSE 446
+ ---> Running in ec6804de1f4f
+Removing intermediate container ec6804de1f4f
+ ---> 9b4995cdc8b8
+Successfully built 9b4995cdc8b8
+Successfully tagged binacle:252765883

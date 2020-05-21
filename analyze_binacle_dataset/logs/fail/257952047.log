@@ -1,0 +1,49 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM php:7.0-cli
+7.0-cli: Pulling from library/php
+177e7ef0df69: Pulling fs layer
+9bf89f2eda24: Pulling fs layer
+350207dcf1b7: Pulling fs layer
+a8a33d96b4e7: Pulling fs layer
+ce57ea4a1929: Pulling fs layer
+93802efca138: Pulling fs layer
+c63e8fa56382: Pulling fs layer
+67cdaaa89ce1: Pulling fs layer
+a8a33d96b4e7: Waiting
+ce57ea4a1929: Waiting
+93802efca138: Waiting
+c63e8fa56382: Waiting
+67cdaaa89ce1: Waiting
+9bf89f2eda24: Verifying Checksum
+9bf89f2eda24: Download complete
+177e7ef0df69: Verifying Checksum
+177e7ef0df69: Download complete
+a8a33d96b4e7: Verifying Checksum
+a8a33d96b4e7: Download complete
+93802efca138: Verifying Checksum
+93802efca138: Download complete
+350207dcf1b7: Verifying Checksum
+350207dcf1b7: Download complete
+ce57ea4a1929: Verifying Checksum
+ce57ea4a1929: Download complete
+67cdaaa89ce1: Verifying Checksum
+67cdaaa89ce1: Download complete
+c63e8fa56382: Verifying Checksum
+c63e8fa56382: Download complete
+177e7ef0df69: Pull complete
+9bf89f2eda24: Pull complete
+350207dcf1b7: Pull complete
+a8a33d96b4e7: Pull complete
+ce57ea4a1929: Pull complete
+93802efca138: Pull complete
+c63e8fa56382: Pull complete
+67cdaaa89ce1: Pull complete
+Digest: sha256:950fa73e35e650ee1d5fff5b053feadcd1dc8c6e83bba07d6c7fd17c44868e22
+Status: Downloaded newer image for php:7.0-cli
+ ---> cd45c80ef616
+Step 2/2 : RUN pecl install xdebug && docker-php-ext-enable xdebug
+ ---> Running in 979d5eaeb126
+pecl/xdebug requires PHP (version >= 7.1.0), installed version is 7.0.33
+No valid packages found
+install failed
+The command '/bin/sh -c pecl install xdebug && docker-php-ext-enable xdebug' returned a non-zero code: 1

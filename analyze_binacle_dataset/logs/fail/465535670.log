@@ -1,0 +1,90 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/10 : FROM golang:1.9
+1.9: Pulling from library/golang
+55cbf04beb70: Pulling fs layer
+1607093a898c: Pulling fs layer
+9a8ea045c926: Pulling fs layer
+d4eee24d4dac: Pulling fs layer
+9c35c9787a2f: Pulling fs layer
+8b376bbb244f: Pulling fs layer
+0d4eafcc732a: Pulling fs layer
+186b06a99029: Pulling fs layer
+d4eee24d4dac: Waiting
+9c35c9787a2f: Waiting
+8b376bbb244f: Waiting
+0d4eafcc732a: Waiting
+186b06a99029: Waiting
+9a8ea045c926: Verifying Checksum
+9a8ea045c926: Download complete
+1607093a898c: Verifying Checksum
+1607093a898c: Download complete
+55cbf04beb70: Verifying Checksum
+55cbf04beb70: Download complete
+9c35c9787a2f: Verifying Checksum
+9c35c9787a2f: Download complete
+0d4eafcc732a: Verifying Checksum
+0d4eafcc732a: Download complete
+8b376bbb244f: Verifying Checksum
+8b376bbb244f: Download complete
+186b06a99029: Verifying Checksum
+186b06a99029: Download complete
+d4eee24d4dac: Verifying Checksum
+d4eee24d4dac: Download complete
+55cbf04beb70: Pull complete
+1607093a898c: Pull complete
+9a8ea045c926: Pull complete
+d4eee24d4dac: Pull complete
+9c35c9787a2f: Pull complete
+8b376bbb244f: Pull complete
+0d4eafcc732a: Pull complete
+186b06a99029: Pull complete
+Digest: sha256:8b5968585131604a92af02f5690713efadf029cc8dad53f79280b87a80eb1354
+Status: Downloaded newer image for golang:1.9
+ ---> ef89ef5c42a9
+Step 2/10 : RUN apt-get update && apt-get install -y --fix-missing htop less
+ ---> Running in 31143c696e2b
+Get:1 http://security.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [527 kB]
+Get:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages [27.9 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7083 kB]
+Fetched 7944 kB in 2s (3880 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  lsof strace
+The following NEW packages will be installed:
+  htop less
+0 upgraded, 2 newly installed, 0 to remove and 52 not upgraded.
+Need to get 215 kB of archives.
+After this operation, 508 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 less amd64 481-2.1 [126 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 htop amd64 2.0.2-1 [88.2 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 215 kB in 0s (2767 kB/s)
+Selecting previously unselected package less.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 15040 files and directories currently installed.)
+Preparing to unpack .../less_481-2.1_amd64.deb ...
+Unpacking less (481-2.1) ...
+Selecting previously unselected package htop.
+Preparing to unpack .../htop_2.0.2-1_amd64.deb ...
+Unpacking htop (2.0.2-1) ...
+Setting up less (481-2.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+Processing triggers for mime-support (3.60) ...
+Setting up htop (2.0.2-1) ...
+Removing intermediate container 31143c696e2b
+ ---> 1e77655d6722
+Step 3/10 : WORKDIR /go/src
+ ---> Running in 332cc1e7c2d1
+Removing intermediate container 332cc1e7c2d1
+ ---> 82d3d65a651a
+Step 4/10 : COPY ./src .
+COPY failed: stat /var/lib/docker/tmp/docker-builder448875918/src: no such file or directory
