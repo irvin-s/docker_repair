@@ -397,3 +397,178 @@
     ]
 }
 
+
+
+{
+    "Hash: 341681394": [
+        {
+            "Log fragment": " 26300K ....\u001b[0m\u001b[91m...... .......... .......... ......                43%  162M=0.6s    \u001b[0m\u001b[91m2020-04-16 01:53:51 (46.7 MB/s) - Read error at byte 26968064/62442704 (Connection reset by peer). \u001b[0mThe command '/bin/sh -c wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz' returned a non-zero code: 1 ",
+            "Query": "26300k 0m 91m 43 162m 0 6s 0m 91m2020 04 16 01 53 51 46 7 mb s read error at byte 26968064 62442704 connection reset by peer 0mthe",
+            "URLs": {
+                "0": "https://github.com/IQSS/dataverse/issues/5092",
+                "1": "https://stackoverflow.com/questions/49145372/artifactory-large-downloads-failing"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 382085608": [
+        {
+            "Log fragment": " 42750K .......... .......... .......... ....                  70%  173M=0.5s    2020-04-16 01:56:33 (77.3 MB/s) - Read error at byte 43810816/62442704 (Connection reset by peer). \u001b[0mThe command '/bin/sh -c wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz' returned a non-zero code: 1 ",
+            "Query": "c wget https storage googleapis com golang go1 4 2 linux amd64 tar gz",
+            "URLs": {
+                "0": "https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79"
+            }
+        }
+    ]
+}
+
+
+
+{
+    "Hash: 395127789": [
+        {
+            "Log fragment": "\u001b[0m\u001b[91mYou are using pip version 8.1.1, however version 20.0.2 is available.  You should consider upgrading via the 'pip install --upgrade pip' command.  \u001b[0mThe command '/bin/sh -c apt-get update &&     apt-get install --yes               $BUILD_PACKAGES               python-pip &&     pip install ont-fast5-api==$PACKAGE_VERSION &&     apt clean &&     rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1 ",
+            "Query": "c apt get update apt get install yes build packages python pip pip install ont fast5 api package version apt clean rm rf var lib apt lists",
+            "URLs": {
+                "0": "https://github.com/jupyterhub/the-littlest-jupyterhub/issues/108",
+                "1": "https://github.com/docker-library/buildpack-deps/issues/40",
+                "2": "https://askubuntu.com/questions/438345/how-to-remove-install-a-package-that-is-not-fully-installed"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 252776551": [
+        {
+            "Log fragment": "  \u001b[91mE: Package 'openjdk-7-jdk' has no installation candidate  \u001b[0mThe command '/bin/sh -c apt-get install openjdk-7-jdk -y' returned a non-zero code: 100 ",
+            "Query": "91me package openjdk 7 jdk has no installation candidate 0mthe",
+            "URLs": {
+                "0": "https://askubuntu.com/questions/883436/openjdk-7-jdk-package",
+                "1": "https://askubuntu.com/questions/761127/how-do-i-install-openjdk-7-on-ubuntu-16-04-or-higher",
+                "2": "https://askubuntu.com/questions/759451/how-can-i-install-openjdk-on-ubuntu-16-04",
+                "3": "https://askubuntu.com/questions/896927/error-when-trying-to-install-java-7",
+                "4": "https://askubuntu.com/questions/796302/cant-able-to-install-openjdk-7-jdk-and-openjdk-7-jre",
+                "5": "https://unix.stackexchange.com/questions/475650/package-openjdk-7-jre-has-no-installation-candidate"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 423311933": [
+        {
+            "Log fragment": "Requirement already up-to-date: pip in /usr/local/lib/python3.6/site-packages (20.1.1)  \u001b[91mERROR: Could not open requirements file: [Errno 2] No such file or directory: '/app/requirements.txt'  \u001b[0mThe command '/bin/sh -c pip install --upgrade pip && pip install -r /app/requirements.txt && pip install gym[atari]' returned a non-zero code: 1 ",
+            "Query": "requirement already up to date pip in usr local lib python3 6 site packages 20 1 1 91merror could not open requirements file errno 2 no such file or directory app requirements txt 0mthe",
+            "URLs": {
+                "0": "https://github.com/projectmesa/mesa/issues/315",
+                "1": "https://github.com/pypa/pip/issues/7620",
+                "2": "https://stackoverflow.com/questions/28167987/python-pip-trouble-installing-from-requirements-txt",
+                "3": "https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-according-to-the-requirements-txt-file-from-a",
+                "4": "https://stackoverflow.com/questions/46854451/pip-install-r-requirements-txt-errno-2-no-such-file-or-directory-requiremen",
+                "5": "https://stackoverflow.com/questions/31512422/pip-install-failing-with-oserror-errno-13-permission-denied-on-directory"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 452046675": [
+        {
+            "Log fragment": "\u001b[0m\u001b[91mnpm\u001b[0m\u001b[91m \u001b[0m\u001b[91mERR!\u001b[0m\u001b[91m     /npm-debug.log  \u001b[0m\u001b[91mnpm\u001b[0m\u001b[91m \u001b[0m\u001b[91mERR!\u001b[0m\u001b[91m not ok code 0  \u001b[0mThe command '/bin/sh -c npm install -g jshint' returned a non-zero code: 1 ",
+            "Query": "0m 91mnpm 0m 91m 0m 91merr 0m 91m npm debug log 0m 91mnpm 0m 91m 0m 91merr 0m 91m not ok",
+            "URLs": {
+                "0": "https://github.com/bkimminich/juice-shop/issues/58",
+                "1": "https://github.com/npm/npm/issues/17735",
+                "2": "https://stackoverflow.com/questions/57335205/unable-to-build-react-project-aws",
+                "3": "https://stackoverflow.com/questions/52317396/azure-devops-cannot-build-an-image-using-npm-private-registry-even-after-settin",
+                "4": "https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle",
+                "5": "https://stackoverflow.com/questions/15393821/npm-err-cb-never-called"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 317628956": [
+        {
+            "Log fragment": "  Step 1/2 : FROM bats-jenkins-install-plugins  pull access denied for bats-jenkins-install-plugins, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Query": "bats jenkins install plugins repository does not exist or may require docker login",
+            "URLs": {
+                "0": "https://github.com/jenkinsci/docker-plugin/issues/745",
+                "1": "https://stackoverflow.com/questions/48719921/pull-access-denied-repository-does-not-exist-or-may-require-docker-login",
+                "2": "https://stackoverflow.com/questions/46052711/extend-jenkins-image-to-install-maven",
+                "3": "https://stackoverflow.com/questions/54446001/docker-push-in-jenkins-denied-requested-access-to-the-resource-is-denied",
+                "4": "https://stackoverflow.com/questions/36309063/how-can-i-test-a-change-made-to-jenkinsfile-locally"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 252769397": [
+        {
+            "Log fragment": "[ERROR] For more information about the errors and possible solutions, please read the following articles:  [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException  The command '/bin/sh -c mvn install' returned a non-zero code: 1 ",
+            "Query": "more information about the errors and possible solutions please read the following articles error help 1 http cwiki apache org confluence display maven missingprojectexception the",
+            "URLs": {
+                "0": "https://github.com/w3c/epubcheck/issues/698",
+                "1": "https://stackoverflow.com/questions/13011648/missingprojectexception-by-maven-in-netbeans-7-x",
+                "2": "https://stackoverflow.com/questions/35400753/build-failure-when-running-mvn-clean-for-the-first-time-while-installing",
+                "3": "https://stackoverflow.com/questions/57026995/sam-build-is-unable-to-locate-the-pom-xml-file",
+                "4": "https://stackoverflow.com/questions/23235430/maven-mojoexecutionexception"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 252770156": [
+        {
+            "Log fragment": "  Step 1/3 : FROM elasticsearch  manifest for elasticsearch:latest not found: manifest unknown: manifest unknown ",
+            "Query": "elasticsearch latest not found",
+            "URLs": {
+                "0": "https://github.com/elastic/elasticsearch-docker/issues/215",
+                "1": "https://github.com/rekibnikufesin/nodejs-api-swagger/issues/4",
+                "2": "https://github.com/docker/kitematic/issues/5041",
+                "3": "https://github.com/elastic/logstash-docker/issues/81"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 252789468": [
+        {
+            "Log fragment": "  Step 1/2 : FROM linuxserver/baseimage  pull access denied for linuxserver/baseimage, repository does not exist or may require 'docker login': denied: requested access to the resource is denied ",
+            "Query": "linuxserver baseimage repository does not exist or may require docker login",
+            "URLs": {
+                "0": "https://github.com/linuxserver/docker-baseimage-guacgui/issues/14",
+                "1": "https://github.com/IBM/build-blockchain-insurance-app/issues/68",
+                "2": "https://stackoverflow.com/questions/48719921/pull-access-denied-repository-does-not-exist-or-may-require-docker-login",
+                "3": "https://stackoverflow.com/questions/48824905/access-denied-when-pulling-docker-image-from-a-repository-i-own",
+                "4": "https://stackoverflow.com/questions/47889337/error-response-from-daemon-pull-access-denied-for-testdockerimage",
+                "5": "https://stackoverflow.com/questions/56512769/unable-to-find-docker-image-locally"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: 257952047": [
+        {
+            "Log fragment": "No valid packages found  install failed  The command '/bin/sh -c pecl install xdebug && docker-php-ext-enable xdebug' returned a non-zero code: 1 ",
+            "Query": "c pecl install xdebug docker php ext enable xdebug",
+            "URLs": {
+                "0": "https://github.com/docker-library/wordpress/issues/244",
+                "1": "https://github.com/docker-library/php/issues/560",
+                "2": "https://github.com/docker-library/php/issues/566",
+                "3": "https://stackoverflow.com/questions/46825502/how-do-i-install-xdebug-on-dockers-official-php-fpm-alpine-image",
+                "4": "https://stackoverflow.com/questions/49907308/installing-xdebug-in-docker",
+                "5": "https://stackoverflow.com/questions/48135728/xdebug-not-running-on-docker"
+            }
+        }
+    ]
+}
+
