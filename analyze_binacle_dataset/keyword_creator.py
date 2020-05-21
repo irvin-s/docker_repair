@@ -5,7 +5,7 @@ import re
 
 #Pre_processing the text to remove noise, punctuation, tags and stopwords
 def removeNoise(s):
-    s = re.sub('[^a-zA-Z]', ' ', s)
+    s = re.sub('[^A-Za-z0-9]+', ' ', s)
     return s
 
 #Instantiate rake

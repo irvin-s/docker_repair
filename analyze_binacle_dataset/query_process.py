@@ -10,14 +10,15 @@ import json
 import re
 import keyword_creator
 
-#Define the url white list
-url_white_lst = ['stackoverflow.com','github.com','issues','reddit.com', 'askubuntu.com', 'ubuntuforums.org', 'gitlab.com', 'medium.com', 'devops.stackexchange.com']
-
 #Initializing variables
 url = []
 lines = []
 dataJ = {}
 i = 0
+
+#File to read url white list
+url_white_lst = open("query_url_white_list.txt","r")
+url_white_lst = url_white_lst.read().splitlines()
 
 #File to store query_log
 query_log = open("analyzed_query.json", "a")
@@ -38,6 +39,16 @@ def listToString(s):
 def listToDict(lst):
     lst = { i : lst[i] for i in range(0, len(lst) ) }
     return lst
+
+#Function to white listing URLs
+def checkURL(wUrl):
+    for white_lst in url_white_lst:
+        if re.search(white_lst, wUrl):
+            result = True
+            break
+        else:
+            result = False
+    return result
 
 if __name__ == "__main__":
 
@@ -61,15 +72,19 @@ if __name__ == "__main__":
 
     #Gerenating keyword
     keyword = keyword_creator.keyGen(query_s)
+
+    #Testing query seach on google
     while not url:
         used_keyword = keyword[i]
+        print(keyword[i])
         for g in search(keyword[i], tld="com", lang="en", num=5, start=0, stop=6, pause=2):
-            url.append(g)
-            i += 1
+            if checkURL(g):
+                url.append(g)
+        i += 1
     #for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
     #    url.append(g)
 
-    #Testing query seach on google and show the results
+    #If the url doesn't match the searching criteria
     if not url:
         url.append("")
     print("Process finished, for log check analyzed_query.json")
@@ -78,10 +93,8 @@ if __name__ == "__main__":
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
     'Log fragment': query_s,
-    'Initial query': used_keyword,
-    'Initial URL': ( listToDict(url) ),
-    'Revised query': '',
-    'Revised URL': ''
+    'Query': used_keyword,
+    'URLs': ( listToDict(url) )
 }) 
 json.dump(dataJ, query_log, indent=4)
 query_log.write("\n")
