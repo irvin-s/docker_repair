@@ -72,15 +72,14 @@ if __name__ == "__main__":
 
     #Gerenating keyword
     keyword = keyword_creator.keyGen(query_s)
-
+    
     #Testing query seach on google
     while not url:
-        used_keyword = keyword[i]
-        print(keyword[i])
-        for g in search(keyword[i], tld="com", lang="en", num=5, start=0, stop=6, pause=2):
+        keyword = listToString(keyword[:6 + i])
+        for g in search(keyword, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
             if checkURL(g):
                 url.append(g)
-        i += 1
+        i += 2
     #for g in search(query_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
     #    url.append(g)
 
@@ -93,7 +92,7 @@ if __name__ == "__main__":
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
     'Log fragment': query_s,
-    'Query': used_keyword,
+    'Query': keyword,
     'URLs': ( listToDict(url) )
 }) 
 json.dump(dataJ, query_log, indent=4)

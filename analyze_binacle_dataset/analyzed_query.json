@@ -9,8 +9,8 @@
                 "2": "https://askubuntu.com/questions/2214/how-do-i-add-a-user-to-the-sudo-group",
                 "3": "https://askubuntu.com/questions/147241/execute-sudo-without-password",
                 "4": "https://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line"
-            }
-        }
+            } Related 1st.
+        } 
     ]
 }
 
@@ -24,7 +24,7 @@
                 "1": "https://stackoverflow.com/questions/32369727/centos-6-mingw32-installations",
                 "2": "https://stackoverflow.com/questions/22515535/cmake-error-using-the-mingw-w64-x86-64-gcc-toolchain-under-windows-7-this-pro",
                 "3": "https://stackoverflow.com/questions/3167368/how-to-use-nsis-with-maven2-and-continuous-integration"
-            }
+            } Related 1st and 2nd. But, could perform a better query.
         }
     ]
 }
@@ -40,7 +40,7 @@
                 "2": "https://stackoverflow.com/questions/47371904/e-unable-to-locate-package-npm",
                 "3": "https://stackoverflow.com/questions/52274485/docker-not-able-to-run-nodejs-npm",
                 "4": "https://stackoverflow.com/questions/16898001/how-to-install-a-specific-version-of-node-on-ubuntu"
-            }
+            } Related 1st and 2nd. But, could perform a better query.
         }
     ]
 }
@@ -57,7 +57,7 @@
                 "3": "https://stackoverflow.com/questions/44432616/failure-of-building-jenkins-docker-image",
                 "4": "https://stackoverflow.com/questions/3949161/no-such-file-or-directory-but-it-exists",
                 "5": "https://stackoverflow.com/questions/58276799/usr-bin-bash-no-such-file-or-directory"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -74,7 +74,7 @@
                 "3": "https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-error-e-the-repository-http-ir-archive-ubuntu",
                 "4": "https://askubuntu.com/questions/1028431/cant-update-from-17-10-to-18-04-because-a-repository-doesnt-have-a-release-fil",
                 "5": "https://ubuntuforums.org/showthread.php?t=2382845"
-            }
+            } Related 1st and 2nd.
         }
     ]
 }
@@ -91,7 +91,7 @@
                 "3": "https://askubuntu.com/questions/1139140/not-able-to-solve-no-pubkey",
                 "4": "https://askubuntu.com/questions/1058820/tor-instructions-dont-work-for-bionic-beaver",
                 "5": "https://askubuntu.com/questions/6522/how-to-install-tor"
-            }
+            } Related 2nd and 3rd. But, could perform a better query.
         }
     ]
 }
@@ -105,7 +105,7 @@
                 "0": "https://github.com/dotnet/core/issues/2608",
                 "1": "https://github.com/Azure/azure-cli/issues/11786",
                 "2": "https://askubuntu.com/questions/329450/e-some-index-files-failed-to-download-they-have-been-ignored-or-old-ones-used"
-            }
+            } Related 3rd. But, could perform a better query.
         }
     ]
 }
@@ -122,7 +122,7 @@
                 "3": "https://askubuntu.com/questions/886476/when-i-try-to-install-libboost-all-dev-using-apt-get-i-get-the-error-unable-to",
                 "4": "https://askubuntu.com/questions/604246/please-help-me-install-libboost1-40-all-dev",
                 "5": "https://askubuntu.com/questions/784868/ubuntu-doesnt-recognize-specific-package-through-apt-get"
-            }
+            } Related 3rd, 4th, 5th. But, could perform a better query.
         }
     ]
 }
@@ -137,7 +137,7 @@
                 "1": "https://stackoverflow.com/questions/55098292/how-to-pull-debian8-jessie-image-in-docker/55098448",
                 "2": "https://github.com/2stacks/docker-freeradius/issues/4",
                 "3": "https://github.com/fffaraz/dockerweb/issues/3"
-            }
+            } Related 2nd.
         }
     ]
 }
@@ -150,7 +150,7 @@
             "URLs": {
                 "0": "https://stackoverflow.com/questions/50478077/pulling-docker-images-manifest-not-found/50481024",
                 "1": "https://github.com/openethereum/openethereum/issues/4503"
-            }
+            } Related 1st.
         }
     ]
 }
@@ -167,7 +167,7 @@
                 "3": "https://stackoverflow.com/questions/46854451/pip-install-r-requirements-txt-errno-2-no-such-file-or-directory-requiremen",
                 "4": "https://stackoverflow.com/questions/55826941/run-pip-install-r-requirements-txt-not-working",
                 "5": "https://stackoverflow.com/questions/55577352/ioerror-errno-2-no-such-file-or-directory-requirements-txt-no-module-name"
-            }
+            } Related 3rd, 4th, 5th. But, could perform a better query.
         }
     ]
 }
@@ -184,7 +184,7 @@
                 "3": "https://stackoverflow.com/questions/55534713/how-to-pull-from-docker-hub-pull-access-denied-repository-does-not-exist-or-ma",
                 "4": "https://stackoverflow.com/questions/47889337/error-response-from-daemon-pull-access-denied-for-testdockerimage",
                 "5": "https://github.com/IBM/build-blockchain-insurance-app/issues/68"
-            }
+            } Related 1st, 2nd and 3rd. But, not directly to the repair.
         }
     ]
 }
@@ -201,7 +201,7 @@
                 "3": "https://askubuntu.com/questions/1019839/sudo-apt-get-update-gives-404-error-e-the-repository-http-ir-archive-ubuntu",
                 "4": "https://askubuntu.com/questions/1028431/cant-update-from-17-10-to-18-04-because-a-repository-doesnt-have-a-release-fil",
                 "5": "https://ubuntuforums.org/showthread.php?t=2382845"
-            }
+            } Related 1st, 2nd and 3rd.
         }
     ]
 }
@@ -215,7 +215,7 @@
                 "0": "https://github.com/pterodactyl/images/issues/38",
                 "1": "https://github.com/vert-x3/vertx-scala.g8/issues/6",
                 "2": "https://github.com/frol/docker-alpine-java/issues/37"
-            }
+            } Related 1st.
         }
     ]
 }
@@ -231,7 +231,7 @@
                 "2": "https://unix.stackexchange.com/questions/424099/centos-epel-repository-listed-more-than-once",
                 "3": "https://unix.stackexchange.com/questions/148144/unable-to-pull-epel-repository-metadata",
                 "4": "https://unix.stackexchange.com/questions/438400/centos-7-4-epel-cannot-retrieve-metalink-for-repository-epel-x86-64-error"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -246,7 +246,7 @@
                 "1": "https://github.com/golang/dep/issues/193",
                 "2": "https://github.com/future-architect/vuls/issues/420",
                 "3": "https://github.com/decred/dcrd/issues/1462"
-            }
+            } Related 1st and 2nd. But, could perform a better query.
         }
     ]
 }
@@ -262,7 +262,7 @@
                 "2": "https://stackoverflow.com/questions/59922335/could-not-locate-gemfile-gemfile-not-found",
                 "3": "https://stackoverflow.com/questions/36644545/rvm-could-not-locate-gemfile-or-bundle-directory-when-running-bundle-install",
                 "4": "https://stackoverflow.com/questions/27098460/github-import-could-not-locate-gemfile"
-            }
+            } Related 1st and 2nd.
         }
     ]
 }
@@ -276,7 +276,7 @@
                 "0": "https://github.com/envoyproxy/envoy/issues/7775",
                 "1": "https://github.com/IQSS/dataverse/issues/5092",
                 "2": "https://stackoverflow.com/questions/31168131/http-server-not-sending-complete-file-to-wget-firefox-connection-reset-by-peer/31168786"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -293,7 +293,7 @@
                 "3": "https://stackoverflow.com/questions/55534713/how-to-pull-from-docker-hub-pull-access-denied-repository-does-not-exist-or-ma",
                 "4": "https://stackoverflow.com/questions/29956500/docker-public-registry-push-fails-repository-does-not-exist",
                 "5": "https://www.reddit.com/r/devops/comments/bzlz6a/docker_pull_access_denied_repository_does_not/"
-            }
+            } Related 1st and 2nd.
         }
     ]
 }
@@ -305,7 +305,7 @@
             "Query": "c apt get update apt get y install curl jq netcat net tools iproute dnsutils graphviz",
             "URLs": {
                 "0": "https://stackoverflow.com/questions/27273412/cannot-install-packages-inside-docker-ubuntu-image"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -320,7 +320,7 @@
                 "1": "https://github.com/tensorflow/models/issues/497",
                 "2": "https://github.com/bazelbuild/bazel/issues/2333",
                 "3": "https://stackoverflow.com/questions/41791171/bazel-build-for-tensorflow-inception-model"
-            }
+            } Related 1st. But, not directly to the repair.
         }
     ]
 }
@@ -336,7 +336,7 @@
                 "2": "https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle",
                 "3": "https://stackoverflow.com/questions/30744964/what-does-the-elifecycle-node-js-error-mean",
                 "4": "https://stackoverflow.com/questions/51843595/how-to-fix-this-error-npm"
-            }
+            } Related 5th but, not directly to the repair.
         }
     ]
 }
@@ -349,7 +349,7 @@
             "URLs": {
                 "0": "https://github.com/JuliaGPU/CuArrays.jl/issues/33",
                 "1": "https://github.com/JuliaGPU/CuArrays.jl/issues/569"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -366,7 +366,7 @@
                 "3": "https://stackoverflow.com/questions/51558168/cant-install-php5-6-gd-in-docker-container",
                 "4": "https://stackoverflow.com/questions/55511346/how-can-i-install-zip-extension-in-php5-4-apache-docker",
                 "5": "https://github.com/fffaraz/dockerweb/issues/3"
-            }
+            } Related 2nd and 3rd but, not directly to the repair.
         }
     ]
 }
@@ -378,7 +378,7 @@
             "Query": "pywps flask alpine latest not found",
             "URLs": {
                 "0": "https://github.com/geopython/pywps-flask/issues/43"
-            }
+            } Related 1st.
         }
     ]
 }
@@ -392,7 +392,7 @@
                 "0": "https://github.com/jupyterhub/the-littlest-jupyterhub/issues/108",
                 "1": "https://github.com/docker-library/buildpack-deps/issues/40",
                 "2": "https://askubuntu.com/questions/438345/how-to-remove-install-a-package-that-is-not-fully-installed"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -407,7 +407,7 @@
             "URLs": {
                 "0": "https://github.com/IQSS/dataverse/issues/5092",
                 "1": "https://stackoverflow.com/questions/49145372/artifactory-large-downloads-failing"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -419,7 +419,7 @@
             "Query": "c wget https storage googleapis com golang go1 4 2 linux amd64 tar gz",
             "URLs": {
                 "0": "https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79"
-            }
+            } Realted 1st but, not directly to the repair.
         }
     ]
 }
@@ -435,7 +435,7 @@
                 "0": "https://github.com/jupyterhub/the-littlest-jupyterhub/issues/108",
                 "1": "https://github.com/docker-library/buildpack-deps/issues/40",
                 "2": "https://askubuntu.com/questions/438345/how-to-remove-install-a-package-that-is-not-fully-installed"
-            }
+            } Realted 1st but, not directly to the repair.
         }
     ]
 }
@@ -452,7 +452,7 @@
                 "3": "https://askubuntu.com/questions/896927/error-when-trying-to-install-java-7",
                 "4": "https://askubuntu.com/questions/796302/cant-able-to-install-openjdk-7-jdk-and-openjdk-7-jre",
                 "5": "https://unix.stackexchange.com/questions/475650/package-openjdk-7-jre-has-no-installation-candidate"
-            }
+            } Related 1st, 2dn and 3rd...
         }
     ]
 }
@@ -469,7 +469,7 @@
                 "3": "https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-according-to-the-requirements-txt-file-from-a",
                 "4": "https://stackoverflow.com/questions/46854451/pip-install-r-requirements-txt-errno-2-no-such-file-or-directory-requiremen",
                 "5": "https://stackoverflow.com/questions/31512422/pip-install-failing-with-oserror-errno-13-permission-denied-on-directory"
-            }
+            } Related 2nd and 3rd but, not directly to the repair.
         }
     ]
 }
@@ -486,7 +486,7 @@
                 "3": "https://stackoverflow.com/questions/52317396/azure-devops-cannot-build-an-image-using-npm-private-registry-even-after-settin",
                 "4": "https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle",
                 "5": "https://stackoverflow.com/questions/15393821/npm-err-cb-never-called"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -502,7 +502,7 @@
                 "2": "https://stackoverflow.com/questions/46052711/extend-jenkins-image-to-install-maven",
                 "3": "https://stackoverflow.com/questions/54446001/docker-push-in-jenkins-denied-requested-access-to-the-resource-is-denied",
                 "4": "https://stackoverflow.com/questions/36309063/how-can-i-test-a-change-made-to-jenkinsfile-locally"
-            }
+            } Related 2nd and 3rd. But, could perform a better query.
         }
     ]
 }
@@ -518,7 +518,7 @@
                 "2": "https://stackoverflow.com/questions/35400753/build-failure-when-running-mvn-clean-for-the-first-time-while-installing",
                 "3": "https://stackoverflow.com/questions/57026995/sam-build-is-unable-to-locate-the-pom-xml-file",
                 "4": "https://stackoverflow.com/questions/23235430/maven-mojoexecutionexception"
-            }
+            } Related 5th. But, could perform a better query.
         }
     ]
 }
@@ -533,7 +533,7 @@
                 "1": "https://github.com/rekibnikufesin/nodejs-api-swagger/issues/4",
                 "2": "https://github.com/docker/kitematic/issues/5041",
                 "3": "https://github.com/elastic/logstash-docker/issues/81"
-            }
+            } Related 1st.
         }
     ]
 }
@@ -550,7 +550,7 @@
                 "3": "https://stackoverflow.com/questions/48824905/access-denied-when-pulling-docker-image-from-a-repository-i-own",
                 "4": "https://stackoverflow.com/questions/47889337/error-response-from-daemon-pull-access-denied-for-testdockerimage",
                 "5": "https://stackoverflow.com/questions/56512769/unable-to-find-docker-image-locally"
-            }
+            } Related 1st, 3rd. But, could perform a better query.
         }
     ]
 }
@@ -567,7 +567,7 @@
                 "3": "https://stackoverflow.com/questions/46825502/how-do-i-install-xdebug-on-dockers-official-php-fpm-alpine-image",
                 "4": "https://stackoverflow.com/questions/49907308/installing-xdebug-in-docker",
                 "5": "https://stackoverflow.com/questions/48135728/xdebug-not-running-on-docker"
-            }
+            } Related 1st.
         }
     ]
 }
@@ -580,7 +580,7 @@
             "URLs": {
                 "0": "https://github.com/heremaps/oss-review-toolkit/issues/2200",
                 "1": "https://github.com/Azure/sonic-buildimage/issues/4315"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -597,7 +597,7 @@
                 "3": "https://stackoverflow.com/questions/37582715/no-buildable-go-source-files-in-folder",
                 "4": "https://stackoverflow.com/questions/42320962/golang-compiler-error-cant-load-package-package-main-no-buildable-go-source",
                 "5": "https://github.com/docker-library/golang/issues/73"
-            }
+            } Related 1st. But, could perform a better query.
         }
     ]
 }
@@ -609,7 +609,7 @@
             "Query": "running in fa0ef045ff80 91m",
             "URLs": {
                 "0": "https://github.com/nodejs/docker-node/issues/225"
-            }
+            } None Related, could perform a better query.
         }
     ]
 }
@@ -624,7 +624,7 @@
                 "1": "https://github.com/favll/pogom/issues/382",
                 "2": "https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host",
                 "3": "https://stackoverflow.com/questions/50564999/lib64-libc-so-6-version-glibc-2-14-not-found-why-am-i-getting-this-error"
-            }
+            } Related 1st. But, could perform a better query.
         }
     ]
 }
@@ -641,7 +641,7 @@
                 "3": "https://stackoverflow.com/questions/37582715/no-buildable-go-source-files-in-folder",
                 "4": "https://stackoverflow.com/questions/42320962/golang-compiler-error-cant-load-package-package-main-no-buildable-go-source",
                 "5": "https://github.com/docker-library/golang/issues/73"
-            }
+            } Related 1st, 2nd and 3rd.
         }
     ]
 }
@@ -658,8 +658,9 @@
                 "3": "https://stackoverflow.com/questions/37582715/no-buildable-go-source-files-in-folder",
                 "4": "https://stackoverflow.com/questions/42320962/golang-compiler-error-cant-load-package-package-main-no-buildable-go-source",
                 "5": "https://github.com/docker-library/golang/issues/73"
-            }
+            } Related 1st, 2nd and 3rd.
         }
     ]
 }
+
 
