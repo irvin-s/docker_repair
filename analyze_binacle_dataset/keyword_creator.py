@@ -5,12 +5,8 @@ import re
 import heapq
 from nltk.corpus import stopwords
 
-#Creating a list of stop words and adding custom stopwords
-stop_words = set(stopwords.words("english"))
-
 ##Creating a list of custom stopwords and adding to stop words
-new_words = ["step", "bin", "sh", "returned", "non", "zero", "code", "manifest", "unknown", "pull", "access", "denied","invalid", "reference", "format", "failed", "process", "command", "me", "mthe", "for", "from", "0mthe", "91me"]
-stop_words = stop_words.union(new_words)
+stop_words = ["step", "bin", "sh", "returned", "non", "zero", "code", "manifest", "unknown", "pull", "access", "denied", "invalid", "reference", "format", "failed", "process", "command", "me", "mthe", "for", "from", "0mthe", "91me"]
 
 #Removing stop words and tokenizing the text
 #Pre-processing the text, lowering all characters, removing especial chars and remove new lines to simple space

@@ -75,8 +75,8 @@ if __name__ == "__main__":
     
     #Testing query seach on google
     while not url:
-        keyword = listToString(keyword[:6 + i])
-        for g in search(keyword, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
+        keyword_s = listToString(keyword[:6 + i])
+        for g in search(keyword_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
             if checkURL(g):
                 url.append(g)
         i += 2
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 dataJ['Hash: '+n_hash[10:-4]] = []
 dataJ['Hash: '+n_hash[10:-4]].append({
     'Log fragment': query_s,
-    'Query': keyword,
+    'Query': keyword_s,
     'URLs': ( listToDict(url) )
 }) 
 json.dump(dataJ, query_log, indent=4)
