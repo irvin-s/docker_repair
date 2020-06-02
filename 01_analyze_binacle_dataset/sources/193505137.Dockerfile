@@ -1,0 +1,13 @@
+FROM alpine:3.7
+WORKDIR /home/weave
+RUN apk add --no-cache bash conntrack-tools iproute2 util-linux curl
+COPY ./scope /home/weave/
+ENTRYPOINT ["/home/weave/scope", "--mode=probe", "--no-app", "--probe.docker=true"]
+
+ARG revision
+LABEL works.weave.role="system" \
+      maintainer="Weaveworks <help@weave.works>" \
+      org.opencontainers.image.title="cloud-agent" \
+      org.opencontainers.image.source="https://github.com/weaveworks/scope" \
+      org.opencontainers.image.revision="${revision}" \
+      org.opencontainers.image.vendor="Weaveworks"

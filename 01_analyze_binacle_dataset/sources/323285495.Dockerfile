@@ -1,0 +1,57 @@
+# sdk/latest as of 2018-08-20
+
+###############################
+# Dependencies
+FROM microsoft/dotnet:2.1.500-sdk-alpine as dependencies
+WORKDIR /app
+
+COPY source/OptimaJet.DWKit.Application/*.csproj /app/OptimaJet.DWKit.Application/
+COPY source/OptimaJet.DWKit.StarterApplication/*.csproj /app/OptimaJet.DWKit.StarterApplication/
+COPY source/SIL.AppBuilder.BuildEngineApiClient/*.csproj /app/SIL.AppBuilder.BuildEngineApiClient/
+WORKDIR /app/OptimaJet.DWKit.StarterApplication/
+RUN dotnet restore
+
+###############################
+# Development
+FROM dependencies as development
+COPY source /app
+COPY --from=dependencies /app /app
+RUN apk add --no-cache bash
+WORKDIR /app/OptimaJet.DWKit.StarterApplication
+
+
+###############################
+# Release
+FROM dependencies as build-release
+WORKDIR /app/
+COPY source/ /app/
+COPY --from=dependencies /app /app
+WORKDIR /app/OptimaJet.DWKit.StarterApplication
+RUN dotnet publish -c Release -o out && \
+    POSTGRES_HOST=build \
+    POSTGRES_DB=build \
+    POSTGRES_USER=build \
+    POSTGRES_PASSWORD=build \
+    dotnet ef migrations --msbuildprojectextensionspath /app/out/OptimaJet.DWKit.StarterApplication/obj/ script --idempotent --output "out/scripts/api_migrations.sql"
+
+FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine AS runtime-release
+# Setup Timezone before installing s3cmd
+ARG timezone="America/New_York"
+ENV TZ=${timezone}
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# Copy build-release files
+WORKDIR /app
+COPY --from=build-release /app/OptimaJet.DWKit.StarterApplication/out ./
+COPY --from=build-release /app/OptimaJet.DWKit.StarterApplication/Templates ./Templates
+COPY --from=build-release /app/run-api.sh ./
+COPY scripts/DB/*.sql scripts/DB/PostgreSQL/*.sql /app/scripts/
+# Install dependencies
+RUN apk add --no-cache bash curl postgresql-client python py-pip py-setuptools git ca-certificates
+RUN pip install python-dateutil
+RUN git clone https://github.com/s3tools/s3cmd.git /opt/s3cmd \
+ && ln -s /opt/s3cmd/s3cmd /usr/bin/s3cmd
+RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternational/runny/0.2/runny \
+    && chmod a+x /usr/local/bin/runny
+RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silinternational/s3-expand/master/s3-expand \
+    && chmod a+x /usr/local/bin/s3-expand
+CMD ["/usr/local/bin/s3-expand", "/app/run-api.sh"]

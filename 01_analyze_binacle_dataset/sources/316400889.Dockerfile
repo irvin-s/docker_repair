@@ -1,0 +1,24 @@
+FROM golang:alpine as builder
+
+RUN apk update && apk upgrade
+RUN apk add --no-cache git gcc musl-dev
+
+WORKDIR /src/github.com/kubeflow/pipelines
+COPY . .
+
+RUN go mod vendor
+RUN go build -o /bin/controller backend/src/crd/controller/viewer/*.go
+
+FROM alpine
+WORKDIR /src
+COPY --from=builder /src/github.com/kubeflow/pipelines/vendor vendor
+
+WORKDIR /bin
+
+COPY --from=builder /bin/controller /bin/controller
+COPY --from=builder /src/github.com/kubeflow/pipelines/third_party/license.txt /bin/license.txt
+RUN chmod +x /bin/controller
+
+ENV MAX_NUM_VIEWERS "50"
+
+CMD /bin/controller -alsologtostderr=true -max_num_viewers=${MAX_NUM_VIEWERS}

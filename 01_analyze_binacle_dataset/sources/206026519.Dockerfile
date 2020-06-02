@@ -1,0 +1,1 @@
+FROM rabblerouser/node-base

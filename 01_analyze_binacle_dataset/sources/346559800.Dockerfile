@@ -1,0 +1,11 @@
+FROM busybox:ubuntu-14.04
+MAINTAINER Slavik Markovich <slavik@demisto.com>
+
+EXPOSE 443 80
+
+COPY ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY g-web.conf /etc/g-web.conf
+COPY alfred /bin/alfred
+COPY build-date /
+
+CMD alfred -conf=/etc/g-web.conf -loglevel=debug

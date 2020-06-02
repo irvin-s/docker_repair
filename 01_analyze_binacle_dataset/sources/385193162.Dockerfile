@@ -1,0 +1,16 @@
+FROM alpine:3.9 as alpine
+RUN apk add -U --no-cache ca-certificates
+
+FROM alpine:3.9
+ENV GODEBUG netdns=go
+ENV DRONE_RUNNER_OS=linux
+ENV DRONE_RUNNER_ARCH=amd64
+ENV DRONE_RUNNER_PLATFORM=linux/amd64
+ENV DRONE_RUNNER_CAPACITY=1
+ADD release/linux/amd64/drone-agent /bin/
+
+COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
+LABEL com.centurylinklabs.watchtower.stop-signal="SIGINT"
+
+ENTRYPOINT ["/bin/drone-agent"]

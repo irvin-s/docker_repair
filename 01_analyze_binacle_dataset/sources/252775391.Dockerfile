@@ -1,0 +1,2 @@
+FROM gliderlabs/logspout:master  
+

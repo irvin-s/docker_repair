@@ -1,0 +1,2 @@
+FROM mongo:3  
+

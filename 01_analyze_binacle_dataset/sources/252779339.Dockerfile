@@ -1,0 +1,2 @@
+FROM caapi/minimal  
+

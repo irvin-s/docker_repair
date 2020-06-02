@@ -1,0 +1,8 @@
+FROM nanocloud/nanocloud-backend
+MAINTAINER \
+  Olivier Berthonneau <olivier.berthonneau@nanocloud.com>
+
+ENV GOBIN $GOPATH/bin
+RUN go get github.com/githubnemo/CompileDaemon
+
+CMD ./install.sh && CompileDaemon -directory=./ -exclude=".#*" -exclude-dir=vendor --command="./nanocloud"

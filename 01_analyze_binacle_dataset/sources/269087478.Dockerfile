@@ -1,0 +1,32 @@
+FROM @IMAGE@
+
+MAINTAINER Stephen Gallagher <sgallagh@redhat.com>
+
+ARG TARBALL
+
+RUN yum -y install epel-release \
+    && yum -y install \
+        clang \
+	createrepo_c \
+	elinks \
+	gcc \
+	gcc-c++ \
+	git-core \
+	glib2-devel \
+	gobject-introspection-devel \
+	gtk-doc \
+	libyaml-devel \
+	meson \
+	ninja-build \
+	pkgconfig \
+	python2-devel \
+	python-gobject-base \
+	python-babel \
+	python36-devel \
+	python36-gobject-base \
+	python3-rpm-macros \
+	redhat-rpm-config \
+	rpm-build \
+	rpmdevtools \
+	sudo \
+    && yum -y clean all

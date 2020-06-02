@@ -1,0 +1,20 @@
+FROM golang:1.12-alpine AS builder
+
+RUN apk add --update --no-cache ca-certificates git
+
+RUN go get github.com/derekparker/delve/cmd/dlv
+
+FROM alpine:3.9
+
+RUN apk add --update --no-cache libc6-compat
+
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=builder /go/bin/dlv /
+
+ARG BUILD_DIR
+ARG BINARY_NAME
+
+COPY $BUILD_DIR/$BINARY_NAME /usr/local/bin/anchore-image-validator
+
+EXPOSE 40000
+CMD ["/dlv", "--listen=:40000", "--headless=true", "--api-version=2", "--log", "exec", "--", "/usr/local/bin/anchore-image-validator"]

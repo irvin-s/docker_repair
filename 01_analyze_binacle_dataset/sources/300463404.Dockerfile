@@ -1,0 +1,1 @@
+FROM gcr.io/istio-release/sidecar_injector:release-1.1-20181110-09-15

@@ -1,0 +1,4 @@
+FROM mariadb  
+  
+ENV MYSQL_ALLOW_EMPTY_PASSWORD true  
+

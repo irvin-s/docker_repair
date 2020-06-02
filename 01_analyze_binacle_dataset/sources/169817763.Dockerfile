@@ -1,0 +1,41 @@
+FROM golang:alpine
+EXPOSE 3000
+ENV BP=$GOPATH/src/github.com/gobuffalo/buffalo
+RUN apk add --no-cache --upgrade apk-tools \
+&& apk add --no-cache bash curl openssl git build-base nodejs npm postgresql libpq postgresql-contrib sqlite sqlite-dev mysql-client vim
+
+RUN go version && go get -v -u github.com/markbates/deplist/deplist
+
+
+RUN go get -u github.com/golang/dep/cmd/dep \
+&& go get -v -u github.com/gobuffalo/flect \
+&& go get -v -u github.com/gobuffalo/makr \
+&& go get -v -u github.com/gobuffalo/packr/v2 \
+&& go get -v -u github.com/gobuffalo/tags \
+&& go get -v -u github.com/gobuffalo/pop \
+&& go get -v -u github.com/gobuffalo/x/... \
+&& go get -v -u github.com/mattn/go-sqlite3 \
+&& go get -v -u github.com/markbates/filetest \
+&& go get -v -u github.com/markbates/grift \
+&& go get -v -u github.com/markbates/refresh \
+&& go get -v -u github.com/gobuffalo/httptest \
+&& go get -v -u github.com/gorilla/sessions \
+&& go get -v -u golang.org/x/vgo
+
+RUN curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.16.0
+
+
+RUN npm i -g --no-progress yarn \
+&& yarn config set yarn-offline-mirror /npm-packages-offline-cache \
+&& yarn config set yarn-offline-mirror-pruning true
+
+
+RUN rm -rfv $BP && mkdir -p $BP
+WORKDIR $BP
+
+COPY . .
+RUN make deps && make install
+
+RUN buffalo version
+
+WORKDIR $GOPATH/src

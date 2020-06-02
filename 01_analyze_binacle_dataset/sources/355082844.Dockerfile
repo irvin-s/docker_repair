@@ -1,0 +1,38 @@
+# vim: syntax=dockerfile
+
+# Bionic Beaver (18.04) does not require ppa repositories for any packages
+# we need, such as g++-7, clang-6.0, ansible, grpc, etc.
+ARG BASE_IMAGE=ubuntu:bionic
+FROM ${BASE_IMAGE}
+
+RUN echo "APT::Install-Recommends false;" >> /etc/apt/apt.conf.d/00recommends && \
+	echo "APT::Install-Suggests false;" >> /etc/apt/apt.conf.d/00recommends && \
+	echo "APT::AutoRemove::RecommendsImportant false;" >> /etc/apt/apt.conf.d/00recommends && \
+	echo "APT::AutoRemove::SuggestsImportant false;" >> /etc/apt/apt.conf.d/00recommends
+
+COPY build-dep.yml /tmp/
+COPY kmod.yml /tmp/
+COPY ci.yml /tmp/
+
+# Install dependency packages with Ansible
+RUN apt-get -q update && \
+	apt-get install -y ansible curl && \
+        ansible-playbook /tmp/ci.yml -i "localhost," -c local && \
+	apt-get purge -y ansible && \
+	apt-get autoremove -y && \
+	rm -rf /var/lib/apt/lists
+
+RUN mkdir -p /build/bess
+
+# Pre-build DPDK from the specified BESS branch
+ARG BESS_DPDK_BRANCH=master
+RUN cd /build/bess && \
+	curl -s -L https://github.com/NetSys/bess/archive/${BESS_DPDK_BRANCH}.tar.gz | tar zx --strip-components=1 && \
+	./build.py dpdk && \
+	mv /build/bess/deps/dpdk-17.11 /build/dpdk-17.11 && \
+	rm -rf /build/bess /build/dpdk-17.11/build/build /build/dpdk-17.11/build/app
+
+ENV CCACHE_DIR=/tmp/ccache
+ENV CCACHE_COMPRESS=true
+
+WORKDIR /build/bess

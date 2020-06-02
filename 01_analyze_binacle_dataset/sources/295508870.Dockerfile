@@ -1,0 +1,15 @@
+FROM centos:7
+
+LABEL Vendor="Crunchy Data Solutions" \
+	Version="7.6" \
+	Release="4.0.0" \
+	summary="Crunchy Data PostgreSQL Operator - Display PVC" \
+	description="Crunchy Data PostgreSQL Operator - Display contents of a PVC"
+
+RUN yum -y update && yum -y clean all
+
+VOLUME ["/pgdata"]
+
+USER 26
+
+CMD ["sh", "-c", "find /pgdata/${BACKUP_ROOT}"]

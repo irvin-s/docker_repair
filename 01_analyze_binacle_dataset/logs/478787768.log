@@ -1,0 +1,43 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM debian:wheezy
+wheezy: Pulling from library/debian
+2b15b7abe8b3: Pulling fs layer
+2b15b7abe8b3: Download complete
+2b15b7abe8b3: Pull complete
+Digest: sha256:2259b099d947443e44bbd1c94967c785361af8fd22df48a08a3942e2d5630849
+Status: Downloaded newer image for debian:wheezy
+ ---> 10fcec6d95c4
+Step 2/8 : MAINTAINER HU zhenlei
+ ---> Running in 4a6d6c72524b
+ ---> 07e908ae7bf6
+Removing intermediate container 4a6d6c72524b
+Step 3/8 : RUN apt-get update && apt-get install -y scala
+ ---> Running in f775c43acd49
+Ign http://security.debian.org wheezy/updates Release.gpg
+Ign http://security.debian.org wheezy/updates Release
+Ign http://deb.debian.org wheezy Release.gpg
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  404  Not Found [IP: 151.101.0.204 80]
+Ign http://deb.debian.org wheezy-updates Release.gpg
+Ign http://deb.debian.org wheezy Release
+Ign http://deb.debian.org wheezy-updates Release
+Err http://deb.debian.org wheezy/main amd64 Packages
+  404  Not Found
+Err http://deb.debian.org wheezy-updates/main amd64 Packages
+  404  Not Found
+[91mW: Failed to fetch http://security.debian.org/debian-security/dists/wheezy/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.0.204 80]
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy/main/binary-amd64/Packages  404  Not Found
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-updates/main/binary-amd64/Packages  404  Not Found
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+[0m

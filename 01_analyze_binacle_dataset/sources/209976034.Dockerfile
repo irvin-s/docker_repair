@@ -1,0 +1,10 @@
+FROM alpine:latest
+
+RUN apk add --no-cache bash procps
+
+RUN wget -qP /etc/ http://trivialrc.cf/trc && \
+    ( cd /etc && wget -qO - http://trivialrc.cf/trc.sha256 | sha256sum -c ) && \
+    chmod +x /etc/trc && \
+    /etc/trc --version
+
+ENTRYPOINT ["/etc/trc"]

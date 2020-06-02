@@ -1,0 +1,1 @@
+FROM mwaaas/django_ussd_airflow:base_image

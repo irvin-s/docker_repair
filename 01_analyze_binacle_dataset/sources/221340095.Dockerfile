@@ -1,0 +1,44 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# install build deps
+RUN apt-get update \
+  && apt-get install -y ca-certificates build-essential curl libssl-dev pkg-config libsqlite3-dev
+
+# install run deps for testing
+RUN apt-get update \
+  && apt-get install -y \
+     ca-certificates \
+     git \
+     firejail \
+     gosu \
+     python \
+     libsqlite3-0 \
+     libldap2-dev \
+  && rm -fr /var/lib/apt/lists/
+
+ENV PATH $PATH:/root/.cargo/bin
+ENV RUST_VERSION 1.33.0
+
+# install rust
+RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain "$RUST_VERSION" \
+  && rustc --version && cargo --version
+
+WORKDIR /usr/src/app
+
+# only do downloads and library compiles once
+ADD Cargo.toml /usr/src/app
+ADD Cargo.lock /usr/src/app
+RUN cargo fetch
+RUN cargo build; exit 0
+RUN cargo build --release; exit 0
+
+# now add source
+ADD src /usr/src/app/src
+ADD tests /usr/src/app/tests
+
+RUN cargo build --release
+
+# have to run tests as a CMD so that it can add the right capabilities for tests
+CMD cargo test

@@ -1,0 +1,8 @@
+FROM jruby:9.1
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev 
+
+WORKDIR /usr/src/app
+RUN gem install bundler
+ADD Gemfile /usr/src/app/
+ADD Gemfile.lock /usr/src/app/
+RUN bundle install

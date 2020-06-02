@@ -1,0 +1,3 @@
+FROM bash
+
+COPY . .

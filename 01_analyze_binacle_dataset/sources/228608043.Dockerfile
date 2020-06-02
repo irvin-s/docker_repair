@@ -1,0 +1,1 @@
+COPY db/migration/ /docker-entrypoint-initdb.d/

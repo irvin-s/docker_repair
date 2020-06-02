@@ -1,0 +1,1 @@
+FROM zeroboh/redis:3.2-alpine

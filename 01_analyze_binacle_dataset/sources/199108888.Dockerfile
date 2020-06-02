@@ -1,0 +1,3 @@
+ARG NODE_VERSION=latest
+FROM node:${NODE_VERSION}
+ENTRYPOINT ["yarn"]

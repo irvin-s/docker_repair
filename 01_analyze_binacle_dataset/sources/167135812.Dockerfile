@@ -1,0 +1,3 @@
+FROM centos:centos7@sha256:df3419e90fe9086f3235e0711f3ee146f378122cb250f9698ad04df27c178713
+
+CMD ["/bin/bash"]

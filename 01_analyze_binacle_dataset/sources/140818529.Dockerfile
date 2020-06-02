@@ -1,0 +1,22 @@
+FROM golang:1.12-alpine AS builder
+
+RUN apk add --update --no-cache ca-certificates git
+RUN go get github.com/derekparker/delve/cmd/dlv gcc
+
+RUN mkdir -p /build
+WORKDIR /build
+
+COPY go.* /build/
+RUN go mod download
+COPY . /build
+RUN go install ./cmd 
+
+FROM alpine:3.9
+
+COPY --from=builder /go/bin/cmd /usr/local/bin/jwt-to-rbac
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
+USER 65534:65534
+
+EXPOSE 40000
+CMD ["/dlv", "--listen=:40000", "--headless=true", "--api-version=2", "--log", "exec", "--", "/usr/local/bin/jwt-to-rbac"]

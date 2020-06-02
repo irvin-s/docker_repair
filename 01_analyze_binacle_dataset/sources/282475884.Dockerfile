@@ -1,0 +1,90 @@
+# Dockerfile for building libnginx-mod-pagespeed for Debian / Ubuntu
+#
+# Usage :
+#
+#   docker build -t build-nginx-pagespeed -f Dockerfile-deb \
+#       --build-arg DISTRIB=debian --build-arg RELEASE=stretch \
+#       --build-arg NGINX_VERSION=1.16.0 --build-arg NPS_VERSION=1.13.35.2 .
+#
+# Or Ubuntu :
+#
+#   docker build -t build-nginx-pagespeed -f Dockerfile-deb \
+#       --build-arg DISTRIB=ubuntu --build-arg RELEASE=xenial \
+#       --build-arg NGINX_VERSION=1.16.0 --build-arg NPS_VERSION=1.13.35.2 .
+#
+# Then :
+#
+#   docker run build-nginx-pagespeed
+#   docker cp $(docker ps -l -q):/src ~/Downloads/
+# And once you don't need it anymore :
+#   docker rm $(docker ps -l -q)
+#
+# Latest ngx_pagespeed version : https://github.com/apache/incubator-pagespeed-ngx/releases
+# Or :
+# curl -s https://api.github.com/repos/apache/incubator-pagespeed-ngx/tags |grep "name" |grep "stable" |head -1 |sed -n "s/^.*v\(.*\)-stable.*$/\1/p"
+#
+# Latest nginx version : https://nginx.org/en/download.html
+# Or :
+# curl -s https://nginx.org/packages/ubuntu/dists/xenial/nginx/binary-amd64/Packages.gz |zcat |php -r 'preg_match_all("#Package: nginx\nVersion: (.*?)-\d~.*?\nArch#", file_get_contents("php://stdin"), $m);echo implode($m[1], "\n")."\n";' |sort -r |head -1
+
+ARG DISTRIB=debian
+ARG RELEASE=stretch
+
+FROM ${DISTRIB}:${RELEASE}
+MAINTAINER Cyril Aknine "caknine@clever-age.com"
+
+ARG DISTRIB
+ARG RELEASE
+#ARG CHANGELOG_MSG
+
+RUN apt-get update && apt-get --no-install-recommends --no-install-suggests -y install \
+    wget ca-certificates curl openssl gnupg2 apt-transport-https \
+    unzip make libpcre3-dev zlib1g-dev build-essential devscripts \
+    debhelper quilt lsb-release libssl-dev lintian uuid-dev
+
+ARG PS_NGX_EXTRA_FLAGS=""
+
+ARG NGINX_VERSION=1.16.0
+ARG NPS_VERSION=1.13.35.2
+
+WORKDIR /root
+
+RUN wget -qO - https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VERSION}-stable.tar.gz | tar zxvf -
+RUN wget -qO - https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz | tar zxvf -
+
+RUN mv incubator-pagespeed-ngx-${NPS_VERSION}-stable ngx_pagespeed-${NPS_VERSION}-stable && \
+    cd ngx_pagespeed-${NPS_VERSION}-stable/ && \
+    psol_url=https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz && \
+    [ -e scripts/format_binary_url.sh ] && psol_url=$(scripts/format_binary_url.sh PSOL_BINARY_URL) && \
+    wget ${psol_url} && \
+    tar -xzvf $(basename ${psol_url})
+
+COPY debian nginx-${NGINX_VERSION}/debian
+#RUN cd nginx-${NGINX_VERSION}/debian && if [ -z "${CHANGELOG_MSG}" ]; then \
+#    dch -M -v ${NPS_VERSION}+nginx-${NGINX_VERSION}-0 --distribution "${CURRENT_RELEASE}" "${CHANGELOG_MSG}";
+
+RUN sed -i "s/stretch; urgency/${RELEASE}; urgency/g" nginx-${NGINX_VERSION}/debian/changelog
+RUN sed -i "s/~stretch)/~${RELEASE})/g" nginx-${NGINX_VERSION}/debian/changelog
+RUN sed -i "s/{NGINX_VERSION}/${NGINX_VERSION}-1~${RELEASE}/g" nginx-${NGINX_VERSION}/debian/control
+
+#RUN cd nginx-${NGINX_VERSION} && debuild -us -uc
+RUN cd nginx-${NGINX_VERSION} && dpkg-buildpackage
+
+RUN mkdir /src && mv libnginx-mod-pagespeed* /src/ && cp nginx-${NGINX_VERSION}/debian/changelog /src/
+RUN dpkg -c /src/libnginx-mod-pagespeed_*.deb
+
+#RUN lintian -i -I --show-overrides /src/libnginx-mod-pagespeed_*.changes
+
+RUN curl -L https://nginx.org/keys/nginx_signing.key | apt-key add -
+RUN echo "deb https://nginx.org/packages/${DISTRIB}/ ${RELEASE} nginx" >> /etc/apt/sources.list.d/nginx.list
+
+RUN apt-get update && apt-get -V --no-install-recommends --no-install-suggests -y install nginx=${NGINX_VERSION}-1~${RELEASE}
+
+RUN dpkg -i /src/libnginx-mod-pagespeed_*.deb && \
+    sed -i '1iload_module modules/ngx_pagespeed.so;' /etc/nginx/nginx.conf && \
+    sed -i '1 apagespeed on;' /etc/nginx/conf.d/default.conf && \
+    nginx -t && /etc/init.d/nginx start && echo "Testing NGiNX headers for PageSpeed presence : " && \
+    curl -s -I http://localhost/ |grep X-Page-Speed
+
+RUN dpkg -r libnginx-mod-pagespeed
+RUN dpkg -P libnginx-mod-pagespeed

@@ -1,0 +1,69 @@
+FROM kalilinux/kali-linux-docker
+RUN apt-get update && apt-get install -y --no-install-recommends metasploit-framework python-pip 
+RUN apt-get install -y  --no-install-recommends \
+    expect \
+    tcl8.6 \
+    man \
+    manpages-dev \
+    net-tools \
+    libgtk-3-dev \
+    libdbus-glib-1-dev \
+    libxt6 \
+    sshpass \
+    tcpreplay \ 
+    openssh-server \
+    hydra  \
+    ettercap-text-only \
+    tcpdump  \
+    update-inetd \
+    xinetd \
+    python-dev 
+
+RUN apt-get install -y --no-install-recommends build-essential
+RUN apt-get install -y --no-install-recommends wget gnupg
+
+RUN pip install --upgrade pip
+RUN pip install setuptools
+RUN pip install parse inotify_simple enum
+
+RUN pip install pexpect netifaces selenium
+
+RUN echo "deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main" | tee -a /etc/apt/sources.list > /dev/null
+RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29
+RUN apt-get update && apt-get install -y --no-install-recommends firefox-mozilla-build
+
+RUN apt-get update && apt-get install -y --no-install-recommends sudo \
+    less \
+    man \
+    manpages-dev \
+    hexedit \
+    xauth \
+    lsof \
+    nfs-common \
+    rpcbind \
+    rsh-client \
+    ruby-dev \
+    libpq-dev \
+    libpcap-dev \
+    libsqlite3-dev \
+    telnet
+
+ADD system/etc/sudoers /etc/sudoers
+ADD system/etc/rc.local /etc/rc.local
+ADD system/bin/funbuffer /usr/bin/
+# manage default gateways
+ADD system/bin/togglegw.sh /usr/bin/
+ADD system/bin/set_default_gw.sh /usr/bin/
+#
+# enable sshd
+ADD system/var/run/sshd /var/run/sshd
+RUN chmod 0755 /var/run/sshd
+
+# Ruby gems
+RUN gem install nokogiri -v '1.8.2'
+RUN gem install pg -v '0.20.0'
+RUN gem install pcaprub -v '0.12.4'
+RUN gem install sqlite3 -v '1.3.13'
+RUN rm -rf /usr/share/metasploit-framework/.bundle
+RUN cd /usr/share/metasploit-framework && bundle install
+

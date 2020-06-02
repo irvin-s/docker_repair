@@ -1,0 +1,5 @@
+FROM rust:1.27.1
+
+ENV CARGO_HOME /mal
+
+WORKDIR /mal

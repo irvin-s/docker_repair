@@ -1,0 +1,44 @@
+ARG CUDA_VERSION
+FROM nvidia/cuda:$CUDA_VERSION-devel-centos6
+
+# Environment
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install all basic requirements
+RUN \
+    yum -y update && \
+    yum install -y wget unzip && \
+    wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo && \
+    yum install -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++ && \
+    # Python
+    wget https://repo.continuum.io/miniconda/Miniconda2-4.3.27-Linux-x86_64.sh && \
+    bash Miniconda2-4.3.27-Linux-x86_64.sh -b -p /opt/python && \
+    # CMake
+    wget http://www.cmake.org/files/v3.5/cmake-3.5.2.tar.gz && \
+    tar -xvzf cmake-3.5.2.tar.gz && \
+    cd cmake-3.5.2/ && ./configure && make && make install && cd ../ && \
+    rm -rf cmake-3.5.2/ && rm -rf cmake-3.5.2.tar.gz
+
+ENV PATH=/opt/python/bin:$PATH
+ENV CC=/opt/rh/devtoolset-2/root/usr/bin/gcc
+ENV CXX=/opt/rh/devtoolset-2/root/usr/bin/c++
+ENV CPP=/opt/rh/devtoolset-2/root/usr/bin/cpp
+
+# Install Python packages
+RUN \
+    pip install numpy nose scipy scikit-learn wheel
+
+ENV GOSU_VERSION 1.10
+
+# Install lightweight sudo (not bound to TTY)
+RUN set -ex; \
+    wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-amd64" && \
+    chmod +x /usr/local/bin/gosu && \
+    gosu nobody true
+
+# Default entry-point to use if running locally
+# It will preserve attributes of created files
+COPY entrypoint.sh /scripts/
+
+WORKDIR /workspace
+ENTRYPOINT ["/scripts/entrypoint.sh"]

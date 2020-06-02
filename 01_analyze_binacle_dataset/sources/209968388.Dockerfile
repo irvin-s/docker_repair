@@ -1,0 +1,92 @@
+FROM ubuntu:16.04
+# FROM arm=armhf/ubuntu:16.04
+
+ARG DAPPER_HOST_ARCH=amd64
+ARG http_proxy
+ARG https_proxy
+ENV HOST_ARCH=${DAPPER_HOST_ARCH} ARCH=${DAPPER_HOST_ARCH}
+
+# Setup environment
+ENV PATH /go/bin:$PATH
+ENV DAPPER_DOCKER_SOCKET true
+ENV DAPPER_ENV TAG REPO
+ENV DAPPER_OUTPUT bin
+ENV DAPPER_RUN_ARGS --privileged --tmpfs /go/src/github.com/longhorn/longhorn-engine/integration/.venv:exec --tmpfs /go/src/github.com/longhorn/longhorn-engine/integration/.tox:exec -v /dev:/host/dev -v /proc:/host/proc
+ENV DAPPER_SOURCE /go/src/github.com/longhorn/longhorn-engine
+ENV TRASH_CACHE ${DAPPER_SOURCE}/.trash-cache
+WORKDIR ${DAPPER_SOURCE}
+
+# Install packages
+RUN apt-get update && \
+    apt-get install -y cmake wget curl git less file \
+        libglib2.0-dev libkmod-dev libnl-genl-3-dev linux-libc-dev pkg-config psmisc python-tox qemu-utils fuse python-dev \
+        devscripts debhelper bash-completion librdmacm-dev libibverbs-dev xsltproc docbook-xsl \
+        libconfig-general-perl libaio-dev libc6-dev sg3-utils iptables libltdl7
+
+# needed for ${!var} substitution
+RUN rm -f /bin/sh && ln -s /bin/bash /bin/sh
+
+# Install Go & tools
+ENV GOLANG_ARCH_amd64=amd64 GOLANG_ARCH_arm=armv6l GOLANG_ARCH=GOLANG_ARCH_${ARCH} \
+    GOPATH=/go PATH=/go/bin:/usr/local/go/bin:${PATH} SHELL=/bin/bash
+RUN wget -O - https://storage.googleapis.com/golang/go1.10.3.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local && \
+    go get github.com/rancher/trash && go get -u golang.org/x/lint/golint
+
+# Docker
+ENV DOCKER_URL_amd64=https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_17.03.3~ce-0~ubuntu-xenial_amd64.deb \
+    DOCKER_URL_arm=https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/arm64/docker-ce_18.06.1~ce~3-0~ubuntu_arm64.deb \
+    DOCKER_URL=DOCKER_URL_${ARCH}
+
+RUN wget ${!DOCKER_URL} -O docker_ce_${ARCH} && dpkg -i docker_ce_${ARCH}
+
+# Minio
+RUN wget -O /usr/bin/minio https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2018-05-25T19-49-13Z && chmod +x /usr/bin/minio
+
+# Build TCMU
+RUN cd /usr/src && \
+    git clone https://github.com/open-iscsi/tcmu-runner.git && \
+    cd tcmu-runner && \
+    git checkout f34b67c65b7844a6d3fcb24c2feaf7db90a889cd
+RUN cd /usr/src/tcmu-runner && \
+    cmake . -Dwith-glfs=false && \
+    make && \
+    make install && \
+    cp scsi_defs.h /usr/local/include && \
+    cp libtcmu_static.a /usr/local/lib/libtcmu.a
+
+# Install libqcow
+RUN wget -O - https://s3-us-west-1.amazonaws.com/rancher-longhorn/libqcow-alpha-20181117.tar.gz | tar xvzf - -C /usr/src
+RUN cd /usr/src/libqcow-20181117 && \
+    ./configure
+RUN cd /usr/src/libqcow-20181117 && \
+    make -j$(nproc) && \
+    make install
+
+# Build liblonghorn
+RUN cd /usr/src && \
+    git clone https://github.com/rancher/liblonghorn.git && \
+    cd liblonghorn && \
+    git checkout 15479ac7b86caf57c81da1c20386c95bd2429859 && \
+    make deb && \
+    dpkg -i ./pkg/liblonghorn_*.deb
+
+# Build TGT
+RUN cd /usr/src && \
+    git clone https://github.com/rancher/tgt.git && \
+    cd tgt && \
+    git checkout eed5fafb4de79b6a5a6ca4164773bf4286942afe && \
+    ./scripts/build-pkg.sh deb && \
+    dpkg -i ./pkg/tgt_*.deb
+
+# Build longhorn-engine-launcher
+RUN cd /go/src/github.com/longhorn && \
+    git clone https://github.com/shuo-wu/longhorn-engine-launcher.git && \
+    cd longhorn-engine-launcher && \
+    git checkout 59ae82f4738fde13fcf8a2191494c8b16b1bd7f0 && \
+    go build && \
+    cp longhorn-engine-launcher /usr/local/bin
+
+VOLUME /tmp
+ENV TMPDIR /tmp
+ENTRYPOINT ["./scripts/entry"]
+CMD ["build"]

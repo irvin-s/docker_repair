@@ -1,0 +1,3 @@
+FROM ghost:1.19.0-alpine
+
+VOLUME $GHOST_CONTENT

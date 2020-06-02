@@ -1,0 +1,88 @@
+# Copyright (c) 2017 Sony Corporation. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# for nnabla>=1.0.17
+
+FROM ubuntu:16.04
+
+ENV LC_ALL C
+ENV LANG C
+ENV LANGUAGE C
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    clang-format-3.8 \
+    cmake \
+    curl \
+    g++ \
+    git \
+    make \
+    python-dev \
+    python-pip \
+    python-setuptools \
+    unzip \
+    zip \
+    zlib1g-dev \
+    libhdf5-dev \
+    libarchive-dev
+
+ADD python/setup_requirements.txt /tmp/deps/
+RUN pip install -U -r /tmp/deps/setup_requirements.txt
+ADD python/requirements.txt /tmp/deps/
+RUN pip install -U -r /tmp/deps/requirements.txt
+ADD python/test_requirements.txt /tmp/deps/
+RUN pip install -U -r /tmp/deps/test_requirements.txt
+
+# Optional
+RUN pip install -U ipython
+
+RUN apt-get -yqq update \
+    && apt-get -yqq install --no-install-recommends \
+        build-essential \
+        dh-autoreconf \
+        pkg-config \
+    && git clone https://github.com/google/protobuf.git /protobuf \
+    && cd /protobuf \
+    && git checkout v3.4.1 \
+    && ./autogen.sh \
+    && ./configure \
+    && make \
+    && make install \
+    && ldconfig \
+    # Cleanup
+    && apt-get -yqq purge dh-autoreconf \
+    && apt-get -yqq clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /protobuf /protoc-gen-doc
+
+RUN apt-get -yqq update \
+    && apt-get -yqq install --no-install-recommends \
+        doxygen \
+        fonts-freefont-ttf \
+        graphviz \
+        pandoc \
+        plantuml \
+        unzip \
+    && pip install -U \
+        Sphinx \
+        pygments \
+        recommonmark==0.4.0 \
+        sphinx-rtd-theme \
+        sphinxcontrib-actdiag \
+        sphinxcontrib-blockdiag \
+        sphinxcontrib-nwdiag \
+        sphinxcontrib-plantuml \
+        sphinxcontrib-seqdiag \
+        sphinxcontrib-toc \
+    && apt-get -yqq clean \
+    && rm -rf /var/lib/apt/lists/*

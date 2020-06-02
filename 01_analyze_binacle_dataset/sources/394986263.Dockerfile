@@ -1,0 +1,12 @@
+FROM alpine:3.9
+VOLUME /mnt/routes
+EXPOSE 80
+
+ENV GOPATH /go
+RUN apk --no-cache add go build-base git mercurial ca-certificates
+COPY . /go/src/github.com/gliderlabs/logspout
+WORKDIR /go/src/github.com/gliderlabs/logspout
+RUN go get
+CMD go get \
+	&& go build -ldflags "-X main.Version=dev" -o /bin/logspout \
+	&& exec /bin/logspout

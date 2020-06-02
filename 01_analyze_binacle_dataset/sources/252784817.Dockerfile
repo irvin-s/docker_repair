@@ -1,0 +1,2 @@
+FROM google/golang-runtime  
+

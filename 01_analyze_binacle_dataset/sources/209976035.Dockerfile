@@ -1,0 +1,8 @@
+FROM centos:latest
+
+RUN curl -sSLfo /etc/trc /etc/trc http://trivialrc.cf/trc && \
+    ( cd /etc && curl -sSLf /etc/trc http://trivialrc.cf/trc.sha256 | sha256sum -c ) && \
+    chmod +x /etc/trc && \
+    /etc/trc --version
+
+ENTRYPOINT ["/etc/trc"]

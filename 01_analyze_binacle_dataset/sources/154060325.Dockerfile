@@ -1,0 +1,22 @@
+FROM clearlinux:latest as first
+
+ENV GOBIN=/go/bin
+ENV PATH=$PATH:$GOBIN
+
+RUN swupd bundle-add go-basic make
+RUN rm -fr /run/lock/clrtrust.lock
+RUN clrtrust generate
+
+RUN go get -u github.com/golang/dep/cmd/dep
+ADD . /go/src/github.com/IntelAI/inference-model-manager/server-controller
+WORKDIR /go/src/github.com/IntelAI/inference-model-manager/server-controller
+RUN dep ensure -v
+
+RUN CGO_ENABLED=0 GOOS=linux go install -a -v -ldflags '-extldflags "-static"' github.com/IntelAI/inference-model-manager/server-controller
+
+FROM clearlinux:latest
+
+USER 1000
+COPY --from=first /go/bin/server-controller /
+WORKDIR /
+CMD ./server-controller

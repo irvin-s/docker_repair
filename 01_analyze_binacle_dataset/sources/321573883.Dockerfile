@@ -1,0 +1,29 @@
+FROM arm32v6/alpine
+COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
+
+MAINTAINER Raymond Mouthaan <raymondmmouthaan@gmail.com>
+
+RUN apk --no-cache add --virtual build-dependencies wget ca-certificates
+
+ENV DF_DOCKER_HOST="unix:///var/run/docker.sock" \
+    DF_NOTIFICATION_URL="" \
+    DF_RETRY="50" \
+    DF_RETRY_INTERVAL="5" \
+    DF_NOTIFY_LABEL="com.df.notify" \
+    DF_INCLUDE_NODE_IP_INFO="false" \
+    DF_SERVICE_POLLING_INTERVAL="-1" \
+    DF_USE_DOCKER_SERVICE_EVENTS="true" \
+    DF_NODE_POLLING_INTERVAL="-1" \
+    DF_USE_DOCKER_NODE_EVENTS="true" \
+    SERVICE_NAME_PREFIX="" \
+    DF_NOTIFY_CREATE_SERVICE_METHOD="GET" \
+    DF_NOTIFY_REMOVE_SERVICE_METHOD="GET"
+
+COPY docker-flow-swarm-listener_linux_arm /usr/local/bin/docker-flow-swarm-listener
+RUN chmod +x /usr/local/bin/docker-flow-swarm-listener
+
+HEALTHCHECK --interval=5s --start-period=3s --timeout=5s CMD wget -qO- "http://localhost:8080/v1/docker-flow-swarm-listener/ping"
+
+EXPOSE 8080
+
+CMD ["docker-flow-swarm-listener"]

@@ -1,0 +1,1 @@
+FROM gcr.io/google-containers/ubuntu-nvidia-driver-installer:cd8732e3c25fe61223e0f37d5f496171833afc14

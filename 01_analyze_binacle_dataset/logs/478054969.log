@@ -1,0 +1,437 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM ubuntu:precise
+precise: Pulling from library/ubuntu
+d8868e50ac4c: Pulling fs layer
+83251ac64627: Pulling fs layer
+589bba2f1b36: Pulling fs layer
+d62ecaceda39: Pulling fs layer
+6d93b41cfc6b: Pulling fs layer
+6d93b41cfc6b: Waiting
+589bba2f1b36: Verifying Checksum
+589bba2f1b36: Download complete
+83251ac64627: Verifying Checksum
+83251ac64627: Download complete
+6d93b41cfc6b: Verifying Checksum
+6d93b41cfc6b: Download complete
+d62ecaceda39: Verifying Checksum
+d62ecaceda39: Download complete
+d8868e50ac4c: Verifying Checksum
+d8868e50ac4c: Download complete
+d8868e50ac4c: Pull complete
+83251ac64627: Pull complete
+589bba2f1b36: Pull complete
+d62ecaceda39: Pull complete
+6d93b41cfc6b: Pull complete
+Digest: sha256:18305429afa14ea462f810146ba44d4363ae76e4c8dfc38288cf73aa07485005
+Status: Downloaded newer image for ubuntu:precise
+ ---> 5b117edd0b76
+Step 2/7 : RUN apt-get update
+ ---> Running in 52bfa7ba9d04
+Get:1 http://archive.ubuntu.com precise Release.gpg [198 B]
+Get:2 http://archive.ubuntu.com precise-updates Release.gpg [198 B]
+Get:3 http://archive.ubuntu.com precise-security Release.gpg [181 B]
+Get:4 http://archive.ubuntu.com precise Release [49.6 kB]
+Get:5 http://archive.ubuntu.com precise-updates Release [55.4 kB]
+Get:6 http://archive.ubuntu.com precise-security Release [55.5 kB]
+Get:7 http://archive.ubuntu.com precise/main Sources [1175 kB]
+Get:8 http://archive.ubuntu.com precise/restricted Sources [5306 B]
+Get:9 http://archive.ubuntu.com precise/universe Sources [6239 kB]
+Get:10 http://archive.ubuntu.com precise/main amd64 Packages [1640 kB]
+Get:11 http://archive.ubuntu.com precise/restricted amd64 Packages [9098 B]
+Get:12 http://archive.ubuntu.com precise/universe amd64 Packages [6167 kB]
+Get:13 http://archive.ubuntu.com precise/main i386 Packages [1641 kB]
+Get:14 http://archive.ubuntu.com precise/restricted i386 Packages [9108 B]
+Get:15 http://archive.ubuntu.com precise/universe i386 Packages [6180 kB]
+Get:16 http://archive.ubuntu.com precise-updates/main Sources [618 kB]
+Get:17 http://archive.ubuntu.com precise-updates/restricted Sources [9232 B]
+Get:18 http://archive.ubuntu.com precise-updates/universe Sources [169 kB]
+Get:19 http://archive.ubuntu.com precise-updates/main amd64 Packages [960 kB]
+Get:20 http://archive.ubuntu.com precise-updates/restricted amd64 Packages [19.6 kB]
+Get:21 http://archive.ubuntu.com precise-updates/universe amd64 Packages [372 kB]
+Get:22 http://archive.ubuntu.com precise-updates/main i386 Packages [964 kB]
+Get:23 http://archive.ubuntu.com precise-updates/restricted i386 Packages [19.5 kB]
+Get:24 http://archive.ubuntu.com precise-updates/universe i386 Packages [382 kB]
+Get:25 http://archive.ubuntu.com precise-security/main Sources [190 kB]
+Get:26 http://archive.ubuntu.com precise-security/restricted Sources [4579 B]
+Get:27 http://archive.ubuntu.com precise-security/universe Sources [68.4 kB]
+Get:28 http://archive.ubuntu.com precise-security/main amd64 Packages [481 kB]
+Get:29 http://archive.ubuntu.com precise-security/restricted amd64 Packages [13.8 kB]
+Get:30 http://archive.ubuntu.com precise-security/universe amd64 Packages [187 kB]
+Get:31 http://archive.ubuntu.com precise-security/main i386 Packages [483 kB]
+Get:32 http://archive.ubuntu.com precise-security/restricted i386 Packages [13.8 kB]
+Get:33 http://archive.ubuntu.com precise-security/universe i386 Packages [197 kB]
+Fetched 28.4 MB in 10s (2682 kB/s)
+Reading package lists...
+ ---> 510cf75caef4
+Removing intermediate container 52bfa7ba9d04
+Step 3/7 : RUN apt-get -y install curl gcc g++ python make
+ ---> Running in 2ba5da5fc713
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  binutils ca-certificates cpp cpp-4.6 file g++-4.6 gcc-4.6 krb5-locales
+  libasn1-8-heimdal libc-dev-bin libc6-dev libcurl3 libexpat1 libgcrypt11
+  libgmp10 libgnutls26 libgomp1 libgpg-error0 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libidn11 libk5crypto3 libkeyutils1
+  libkrb5-26-heimdal libkrb5-3 libkrb5support0 libldap-2.4-2 libmagic1 libmpc2
+  libmpfr4 libp11-kit0 libquadmath0 libroken18-heimdal librtmp0 libsasl2-2
+  libsasl2-modules libsqlite3-0 libstdc++6-4.6-dev libtasn1-3 libwind0-heimdal
+  linux-libc-dev manpages manpages-dev mime-support openssl python2.7
+Suggested packages:
+  binutils-doc cpp-doc gcc-4.6-locales g++-multilib g++-4.6-multilib
+  gcc-4.6-doc libstdc++6-4.6-dbg gcc-multilib autoconf automake1.9 libtool
+  flex bison gdb gcc-doc gcc-4.6-multilib libmudflap0-4.6-dev libgcc1-dbg
+  libgomp1-dbg libquadmath0-dbg libmudflap0-dbg binutils-gold glibc-doc
+  rng-tools gnutls-bin krb5-doc krb5-user libsasl2-modules-otp
+  libsasl2-modules-ldap libsasl2-modules-sql libsasl2-modules-gssapi-mit
+  libsasl2-modules-gssapi-heimdal libstdc++6-4.6-doc make-doc man-browser
+  python-doc python-tk python2.7-doc
+The following NEW packages will be installed:
+  binutils ca-certificates cpp cpp-4.6 curl file g++ g++-4.6 gcc gcc-4.6
+  krb5-locales libasn1-8-heimdal libc-dev-bin libc6-dev libcurl3 libexpat1
+  libgcrypt11 libgmp10 libgnutls26 libgomp1 libgpg-error0 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libidn11 libk5crypto3 libkeyutils1
+  libkrb5-26-heimdal libkrb5-3 libkrb5support0 libldap-2.4-2 libmagic1 libmpc2
+  libmpfr4 libp11-kit0 libquadmath0 libroken18-heimdal librtmp0 libsasl2-2
+  libsasl2-modules libsqlite3-0 libstdc++6-4.6-dev libtasn1-3 libwind0-heimdal
+  linux-libc-dev make manpages manpages-dev mime-support openssl python
+  python2.7
+0 upgraded, 55 newly installed, 0 to remove and 0 not upgraded.
+Need to get 38.2 MB of archives.
+After this operation, 108 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsqlite3-0 amd64 3.7.9-2ubuntu1.2 [349 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ precise-updates/main libroken18-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [46.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ precise-updates/main libasn1-8-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [220 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ precise/main libgpg-error0 amd64 1.10-2ubuntu1 [14.5 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgcrypt11 amd64 1.5.0-3ubuntu0.6 [282 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ precise/main libp11-kit0 amd64 0.12-2ubuntu1 [34.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ precise-updates/main libtasn1-3 amd64 2.10-1ubuntu1.5 [43.6 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgnutls26 amd64 2.12.14-5ubuntu3.14 [461 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5support0 amd64 1.10+dfsg~beta1-2ubuntu0.7 [24.9 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ precise-updates/main libk5crypto3 amd64 1.10+dfsg~beta1-2ubuntu0.7 [80.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ precise/main libkeyutils1 amd64 1.5.2-2 [7862 B]
+Get:12 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-3 amd64 1.10+dfsg~beta1-2ubuntu0.7 [355 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi-krb5-2 amd64 1.10+dfsg~beta1-2ubuntu0.7 [119 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhcrypto4-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [103 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimbase1-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [33.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ precise-updates/main libwind0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [77.8 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhx509-5-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [125 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-26-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [234 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimntlm0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [16.0 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi3-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [108 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ precise-updates/main libidn11 amd64 1.23-2ubuntu0.1 [112 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-2 amd64 2.1.25.dfsg1-3ubuntu0.1 [69.1 kB]
+Get:23 http://archive.ubuntu.com/ubuntu/ precise-updates/main libldap-2.4-2 amd64 2.4.28-1.1ubuntu4.6 [185 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ precise/main librtmp0 amd64 2.4~20110711.gitc28f1bab-1 [57.1 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ precise-updates/main openssl amd64 1.0.1-4ubuntu5.39 [524 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ precise-updates/main ca-certificates all 20160104ubuntu0.12.04.1 [208 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ precise-updates/main libcurl3 amd64 7.22.0-3ubuntu4.17 [237 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ precise-updates/main libexpat1 amd64 2.0.1-7.2ubuntu1.4 [131 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ precise/main libgmp10 amd64 2:5.0.2+dfsg-2ubuntu1 [238 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ precise/main libgomp1 amd64 4.6.3-1ubuntu5 [25.5 kB]
+Get:31 http://archive.ubuntu.com/ubuntu/ precise/main libmpfr4 amd64 3.1.0-3ubuntu2 [201 kB]
+Get:32 http://archive.ubuntu.com/ubuntu/ precise/main libquadmath0 amd64 4.6.3-1ubuntu5 [126 kB]
+Get:33 http://archive.ubuntu.com/ubuntu/ precise/main libmpc2 amd64 0.9-4 [39.5 kB]
+Get:34 http://archive.ubuntu.com/ubuntu/ precise-updates/main libmagic1 amd64 5.09-2ubuntu0.6 [218 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ precise-updates/main file amd64 5.09-2ubuntu0.6 [20.0 kB]
+Get:36 http://archive.ubuntu.com/ubuntu/ precise-updates/main mime-support all 3.51-1ubuntu1.1 [30.4 kB]
+Get:37 http://archive.ubuntu.com/ubuntu/ precise-updates/main python2.7 amd64 2.7.3-0ubuntu3.9 [2678 kB]
+Get:38 http://archive.ubuntu.com/ubuntu/ precise-updates/main python amd64 2.7.3-0ubuntu2.2 [168 kB]
+Get:39 http://archive.ubuntu.com/ubuntu/ precise-updates/main krb5-locales all 1.10+dfsg~beta1-2ubuntu0.7 [10.3 kB]
+Get:40 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-modules amd64 2.1.25.dfsg1-3ubuntu0.1 [63.2 kB]
+Get:41 http://archive.ubuntu.com/ubuntu/ precise/main manpages all 3.35-0.1ubuntu1 [584 kB]
+Get:42 http://archive.ubuntu.com/ubuntu/ precise-updates/main binutils amd64 2.22-6ubuntu1.4 [2653 kB]
+Get:43 http://archive.ubuntu.com/ubuntu/ precise/main cpp-4.6 amd64 4.6.3-1ubuntu5 [4836 kB]
+Get:44 http://archive.ubuntu.com/ubuntu/ precise/main cpp amd64 4:4.6.3-1ubuntu5 [27.6 kB]
+Get:45 http://archive.ubuntu.com/ubuntu/ precise-updates/main curl amd64 7.22.0-3ubuntu4.17 [138 kB]
+Get:46 http://archive.ubuntu.com/ubuntu/ precise/main gcc-4.6 amd64 4.6.3-1ubuntu5 [7572 kB]
+Get:47 http://archive.ubuntu.com/ubuntu/ precise/main gcc amd64 4:4.6.3-1ubuntu5 [5114 B]
+Get:48 http://archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.18 [84.5 kB]
+Get:49 http://archive.ubuntu.com/ubuntu/ precise-updates/main linux-libc-dev amd64 3.2.0-126.169 [848 kB]
+Get:50 http://archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.18 [2948 kB]
+Get:51 http://archive.ubuntu.com/ubuntu/ precise/main libstdc++6-4.6-dev amd64 4.6.3-1ubuntu5 [1660 kB]
+Get:52 http://archive.ubuntu.com/ubuntu/ precise/main g++-4.6 amd64 4.6.3-1ubuntu5 [6954 kB]
+Get:53 http://archive.ubuntu.com/ubuntu/ precise/main g++ amd64 4:4.6.3-1ubuntu5 [1442 B]
+Get:54 http://archive.ubuntu.com/ubuntu/ precise-updates/main make amd64 3.81-8.1ubuntu1.1 [119 kB]
+Get:55 http://archive.ubuntu.com/ubuntu/ precise/main manpages-dev all 3.35-0.1ubuntu1 [1671 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 38.2 MB in 13s (2873 kB/s)
+Selecting previously unselected package libsqlite3-0.
+(Reading database ... 7590 files and directories currently installed.)
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.7.9-2ubuntu1.2_amd64.deb) ...
+Selecting previously unselected package libroken18-heimdal.
+Unpacking libroken18-heimdal (from .../libroken18-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libasn1-8-heimdal.
+Unpacking libasn1-8-heimdal (from .../libasn1-8-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libgpg-error0.
+Unpacking libgpg-error0 (from .../libgpg-error0_1.10-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libgcrypt11.
+Unpacking libgcrypt11 (from .../libgcrypt11_1.5.0-3ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package libp11-kit0.
+Unpacking libp11-kit0 (from .../libp11-kit0_0.12-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libtasn1-3.
+Unpacking libtasn1-3 (from .../libtasn1-3_2.10-1ubuntu1.5_amd64.deb) ...
+Selecting previously unselected package libgnutls26.
+Unpacking libgnutls26 (from .../libgnutls26_2.12.14-5ubuntu3.14_amd64.deb) ...
+Selecting previously unselected package libkrb5support0.
+Unpacking libkrb5support0 (from .../libkrb5support0_1.10+dfsg~beta1-2ubuntu0.7_amd64.deb) ...
+Selecting previously unselected package libk5crypto3.
+Unpacking libk5crypto3 (from .../libk5crypto3_1.10+dfsg~beta1-2ubuntu0.7_amd64.deb) ...
+Selecting previously unselected package libkeyutils1.
+Unpacking libkeyutils1 (from .../libkeyutils1_1.5.2-2_amd64.deb) ...
+Selecting previously unselected package libkrb5-3.
+Unpacking libkrb5-3 (from .../libkrb5-3_1.10+dfsg~beta1-2ubuntu0.7_amd64.deb) ...
+Selecting previously unselected package libgssapi-krb5-2.
+Unpacking libgssapi-krb5-2 (from .../libgssapi-krb5-2_1.10+dfsg~beta1-2ubuntu0.7_amd64.deb) ...
+Selecting previously unselected package libhcrypto4-heimdal.
+Unpacking libhcrypto4-heimdal (from .../libhcrypto4-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimbase1-heimdal.
+Unpacking libheimbase1-heimdal (from .../libheimbase1-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libwind0-heimdal.
+Unpacking libwind0-heimdal (from .../libwind0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libhx509-5-heimdal.
+Unpacking libhx509-5-heimdal (from .../libhx509-5-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libkrb5-26-heimdal.
+Unpacking libkrb5-26-heimdal (from .../libkrb5-26-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimntlm0-heimdal.
+Unpacking libheimntlm0-heimdal (from .../libheimntlm0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libgssapi3-heimdal.
+Unpacking libgssapi3-heimdal (from .../libgssapi3-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libidn11.
+Unpacking libidn11 (from .../libidn11_1.23-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libsasl2-2.
+Unpacking libsasl2-2 (from .../libsasl2-2_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libldap-2.4-2.
+Unpacking libldap-2.4-2 (from .../libldap-2.4-2_2.4.28-1.1ubuntu4.6_amd64.deb) ...
+Selecting previously unselected package librtmp0.
+Unpacking librtmp0 (from .../librtmp0_2.4~20110711.gitc28f1bab-1_amd64.deb) ...
+Selecting previously unselected package openssl.
+Unpacking openssl (from .../openssl_1.0.1-4ubuntu5.39_amd64.deb) ...
+Selecting previously unselected package ca-certificates.
+Unpacking ca-certificates (from .../ca-certificates_20160104ubuntu0.12.04.1_all.deb) ...
+Selecting previously unselected package libcurl3.
+Unpacking libcurl3 (from .../libcurl3_7.22.0-3ubuntu4.17_amd64.deb) ...
+Selecting previously unselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-7.2ubuntu1.4_amd64.deb) ...
+Selecting previously unselected package libgmp10.
+Unpacking libgmp10 (from .../libgmp10_2%3a5.0.2+dfsg-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libgomp1.
+Unpacking libgomp1 (from .../libgomp1_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package libmpfr4.
+Unpacking libmpfr4 (from .../libmpfr4_3.1.0-3ubuntu2_amd64.deb) ...
+Selecting previously unselected package libquadmath0.
+Unpacking libquadmath0 (from .../libquadmath0_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package libmpc2.
+Unpacking libmpc2 (from .../libmpc2_0.9-4_amd64.deb) ...
+Selecting previously unselected package libmagic1.
+Unpacking libmagic1 (from .../libmagic1_5.09-2ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package file.
+Unpacking file (from .../file_5.09-2ubuntu0.6_amd64.deb) ...
+Selecting previously unselected package mime-support.
+Unpacking mime-support (from .../mime-support_3.51-1ubuntu1.1_all.deb) ...
+Selecting previously unselected package python2.7.
+Unpacking python2.7 (from .../python2.7_2.7.3-0ubuntu3.9_amd64.deb) ...
+Selecting previously unselected package python.
+Unpacking python (from .../python_2.7.3-0ubuntu2.2_amd64.deb) ...
+Selecting previously unselected package krb5-locales.
+Unpacking krb5-locales (from .../krb5-locales_1.10+dfsg~beta1-2ubuntu0.7_all.deb) ...
+Selecting previously unselected package libsasl2-modules.
+Unpacking libsasl2-modules (from .../libsasl2-modules_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package manpages.
+Unpacking manpages (from .../manpages_3.35-0.1ubuntu1_all.deb) ...
+Selecting previously unselected package binutils.
+Unpacking binutils (from .../binutils_2.22-6ubuntu1.4_amd64.deb) ...
+Selecting previously unselected package cpp-4.6.
+Unpacking cpp-4.6 (from .../cpp-4.6_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package cpp.
+Unpacking cpp (from .../cpp_4%3a4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package curl.
+Unpacking curl (from .../curl_7.22.0-3ubuntu4.17_amd64.deb) ...
+Selecting previously unselected package gcc-4.6.
+Unpacking gcc-4.6 (from .../gcc-4.6_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package gcc.
+Unpacking gcc (from .../gcc_4%3a4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package libc-dev-bin.
+Unpacking libc-dev-bin (from .../libc-dev-bin_2.15-0ubuntu10.18_amd64.deb) ...
+Selecting previously unselected package linux-libc-dev.
+Unpacking linux-libc-dev (from .../linux-libc-dev_3.2.0-126.169_amd64.deb) ...
+Selecting previously unselected package libc6-dev.
+Unpacking libc6-dev (from .../libc6-dev_2.15-0ubuntu10.18_amd64.deb) ...
+Selecting previously unselected package libstdc++6-4.6-dev.
+Unpacking libstdc++6-4.6-dev (from .../libstdc++6-4.6-dev_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package g++-4.6.
+Unpacking g++-4.6 (from .../g++-4.6_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package g++.
+Unpacking g++ (from .../g++_4%3a4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package make.
+Unpacking make (from .../make_3.81-8.1ubuntu1.1_amd64.deb) ...
+Selecting previously unselected package manpages-dev.
+Unpacking manpages-dev (from .../manpages-dev_3.35-0.1ubuntu1_all.deb) ...
+Setting up libsqlite3-0 (3.7.9-2ubuntu1.2) ...
+Setting up libroken18-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libasn1-8-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libgpg-error0 (1.10-2ubuntu1) ...
+Setting up libgcrypt11 (1.5.0-3ubuntu0.6) ...
+Setting up libp11-kit0 (0.12-2ubuntu1) ...
+Setting up libtasn1-3 (2.10-1ubuntu1.5) ...
+Setting up libgnutls26 (2.12.14-5ubuntu3.14) ...
+Setting up libkrb5support0 (1.10+dfsg~beta1-2ubuntu0.7) ...
+Setting up libk5crypto3 (1.10+dfsg~beta1-2ubuntu0.7) ...
+Setting up libkeyutils1 (1.5.2-2) ...
+Setting up libkrb5-3 (1.10+dfsg~beta1-2ubuntu0.7) ...
+Setting up libgssapi-krb5-2 (1.10+dfsg~beta1-2ubuntu0.7) ...
+Setting up libhcrypto4-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimbase1-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libwind0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libhx509-5-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libkrb5-26-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimntlm0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libgssapi3-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libidn11 (1.23-2ubuntu0.1) ...
+Setting up libsasl2-2 (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up libldap-2.4-2 (2.4.28-1.1ubuntu4.6) ...
+Setting up librtmp0 (2.4~20110711.gitc28f1bab-1) ...
+Setting up openssl (1.0.1-4ubuntu5.39) ...
+Setting up ca-certificates (20160104ubuntu0.12.04.1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 /usr/share/perl/5.14 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+[0m[91mUpdating certificates in /etc/ssl/certs... [0m[91m173 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....[0m[91mdone.
+[0mSetting up libcurl3 (7.22.0-3ubuntu4.17) ...
+Setting up libexpat1 (2.0.1-7.2ubuntu1.4) ...
+Setting up libgmp10 (2:5.0.2+dfsg-2ubuntu1) ...
+Setting up libgomp1 (4.6.3-1ubuntu5) ...
+Setting up libmpfr4 (3.1.0-3ubuntu2) ...
+Setting up libquadmath0 (4.6.3-1ubuntu5) ...
+Setting up libmpc2 (0.9-4) ...
+Setting up libmagic1 (5.09-2ubuntu0.6) ...
+Setting up file (5.09-2ubuntu0.6) ...
+Setting up mime-support (3.51-1ubuntu1.1) ...
+update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+Setting up python2.7 (2.7.3-0ubuntu3.9) ...
+Setting up python (2.7.3-0ubuntu2.2) ...
+Setting up krb5-locales (1.10+dfsg~beta1-2ubuntu0.7) ...
+Setting up libsasl2-modules (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up manpages (3.35-0.1ubuntu1) ...
+Setting up binutils (2.22-6ubuntu1.4) ...
+Setting up cpp-4.6 (4.6.3-1ubuntu5) ...
+Setting up cpp (4:4.6.3-1ubuntu5) ...
+Setting up curl (7.22.0-3ubuntu4.17) ...
+Setting up gcc-4.6 (4.6.3-1ubuntu5) ...
+Setting up gcc (4:4.6.3-1ubuntu5) ...
+Setting up libc-dev-bin (2.15-0ubuntu10.18) ...
+Setting up linux-libc-dev (3.2.0-126.169) ...
+Setting up libc6-dev (2.15-0ubuntu10.18) ...
+Setting up make (3.81-8.1ubuntu1.1) ...
+Setting up manpages-dev (3.35-0.1ubuntu1) ...
+Setting up g++-4.6 (4.6.3-1ubuntu5) ...
+Setting up g++ (4:4.6.3-1ubuntu5) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode.
+Setting up libstdc++6-4.6-dev (4.6.3-1ubuntu5) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+ ---> fb101b726c0b
+Removing intermediate container 2ba5da5fc713
+Step 4/7 : RUN curl https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.sh -o /tmp/cmake.sh
+ ---> Running in ed6e66ef12fd
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+ [0m[91m                                Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 [0m[91m--:--:--  0:00:01 --:--:--     0[0m[91m  0 33.3M    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0[0m[91m  2 33.3M    2  848k    0     0   290k      0  0:01:57  0:00:02  0:01:55  512k[0m[91m 12 33.3M   12 4272k    0     0  1090k      0  0:00:31  0:00:03  0:00:28 1607k[0m[91m 21 33.3M   21 7472k    0     0  1520k      0  0:00:22  0:00:04  0:00:18 2043k[0m[91m 31 33.3M   31 10.5M    0     0  1827k      0  0:00:18  0:00:05  0:00:13 2320k[0m[91m 41 33.3M   41 13.9M    0     0  2063k      0  0:00:16  0:00:06  0:00:10 2859k[0m[91m 51 33.3M   51 17.2M    0     0  2229k      0  0:00:15  0:00:07  0:00:08 3[0m[91m358k[0m[91m 59 33.3M   59 19.9M    0     0  2289k      0  0:00:14  0:00:08  0:00:06 3228k[0m[91m 68 33.3M   68 23.0M    0     0  2375k      0  0:00:14  0:00:09  0:00:05 3216k[0m[91m 78 33.3M   78 26.3M    0     0  2468k      0  0:00:13  0:00:10  0:00:03 3229k[0m[91m 83 33.3M   83 28.0M    0     0  2363k      0  0:00:14  0:00:12  0:00:02 2760k[0m[91m 89 33.3M   89 29.9M    0     0  2375k      0  0:00:14  0:00:12  0:00:02 2605k[0m[91m 97 33.3M   97 32.4M    0     0  2385k      0  0:00:14  0:00:13  0:00:01 2556k[0m[91m100 33.3M  100 33.3M    0     0  2389k      0  0:00:14  0:00:14 --:--:-- 2422k
+[0m ---> 0ba9b39f9584
+Removing intermediate container ed6e66ef12fd
+Step 5/7 : RUN sh /tmp/cmake.sh --exclude-subdir --prefix=/usr/local
+ ---> Running in 5c73b998f686
+CMake Installer Version: 3.12.2, Copyright (c) Kitware
+This is a self-extracting archive.
+The archive will be extracted to: /usr/local
+
+Using target directory: /usr/local
+Extracting, please wait...
+
+Unpacking finished successfully
+ ---> 1699427f3389
+Removing intermediate container 5c73b998f686
+Step 6/7 : RUN curl https://bootstrap.pypa.io/get-pip.py | python -
+ ---> Running in 40b127835e87
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    [0m[91mLeft  Speed
+  0     0    0     0    0 [0m[91m    0      0      0 --:--:--  0:00:01 --:--:--     0[0m[91m  1 1764k    1 32237    0     0  19647      0  0:01:31  0:00:01  0:01:3[0m[91m0 50847[0m[91m100 1764k  100 1764k    0     0   769k      0  0:00:02  0:00:02 --:--:-- 1372k
+[0m[91mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+[0m[91m/tmp/tmp7f4ZVX/pip.zip/pip/_vendor/urllib3/util/ssl_.py:380: SNIMissingWarning: An HTTPS request has been made, but the SNI (Server Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+/tmp/tmp7f4ZVX/pip.zip/pip/_vendor/urllib3/util/ssl_.py:139: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+[0mCollecting pip
+[91m/tmp/tmp7f4ZVX/pip.zip/pip/_vendor/urllib3/util/ssl_.py:139: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+[0m  Downloading pip-20.0.2-py2.py3-none-any.whl (1.4 MB)
+Collecting setuptools
+  Downloading setuptools-44.1.0-py2.py3-none-any.whl (583 kB)
+Collecting wheel
+  Downloading wheel-0.34.2-py2.py3-none-any.whl (26 kB)
+Installing collected packages: pip, setuptools, wheel
+Successfully installed pip-20.0.2 setuptools-44.1.0 wheel-0.34.2
+[91m/tmp/tmp7f4ZVX/pip.zip/pip/_vendor/urllib3/util/ssl_.py:139: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+[0m ---> 80651c2f7dd1
+Removing intermediate container 40b127835e87
+Step 7/7 : RUN pip install virtualenv
+ ---> Running in e688c35a1446
+[91mDEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:380: SNIMissingWarning: An HTTPS request has been made, but the SNI (Server Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning,
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:139: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning,
+[0mCollecting virtualenv
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:139: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning,
+[0m  Downloading virtualenv-20.0.14-py2.py3-none-any.whl (4.6 MB)
+Collecting contextlib2<1,>=0.6.0; python_version < "3.3"
+  Downloading contextlib2-0.6.0.post1-py2.py3-none-any.whl (9.8 kB)
+Collecting filelock<4,>=3.0.0
+  Downloading filelock-3.0.12.tar.gz (8.5 kB)
+Collecting importlib-metadata<2,>=0.12; python_version < "3.8"
+  Downloading importlib_metadata-1.5.2-py2.py3-none-any.whl (30 kB)
+Collecting appdirs<2,>=1.4.3
+  Downloading appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting pathlib2<3,>=2.3.3; python_version < "3.4" and sys_platform != "win32"
+  Downloading pathlib2-2.3.5-py2.py3-none-any.whl (18 kB)
+Collecting six<2,>=1.9.0
+  Downloading six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting distlib<1,>=0.3.0
+  Downloading distlib-0.3.0.zip (571 kB)
+Collecting importlib-resources<2,>=1.0; python_version < "3.7"
+  Downloading importlib_resources-1.4.0-py2.py3-none-any.whl (20 kB)
+Collecting zipp>=0.5
+  Downloading zipp-1.2.0-py2.py3-none-any.whl (4.8 kB)
+Collecting configparser>=3.5; python_version < "3"
+  Downloading configparser-4.0.2-py2.py3-none-any.whl (22 kB)
+Collecting scandir; python_version < "3.5"
+  Downloading scandir-1.10.0.tar.gz (33 kB)
+Collecting typing; python_version < "3.5"
+  Downloading typing-3.7.4.1-py2-none-any.whl (26 kB)
+Collecting singledispatch; python_version < "3.4"
+  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl (12 kB)
+Building wheels for collected packages: filelock, distlib, scandir
+  Building wheel for filelock (setup.py): started
+  Building wheel for filelock (setup.py): finished with status 'done'
+  Created wheel for filelock: filename=filelock-3.0.12-py2-none-any.whl size=7578 sha256=234f869c1faefd3af25ebdcc3fee1841e453bd0a0ad426c525b572d6008b741c
+  Stored in directory: /root/.cache/pip/wheels/b9/91/23/b559c1f4fd55056712b3a71cd9cab1dc0089e2232d502ed72e
+  Building wheel for distlib (setup.py): started
+  Building wheel for distlib (setup.py): finished with status 'done'
+  Created wheel for distlib: filename=distlib-0.3.0-py2-none-any.whl size=340428 sha256=d88622d3531bdd61174318c6cfc420be1025fc88a3a69f05fd2e04bcb19500c3
+  Stored in directory: /root/.cache/pip/wheels/0c/88/ac/41500883ea902d3409a83a827870a726346b5ebfd0523e91df
+  Building wheel for scandir (setup.py): started
+  Building wheel for scandir (setup.py): finished with status 'done'
+  Created wheel for scandir: filename=scandir-1.10.0-cp27-cp27mu-linux_x86_64.whl size=11146 sha256=f56ea8bf46cfb3ab92d267733fcce078fa46961f5b76dd01aa6f801cd8442a4d
+  Stored in directory: /root/.cache/pip/wheels/58/2c/26/52406f7d1f19bcc47a6fbd1037a5f293492f5cf1d58c539edb
+Successfully built filelock distlib scandir
+Installing collected packages: contextlib2, filelock, zipp, configparser, scandir, six, pathlib2, importlib-metadata, appdirs, distlib, typing, singledispatch, importlib-resources, virtualenv
+Successfully installed appdirs-1.4.3 configparser-4.0.2 contextlib2-0.6.0.post1 distlib-0.3.0 filelock-3.0.12 importlib-metadata-1.5.2 importlib-resources-1.4.0 pathlib2-2.3.5 scandir-1.10.0 singledispatch-3.4.0.3 six-1.14.0 typing-3.7.4.1 virtualenv-20.0.14 zipp-1.2.0
+ ---> 9ca25f05d91c
+Removing intermediate container e688c35a1446
+Successfully built 9ca25f05d91c
+Successfully tagged binacle:478054969

@@ -1,0 +1,23 @@
+ARG PYTHON
+FROM ibis:$PYTHON
+
+# fonts are for docs
+RUN apt-get -qq update --yes \
+ && apt-get -qq install --yes ttf-dejavu \
+ && rm -rf /var/lib/apt/lists/*
+
+ADD ci/requirements-docs.yml /
+
+RUN conda config --add channels conda-forge \
+ && conda update --all --yes \
+ && conda install --name ibis-env --yes --file /requirements-docs.yml \
+ && conda clean --all --yes
+
+RUN echo 'source activate ibis-env && exec "$@"' > activate.sh
+
+COPY . /ibis
+WORKDIR /ibis
+
+RUN bash /activate.sh pip install -e . --no-deps --ignore-installed --no-cache-dir
+
+ENTRYPOINT ["bash", "/activate.sh"]

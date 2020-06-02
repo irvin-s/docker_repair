@@ -1,0 +1,26 @@
+####################################################################################################################
+# Install insturction: https://rocm.github.io/ROCmInstall.html                                                     #
+# ROCm Docker base image: https://github.com/RadeonOpenCompute/ROCm-docker/blob/master/dev/Dockerfile-ubuntu-18.04 #
+# ROCm Docker template: https://github.com/RadeonOpenCompute/ROCm-docker/blob/master/rocm-terminal/Dockerfile      #
+####################################################################################################################
+FROM boinc/client:baseimage-ubuntu
+
+LABEL maintainer="BOINC" \
+      description="AMD OpenCL-savvy BOINC client."
+
+# Install
+RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install ROCm dependeny
+    curl \
+    gnupg && \
+# Install ROCm Driver
+    curl -sL http://repo.radeon.com/rocm/apt/debian/rocm.gpg.key | apt-key add - && \
+    printf "deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main" | tee /etc/apt/sources.list.d/rocm.list && \
+    apt-get update && apt-get install -y --no-install-recommends \
+    libnuma-dev \
+    libelf1 \
+    rocm-dev && \
+# Cleaning up
+    apt-get remove -y curl gnupg && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*

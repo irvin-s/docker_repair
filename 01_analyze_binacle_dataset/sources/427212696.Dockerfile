@@ -1,0 +1,17 @@
+FROM osem/base
+
+# Add our files
+COPY --chown=1000:1000 . /osem/
+
+USER osem
+WORKDIR /osem/
+
+# Install our bundle
+RUN export NOKOGIRI_USE_SYSTEM_LIBRARIES=1; bundle install --jobs=3 --retry=3 --without test development
+
+# Generate assets
+RUN export RAILS_ENV=production; bundle exec rake assets:clobber assets:precompile
+
+ENV RAILS_ENV=production
+
+CMD ["foreman", "start"]

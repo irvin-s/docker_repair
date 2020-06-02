@@ -1,0 +1,48 @@
+#!/bin/bash
+
+NUM=250 # <~~~~ define how many images you want to build in one pass
+
+HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+mkdir -p ${HERE}/logs/history
+mkdir -p ${HERE}/logs/success
+mkdir -p ${HERE}/logs/fail
+
+if [ ! -d ${HERE}/sources ];
+then
+    echo "Please, download the dataset first!"
+    exit
+fi
+
+for x in `ls -lt sources | grep Dockerfile | head -n $NUM | rev | awk '{print $1}' | rev`;
+do
+    # parse hashcode
+    hash=$(echo $x | cut -d\. -f1)
+    logfile=$HERE/logs/history/$hash.log
+    ## log file exists -> skip
+    if [ -f ${logfile} ];
+    then
+        echo "$hash already processed...skipping"
+        continue
+    fi
+    # create dir and log history
+    mkdir -p $hash
+    (cd $hash;
+     cp ../sources/$hash.Dockerfile Dockerfile
+     touch $logfile
+     echo "Building image binacle:$hash"
+     ## build image, dump output and error streams to $logfile
+     tmp_logfile=$(docker build -t binacle:$hash . 2>&1 )
+    ## removes all images and test the built was successfully or failed
+    if [[ $tmp_logfile == *"Successfully tagged"* ]];
+    then
+       echo "$tmp_logfile" > ${HERE}/logs/success/$hash.log 
+       docker system prune -af
+    else
+       echo "$tmp_logfile" > ${HERE}/logs/fail/$hash.log
+       docker system prune -af
+    fi
+    )
+    # delete dir
+    rm -rf ${HERE}/$hash
+done

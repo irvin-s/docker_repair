@@ -1,0 +1,27 @@
+# Ubuntu 15.04 with Java 8 installed
+ 
+FROM ubuntu:16.04
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y less software-properties-common && \
+    add-apt-repository ppa:webupd8team/java -y && \
+    apt-get update && \
+    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-get install -y oracle-java8-installer && \
+	apt-get install oracle-java8-set-default && \
+	apt-get install unzip && \
+    apt-get clean
+	
+ADD lykke-me-prototype-0.1.zip .
+RUN unzip -q lykke-me-prototype-0.1.zip && \
+    rm lykke-me-prototype-0.1.zip && \
+    mv lykke-me-prototype-* lykke-me-prototype && \
+    chmod +x lykke-me-prototype/bin/start.sh && \
+    chmod +x lykke-me-prototype/bin/stop.sh && \
+    sed -i -e 's/\r$//' lykke-me-prototype/bin/start.sh && \
+    sed -i -e 's/\r$//' lykke-me-prototype/bin/stop.sh
+
+EXPOSE 8886 8887 8888 8889
+
+ENTRYPOINT ["/lykke-me-prototype/bin/start.sh"]
+CMD ["--console"]

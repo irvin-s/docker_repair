@@ -1,0 +1,23 @@
+FROM debian:jessie
+
+#Default branch name develop
+ARG BRANCH_NAME=develop
+#Default
+ARG REPO_SLUG=bitcoinair/bitcoinair
+ENV REPO_SLUG=${REPO_SLUG}
+ENV REPO_URL=https://github.com/${REPO_SLUG}
+
+RUN apt-get -qq update && \
+    apt-get -qqy install \
+	git \
+	sudo
+
+#RUN git clone ${REPO_URL} --branch $BRANCH_NAME --single-branch --depth 1 
+
+COPY bitcoinair.tar.gz /bitcoinair.tar.gz
+RUN tar -xvf /bitcoinair.tar.gz
+
+RUN cd /bitcoinair && ./scripts/dependencies-ubuntu.sh && ./scripts/install-ubuntu.sh && \
+	apt-get purge git build-essential -qy && \
+	apt-get autoremove -qy && \
+	apt-get clean

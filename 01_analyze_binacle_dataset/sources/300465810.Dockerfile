@@ -1,0 +1,1 @@
+FROM quay.io/calico/ctl:v2.0.0-84-g7213a440-arm64

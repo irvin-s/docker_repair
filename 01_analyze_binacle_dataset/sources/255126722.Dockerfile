@@ -1,0 +1,50 @@
+FROM ffmpeg_gpu:latest
+LABEL maintainer="Erwan BERNARD https://github.com/edmBernard/DockerFiles"
+
+RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+
+# Pick up some dependencies
+RUN apt-get update && apt-get install -y \
+        libjasper-dev \
+        && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p "/home/dev/lib/opencv"
+ENV OPENCV_DIR "/home/dev/lib/opencv"
+
+# download opencv4
+RUN cd "$OPENCV_DIR" && \
+    wget https://github.com/opencv/opencv/archive/4.1.0.zip && \
+    unzip 4.1.0.zip && \
+    rm 4.1.0.zip
+    # git clone https://github.com/opencv/opencv.git  <-- don't work anymore : GnuTLS recv error
+
+# download opencv4 contrib
+RUN cd "$OPENCV_DIR" && \
+    wget https://github.com/opencv/opencv_contrib/archive/4.1.0.zip && \
+    unzip 4.1.0.zip && \
+    rm 4.1.0.zip
+    # git clone https://github.com/opencv/opencv_contrib.git  <-- don't work anymore : GnuTLS recv error
+
+# build opencv4
+RUN cd "$OPENCV_DIR/opencv-4.1.0" && mkdir build && cd build && \
+    cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D WITH_CUDA=ON \
+    # -D WITH_NVCUVID=ON \
+    -D CMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D OPENCV_EXTRA_MODULES_PATH="$OPENCV_DIR/opencv_contrib-4.1.0/modules" \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D BUILD_EXAMPLES=OFF \
+    -D BUILD_TESTS=OFF \
+    -D BUILD_PERF_TESTS=OFF \
+    -D WITH_IPP=ON .. && \
+    make -j$(nproc) && \
+    make install && \
+    /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && \
+    ldconfig && \
+    cd .. && rm -r build
+

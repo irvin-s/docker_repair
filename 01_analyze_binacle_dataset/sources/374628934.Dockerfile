@@ -1,0 +1,15 @@
+FROM node:carbon-alpine
+
+WORKDIR /app
+COPY api .
+
+# info on ARG/ENV and build step: https://github.com/docker/compose/issues/1837
+ARG NODE_ENV
+ENV NODE_ENV "$NODE_ENV"
+
+RUN yarn global add wait-on
+RUN yarn install
+
+EXPOSE 4000
+
+CMD wait-on -l tcp:db:5432 tcp:rabbitmq:5672 && yarn start

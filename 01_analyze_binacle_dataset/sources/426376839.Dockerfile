@@ -1,0 +1,6 @@
+#ifndef DOCKERFILE_SUPERVISORD_RUN
+#define DOCKERFILE_SUPERVISORD_RUN
+
+CMD ["/usr/bin/supervisord", "-n"]
+
+#endif // DOCKERFILE_SUPERVISORD_RUN

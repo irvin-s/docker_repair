@@ -1,0 +1,39 @@
+FROM node:10-alpine
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+
+# Build backend code
+
+COPY . /usr/src/app
+
+RUN npm install && \
+     npm cache clean --force && \
+     npm run build && \
+     mv ./edge-override.json ./config-override.json
+
+
+# Build frontend code
+
+ # This quick hack invalidates the cache
+ADD https://www.google.com /time.now
+
+RUN mkdir -p /usr/src/app-frontend && cd /usr/src/app-frontend && \
+    git clone https://github.com/githubsaturn/caprover-frontend.git && \
+    cd caprover-frontend && \
+    git log --max-count=1 && \
+    npm install && npm cache clean --force && \
+    npm run build && \
+    mv ./build ../../app/dist-frontend && \
+    cd / && \
+    rm -rf /usr/src/app-frontend
+
+
+ENV NODE_ENV production
+ENV PORT 3000
+EXPOSE 3000
+
+CMD ["npm" , "start"]

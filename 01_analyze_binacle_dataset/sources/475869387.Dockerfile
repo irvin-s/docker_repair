@@ -1,0 +1,47 @@
+FROM golang:alpine
+
+# Set the default timezone to EST.
+ENV TZ=America/New_York
+RUN set -ex \
+  && apk add --update tzdata \
+  && cp "/usr/share/zoneinfo/$TZ" /etc/localtime \
+  && echo $TZ > /etc/timezone
+
+# We need git for pulling dependencies and bash for debugging.
+RUN set -ex && apk add --update 'git' && apk add 'bash'
+
+# Copy in requisite files.
+COPY ./infra /go/src/github.com/gophr-pm/gophr/infra
+COPY ./lib /go/src/github.com/gophr-pm/gophr/lib
+COPY ./migrator /go/src/github.com/gophr-pm/gophr/migrator
+
+# Build source and move things around.
+RUN cd /go/src/github.com/gophr-pm/gophr/migrator \
+    && echo -e "\nFetching dependencies...\n" \
+    && go get -d -v \
+    && echo -e "\nBuilding the binary...\n" \
+    && go build -v -o gophr-migrator-binary \
+    && chmod +x ./gophr-migrator-binary \
+    && echo -e "\nMoving things around...\n" \
+    && mkdir /gophr \
+    && mv ./gophr-migrator-binary /gophr/gophr-migrator-binary \
+    && mv ../migrator/migrations /gophr/migrations \
+    && mv ../infra/scripts/wait-for-it.sh /gophr/wait-for-it.sh \
+    && cd /gophr \
+    && rm -rf /go
+
+# Since its no longer necessary, remove git.
+RUN set -ex && apk del git
+
+# Set the environment variables
+ENV GOPHR_ENV="prod"
+ENV GOPHR_DB_ADDR="db-svc"
+ENV GOPHR_MIGRATIONS_PATH="/gophr/migrations"
+
+# Set the generated directory as the work directory.
+WORKDIR /gophr
+
+# Wait for db:9042 with no timeout, then start the binary.
+CMD ./wait-for-it.sh -h "$GOPHR_DB_ADDR" -p 9042 -t 0 \
+    -- \
+    ./gophr-migrator-binary
