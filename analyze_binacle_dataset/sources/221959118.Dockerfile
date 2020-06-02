@@ -1,7 +1,0 @@
-ARG GRAFANA_VERSION
-FROM grafana/grafana:${GRAFANA_VERSION}
-
-COPY run.sh /run.sh
-
-EXPOSE 3000
-ENTRYPOINT /run.sh

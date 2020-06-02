@@ -1,1 +1,0 @@
-FROM nbrown/revealjs:onbuild

@@ -1,1 +1,0 @@
-FROM <%= config[:image] %>

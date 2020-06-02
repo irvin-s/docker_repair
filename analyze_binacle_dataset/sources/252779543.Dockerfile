@@ -1,2 +1,0 @@
-FROM buildpack-deps:bionic  
-

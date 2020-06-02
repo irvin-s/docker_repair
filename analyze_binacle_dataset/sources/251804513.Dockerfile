@@ -1,1 +1,0 @@
-FROM gcr.io/google_containers/heapster:4google_containers_heapster-s390x

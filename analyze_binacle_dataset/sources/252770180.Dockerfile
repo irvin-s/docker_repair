@@ -1,2 +1,0 @@
-FROM asakaguchi/node:onbuild  
-

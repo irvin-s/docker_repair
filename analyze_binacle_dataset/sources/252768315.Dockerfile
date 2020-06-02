@@ -1,2 +1,0 @@
-FROM adopteunops/logspout:latest  
-

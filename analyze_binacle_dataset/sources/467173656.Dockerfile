@@ -1,1 +1,0 @@
-FROM zenika/kotlin:latest

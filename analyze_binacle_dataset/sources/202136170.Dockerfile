@@ -1,9 +1,0 @@
-FROM golang:1.11
-
-ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
-ENV BUILDTAGS include_oss include_gcs
-
-WORKDIR $DISTRIBUTION_DIR
-COPY . $DISTRIBUTION_DIR
-
-RUN CGO_ENABLED=0 make PREFIX=/go clean binaries

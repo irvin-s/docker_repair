@@ -1,7 +1,0 @@
-FROM scratch
-COPY . /
-ENV CLOUDPROXY_TAO_HOST_CHANNEL_TYPE unix
-ENV CLOUDPROXY_TAO_HOST_SPEC /tao
-ENV TAO_DOMAIN /
-WORKDIR .
-ENTRYPOINT ["/bin/demo_client", "--logtostderr"]

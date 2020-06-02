@@ -1,3 +1,0 @@
-# Dockerfile  
-FROM aedm/minimeteor  
-

@@ -1,5 +1,0 @@
-FROM python:2.7.13
-ADD snippet.py snippet.py
-RUN ["pip", "install", "mutagen"]
-RUN ["pip", "install", "mutagen"]
-CMD ["python", "snippet.py"]

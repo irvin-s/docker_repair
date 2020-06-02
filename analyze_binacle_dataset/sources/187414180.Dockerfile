@@ -1,1 +1,0 @@
-FROM logicalspark/docker-tikaserver

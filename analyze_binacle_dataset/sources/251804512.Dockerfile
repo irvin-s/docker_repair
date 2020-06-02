@@ -1,1 +1,0 @@
-FROM gcr.io/google_containers/heapster:3google_containers_heapster-ppc64le

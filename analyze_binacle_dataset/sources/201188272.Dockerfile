@@ -1,2 +1,0 @@
-FROM omercnet/httrack:latest
-

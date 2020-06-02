@@ -1,6 +1,0 @@
-FROM node:6-slim
-RUN npm install -g yarn
-RUN mkdir /app
-ADD package.json yarn.lock /app/
-WORKDIR /app
-RUN yarn --ignore-engines

@@ -1,6 +1,0 @@
-
-FROM alpine
-ENV HCMS_HOST=0.0.0.0 HCMS_PORT=80
-COPY hcms /
-ENTRYPOINT ["/hcms"]
-EXPOSE 80

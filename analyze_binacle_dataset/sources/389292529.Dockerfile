@@ -1,5 +1,0 @@
-FROM centos:7
-
-RUN yum -y update && \
-    yum -y groupinstall "Development Tools" && \
-    yum -y install sudo wget git-core ruby rpm-build rpmdevtools spectool createrepo apr-devel apr-util-devel opencv-devel python-devel

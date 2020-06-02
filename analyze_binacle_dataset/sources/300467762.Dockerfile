@@ -1,1 +1,0 @@
-FROM quay.io/calico/node:v3.3.4-arm64

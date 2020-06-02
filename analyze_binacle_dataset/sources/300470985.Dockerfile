@@ -1,1 +1,0 @@
-FROM quay.io/calico/routereflector:v0.2.0-rc1

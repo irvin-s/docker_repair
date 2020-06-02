@@ -1,2 +1,0 @@
-FROM advizex/runbook:onbuild  
-

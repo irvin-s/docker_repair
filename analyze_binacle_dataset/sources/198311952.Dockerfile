@@ -1,1 +1,0 @@
-RUN pip install "allennlp>=0.8,<0.9"

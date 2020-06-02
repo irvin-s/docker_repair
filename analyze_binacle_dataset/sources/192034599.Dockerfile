@@ -1,9 +1,0 @@
-# Photon Base Build Container
-
-FROM vmware/photon:2.0
-
-MAINTAINER kulkarniv@vmware.com
-
-ADD tmp/k8s/usr/bin/kube-controller-manager /usr/bin/kube-controller-manager
-
-CMD ["/usr/bin/kube-controller-manager"]

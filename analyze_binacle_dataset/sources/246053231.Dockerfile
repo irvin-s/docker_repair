@@ -1,1 +1,0 @@
-FROM kaggle/rstats:latest

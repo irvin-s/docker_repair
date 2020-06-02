@@ -1,1 +1,0 @@
-FROM mongoclient/mongoclient

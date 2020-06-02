@@ -1,5 +1,0 @@
-FROM node
-
-WORKDIR /app
-
-EXPOSE 5555

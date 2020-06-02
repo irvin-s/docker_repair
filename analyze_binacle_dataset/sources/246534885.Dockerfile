@@ -1,4 +1,0 @@
-FROM ubuntu:16.04
-
-# Install Python so Ansible can run against node
-RUN apt-get update -y && apt-get install -y python-minimal

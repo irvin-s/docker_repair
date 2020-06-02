@@ -1,1 +1,0 @@
-FROM rroemhild/test-openldap:latest

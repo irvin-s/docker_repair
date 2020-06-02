@@ -1,1 +1,0 @@
-FROM quay.io/calico/cni:v3.3.4-1-g5bf0661-amd64

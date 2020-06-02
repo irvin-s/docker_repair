@@ -1,4 +1,0 @@
-FROM ubuntu  
-RUN whoami  
-  
-

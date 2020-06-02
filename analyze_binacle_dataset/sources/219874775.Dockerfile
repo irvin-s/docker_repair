@@ -1,9 +1,0 @@
-FROM golang:1.9
-
-WORKDIR /go/src/github.com/orange-lang/orange 
-ADD . /go/src/github.com/orange-lang/orange 
-
-
-RUN go get -t -v ./...
-RUN go build cmd/...
-RUN go test -v ./...

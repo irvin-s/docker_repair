@@ -1,8 +1,0 @@
-FROM registry:2.7.1
-
-COPY hub.* /certs/
-ENV REGISTRY_HTTP_TLS_CERTIFICATE /certs/hub.crt
-ENV REGISTRY_HTTP_TLS_KEY /certs/hub.key
-
-ENV REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY /data
-ADD images.tar.gz /data/

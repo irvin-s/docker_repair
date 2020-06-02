@@ -1,1 +1,0 @@
-FROM gngdb/revealjs

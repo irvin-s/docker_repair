@@ -1,1 +1,0 @@
-FROM avfisherdocker/wordpress:4.9.8

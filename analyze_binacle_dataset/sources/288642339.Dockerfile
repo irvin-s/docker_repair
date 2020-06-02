@@ -1,6 +1,0 @@
-FROM ARG_FROM
-
-ADD bin/ARG_BIN-ARG_ARCH /ARG_BIN
-
-USER nobody:nobody
-ENTRYPOINT ["/ARG_BIN"]

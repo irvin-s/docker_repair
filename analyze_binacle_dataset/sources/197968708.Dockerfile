@@ -1,5 +1,0 @@
-FROM alpine:4
-
-SHELL ["/bin/sh"]
-SHELL "bin/sh"
-SHELL ["/bin/sh", "-c"]

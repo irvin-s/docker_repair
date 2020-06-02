@@ -1,1 +1,0 @@
-FROM quay.io/calico/ctl:v2.0.0-110-g9a3a9543-ppc64le

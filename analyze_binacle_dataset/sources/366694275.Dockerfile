@@ -1,3 +1,0 @@
-FROM meteorhacks/meteord:onbuild
-
-

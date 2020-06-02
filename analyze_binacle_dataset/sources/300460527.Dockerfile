@@ -1,1 +1,0 @@
-FROM gcr.io/istio-release/servicegraph:master-20180915-09-15

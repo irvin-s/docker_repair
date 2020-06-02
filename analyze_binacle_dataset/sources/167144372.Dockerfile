@@ -1,3 +1,0 @@
-FROM frodenas/rabbitmq
-ENV RABBITMQ_USERNAME guest
-ENV RABBITMQ_PASSWORD guest

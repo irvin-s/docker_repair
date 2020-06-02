@@ -1,6 +1,0 @@
-FROM golang:1.8
-
-RUN apt-get update && apt-get install -yq libpcap-dev libnetfilter-queue-dev
-RUN go get golang.org/x/net/bpf
-RUN go get golang.org/x/net/context
-RUN go get golang.org/x/net/proxy

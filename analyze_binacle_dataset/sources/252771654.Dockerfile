@@ -1,2 +1,0 @@
-FROM astronomerio/aries-data
-

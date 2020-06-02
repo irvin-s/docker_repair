@@ -1,1 +1,0 @@
-FROM daocloud.io/guangqiang/android

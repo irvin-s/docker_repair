@@ -1,1 +1,0 @@
-FROM python:3.7.0-alpine3.7@sha256:56db1cdc715a8d67f93953c035c266895a13ffff994d13ecf2a81b0e580aa95f

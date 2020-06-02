@@ -1,8 +1,0 @@
-FROM python:3.7
-
-COPY setup.sh /setup.sh
-
-RUN chmod +x /setup.sh && \
-    /setup.sh
-
-ENTRYPOINT [ "/entrypoint.sh", "docker" ]

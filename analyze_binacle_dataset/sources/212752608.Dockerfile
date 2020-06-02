@@ -1,8 +1,0 @@
-FROM freeipa/freeipa-server:fedora-29
-COPY init-ipa-server-install-options ipa-precreate-hosts /usr/sbin/
-COPY ipa-precreate-hosts.service /usr/lib/systemd/system/
-RUN mkdir /usr/lib/systemd/system/container-ipa.target.wants \
-	&& ln -s /usr/lib/systemd/system/ipa-precreate-hosts.service /usr/lib/systemd/system/container-ipa.target.wants/ipa-precreate-hosts.service
-RUN ln -s /data /var/www/html/pub
-
-ENTRYPOINT [ "/usr/sbin/init-ipa-server-install-options" ]

@@ -1,3 +1,0 @@
-#VERSION: 1.0.0
-
-FROM blah

@@ -1,1 +1,0 @@
-FROM flopes/spring-boot-docker:1.1

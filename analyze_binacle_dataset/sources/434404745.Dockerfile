@@ -1,1 +1,0 @@
-FROM stain/jena-fuseki:2.6.0

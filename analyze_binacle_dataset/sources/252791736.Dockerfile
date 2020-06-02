@@ -1,2 +1,0 @@
-FROM tozd/meteor  
-

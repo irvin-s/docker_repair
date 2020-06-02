@@ -1,1 +1,0 @@
-FROM quay.io/calico/kube-controllers:v3.2.7-0-gb7eaca6-arm64

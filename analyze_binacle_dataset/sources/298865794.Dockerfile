@@ -1,1 +1,0 @@
-FROM zeroboh/mariadb:10.1-debian-jessie

@@ -1,1 +1,0 @@
-FROM gcr.io/google_containers/heapster:v0.13.0

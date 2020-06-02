@@ -1,1 +1,0 @@
-FROM logstash:5

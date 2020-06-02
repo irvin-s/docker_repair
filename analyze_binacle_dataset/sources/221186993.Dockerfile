@@ -1,1 +1,0 @@
-FROM hone/mruby-cli

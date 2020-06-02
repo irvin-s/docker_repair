@@ -1,1 +1,0 @@
-FROM gcr.io/google_containers/elasticsearch:v6.3.0

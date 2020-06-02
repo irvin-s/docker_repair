@@ -1,6 +1,0 @@
-ARG BASE_USER
-ARG MAINTAINER
-FROM ${BASE_USER}/nodejs
-MAINTAINER $MAINTAINER
-
-RUN sudo npm install -g uncss

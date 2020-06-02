@@ -1,1 +1,0 @@
-FROM runnable/consul-server:0.6.4

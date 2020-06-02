@@ -1,2 +1,0 @@
-FROM drupal:8  
-

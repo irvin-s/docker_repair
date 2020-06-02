@@ -1,8 +1,0 @@
-FROM debian  
-MAINTAINER Cheng Jeng<s100062314@m100.nthu.edu.tw>  
-RUN apt-get update && \  
-apt-get install -y \  
-apache2  
-EXPOSE 80  
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]  
-

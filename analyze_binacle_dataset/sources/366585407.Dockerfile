@@ -1,5 +1,0 @@
-FROM scratch
-COPY corald /
-ENV CORAL_HOST 127.0.0.1:16180
-EXPOSE 16180
-CMD ["/corald"]

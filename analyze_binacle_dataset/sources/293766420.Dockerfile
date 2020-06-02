@@ -1,8 +1,0 @@
-FROM centos:7
-LABEL maintainer="Jian Zeng <anonymousknight96 AT gmail.com>" \
-      org.ustcmirror.images=true
-ADD ["entry.sh", "savelog", "/usr/local/bin/"]
-VOLUME ["/data", "/log"]
-ENTRYPOINT ["entry.sh"]
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    curl -o /usr/local/bin/su-exec http://ftp.ustclug.org/misc/su-exec && chmod +x /usr/local/bin/su-exec

@@ -1,1 +1,0 @@
-FROM heroku/go:latest

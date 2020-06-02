@@ -1,2 +1,0 @@
-FROM google/python-runtime
-

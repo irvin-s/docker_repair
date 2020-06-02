@@ -1,1 +1,0 @@
-FROM gcr.io/google_containers/heapster_grafana:v2.1.1

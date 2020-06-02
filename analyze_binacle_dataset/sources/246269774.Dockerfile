@@ -1,4 +1,0 @@
-FROM oroinc/php:7.1-fpm-xenial
-COPY conf/websocket.sh /usr/local/bin/websocket.sh
-CMD "websocket.sh"
-EXPOSE 8080

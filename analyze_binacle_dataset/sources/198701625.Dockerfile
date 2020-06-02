@@ -1,1 +1,0 @@
-FROM fabric8/chaos-monkey:2.2.115

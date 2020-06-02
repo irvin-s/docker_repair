@@ -1,3 +1,0 @@
-FROM centos
-
-CMD ["cat"]

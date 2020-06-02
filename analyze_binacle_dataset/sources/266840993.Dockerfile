@@ -1,2 +1,0 @@
-FROM appcelerator/etcd:latest
-

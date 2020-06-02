@@ -1,3 +1,0 @@
-FROM readytalk/nodejs-runtime  
-  
-

@@ -1,5 +1,0 @@
-FROM postgres:latest
-
-ENV POSTGRES_USER plenario_redshift
-ENV POSTGRES_PASSWORD plenario_redshift
-ENV POSTGRES_DB plenario_redshift

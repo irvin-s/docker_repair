@@ -1,1 +1,0 @@
-FROM erlang:R15

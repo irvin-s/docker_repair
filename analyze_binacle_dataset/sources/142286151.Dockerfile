@@ -1,2 +1,0 @@
-FROM fedora:27
-ENV ASAN=1

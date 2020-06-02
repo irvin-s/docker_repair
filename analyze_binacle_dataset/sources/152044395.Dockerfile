@@ -1,1 +1,0 @@
-FROM {{registry}}missing/image

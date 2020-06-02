@@ -1,1 +1,0 @@
-FROM badnack/bootstomp

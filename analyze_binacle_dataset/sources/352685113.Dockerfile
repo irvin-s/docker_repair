@@ -1,9 +1,0 @@
-FROM alpine:3.3
-
-COPY traefik /traefik
-
-WORKDIR /
-ENTRYPOINT ["/traefik"]
-EXPOSE 8080
-EXPOSE 80
-EXPOSE 443

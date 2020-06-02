@@ -1,5 +1,0 @@
-FROM scratch
-COPY xeniad /
-ENV XENIA_HOST 127.0.0.1:16182
-EXPOSE 16182
-CMD ["/xeniad"]
