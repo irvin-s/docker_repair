@@ -1,0 +1,1482 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM fedora:25
+25: Pulling from library/fedora
+8ab017634520: Pulling fs layer
+8ab017634520: Verifying Checksum
+8ab017634520: Download complete
+8ab017634520: Pull complete
+Digest: sha256:322cb01bbca26972c98051bacd3ab8555cec059496d64d35ee78b15de9ea0d06
+Status: Downloaded newer image for fedora:25
+ ---> 9cffd21a45e3
+Step 2/10 : RUN dnf -y upgrade
+ ---> Running in 5a45a73dbb2b
+Last metadata expiration check: 0:00:10 ago on Thu Apr  2 15:58:13 2020.
+Dependencies resolved.
+================================================================================
+ Package                       Arch      Version               Repository  Size
+================================================================================
+Upgrading:
+ audit-libs                    x86_64    2.8.1-1.fc25          updates    111 k
+ ca-certificates               noarch    2017.2.20-1.0.fc25    updates    406 k
+ dbus                          x86_64    1:1.11.18-1.fc25      updates    257 k
+ dbus-libs                     x86_64    1:1.11.18-1.fc25      updates    175 k
+ emacs-filesystem              noarch    1:25.3-3.fc25         updates     67 k
+ gawk                          x86_64    4.1.3-12.fc25         updates    1.0 M
+ krb5-libs                     x86_64    1.14.4-9.fc25         updates    742 k
+ libgcrypt                     x86_64    1.7.9-1.fc25          updates    436 k
+ libsolv                       x86_64    0.6.29-2.fc25         updates    360 k
+ libssh2                       x86_64    1.8.0-5.fc25          updates     94 k
+ libsss_idmap                  x86_64    1.16.0-4.fc25         updates     86 k
+ libsss_nss_idmap              x86_64    1.16.0-4.fc25         updates     84 k
+ lua-libs                      x86_64    5.3.4-7.fc25          updates    114 k
+ nspr                          x86_64    4.17.0-1.fc25         updates    138 k
+ nss                           x86_64    3.34.0-1.0.fc25       updates    851 k
+ nss-softokn                   x86_64    3.34.0-1.0.fc25       updates    389 k
+ nss-softokn-freebl            x86_64    3.34.0-1.0.fc25       updates    231 k
+ nss-sysinit                   x86_64    3.34.0-1.0.fc25       updates     62 k
+ nss-tools                     x86_64    3.34.0-1.0.fc25       updates    516 k
+ nss-util                      x86_64    3.34.0-1.0.fc25       updates     87 k
+ openssl-libs                  x86_64    1:1.0.2m-1.fc25       updates    1.2 M
+ p11-kit                       x86_64    0.23.9-2.fc25         updates    262 k
+ p11-kit-trust                 x86_64    0.23.9-2.fc25         updates    131 k
+ pcre                          x86_64    8.41-3.fc25           updates    199 k
+ popt                          x86_64    1.16-12.fc25          updates     58 k
+ publicsuffix-list-dafsa       noarch    20170828-1.fc25       updates     45 k
+ python3                       x86_64    3.5.4-2.fc25          updates     58 k
+ python3-libs                  x86_64    3.5.4-2.fc25          updates    1.4 M
+ python3-rpm                   x86_64    4.13.0.2-1.fc25       updates    106 k
+ rpm                           x86_64    4.13.0.2-1.fc25       updates    518 k
+ rpm-build-libs                x86_64    4.13.0.2-1.fc25       updates    121 k
+ rpm-libs                      x86_64    4.13.0.2-1.fc25       updates    305 k
+ rpm-plugin-selinux            x86_64    4.13.0.2-1.fc25       updates     57 k
+ rpm-plugin-systemd-inhibit    x86_64    4.13.0.2-1.fc25       updates     57 k
+ sssd-client                   x86_64    1.16.0-4.fc25         updates    137 k
+ system-python                 x86_64    3.5.4-2.fc25          updates     51 k
+ system-python-libs            x86_64    3.5.4-2.fc25          updates    6.9 M
+ systemd                       x86_64    231-19.fc25           updates    2.8 M
+ systemd-libs                  x86_64    231-19.fc25           updates    422 k
+ systemd-pam                   x86_64    231-19.fc25           updates    178 k
+ vim-minimal                   x86_64    2:8.0.1171-1.fc25     updates    531 k
+
+Transaction Summary
+================================================================================
+Upgrade  41 Packages
+
+Total download size: 22 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           7.2 MB/s |  22 MB     00:02     
+[91mwarning: /var/cache/dnf/updates-87ad44ec2dc11249/packages/audit-libs-2.8.1-1.fc25.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID fdb19c98: NOKEY
+[0m[91mImporting GPG key 0xFDB19C98:
+ Userid     : "Fedora 25 Primary (25) <fedora-25-primary@fedoraproject.org>"
+ Fingerprint: C437 DCCD 558A 66A3 7D6F 4372 4089 D8F2 FDB1 9C98
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-25-x86_64
+[0mKey imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Upgrading   : nspr-4.17.0-1.fc25.x86_64                                  1/82 
+  Upgrading   : nss-util-3.34.0-1.0.fc25.x86_64                            2/82 
+  Upgrading   : popt-1.16-12.fc25.x86_64                                   3/82 
+  Upgrading   : lua-libs-5.3.4-7.fc25.x86_64                               4/82 
+  Upgrading   : libgcrypt-1.7.9-1.fc25.x86_64                              5/82 
+  Upgrading   : systemd-libs-231-19.fc25.x86_64                            6/82 
+  Upgrading   : dbus-libs-1:1.11.18-1.fc25.x86_64                          7/82 
+  Upgrading   : p11-kit-0.23.9-2.fc25.x86_64                               8/82 
+  Upgrading   : audit-libs-2.8.1-1.fc25.x86_64                             9/82 
+  Upgrading   : systemd-pam-231-19.fc25.x86_64                            10/82 
+  Upgrading   : systemd-231-19.fc25.x86_64                                11/82 
+  Upgrading   : dbus-1:1.11.18-1.fc25.x86_64                              12/82 
+  Upgrading   : p11-kit-trust-0.23.9-2.fc25.x86_64                        13/82 
+  Upgrading   : ca-certificates-2017.2.20-1.0.fc25.noarch                 14/82 
+  Upgrading   : nss-softokn-freebl-3.34.0-1.0.fc25.x86_64                 15/82 
+  Upgrading   : nss-softokn-3.34.0-1.0.fc25.x86_64                        16/82 
+  Upgrading   : nss-3.34.0-1.0.fc25.x86_64                                17/82 
+  Upgrading   : nss-sysinit-3.34.0-1.0.fc25.x86_64                        18/82 
+  Upgrading   : rpm-4.13.0.2-1.fc25.x86_64                                19/82 
+  Upgrading   : rpm-libs-4.13.0.2-1.fc25.x86_64                           20/82 
+  Upgrading   : rpm-plugin-selinux-4.13.0.2-1.fc25.x86_64                 21/82 
+  Upgrading   : rpm-build-libs-4.13.0.2-1.fc25.x86_64                     22/82 
+  Upgrading   : libsss_nss_idmap-1.16.0-4.fc25.x86_64                     23/82 
+  Upgrading   : libsss_idmap-1.16.0-4.fc25.x86_64                         24/82 
+  Upgrading   : gawk-4.1.3-12.fc25.x86_64                                 25/82 
+  Upgrading   : krb5-libs-1.14.4-9.fc25.x86_64                            26/82 
+  Upgrading   : openssl-libs-1:1.0.2m-1.fc25.x86_64                       27/82 
+  Upgrading   : system-python-libs-3.5.4-2.fc25.x86_64                    28/82 
+  Upgrading   : python3-libs-3.5.4-2.fc25.x86_64                          29/82 
+  Upgrading   : system-python-3.5.4-2.fc25.x86_64                         30/82 
+  Upgrading   : python3-rpm-4.13.0.2-1.fc25.x86_64                        31/82 
+  Upgrading   : python3-3.5.4-2.fc25.x86_64                               32/82 
+  Upgrading   : libssh2-1.8.0-5.fc25.x86_64                               33/82 
+  Upgrading   : sssd-client-1.16.0-4.fc25.x86_64                          34/82 
+  Upgrading   : libsolv-0.6.29-2.fc25.x86_64                              35/82 
+  Upgrading   : rpm-plugin-systemd-inhibit-4.13.0.2-1.fc25.x86_64         36/82 
+  Upgrading   : nss-tools-3.34.0-1.0.fc25.x86_64                          37/82 
+  Upgrading   : vim-minimal-2:8.0.1171-1.fc25.x86_64                      38/82 
+  Upgrading   : publicsuffix-list-dafsa-20170828-1.fc25.noarch            39/82 
+  Upgrading   : pcre-8.41-3.fc25.x86_64                                   40/82 
+  Upgrading   : emacs-filesystem-1:25.3-3.fc25.noarch                     41/82 
+  Cleanup     : publicsuffix-list-dafsa-20170424-1.fc25.noarch            42/82 
+  Cleanup     : emacs-filesystem-1:25.2-3.fc25.noarch                     43/82 
+  Cleanup     : python3-rpm-4.13.0.1-2.fc25.x86_64                        44/82 
+  Cleanup     : nss-tools-3.32.0-1.1.fc25.x86_64                          45/82 
+  Cleanup     : systemd-pam-231-17.fc25.x86_64                            46/82 
+  Cleanup     : dbus-1:1.11.16-1.fc25.x86_64                              47/82[91mFailed to connect to bus: No such file or directory
+[0m 
+  Cleanup     : systemd-231-17.fc25.x86_64                                48/82 
+  Cleanup     : rpm-plugin-systemd-inhibit-4.13.0.1-2.fc25.x86_64         49/82 
+  Cleanup     : rpm-build-libs-4.13.0.1-2.fc25.x86_64                     50/82 
+  Cleanup     : sssd-client-1.15.3-1.fc25.x86_64                          51/82 
+  Cleanup     : python3-3.5.4-1.fc25.x86_64                               52/82 
+  Cleanup     : python3-libs-3.5.4-1.fc25.x86_64                          53/82 
+  Cleanup     : dbus-libs-1:1.11.16-1.fc25.x86_64                         54/82 
+  Cleanup     : systemd-libs-231-17.fc25.x86_64                           55/82 
+  Cleanup     : system-python-3.5.4-1.fc25.x86_64                         56/82 
+  Cleanup     : system-python-libs-3.5.4-1.fc25.x86_64                    57/82 
+  Cleanup     : libssh2-1.8.0-1.fc25.x86_64                               58/82 
+  Cleanup     : openssl-libs-1:1.0.2k-1.fc25.x86_64                       59/82 
+  Cleanup     : krb5-libs-1.14.4-8.fc25.x86_64                            60/82 
+  Cleanup     : ca-certificates-2017.2.16-1.0.fc25.noarch                 61/82 
+  Cleanup     : p11-kit-trust-0.23.8-1.fc25.x86_64                        62/82 
+  Cleanup     : libsolv-0.6.29-1.fc25.x86_64                              63/82 
+  Cleanup     : rpm-4.13.0.1-2.fc25.x86_64                                64/82 
+  Cleanup     : rpm-plugin-selinux-4.13.0.1-2.fc25.x86_64                 65/82 
+  Cleanup     : rpm-libs-4.13.0.1-2.fc25.x86_64                           66/82 
+  Cleanup     : nss-sysinit-3.32.0-1.1.fc25.x86_64                        67/82 
+  Cleanup     : nss-3.32.0-1.1.fc25.x86_64                                68/82 
+  Cleanup     : nss-softokn-3.32.0-1.2.fc25.x86_64                        69/82 
+  Cleanup     : nss-util-3.32.0-1.0.fc25.x86_64                           70/82 
+  Cleanup     : nspr-4.16.0-1.fc25.x86_64                                 71/82 
+  Cleanup     : nss-softokn-freebl-3.32.0-1.2.fc25.x86_64                 72/82 
+  Cleanup     : lua-libs-5.3.4-3.fc25.x86_64                              73/82 
+  Cleanup     : popt-1.16-7.fc24.x86_64                                   74/82 
+  Cleanup     : p11-kit-0.23.8-1.fc25.x86_64                              75/82 
+  Cleanup     : gawk-4.1.3-8.fc25.x86_64                                  76/82 
+  Cleanup     : libgcrypt-1.7.8-1.fc25.x86_64                             77/82 
+  Cleanup     : libsss_idmap-1.15.3-1.fc25.x86_64                         78/82 
+  Cleanup     : libsss_nss_idmap-1.15.3-1.fc25.x86_64                     79/82 
+  Cleanup     : audit-libs-2.7.7-1.fc25.x86_64                            80/82 
+  Cleanup     : vim-minimal-2:8.0.1030-1.fc25.x86_64                      81/82 
+  Cleanup     : pcre-8.41-1.fc25.x86_64                                   82/82[91mFailed to connect to bus: No such file or directory
+[0m 
+  Verifying   : audit-libs-2.8.1-1.fc25.x86_64                             1/82 
+  Verifying   : ca-certificates-2017.2.20-1.0.fc25.noarch                  2/82 
+  Verifying   : dbus-1:1.11.18-1.fc25.x86_64                               3/82 
+  Verifying   : dbus-libs-1:1.11.18-1.fc25.x86_64                          4/82 
+  Verifying   : emacs-filesystem-1:25.3-3.fc25.noarch                      5/82 
+  Verifying   : gawk-4.1.3-12.fc25.x86_64                                  6/82 
+  Verifying   : krb5-libs-1.14.4-9.fc25.x86_64                             7/82 
+  Verifying   : libgcrypt-1.7.9-1.fc25.x86_64                              8/82 
+  Verifying   : libsolv-0.6.29-2.fc25.x86_64                               9/82 
+  Verifying   : libssh2-1.8.0-5.fc25.x86_64                               10/82 
+  Verifying   : libsss_idmap-1.16.0-4.fc25.x86_64                         11/82 
+  Verifying   : libsss_nss_idmap-1.16.0-4.fc25.x86_64                     12/82 
+  Verifying   : lua-libs-5.3.4-7.fc25.x86_64                              13/82 
+  Verifying   : nspr-4.17.0-1.fc25.x86_64                                 14/82 
+  Verifying   : nss-3.34.0-1.0.fc25.x86_64                                15/82 
+  Verifying   : nss-softokn-3.34.0-1.0.fc25.x86_64                        16/82 
+  Verifying   : nss-util-3.34.0-1.0.fc25.x86_64                           17/82 
+  Verifying   : nss-softokn-freebl-3.34.0-1.0.fc25.x86_64                 18/82 
+  Verifying   : nss-tools-3.34.0-1.0.fc25.x86_64                          19/82 
+  Verifying   : nss-sysinit-3.34.0-1.0.fc25.x86_64                        20/82 
+  Verifying   : openssl-libs-1:1.0.2m-1.fc25.x86_64                       21/82 
+  Verifying   : p11-kit-0.23.9-2.fc25.x86_64                              22/82 
+  Verifying   : p11-kit-trust-0.23.9-2.fc25.x86_64                        23/82 
+  Verifying   : pcre-8.41-3.fc25.x86_64                                   24/82 
+  Verifying   : popt-1.16-12.fc25.x86_64                                  25/82 
+  Verifying   : publicsuffix-list-dafsa-20170828-1.fc25.noarch            26/82 
+  Verifying   : python3-3.5.4-2.fc25.x86_64                               27/82 
+  Verifying   : python3-libs-3.5.4-2.fc25.x86_64                          28/82 
+  Verifying   : system-python-libs-3.5.4-2.fc25.x86_64                    29/82 
+  Verifying   : system-python-3.5.4-2.fc25.x86_64                         30/82 
+  Verifying   : python3-rpm-4.13.0.2-1.fc25.x86_64                        31/82 
+  Verifying   : rpm-libs-4.13.0.2-1.fc25.x86_64                           32/82 
+  Verifying   : rpm-4.13.0.2-1.fc25.x86_64                                33/82 
+  Verifying   : rpm-plugin-selinux-4.13.0.2-1.fc25.x86_64                 34/82 
+  Verifying   : rpm-plugin-systemd-inhibit-4.13.0.2-1.fc25.x86_64         35/82 
+  Verifying   : rpm-build-libs-4.13.0.2-1.fc25.x86_64                     36/82 
+  Verifying   : sssd-client-1.16.0-4.fc25.x86_64                          37/82 
+  Verifying   : systemd-231-19.fc25.x86_64                                38/82 
+  Verifying   : systemd-pam-231-19.fc25.x86_64                            39/82 
+  Verifying   : systemd-libs-231-19.fc25.x86_64                           40/82 
+  Verifying   : vim-minimal-2:8.0.1171-1.fc25.x86_64                      41/82 
+  Verifying   : popt-1.16-7.fc24.x86_64                                   42/82 
+  Verifying   : audit-libs-2.7.7-1.fc25.x86_64                            43/82 
+  Verifying   : publicsuffix-list-dafsa-20170424-1.fc25.noarch            44/82 
+  Verifying   : python3-3.5.4-1.fc25.x86_64                               45/82 
+  Verifying   : ca-certificates-2017.2.16-1.0.fc25.noarch                 46/82 
+  Verifying   : python3-libs-3.5.4-1.fc25.x86_64                          47/82 
+  Verifying   : python3-rpm-4.13.0.1-2.fc25.x86_64                        48/82 
+  Verifying   : dbus-1:1.11.16-1.fc25.x86_64                              49/82 
+  Verifying   : dbus-libs-1:1.11.16-1.fc25.x86_64                         50/82 
+  Verifying   : rpm-4.13.0.1-2.fc25.x86_64                                51/82 
+  Verifying   : rpm-build-libs-4.13.0.1-2.fc25.x86_64                     52/82 
+  Verifying   : rpm-libs-4.13.0.1-2.fc25.x86_64                           53/82 
+  Verifying   : rpm-plugin-selinux-4.13.0.1-2.fc25.x86_64                 54/82 
+  Verifying   : rpm-plugin-systemd-inhibit-4.13.0.1-2.fc25.x86_64         55/82 
+  Verifying   : emacs-filesystem-1:25.2-3.fc25.noarch                     56/82 
+  Verifying   : system-python-3.5.4-1.fc25.x86_64                         57/82 
+  Verifying   : system-python-libs-3.5.4-1.fc25.x86_64                    58/82 
+  Verifying   : sssd-client-1.15.3-1.fc25.x86_64                          59/82 
+  Verifying   : systemd-231-17.fc25.x86_64                                60/82 
+  Verifying   : systemd-pam-231-17.fc25.x86_64                            61/82 
+  Verifying   : systemd-libs-231-17.fc25.x86_64                           62/82 
+  Verifying   : gawk-4.1.3-8.fc25.x86_64                                  63/82 
+  Verifying   : vim-minimal-2:8.0.1030-1.fc25.x86_64                      64/82 
+  Verifying   : krb5-libs-1.14.4-8.fc25.x86_64                            65/82 
+  Verifying   : libgcrypt-1.7.8-1.fc25.x86_64                             66/82 
+  Verifying   : libsolv-0.6.29-1.fc25.x86_64                              67/82 
+  Verifying   : libssh2-1.8.0-1.fc25.x86_64                               68/82 
+  Verifying   : libsss_idmap-1.15.3-1.fc25.x86_64                         69/82 
+  Verifying   : libsss_nss_idmap-1.15.3-1.fc25.x86_64                     70/82 
+  Verifying   : lua-libs-5.3.4-3.fc25.x86_64                              71/82 
+  Verifying   : nspr-4.16.0-1.fc25.x86_64                                 72/82 
+  Verifying   : nss-3.32.0-1.1.fc25.x86_64                                73/82 
+  Verifying   : nss-softokn-3.32.0-1.2.fc25.x86_64                        74/82 
+  Verifying   : nss-softokn-freebl-3.32.0-1.2.fc25.x86_64                 75/82 
+  Verifying   : nss-sysinit-3.32.0-1.1.fc25.x86_64                        76/82 
+  Verifying   : nss-tools-3.32.0-1.1.fc25.x86_64                          77/82 
+  Verifying   : nss-util-3.32.0-1.0.fc25.x86_64                           78/82 
+  Verifying   : openssl-libs-1:1.0.2k-1.fc25.x86_64                       79/82 
+  Verifying   : p11-kit-0.23.8-1.fc25.x86_64                              80/82 
+  Verifying   : p11-kit-trust-0.23.8-1.fc25.x86_64                        81/82 
+  Verifying   : pcre-8.41-1.fc25.x86_64                                   82/82 
+
+Upgraded:
+  audit-libs.x86_64 2.8.1-1.fc25                                                
+  ca-certificates.noarch 2017.2.20-1.0.fc25                                     
+  dbus.x86_64 1:1.11.18-1.fc25                                                  
+  dbus-libs.x86_64 1:1.11.18-1.fc25                                             
+  emacs-filesystem.noarch 1:25.3-3.fc25                                         
+  gawk.x86_64 4.1.3-12.fc25                                                     
+  krb5-libs.x86_64 1.14.4-9.fc25                                                
+  libgcrypt.x86_64 1.7.9-1.fc25                                                 
+  libsolv.x86_64 0.6.29-2.fc25                                                  
+  libssh2.x86_64 1.8.0-5.fc25                                                   
+  libsss_idmap.x86_64 1.16.0-4.fc25                                             
+  libsss_nss_idmap.x86_64 1.16.0-4.fc25                                         
+  lua-libs.x86_64 5.3.4-7.fc25                                                  
+  nspr.x86_64 4.17.0-1.fc25                                                     
+  nss.x86_64 3.34.0-1.0.fc25                                                    
+  nss-softokn.x86_64 3.34.0-1.0.fc25                                            
+  nss-softokn-freebl.x86_64 3.34.0-1.0.fc25                                     
+  nss-sysinit.x86_64 3.34.0-1.0.fc25                                            
+  nss-tools.x86_64 3.34.0-1.0.fc25                                              
+  nss-util.x86_64 3.34.0-1.0.fc25                                               
+  openssl-libs.x86_64 1:1.0.2m-1.fc25                                           
+  p11-kit.x86_64 0.23.9-2.fc25                                                  
+  p11-kit-trust.x86_64 0.23.9-2.fc25                                            
+  pcre.x86_64 8.41-3.fc25                                                       
+  popt.x86_64 1.16-12.fc25                                                      
+  publicsuffix-list-dafsa.noarch 20170828-1.fc25                                
+  python3.x86_64 3.5.4-2.fc25                                                   
+  python3-libs.x86_64 3.5.4-2.fc25                                              
+  python3-rpm.x86_64 4.13.0.2-1.fc25                                            
+  rpm.x86_64 4.13.0.2-1.fc25                                                    
+  rpm-build-libs.x86_64 4.13.0.2-1.fc25                                         
+  rpm-libs.x86_64 4.13.0.2-1.fc25                                               
+  rpm-plugin-selinux.x86_64 4.13.0.2-1.fc25                                     
+  rpm-plugin-systemd-inhibit.x86_64 4.13.0.2-1.fc25                             
+  sssd-client.x86_64 1.16.0-4.fc25                                              
+  system-python.x86_64 3.5.4-2.fc25                                             
+  system-python-libs.x86_64 3.5.4-2.fc25                                        
+  systemd.x86_64 231-19.fc25                                                    
+  systemd-libs.x86_64 231-19.fc25                                               
+  systemd-pam.x86_64 231-19.fc25                                                
+  vim-minimal.x86_64 2:8.0.1171-1.fc25                                          
+
+Complete!
+Removing intermediate container 5a45a73dbb2b
+ ---> f2b2806abcec
+Step 3/10 : RUN dnf install -y @development-tools fedora-packager
+ ---> Running in c0e2d811f7ef
+Last metadata expiration check: 0:01:05 ago on Thu Apr  2 15:58:13 2020.
+Dependencies resolved.
+================================================================================
+ Group                         Packages                                       
+================================================================================
+Marking packages as installed by the group:
+ @Development Tools            subversion          systemtap          git     
+                               patchutils          patch              diffstat
+                               gettext             doxygen                    
+================================================================================
+ Package                   Arch   Version                         Repository
+                                                                           Size
+================================================================================
+Installing:
+ apr                       x86_64 1.6.2-1.fc25                    updates 118 k
+ apr-util                  x86_64 1.5.4-3.fc24                    fedora   94 k
+ avahi-libs                x86_64 0.6.32-4.fc25                   fedora   61 k
+ binutils                  x86_64 2.26.1-1.fc25                   fedora  5.9 M
+ bodhi-client              noarch 0.9.12.2-6.fc25                 updates  26 k
+ boost-atomic              x86_64 1.60.0-10.fc25                  updates  47 k
+ boost-chrono              x86_64 1.60.0-10.fc25                  updates  53 k
+ boost-date-time           x86_64 1.60.0-10.fc25                  updates  60 k
+ boost-system              x86_64 1.60.0-10.fc25                  updates  50 k
+ boost-thread              x86_64 1.60.0-10.fc25                  updates  91 k
+ btrfs-progs               x86_64 4.6.1-1.fc25                    fedora  640 k
+ bzip2                     x86_64 1.0.6-21.fc25                   updates  57 k
+ cpio                      x86_64 2.12-3.fc24                     fedora  261 k
+ cpp                       x86_64 6.4.1-1.fc25                    updates 9.0 M
+ createrepo_c              x86_64 0.10.0-6.fc25                   fedora   68 k
+ createrepo_c-libs         x86_64 0.10.0-6.fc25                   fedora   94 k
+ desktop-file-utils        x86_64 0.23-2.fc25                     updates  75 k
+ diffstat                  x86_64 1.61-2.fc24                     fedora   43 k
+ distribution-gpg-keys     noarch 1.15-1.fc25                     updates 165 k
+ dnf-plugins-core          noarch 0.1.21-5.fc25                   updates  16 k
+ doxygen                   x86_64 1:1.8.13-9.fc25                 updates 6.8 M
+ drpm                      x86_64 0.3.0-3.fc25                    fedora   67 k
+ dwz                       x86_64 0.12-2.fc24                     fedora  107 k
+ dyninst                   x86_64 9.3.1-1.fc25                    updates 3.6 M
+ efivar-libs               x86_64 30-4.fc25                       fedora   68 k
+ elfutils                  x86_64 0.169-1.fc25                    updates 298 k
+ enchant                   x86_64 1:1.6.0-14.fc25                 fedora   59 k
+ fakeroot                  x86_64 1.20.2-4.fc24                   fedora  101 k
+ fakeroot-libs             x86_64 1.20.2-4.fc24                   fedora   35 k
+ fedora-cert               noarch 0.6.0.1-1.fc25                  updates  40 k
+ fedora-packager           noarch 0.6.0.1-1.fc25                  updates  48 k
+ fedpkg                    noarch 1.30-4.fc25                     updates  55 k
+ file                      x86_64 5.29-9.fc25                     updates  69 k
+ findutils                 x86_64 1:4.6.0-8.fc25                  fedora  521 k
+ fipscheck                 x86_64 1.4.1-11.fc25                   fedora   26 k
+ fipscheck-lib             x86_64 1.4.1-11.fc25                   fedora   15 k
+ fpc-srpm-macros           noarch 1.0-1.fc25                      fedora  7.6 k
+ gc                        x86_64 7.4.4-1.fc25                    fedora  104 k
+ gcc                       x86_64 6.4.1-1.fc25                    updates  20 M
+ gdb-headless              x86_64 7.12.1-48.fc25                  updates 3.2 M
+ gettext                   x86_64 0.19.8.1-3.fc25                 updates 1.0 M
+ gettext-libs              x86_64 0.19.8.1-3.fc25                 updates 508 k
+ ghc-srpm-macros           noarch 1.4.2-4.fc25                    fedora  8.6 k
+ git                       x86_64 2.9.5-3.fc25                    updates 1.0 M
+ git-core                  x86_64 2.9.5-3.fc25                    updates 3.6 M
+ git-core-doc              x86_64 2.9.5-3.fc25                    updates 2.3 M
+ glibc-devel               x86_64 2.24-10.fc25                    updates 937 k
+ glibc-headers             x86_64 2.24-10.fc25                    updates 501 k
+ gnat-srpm-macros          noarch 4-1.fc25                        fedora  9.0 k
+ go-srpm-macros            noarch 2-7.fc25                        fedora  8.6 k
+ groff-base                x86_64 1.22.3-9.fc25                   updates 1.0 M
+ guile                     x86_64 5:2.0.13-1.fc25                 fedora  3.5 M
+ hunspell                  x86_64 1.4.1-2.fc25                    updates 272 k
+ hunspell-en               noarch 0.20140811.1-5.fc24             fedora  199 k
+ hunspell-en-GB            noarch 0.20140811.1-5.fc24             fedora  244 k
+ hunspell-en-US            noarch 0.20140811.1-5.fc24             fedora  195 k
+ isl                       x86_64 0.14-5.fc24                     fedora  482 k
+ json-c                    x86_64 0.12.1-2.fc25                   updates  29 k
+ kernel-devel              x86_64 4.13.16-100.fc25                updates  12 M
+ kernel-headers            x86_64 4.13.16-100.fc25                updates 1.2 M
+ koji                      noarch 1.14.0-1.fc25                   updates 112 k
+ krb5-workstation          x86_64 1.14.4-9.fc25                   updates 893 k
+ less                      x86_64 481-7.fc25                      updates 156 k
+ libatomic_ops             x86_64 7.4.4-1.fc25                    fedora   32 k
+ libbabeltrace             x86_64 1.4.0-3.fc25                    fedora  164 k
+ libcroco                  x86_64 0.6.11-3.fc25                   updates 108 k
+ libdwarf                  x86_64 20170416-1.fc25                 updates 164 k
+ libedit                   x86_64 3.1-16.20160618cvs.fc25         fedora   97 k
+ libgnome-keyring          x86_64 3.12.0-7.fc25                   fedora  114 k
+ libgomp                   x86_64 6.4.1-1.fc25                    updates 197 k
+ libipt                    x86_64 1.5-1.fc25                      fedora   38 k
+ libkadm5                  x86_64 1.14.4-9.fc25                   updates 172 k
+ libmpc                    x86_64 1.0.2-5.fc24                    fedora   54 k
+ libserf                   x86_64 1.3.9-1.fc25                    fedora   56 k
+ libstdc++                 x86_64 6.4.1-1.fc25                    updates 459 k
+ libtool-ltdl              x86_64 2.4.6-14.fc25                   updates  54 k
+ libuser                   x86_64 0.62-4.fc25                     fedora  397 k
+ libxslt                   x86_64 1.1.28-13.fc25                  fedora  247 k
+ libyubikey                x86_64 1.13-2.fc24                     fedora   34 k
+ make                      x86_64 1:4.1-6.fc25                    updates 468 k
+ mock                      noarch 1.4.7-2.fc25                    updates 157 k
+ mock-core-configs         noarch 27.4-1.fc25                     updates  27 k
+ mokutil                   x86_64 1:0.3.0-3.fc25                  fedora   42 k
+ ocaml-srpm-macros         noarch 2-4.fc24                        fedora  8.0 k
+ openssh                   x86_64 7.4p1-5.fc25                    updates 476 k
+ openssh-clients           x86_64 7.4p1-5.fc25                    updates 657 k
+ openssl                   x86_64 1:1.0.2m-1.fc25                 updates 500 k
+ packagedb-cli             noarch 2.14.1-1.fc25                   updates  68 k
+ passwd                    x86_64 0.79-8.fc24                     fedora  109 k
+ patch                     x86_64 2.7.5-3.fc24                    fedora  125 k
+ patchutils                x86_64 0.3.4-5.fc24                    fedora  113 k
+ perl                      x86_64 4:5.24.3-389.fc25               updates 6.1 M
+ perl-Carp                 noarch 1.40-365.fc25                   fedora   29 k
+ perl-Data-Dumper          x86_64 2.161-1.fc25                    fedora   55 k
+ perl-Encode               x86_64 4:2.88-5.fc25                   updates 1.5 M
+ perl-Errno                x86_64 1.25-389.fc25                   updates  68 k
+ perl-Error                noarch 1:0.17024-7.fc25                fedora   45 k
+ perl-Exporter             noarch 5.72-366.fc25                   fedora   33 k
+ perl-File-Path            noarch 2.12-366.fc25                   updates  34 k
+ perl-File-Temp            noarch 0.23.04-365.fc25                fedora   61 k
+ perl-Getopt-Long          noarch 2.49.1-1.fc25                   fedora   62 k
+ perl-Git                  noarch 2.9.5-3.fc25                    updates  64 k
+ perl-HTTP-Tiny            noarch 0.070-1.fc25                    fedora   56 k
+ perl-IO                   x86_64 1.36-389.fc25                   updates 133 k
+ perl-IO-Socket-IP         noarch 0.39-1.fc25                     updates  45 k
+ perl-IO-Socket-SSL        noarch 2.038-1.fc25                    fedora  261 k
+ perl-MIME-Base64          x86_64 3.15-365.fc25                   fedora   29 k
+ perl-Mozilla-CA           noarch 20160104-3.fc25                 fedora   14 k
+ perl-Net-SSLeay           x86_64 1.78-1.fc25                     fedora  329 k
+ perl-PathTools            x86_64 3.63-366.fc25                   fedora   88 k
+ perl-Pod-Escapes          noarch 1:1.07-365.fc25                 fedora   20 k
+ perl-Pod-Perldoc          noarch 3.28-1.fc25                     updates  86 k
+ perl-Pod-Simple           noarch 1:3.35-1.fc25                   updates 211 k
+ perl-Pod-Usage            noarch 4:1.69-1.fc25                   fedora   33 k
+ perl-Scalar-List-Utils    x86_64 3:1.48-1.fc25                   updates  65 k
+ perl-Socket               x86_64 4:2.024-1.fc25                  fedora   56 k
+ perl-Term-ANSIColor       noarch 4.05-2.fc25                     fedora   45 k
+ perl-Term-Cap             noarch 1.17-365.fc25                   fedora   22 k
+ perl-TermReadKey          x86_64 2.37-1.fc25                     fedora   37 k
+ perl-Text-ParseWords      noarch 3.30-365.fc25                   fedora   17 k
+ perl-Text-Tabs+Wrap       noarch 2013.0523-365.fc25              fedora   23 k
+ perl-Time-Local           noarch 1:1.250-1.fc25                  updates  30 k
+ perl-URI                  noarch 1.71-5.fc25                     fedora  115 k
+ perl-Unicode-Normalize    x86_64 1.25-365.fc25                   fedora   81 k
+ perl-constant             noarch 1.33-367.fc25                   fedora   24 k
+ perl-libnet               noarch 3.11-1.fc25                     updates 119 k
+ perl-libs                 x86_64 4:5.24.3-389.fc25               updates 1.5 M
+ perl-macros               x86_64 4:5.24.3-389.fc25               updates  64 k
+ perl-parent               noarch 1:0.236-1.fc25                  fedora   18 k
+ perl-podlators            noarch 4.09-1.fc25                     updates 114 k
+ perl-srpm-macros          noarch 1-20.fc25                       fedora   10 k
+ perl-threads              x86_64 1:2.16-1.fc25                   updates  58 k
+ perl-threads-shared       x86_64 1.57-1.fc25                     updates  45 k
+ pigz                      x86_64 2.3.4-1.fc25                    updates  85 k
+ procps-ng                 x86_64 3.3.10-11.fc24                  fedora  389 k
+ pyOpenSSL                 noarch 16.2.0-2.fc25                   updates  87 k
+ pyliblzma                 x86_64 0.5.3-16.fc25                   fedora   54 k
+ python                    x86_64 2.7.13-3.fc25                   updates  96 k
+ python-beautifulsoup4     noarch 4.6.0-1.fc25                    updates 175 k
+ python-bugzilla           noarch 1.2.2-4.fc25                    fedora   94 k
+ python-chardet            noarch 2.3.0-1.fc25                    fedora  233 k
+ python-enum34             noarch 1.0.4-6.fc25                    fedora   57 k
+ python-ipaddress          noarch 1.0.16-3.fc25                   fedora   39 k
+ python-kitchen            noarch 1.2.4-2.fc24                    fedora  121 k
+ python-krbV               x86_64 1.0.90-12.fc25                  fedora   58 k
+ python-libs               x86_64 2.7.13-3.fc25                   updates 6.2 M
+ python-lockfile           noarch 1:0.11.0-4.fc25                 fedora   36 k
+ python-magic              noarch 5.29-9.fc25                     updates  40 k
+ python-munch              noarch 2.0.4-3.fc25                    fedora   19 k
+ python-offtrac            noarch 0.1.0-7.fc25                    fedora   20 k
+ python-pip                noarch 8.1.2-2.fc25                    fedora  1.7 M
+ python-pycparser          noarch 2.14-7.fc25                     fedora  109 k
+ python-six                noarch 1.10.0-3.fc25                   fedora   35 k
+ python-srpm-macros        noarch 3-12.fc25                       updates 8.5 k
+ python-urlgrabber         noarch 3.10.1-9.fc25                   fedora  112 k
+ python2-GitPython         noarch 2.1.5-1.fc25                    updates 557 k
+ python2-asn1crypto        noarch 0.22.0-2.fc25                   updates 173 k
+ python2-cccolutils        x86_64 1.4-1.fc25                      updates  18 k
+ python2-cffi              x86_64 1.7.0-2.fc25                    fedora  221 k
+ python2-cryptography      x86_64 2.0.2-2.fc25                    updates 508 k
+ python2-cssselect         noarch 0.9.2-1.fc25                    fedora   39 k
+ python2-dateutil          noarch 1:2.6.0-1.fc25                  updates 248 k
+ python2-dnf               noarch 1.1.10-6.fc25                   updates 445 k
+ python2-fedora            noarch 0.9.0-6.fc25                    updates 349 k
+ python2-gitdb             noarch 2.0.2-1.fc25                    updates 111 k
+ python2-hawkey            x86_64 0.6.4-3.fc25                    updates  46 k
+ python2-idna              noarch 2.5-1.fc25                      updates  98 k
+ python2-iniparse          noarch 0.4-20.fc25                     fedora   46 k
+ python2-kerberos          x86_64 1.2.5-1.fc25                    fedora   32 k
+ python2-koji              noarch 1.14.0-1.fc25                   updates 288 k
+ python2-libcomps          x86_64 0.1.7-5.fc25                    fedora   47 k
+ python2-librepo           x86_64 1.7.18-3.fc25                   fedora   57 k
+ python2-lxml              x86_64 4.1.1-1.fc25                    updates 1.4 M
+ python2-openidc-client    noarch 0-3.20170523git77cb3ee.fc25     updates  21 k
+ python2-ply               noarch 3.8-2.fc25                      fedora  107 k
+ python2-pycurl            x86_64 7.43.0-6.fc25                   updates 241 k
+ python2-pygpgme           x86_64 0.3-18.fc25                     fedora   90 k
+ python2-pysocks           noarch 1.6.7-1.fc25                    updates  32 k
+ python2-requests          noarch 2.10.0-4.fc25                   fedora  107 k
+ python2-requests-kerberos noarch 0.10.0-2.fc25                   fedora   25 k
+ python2-rpkg              noarch 1.51-2.fc25                     updates 155 k
+ python2-rpm               x86_64 4.13.0.2-1.fc25                 updates 106 k
+ python2-setuptools        noarch 25.1.1-1.fc25                   fedora  506 k
+ python2-smmap             noarch 2.0.3-1.fc25                    updates  48 k
+ python2-urllib3           noarch 1.15.1-3.fc25                   fedora  128 k
+ python2-yubico            noarch 1.3.2-7.fc25                    updates  60 k
+ python3-asn1crypto        noarch 0.22.0-2.fc25                   updates 178 k
+ python3-cffi              x86_64 1.7.0-2.fc25                    fedora  225 k
+ python3-chardet           noarch 2.3.0-1.fc25                    fedora  244 k
+ python3-cryptography      x86_64 2.0.2-2.fc25                    updates 515 k
+ python3-dateutil          noarch 1:2.6.0-1.fc25                  updates 249 k
+ python3-distro            noarch 1.0.3-1.fc25                    updates  31 k
+ python3-dnf-plugins-core  noarch 0.1.21-5.fc25                   updates  69 k
+ python3-enchant           noarch 1.6.8-1.fc25                    updates 109 k
+ python3-idna              noarch 2.5-1.fc25                      updates  96 k
+ python3-kerberos          x86_64 1.2.5-1.fc25                    fedora   32 k
+ python3-koji              noarch 1.14.0-1.fc25                   updates 225 k
+ python3-magic             noarch 5.29-9.fc25                     updates  41 k
+ python3-ply               noarch 3.8-2.fc25                      fedora  108 k
+ python3-pyOpenSSL         noarch 16.2.0-2.fc25                   updates  89 k
+ python3-pycparser         noarch 2.14-7.fc25                     fedora  101 k
+ python3-pycurl            x86_64 7.43.0-6.fc25                   updates 241 k
+ python3-pyroute2          noarch 0.4.13-1.fc25                   updates 360 k
+ python3-pysocks           noarch 1.6.7-1.fc25                    updates  33 k
+ python3-requests          noarch 2.10.0-4.fc25                   fedora  110 k
+ python3-requests-kerberos noarch 0.10.0-2.fc25                   fedora   25 k
+ python3-urllib3           noarch 1.15.1-3.fc25                   fedora  136 k
+ pyusb                     noarch 1.0.0-2.fc25                    fedora   85 k
+ pyxattr                   x86_64 0.5.3-8.fc25                    fedora   34 k
+ qt5-srpm-macros           noarch 5.7.1-1.fc25                    updates 7.9 k
+ redhat-rpm-config         noarch 45-1.fc25                       updates  60 k
+ rpm-build                 x86_64 4.13.0.2-1.fc25                 updates 147 k
+ rpmdevtools               noarch 8.9-1.fc25                      fedora  105 k
+ rpmlint                   noarch 1.10-5.fc25                     updates 257 k
+ rsync                     x86_64 3.1.2-4.fc25                    updates 392 k
+ subversion                x86_64 1.9.7-1.fc25                    updates 1.1 M
+ subversion-libs           x86_64 1.9.7-1.fc25                    updates 1.5 M
+ systemd-container         x86_64 231-19.fc25                     updates 412 k
+ systemtap                 x86_64 3.2-2.fc25                      updates 143 k
+ systemtap-client          x86_64 3.2-2.fc25                      updates 3.8 M
+ systemtap-devel           x86_64 3.2-2.fc25                      updates 2.1 M
+ systemtap-runtime         x86_64 3.2-2.fc25                      updates 423 k
+ unzip                     x86_64 6.0-32.fc25                     updates 184 k
+ usermode                  x86_64 1.111-8.fc24                    fedora  197 k
+ xapian-core-libs          x86_64 1.2.24-1.fc25                   updates 758 k
+ xemacs-filesystem         noarch 21.5.34-20.20170124hgf412e9f093d4.fc25
+                                                                  updates  21 k
+ xz                        x86_64 5.2.2-2.fc24                    fedora  148 k
+ ykpers                    x86_64 1.18.0-2.fc25                   updates 105 k
+ yum                       noarch 3.4.3-510.fc25                  fedora  1.2 M
+ yum-metadata-parser       x86_64 1.1.4-17.fc25                   fedora   39 k
+ zip                       x86_64 3.0-16.fc24                     fedora  272 k
+
+Transaction Summary
+================================================================================
+Install  231 Packages
+
+Total download size: 131 M
+Installed size: 440 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                            17 MB/s | 131 MB     00:07     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Installing  : python-libs-2.7.13-3.fc25.x86_64                          1/231 
+  Installing  : perl-Exporter-5.72-366.fc25.noarch                        2/231 
+  Installing  : perl-libs-4:5.24.3-389.fc25.x86_64                        3/231 
+  Installing  : perl-Carp-1.40-365.fc25.noarch                            4/231 
+  Installing  : libstdc++-6.4.1-1.fc25.x86_64                             5/231 
+  Installing  : python-2.7.13-3.fc25.x86_64                               6/231 
+  Installing  : python2-setuptools-25.1.1-1.fc25.noarch                   7/231 
+  Installing  : python-pip-8.1.2-2.fc25.noarch                            8/231 
+  Installing  : perl-Scalar-List-Utils-3:1.48-1.fc25.x86_64               9/231 
+  Installing  : python-six-1.10.0-3.fc25.noarch                          10/231 
+  Installing  : hunspell-en-US-0.20140811.1-5.fc24.noarch                11/231 
+  Installing  : hunspell-1.4.1-2.fc25.x86_64                             12/231 
+  Installing  : python2-pycurl-7.43.0-6.fc25.x86_64                      13/231 
+  Installing  : python2-rpm-4.13.0.2-1.fc25.x86_64                       14/231 
+  Installing  : apr-1.6.2-1.fc25.x86_64                                  15/231 
+  Installing  : file-5.29-9.fc25.x86_64                                  16/231 
+  Installing  : apr-util-1.5.4-3.fc24.x86_64                             17/231 
+  Installing  : boost-system-1.60.0-10.fc25.x86_64                       18/231 
+  Installing  : fipscheck-1.4.1-11.fc25.x86_64                           19/231 
+  Installing  : fipscheck-lib-1.4.1-11.fc25.x86_64                       20/231 
+  Installing  : libgomp-6.4.1-1.fc25.x86_64                              21/231 
+  Installing  : unzip-6.0-32.fc25.x86_64                                 22/231 
+  Installing  : cpio-2.12-3.fc24.x86_64                                  23/231 
+  Installing  : binutils-2.26.1-1.fc25.x86_64                            24/231 
+  Installing  : findutils-1:4.6.0-8.fc25.x86_64                          25/231 
+  Installing  : zip-3.0-16.fc24.x86_64                                   26/231 
+  Installing  : libserf-1.3.9-1.fc25.x86_64                              27/231 
+  Installing  : python2-iniparse-0.4-20.fc25.noarch                      28/231 
+  Installing  : python-chardet-2.3.0-1.fc25.noarch                       29/231 
+  Installing  : python-kitchen-1.2.4-2.fc24.noarch                       30/231 
+  Installing  : groff-base-1.22.3-9.fc25.x86_64                          31/231 
+  Installing  : perl-Text-ParseWords-3.30-365.fc25.noarch                32/231 
+  Installing  : python2-libcomps-0.1.7-5.fc25.x86_64                     33/231 
+  Installing  : pyliblzma-0.5.3-16.fc25.x86_64                           34/231 
+  Installing  : python2-pygpgme-0.3-18.fc25.x86_64                       35/231 
+  Installing  : libmpc-1.0.2-5.fc24.x86_64                               36/231 
+  Installing  : libuser-0.62-4.fc25.x86_64                               37/231 
+  Installing  : drpm-0.3.0-3.fc25.x86_64                                 38/231 
+  Installing  : libcroco-0.6.11-3.fc25.x86_64                            39/231 
+  Installing  : bzip2-1.0.6-21.fc25.x86_64                               40/231 
+  Installing  : xz-5.2.2-2.fc24.x86_64                                   41/231 
+  Installing  : avahi-libs-0.6.32-4.fc25.x86_64                          42/231 
+  Installing  : gettext-libs-0.19.8.1-3.fc25.x86_64                      43/231 
+  Installing  : createrepo_c-libs-0.10.0-6.fc25.x86_64                   44/231 
+  Installing  : createrepo_c-0.10.0-6.fc25.x86_64                        45/231 
+  Installing  : passwd-0.79-8.fc24.x86_64                                46/231 
+  Installing  : usermode-1.111-8.fc24.x86_64                             47/231 
+  Installing  : cpp-6.4.1-1.fc25.x86_64                                  48/231 
+  Installing  : subversion-libs-1.9.7-1.fc25.x86_64                      49/231 
+  Installing  : openssh-7.4p1-5.fc25.x86_64                              50/231 
+  Installing  : boost-chrono-1.60.0-10.fc25.x86_64                       51/231 
+  Installing  : boost-thread-1.60.0-10.fc25.x86_64                       52/231 
+  Installing  : python-magic-5.29-9.fc25.noarch                          53/231 
+  Installing  : python3-magic-5.29-9.fc25.noarch                         54/231 
+  Installing  : python-urlgrabber-3.10.1-9.fc25.noarch                   55/231 
+  Installing  : enchant-1:1.6.0-14.fc25.x86_64                           56/231 
+  Installing  : python3-enchant-1.6.8-1.fc25.noarch                      57/231 
+  Installing  : hunspell-en-GB-0.20140811.1-5.fc24.noarch                58/231 
+  Installing  : python2-dateutil-1:2.6.0-1.fc25.noarch                   59/231 
+  Installing  : elfutils-0.169-1.fc25.x86_64                             60/231 
+  Installing  : boost-atomic-1.60.0-10.fc25.x86_64                       61/231 
+  Installing  : boost-date-time-1.60.0-10.fc25.x86_64                    62/231 
+  Installing  : xapian-core-libs-1.2.24-1.fc25.x86_64                    63/231 
+  Installing  : perl-Term-ANSIColor-4.05-2.fc25.noarch                   64/231 
+  Installing  : perl-macros-4:5.24.3-389.fc25.x86_64                     65/231 
+  Installing  : perl-Socket-4:2.024-1.fc25.x86_64                        66/231 
+  Installing  : perl-Errno-1.25-389.fc25.x86_64                          67/231 
+  Installing  : perl-constant-1.33-367.fc25.noarch                       68/231 
+  Installing  : perl-parent-1:0.236-1.fc25.noarch                        69/231 
+  Installing  : perl-Text-Tabs+Wrap-2013.0523-365.fc25.noarch            70/231 
+  Installing  : perl-Unicode-Normalize-1.25-365.fc25.x86_64              71/231 
+  Installing  : perl-IO-1.36-389.fc25.x86_64                             72/231 
+  Installing  : perl-threads-shared-1.57-1.fc25.x86_64                   73/231 
+  Installing  : perl-threads-1:2.16-1.fc25.x86_64                        74/231 
+  Installing  : perl-File-Path-2.12-366.fc25.noarch                      75/231 
+  Installing  : perl-PathTools-3.63-366.fc25.x86_64                      76/231 
+  Installing  : perl-4:5.24.3-389.fc25.x86_64                            77/231 
+  Installing  : perl-MIME-Base64-3.15-365.fc25.x86_64                    78/231 
+  Installing  : perl-File-Temp-0.23.04-365.fc25.noarch                   79/231 
+  Installing  : perl-Time-Local-1:1.250-1.fc25.noarch                    80/231 
+  Installing  : perl-HTTP-Tiny-0.070-1.fc25.noarch                       81/231 
+  Installing  : perl-Error-1:0.17024-7.fc25.noarch                       82/231 
+  Installing  : perl-IO-Socket-IP-0.39-1.fc25.noarch                     83/231 
+  Installing  : perl-libnet-3.11-1.fc25.noarch                           84/231 
+  Installing  : perl-Net-SSLeay-1.78-1.fc25.x86_64                       85/231 
+  Installing  : perl-TermReadKey-2.37-1.fc25.x86_64                      86/231 
+  Installing  : perl-Term-Cap-1.17-365.fc25.noarch                       87/231 
+  Installing  : perl-Pod-Escapes-1:1.07-365.fc25.noarch                  88/231 
+  Installing  : perl-Encode-4:2.88-5.fc25.x86_64                         89/231 
+  Installing  : perl-Pod-Simple-1:3.35-1.fc25.noarch                     90/231 
+  Installing  : perl-Getopt-Long-2.49.1-1.fc25.noarch                    91/231 
+  Installing  : perl-podlators-4.09-1.fc25.noarch                        92/231 
+  Installing  : perl-Pod-Perldoc-3.28-1.fc25.noarch                      93/231 
+  Installing  : perl-Pod-Usage-4:1.69-1.fc25.noarch                      94/231 
+  Installing  : kernel-devel-4.13.16-100.fc25.x86_64                     95/231 
+  Installing  : perl-Data-Dumper-2.161-1.fc25.x86_64                     96/231 
+  Installing  : perl-URI-1.71-5.fc25.noarch                              97/231 
+  Installing  : python-offtrac-0.1.0-7.fc25.noarch                       98/231 
+  Installing  : python-krbV-1.0.90-12.fc25.x86_64                        99/231 
+  Installing  : python2-kerberos-1.2.5-1.fc25.x86_64                    100/231 
+  Installing  : python2-pysocks-1.6.7-1.fc25.noarch                     101/231 
+  Installing  : python2-urllib3-1.15.1-3.fc25.noarch                    102/231 
+  Installing  : python2-requests-2.10.0-4.fc25.noarch                   103/231 
+  Installing  : python2-openidc-client-0-3.20170523git77cb3ee.fc25.no   104/231 
+  Installing  : python2-requests-kerberos-0.10.0-2.fc25.noarch          105/231 
+  Installing  : python-bugzilla-1.2.2-4.fc25.noarch                     106/231 
+  Installing  : python2-asn1crypto-0.22.0-2.fc25.noarch                 107/231 
+  Installing  : python2-idna-2.5-1.fc25.noarch                          108/231 
+  Installing  : python-enum34-1.0.4-6.fc25.noarch                       109/231 
+  Installing  : python-ipaddress-1.0.16-3.fc25.noarch                   110/231 
+  Installing  : python2-ply-3.8-2.fc25.noarch                           111/231 
+  Installing  : python-pycparser-2.14-7.fc25.noarch                     112/231 
+  Installing  : python2-cffi-1.7.0-2.fc25.x86_64                        113/231 
+  Installing  : python2-hawkey-0.6.4-3.fc25.x86_64                      114/231 
+  Installing  : python2-librepo-1.7.18-3.fc25.x86_64                    115/231 
+  Installing  : python2-dnf-1.1.10-6.fc25.noarch                        116/231 
+  Installing  : pyxattr-0.5.3-8.fc25.x86_64                             117/231 
+  Installing  : yum-metadata-parser-1.1.4-17.fc25.x86_64                118/231 
+  Installing  : yum-3.4.3-510.fc25.noarch                               119/231 
+  Installing  : python-lockfile-1:0.11.0-4.fc25.noarch                  120/231 
+  Installing  : python-munch-2.0.4-3.fc25.noarch                        121/231 
+  Installing  : python2-cccolutils-1.4-1.fc25.x86_64                    122/231 
+  Installing  : pyusb-1.0.0-2.fc25.noarch                               123/231 
+  Installing  : python2-yubico-1.3.2-7.fc25.noarch                      124/231 
+  Installing  : python2-smmap-2.0.3-1.fc25.noarch                       125/231 
+  Installing  : python2-gitdb-2.0.2-1.fc25.noarch                       126/231 
+  Installing  : kernel-headers-4.13.16-100.fc25.x86_64                  127/231 
+  Installing  : glibc-headers-2.24-10.fc25.x86_64                       128/231 
+  Installing  : glibc-devel-2.24-10.fc25.x86_64                         129/231 
+  Installing  : isl-0.14-5.fc24.x86_64                                  130/231 
+  Installing  : gcc-6.4.1-1.fc25.x86_64                                 131/231 
+  Installing  : procps-ng-3.3.10-11.fc24.x86_64                         132/231 
+  Installing  : systemd-container-231-19.fc25.x86_64                    133/231 
+  Installing  : python3-pyroute2-0.4.13-1.fc25.noarch                   134/231 
+  Installing  : python3-distro-1.0.3-1.fc25.noarch                      135/231 
+  Installing  : pigz-2.3.4-1.fc25.x86_64                                136/231 
+  Installing  : python3-dnf-plugins-core-0.1.21-5.fc25.noarch           137/231 
+  Installing  : dnf-plugins-core-0.1.21-5.fc25.noarch                   138/231 
+  Installing  : libxslt-1.1.28-13.fc25.x86_64                           139/231 
+  Installing  : python2-lxml-4.1.1-1.fc25.x86_64                        140/231 
+  Installing  : python-beautifulsoup4-4.6.0-1.fc25.noarch               141/231 
+  Installing  : python2-fedora-0.9.0-6.fc25.noarch                      142/231 
+  Installing  : python3-ply-3.8-2.fc25.noarch                           143/231 
+  Installing  : python3-pycparser-2.14-7.fc25.noarch                    144/231 
+  Installing  : python3-cffi-1.7.0-2.fc25.x86_64                        145/231 
+  Installing  : python3-idna-2.5-1.fc25.noarch                          146/231 
+  Installing  : python3-asn1crypto-0.22.0-2.fc25.noarch                 147/231 
+  Installing  : desktop-file-utils-0.23-2.fc25.x86_64                   148/231 
+  Installing  : rpmlint-1.10-5.fc25.noarch                              149/231 
+  Installing  : libtool-ltdl-2.4.6-14.fc25.x86_64                       150/231 
+  Installing  : libdwarf-20170416-1.fc25.x86_64                         151/231 
+  Installing  : dyninst-9.3.1-1.fc25.x86_64                             152/231 
+  Installing  : libyubikey-1.13-2.fc24.x86_64                           153/231 
+  Installing  : ykpers-1.18.0-2.fc25.x86_64                             154/231 
+  Installing  : distribution-gpg-keys-1.15-1.fc25.noarch                155/231 
+  Installing  : mock-core-configs-27.4-1.fc25.noarch                    156/231 
+  Installing  : rsync-3.1.2-4.fc25.x86_64                               157/231 
+  Installing  : less-481-7.fc25.x86_64                                  158/231 
+  Installing  : python3-pycurl-7.43.0-6.fc25.x86_64                     159/231 
+  Installing  : python3-dateutil-1:2.6.0-1.fc25.noarch                  160/231 
+  Installing  : qt5-srpm-macros-5.7.1-1.fc25.noarch                     161/231 
+  Installing  : python-srpm-macros-3-12.fc25.noarch                     162/231 
+  Installing  : perl-srpm-macros-1-20.fc25.noarch                       163/231 
+  Installing  : ocaml-srpm-macros-2-4.fc24.noarch                       164/231 
+  Installing  : go-srpm-macros-2-7.fc25.noarch                          165/231 
+  Installing  : gnat-srpm-macros-4-1.fc25.noarch                        166/231 
+  Installing  : ghc-srpm-macros-1.4.2-4.fc25.noarch                     167/231 
+  Installing  : fpc-srpm-macros-1.0-1.fc25.noarch                       168/231 
+  Installing  : dwz-0.12-2.fc24.x86_64                                  169/231 
+  Installing  : redhat-rpm-config-45-1.fc25.noarch                      170/231 
+  Installing  : libatomic_ops-7.4.4-1.fc25.x86_64                       171/231 
+  Installing  : gc-7.4.4-1.fc25.x86_64                                  172/231 
+  Installing  : guile-5:2.0.13-1.fc25.x86_64                            173/231 
+  Installing  : make-1:4.1-6.fc25.x86_64                                174/231 
+  Installing  : openssl-1:1.0.2m-1.fc25.x86_64                          175/231 
+  Installing  : python2-cryptography-2.0.2-2.fc25.x86_64                176/231 
+  Installing  : pyOpenSSL-16.2.0-2.fc25.noarch                          177/231 
+  Installing  : fedora-cert-0.6.0.1-1.fc25.noarch                       178/231 
+  Installing  : python2-koji-1.14.0-1.fc25.noarch                       179/231 
+  Installing  : python3-cryptography-2.0.2-2.fc25.x86_64                180/231 
+  Installing  : python3-pyOpenSSL-16.2.0-2.fc25.noarch                  181/231 
+  Installing  : systemtap-devel-3.2-2.fc25.x86_64                       182/231 
+  Installing  : libipt-1.5-1.fc25.x86_64                                183/231 
+  Installing  : libbabeltrace-1.4.0-3.fc25.x86_64                       184/231 
+  Installing  : gdb-headless-7.12.1-48.fc25.x86_64                      185/231 
+  Installing  : libedit-3.1-16.20160618cvs.fc25.x86_64                  186/231 
+  Installing  : openssh-clients-7.4p1-5.fc25.x86_64                     187/231 
+  Installing  : json-c-0.12.1-2.fc25.x86_64                             188/231 
+  Installing  : systemtap-runtime-3.2-2.fc25.x86_64                     189/231 
+  Installing  : fakeroot-libs-1.20.2-4.fc24.x86_64                      190/231 
+  Installing  : fakeroot-1.20.2-4.fc24.x86_64                           191/231 
+  Installing  : python3-pysocks-1.6.7-1.fc25.noarch                     192/231 
+  Installing  : python3-urllib3-1.15.1-3.fc25.noarch                    193/231 
+  Installing  : xemacs-filesystem-21.5.34-20.20170124hgf412e9f093d4.f   194/231 
+  Installing  : libkadm5-1.14.4-9.fc25.x86_64                           195/231 
+  Installing  : krb5-workstation-1.14.4-9.fc25.x86_64                   196/231 
+  Installing  : python3-kerberos-1.2.5-1.fc25.x86_64                    197/231 
+  Installing  : python3-chardet-2.3.0-1.fc25.noarch                     198/231 
+  Installing  : python3-requests-2.10.0-4.fc25.noarch                   199/231 
+  Installing  : mock-1.4.7-2.fc25.noarch                                200/231 
+  Installing  : python3-requests-kerberos-0.10.0-2.fc25.noarch          201/231 
+  Installing  : python3-koji-1.14.0-1.fc25.noarch                       202/231 
+  Installing  : koji-1.14.0-1.fc25.noarch                               203/231 
+  Installing  : bodhi-client-0.9.12.2-6.fc25.noarch                     204/231 
+  Installing  : packagedb-cli-2.14.1-1.fc25.noarch                      205/231 
+  Installing  : libgnome-keyring-3.12.0-7.fc25.x86_64                   206/231 
+  Installing  : git-core-2.9.5-3.fc25.x86_64                            207/231 
+  Installing  : git-core-doc-2.9.5-3.fc25.x86_64                        208/231 
+  Installing  : perl-Git-2.9.5-3.fc25.noarch                            209/231 
+  Installing  : git-2.9.5-3.fc25.x86_64                                 210/231 
+  Installing  : python2-GitPython-2.1.5-1.fc25.noarch                   211/231 
+  Installing  : efivar-libs-30-4.fc25.x86_64                            212/231 
+  Installing  : mokutil-1:0.3.0-3.fc25.x86_64                           213/231 
+  Installing  : systemtap-client-3.2-2.fc25.x86_64                      214/231 
+  Installing  : patch-2.7.5-3.fc24.x86_64                               215/231 
+  Installing  : rpm-build-4.13.0.2-1.fc25.x86_64                        216/231 
+  Installing  : rpmdevtools-8.9-1.fc25.noarch                           217/231 
+  Installing  : python2-rpkg-1.51-2.fc25.noarch                         218/231 
+  Installing  : fedora-packager-0.6.0.1-1.fc25.noarch                   219/231 
+  Installing  : fedpkg-1.30-4.fc25.noarch                               220/231 
+  Installing  : systemtap-3.2-2.fc25.x86_64                             221/231 
+  Installing  : perl-IO-Socket-SSL-2.038-1.fc25.noarch                  222/231 
+  Installing  : patchutils-0.3.4-5.fc24.x86_64                          223/231 
+  Installing  : doxygen-1:1.8.13-9.fc25.x86_64                          224/231 
+  Installing  : perl-Mozilla-CA-20160104-3.fc25.noarch                  225/231 
+  Installing  : hunspell-en-0.20140811.1-5.fc24.noarch                  226/231 
+  Installing  : subversion-1.9.7-1.fc25.x86_64                          227/231 
+  Installing  : gettext-0.19.8.1-3.fc25.x86_64                          228/231 
+  Installing  : python2-cssselect-0.9.2-1.fc25.noarch                   229/231 
+  Installing  : btrfs-progs-4.6.1-1.fc25.x86_64                         230/231 
+  Installing  : diffstat-1.61-2.fc24.x86_64                             231/231[91mFailed to connect to bus: No such file or directory
+[0m 
+  Verifying   : patchutils-0.3.4-5.fc24.x86_64                            1/231 
+  Verifying   : patch-2.7.5-3.fc24.x86_64                                 2/231 
+  Verifying   : diffstat-1.61-2.fc24.x86_64                               3/231 
+  Verifying   : gettext-0.19.8.1-3.fc25.x86_64                            4/231 
+  Verifying   : subversion-1.9.7-1.fc25.x86_64                            5/231 
+  Verifying   : subversion-libs-1.9.7-1.fc25.x86_64                       6/231 
+  Verifying   : apr-util-1.5.4-3.fc24.x86_64                              7/231 
+  Verifying   : libserf-1.3.9-1.fc25.x86_64                               8/231 
+  Verifying   : systemtap-3.2-2.fc25.x86_64                               9/231 
+  Verifying   : systemtap-client-3.2-2.fc25.x86_64                       10/231 
+  Verifying   : systemtap-runtime-3.2-2.fc25.x86_64                      11/231 
+  Verifying   : avahi-libs-0.6.32-4.fc25.x86_64                          12/231 
+  Verifying   : mokutil-1:0.3.0-3.fc25.x86_64                            13/231 
+  Verifying   : zip-3.0-16.fc24.x86_64                                   14/231 
+  Verifying   : dyninst-9.3.1-1.fc25.x86_64                              15/231 
+  Verifying   : efivar-libs-30-4.fc25.x86_64                             16/231 
+  Verifying   : git-2.9.5-3.fc25.x86_64                                  17/231 
+  Verifying   : git-core-2.9.5-3.fc25.x86_64                             18/231 
+  Verifying   : git-core-doc-2.9.5-3.fc25.x86_64                         19/231 
+  Verifying   : perl-Git-2.9.5-3.fc25.noarch                             20/231 
+  Verifying   : perl-Error-1:0.17024-7.fc25.noarch                       21/231 
+  Verifying   : perl-File-Temp-0.23.04-365.fc25.noarch                   22/231 
+  Verifying   : perl-Getopt-Long-2.49.1-1.fc25.noarch                    23/231 
+  Verifying   : perl-PathTools-3.63-366.fc25.x86_64                      24/231 
+  Verifying   : perl-TermReadKey-2.37-1.fc25.x86_64                      25/231 
+  Verifying   : libgnome-keyring-3.12.0-7.fc25.x86_64                    26/231 
+  Verifying   : perl-Carp-1.40-365.fc25.noarch                           27/231 
+  Verifying   : perl-Exporter-5.72-366.fc25.noarch                       28/231 
+  Verifying   : perl-constant-1.33-367.fc25.noarch                       29/231 
+  Verifying   : perl-parent-1:0.236-1.fc25.noarch                        30/231 
+  Verifying   : perl-Pod-Usage-4:1.69-1.fc25.noarch                      31/231 
+  Verifying   : perl-Text-ParseWords-3.30-365.fc25.noarch                32/231 
+  Verifying   : doxygen-1:1.8.13-9.fc25.x86_64                           33/231 
+  Verifying   : fedora-packager-0.6.0.1-1.fc25.noarch                    34/231 
+  Verifying   : fedora-cert-0.6.0.1-1.fc25.noarch                        35/231 
+  Verifying   : koji-1.14.0-1.fc25.noarch                                36/231 
+  Verifying   : python-offtrac-0.1.0-7.fc25.noarch                       37/231 
+  Verifying   : rpmdevtools-8.9-1.fc25.noarch                            38/231 
+  Verifying   : python2-koji-1.14.0-1.fc25.noarch                        39/231 
+  Verifying   : python2-pycurl-7.43.0-6.fc25.x86_64                      40/231 
+  Verifying   : python3-koji-1.14.0-1.fc25.noarch                        41/231 
+  Verifying   : python2-libcomps-0.1.7-5.fc25.x86_64                     42/231 
+  Verifying   : fakeroot-1.20.2-4.fc24.x86_64                            43/231 
+  Verifying   : findutils-1:4.6.0-8.fc25.x86_64                          44/231 
+  Verifying   : python-krbV-1.0.90-12.fc25.x86_64                        45/231 
+  Verifying   : python-six-1.10.0-3.fc25.noarch                          46/231 
+  Verifying   : python2-requests-2.10.0-4.fc25.noarch                    47/231 
+  Verifying   : python2-requests-kerberos-0.10.0-2.fc25.noarch           48/231 
+  Verifying   : python3-requests-2.10.0-4.fc25.noarch                    49/231 
+  Verifying   : python3-requests-kerberos-0.10.0-2.fc25.noarch           50/231 
+  Verifying   : python-chardet-2.3.0-1.fc25.noarch                       51/231 
+  Verifying   : python2-urllib3-1.15.1-3.fc25.noarch                     52/231 
+  Verifying   : python2-kerberos-1.2.5-1.fc25.x86_64                     53/231 
+  Verifying   : python3-chardet-2.3.0-1.fc25.noarch                      54/231 
+  Verifying   : python3-urllib3-1.15.1-3.fc25.noarch                     55/231 
+  Verifying   : python3-kerberos-1.2.5-1.fc25.x86_64                     56/231 
+  Verifying   : file-5.29-9.fc25.x86_64                                  57/231 
+  Verifying   : krb5-workstation-1.14.4-9.fc25.x86_64                    58/231 
+  Verifying   : libkadm5-1.14.4-9.fc25.x86_64                            59/231 
+  Verifying   : python2-rpm-4.13.0.2-1.fc25.x86_64                       60/231 
+  Verifying   : rpm-build-4.13.0.2-1.fc25.x86_64                         61/231 
+  Verifying   : elfutils-0.169-1.fc25.x86_64                             62/231 
+  Verifying   : binutils-2.26.1-1.fc25.x86_64                            63/231 
+  Verifying   : cpio-2.12-3.fc24.x86_64                                  64/231 
+  Verifying   : xz-5.2.2-2.fc24.x86_64                                   65/231 
+  Verifying   : unzip-6.0-32.fc25.x86_64                                 66/231 
+  Verifying   : perl-4:5.24.3-389.fc25.x86_64                            67/231 
+  Verifying   : perl-libs-4:5.24.3-389.fc25.x86_64                       68/231 
+  Verifying   : perl-Text-Tabs+Wrap-2013.0523-365.fc25.noarch            69/231 
+  Verifying   : perl-Unicode-Normalize-1.25-365.fc25.x86_64              70/231 
+  Verifying   : xemacs-filesystem-21.5.34-20.20170124hgf412e9f093d4.f    71/231 
+  Verifying   : python3-pysocks-1.6.7-1.fc25.noarch                      72/231 
+  Verifying   : python2-pysocks-1.6.7-1.fc25.noarch                      73/231 
+  Verifying   : python-libs-2.7.13-3.fc25.x86_64                         74/231 
+  Verifying   : python-2.7.13-3.fc25.x86_64                              75/231 
+  Verifying   : python-pip-8.1.2-2.fc25.noarch                           76/231 
+  Verifying   : python2-setuptools-25.1.1-1.fc25.noarch                  77/231 
+  Verifying   : perl-Pod-Perldoc-3.28-1.fc25.noarch                      78/231 
+  Verifying   : perl-HTTP-Tiny-0.070-1.fc25.noarch                       79/231 
+  Verifying   : perl-MIME-Base64-3.15-365.fc25.x86_64                    80/231 
+  Verifying   : perl-Socket-4:2.024-1.fc25.x86_64                        81/231 
+  Verifying   : perl-podlators-4.09-1.fc25.noarch                        82/231 
+  Verifying   : perl-Term-ANSIColor-4.05-2.fc25.noarch                   83/231 
+  Verifying   : perl-Term-Cap-1.17-365.fc25.noarch                       84/231 
+  Verifying   : perl-Scalar-List-Utils-3:1.48-1.fc25.x86_64              85/231 
+  Verifying   : perl-Errno-1.25-389.fc25.x86_64                          86/231 
+  Verifying   : perl-IO-1.36-389.fc25.x86_64                             87/231 
+  Verifying   : perl-Time-Local-1:1.250-1.fc25.noarch                    88/231 
+  Verifying   : perl-File-Path-2.12-366.fc25.noarch                      89/231 
+  Verifying   : apr-1.6.2-1.fc25.x86_64                                  90/231 
+  Verifying   : fakeroot-libs-1.20.2-4.fc24.x86_64                       91/231 
+  Verifying   : json-c-0.12.1-2.fc25.x86_64                              92/231 
+  Verifying   : libstdc++-6.4.1-1.fc25.x86_64                            93/231 
+  Verifying   : openssh-clients-7.4p1-5.fc25.x86_64                      94/231 
+  Verifying   : openssh-7.4p1-5.fc25.x86_64                              95/231 
+  Verifying   : fipscheck-lib-1.4.1-11.fc25.x86_64                       96/231 
+  Verifying   : libedit-3.1-16.20160618cvs.fc25.x86_64                   97/231 
+  Verifying   : fipscheck-1.4.1-11.fc25.x86_64                           98/231 
+  Verifying   : systemtap-devel-3.2-2.fc25.x86_64                        99/231 
+  Verifying   : bzip2-1.0.6-21.fc25.x86_64                              100/231 
+  Verifying   : gdb-headless-7.12.1-48.fc25.x86_64                      101/231 
+  Verifying   : gc-7.4.4-1.fc25.x86_64                                  102/231 
+  Verifying   : guile-5:2.0.13-1.fc25.x86_64                            103/231 
+  Verifying   : libbabeltrace-1.4.0-3.fc25.x86_64                       104/231 
+  Verifying   : libipt-1.5-1.fc25.x86_64                                105/231 
+  Verifying   : libatomic_ops-7.4.4-1.fc25.x86_64                       106/231 
+  Verifying   : redhat-rpm-config-45-1.fc25.noarch                      107/231 
+  Verifying   : dwz-0.12-2.fc24.x86_64                                  108/231 
+  Verifying   : fpc-srpm-macros-1.0-1.fc25.noarch                       109/231 
+  Verifying   : ghc-srpm-macros-1.4.2-4.fc25.noarch                     110/231 
+  Verifying   : gnat-srpm-macros-4-1.fc25.noarch                        111/231 
+  Verifying   : go-srpm-macros-2-7.fc25.noarch                          112/231 
+  Verifying   : ocaml-srpm-macros-2-4.fc24.noarch                       113/231 
+  Verifying   : perl-srpm-macros-1-20.fc25.noarch                       114/231 
+  Verifying   : python-srpm-macros-3-12.fc25.noarch                     115/231 
+  Verifying   : qt5-srpm-macros-5.7.1-1.fc25.noarch                     116/231 
+  Verifying   : python3-dateutil-1:2.6.0-1.fc25.noarch                  117/231 
+  Verifying   : python3-pyOpenSSL-16.2.0-2.fc25.noarch                  118/231 
+  Verifying   : pyOpenSSL-16.2.0-2.fc25.noarch                          119/231 
+  Verifying   : python2-dateutil-1:2.6.0-1.fc25.noarch                  120/231 
+  Verifying   : python2-cryptography-2.0.2-2.fc25.x86_64                121/231 
+  Verifying   : openssl-1:1.0.2m-1.fc25.x86_64                          122/231 
+  Verifying   : python2-asn1crypto-0.22.0-2.fc25.noarch                 123/231 
+  Verifying   : python2-idna-2.5-1.fc25.noarch                          124/231 
+  Verifying   : python-enum34-1.0.4-6.fc25.noarch                       125/231 
+  Verifying   : python-ipaddress-1.0.16-3.fc25.noarch                   126/231 
+  Verifying   : python2-cffi-1.7.0-2.fc25.x86_64                        127/231 
+  Verifying   : python-pycparser-2.14-7.fc25.noarch                     128/231 
+  Verifying   : python2-ply-3.8-2.fc25.noarch                           129/231 
+  Verifying   : perl-Encode-4:2.88-5.fc25.x86_64                        130/231 
+  Verifying   : perl-Pod-Simple-1:3.35-1.fc25.noarch                    131/231 
+  Verifying   : perl-Pod-Escapes-1:1.07-365.fc25.noarch                 132/231 
+  Verifying   : groff-base-1.22.3-9.fc25.x86_64                         133/231 
+  Verifying   : perl-macros-4:5.24.3-389.fc25.x86_64                    134/231 
+  Verifying   : perl-threads-1:2.16-1.fc25.x86_64                       135/231 
+  Verifying   : perl-threads-shared-1.57-1.fc25.x86_64                  136/231 
+  Verifying   : make-1:4.1-6.fc25.x86_64                                137/231 
+  Verifying   : python3-pycurl-7.43.0-6.fc25.x86_64                     138/231 
+  Verifying   : less-481-7.fc25.x86_64                                  139/231 
+  Verifying   : rsync-3.1.2-4.fc25.x86_64                               140/231 
+  Verifying   : gettext-libs-0.19.8.1-3.fc25.x86_64                     141/231 
+  Verifying   : libcroco-0.6.11-3.fc25.x86_64                           142/231 
+  Verifying   : libgomp-6.4.1-1.fc25.x86_64                             143/231 
+  Verifying   : bodhi-client-0.9.12.2-6.fc25.noarch                     144/231 
+  Verifying   : python2-dnf-1.1.10-6.fc25.noarch                        145/231 
+  Verifying   : python-kitchen-1.2.4-2.fc24.noarch                      146/231 
+  Verifying   : yum-3.4.3-510.fc25.noarch                               147/231 
+  Verifying   : python2-hawkey-0.6.4-3.fc25.x86_64                      148/231 
+  Verifying   : pyliblzma-0.5.3-16.fc25.x86_64                          149/231 
+  Verifying   : python2-iniparse-0.4-20.fc25.noarch                     150/231 
+  Verifying   : python2-librepo-1.7.18-3.fc25.x86_64                    151/231 
+  Verifying   : python2-pygpgme-0.3-18.fc25.x86_64                      152/231 
+  Verifying   : python-urlgrabber-3.10.1-9.fc25.noarch                  153/231 
+  Verifying   : pyxattr-0.5.3-8.fc25.x86_64                             154/231 
+  Verifying   : yum-metadata-parser-1.1.4-17.fc25.x86_64                155/231 
+  Verifying   : fedpkg-1.30-4.fc25.noarch                               156/231 
+  Verifying   : python2-fedora-0.9.0-6.fc25.noarch                      157/231 
+  Verifying   : python2-openidc-client-0-3.20170523git77cb3ee.fc25.no   158/231 
+  Verifying   : python2-rpkg-1.51-2.fc25.noarch                         159/231 
+  Verifying   : python-lockfile-1:0.11.0-4.fc25.noarch                  160/231 
+  Verifying   : python-munch-2.0.4-3.fc25.noarch                        161/231 
+  Verifying   : python2-cccolutils-1.4-1.fc25.x86_64                    162/231 
+  Verifying   : mock-1.4.7-2.fc25.noarch                                163/231 
+  Verifying   : mock-core-configs-27.4-1.fc25.noarch                    164/231 
+  Verifying   : createrepo_c-0.10.0-6.fc25.x86_64                       165/231 
+  Verifying   : usermode-1.111-8.fc24.x86_64                            166/231 
+  Verifying   : distribution-gpg-keys-1.15-1.fc25.noarch                167/231 
+  Verifying   : createrepo_c-libs-0.10.0-6.fc25.x86_64                  168/231 
+  Verifying   : drpm-0.3.0-3.fc25.x86_64                                169/231 
+  Verifying   : libuser-0.62-4.fc25.x86_64                              170/231 
+  Verifying   : passwd-0.79-8.fc24.x86_64                               171/231 
+  Verifying   : packagedb-cli-2.14.1-1.fc25.noarch                      172/231 
+  Verifying   : python-bugzilla-1.2.2-4.fc25.noarch                     173/231 
+  Verifying   : python-magic-5.29-9.fc25.noarch                         174/231 
+  Verifying   : python2-yubico-1.3.2-7.fc25.noarch                      175/231 
+  Verifying   : pyusb-1.0.0-2.fc25.noarch                               176/231 
+  Verifying   : rpmlint-1.10-5.fc25.noarch                              177/231 
+  Verifying   : python3-magic-5.29-9.fc25.noarch                        178/231 
+  Verifying   : ykpers-1.18.0-2.fc25.x86_64                             179/231 
+  Verifying   : libyubikey-1.13-2.fc24.x86_64                           180/231 
+  Verifying   : boost-atomic-1.60.0-10.fc25.x86_64                      181/231 
+  Verifying   : boost-chrono-1.60.0-10.fc25.x86_64                      182/231 
+  Verifying   : boost-system-1.60.0-10.fc25.x86_64                      183/231 
+  Verifying   : boost-thread-1.60.0-10.fc25.x86_64                      184/231 
+  Verifying   : boost-date-time-1.60.0-10.fc25.x86_64                   185/231 
+  Verifying   : libdwarf-20170416-1.fc25.x86_64                         186/231 
+  Verifying   : xapian-core-libs-1.2.24-1.fc25.x86_64                   187/231 
+  Verifying   : libtool-ltdl-2.4.6-14.fc25.x86_64                       188/231 
+  Verifying   : gcc-6.4.1-1.fc25.x86_64                                 189/231 
+  Verifying   : cpp-6.4.1-1.fc25.x86_64                                 190/231 
+  Verifying   : libmpc-1.0.2-5.fc24.x86_64                              191/231 
+  Verifying   : desktop-file-utils-0.23-2.fc25.x86_64                   192/231 
+  Verifying   : python3-enchant-1.6.8-1.fc25.noarch                     193/231 
+  Verifying   : python3-cryptography-2.0.2-2.fc25.x86_64                194/231 
+  Verifying   : python3-asn1crypto-0.22.0-2.fc25.noarch                 195/231 
+  Verifying   : python3-idna-2.5-1.fc25.noarch                          196/231 
+  Verifying   : python3-cffi-1.7.0-2.fc25.x86_64                        197/231 
+  Verifying   : python3-pycparser-2.14-7.fc25.noarch                    198/231 
+  Verifying   : python3-ply-3.8-2.fc25.noarch                           199/231 
+  Verifying   : enchant-1:1.6.0-14.fc25.x86_64                          200/231 
+  Verifying   : python2-GitPython-2.1.5-1.fc25.noarch                   201/231 
+  Verifying   : python2-gitdb-2.0.2-1.fc25.noarch                       202/231 
+  Verifying   : python2-smmap-2.0.3-1.fc25.noarch                       203/231 
+  Verifying   : python-beautifulsoup4-4.6.0-1.fc25.noarch               204/231 
+  Verifying   : python2-lxml-4.1.1-1.fc25.x86_64                        205/231 
+  Verifying   : libxslt-1.1.28-13.fc25.x86_64                           206/231 
+  Verifying   : dnf-plugins-core-0.1.21-5.fc25.noarch                   207/231 
+  Verifying   : python3-dnf-plugins-core-0.1.21-5.fc25.noarch           208/231 
+  Verifying   : pigz-2.3.4-1.fc25.x86_64                                209/231 
+  Verifying   : python3-distro-1.0.3-1.fc25.noarch                      210/231 
+  Verifying   : python3-pyroute2-0.4.13-1.fc25.noarch                   211/231 
+  Verifying   : systemd-container-231-19.fc25.x86_64                    212/231 
+  Verifying   : procps-ng-3.3.10-11.fc24.x86_64                         213/231 
+  Verifying   : glibc-devel-2.24-10.fc25.x86_64                         214/231 
+  Verifying   : isl-0.14-5.fc24.x86_64                                  215/231 
+  Verifying   : hunspell-1.4.1-2.fc25.x86_64                            216/231 
+  Verifying   : hunspell-en-US-0.20140811.1-5.fc24.noarch               217/231 
+  Verifying   : glibc-headers-2.24-10.fc25.x86_64                       218/231 
+  Verifying   : kernel-headers-4.13.16-100.fc25.x86_64                  219/231 
+  Verifying   : kernel-devel-4.13.16-100.fc25.x86_64                    220/231 
+  Verifying   : hunspell-en-0.20140811.1-5.fc24.noarch                  221/231 
+  Verifying   : hunspell-en-GB-0.20140811.1-5.fc24.noarch               222/231 
+  Verifying   : perl-Mozilla-CA-20160104-3.fc25.noarch                  223/231 
+  Verifying   : perl-IO-Socket-IP-0.39-1.fc25.noarch                    224/231 
+  Verifying   : perl-IO-Socket-SSL-2.038-1.fc25.noarch                  225/231 
+  Verifying   : perl-Net-SSLeay-1.78-1.fc25.x86_64                      226/231 
+  Verifying   : perl-URI-1.71-5.fc25.noarch                             227/231 
+  Verifying   : perl-Data-Dumper-2.161-1.fc25.x86_64                    228/231 
+  Verifying   : btrfs-progs-4.6.1-1.fc25.x86_64                         229/231 
+  Verifying   : python2-cssselect-0.9.2-1.fc25.noarch                   230/231 
+  Verifying   : perl-libnet-3.11-1.fc25.noarch                          231/231 
+
+Installed:
+  apr.x86_64 1.6.2-1.fc25                                                       
+  apr-util.x86_64 1.5.4-3.fc24                                                  
+  avahi-libs.x86_64 0.6.32-4.fc25                                               
+  binutils.x86_64 2.26.1-1.fc25                                                 
+  bodhi-client.noarch 0.9.12.2-6.fc25                                           
+  boost-atomic.x86_64 1.60.0-10.fc25                                            
+  boost-chrono.x86_64 1.60.0-10.fc25                                            
+  boost-date-time.x86_64 1.60.0-10.fc25                                         
+  boost-system.x86_64 1.60.0-10.fc25                                            
+  boost-thread.x86_64 1.60.0-10.fc25                                            
+  btrfs-progs.x86_64 4.6.1-1.fc25                                               
+  bzip2.x86_64 1.0.6-21.fc25                                                    
+  cpio.x86_64 2.12-3.fc24                                                       
+  cpp.x86_64 6.4.1-1.fc25                                                       
+  createrepo_c.x86_64 0.10.0-6.fc25                                             
+  createrepo_c-libs.x86_64 0.10.0-6.fc25                                        
+  desktop-file-utils.x86_64 0.23-2.fc25                                         
+  diffstat.x86_64 1.61-2.fc24                                                   
+  distribution-gpg-keys.noarch 1.15-1.fc25                                      
+  dnf-plugins-core.noarch 0.1.21-5.fc25                                         
+  doxygen.x86_64 1:1.8.13-9.fc25                                                
+  drpm.x86_64 0.3.0-3.fc25                                                      
+  dwz.x86_64 0.12-2.fc24                                                        
+  dyninst.x86_64 9.3.1-1.fc25                                                   
+  efivar-libs.x86_64 30-4.fc25                                                  
+  elfutils.x86_64 0.169-1.fc25                                                  
+  enchant.x86_64 1:1.6.0-14.fc25                                                
+  fakeroot.x86_64 1.20.2-4.fc24                                                 
+  fakeroot-libs.x86_64 1.20.2-4.fc24                                            
+  fedora-cert.noarch 0.6.0.1-1.fc25                                             
+  fedora-packager.noarch 0.6.0.1-1.fc25                                         
+  fedpkg.noarch 1.30-4.fc25                                                     
+  file.x86_64 5.29-9.fc25                                                       
+  findutils.x86_64 1:4.6.0-8.fc25                                               
+  fipscheck.x86_64 1.4.1-11.fc25                                                
+  fipscheck-lib.x86_64 1.4.1-11.fc25                                            
+  fpc-srpm-macros.noarch 1.0-1.fc25                                             
+  gc.x86_64 7.4.4-1.fc25                                                        
+  gcc.x86_64 6.4.1-1.fc25                                                       
+  gdb-headless.x86_64 7.12.1-48.fc25                                            
+  gettext.x86_64 0.19.8.1-3.fc25                                                
+  gettext-libs.x86_64 0.19.8.1-3.fc25                                           
+  ghc-srpm-macros.noarch 1.4.2-4.fc25                                           
+  git.x86_64 2.9.5-3.fc25                                                       
+  git-core.x86_64 2.9.5-3.fc25                                                  
+  git-core-doc.x86_64 2.9.5-3.fc25                                              
+  glibc-devel.x86_64 2.24-10.fc25                                               
+  glibc-headers.x86_64 2.24-10.fc25                                             
+  gnat-srpm-macros.noarch 4-1.fc25                                              
+  go-srpm-macros.noarch 2-7.fc25                                                
+  groff-base.x86_64 1.22.3-9.fc25                                               
+  guile.x86_64 5:2.0.13-1.fc25                                                  
+  hunspell.x86_64 1.4.1-2.fc25                                                  
+  hunspell-en.noarch 0.20140811.1-5.fc24                                        
+  hunspell-en-GB.noarch 0.20140811.1-5.fc24                                     
+  hunspell-en-US.noarch 0.20140811.1-5.fc24                                     
+  isl.x86_64 0.14-5.fc24                                                        
+  json-c.x86_64 0.12.1-2.fc25                                                   
+  kernel-devel.x86_64 4.13.16-100.fc25                                          
+  kernel-headers.x86_64 4.13.16-100.fc25                                        
+  koji.noarch 1.14.0-1.fc25                                                     
+  krb5-workstation.x86_64 1.14.4-9.fc25                                         
+  less.x86_64 481-7.fc25                                                        
+  libatomic_ops.x86_64 7.4.4-1.fc25                                             
+  libbabeltrace.x86_64 1.4.0-3.fc25                                             
+  libcroco.x86_64 0.6.11-3.fc25                                                 
+  libdwarf.x86_64 20170416-1.fc25                                               
+  libedit.x86_64 3.1-16.20160618cvs.fc25                                        
+  libgnome-keyring.x86_64 3.12.0-7.fc25                                         
+  libgomp.x86_64 6.4.1-1.fc25                                                   
+  libipt.x86_64 1.5-1.fc25                                                      
+  libkadm5.x86_64 1.14.4-9.fc25                                                 
+  libmpc.x86_64 1.0.2-5.fc24                                                    
+  libserf.x86_64 1.3.9-1.fc25                                                   
+  libstdc++.x86_64 6.4.1-1.fc25                                                 
+  libtool-ltdl.x86_64 2.4.6-14.fc25                                             
+  libuser.x86_64 0.62-4.fc25                                                    
+  libxslt.x86_64 1.1.28-13.fc25                                                 
+  libyubikey.x86_64 1.13-2.fc24                                                 
+  make.x86_64 1:4.1-6.fc25                                                      
+  mock.noarch 1.4.7-2.fc25                                                      
+  mock-core-configs.noarch 27.4-1.fc25                                          
+  mokutil.x86_64 1:0.3.0-3.fc25                                                 
+  ocaml-srpm-macros.noarch 2-4.fc24                                             
+  openssh.x86_64 7.4p1-5.fc25                                                   
+  openssh-clients.x86_64 7.4p1-5.fc25                                           
+  openssl.x86_64 1:1.0.2m-1.fc25                                                
+  packagedb-cli.noarch 2.14.1-1.fc25                                            
+  passwd.x86_64 0.79-8.fc24                                                     
+  patch.x86_64 2.7.5-3.fc24                                                     
+  patchutils.x86_64 0.3.4-5.fc24                                                
+  perl.x86_64 4:5.24.3-389.fc25                                                 
+  perl-Carp.noarch 1.40-365.fc25                                                
+  perl-Data-Dumper.x86_64 2.161-1.fc25                                          
+  perl-Encode.x86_64 4:2.88-5.fc25                                              
+  perl-Errno.x86_64 1.25-389.fc25                                               
+  perl-Error.noarch 1:0.17024-7.fc25                                            
+  perl-Exporter.noarch 5.72-366.fc25                                            
+  perl-File-Path.noarch 2.12-366.fc25                                           
+  perl-File-Temp.noarch 0.23.04-365.fc25                                        
+  perl-Getopt-Long.noarch 2.49.1-1.fc25                                         
+  perl-Git.noarch 2.9.5-3.fc25                                                  
+  perl-HTTP-Tiny.noarch 0.070-1.fc25                                            
+  perl-IO.x86_64 1.36-389.fc25                                                  
+  perl-IO-Socket-IP.noarch 0.39-1.fc25                                          
+  perl-IO-Socket-SSL.noarch 2.038-1.fc25                                        
+  perl-MIME-Base64.x86_64 3.15-365.fc25                                         
+  perl-Mozilla-CA.noarch 20160104-3.fc25                                        
+  perl-Net-SSLeay.x86_64 1.78-1.fc25                                            
+  perl-PathTools.x86_64 3.63-366.fc25                                           
+  perl-Pod-Escapes.noarch 1:1.07-365.fc25                                       
+  perl-Pod-Perldoc.noarch 3.28-1.fc25                                           
+  perl-Pod-Simple.noarch 1:3.35-1.fc25                                          
+  perl-Pod-Usage.noarch 4:1.69-1.fc25                                           
+  perl-Scalar-List-Utils.x86_64 3:1.48-1.fc25                                   
+  perl-Socket.x86_64 4:2.024-1.fc25                                             
+  perl-Term-ANSIColor.noarch 4.05-2.fc25                                        
+  perl-Term-Cap.noarch 1.17-365.fc25                                            
+  perl-TermReadKey.x86_64 2.37-1.fc25                                           
+  perl-Text-ParseWords.noarch 3.30-365.fc25                                     
+  perl-Text-Tabs+Wrap.noarch 2013.0523-365.fc25                                 
+  perl-Time-Local.noarch 1:1.250-1.fc25                                         
+  perl-URI.noarch 1.71-5.fc25                                                   
+  perl-Unicode-Normalize.x86_64 1.25-365.fc25                                   
+  perl-constant.noarch 1.33-367.fc25                                            
+  perl-libnet.noarch 3.11-1.fc25                                                
+  perl-libs.x86_64 4:5.24.3-389.fc25                                            
+  perl-macros.x86_64 4:5.24.3-389.fc25                                          
+  perl-parent.noarch 1:0.236-1.fc25                                             
+  perl-podlators.noarch 4.09-1.fc25                                             
+  perl-srpm-macros.noarch 1-20.fc25                                             
+  perl-threads.x86_64 1:2.16-1.fc25                                             
+  perl-threads-shared.x86_64 1.57-1.fc25                                        
+  pigz.x86_64 2.3.4-1.fc25                                                      
+  procps-ng.x86_64 3.3.10-11.fc24                                               
+  pyOpenSSL.noarch 16.2.0-2.fc25                                                
+  pyliblzma.x86_64 0.5.3-16.fc25                                                
+  python.x86_64 2.7.13-3.fc25                                                   
+  python-beautifulsoup4.noarch 4.6.0-1.fc25                                     
+  python-bugzilla.noarch 1.2.2-4.fc25                                           
+  python-chardet.noarch 2.3.0-1.fc25                                            
+  python-enum34.noarch 1.0.4-6.fc25                                             
+  python-ipaddress.noarch 1.0.16-3.fc25                                         
+  python-kitchen.noarch 1.2.4-2.fc24                                            
+  python-krbV.x86_64 1.0.90-12.fc25                                             
+  python-libs.x86_64 2.7.13-3.fc25                                              
+  python-lockfile.noarch 1:0.11.0-4.fc25                                        
+  python-magic.noarch 5.29-9.fc25                                               
+  python-munch.noarch 2.0.4-3.fc25                                              
+  python-offtrac.noarch 0.1.0-7.fc25                                            
+  python-pip.noarch 8.1.2-2.fc25                                                
+  python-pycparser.noarch 2.14-7.fc25                                           
+  python-six.noarch 1.10.0-3.fc25                                               
+  python-srpm-macros.noarch 3-12.fc25                                           
+  python-urlgrabber.noarch 3.10.1-9.fc25                                        
+  python2-GitPython.noarch 2.1.5-1.fc25                                         
+  python2-asn1crypto.noarch 0.22.0-2.fc25                                       
+  python2-cccolutils.x86_64 1.4-1.fc25                                          
+  python2-cffi.x86_64 1.7.0-2.fc25                                              
+  python2-cryptography.x86_64 2.0.2-2.fc25                                      
+  python2-cssselect.noarch 0.9.2-1.fc25                                         
+  python2-dateutil.noarch 1:2.6.0-1.fc25                                        
+  python2-dnf.noarch 1.1.10-6.fc25                                              
+  python2-fedora.noarch 0.9.0-6.fc25                                            
+  python2-gitdb.noarch 2.0.2-1.fc25                                             
+  python2-hawkey.x86_64 0.6.4-3.fc25                                            
+  python2-idna.noarch 2.5-1.fc25                                                
+  python2-iniparse.noarch 0.4-20.fc25                                           
+  python2-kerberos.x86_64 1.2.5-1.fc25                                          
+  python2-koji.noarch 1.14.0-1.fc25                                             
+  python2-libcomps.x86_64 0.1.7-5.fc25                                          
+  python2-librepo.x86_64 1.7.18-3.fc25                                          
+  python2-lxml.x86_64 4.1.1-1.fc25                                              
+  python2-openidc-client.noarch 0-3.20170523git77cb3ee.fc25                     
+  python2-ply.noarch 3.8-2.fc25                                                 
+  python2-pycurl.x86_64 7.43.0-6.fc25                                           
+  python2-pygpgme.x86_64 0.3-18.fc25                                            
+  python2-pysocks.noarch 1.6.7-1.fc25                                           
+  python2-requests.noarch 2.10.0-4.fc25                                         
+  python2-requests-kerberos.noarch 0.10.0-2.fc25                                
+  python2-rpkg.noarch 1.51-2.fc25                                               
+  python2-rpm.x86_64 4.13.0.2-1.fc25                                            
+  python2-setuptools.noarch 25.1.1-1.fc25                                       
+  python2-smmap.noarch 2.0.3-1.fc25                                             
+  python2-urllib3.noarch 1.15.1-3.fc25                                          
+  python2-yubico.noarch 1.3.2-7.fc25                                            
+  python3-asn1crypto.noarch 0.22.0-2.fc25                                       
+  python3-cffi.x86_64 1.7.0-2.fc25                                              
+  python3-chardet.noarch 2.3.0-1.fc25                                           
+  python3-cryptography.x86_64 2.0.2-2.fc25                                      
+  python3-dateutil.noarch 1:2.6.0-1.fc25                                        
+  python3-distro.noarch 1.0.3-1.fc25                                            
+  python3-dnf-plugins-core.noarch 0.1.21-5.fc25                                 
+  python3-enchant.noarch 1.6.8-1.fc25                                           
+  python3-idna.noarch 2.5-1.fc25                                                
+  python3-kerberos.x86_64 1.2.5-1.fc25                                          
+  python3-koji.noarch 1.14.0-1.fc25                                             
+  python3-magic.noarch 5.29-9.fc25                                              
+  python3-ply.noarch 3.8-2.fc25                                                 
+  python3-pyOpenSSL.noarch 16.2.0-2.fc25                                        
+  python3-pycparser.noarch 2.14-7.fc25                                          
+  python3-pycurl.x86_64 7.43.0-6.fc25                                           
+  python3-pyroute2.noarch 0.4.13-1.fc25                                         
+  python3-pysocks.noarch 1.6.7-1.fc25                                           
+  python3-requests.noarch 2.10.0-4.fc25                                         
+  python3-requests-kerberos.noarch 0.10.0-2.fc25                                
+  python3-urllib3.noarch 1.15.1-3.fc25                                          
+  pyusb.noarch 1.0.0-2.fc25                                                     
+  pyxattr.x86_64 0.5.3-8.fc25                                                   
+  qt5-srpm-macros.noarch 5.7.1-1.fc25                                           
+  redhat-rpm-config.noarch 45-1.fc25                                            
+  rpm-build.x86_64 4.13.0.2-1.fc25                                              
+  rpmdevtools.noarch 8.9-1.fc25                                                 
+  rpmlint.noarch 1.10-5.fc25                                                    
+  rsync.x86_64 3.1.2-4.fc25                                                     
+  subversion.x86_64 1.9.7-1.fc25                                                
+  subversion-libs.x86_64 1.9.7-1.fc25                                           
+  systemd-container.x86_64 231-19.fc25                                          
+  systemtap.x86_64 3.2-2.fc25                                                   
+  systemtap-client.x86_64 3.2-2.fc25                                            
+  systemtap-devel.x86_64 3.2-2.fc25                                             
+  systemtap-runtime.x86_64 3.2-2.fc25                                           
+  unzip.x86_64 6.0-32.fc25                                                      
+  usermode.x86_64 1.111-8.fc24                                                  
+  xapian-core-libs.x86_64 1.2.24-1.fc25                                         
+  xemacs-filesystem.noarch 21.5.34-20.20170124hgf412e9f093d4.fc25               
+  xz.x86_64 5.2.2-2.fc24                                                        
+  ykpers.x86_64 1.18.0-2.fc25                                                   
+  yum.noarch 3.4.3-510.fc25                                                     
+  yum-metadata-parser.x86_64 1.1.4-17.fc25                                      
+  zip.x86_64 3.0-16.fc24                                                        
+
+Complete!
+Removing intermediate container c0e2d811f7ef
+ ---> 72ef352f6ede
+Step 4/10 : RUN dnf install -y btrfs-progs-devel device-mapper-devel glibc-static libseccomp-devel libselinux-devel libtool-ltdl-devel pkgconfig selinux-policy selinux-policy-devel systemd-devel tar git cmake vim-common
+ ---> Running in 7e6c2238f706
+Last metadata expiration check: 0:02:36 ago on Thu Apr  2 15:58:13 2020.
+[91mPackage pkgconfig-1:0.29.1-1.fc25.x86_64 is already installed, skipping.
+[0m[91mPackage tar-2:1.29-4.fc25.x86_64 is already installed, skipping.
+[0m[91mPackage git-2.9.5-3.fc25.x86_64 is already installed, skipping.
+[0mDependencies resolved.
+================================================================================
+ Package                        Arch     Version                Repository
+                                                                           Size
+================================================================================
+Installing:
+ audit                          x86_64   2.8.1-1.fc25           updates   249 k
+ audit-libs-python3             x86_64   2.8.1-1.fc25           updates    80 k
+ btrfs-progs-devel              x86_64   4.6.1-1.fc25           fedora     50 k
+ checkpolicy                    x86_64   2.5-8.fc25             fedora    297 k
+ cmake                          x86_64   3.9.1-1.fc25           updates   7.6 M
+ cmake-data                     noarch   3.9.1-1.fc25           updates   1.2 M
+ cmake-filesystem               x86_64   3.9.1-1.fc25           updates    35 k
+ device-mapper                  x86_64   1.02.136-3.fc25        updates   327 k
+ device-mapper-devel            x86_64   1.02.136-3.fc25        updates   253 k
+ device-mapper-libs             x86_64   1.02.136-3.fc25        updates   372 k
+ glibc-static                   x86_64   2.24-10.fc25           updates   1.5 M
+ jsoncpp                        x86_64   1.8.1-3.fc25           updates    84 k
+ libcgroup                      x86_64   0.41-9.fc25            fedora     67 k
+ libseccomp-devel               x86_64   2.3.2-1.fc25           updates    74 k
+ libselinux-devel               x86_64   2.5-13.fc25            updates   192 k
+ libselinux-python3             x86_64   2.5-13.fc25            updates   240 k
+ libselinux-utils               x86_64   2.5-13.fc25            updates   158 k
+ libsemanage-python3            x86_64   2.5-9.fc25             updates   111 k
+ libsepol-devel                 x86_64   2.5-10.fc25            fedora     80 k
+ libtool-ltdl-devel             x86_64   2.4.6-14.fc25          updates   181 k
+ libuv                          x86_64   1:1.10.2-1.fc25        updates   111 k
+ m4                             x86_64   1.4.17-9.fc24          fedora    266 k
+ pcre-cpp                       x86_64   8.41-3.fc25            updates    40 k
+ pcre-devel                     x86_64   8.41-3.fc25            updates   548 k
+ pcre-utf16                     x86_64   8.41-3.fc25            updates   189 k
+ pcre-utf32                     x86_64   8.41-3.fc25            updates   180 k
+ policycoreutils                x86_64   2.5-20.fc25            updates   863 k
+ policycoreutils-devel          x86_64   2.5-20.fc25            updates   340 k
+ policycoreutils-python-utils   x86_64   2.5-20.fc25            updates   217 k
+ policycoreutils-python3        x86_64   2.5-20.fc25            updates   1.8 M
+ python-IPy-python3             noarch   0.81-16.fc25           fedora     43 k
+ rhash                          x86_64   1.3.4-2.fc25           updates   126 k
+ selinux-policy                 noarch   3.13.1-225.23.fc25     updates   497 k
+ selinux-policy-devel           noarch   3.13.1-225.23.fc25     updates   1.3 M
+ setools-libs                   x86_64   3.3.8-12.fc25          fedora    560 k
+ sqlite                         x86_64   3.14.2-3.fc25          updates   489 k
+ systemd-devel                  x86_64   231-19.fc25            updates   293 k
+ tcp_wrappers-libs              x86_64   7.6-83.fc25            fedora     72 k
+ vim-common                     x86_64   2:8.0.1171-1.fc25      updates   6.3 M
+ vim-filesystem                 x86_64   2:8.0.1171-1.fc25      updates    38 k
+
+Transaction Summary
+================================================================================
+Install  40 Packages
+
+Total download size: 27 M
+Installed size: 95 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                            10 MB/s |  27 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Installing  : device-mapper-libs-1.02.136-3.fc25.x86_64                  1/40 
+  Installing  : device-mapper-1.02.136-3.fc25.x86_64                       2/40 
+  Installing  : libselinux-python3-2.5-13.fc25.x86_64                      3/40 
+  Installing  : cmake-filesystem-3.9.1-1.fc25.x86_64                       4/40 
+  Installing  : checkpolicy-2.5-8.fc25.x86_64                              5/40 
+  Installing  : libsemanage-python3-2.5-9.fc25.x86_64                      6/40 
+  Installing  : sqlite-3.14.2-3.fc25.x86_64                                7/40 
+  Installing  : setools-libs-3.3.8-12.fc25.x86_64                          8/40 
+  Installing  : libuv-1:1.10.2-1.fc25.x86_64                               9/40 
+  Installing  : jsoncpp-1.8.1-3.fc25.x86_64                               10/40 
+  Installing  : pcre-utf32-8.41-3.fc25.x86_64                             11/40 
+  Installing  : pcre-utf16-8.41-3.fc25.x86_64                             12/40 
+  Installing  : pcre-cpp-8.41-3.fc25.x86_64                               13/40 
+  Installing  : pcre-devel-8.41-3.fc25.x86_64                             14/40 
+  Installing  : libcgroup-0.41-9.fc25.x86_64                              15/40 
+  Installing  : tcp_wrappers-libs-7.6-83.fc25.x86_64                      16/40 
+  Installing  : audit-2.8.1-1.fc25.x86_64                                 17/40 
+  Installing  : audit-libs-python3-2.8.1-1.fc25.x86_64                    18/40 
+  Installing  : libselinux-utils-2.5-13.fc25.x86_64                       19/40 
+  Installing  : policycoreutils-2.5-20.fc25.x86_64                        20/40 
+  Installing  : selinux-policy-3.13.1-225.23.fc25.noarch                  21/40 
+  Installing  : python-IPy-python3-0.81-16.fc25.noarch                    22/40 
+  Installing  : policycoreutils-python3-2.5-20.fc25.x86_64                23/40 
+  Installing  : policycoreutils-python-utils-2.5-20.fc25.x86_64           24/40 
+  Installing  : vim-filesystem-2:8.0.1171-1.fc25.x86_64                   25/40 
+  Installing  : rhash-1.3.4-2.fc25.x86_64                                 26/40 
+  Installing  : cmake-data-3.9.1-1.fc25.noarch                            27/40 
+  Installing  : cmake-3.9.1-1.fc25.x86_64                                 28/40 
+  Installing  : systemd-devel-231-19.fc25.x86_64                          29/40 
+  Installing  : m4-1.4.17-9.fc24.x86_64                                   30/40 
+  Installing  : policycoreutils-devel-2.5-20.fc25.x86_64                  31/40 
+  Installing  : selinux-policy-devel-3.13.1-225.23.fc25.noarch            32/40 
+  Installing  : libsepol-devel-2.5-10.fc25.x86_64                         33/40 
+  Installing  : libselinux-devel-2.5-13.fc25.x86_64                       34/40 
+  Installing  : device-mapper-devel-1.02.136-3.fc25.x86_64                35/40 
+  Installing  : vim-common-2:8.0.1171-1.fc25.x86_64                       36/40 
+  Installing  : libtool-ltdl-devel-2.4.6-14.fc25.x86_64                   37/40 
+  Installing  : libseccomp-devel-2.3.2-1.fc25.x86_64                      38/40 
+  Installing  : glibc-static-2.24-10.fc25.x86_64                          39/40 
+  Installing  : btrfs-progs-devel-4.6.1-1.fc25.x86_64                     40/40[91mFailed to connect to bus: No such file or directory
+[0m 
+warning: %triggerin(vim-common-2:8.0.1171-1.fc25.x86_64) scriptlet failed, exit status 127
+  Verifying   : btrfs-progs-devel-4.6.1-1.fc25.x86_64                      1/40 
+  Verifying   : device-mapper-devel-1.02.136-3.fc25.x86_64                 2/40 
+  Verifying   : device-mapper-1.02.136-3.fc25.x86_64                       3/40 
+  Verifying   : device-mapper-libs-1.02.136-3.fc25.x86_64                  4/40 
+  Verifying   : glibc-static-2.24-10.fc25.x86_64                           5/40 
+  Verifying   : libseccomp-devel-2.3.2-1.fc25.x86_64                       6/40 
+  Verifying   : libselinux-devel-2.5-13.fc25.x86_64                        7/40 
+  Verifying   : libsepol-devel-2.5-10.fc25.x86_64                          8/40 
+  Verifying   : libtool-ltdl-devel-2.4.6-14.fc25.x86_64                    9/40 
+  Verifying   : selinux-policy-3.13.1-225.23.fc25.noarch                  10/40 
+  Verifying   : selinux-policy-devel-3.13.1-225.23.fc25.noarch            11/40 
+  Verifying   : checkpolicy-2.5-8.fc25.x86_64                             12/40 
+  Verifying   : m4-1.4.17-9.fc24.x86_64                                   13/40 
+  Verifying   : systemd-devel-231-19.fc25.x86_64                          14/40 
+  Verifying   : cmake-3.9.1-1.fc25.x86_64                                 15/40 
+  Verifying   : cmake-data-3.9.1-1.fc25.noarch                            16/40 
+  Verifying   : cmake-filesystem-3.9.1-1.fc25.x86_64                      17/40 
+  Verifying   : rhash-1.3.4-2.fc25.x86_64                                 18/40 
+  Verifying   : vim-common-2:8.0.1171-1.fc25.x86_64                       19/40 
+  Verifying   : vim-filesystem-2:8.0.1171-1.fc25.x86_64                   20/40 
+  Verifying   : policycoreutils-devel-2.5-20.fc25.x86_64                  21/40 
+  Verifying   : policycoreutils-python-utils-2.5-20.fc25.x86_64           22/40 
+  Verifying   : policycoreutils-python3-2.5-20.fc25.x86_64                23/40 
+  Verifying   : audit-libs-python3-2.8.1-1.fc25.x86_64                    24/40 
+  Verifying   : libselinux-python3-2.5-13.fc25.x86_64                     25/40 
+  Verifying   : libsemanage-python3-2.5-9.fc25.x86_64                     26/40 
+  Verifying   : python-IPy-python3-0.81-16.fc25.noarch                    27/40 
+  Verifying   : setools-libs-3.3.8-12.fc25.x86_64                         28/40 
+  Verifying   : policycoreutils-2.5-20.fc25.x86_64                        29/40 
+  Verifying   : audit-2.8.1-1.fc25.x86_64                                 30/40 
+  Verifying   : libselinux-utils-2.5-13.fc25.x86_64                       31/40 
+  Verifying   : tcp_wrappers-libs-7.6-83.fc25.x86_64                      32/40 
+  Verifying   : libcgroup-0.41-9.fc25.x86_64                              33/40 
+  Verifying   : pcre-devel-8.41-3.fc25.x86_64                             34/40 
+  Verifying   : pcre-cpp-8.41-3.fc25.x86_64                               35/40 
+  Verifying   : pcre-utf16-8.41-3.fc25.x86_64                             36/40 
+  Verifying   : pcre-utf32-8.41-3.fc25.x86_64                             37/40 
+  Verifying   : jsoncpp-1.8.1-3.fc25.x86_64                               38/40 
+  Verifying   : libuv-1:1.10.2-1.fc25.x86_64                              39/40 
+  Verifying   : sqlite-3.14.2-3.fc25.x86_64                               40/40 
+
+Installed:
+  audit.x86_64 2.8.1-1.fc25                                                     
+  audit-libs-python3.x86_64 2.8.1-1.fc25                                        
+  btrfs-progs-devel.x86_64 4.6.1-1.fc25                                         
+  checkpolicy.x86_64 2.5-8.fc25                                                 
+  cmake.x86_64 3.9.1-1.fc25                                                     
+  cmake-data.noarch 3.9.1-1.fc25                                                
+  cmake-filesystem.x86_64 3.9.1-1.fc25                                          
+  device-mapper.x86_64 1.02.136-3.fc25                                          
+  device-mapper-devel.x86_64 1.02.136-3.fc25                                    
+  device-mapper-libs.x86_64 1.02.136-3.fc25                                     
+  glibc-static.x86_64 2.24-10.fc25                                              
+  jsoncpp.x86_64 1.8.1-3.fc25                                                   
+  libcgroup.x86_64 0.41-9.fc25                                                  
+  libseccomp-devel.x86_64 2.3.2-1.fc25                                          
+  libselinux-devel.x86_64 2.5-13.fc25                                           
+  libselinux-python3.x86_64 2.5-13.fc25                                         
+  libselinux-utils.x86_64 2.5-13.fc25                                           
+  libsemanage-python3.x86_64 2.5-9.fc25                                         
+  libsepol-devel.x86_64 2.5-10.fc25                                             
+  libtool-ltdl-devel.x86_64 2.4.6-14.fc25                                       
+  libuv.x86_64 1:1.10.2-1.fc25                                                  
+  m4.x86_64 1.4.17-9.fc24                                                       
+  pcre-cpp.x86_64 8.41-3.fc25                                                   
+  pcre-devel.x86_64 8.41-3.fc25                                                 
+  pcre-utf16.x86_64 8.41-3.fc25                                                 
+  pcre-utf32.x86_64 8.41-3.fc25                                                 
+  policycoreutils.x86_64 2.5-20.fc25                                            
+  policycoreutils-devel.x86_64 2.5-20.fc25                                      
+  policycoreutils-python-utils.x86_64 2.5-20.fc25                               
+  policycoreutils-python3.x86_64 2.5-20.fc25                                    
+  python-IPy-python3.noarch 0.81-16.fc25                                        
+  rhash.x86_64 1.3.4-2.fc25                                                     
+  selinux-policy.noarch 3.13.1-225.23.fc25                                      
+  selinux-policy-devel.noarch 3.13.1-225.23.fc25                                
+  setools-libs.x86_64 3.3.8-12.fc25                                             
+  sqlite.x86_64 3.14.2-3.fc25                                                   
+  systemd-devel.x86_64 231-19.fc25                                              
+  tcp_wrappers-libs.x86_64 7.6-83.fc25                                          
+  vim-common.x86_64 2:8.0.1171-1.fc25                                           
+  vim-filesystem.x86_64 2:8.0.1171-1.fc25                                       
+
+Complete!
+[91mNon-fatal <unknown> scriptlet failure in rpm package vim-common
+Non-fatal <unknown> scriptlet failure in rpm package vim-common
+[0mRemoving intermediate container 7e6c2238f706
+ ---> 4e36dbec2e7a
+Step 5/10 : ENV GO_VERSION 1.7.5
+ ---> Running in 6b1bd91cb85d
+Removing intermediate container 6b1bd91cb85d
+ ---> dc9f191573d2
+Step 6/10 : RUN curl -fSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar xzC /usr/local
+ ---> Running in a1f4c063294d
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100    74  100    74    0     0   1999      0 --:--:-- --:--:-- --:--:--  2055
+[0m[91m  2 80.2M    2 2463k    0     0  6581k      0  0:00:12 --:--:--  0:00:12 6581k[0m[91m 50 80.2M   50 40.1M    0     0  28.9M    [0m[91m  0  0:00:02  0:00:01  0:00:01 37.3M[0m[91m 88 80.2M   88 71.3M    0     0  29.8M      0  0:00:02  0:00:02 --:--[0m[91m:-- 34.2M[0m[91m100 80.2M  100 80.2M    0     0  29.1M      0  0:00:02  0:00:02 --:--:-- 32.7M
+[0mRemoving intermediate container a1f4c063294d
+ ---> 0c966835a0ab
+Step 7/10 : ENV PATH $PATH:/usr/local/go/bin
+ ---> Running in 0685aedc46e5
+Removing intermediate container 0685aedc46e5
+ ---> a2bb115fdabe
+Step 8/10 : ENV AUTO_GOPATH 1
+ ---> Running in c3992acd6a74
+Removing intermediate container c3992acd6a74
+ ---> 1a57cc90af94
+Step 9/10 : ENV DOCKER_BUILDTAGS pkcs11 seccomp selinux
+ ---> Running in 4d2388f89f3c
+Removing intermediate container 4d2388f89f3c
+ ---> 1ed1d5d1400a
+Step 10/10 : ENV RUNC_BUILDTAGS seccomp selinux
+ ---> Running in 0cc2253c5f54
+Removing intermediate container 0cc2253c5f54
+ ---> ec8291a65a7f
+Successfully built ec8291a65a7f
+Successfully tagged binacle:484097271

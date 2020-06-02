@@ -1,0 +1,116 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM phpdockerio/php73-fpm:latest
+latest: Pulling from phpdockerio/php73-fpm
+23884877105a: Pulling fs layer
+bc38caa0f5b9: Pulling fs layer
+2910811b6c42: Pulling fs layer
+36505266dcc6: Pulling fs layer
+7321024481ae: Pulling fs layer
+a2a56d1a9d51: Pulling fs layer
+95c59a14412e: Pulling fs layer
+36505266dcc6: Waiting
+7321024481ae: Waiting
+a2a56d1a9d51: Waiting
+95c59a14412e: Waiting
+2910811b6c42: Verifying Checksum
+2910811b6c42: Download complete
+bc38caa0f5b9: Verifying Checksum
+bc38caa0f5b9: Download complete
+23884877105a: Verifying Checksum
+23884877105a: Download complete
+36505266dcc6: Verifying Checksum
+36505266dcc6: Download complete
+7321024481ae: Verifying Checksum
+7321024481ae: Download complete
+95c59a14412e: Verifying Checksum
+95c59a14412e: Download complete
+a2a56d1a9d51: Verifying Checksum
+a2a56d1a9d51: Download complete
+23884877105a: Pull complete
+bc38caa0f5b9: Pull complete
+2910811b6c42: Pull complete
+36505266dcc6: Pull complete
+7321024481ae: Pull complete
+a2a56d1a9d51: Pull complete
+95c59a14412e: Pull complete
+Digest: sha256:73a0ca61a890cef50e85812a3671b66d6d54fc4a81200c6efa727852ae9ecc04
+Status: Downloaded newer image for phpdockerio/php73-fpm:latest
+ ---> 2eaebeafa68c
+Step 2/4 : WORKDIR "/application"
+ ---> Running in cd4199c42793
+Removing intermediate container cd4199c42793
+ ---> 11bca8409a84
+Step 3/4 : ARG DEBIAN_FRONTEND=noninteractive
+ ---> Running in ccc85eb4fe10
+Removing intermediate container ccc85eb4fe10
+ ---> 140784fe47cc
+Step 4/4 : RUN apt-get update     && apt-get -y --no-install-recommends install  php7.3-gmp php7.3-xmlrpc     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+ ---> Running in ca79f2775f45
+Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Get:2 http://ppa.launchpad.net/ondrej/php/ubuntu bionic InRelease [20.8 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [852 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [924 kB]
+Get:6 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [8815 B]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [56.7 kB]
+Get:8 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 Packages [62.4 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1225 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [20.1 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [73.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1385 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [8158 B]
+Get:20 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [8286 B]
+Fetched 18.0 MB in 3s (5960 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libexpat1 libxmlrpc-epi0
+The following NEW packages will be installed:
+  libexpat1 libxmlrpc-epi0 php7.3-gmp php7.3-xmlrpc
+0 upgraded, 4 newly installed, 0 to remove and 5 not upgraded.
+Need to get 145 kB of archives.
+After this operation, 714 kB of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.3-gmp amd64 7.3.18-1+ubuntu18.04.1+deb.sury.org+1 [20.9 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1 amd64 2.2.5-3ubuntu0.2 [80.5 kB]
+Get:3 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.3-xmlrpc amd64 7.3.18-1+ubuntu18.04.1+deb.sury.org+1 [12.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxmlrpc-epi0 amd64 0.54.2-1.2 [30.5 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 145 kB in 1s (247 kB/s)
+Selecting previously unselected package libexpat1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7916 files and directories currently installed.)
+Preparing to unpack .../libexpat1_2.2.5-3ubuntu0.2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.5-3ubuntu0.2) ...
+Selecting previously unselected package php7.3-gmp.
+Preparing to unpack .../php7.3-gmp_7.3.18-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.3-gmp (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libxmlrpc-epi0:amd64.
+Preparing to unpack .../libxmlrpc-epi0_0.54.2-1.2_amd64.deb ...
+Unpacking libxmlrpc-epi0:amd64 (0.54.2-1.2) ...
+Selecting previously unselected package php7.3-xmlrpc.
+Preparing to unpack .../php7.3-xmlrpc_7.3.18-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.3-xmlrpc (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up libexpat1:amd64 (2.2.5-3ubuntu0.2) ...
+Setting up libxmlrpc-epi0:amd64 (0.54.2-1.2) ...
+Setting up php7.3-gmp (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.3/mods-available/gmp.ini with new version
+Setting up php7.3-xmlrpc (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.3/mods-available/xmlrpc.ini with new version
+Processing triggers for php7.3-fpm (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for php7.3-cli (7.3.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+Removing intermediate container ca79f2775f45
+ ---> 60b42ccf6315
+Successfully built 60b42ccf6315
+Successfully tagged binacle:423983102

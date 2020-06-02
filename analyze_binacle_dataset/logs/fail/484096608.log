@@ -1,2 +1,0 @@
-Sending build context to Docker daemon  2.048kB
-Error response from daemon: Dockerfile parse error line 4: HEALTHCHECK requires at least one argument

@@ -1,0 +1,40 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM gcr.io/istio-release/proxy_init:master-20190111-09-15
+master-20190111-09-15: Pulling from istio-release/proxy_init
+b849b56b69e7: Pulling fs layer
+42986ef25bcd: Pulling fs layer
+d927c1b717ec: Pulling fs layer
+15b86ea20233: Pulling fs layer
+515da2ef4440: Pulling fs layer
+7510091a15f9: Pulling fs layer
+f66456a999db: Pulling fs layer
+15b86ea20233: Waiting
+515da2ef4440: Waiting
+7510091a15f9: Waiting
+f66456a999db: Waiting
+42986ef25bcd: Verifying Checksum
+42986ef25bcd: Download complete
+d927c1b717ec: Verifying Checksum
+d927c1b717ec: Download complete
+15b86ea20233: Verifying Checksum
+15b86ea20233: Download complete
+7510091a15f9: Verifying Checksum
+7510091a15f9: Download complete
+515da2ef4440: Verifying Checksum
+515da2ef4440: Download complete
+b849b56b69e7: Verifying Checksum
+b849b56b69e7: Download complete
+f66456a999db: Verifying Checksum
+f66456a999db: Download complete
+b849b56b69e7: Pull complete
+42986ef25bcd: Pull complete
+d927c1b717ec: Pull complete
+15b86ea20233: Pull complete
+515da2ef4440: Pull complete
+7510091a15f9: Pull complete
+f66456a999db: Pull complete
+Digest: sha256:fa617562d040efc7a342c179b96afef1943ae0bac9406d8dc0c4fc4e796ab64e
+Status: Downloaded newer image for gcr.io/istio-release/proxy_init:master-20190111-09-15
+ ---> da9ec313fb70
+Successfully built da9ec313fb70
+Successfully tagged binacle:300456087

@@ -1,0 +1,20 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM gcr.io/google_containers/heapster-amd64:v1.5.0
+v1.5.0: Pulling from google_containers/heapster-amd64
+627effa224be: Pulling fs layer
+ac1227a0c9ad: Pulling fs layer
+ac1227a0c9ad: Verifying Checksum
+ac1227a0c9ad: Download complete
+627effa224be: Verifying Checksum
+627effa224be: Download complete
+627effa224be: Pull complete
+ac1227a0c9ad: Pull complete
+Digest: sha256:da3288b0fe2312c621c2a6d08f24ccc56183156ec70767987501287db4927b9d
+Status: Downloaded newer image for gcr.io/google_containers/heapster-amd64:v1.5.0
+ ---> 86a0ddc3a8c2
+Step 2/2 : MAINTAINER Mosaicwang <mosaicwang@gmail.com>
+ ---> Running in 9576598ffd20
+Removing intermediate container 9576598ffd20
+ ---> affb56538795
+Successfully built affb56538795
+Successfully tagged binacle:319097761

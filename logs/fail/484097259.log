@@ -1,0 +1,22 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/8 : FROM ppc64le/ubuntu:trusty
+trusty: Pulling from ppc64le/ubuntu
+bed4146d918c: Pulling fs layer
+95d17944a6ab: Pulling fs layer
+04d84211dbdd: Pulling fs layer
+04d84211dbdd: Verifying Checksum
+04d84211dbdd: Download complete
+95d17944a6ab: Verifying Checksum
+95d17944a6ab: Download complete
+bed4146d918c: Verifying Checksum
+bed4146d918c: Download complete
+bed4146d918c: Pull complete
+95d17944a6ab: Pull complete
+04d84211dbdd: Pull complete
+Digest: sha256:d00cd5726fb0c0523960683e45fe4bbb3807e68ef3edff693d44454aad69b85b
+Status: Downloaded newer image for ppc64le/ubuntu:trusty
+ ---> 6ce257c90d69
+Step 2/8 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in 604a204b3caa
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

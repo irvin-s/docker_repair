@@ -1,0 +1,51 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/10 : FROM goodrainapps/alpine:3.4
+3.4: Pulling from goodrainapps/alpine
+90f4dba627d6: Pulling fs layer
+0df6ba6188b1: Pulling fs layer
+d7ec086163d8: Pulling fs layer
+0df6ba6188b1: Verifying Checksum
+0df6ba6188b1: Download complete
+90f4dba627d6: Verifying Checksum
+90f4dba627d6: Download complete
+d7ec086163d8: Verifying Checksum
+d7ec086163d8: Download complete
+90f4dba627d6: Pull complete
+0df6ba6188b1: Pull complete
+d7ec086163d8: Pull complete
+Digest: sha256:8a35ef5e18bd02cc6b5a70d442e57edc24ac8559bad01e2cdb09f00748a6c61a
+Status: Downloaded newer image for goodrainapps/alpine:3.4
+ ---> e2b1d227bb70
+Step 2/10 : LABEL author="zengqg@goodrain.com"
+ ---> Running in 042d7cbfeaa8
+Removing intermediate container 042d7cbfeaa8
+ ---> 104d04219095
+Step 3/10 : ENV WORK_DIR=/run
+ ---> Running in ae1ed4ef23ce
+Removing intermediate container ae1ed4ef23ce
+ ---> 07b435dc38db
+Step 4/10 : RUN apk --no-cache add openssl openssh-client subversion
+ ---> Running in 4cea0a246fc3
+fetch http://mirrors.aliyun.com/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
+fetch http://mirrors.aliyun.com/alpine/v3.4/community/x86_64/APKINDEX.tar.gz
+(1/13) Installing openssh-client (7.2_p2-r5)
+(2/13) Installing openssl (1.0.2n-r0)
+(3/13) Installing libuuid (2.28-r3)
+(4/13) Installing apr (1.5.2-r0)
+(5/13) Installing expat (2.2.0-r1)
+(6/13) Installing apr-util (1.5.4-r1)
+(7/13) Installing db (5.3.28-r0)
+(8/13) Installing libsasl (2.1.26-r7)
+(9/13) Installing libldap (2.4.44-r2)
+(10/13) Installing serf (1.3.8-r0)
+(11/13) Installing sqlite-libs (3.13.0-r2)
+(12/13) Installing subversion-libs (1.9.7-r0)
+(13/13) Installing subversion (1.9.7-r0)
+Executing subversion-1.9.7-r0.pre-install
+Executing busybox-1.24.2-r13.trigger
+Executing ca-certificates-20161130-r0.trigger
+OK: 31 MiB in 45 packages
+Removing intermediate container 4cea0a246fc3
+ ---> 786153df7bad
+Step 5/10 : COPY rainbond-chaos entrypoint.sh /run/
+COPY failed: stat /var/lib/docker/tmp/docker-builder743754961/rainbond-chaos: no such file or directory

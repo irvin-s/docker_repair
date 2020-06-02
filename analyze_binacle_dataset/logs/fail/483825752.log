@@ -1,9 +1,0 @@
-Sending build context to Docker daemon  2.048kB
-Step 1/3 : FROM scratch
- ---> 
-Step 2/3 : LABEL org.label-schema.vendor="CoreOS Inc. <coreos-dev@googlegroups.com>"       org.label-schema.vcs-url="https://github.com/coreos/torcx"
- ---> Running in f36a9455498d
-Removing intermediate container f36a9455498d
- ---> 3e163bccfb2e
-Step 3/3 : COPY bin/ARG_ARCH/torcx /usr/sbin/torcx
-COPY failed: stat /var/lib/docker/tmp/docker-builder780641826/bin/ARG_ARCH/torcx: no such file or directory

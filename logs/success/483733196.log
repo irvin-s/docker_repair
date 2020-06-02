@@ -1,0 +1,338 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM fedora:rawhide
+rawhide: Pulling from library/fedora
+a19bc3adca7a: Pulling fs layer
+a19bc3adca7a: Verifying Checksum
+a19bc3adca7a: Download complete
+a19bc3adca7a: Pull complete
+Digest: sha256:42e73b6de8615fe67780b2bea86b6ef5177981b9a0f40e86e0e37cf317dd6b77
+Status: Downloaded newer image for fedora:rawhide
+ ---> 1910ec046b4b
+Step 2/3 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in 62c8fdd8ffe7
+Removing intermediate container 62c8fdd8ffe7
+ ---> 04d51cf56a12
+Step 3/3 : RUN yum -y install 	virt-install 	libvirt-client 	; yum clean all
+ ---> Running in 568a441012f2
+Fedora - Modular Rawhide - Developmental packag 3.0 MB/s | 3.0 MB     00:00    
+Fedora - Rawhide - Developmental packages for t  20 MB/s |  72 MB     00:03    
+Dependencies resolved.
+================================================================================
+ Package                       Arch     Version                 Repo       Size
+================================================================================
+Installing:
+ libvirt-client                x86_64   6.2.0-1.fc33            rawhide   332 k
+ virt-install                  noarch   2.2.1-3.fc32            rawhide    63 k
+Upgrading:
+ cyrus-sasl-lib                x86_64   2.1.27-4.fc33           rawhide   101 k
+ gnutls                        x86_64   3.6.13-1.fc33           rawhide   984 k
+Installing dependencies:
+ autogen-libopts               x86_64   5.18.16-5.fc33          rawhide    75 k
+ cyrus-sasl                    x86_64   2.1.27-4.fc33           rawhide    72 k
+ cyrus-sasl-gssapi             x86_64   2.1.27-4.fc33           rawhide    25 k
+ dbus-libs                     x86_64   1:1.12.16-5.fc33        rawhide   163 k
+ fonts-filesystem              noarch   2.0.5-1.fc33            rawhide   8.0 k
+ genisoimage                   x86_64   1.1.11-44.fc33          rawhide   321 k
+ gettext                       x86_64   0.20.1-4.fc32           rawhide   1.1 M
+ gettext-libs                  x86_64   0.20.1-4.fc32           rawhide   287 k
+ glib-networking               x86_64   2.64.1-1.fc33           rawhide   160 k
+ gnutls-dane                   x86_64   3.6.13-1.fc33           rawhide    30 k
+ gnutls-utils                  x86_64   3.6.13-1.fc33           rawhide   347 k
+ gobject-introspection         x86_64   1.64.0-2.fc33           rawhide   271 k
+ gsettings-desktop-schemas     x86_64   3.36.0-1.fc33           rawhide   656 k
+ hwdata                        noarch   0.334-1.fc33            rawhide   1.4 M
+ json-glib                     x86_64   1.4.4-4.fc32            rawhide   144 k
+ libcroco                      x86_64   0.6.13-3.fc32           rawhide   111 k
+ libevent                      x86_64   2.1.8-8.fc32            rawhide   254 k
+ libmodman                     x86_64   2.0.1-21.fc32           rawhide    34 k
+ libnl3                        x86_64   3.5.0-2.fc32            rawhide   330 k
+ libosinfo                     x86_64   1.7.1-3.fc32            rawhide   289 k
+ libproxy                      x86_64   0.4.15-18.fc33          rawhide    72 k
+ libsoup                       x86_64   2.70.0-1.fc33           rawhide   387 k
+ libssh2                       x86_64   1.9.0-5.fc33            rawhide   119 k
+ libtextstyle                  x86_64   0.20.1-4.fc32           rawhide    56 k
+ libusal                       x86_64   1.1.11-44.fc33          rawhide   139 k
+ libvirt-bash-completion       x86_64   6.2.0-1.fc33            rawhide    11 k
+ libvirt-libs                  x86_64   6.2.0-1.fc33            rawhide   4.2 M
+ libwsman1                     x86_64   2.6.8-12.fc32           rawhide   139 k
+ libxslt                       x86_64   1.1.34-1.fc33           rawhide   246 k
+ numactl-libs                  x86_64   2.0.12-4.fc32           rawhide    30 k
+ osinfo-db                     noarch   20200325-1.fc33         rawhide   209 k
+ osinfo-db-tools               x86_64   1.7.0-2.fc32            rawhide    78 k
+ python3-argcomplete           noarch   1.11.1-1.fc33           rawhide    60 k
+ python3-chardet               noarch   3.0.4-15.fc32           rawhide   194 k
+ python3-gobject-base          x86_64   3.36.0-2.fc33           rawhide   322 k
+ python3-idna                  noarch   2.8-6.fc32              rawhide    97 k
+ python3-libvirt               x86_64   6.2.0-1.fc33            rawhide   300 k
+ python3-libxml2               x86_64   2.9.10-4.fc33           rawhide   237 k
+ python3-pysocks               noarch   1.7.1-4.fc32            rawhide    35 k
+ python3-requests              noarch   2.23.0-1.fc33           rawhide   112 k
+ python3-setuptools            noarch   46.1.3-1.fc33           rawhide   594 k
+ python3-six                   noarch   1.14.0-2.fc32           rawhide    36 k
+ python3-urllib3               noarch   1.25.8-1.fc33           rawhide   173 k
+ trousers-lib                  x86_64   0.3.13-13.fc31          rawhide   171 k
+ unbound-libs                  x86_64   1.10.0-1.fc33           rawhide   531 k
+ virt-manager-common           noarch   2.2.1-3.fc32            rawhide   1.0 M
+ yajl                          x86_64   2.1.0-14.fc32           rawhide    38 k
+Installing weak dependencies:
+ abattis-cantarell-fonts       noarch   0.201-2.fc32            rawhide   336 k
+ adobe-source-code-pro-fonts   noarch   2.030.1.050-8.fc32      rawhide   834 k
+ trousers                      x86_64   0.3.13-13.fc31          rawhide   150 k
+
+Transaction Summary
+================================================================================
+Install  52 Packages
+Upgrade   2 Packages
+
+Total download size: 18 M
+Downloading Packages:
+(1/54): autogen-libopts-5.18.16-5.fc33.x86_64.r 579 kB/s |  75 kB     00:00    
+(2/54): abattis-cantarell-fonts-0.201-2.fc32.no 1.7 MB/s | 336 kB     00:00    
+(3/54): cyrus-sasl-2.1.27-4.fc33.x86_64.rpm     1.0 MB/s |  72 kB     00:00    
+(4/54): adobe-source-code-pro-fonts-2.030.1.050 3.6 MB/s | 834 kB     00:00    
+(5/54): cyrus-sasl-gssapi-2.1.27-4.fc33.x86_64. 682 kB/s |  25 kB     00:00    
+(6/54): genisoimage-1.1.11-44.fc33.x86_64.rpm   9.4 MB/s | 321 kB     00:00    
+(7/54): fonts-filesystem-2.0.5-1.fc33.noarch.rp 229 kB/s | 8.0 kB     00:00    
+(8/54): dbus-libs-1.12.16-5.fc33.x86_64.rpm     2.3 MB/s | 163 kB     00:00    
+(9/54): gettext-libs-0.20.1-4.fc32.x86_64.rpm   5.0 MB/s | 287 kB     00:00    
+(10/54): glib-networking-2.64.1-1.fc33.x86_64.r 2.2 MB/s | 160 kB     00:00    
+(11/54): gnutls-dane-3.6.13-1.fc33.x86_64.rpm   1.0 MB/s |  30 kB     00:00    
+(12/54): gettext-0.20.1-4.fc32.x86_64.rpm        12 MB/s | 1.1 MB     00:00    
+(13/54): gobject-introspection-1.64.0-2.fc33.x8 8.2 MB/s | 271 kB     00:00    
+(14/54): gsettings-desktop-schemas-3.36.0-1.fc3  11 MB/s | 656 kB     00:00    
+(15/54): json-glib-1.4.4-4.fc32.x86_64.rpm      4.7 MB/s | 144 kB     00:00    
+(16/54): gnutls-utils-3.6.13-1.fc33.x86_64.rpm  2.6 MB/s | 347 kB     00:00    
+(17/54): libcroco-0.6.13-3.fc32.x86_64.rpm      3.7 MB/s | 111 kB     00:00    
+(18/54): hwdata-0.334-1.fc33.noarch.rpm          11 MB/s | 1.4 MB     00:00    
+(19/54): libmodman-2.0.1-21.fc32.x86_64.rpm     1.2 MB/s |  34 kB     00:00    
+(20/54): libnl3-3.5.0-2.fc32.x86_64.rpm         9.4 MB/s | 330 kB     00:00    
+(21/54): libosinfo-1.7.1-3.fc32.x86_64.rpm      8.2 MB/s | 289 kB     00:00    
+(22/54): libevent-2.1.8-8.fc32.x86_64.rpm       2.8 MB/s | 254 kB     00:00    
+(23/54): libproxy-0.4.15-18.fc33.x86_64.rpm     2.3 MB/s |  72 kB     00:00    
+(24/54): libsoup-2.70.0-1.fc33.x86_64.rpm        12 MB/s | 387 kB     00:00    
+(25/54): libtextstyle-0.20.1-4.fc32.x86_64.rpm  1.8 MB/s |  56 kB     00:00    
+(26/54): libusal-1.1.11-44.fc33.x86_64.rpm      4.5 MB/s | 139 kB     00:00    
+(27/54): libssh2-1.9.0-5.fc33.x86_64.rpm        2.0 MB/s | 119 kB     00:00    
+(28/54): libvirt-bash-completion-6.2.0-1.fc33.x 374 kB/s |  11 kB     00:00    
+(29/54): libvirt-client-6.2.0-1.fc33.x86_64.rpm  10 MB/s | 332 kB     00:00    
+(30/54): libwsman1-2.6.8-12.fc32.x86_64.rpm     4.4 MB/s | 139 kB     00:00    
+(31/54): libxslt-1.1.34-1.fc33.x86_64.rpm       7.7 MB/s | 246 kB     00:00    
+(32/54): numactl-libs-2.0.12-4.fc32.x86_64.rpm  1.0 MB/s |  30 kB     00:00    
+(33/54): osinfo-db-20200325-1.fc33.noarch.rpm   6.6 MB/s | 209 kB     00:00    
+(34/54): osinfo-db-tools-1.7.0-2.fc32.x86_64.rp 2.5 MB/s |  78 kB     00:00    
+(35/54): python3-argcomplete-1.11.1-1.fc33.noar 2.0 MB/s |  60 kB     00:00    
+(36/54): python3-chardet-3.0.4-15.fc32.noarch.r 5.9 MB/s | 194 kB     00:00    
+(37/54): python3-gobject-base-3.36.0-2.fc33.x86 2.8 MB/s | 322 kB     00:00    
+(38/54): python3-idna-2.8-6.fc32.noarch.rpm     1.1 MB/s |  97 kB     00:00    
+(39/54): python3-libvirt-6.2.0-1.fc33.x86_64.rp 2.0 MB/s | 300 kB     00:00    
+(40/54): python3-libxml2-2.9.10-4.fc33.x86_64.r 704 kB/s | 237 kB     00:00    
+(41/54): python3-pysocks-1.7.1-4.fc32.noarch.rp 177 kB/s |  35 kB     00:00    
+(42/54): python3-requests-2.23.0-1.fc33.noarch. 3.5 MB/s | 112 kB     00:00    
+(43/54): python3-setuptools-46.1.3-1.fc33.noarc 9.5 MB/s | 594 kB     00:00    
+(44/54): python3-six-1.14.0-2.fc32.noarch.rpm   1.1 MB/s |  36 kB     00:00    
+(45/54): python3-urllib3-1.25.8-1.fc33.noarch.r 5.6 MB/s | 173 kB     00:00    
+(46/54): trousers-0.3.13-13.fc31.x86_64.rpm     4.7 MB/s | 150 kB     00:00    
+(47/54): trousers-lib-0.3.13-13.fc31.x86_64.rpm 5.5 MB/s | 171 kB     00:00    
+(48/54): virt-install-2.2.1-3.fc32.noarch.rpm   2.1 MB/s |  63 kB     00:00    
+(49/54): unbound-libs-1.10.0-1.fc33.x86_64.rpm  8.3 MB/s | 531 kB     00:00    
+(50/54): yajl-2.1.0-14.fc32.x86_64.rpm          1.2 MB/s |  38 kB     00:00    
+(51/54): cyrus-sasl-lib-2.1.27-4.fc33.x86_64.rp 3.2 MB/s | 101 kB     00:00    
+(52/54): virt-manager-common-2.2.1-3.fc32.noarc 8.4 MB/s | 1.0 MB     00:00    
+(53/54): gnutls-3.6.13-1.fc33.x86_64.rpm         10 MB/s | 984 kB     00:00    
+(54/54): libvirt-libs-6.2.0-1.fc33.x86_64.rpm   4.0 MB/s | 4.2 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           9.6 MB/s |  18 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Upgrading        : cyrus-sasl-lib-2.1.27-4.fc33.x86_64                   1/56 
+  Installing       : python3-setuptools-46.1.3-1.fc33.noarch               2/56 
+  Installing       : python3-idna-2.8-6.fc32.noarch                        3/56 
+  Installing       : hwdata-0.334-1.fc33.noarch                            4/56 
+  Installing       : fonts-filesystem-2.0.5-1.fc33.noarch                  5/56 
+  Installing       : abattis-cantarell-fonts-0.201-2.fc32.noarch           6/56 
+  Installing       : adobe-source-code-pro-fonts-2.030.1.050-8.fc32.noa    7/56 
+  Installing       : gsettings-desktop-schemas-3.36.0-1.fc33.x86_64        8/56 
+  Installing       : osinfo-db-20200325-1.fc33.noarch                      9/56 
+  Installing       : python3-argcomplete-1.11.1-1.fc33.noarch             10/56 
+  Installing       : python3-chardet-3.0.4-15.fc32.noarch                 11/56 
+  Running scriptlet: cyrus-sasl-2.1.27-4.fc33.x86_64                      12/56 
+  Installing       : cyrus-sasl-2.1.27-4.fc33.x86_64                      12/56 
+  Running scriptlet: cyrus-sasl-2.1.27-4.fc33.x86_64                      12/56 
+  Installing       : cyrus-sasl-gssapi-2.1.27-4.fc33.x86_64               13/56 
+  Installing       : yajl-2.1.0-14.fc32.x86_64                            14/56 
+  Installing       : trousers-lib-0.3.13-13.fc31.x86_64                   15/56 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       16/56 
+  Installing       : trousers-0.3.13-13.fc31.x86_64                       16/56 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       16/56 
+  Upgrading        : gnutls-3.6.13-1.fc33.x86_64                          17/56 
+  Installing       : python3-six-1.14.0-2.fc32.noarch                     18/56 
+  Installing       : python3-pysocks-1.7.1-4.fc32.noarch                  19/56 
+  Installing       : python3-urllib3-1.25.8-1.fc33.noarch                 20/56 
+  Installing       : python3-requests-2.23.0-1.fc33.noarch                21/56 
+  Installing       : python3-libxml2-2.9.10-4.fc33.x86_64                 22/56 
+  Installing       : numactl-libs-2.0.12-4.fc32.x86_64                    23/56 
+  Installing       : libxslt-1.1.34-1.fc33.x86_64                         24/56 
+  Installing       : libwsman1-2.6.8-12.fc32.x86_64                       25/56 
+  Installing       : libvirt-bash-completion-6.2.0-1.fc33.x86_64          26/56 
+  Installing       : libusal-1.1.11-44.fc33.x86_64                        27/56 
+  Installing       : genisoimage-1.1.11-44.fc33.x86_64                    28/56 
+  Running scriptlet: genisoimage-1.1.11-44.fc33.x86_64                    28/56 
+  Installing       : libssh2-1.9.0-5.fc33.x86_64                          29/56 
+  Installing       : libnl3-3.5.0-2.fc32.x86_64                           30/56 
+  Installing       : libmodman-2.0.1-21.fc32.x86_64                       31/56 
+  Installing       : libproxy-0.4.15-18.fc33.x86_64                       32/56 
+  Installing       : glib-networking-2.64.1-1.fc33.x86_64                 33/56 
+  Installing       : libsoup-2.70.0-1.fc33.x86_64                         34/56 
+  Installing       : libevent-2.1.8-8.fc32.x86_64                         35/56 
+  Running scriptlet: unbound-libs-1.10.0-1.fc33.x86_64                    36/56 
+  Installing       : unbound-libs-1.10.0-1.fc33.x86_64                    36/56 
+  Running scriptlet: unbound-libs-1.10.0-1.fc33.x86_64                    36/56 
+Created symlink /etc/systemd/system/timers.target.wants/unbound-anchor.timer → /usr/lib/systemd/system/unbound-anchor.timer.
+
+  Installing       : gnutls-dane-3.6.13-1.fc33.x86_64                     37/56 
+  Installing       : libcroco-0.6.13-3.fc32.x86_64                        38/56 
+  Installing       : libtextstyle-0.20.1-4.fc32.x86_64                    39/56 
+  Installing       : gettext-libs-0.20.1-4.fc32.x86_64                    40/56 
+  Installing       : gettext-0.20.1-4.fc32.x86_64                         41/56 
+  Installing       : json-glib-1.4.4-4.fc32.x86_64                        42/56 
+  Installing       : osinfo-db-tools-1.7.0-2.fc32.x86_64                  43/56 
+  Installing       : libosinfo-1.7.1-3.fc32.x86_64                        44/56 
+  Installing       : gobject-introspection-1.64.0-2.fc33.x86_64           45/56 
+  Installing       : python3-gobject-base-3.36.0-2.fc33.x86_64            46/56 
+  Installing       : dbus-libs-1:1.12.16-5.fc33.x86_64                    47/56 
+  Installing       : libvirt-libs-6.2.0-1.fc33.x86_64                     48/56 
+  Running scriptlet: libvirt-libs-6.2.0-1.fc33.x86_64                     48/56 
+  Installing       : python3-libvirt-6.2.0-1.fc33.x86_64                  49/56 
+  Installing       : virt-manager-common-2.2.1-3.fc32.noarch              50/56 
+  Installing       : autogen-libopts-5.18.16-5.fc33.x86_64                51/56 
+  Installing       : gnutls-utils-3.6.13-1.fc33.x86_64                    52/56 
+  Installing       : libvirt-client-6.2.0-1.fc33.x86_64                   53/56 
+  Running scriptlet: libvirt-client-6.2.0-1.fc33.x86_64                   53/56 
+  Installing       : virt-install-2.2.1-3.fc32.noarch                     54/56 
+  Cleanup          : gnutls-3.6.12-1.fc32.x86_64                          55/56 
+  Cleanup          : cyrus-sasl-lib-2.1.27-3.fc32.x86_64                  56/56 
+  Running scriptlet: cyrus-sasl-lib-2.1.27-3.fc32.x86_64                  56/56 
+  Verifying        : abattis-cantarell-fonts-0.201-2.fc32.noarch           1/56 
+  Verifying        : adobe-source-code-pro-fonts-2.030.1.050-8.fc32.noa    2/56 
+  Verifying        : autogen-libopts-5.18.16-5.fc33.x86_64                 3/56 
+  Verifying        : cyrus-sasl-2.1.27-4.fc33.x86_64                       4/56 
+  Verifying        : cyrus-sasl-gssapi-2.1.27-4.fc33.x86_64                5/56 
+  Verifying        : dbus-libs-1:1.12.16-5.fc33.x86_64                     6/56 
+  Verifying        : fonts-filesystem-2.0.5-1.fc33.noarch                  7/56 
+  Verifying        : genisoimage-1.1.11-44.fc33.x86_64                     8/56 
+  Verifying        : gettext-0.20.1-4.fc32.x86_64                          9/56 
+  Verifying        : gettext-libs-0.20.1-4.fc32.x86_64                    10/56 
+  Verifying        : glib-networking-2.64.1-1.fc33.x86_64                 11/56 
+  Verifying        : gnutls-dane-3.6.13-1.fc33.x86_64                     12/56 
+  Verifying        : gnutls-utils-3.6.13-1.fc33.x86_64                    13/56 
+  Verifying        : gobject-introspection-1.64.0-2.fc33.x86_64           14/56 
+  Verifying        : gsettings-desktop-schemas-3.36.0-1.fc33.x86_64       15/56 
+  Verifying        : hwdata-0.334-1.fc33.noarch                           16/56 
+  Verifying        : json-glib-1.4.4-4.fc32.x86_64                        17/56 
+  Verifying        : libcroco-0.6.13-3.fc32.x86_64                        18/56 
+  Verifying        : libevent-2.1.8-8.fc32.x86_64                         19/56 
+  Verifying        : libmodman-2.0.1-21.fc32.x86_64                       20/56 
+  Verifying        : libnl3-3.5.0-2.fc32.x86_64                           21/56 
+  Verifying        : libosinfo-1.7.1-3.fc32.x86_64                        22/56 
+  Verifying        : libproxy-0.4.15-18.fc33.x86_64                       23/56 
+  Verifying        : libsoup-2.70.0-1.fc33.x86_64                         24/56 
+  Verifying        : libssh2-1.9.0-5.fc33.x86_64                          25/56 
+  Verifying        : libtextstyle-0.20.1-4.fc32.x86_64                    26/56 
+  Verifying        : libusal-1.1.11-44.fc33.x86_64                        27/56 
+  Verifying        : libvirt-bash-completion-6.2.0-1.fc33.x86_64          28/56 
+  Verifying        : libvirt-client-6.2.0-1.fc33.x86_64                   29/56 
+  Verifying        : libvirt-libs-6.2.0-1.fc33.x86_64                     30/56 
+  Verifying        : libwsman1-2.6.8-12.fc32.x86_64                       31/56 
+  Verifying        : libxslt-1.1.34-1.fc33.x86_64                         32/56 
+  Verifying        : numactl-libs-2.0.12-4.fc32.x86_64                    33/56 
+  Verifying        : osinfo-db-20200325-1.fc33.noarch                     34/56 
+  Verifying        : osinfo-db-tools-1.7.0-2.fc32.x86_64                  35/56 
+  Verifying        : python3-argcomplete-1.11.1-1.fc33.noarch             36/56 
+  Verifying        : python3-chardet-3.0.4-15.fc32.noarch                 37/56 
+  Verifying        : python3-gobject-base-3.36.0-2.fc33.x86_64            38/56 
+  Verifying        : python3-idna-2.8-6.fc32.noarch                       39/56 
+  Verifying        : python3-libvirt-6.2.0-1.fc33.x86_64                  40/56 
+  Verifying        : python3-libxml2-2.9.10-4.fc33.x86_64                 41/56 
+  Verifying        : python3-pysocks-1.7.1-4.fc32.noarch                  42/56 
+  Verifying        : python3-requests-2.23.0-1.fc33.noarch                43/56 
+  Verifying        : python3-setuptools-46.1.3-1.fc33.noarch              44/56 
+  Verifying        : python3-six-1.14.0-2.fc32.noarch                     45/56 
+  Verifying        : python3-urllib3-1.25.8-1.fc33.noarch                 46/56 
+  Verifying        : trousers-0.3.13-13.fc31.x86_64                       47/56 
+  Verifying        : trousers-lib-0.3.13-13.fc31.x86_64                   48/56 
+  Verifying        : unbound-libs-1.10.0-1.fc33.x86_64                    49/56 
+  Verifying        : virt-install-2.2.1-3.fc32.noarch                     50/56 
+  Verifying        : virt-manager-common-2.2.1-3.fc32.noarch              51/56 
+  Verifying        : yajl-2.1.0-14.fc32.x86_64                            52/56 
+  Verifying        : cyrus-sasl-lib-2.1.27-4.fc33.x86_64                  53/56 
+  Verifying        : cyrus-sasl-lib-2.1.27-3.fc32.x86_64                  54/56 
+  Verifying        : gnutls-3.6.13-1.fc33.x86_64                          55/56 
+  Verifying        : gnutls-3.6.12-1.fc32.x86_64                          56/56 
+
+Upgraded:
+  cyrus-sasl-lib-2.1.27-4.fc33.x86_64        gnutls-3.6.13-1.fc33.x86_64       
+
+Installed:
+  abattis-cantarell-fonts-0.201-2.fc32.noarch                                   
+  adobe-source-code-pro-fonts-2.030.1.050-8.fc32.noarch                         
+  autogen-libopts-5.18.16-5.fc33.x86_64                                         
+  cyrus-sasl-2.1.27-4.fc33.x86_64                                               
+  cyrus-sasl-gssapi-2.1.27-4.fc33.x86_64                                        
+  dbus-libs-1:1.12.16-5.fc33.x86_64                                             
+  fonts-filesystem-2.0.5-1.fc33.noarch                                          
+  genisoimage-1.1.11-44.fc33.x86_64                                             
+  gettext-0.20.1-4.fc32.x86_64                                                  
+  gettext-libs-0.20.1-4.fc32.x86_64                                             
+  glib-networking-2.64.1-1.fc33.x86_64                                          
+  gnutls-dane-3.6.13-1.fc33.x86_64                                              
+  gnutls-utils-3.6.13-1.fc33.x86_64                                             
+  gobject-introspection-1.64.0-2.fc33.x86_64                                    
+  gsettings-desktop-schemas-3.36.0-1.fc33.x86_64                                
+  hwdata-0.334-1.fc33.noarch                                                    
+  json-glib-1.4.4-4.fc32.x86_64                                                 
+  libcroco-0.6.13-3.fc32.x86_64                                                 
+  libevent-2.1.8-8.fc32.x86_64                                                  
+  libmodman-2.0.1-21.fc32.x86_64                                                
+  libnl3-3.5.0-2.fc32.x86_64                                                    
+  libosinfo-1.7.1-3.fc32.x86_64                                                 
+  libproxy-0.4.15-18.fc33.x86_64                                                
+  libsoup-2.70.0-1.fc33.x86_64                                                  
+  libssh2-1.9.0-5.fc33.x86_64                                                   
+  libtextstyle-0.20.1-4.fc32.x86_64                                             
+  libusal-1.1.11-44.fc33.x86_64                                                 
+  libvirt-bash-completion-6.2.0-1.fc33.x86_64                                   
+  libvirt-client-6.2.0-1.fc33.x86_64                                            
+  libvirt-libs-6.2.0-1.fc33.x86_64                                              
+  libwsman1-2.6.8-12.fc32.x86_64                                                
+  libxslt-1.1.34-1.fc33.x86_64                                                  
+  numactl-libs-2.0.12-4.fc32.x86_64                                             
+  osinfo-db-20200325-1.fc33.noarch                                              
+  osinfo-db-tools-1.7.0-2.fc32.x86_64                                           
+  python3-argcomplete-1.11.1-1.fc33.noarch                                      
+  python3-chardet-3.0.4-15.fc32.noarch                                          
+  python3-gobject-base-3.36.0-2.fc33.x86_64                                     
+  python3-idna-2.8-6.fc32.noarch                                                
+  python3-libvirt-6.2.0-1.fc33.x86_64                                           
+  python3-libxml2-2.9.10-4.fc33.x86_64                                          
+  python3-pysocks-1.7.1-4.fc32.noarch                                           
+  python3-requests-2.23.0-1.fc33.noarch                                         
+  python3-setuptools-46.1.3-1.fc33.noarch                                       
+  python3-six-1.14.0-2.fc32.noarch                                              
+  python3-urllib3-1.25.8-1.fc33.noarch                                          
+  trousers-0.3.13-13.fc31.x86_64                                                
+  trousers-lib-0.3.13-13.fc31.x86_64                                            
+  unbound-libs-1.10.0-1.fc33.x86_64                                             
+  virt-install-2.2.1-3.fc32.noarch                                              
+  virt-manager-common-2.2.1-3.fc32.noarch                                       
+  yajl-2.1.0-14.fc32.x86_64                                                     
+
+Complete!
+14 files removed
+Removing intermediate container 568a441012f2
+ ---> 8fbee1c8ac33
+Successfully built 8fbee1c8ac33
+Successfully tagged binacle:483733196

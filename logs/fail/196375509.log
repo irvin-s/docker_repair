@@ -1,0 +1,47 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM golang:onbuild
+onbuild: Pulling from library/golang
+ad74af05f5a2: Pulling fs layer
+2b032b8bbe8b: Pulling fs layer
+a9a5b35f6ead: Pulling fs layer
+25d9840c55bc: Pulling fs layer
+d792ec7d64a3: Pulling fs layer
+be556a93c22e: Pulling fs layer
+3a5fce283a1e: Pulling fs layer
+0621865a0c2e: Pulling fs layer
+25d9840c55bc: Waiting
+d792ec7d64a3: Waiting
+be556a93c22e: Waiting
+3a5fce283a1e: Waiting
+0621865a0c2e: Waiting
+2b032b8bbe8b: Verifying Checksum
+2b032b8bbe8b: Download complete
+a9a5b35f6ead: Verifying Checksum
+a9a5b35f6ead: Download complete
+ad74af05f5a2: Verifying Checksum
+ad74af05f5a2: Download complete
+be556a93c22e: Verifying Checksum
+be556a93c22e: Download complete
+25d9840c55bc: Verifying Checksum
+25d9840c55bc: Download complete
+3a5fce283a1e: Verifying Checksum
+3a5fce283a1e: Download complete
+0621865a0c2e: Verifying Checksum
+0621865a0c2e: Download complete
+d792ec7d64a3: Verifying Checksum
+d792ec7d64a3: Download complete
+ad74af05f5a2: Pull complete
+2b032b8bbe8b: Pull complete
+a9a5b35f6ead: Pull complete
+25d9840c55bc: Pull complete
+d792ec7d64a3: Pull complete
+be556a93c22e: Pull complete
+3a5fce283a1e: Pull complete
+0621865a0c2e: Pull complete
+Digest: sha256:c0ec19d49014d604e4f62266afd490016b11ceec103f0b7ef44875801ef93f36
+Status: Downloaded newer image for golang:onbuild
+# Executing 3 build triggers
+ ---> Running in 6bb9cd5d0718
+[91m+ [0m[91mexec[0m[91m go[0m[91m get[0m[91m -v[0m[91m -d[0m[91m
+[0m[91mcan't load package: package app: no buildable Go source files in /go/src/app
+[0mThe command '/bin/sh -c go-wrapper download' returned a non-zero code: 1

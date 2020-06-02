@@ -1,0 +1,51 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM kylemanna/openvpn
+latest: Pulling from kylemanna/openvpn
+c9b1b535fdd9: Pulling fs layer
+48ae345d34a0: Pulling fs layer
+9660e571431b: Pulling fs layer
+294766247fac: Pulling fs layer
+e0cfc9e9959e: Pulling fs layer
+294766247fac: Waiting
+e0cfc9e9959e: Waiting
+9660e571431b: Verifying Checksum
+9660e571431b: Download complete
+c9b1b535fdd9: Verifying Checksum
+c9b1b535fdd9: Download complete
+48ae345d34a0: Verifying Checksum
+48ae345d34a0: Download complete
+294766247fac: Verifying Checksum
+294766247fac: Download complete
+e0cfc9e9959e: Verifying Checksum
+e0cfc9e9959e: Download complete
+c9b1b535fdd9: Pull complete
+48ae345d34a0: Pull complete
+9660e571431b: Pull complete
+294766247fac: Pull complete
+e0cfc9e9959e: Pull complete
+Digest: sha256:f638aff0997e519ab356ea4770d33df08c69cbc8fde6071130e5459e92d266d7
+Status: Downloaded newer image for kylemanna/openvpn:latest
+ ---> a9f497aadbc8
+Step 2/2 : RUN ls
+ ---> Running in 752ca1ed9bfe
+bin
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+Removing intermediate container 752ca1ed9bfe
+ ---> efd4f2d458bb
+Successfully built efd4f2d458bb
+Successfully tagged binacle:201188376

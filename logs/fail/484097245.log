@@ -1,0 +1,61 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/12 : FROM debian:wheezy-backports
+wheezy-backports: Pulling from library/debian
+2b15b7abe8b3: Pulling fs layer
+f0cdaa86a24e: Pulling fs layer
+f0cdaa86a24e: Download complete
+2b15b7abe8b3: Verifying Checksum
+2b15b7abe8b3: Download complete
+2b15b7abe8b3: Pull complete
+f0cdaa86a24e: Pull complete
+Digest: sha256:7647b7e8f89ce651bb25a4774d6dfde76665f8dcbd7079a8272187f22dfcf799
+Status: Downloaded newer image for debian:wheezy-backports
+ ---> f9303f15aacd
+Step 2/12 : ARG APT_MIRROR=deb.debian.org
+ ---> Running in 91b0c333a69f
+Removing intermediate container 91b0c333a69f
+ ---> 7e368e2b4693
+Step 3/12 : RUN sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list
+ ---> Running in 6bdce0635fea
+Removing intermediate container 6bdce0635fea
+ ---> dc342b0e3677
+Step 4/12 : RUN sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list.d/backports.list
+ ---> Running in 96b21a84a0d0
+Removing intermediate container 96b21a84a0d0
+ ---> c103e04a8742
+Step 5/12 : RUN apt-get update && apt-get install -y -t wheezy-backports btrfs-tools --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in c673ed9093a3
+Ign http://deb.debian.org wheezy Release.gpg
+Ign http://security.debian.org wheezy/updates Release.gpg
+Ign http://deb.debian.org wheezy-updates Release.gpg
+Ign http://security.debian.org wheezy/updates Release
+Ign http://deb.debian.org wheezy-backports Release.gpg
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Ign http://deb.debian.org wheezy Release
+Ign http://deb.debian.org wheezy-updates Release
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Ign http://deb.debian.org wheezy-backports Release
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  404  Not Found [IP: 151.101.192.204 80]
+Err http://deb.debian.org wheezy/main amd64 Packages
+  404  Not Found
+Err http://deb.debian.org wheezy-updates/main amd64 Packages
+  404  Not Found
+Err http://deb.debian.org wheezy-backports/main amd64 Packages
+  404  Not Found
+[91mW: Failed to fetch http://security.debian.org/debian-security/dists/wheezy/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.192.204 80]
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy/main/binary-amd64/Packages  404  Not Found
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-updates/main/binary-amd64/Packages  404  Not Found
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-backports/main/binary-amd64/Packages  404  Not Found
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y -t wheezy-backports btrfs-tools --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

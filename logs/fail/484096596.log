@@ -1,0 +1,64 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/16 : FROM ubuntu
+latest: Pulling from library/ubuntu
+5bed26d33875: Pulling fs layer
+f11b29a9c730: Pulling fs layer
+930bda195c84: Pulling fs layer
+78bf9a5ad49e: Pulling fs layer
+78bf9a5ad49e: Waiting
+f11b29a9c730: Verifying Checksum
+f11b29a9c730: Download complete
+930bda195c84: Download complete
+78bf9a5ad49e: Verifying Checksum
+78bf9a5ad49e: Download complete
+5bed26d33875: Verifying Checksum
+5bed26d33875: Download complete
+5bed26d33875: Pull complete
+f11b29a9c730: Pull complete
+930bda195c84: Pull complete
+78bf9a5ad49e: Pull complete
+Digest: sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
+Status: Downloaded newer image for ubuntu:latest
+ ---> 4e5021d210f6
+Step 2/16 : ENV name value
+ ---> Running in 62f79fafe23b
+Removing intermediate container 62f79fafe23b
+ ---> 0dabe0d97da2
+Step 3/16 : ENV name=value
+ ---> Running in dc24cf27e4e2
+Removing intermediate container dc24cf27e4e2
+ ---> ac0343842734
+Step 4/16 : ENV name=value name2=value2
+ ---> Running in 74537085fc17
+Removing intermediate container 74537085fc17
+ ---> 1e27f7f31b70
+Step 5/16 : ENV name="value value1"
+ ---> Running in 6cc73555f54a
+Removing intermediate container 6cc73555f54a
+ ---> cf2121fcb061
+Step 6/16 : ENV name=value\ value2
+ ---> Running in 0ff36adfa8d8
+Removing intermediate container 0ff36adfa8d8
+ ---> 5bcbef85da31
+Step 7/16 : ENV name="value'quote space'value2"
+ ---> Running in 2d19b2afc735
+Removing intermediate container 2d19b2afc735
+ ---> cc86b2a94614
+Step 8/16 : ENV name='value"double quote"value2'
+ ---> Running in 9a5ce4aafd0d
+Removing intermediate container 9a5ce4aafd0d
+ ---> a7ab6713cb31
+Step 9/16 : ENV name=value\ value2 name2=value2\ value3
+ ---> Running in 7a0180937c13
+Removing intermediate container 7a0180937c13
+ ---> 14b3a24a7a95
+Step 10/16 : ENV name="a\"b"
+ ---> Running in 9bbd2ba001d2
+Removing intermediate container 9bbd2ba001d2
+ ---> 6e139d363957
+Step 11/16 : ENV name="a\'b"
+ ---> Running in 9b731d52c659
+Removing intermediate container 9b731d52c659
+ ---> 2123c3af551c
+Step 12/16 : ENV name='a\'b'
+failed to process "'a\\'b'": unexpected end of statement while looking for matching single-quote

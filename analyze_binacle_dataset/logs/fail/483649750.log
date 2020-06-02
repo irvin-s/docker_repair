@@ -1,307 +1,0 @@
-Sending build context to Docker daemon   2.56kB
-Step 1/11 : FROM andrewosh/binder-base
-latest: Pulling from andrewosh/binder-base
-Image docker.io/andrewosh/binder-base:latest uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
-6a5a5368e0c2: Pulling fs layer
-a3ed95caeb02: Pulling fs layer
-4c1a4e217483: Pulling fs layer
-da4e26ae5a73: Pulling fs layer
-066f76b7f7fd: Pulling fs layer
-dde5ae526502: Pulling fs layer
-79ffbe5ddb2d: Pulling fs layer
-9bfc42d5c53d: Pulling fs layer
-9c044d3f1cc8: Pulling fs layer
-b7c174a4ca97: Pulling fs layer
-9e391b913e48: Pulling fs layer
-6e840d774f36: Pulling fs layer
-b6225b8a2783: Pulling fs layer
-699f0e0f26d2: Pulling fs layer
-c3389f562d5b: Pulling fs layer
-9fb29d466d3c: Pulling fs layer
-c9288fd5f6e9: Pulling fs layer
-066f76b7f7fd: Waiting
-dde5ae526502: Waiting
-79ffbe5ddb2d: Waiting
-9bfc42d5c53d: Waiting
-9c044d3f1cc8: Waiting
-b7c174a4ca97: Waiting
-9e391b913e48: Waiting
-6e840d774f36: Waiting
-b6225b8a2783: Waiting
-699f0e0f26d2: Waiting
-c3389f562d5b: Waiting
-9fb29d466d3c: Waiting
-c9288fd5f6e9: Waiting
-da4e26ae5a73: Waiting
-a3ed95caeb02: Verifying Checksum
-a3ed95caeb02: Download complete
-6a5a5368e0c2: Verifying Checksum
-6a5a5368e0c2: Download complete
-da4e26ae5a73: Verifying Checksum
-da4e26ae5a73: Download complete
-066f76b7f7fd: Verifying Checksum
-066f76b7f7fd: Download complete
-dde5ae526502: Verifying Checksum
-dde5ae526502: Download complete
-79ffbe5ddb2d: Verifying Checksum
-79ffbe5ddb2d: Download complete
-9bfc42d5c53d: Verifying Checksum
-9bfc42d5c53d: Download complete
-9c044d3f1cc8: Verifying Checksum
-9c044d3f1cc8: Download complete
-6a5a5368e0c2: Pull complete
-a3ed95caeb02: Pull complete
-b7c174a4ca97: Verifying Checksum
-b7c174a4ca97: Download complete
-9e391b913e48: Verifying Checksum
-9e391b913e48: Download complete
-4c1a4e217483: Verifying Checksum
-4c1a4e217483: Download complete
-6e840d774f36: Verifying Checksum
-6e840d774f36: Download complete
-c3389f562d5b: Download complete
-9fb29d466d3c: Verifying Checksum
-9fb29d466d3c: Download complete
-c9288fd5f6e9: Verifying Checksum
-c9288fd5f6e9: Download complete
-b6225b8a2783: Verifying Checksum
-b6225b8a2783: Download complete
-4c1a4e217483: Pull complete
-da4e26ae5a73: Pull complete
-066f76b7f7fd: Pull complete
-dde5ae526502: Pull complete
-79ffbe5ddb2d: Pull complete
-9bfc42d5c53d: Pull complete
-9c044d3f1cc8: Pull complete
-b7c174a4ca97: Pull complete
-9e391b913e48: Pull complete
-6e840d774f36: Pull complete
-699f0e0f26d2: Verifying Checksum
-699f0e0f26d2: Download complete
-b6225b8a2783: Pull complete
-699f0e0f26d2: Pull complete
-c3389f562d5b: Pull complete
-9fb29d466d3c: Pull complete
-c9288fd5f6e9: Pull complete
-Digest: sha256:eabde24f4c55174832ed8795faa40cea62fc9e2a4a9f1ee1444f8a2e4f9710ee
-Status: Downloaded newer image for andrewosh/binder-base:latest
- ---> 10c75734a0d4
-Step 2/11 : MAINTAINER Kozo Nishida <knishida@riken.jp>
- ---> Running in c927004dd808
-Removing intermediate container c927004dd808
- ---> c4b17cfb8b99
-Step 3/11 : USER root
- ---> Running in 5c3d2f5226cb
-Removing intermediate container 5c3d2f5226cb
- ---> 085d64d3846f
-Step 4/11 : RUN apt-get update
- ---> Running in 36a5b38589e7
-Ign http://httpredir.debian.org jessie InRelease
-Get:1 http://httpredir.debian.org jessie-updates InRelease [16.3 kB]
-Get:2 http://security.debian.org jessie/updates InRelease [44.9 kB]
-Get:3 http://httpredir.debian.org jessie Release.gpg [1,652 B]
-Get:4 http://httpredir.debian.org jessie Release [77.3 kB]
-Get:5 http://httpredir.debian.org jessie-updates/main amd64 Packages [20 B]
-Get:6 http://security.debian.org jessie/updates/main amd64 Packages [954 kB]
-Get:7 http://httpredir.debian.org jessie/main amd64 Packages [9,098 kB]
-Fetched 10.2 MB in 7s (1,404 kB/s)
-Reading package lists...
-[91mW: There is no public key available for the following key IDs:
-AA8E81B4331F7F50
-[0mRemoving intermediate container 36a5b38589e7
- ---> 7b5e02f3994b
-Step 5/11 : RUN apt-get install -y build-essential ruby ruby-dev rake git libzmq3 libzmq3-dev libgsl0-dev libtool autoconf automake zlib1g-dev && apt-get clean
- ---> Running in b2a627551ea7
-Reading package lists...
-Building dependency tree...
-Reading state information...
-build-essential is already the newest version.
-The following extra packages will be installed:
-  autotools-dev libgmp-dev libgmpxx4ldbl libgsl0ldbl libltdl-dev libltdl7
-  libpgm-5.1-0 libruby2.1 libsigsegv2 libsodium13 libyaml-0-2 m4 ruby2.1
-  ruby2.1-dev rubygems-integration unzip zip zlib1g
-Suggested packages:
-  autoconf-archive gnu-standards autoconf-doc gettext gettext-base
-  git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
-  gitweb git-arch git-cvs git-mediawiki git-svn libgmp10-doc libmpfr-dev
-  gsl-ref-psdoc gsl-doc-pdf gsl-doc-info gsl-ref-html libtool-doc automaken
-  gcj-jdk ri bundler
-The following NEW packages will be installed:
-  autoconf automake autotools-dev libgmp-dev libgmpxx4ldbl libgsl0-dev
-  libgsl0ldbl libltdl-dev libltdl7 libpgm-5.1-0 libruby2.1 libsigsegv2
-  libsodium13 libtool libyaml-0-2 libzmq3 libzmq3-dev m4 rake ruby ruby-dev
-  ruby2.1 ruby2.1-dev rubygems-integration unzip zip
-The following packages will be upgraded:
-  git zlib1g zlib1g-dev
-3 upgraded, 26 newly installed, 0 to remove and 175 not upgraded.
-Need to get 14.2 MB of archives.
-After this operation, 41.3 MB of additional disk space will be used.
-Get:1 http://security.debian.org/ jessie/updates/main zlib1g-dev amd64 1:1.2.8.dfsg-2+deb8u1 [206 kB]
-Get:2 http://httpredir.debian.org/debian/ jessie/main libgmpxx4ldbl amd64 2:6.0.0+dfsg-6 [22.1 kB]
-Get:3 http://httpredir.debian.org/debian/ jessie/main libltdl7 amd64 2.4.2-1.11+b1 [45.4 kB]
-Get:4 http://security.debian.org/ jessie/updates/main zlib1g amd64 1:1.2.8.dfsg-2+deb8u1 [88.3 kB]
-Get:5 http://httpredir.debian.org/debian/ jessie/main libsigsegv2 amd64 2.10-4+b1 [29.2 kB]
-Get:6 http://security.debian.org/ jessie/updates/main libzmq3 amd64 4.0.5+dfsg-2+deb8u2 [438 kB]
-Get:7 http://httpredir.debian.org/debian/ jessie/main libsodium13 amd64 1.0.0-1 [138 kB]
-Get:8 http://httpredir.debian.org/debian/ jessie/main libyaml-0-2 amd64 0.1.6-3 [50.4 kB]
-Get:9 http://httpredir.debian.org/debian/ jessie/main libpgm-5.1-0 amd64 5.1.118-1~dfsg-1 [157 kB]
-Get:10 http://security.debian.org/ jessie/updates/main git amd64 1:2.1.4-2.1+deb8u8 [3,225 kB]
-Get:11 http://httpredir.debian.org/debian/ jessie/main m4 amd64 1.4.17-4 [254 kB]
-Get:12 http://httpredir.debian.org/debian/ jessie/main autoconf all 2.69-8 [340 kB]
-Get:13 http://security.debian.org/ jessie/updates/main libzmq3-dev amd64 4.0.5+dfsg-2+deb8u2 [564 kB]
-Get:14 http://httpredir.debian.org/debian/ jessie/main autotools-dev all 20140911.1 [70.5 kB]
-Get:15 http://httpredir.debian.org/debian/ jessie/main automake all 1:1.14.1-4+deb8u1 [724 kB]
-Get:16 http://security.debian.org/ jessie/updates/main libruby2.1 amd64 2.1.5-2+deb8u9 [3,286 kB]
-Get:17 http://security.debian.org/ jessie/updates/main ruby2.1 amd64 2.1.5-2+deb8u9 [277 kB]
-Get:18 http://security.debian.org/ jessie/updates/main rake all 10.3.2-2+deb8u1 [49.2 kB]
-Get:19 http://security.debian.org/ jessie/updates/main ruby2.1-dev amd64 2.1.5-2+deb8u9 [1,102 kB]
-Get:20 http://httpredir.debian.org/debian/ jessie/main libgmp-dev amd64 2:6.0.0+dfsg-6 [621 kB]
-Get:21 http://security.debian.org/ jessie/updates/main unzip amd64 6.0-16+deb8u6 [164 kB]
-Get:22 http://httpredir.debian.org/debian/ jessie/main libgsl0ldbl amd64 1.16+dfsg-2 [819 kB]
-Get:23 http://httpredir.debian.org/debian/ jessie/main libgsl0-dev amd64 1.16+dfsg-2 [908 kB]
-Get:24 http://httpredir.debian.org/debian/ jessie/main libltdl-dev amd64 2.4.2-1.11+b1 [157 kB]
-Get:25 http://httpredir.debian.org/debian/ jessie/main libtool all 2.4.2-1.11 [190 kB]
-Get:26 http://httpredir.debian.org/debian/ jessie/main rubygems-integration all 1.8 [4,514 B]
-Get:27 http://httpredir.debian.org/debian/ jessie/main ruby all 1:2.1.5+deb8u2 [9,688 B]
-Get:28 http://httpredir.debian.org/debian/ jessie/main ruby-dev all 1:2.1.5+deb8u2 [8,364 B]
-Get:29 http://httpredir.debian.org/debian/ jessie/main zip amd64 3.0-8 [228 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 14.2 MB in 3s (4,551 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 27124 files and directories currently installed.)
-Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2+deb8u1_amd64.deb ...
-Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2+deb8u1) over (1:1.2.8.dfsg-2+b1) ...
-Preparing to unpack .../zlib1g_1%3a1.2.8.dfsg-2+deb8u1_amd64.deb ...
-Unpacking zlib1g:amd64 (1:1.2.8.dfsg-2+deb8u1) over (1:1.2.8.dfsg-2+b1) ...
-Setting up zlib1g:amd64 (1:1.2.8.dfsg-2+deb8u1) ...
-Processing triggers for libc-bin (2.19-18+deb8u6) ...
-Selecting previously unselected package libgmpxx4ldbl:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 27122 files and directories currently installed.)
-Preparing to unpack .../libgmpxx4ldbl_2%3a6.0.0+dfsg-6_amd64.deb ...
-Unpacking libgmpxx4ldbl:amd64 (2:6.0.0+dfsg-6) ...
-Selecting previously unselected package libltdl7:amd64.
-Preparing to unpack .../libltdl7_2.4.2-1.11+b1_amd64.deb ...
-Unpacking libltdl7:amd64 (2.4.2-1.11+b1) ...
-Selecting previously unselected package libsigsegv2:amd64.
-Preparing to unpack .../libsigsegv2_2.10-4+b1_amd64.deb ...
-Unpacking libsigsegv2:amd64 (2.10-4+b1) ...
-Selecting previously unselected package libsodium13:amd64.
-Preparing to unpack .../libsodium13_1.0.0-1_amd64.deb ...
-Unpacking libsodium13:amd64 (1.0.0-1) ...
-Selecting previously unselected package libyaml-0-2:amd64.
-Preparing to unpack .../libyaml-0-2_0.1.6-3_amd64.deb ...
-Unpacking libyaml-0-2:amd64 (0.1.6-3) ...
-Selecting previously unselected package libpgm-5.1-0.
-Preparing to unpack .../libpgm-5.1-0_5.1.118-1~dfsg-1_amd64.deb ...
-Unpacking libpgm-5.1-0 (5.1.118-1~dfsg-1) ...
-Selecting previously unselected package libzmq3:amd64.
-Preparing to unpack .../libzmq3_4.0.5+dfsg-2+deb8u2_amd64.deb ...
-Unpacking libzmq3:amd64 (4.0.5+dfsg-2+deb8u2) ...
-Selecting previously unselected package m4.
-Preparing to unpack .../archives/m4_1.4.17-4_amd64.deb ...
-Unpacking m4 (1.4.17-4) ...
-Selecting previously unselected package autoconf.
-Preparing to unpack .../autoconf_2.69-8_all.deb ...
-Unpacking autoconf (2.69-8) ...
-Selecting previously unselected package autotools-dev.
-Preparing to unpack .../autotools-dev_20140911.1_all.deb ...
-Unpacking autotools-dev (20140911.1) ...
-Selecting previously unselected package automake.
-Preparing to unpack .../automake_1%3a1.14.1-4+deb8u1_all.deb ...
-Unpacking automake (1:1.14.1-4+deb8u1) ...
-Preparing to unpack .../git_1%3a2.1.4-2.1+deb8u8_amd64.deb ...
-Unpacking git (1:2.1.4-2.1+deb8u8) over (1:2.1.4-2.1+deb8u2) ...
-Selecting previously unselected package libgmp-dev:amd64.
-Preparing to unpack .../libgmp-dev_2%3a6.0.0+dfsg-6_amd64.deb ...
-Unpacking libgmp-dev:amd64 (2:6.0.0+dfsg-6) ...
-Selecting previously unselected package libgsl0ldbl.
-Preparing to unpack .../libgsl0ldbl_1.16+dfsg-2_amd64.deb ...
-Unpacking libgsl0ldbl (1.16+dfsg-2) ...
-Selecting previously unselected package libgsl0-dev.
-Preparing to unpack .../libgsl0-dev_1.16+dfsg-2_amd64.deb ...
-Unpacking libgsl0-dev (1.16+dfsg-2) ...
-Selecting previously unselected package libltdl-dev:amd64.
-Preparing to unpack .../libltdl-dev_2.4.2-1.11+b1_amd64.deb ...
-Unpacking libltdl-dev:amd64 (2.4.2-1.11+b1) ...
-Selecting previously unselected package libtool.
-Preparing to unpack .../libtool_2.4.2-1.11_all.deb ...
-Unpacking libtool (2.4.2-1.11) ...
-Selecting previously unselected package libzmq3-dev:amd64.
-Preparing to unpack .../libzmq3-dev_4.0.5+dfsg-2+deb8u2_amd64.deb ...
-Unpacking libzmq3-dev:amd64 (4.0.5+dfsg-2+deb8u2) ...
-Selecting previously unselected package rubygems-integration.
-Preparing to unpack .../rubygems-integration_1.8_all.deb ...
-Unpacking rubygems-integration (1.8) ...
-Selecting previously unselected package libruby2.1:amd64.
-Preparing to unpack .../libruby2.1_2.1.5-2+deb8u9_amd64.deb ...
-Unpacking libruby2.1:amd64 (2.1.5-2+deb8u9) ...
-Selecting previously unselected package ruby2.1.
-Preparing to unpack .../ruby2.1_2.1.5-2+deb8u9_amd64.deb ...
-Unpacking ruby2.1 (2.1.5-2+deb8u9) ...
-Selecting previously unselected package ruby.
-Preparing to unpack .../ruby_1%3a2.1.5+deb8u2_all.deb ...
-Unpacking ruby (1:2.1.5+deb8u2) ...
-Selecting previously unselected package rake.
-Preparing to unpack .../rake_10.3.2-2+deb8u1_all.deb ...
-Unpacking rake (10.3.2-2+deb8u1) ...
-Selecting previously unselected package ruby2.1-dev:amd64.
-Preparing to unpack .../ruby2.1-dev_2.1.5-2+deb8u9_amd64.deb ...
-Unpacking ruby2.1-dev:amd64 (2.1.5-2+deb8u9) ...
-Selecting previously unselected package ruby-dev.
-Preparing to unpack .../ruby-dev_1%3a2.1.5+deb8u2_all.deb ...
-Unpacking ruby-dev (1:2.1.5+deb8u2) ...
-Selecting previously unselected package unzip.
-Preparing to unpack .../unzip_6.0-16+deb8u6_amd64.deb ...
-Unpacking unzip (6.0-16+deb8u6) ...
-Selecting previously unselected package zip.
-Preparing to unpack .../archives/zip_3.0-8_amd64.deb ...
-Unpacking zip (3.0-8) ...
-Processing triggers for mime-support (3.58) ...
-Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2+deb8u1) ...
-Setting up libgmpxx4ldbl:amd64 (2:6.0.0+dfsg-6) ...
-Setting up libltdl7:amd64 (2.4.2-1.11+b1) ...
-Setting up libsigsegv2:amd64 (2.10-4+b1) ...
-Setting up libsodium13:amd64 (1.0.0-1) ...
-Setting up libyaml-0-2:amd64 (0.1.6-3) ...
-Setting up libpgm-5.1-0 (5.1.118-1~dfsg-1) ...
-Setting up libzmq3:amd64 (4.0.5+dfsg-2+deb8u2) ...
-Setting up m4 (1.4.17-4) ...
-Setting up autoconf (2.69-8) ...
-Setting up autotools-dev (20140911.1) ...
-Setting up automake (1:1.14.1-4+deb8u1) ...
-update-alternatives: using /usr/bin/automake-1.14 to provide /usr/bin/automake (automake) in auto mode
-Setting up git (1:2.1.4-2.1+deb8u8) ...
-Setting up libgmp-dev:amd64 (2:6.0.0+dfsg-6) ...
-Setting up libgsl0ldbl (1.16+dfsg-2) ...
-Setting up libgsl0-dev (1.16+dfsg-2) ...
-Setting up libltdl-dev:amd64 (2.4.2-1.11+b1) ...
-Setting up libtool (2.4.2-1.11) ...
-Setting up libzmq3-dev:amd64 (4.0.5+dfsg-2+deb8u2) ...
-Setting up rubygems-integration (1.8) ...
-Setting up libruby2.1:amd64 (2.1.5-2+deb8u9) ...
-Setting up ruby2.1 (2.1.5-2+deb8u9) ...
-Setting up ruby (1:2.1.5+deb8u2) ...
-Setting up rake (10.3.2-2+deb8u1) ...
-Setting up ruby2.1-dev:amd64 (2.1.5-2+deb8u9) ...
-Setting up ruby-dev (1:2.1.5+deb8u2) ...
-Setting up unzip (6.0-16+deb8u6) ...
-Setting up zip (3.0-8) ...
-Processing triggers for libc-bin (2.19-18+deb8u6) ...
-Removing intermediate container b2a627551ea7
- ---> c890b71117a9
-Step 6/11 : RUN ln -s /usr/bin/libtoolize /usr/bin/libtool # See https://github.com/zeromq/libzmq/issues/1385
- ---> Running in 13140704ad61
-Removing intermediate container 13140704ad61
- ---> d3bbf227224f
-Step 7/11 : RUN git clone git://github.com/ruby-numo/numo-narray
- ---> Running in befa8bf1c983
-[91mCloning into 'numo-narray'...
-[0mRemoving intermediate container befa8bf1c983
- ---> 2815db2516a0
-Step 8/11 : RUN gem update --no-document --system && gem install --no-document iruby pry rbczmq
- ---> Running in 6de004f6e97a
-[91mERROR:  Error installing rubygems-update:
-	rubygems-update requires Ruby version >= 2.3.0.
-ERROR:  While executing gem ... (NoMethodError)
-    undefined method `version' for nil:NilClass
-[0mUpdating rubygems-update
-The command '/bin/sh -c gem update --no-document --system && gem install --no-document iruby pry rbczmq' returned a non-zero code: 1

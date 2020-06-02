@@ -1,174 +1,0 @@
-Sending build context to Docker daemon   2.56kB
-Step 1/10 : FROM python:2.7
-2.7: Pulling from library/python
-f15005b0235f: Pulling fs layer
-41ebfd3d2fd0: Pulling fs layer
-b998346ba308: Pulling fs layer
-f01ec562c947: Pulling fs layer
-2447a2c11907: Pulling fs layer
-0bd90bd78729: Pulling fs layer
-a124f24dcf32: Pulling fs layer
-35b012b3251a: Pulling fs layer
-2f528e6d62a0: Pulling fs layer
-a124f24dcf32: Waiting
-f01ec562c947: Waiting
-2447a2c11907: Waiting
-0bd90bd78729: Waiting
-35b012b3251a: Waiting
-2f528e6d62a0: Waiting
-41ebfd3d2fd0: Verifying Checksum
-41ebfd3d2fd0: Download complete
-b998346ba308: Verifying Checksum
-b998346ba308: Download complete
-f15005b0235f: Verifying Checksum
-f15005b0235f: Download complete
-0bd90bd78729: Verifying Checksum
-0bd90bd78729: Download complete
-f01ec562c947: Verifying Checksum
-f01ec562c947: Download complete
-35b012b3251a: Verifying Checksum
-35b012b3251a: Download complete
-a124f24dcf32: Verifying Checksum
-a124f24dcf32: Download complete
-2f528e6d62a0: Verifying Checksum
-2f528e6d62a0: Download complete
-2447a2c11907: Verifying Checksum
-2447a2c11907: Download complete
-f15005b0235f: Pull complete
-41ebfd3d2fd0: Pull complete
-b998346ba308: Pull complete
-f01ec562c947: Pull complete
-2447a2c11907: Pull complete
-0bd90bd78729: Pull complete
-a124f24dcf32: Pull complete
-35b012b3251a: Pull complete
-2f528e6d62a0: Pull complete
-Digest: sha256:675c76b809607779bd0be4553eb2b4a2dab90d09f37e8179fe8039e3ce9d8f15
-Status: Downloaded newer image for python:2.7
- ---> 154f4db0c875
-Step 2/10 : RUN sed -i 's/main/main contrib non-free/g' /etc/apt/sources.list
- ---> Running in f5209f6a1355
-Removing intermediate container f5209f6a1355
- ---> 860b4770cd76
-Step 3/10 : RUN apt-get update && apt-get install -y --no-install-recommends graphviz && apt-get autoclean -y && apt-get -y update && apt-get install -y && apt-get clean -y && mkdir /transform && mkdir /data
- ---> Running in 321b3f3edfd9
-Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
-Get:2 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
-Get:3 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
-Get:4 http://security.debian.org/debian-security buster/updates/non-free amd64 Packages [552 B]
-Get:5 http://security.debian.org/debian-security buster/updates/main amd64 Packages [187 kB]
-Get:6 http://deb.debian.org/debian buster/main amd64 Packages [7907 kB]
-Get:7 http://deb.debian.org/debian buster/non-free amd64 Packages [88.0 kB]
-Get:8 http://deb.debian.org/debian buster/contrib amd64 Packages [51.0 kB]
-Get:9 http://deb.debian.org/debian buster-updates/main amd64 Packages [7380 B]
-Fetched 8477 kB in 2s (3861 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  libcdt5 libcgraph6 libgd3 libgts-0.7-5 libgvc6 libgvpr2 liblab-gamut1
-  libpathplan4 libxaw7 libxdot4 libxmu6 libxpm4
-Suggested packages:
-  gsfonts graphviz-doc libgd-tools
-Recommended packages:
-  fonts-liberation libgts-bin
-The following NEW packages will be installed:
-  graphviz libcdt5 libcgraph6 libgd3 libgts-0.7-5 libgvc6 libgvpr2
-  liblab-gamut1 libpathplan4 libxaw7 libxdot4 libxmu6 libxpm4
-0 upgraded, 13 newly installed, 0 to remove and 7 not upgraded.
-Need to get 2543 kB of archives.
-After this operation, 9840 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian buster/main amd64 libcdt5 amd64 2.40.1-6 [60.6 kB]
-Get:2 http://deb.debian.org/debian buster/main amd64 libcgraph6 amd64 2.40.1-6 [84.1 kB]
-Get:3 http://deb.debian.org/debian buster/main amd64 libxpm4 amd64 1:3.5.12-1 [49.1 kB]
-Get:4 http://deb.debian.org/debian buster/main amd64 libgd3 amd64 2.2.5-5.2 [136 kB]
-Get:5 http://deb.debian.org/debian buster/main amd64 libgts-0.7-5 amd64 0.7.6+darcs121130-4 [158 kB]
-Get:6 http://deb.debian.org/debian buster/main amd64 libpathplan4 amd64 2.40.1-6 [63.5 kB]
-Get:7 http://deb.debian.org/debian buster/main amd64 libxdot4 amd64 2.40.1-6 [56.9 kB]
-Get:8 http://deb.debian.org/debian buster/main amd64 libgvc6 amd64 2.40.1-6 [646 kB]
-Get:9 http://deb.debian.org/debian buster/main amd64 libgvpr2 amd64 2.40.1-6 [213 kB]
-Get:10 http://deb.debian.org/debian buster/main amd64 liblab-gamut1 amd64 2.40.1-6 [220 kB]
-Get:11 http://deb.debian.org/debian buster/main amd64 libxmu6 amd64 2:1.1.2-2+b3 [60.8 kB]
-Get:12 http://deb.debian.org/debian buster/main amd64 libxaw7 amd64 2:1.0.13-1+b2 [201 kB]
-Get:13 http://deb.debian.org/debian buster/main amd64 graphviz amd64 2.40.1-6 [594 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 2543 kB in 0s (14.4 MB/s)
-Selecting previously unselected package libcdt5.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24534 files and directories currently installed.)
-Preparing to unpack .../00-libcdt5_2.40.1-6_amd64.deb ...
-Unpacking libcdt5 (2.40.1-6) ...
-Selecting previously unselected package libcgraph6.
-Preparing to unpack .../01-libcgraph6_2.40.1-6_amd64.deb ...
-Unpacking libcgraph6 (2.40.1-6) ...
-Selecting previously unselected package libxpm4:amd64.
-Preparing to unpack .../02-libxpm4_1%3a3.5.12-1_amd64.deb ...
-Unpacking libxpm4:amd64 (1:3.5.12-1) ...
-Selecting previously unselected package libgd3:amd64.
-Preparing to unpack .../03-libgd3_2.2.5-5.2_amd64.deb ...
-Unpacking libgd3:amd64 (2.2.5-5.2) ...
-Selecting previously unselected package libgts-0.7-5:amd64.
-Preparing to unpack .../04-libgts-0.7-5_0.7.6+darcs121130-4_amd64.deb ...
-Unpacking libgts-0.7-5:amd64 (0.7.6+darcs121130-4) ...
-Selecting previously unselected package libpathplan4.
-Preparing to unpack .../05-libpathplan4_2.40.1-6_amd64.deb ...
-Unpacking libpathplan4 (2.40.1-6) ...
-Selecting previously unselected package libxdot4.
-Preparing to unpack .../06-libxdot4_2.40.1-6_amd64.deb ...
-Unpacking libxdot4 (2.40.1-6) ...
-Selecting previously unselected package libgvc6.
-Preparing to unpack .../07-libgvc6_2.40.1-6_amd64.deb ...
-Unpacking libgvc6 (2.40.1-6) ...
-Selecting previously unselected package libgvpr2.
-Preparing to unpack .../08-libgvpr2_2.40.1-6_amd64.deb ...
-Unpacking libgvpr2 (2.40.1-6) ...
-Selecting previously unselected package liblab-gamut1.
-Preparing to unpack .../09-liblab-gamut1_2.40.1-6_amd64.deb ...
-Unpacking liblab-gamut1 (2.40.1-6) ...
-Selecting previously unselected package libxmu6:amd64.
-Preparing to unpack .../10-libxmu6_2%3a1.1.2-2+b3_amd64.deb ...
-Unpacking libxmu6:amd64 (2:1.1.2-2+b3) ...
-Selecting previously unselected package libxaw7:amd64.
-Preparing to unpack .../11-libxaw7_2%3a1.0.13-1+b2_amd64.deb ...
-Unpacking libxaw7:amd64 (2:1.0.13-1+b2) ...
-Selecting previously unselected package graphviz.
-Preparing to unpack .../12-graphviz_2.40.1-6_amd64.deb ...
-Unpacking graphviz (2.40.1-6) ...
-Setting up libxdot4 (2.40.1-6) ...
-Setting up libxmu6:amd64 (2:1.1.2-2+b3) ...
-Setting up libxpm4:amd64 (1:3.5.12-1) ...
-Setting up liblab-gamut1 (2.40.1-6) ...
-Setting up libxaw7:amd64 (2:1.0.13-1+b2) ...
-Setting up libgts-0.7-5:amd64 (0.7.6+darcs121130-4) ...
-Setting up libpathplan4 (2.40.1-6) ...
-Setting up libgd3:amd64 (2.2.5-5.2) ...
-Setting up libcdt5 (2.40.1-6) ...
-Setting up libcgraph6 (2.40.1-6) ...
-Setting up libgvc6 (2.40.1-6) ...
-Setting up libgvpr2 (2.40.1-6) ...
-Setting up graphviz (2.40.1-6) ...
-Processing triggers for libc-bin (2.28-10) ...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Hit:1 http://deb.debian.org/debian buster InRelease
-Hit:2 http://security.debian.org/debian-security buster/updates InRelease
-Hit:3 http://deb.debian.org/debian buster-updates InRelease
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
-Removing intermediate container 321b3f3edfd9
- ---> 2250f5f709ef
-Step 4/10 : RUN apt-get install openjdk-7-jdk -y
- ---> Running in b2304762f005
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Package openjdk-7-jdk is not available, but is referred to by another package.
-This may mean that the package is missing, has been obsoleted, or
-is only available from another source
-
-[91mE: Package 'openjdk-7-jdk' has no installation candidate
-[0mThe command '/bin/sh -c apt-get install openjdk-7-jdk -y' returned a non-zero code: 100

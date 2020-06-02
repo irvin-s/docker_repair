@@ -1,151 +1,0 @@
-Sending build context to Docker daemon   2.56kB
-Step 1/11 : FROM ruby:2.2
-2.2: Pulling from library/ruby
-3d77ce4481b1: Pulling fs layer
-534514c83d69: Pulling fs layer
-d562b1c3ac3f: Pulling fs layer
-4b85e68dc01d: Pulling fs layer
-52134d825d3e: Pulling fs layer
-b2262ff3b75c: Pulling fs layer
-4d1332abe17f: Pulling fs layer
-4b85e68dc01d: Waiting
-52134d825d3e: Waiting
-b2262ff3b75c: Waiting
-4d1332abe17f: Waiting
-534514c83d69: Verifying Checksum
-534514c83d69: Download complete
-d562b1c3ac3f: Verifying Checksum
-d562b1c3ac3f: Download complete
-3d77ce4481b1: Verifying Checksum
-3d77ce4481b1: Download complete
-52134d825d3e: Verifying Checksum
-52134d825d3e: Download complete
-4d1332abe17f: Verifying Checksum
-4d1332abe17f: Download complete
-b2262ff3b75c: Verifying Checksum
-b2262ff3b75c: Download complete
-4b85e68dc01d: Verifying Checksum
-4b85e68dc01d: Download complete
-3d77ce4481b1: Pull complete
-534514c83d69: Pull complete
-d562b1c3ac3f: Pull complete
-4b85e68dc01d: Pull complete
-52134d825d3e: Pull complete
-b2262ff3b75c: Pull complete
-4d1332abe17f: Pull complete
-Digest: sha256:4987b5e2f03b7086c493208ef616b711fe73228391a80faf451975f9e0195236
-Status: Downloaded newer image for ruby:2.2
- ---> 6c8e6f9667b2
-Step 2/11 : MAINTAINER Mateusz Koszutowski <mkoszutowski@divante.pl>
- ---> Running in 59027127616b
-Removing intermediate container 59027127616b
- ---> eb30434bc6aa
-Step 3/11 : WORKDIR /usr/src/anonymizer
- ---> Running in 02c4a51d1b2a
-Removing intermediate container 02c4a51d1b2a
- ---> 5efc0b37012a
-Step 4/11 : ARG UID=1000
- ---> Running in 6ccdfd644177
-Removing intermediate container 6ccdfd644177
- ---> a63d254ccbe5
-Step 5/11 : ARG GID=1000
- ---> Running in 1fda3be78d0b
-Removing intermediate container 1fda3be78d0b
- ---> 5021ca8a851b
-Step 6/11 : USER root
- ---> Running in 517bdc73b2c0
-Removing intermediate container 517bdc73b2c0
- ---> cf3234348fd0
-Step 7/11 : RUN apt-get update     && apt-get install -y         mysql-client         rsync     && apt-get clean     && rm -rf /var/lib/apt/lists/*
- ---> Running in e8fd221b68ce
-Ign http://deb.debian.org jessie InRelease
-Get:1 http://deb.debian.org jessie-updates InRelease [16.3 kB]
-Get:2 http://security.debian.org jessie/updates InRelease [44.9 kB]
-Get:3 http://deb.debian.org jessie Release.gpg [1652 B]
-Get:4 http://deb.debian.org jessie Release [77.3 kB]
-Get:5 http://deb.debian.org jessie-updates/main amd64 Packages [20 B]
-Get:6 http://deb.debian.org jessie/main amd64 Packages [9098 kB]
-Get:7 http://security.debian.org jessie/updates/main amd64 Packages [973 kB]
-Fetched 10.2 MB in 7s (1343 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  libdbd-mysql-perl libdbi-perl libpopt0 libterm-readkey-perl mysql-client-5.5
-  mysql-common
-Suggested packages:
-  libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl
-  openssh-server
-The following NEW packages will be installed:
-  libdbd-mysql-perl libdbi-perl libpopt0 libterm-readkey-perl mysql-client
-  mysql-client-5.5 rsync
-The following packages will be upgraded:
-  mysql-common
-1 upgraded, 7 newly installed, 0 to remove and 160 not upgraded.
-Need to get 3374 kB of archives.
-After this operation, 40.7 MB of additional disk space will be used.
-Get:1 http://security.debian.org/debian-security/ jessie/updates/main mysql-common all 5.5.62-0+deb8u1 [75.7 kB]
-Get:2 http://deb.debian.org/debian/ jessie/main libpopt0 amd64 1.16-10 [49.2 kB]
-Get:3 http://security.debian.org/debian-security/ jessie/updates/main mysql-client-5.5 amd64 5.5.62-0+deb8u1 [1822 kB]
-Get:4 http://deb.debian.org/debian/ jessie/main libdbi-perl amd64 1.631-3+b1 [816 kB]
-Get:5 http://deb.debian.org/debian/ jessie/main libdbd-mysql-perl amd64 4.028-2+deb8u2 [119 kB]
-Get:6 http://deb.debian.org/debian/ jessie/main libterm-readkey-perl amd64 2.32-1+b1 [28.0 kB]
-Get:7 http://security.debian.org/debian-security/ jessie/updates/main mysql-client all 5.5.62-0+deb8u1 [73.8 kB]
-Get:8 http://security.debian.org/debian-security/ jessie/updates/main rsync amd64 3.1.1-3+deb8u2 [390 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 3374 kB in 0s (17.7 MB/s)
-Selecting previously unselected package libpopt0:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21206 files and directories currently installed.)
-Preparing to unpack .../libpopt0_1.16-10_amd64.deb ...
-Unpacking libpopt0:amd64 (1.16-10) ...
-Selecting previously unselected package libdbi-perl.
-Preparing to unpack .../libdbi-perl_1.631-3+b1_amd64.deb ...
-Unpacking libdbi-perl (1.631-3+b1) ...
-Selecting previously unselected package libdbd-mysql-perl.
-Preparing to unpack .../libdbd-mysql-perl_4.028-2+deb8u2_amd64.deb ...
-Unpacking libdbd-mysql-perl (4.028-2+deb8u2) ...
-Selecting previously unselected package libterm-readkey-perl.
-Preparing to unpack .../libterm-readkey-perl_2.32-1+b1_amd64.deb ...
-Unpacking libterm-readkey-perl (2.32-1+b1) ...
-Preparing to unpack .../mysql-common_5.5.62-0+deb8u1_all.deb ...
-Unpacking mysql-common (5.5.62-0+deb8u1) over (5.5.60-0+deb8u1) ...
-Selecting previously unselected package mysql-client-5.5.
-Preparing to unpack .../mysql-client-5.5_5.5.62-0+deb8u1_amd64.deb ...
-Unpacking mysql-client-5.5 (5.5.62-0+deb8u1) ...
-Selecting previously unselected package mysql-client.
-Preparing to unpack .../mysql-client_5.5.62-0+deb8u1_all.deb ...
-Unpacking mysql-client (5.5.62-0+deb8u1) ...
-Selecting previously unselected package rsync.
-Preparing to unpack .../rsync_3.1.1-3+deb8u2_amd64.deb ...
-Unpacking rsync (3.1.1-3+deb8u2) ...
-Processing triggers for systemd (215-17+deb8u7) ...
-Setting up libpopt0:amd64 (1.16-10) ...
-Setting up libdbi-perl (1.631-3+b1) ...
-Setting up libdbd-mysql-perl (4.028-2+deb8u2) ...
-Setting up libterm-readkey-perl (2.32-1+b1) ...
-Setting up mysql-common (5.5.62-0+deb8u1) ...
-Setting up mysql-client-5.5 (5.5.62-0+deb8u1) ...
-Setting up mysql-client (5.5.62-0+deb8u1) ...
-Setting up rsync (3.1.1-3+deb8u2) ...
-invoke-rc.d: policy-rc.d denied execution of restart.
-Processing triggers for libc-bin (2.19-18+deb8u10) ...
-Processing triggers for systemd (215-17+deb8u7) ...
-Removing intermediate container e8fd221b68ce
- ---> 62740eac5cc9
-Step 8/11 : RUN if [ ! `id -g anonymizer &> /dev/null` ]; then groupadd -f -g ${GID} anonymizer; fi     && if [ ! `id -u anonymizer &> /dev/null` ]; then useradd --shell /bin/bash -u ${UID} -g ${GID} -m anonymizer; fi
- ---> Running in a4f8f3301f53
-[91mid: anonymizer: no such user
-[0m[91mid: anonymizer: no such user
-[0mRemoving intermediate container a4f8f3301f53
- ---> 1691a4ff3cb1
-Step 9/11 : COPY --chown=1000:1000 . .
- ---> 60e0b45f6920
-Step 10/11 : USER anonymizer
- ---> Running in 73e9a603e10d
-Removing intermediate container 73e9a603e10d
- ---> 15173b796670
-Step 11/11 : RUN bundle install --deployment --force
- ---> Running in 1f75f89bbd52
-Could not locate Gemfile
-The command '/bin/sh -c bundle install --deployment --force' returned a non-zero code: 10

@@ -1,0 +1,31 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/8 : FROM armhf/ubuntu:trusty
+trusty: Pulling from armhf/ubuntu
+b7302a3eb76f: Pulling fs layer
+16625fa67984: Pulling fs layer
+a50595b47ade: Pulling fs layer
+c1415e20baf7: Pulling fs layer
+995832160119: Pulling fs layer
+c1415e20baf7: Waiting
+995832160119: Waiting
+16625fa67984: Verifying Checksum
+16625fa67984: Download complete
+a50595b47ade: Download complete
+c1415e20baf7: Verifying Checksum
+c1415e20baf7: Download complete
+995832160119: Verifying Checksum
+995832160119: Download complete
+b7302a3eb76f: Verifying Checksum
+b7302a3eb76f: Download complete
+b7302a3eb76f: Pull complete
+16625fa67984: Pull complete
+a50595b47ade: Pull complete
+c1415e20baf7: Pull complete
+995832160119: Pull complete
+Digest: sha256:0ef1a70d08e7d7868c530d787b409b359a3875620d7d3d7a27753cfe03dd2e80
+Status: Downloaded newer image for armhf/ubuntu:trusty
+ ---> 800c748423ca
+Step 2/8 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev  pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in 25524609939b
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev  pkg-config vim-common libsystemd-journal-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

@@ -1,0 +1,4 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/6 : ARG base
+Step 2/6 : FROM juliagpu/julia:${base} as base
+invalid reference format

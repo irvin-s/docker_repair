@@ -1,0 +1,122 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/16 : FROM alpine:3.8
+3.8: Pulling from library/alpine
+486039affc0a: Pulling fs layer
+486039affc0a: Verifying Checksum
+486039affc0a: Download complete
+486039affc0a: Pull complete
+Digest: sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14
+Status: Downloaded newer image for alpine:3.8
+ ---> c8bccc0af957
+Step 2/16 : LABEL maintainer Jan Koppe <post@jankoppe.de>
+ ---> Running in fc741381081f
+Removing intermediate container fc741381081f
+ ---> 482189240ed6
+Step 3/16 : ARG PUMPIO__GUID=888
+ ---> Running in a11aaf5b83a2
+Removing intermediate container a11aaf5b83a2
+ ---> 4d8e765ad368
+Step 4/16 : ARG PUMPIO__UID=888
+ ---> Running in ef4568c2fb11
+Removing intermediate container ef4568c2fb11
+ ---> 943881df75cb
+Step 5/16 : ENV PUMP_LOCATION="/opt/pumpio"
+ ---> Running in 340f94b3620d
+Removing intermediate container 340f94b3620d
+ ---> 13e90919f54d
+Step 6/16 : ENV PUMP_DATADIR="/var/local/pump.io"
+ ---> Running in adbea7d7c517
+Removing intermediate container adbea7d7c517
+ ---> 01c8414b92ea
+Step 7/16 : ENV PUMP_LOGFILE="/dev/stdout"
+ ---> Running in 1c24e677a85f
+Removing intermediate container 1c24e677a85f
+ ---> a8460143790a
+Step 8/16 : ENV PUMP_PORT="80"
+ ---> Running in c1fb40feb41e
+Removing intermediate container c1fb40feb41e
+ ---> 450911654032
+Step 9/16 : ENV NODE_ENV="production"
+ ---> Running in 06b13654743b
+Removing intermediate container 06b13654743b
+ ---> d4b2bf456af8
+Step 10/16 : COPY . "${PUMP_LOCATION}"
+ ---> 7c5163f542bd
+Step 11/16 : RUN apk add --no-cache graphicsmagick openssl nodejs npm python make g++ git      && cd "${PUMP_LOCATION}"      && npm install      && npm run build      && cd node_modules/databank      && npm install databank-mongodb@1 databank-disk@1 databank-leveldb@1 databank-redis@0.19 databank-memcached@0.15      && addgroup -S -g "${PUMPIO__GUID}" "pumpio"      && adduser -S -D -H -G "pumpio" -h "${PUMP_LOCATION}" -u "${PUMPIO__UID}" "pumpio"      && mkdir -p /usr/local/bin "${PUMP_DATADIR}"      && chown "pumpio:pumpio" "${PUMP_DATADIR}" -R      && ln -s "${PUMP_LOCATION}/bin/pump" /usr/local/bin/pump      && rm -rf /usr/lib/node_modules/npm      && rm -rf ~/.npm      && apk del --purge python make g++ git libc-utils
+ ---> Running in c6a3ba2cdbe6
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/community/x86_64/APKINDEX.tar.gz
+(1/49) Installing libgcc (6.4.0-r9)
+(2/49) Installing libstdc++ (6.4.0-r9)
+(3/49) Installing binutils (2.30-r6)
+(4/49) Installing gmp (6.1.2-r1)
+(5/49) Installing isl (0.18-r0)
+(6/49) Installing libgomp (6.4.0-r9)
+(7/49) Installing libatomic (6.4.0-r9)
+(8/49) Installing pkgconf (1.5.3-r0)
+(9/49) Installing mpfr3 (3.1.5-r1)
+(10/49) Installing mpc1 (1.0.3-r1)
+(11/49) Installing gcc (6.4.0-r9)
+(12/49) Installing musl-dev (1.1.19-r11)
+(13/49) Installing libc-dev (0.7.1-r0)
+(14/49) Installing g++ (6.4.0-r9)
+(15/49) Installing ca-certificates (20190108-r0)
+(16/49) Installing nghttp2-libs (1.39.2-r0)
+(17/49) Installing libssh2 (1.9.0-r1)
+(18/49) Installing libcurl (7.61.1-r3)
+(19/49) Installing expat (2.2.8-r0)
+(20/49) Installing pcre2 (10.31-r0)
+(21/49) Installing git (2.18.2-r0)
+(22/49) Installing libbz2 (1.0.6-r7)
+(23/49) Installing libpng (1.6.37-r0)
+(24/49) Installing freetype (2.9.1-r1)
+(25/49) Installing libjpeg-turbo (1.5.3-r6)
+(26/49) Installing jasper-libs (2.0.14-r0)
+(27/49) Installing libltdl (2.4.6-r5)
+(28/49) Installing tiff (4.0.10-r3)
+(29/49) Installing ghostscript-fonts (8.11-r1)
+(30/49) Installing libwmf (0.2.8.4-r4)
+(31/49) Installing libxml2 (2.9.8-r2)
+(32/49) Installing graphicsmagick (1.3.30-r0)
+(33/49) Installing make (4.2.1-r2)
+(34/49) Installing c-ares (1.14.0-r0)
+(35/49) Installing libcrypto1.0 (1.0.2u-r0)
+(36/49) Installing http-parser (2.8.1-r0)
+(37/49) Installing libssl1.0 (1.0.2u-r0)
+(38/49) Installing libuv (1.20.2-r0)
+(39/49) Installing nodejs (8.14.0-r0)
+(40/49) Installing npm (8.14.0-r0)
+(41/49) Installing openssl (1.0.2u-r0)
+(42/49) Installing libffi (3.2.1-r4)
+(43/49) Installing gdbm (1.13-r1)
+(44/49) Installing ncurses-terminfo-base (6.1_p20180818-r1)
+(45/49) Installing ncurses-terminfo (6.1_p20180818-r1)
+(46/49) Installing ncurses-libs (6.1_p20180818-r1)
+(47/49) Installing readline (7.0.003-r0)
+(48/49) Installing sqlite-libs (3.25.3-r3)
+(49/49) Installing python2 (2.7.15-r3)
+Executing busybox-1.28.4-r3.trigger
+Executing ca-certificates-20190108-r0.trigger
+OK: 284 MiB in 62 packages
+[91mnpm WARN saveError ENOENT: no such file or directory, open '/opt/pumpio/package.json'
+[0m[91mnpm notice[0m[91m created a lockfile as package-lock.json. You should commit this file.
+[0m[91mnpm WARN[0m[91m enoent ENOENT: no such file or directory, open '/opt/pumpio/package.json'
+[0m[91mnpm[0m[91m WARN pumpio No description
+npm[0m[91m WARN[0m[91m pumpio No repository field.
+[0m[91mnpm[0m[91m [0m[91mWARN pumpio No README data
+[0m[91mnpm [0m[91mWARN[0m[91m pumpio No license field.
+[0m[91m
+[0mup to date in 0.913s
+found 0 vulnerabilities
+
+[91mnpm[0m[91m ERR! [0m[91mpath[0m[91m /opt/pumpio/package.json
+[0m[91mnpm ERR![0m[91m [0m[91mcode ENOENT
+[0m[91mnpm ERR! [0m[91merrno -2
+[0m[91mnpm [0m[91mERR! [0m[91msyscall open
+[0m[91mnpm ERR! enoent ENOENT: no such file or directory, open '/opt/pumpio/package.json'
+[0m[91mnpm ERR! [0m[91menoent This is related to npm not being able to find a file.
+npm[0m[91m ERR! enoent 
+[0m[91m
+[0m[91mnpm ERR![0m[91m A complete log of this run can be found in:
+npm ERR![0m[91m     /root/.npm/_logs/2020-04-02T16_48_09_933Z-debug.log
+[0mThe command '/bin/sh -c apk add --no-cache graphicsmagick openssl nodejs npm python make g++ git      && cd "${PUMP_LOCATION}"      && npm install      && npm run build      && cd node_modules/databank      && npm install databank-mongodb@1 databank-disk@1 databank-leveldb@1 databank-redis@0.19 databank-memcached@0.15      && addgroup -S -g "${PUMPIO__GUID}" "pumpio"      && adduser -S -D -H -G "pumpio" -h "${PUMP_LOCATION}" -u "${PUMPIO__UID}" "pumpio"      && mkdir -p /usr/local/bin "${PUMP_DATADIR}"      && chown "pumpio:pumpio" "${PUMP_DATADIR}" -R      && ln -s "${PUMP_LOCATION}/bin/pump" /usr/local/bin/pump      && rm -rf /usr/lib/node_modules/npm      && rm -rf ~/.npm      && apk del --purge python make g++ git libc-utils' returned a non-zero code: 254

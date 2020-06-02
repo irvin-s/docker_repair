@@ -1,0 +1,20 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM haproxy:1.7
+1.7: Pulling from library/haproxy
+afb6ec6fdc1c: Pulling fs layer
+f7870d40cfdf: Pulling fs layer
+d9442640b7f3: Pulling fs layer
+d9442640b7f3: Verifying Checksum
+d9442640b7f3: Download complete
+f7870d40cfdf: Verifying Checksum
+f7870d40cfdf: Download complete
+afb6ec6fdc1c: Verifying Checksum
+afb6ec6fdc1c: Download complete
+afb6ec6fdc1c: Pull complete
+f7870d40cfdf: Pull complete
+d9442640b7f3: Pull complete
+Digest: sha256:28dc8a6a3ff25a3579a5403bb91ca70409b44cb1f48fa119f02645b075035fd2
+Status: Downloaded newer image for haproxy:1.7
+ ---> 6f26ab363ba8
+Step 2/2 : COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY failed: stat /var/lib/docker/tmp/docker-builder665825655/haproxy.cfg: no such file or directory

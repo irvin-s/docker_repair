@@ -1,0 +1,3 @@
+Sending build context to Docker daemon  13.31kB
+Step 1/7 : FROM microsoft/windowsservercore
+manifest for microsoft/windowsservercore:latest not found: manifest unknown: manifest unknown

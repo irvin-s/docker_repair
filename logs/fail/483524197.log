@@ -1,0 +1,51 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM openjdk:8-jdk
+8-jdk: Pulling from library/openjdk
+f15005b0235f: Pulling fs layer
+41ebfd3d2fd0: Pulling fs layer
+b998346ba308: Pulling fs layer
+f01ec562c947: Pulling fs layer
+74c11ae3efe8: Pulling fs layer
+3a7e595a3ef5: Pulling fs layer
+208407758d73: Pulling fs layer
+74c11ae3efe8: Waiting
+3a7e595a3ef5: Waiting
+208407758d73: Waiting
+f01ec562c947: Waiting
+41ebfd3d2fd0: Verifying Checksum
+41ebfd3d2fd0: Download complete
+b998346ba308: Verifying Checksum
+b998346ba308: Download complete
+f15005b0235f: Verifying Checksum
+f15005b0235f: Download complete
+74c11ae3efe8: Download complete
+3a7e595a3ef5: Verifying Checksum
+3a7e595a3ef5: Download complete
+f01ec562c947: Verifying Checksum
+f01ec562c947: Download complete
+208407758d73: Verifying Checksum
+208407758d73: Download complete
+f15005b0235f: Pull complete
+41ebfd3d2fd0: Pull complete
+b998346ba308: Pull complete
+f01ec562c947: Pull complete
+74c11ae3efe8: Pull complete
+3a7e595a3ef5: Pull complete
+208407758d73: Pull complete
+Digest: sha256:2b14e3b158ac226d7945e3504050f7c5469eff02f496ca0e0ee8fde8524afcec
+Status: Downloaded newer image for openjdk:8-jdk
+ ---> 0d54b885dc70
+Step 2/6 : MAINTAINER dCache "https://www.dcache.org"
+ ---> Running in 48a763dc6e4c
+Removing intermediate container 48a763dc6e4c
+ ---> 3e229978516d
+Step 3/6 : ENV DCACHE_HOME=/opt/dcache
+ ---> Running in 8190c97b1cde
+Removing intermediate container 8190c97b1cde
+ ---> a0571d904e93
+Step 4/6 : RUN groupadd -r dcache && useradd -r -g dcache dcache
+ ---> Running in 3b4f02b450e8
+Removing intermediate container 3b4f02b450e8
+ ---> 6b10703dc20e
+Step 5/6 : ADD target/dcache*.tar.gz  /opt/
+ADD failed: no source files were specified

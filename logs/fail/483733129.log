@@ -1,0 +1,856 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/11 : FROM fedora
+latest: Pulling from library/fedora
+5c1b9e8d7bf7: Pulling fs layer
+5c1b9e8d7bf7: Verifying Checksum
+5c1b9e8d7bf7: Download complete
+5c1b9e8d7bf7: Pull complete
+Digest: sha256:c97879f8bebe49744307ea5c77ffc76c7cc97f3ddec72fb9a394bd4e4519b388
+Status: Downloaded newer image for fedora:latest
+ ---> 536f3995adeb
+Step 2/11 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in 8db9c745a049
+Removing intermediate container 8db9c745a049
+ ---> 4cc88f9dfe06
+Step 3/11 : RUN yum -y update && yum clean all
+ ---> Running in 85b1b445fdc1
+Fedora Modular 31 - x86_64                      3.6 MB/s | 5.2 MB     00:01    
+Fedora Modular 31 - x86_64 - Updates            3.6 MB/s | 4.0 MB     00:01    
+Fedora 31 - x86_64 - Updates                     11 MB/s |  23 MB     00:02    
+Fedora 31 - x86_64                               16 MB/s |  71 MB     00:04    
+Last metadata expiration check: 0:00:01 ago on Fri Apr  3 23:50:22 2020.
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version               Repository   Size
+================================================================================
+Upgrading:
+ coreutils                   x86_64     8.31-9.fc31           updates     1.1 M
+ coreutils-common            x86_64     8.31-9.fc31           updates     1.9 M
+ glib2                       x86_64     2.62.6-1.fc31         updates     2.6 M
+ gnutls                      x86_64     3.6.12-2.fc31         updates     975 k
+ libarchive                  x86_64     3.4.2-1.fc31          updates     384 k
+ libdnf                      x86_64     0.43.1-5.fc31         updates     633 k
+ libgcc                      x86_64     9.3.1-1.fc31          updates     101 k
+ libgomp                     x86_64     9.3.1-1.fc31          updates     237 k
+ libpcap                     x86_64     14:1.9.1-2.fc31       updates     168 k
+ libsss_idmap                x86_64     2.2.3-13.fc31         updates      46 k
+ libsss_nss_idmap            x86_64     2.2.3-13.fc31         updates      53 k
+ libstdc++                   x86_64     9.3.1-1.fc31          updates     633 k
+ libtirpc                    x86_64     1.2.5-1.rc2.fc31      updates      98 k
+ libxcrypt                   x86_64     4.4.15-1.fc31         updates     126 k
+ pcre                        x86_64     8.44-1.fc31           updates     192 k
+ pcre2                       x86_64     10.34-8.fc31          updates     222 k
+ python-setuptools-wheel     noarch     41.6.0-1.fc31         updates     281 k
+ python3-hawkey              x86_64     0.43.1-5.fc31         updates     101 k
+ python3-libdnf              x86_64     0.43.1-5.fc31         updates     702 k
+ shadow-utils                x86_64     2:4.6-17.fc31         updates     1.2 M
+ sssd-client                 x86_64     2.2.3-13.fc31         updates     110 k
+ sudo                        x86_64     1.9.0-0.1.b1.fc31     updates     1.0 M
+ systemd                     x86_64     243.8-1.fc31          updates     3.8 M
+ systemd-libs                x86_64     243.8-1.fc31          updates     523 k
+ systemd-pam                 x86_64     243.8-1.fc31          updates     165 k
+ systemd-rpm-macros          noarch     243.8-1.fc31          updates      20 k
+ vim-minimal                 x86_64     2:8.2.480-1.fc31      updates     647 k
+Installing dependencies:
+ pcre2-syntax                noarch     10.34-8.fc31          updates     140 k
+ trousers-lib                x86_64     0.3.13-13.fc31        fedora      171 k
+ whois-nls                   noarch     5.5.6-1.fc31          updates      34 k
+ xkeyboard-config            noarch     2.28-1.fc31           updates     753 k
+Installing weak dependencies:
+ diffutils                   x86_64     3.7-3.fc31            fedora      401 k
+ libxkbcommon                x86_64     0.9.1-3.fc31          updates     120 k
+ mkpasswd                    x86_64     5.5.6-1.fc31          updates      41 k
+ shared-mime-info            x86_64     1.15-1.fc31           updates     303 k
+ trousers                    x86_64     0.3.13-13.fc31        fedora      150 k
+
+Transaction Summary
+================================================================================
+Install   9 Packages
+Upgrade  27 Packages
+
+Total download size: 20 M
+Downloading Packages:
+(1/36): mkpasswd-5.5.6-1.fc31.x86_64.rpm        240 kB/s |  41 kB     00:00    
+(2/36): pcre2-syntax-10.34-8.fc31.noarch.rpm    508 kB/s | 140 kB     00:00    
+(3/36): libxkbcommon-0.9.1-3.fc31.x86_64.rpm    435 kB/s | 120 kB     00:00    
+(4/36): whois-nls-5.5.6-1.fc31.noarch.rpm       615 kB/s |  34 kB     00:00    
+(5/36): shared-mime-info-1.15-1.fc31.x86_64.rpm 1.8 MB/s | 303 kB     00:00    
+(6/36): xkeyboard-config-2.28-1.fc31.noarch.rpm 4.4 MB/s | 753 kB     00:00    
+(7/36): trousers-0.3.13-13.fc31.x86_64.rpm      890 kB/s | 150 kB     00:00    
+(8/36): coreutils-8.31-9.fc31.x86_64.rpm         10 MB/s | 1.1 MB     00:00    
+(9/36): diffutils-3.7-3.fc31.x86_64.rpm         1.4 MB/s | 401 kB     00:00    
+(10/36): trousers-lib-0.3.13-13.fc31.x86_64.rpm 878 kB/s | 171 kB     00:00    
+(11/36): coreutils-common-8.31-9.fc31.x86_64.rp  23 MB/s | 1.9 MB     00:00    
+(12/36): libarchive-3.4.2-1.fc31.x86_64.rpm     6.3 MB/s | 384 kB     00:00    
+(13/36): libdnf-0.43.1-5.fc31.x86_64.rpm        9.7 MB/s | 633 kB     00:00    
+(14/36): gnutls-3.6.12-2.fc31.x86_64.rpm        4.4 MB/s | 975 kB     00:00    
+(15/36): glib2-2.62.6-1.fc31.x86_64.rpm         9.8 MB/s | 2.6 MB     00:00    
+(16/36): libgcc-9.3.1-1.fc31.x86_64.rpm         1.5 MB/s | 101 kB     00:00    
+(17/36): libgomp-9.3.1-1.fc31.x86_64.rpm        4.1 MB/s | 237 kB     00:00    
+(18/36): libsss_idmap-2.2.3-13.fc31.x86_64.rpm  848 kB/s |  46 kB     00:00    
+(19/36): libpcap-1.9.1-2.fc31.x86_64.rpm        2.8 MB/s | 168 kB     00:00    
+(20/36): libsss_nss_idmap-2.2.3-13.fc31.x86_64. 987 kB/s |  53 kB     00:00    
+(21/36): libtirpc-1.2.5-1.rc2.fc31.x86_64.rpm   1.7 MB/s |  98 kB     00:00    
+(22/36): libstdc++-9.3.1-1.fc31.x86_64.rpm      9.7 MB/s | 633 kB     00:00    
+(23/36): libxcrypt-4.4.15-1.fc31.x86_64.rpm     2.2 MB/s | 126 kB     00:00    
+(24/36): pcre-8.44-1.fc31.x86_64.rpm            3.3 MB/s | 192 kB     00:00    
+(25/36): pcre2-10.34-8.fc31.x86_64.rpm          3.8 MB/s | 222 kB     00:00    
+(26/36): python-setuptools-wheel-41.6.0-1.fc31. 4.8 MB/s | 281 kB     00:00    
+(27/36): python3-hawkey-0.43.1-5.fc31.x86_64.rp 1.8 MB/s | 101 kB     00:00    
+(28/36): python3-libdnf-0.43.1-5.fc31.x86_64.rp  11 MB/s | 702 kB     00:00    
+(29/36): sssd-client-2.2.3-13.fc31.x86_64.rpm   2.0 MB/s | 110 kB     00:00    
+(30/36): shadow-utils-4.6-17.fc31.x86_64.rpm     11 MB/s | 1.2 MB     00:00    
+(31/36): sudo-1.9.0-0.1.b1.fc31.x86_64.rpm       14 MB/s | 1.0 MB     00:00    
+(32/36): systemd-libs-243.8-1.fc31.x86_64.rpm   8.3 MB/s | 523 kB     00:00    
+(33/36): systemd-pam-243.8-1.fc31.x86_64.rpm    2.8 MB/s | 165 kB     00:00    
+(34/36): systemd-243.8-1.fc31.x86_64.rpm         28 MB/s | 3.8 MB     00:00    
+(35/36): systemd-rpm-macros-243.8-1.fc31.noarch 383 kB/s |  20 kB     00:00    
+[MIRROR] vim-minimal-8.2.480-1.fc31.x86_64.rpm: Status code: 404 for http://mirror.atl.genesisadaptive.com/fedora/linux/updates/31/Everything/x86_64/Packages/v/vim-minimal-8.2.480-1.fc31.x86_64.rpm (IP: 206.198.182.70)
+[MIRROR] vim-minimal-8.2.480-1.fc31.x86_64.rpm: Status code: 404 for https://mirror.atl.genesisadaptive.com/fedora/linux/updates/31/Everything/x86_64/Packages/v/vim-minimal-8.2.480-1.fc31.x86_64.rpm (IP: 206.198.182.70)
+[MIRROR] vim-minimal-8.2.480-1.fc31.x86_64.rpm: Status code: 404 for http://mirror.math.princeton.edu/pub/fedora/linux/updates/31/Everything/x86_64/Packages/v/vim-minimal-8.2.480-1.fc31.x86_64.rpm (IP: 128.112.18.21)
+[MIRROR] vim-minimal-8.2.480-1.fc31.x86_64.rpm: Status code: 404 for http://mirrors.syringanetworks.net/fedora/linux/updates/31/Everything/x86_64/Packages/v/vim-minimal-8.2.480-1.fc31.x86_64.rpm (IP: 66.232.64.7)
+(36/36): vim-minimal-8.2.480-1.fc31.x86_64.rpm  983 kB/s | 647 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           7.8 MB/s |  20 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                             1/1 
+  Upgrading        : libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Running scriptlet: libgcc-9.3.1-1.fc31.x86_64                            1/63 
+  Upgrading        : libstdc++-9.3.1-1.fc31.x86_64                         2/63 
+  Upgrading        : vim-minimal-2:8.2.480-1.fc31.x86_64                   3/63 
+  Upgrading        : systemd-rpm-macros-243.8-1.fc31.noarch                4/63 
+  Upgrading        : pcre-8.44-1.fc31.x86_64                               5/63 
+  Upgrading        : glib2-2.62.6-1.fc31.x86_64                            6/63 
+  Installing       : shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Running scriptlet: shared-mime-info-1.15-1.fc31.x86_64                   7/63 
+  Upgrading        : libdnf-0.43.1-5.fc31.x86_64                           8/63 
+  Upgrading        : python3-libdnf-0.43.1-5.fc31.x86_64                   9/63 
+  Upgrading        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                10/63 
+  Upgrading        : libsss_idmap-2.2.3-13.fc31.x86_64                    11/63 
+  Upgrading        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Upgrading        : coreutils-8.31-9.fc31.x86_64                         13/63 
+  Upgrading        : systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Running scriptlet: systemd-libs-243.8-1.fc31.x86_64                     14/63 
+  Installing       : trousers-lib-0.3.13-13.fc31.x86_64                   15/63 
+  Installing       : diffutils-3.7-3.fc31.x86_64                          16/63 
+  Installing       : xkeyboard-config-2.28-1.fc31.noarch                  17/63 
+  Installing       : libxkbcommon-0.9.1-3.fc31.x86_64                     18/63 
+  Installing       : whois-nls-5.5.6-1.fc31.noarch                        19/63 
+  Upgrading        : libxcrypt-4.4.15-1.fc31.x86_64                       20/63 
+  Installing       : mkpasswd-5.5.6-1.fc31.x86_64                         21/63 
+  Upgrading        : shadow-utils-2:4.6-17.fc31.x86_64                    22/63 
+  Installing       : pcre2-syntax-10.34-8.fc31.noarch                     23/63 
+  Upgrading        : pcre2-10.34-8.fc31.x86_64                            24/63 
+  Upgrading        : gnutls-3.6.12-2.fc31.x86_64                          25/63 
+  Upgrading        : systemd-pam-243.8-1.fc31.x86_64                      26/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Upgrading        : systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: systemd-243.8-1.fc31.x86_64                          27/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Installing       : trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                       28/63 
+  Upgrading        : sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Running scriptlet: sudo-1.9.0-0.1.b1.fc31.x86_64                        29/63 
+  Upgrading        : sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Running scriptlet: sssd-client-2.2.3-13.fc31.x86_64                     30/63 
+  Upgrading        : python3-hawkey-0.43.1-5.fc31.x86_64                  31/63 
+  Upgrading        : python-setuptools-wheel-41.6.0-1.fc31.noarch         32/63 
+  Upgrading        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     33/63 
+  Upgrading        : libpcap-14:1.9.1-2.fc31.x86_64                       34/63 
+  Upgrading        : libgomp-9.3.1-1.fc31.x86_64                          35/63 
+  Upgrading        : libarchive-3.4.2-1.fc31.x86_64                       36/63 
+  Cleanup          : python-setuptools-wheel-41.2.0-1.fc31.noarch         37/63 
+  Running scriptlet: systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : systemd-243.7-1.fc31.x86_64                          38/63 
+  Cleanup          : python3-hawkey-0.43.1-2.fc31.x86_64                  39/63 
+  Cleanup          : python3-libdnf-0.43.1-2.fc31.x86_64                  40/63 
+  Cleanup          : libdnf-0.43.1-2.fc31.x86_64                          41/63 
+  Cleanup          : libstdc++-9.2.1-1.fc31.x86_64                        42/63 
+  Running scriptlet: sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : sssd-client-2.2.2-3.fc31.x86_64                      43/63 
+  Cleanup          : systemd-libs-243.7-1.fc31.x86_64                     44/63 
+  Cleanup          : systemd-pam-243.7-1.fc31.x86_64                      45/63 
+  Cleanup          : shadow-utils-2:4.6-16.fc31.x86_64                    46/63 
+  Cleanup          : sudo-1.8.29-1.fc31.x86_64                            47/63 
+  Cleanup          : systemd-rpm-macros-243.7-1.fc31.noarch               48/63 
+  Cleanup          : coreutils-8.31-6.fc31.x86_64                         49/63 
+  Cleanup          : glib2-2.62.4-2.fc31.x86_64                           50/63 
+  Cleanup          : coreutils-common-8.31-6.fc31.x86_64                  51/63 
+  Cleanup          : pcre-8.43-2.fc31.1.x86_64                            52/63 
+  Cleanup          : vim-minimal-2:8.2.236-1.fc31.x86_64                  53/63 
+  Cleanup          : libxcrypt-4.4.12-1.fc31.x86_64                       54/63 
+  Cleanup          : libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Running scriptlet: libgcc-9.2.1-1.fc31.x86_64                           55/63 
+  Cleanup          : libsss_idmap-2.2.2-3.fc31.x86_64                     56/63 
+  Cleanup          : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 57/63 
+  Cleanup          : gnutls-3.6.11-1.fc31.x86_64                          58/63 
+  Cleanup          : pcre2-10.34-5.fc31.x86_64                            59/63 
+  Cleanup          : libtirpc-1.2.5-0.fc31.x86_64                         60/63 
+  Cleanup          : libpcap-14:1.9.1-1.fc31.x86_64                       61/63 
+  Cleanup          : libgomp-9.2.1-1.fc31.x86_64                          62/63 
+  Cleanup          : libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Running scriptlet: libarchive-3.4.0-1.fc31.x86_64                       63/63 
+  Verifying        : libxkbcommon-0.9.1-3.fc31.x86_64                      1/63 
+  Verifying        : mkpasswd-5.5.6-1.fc31.x86_64                          2/63 
+  Verifying        : pcre2-syntax-10.34-8.fc31.noarch                      3/63 
+  Verifying        : shared-mime-info-1.15-1.fc31.x86_64                   4/63 
+  Verifying        : whois-nls-5.5.6-1.fc31.noarch                         5/63 
+  Verifying        : xkeyboard-config-2.28-1.fc31.noarch                   6/63 
+  Verifying        : diffutils-3.7-3.fc31.x86_64                           7/63 
+  Verifying        : trousers-0.3.13-13.fc31.x86_64                        8/63 
+  Verifying        : trousers-lib-0.3.13-13.fc31.x86_64                    9/63 
+  Verifying        : coreutils-8.31-9.fc31.x86_64                         10/63 
+  Verifying        : coreutils-8.31-6.fc31.x86_64                         11/63 
+  Verifying        : coreutils-common-8.31-9.fc31.x86_64                  12/63 
+  Verifying        : coreutils-common-8.31-6.fc31.x86_64                  13/63 
+  Verifying        : glib2-2.62.6-1.fc31.x86_64                           14/63 
+  Verifying        : glib2-2.62.4-2.fc31.x86_64                           15/63 
+  Verifying        : gnutls-3.6.12-2.fc31.x86_64                          16/63 
+  Verifying        : gnutls-3.6.11-1.fc31.x86_64                          17/63 
+  Verifying        : libarchive-3.4.2-1.fc31.x86_64                       18/63 
+  Verifying        : libarchive-3.4.0-1.fc31.x86_64                       19/63 
+  Verifying        : libdnf-0.43.1-5.fc31.x86_64                          20/63 
+  Verifying        : libdnf-0.43.1-2.fc31.x86_64                          21/63 
+  Verifying        : libgcc-9.3.1-1.fc31.x86_64                           22/63 
+  Verifying        : libgcc-9.2.1-1.fc31.x86_64                           23/63 
+  Verifying        : libgomp-9.3.1-1.fc31.x86_64                          24/63 
+  Verifying        : libgomp-9.2.1-1.fc31.x86_64                          25/63 
+  Verifying        : libpcap-14:1.9.1-2.fc31.x86_64                       26/63 
+  Verifying        : libpcap-14:1.9.1-1.fc31.x86_64                       27/63 
+  Verifying        : libsss_idmap-2.2.3-13.fc31.x86_64                    28/63 
+  Verifying        : libsss_idmap-2.2.2-3.fc31.x86_64                     29/63 
+  Verifying        : libsss_nss_idmap-2.2.3-13.fc31.x86_64                30/63 
+  Verifying        : libsss_nss_idmap-2.2.2-3.fc31.x86_64                 31/63 
+  Verifying        : libstdc++-9.3.1-1.fc31.x86_64                        32/63 
+  Verifying        : libstdc++-9.2.1-1.fc31.x86_64                        33/63 
+  Verifying        : libtirpc-1.2.5-1.rc2.fc31.x86_64                     34/63 
+  Verifying        : libtirpc-1.2.5-0.fc31.x86_64                         35/63 
+  Verifying        : libxcrypt-4.4.15-1.fc31.x86_64                       36/63 
+  Verifying        : libxcrypt-4.4.12-1.fc31.x86_64                       37/63 
+  Verifying        : pcre-8.44-1.fc31.x86_64                              38/63 
+  Verifying        : pcre-8.43-2.fc31.1.x86_64                            39/63 
+  Verifying        : pcre2-10.34-8.fc31.x86_64                            40/63 
+  Verifying        : pcre2-10.34-5.fc31.x86_64                            41/63 
+  Verifying        : python-setuptools-wheel-41.6.0-1.fc31.noarch         42/63 
+  Verifying        : python-setuptools-wheel-41.2.0-1.fc31.noarch         43/63 
+  Verifying        : python3-hawkey-0.43.1-5.fc31.x86_64                  44/63 
+  Verifying        : python3-hawkey-0.43.1-2.fc31.x86_64                  45/63 
+  Verifying        : python3-libdnf-0.43.1-5.fc31.x86_64                  46/63 
+  Verifying        : python3-libdnf-0.43.1-2.fc31.x86_64                  47/63 
+  Verifying        : shadow-utils-2:4.6-17.fc31.x86_64                    48/63 
+  Verifying        : shadow-utils-2:4.6-16.fc31.x86_64                    49/63 
+  Verifying        : sssd-client-2.2.3-13.fc31.x86_64                     50/63 
+  Verifying        : sssd-client-2.2.2-3.fc31.x86_64                      51/63 
+  Verifying        : sudo-1.9.0-0.1.b1.fc31.x86_64                        52/63 
+  Verifying        : sudo-1.8.29-1.fc31.x86_64                            53/63 
+  Verifying        : systemd-243.8-1.fc31.x86_64                          54/63 
+  Verifying        : systemd-243.7-1.fc31.x86_64                          55/63 
+  Verifying        : systemd-libs-243.8-1.fc31.x86_64                     56/63 
+  Verifying        : systemd-libs-243.7-1.fc31.x86_64                     57/63 
+  Verifying        : systemd-pam-243.8-1.fc31.x86_64                      58/63 
+  Verifying        : systemd-pam-243.7-1.fc31.x86_64                      59/63 
+  Verifying        : systemd-rpm-macros-243.8-1.fc31.noarch               60/63 
+  Verifying        : systemd-rpm-macros-243.7-1.fc31.noarch               61/63 
+  Verifying        : vim-minimal-2:8.2.480-1.fc31.x86_64                  62/63 
+  Verifying        : vim-minimal-2:8.2.236-1.fc31.x86_64                  63/63 
+
+Upgraded:
+  coreutils-8.31-9.fc31.x86_64                                                  
+  coreutils-common-8.31-9.fc31.x86_64                                           
+  glib2-2.62.6-1.fc31.x86_64                                                    
+  gnutls-3.6.12-2.fc31.x86_64                                                   
+  libarchive-3.4.2-1.fc31.x86_64                                                
+  libdnf-0.43.1-5.fc31.x86_64                                                   
+  libgcc-9.3.1-1.fc31.x86_64                                                    
+  libgomp-9.3.1-1.fc31.x86_64                                                   
+  libpcap-14:1.9.1-2.fc31.x86_64                                                
+  libsss_idmap-2.2.3-13.fc31.x86_64                                             
+  libsss_nss_idmap-2.2.3-13.fc31.x86_64                                         
+  libstdc++-9.3.1-1.fc31.x86_64                                                 
+  libtirpc-1.2.5-1.rc2.fc31.x86_64                                              
+  libxcrypt-4.4.15-1.fc31.x86_64                                                
+  pcre-8.44-1.fc31.x86_64                                                       
+  pcre2-10.34-8.fc31.x86_64                                                     
+  python-setuptools-wheel-41.6.0-1.fc31.noarch                                  
+  python3-hawkey-0.43.1-5.fc31.x86_64                                           
+  python3-libdnf-0.43.1-5.fc31.x86_64                                           
+  shadow-utils-2:4.6-17.fc31.x86_64                                             
+  sssd-client-2.2.3-13.fc31.x86_64                                              
+  sudo-1.9.0-0.1.b1.fc31.x86_64                                                 
+  systemd-243.8-1.fc31.x86_64                                                   
+  systemd-libs-243.8-1.fc31.x86_64                                              
+  systemd-pam-243.8-1.fc31.x86_64                                               
+  systemd-rpm-macros-243.8-1.fc31.noarch                                        
+  vim-minimal-2:8.2.480-1.fc31.x86_64                                           
+
+Installed:
+  diffutils-3.7-3.fc31.x86_64              libxkbcommon-0.9.1-3.fc31.x86_64     
+  mkpasswd-5.5.6-1.fc31.x86_64             pcre2-syntax-10.34-8.fc31.noarch     
+  shared-mime-info-1.15-1.fc31.x86_64      trousers-0.3.13-13.fc31.x86_64       
+  trousers-lib-0.3.13-13.fc31.x86_64       whois-nls-5.5.6-1.fc31.noarch        
+  xkeyboard-config-2.28-1.fc31.noarch     
+
+Complete!
+33 files removed
+Removing intermediate container 85b1b445fdc1
+ ---> 625afc303c16
+Step 4/11 : RUN yum -y install cups openssl passwd && yum clean all
+ ---> Running in 3d3aea781554
+Fedora Modular 31 - x86_64                      4.5 MB/s | 5.2 MB     00:01    
+Fedora Modular 31 - x86_64 - Updates            2.8 MB/s | 4.0 MB     00:01    
+Fedora 31 - x86_64 - Updates                     15 MB/s |  23 MB     00:01    
+Fedora 31 - x86_64                               16 MB/s |  71 MB     00:04    
+Last metadata expiration check: 0:00:01 ago on Fri Apr  3 23:51:24 2020.
+Package openssl-1:1.1.1d-2.fc31.x86_64 is already installed.
+Dependencies resolved.
+=================================================================================================
+ Package                                Arch    Version                            Repo      Size
+=================================================================================================
+Installing:
+ cups                                   x86_64  1:2.2.12-6.fc31                    updates  1.4 M
+ passwd                                 x86_64  0.80-7.fc31                        updates  109 k
+Installing dependencies:
+ adobe-mappings-cmap                    noarch  20171205-6.fc31                    fedora   1.9 M
+ adobe-mappings-cmap-deprecated         noarch  20171205-6.fc31                    fedora   118 k
+ adobe-mappings-pdf                     noarch  20180407-4.fc31                    fedora   668 k
+ avahi                                  x86_64  0.7-20.fc31                        fedora   288 k
+ avahi-glib                             x86_64  0.7-20.fc31                        fedora    14 k
+ avahi-libs                             x86_64  0.7-20.fc31                        fedora    63 k
+ bc                                     x86_64  1.07.1-9.fc31                      fedora   121 k
+ cairo                                  x86_64  1.16.0-6.fc31                      fedora   707 k
+ color-filesystem                       noarch  1-23.fc31                          fedora   7.8 k
+ colord                                 x86_64  1.4.4-2.fc31                       fedora   511 k
+ colord-libs                            x86_64  1.4.4-2.fc31                       fedora   236 k
+ cups-client                            x86_64  1:2.2.12-6.fc31                    updates   70 k
+ cups-filesystem                        noarch  1:2.2.12-6.fc31                    updates   11 k
+ cups-filters                           x86_64  1.27.3-1.fc31                      updates  826 k
+ cups-filters-libs                      x86_64  1.27.3-1.fc31                      updates  136 k
+ cups-ipptool                           x86_64  1:2.2.12-6.fc31                    updates  5.7 M
+ cups-libs                              x86_64  1:2.2.12-6.fc31                    updates  275 k
+ dbus-libs                              x86_64  1:1.12.16-3.fc31                   fedora   161 k
+ emacs-filesystem                       noarch  1:26.3-1.fc31                      updates  8.5 k
+ fontconfig                             x86_64  2.13.92-3.fc31                     fedora   263 k
+ fonts-filesystem                       noarch  2.0.3-1.fc31                       updates  7.7 k
+ freetype                               x86_64  2.10.0-3.fc31                      fedora   384 k
+ ghostscript                            x86_64  9.27-3.fc31                        updates   39 k
+ google-droid-sans-fonts                noarch  20120715-16.fc31                   fedora   2.4 M
+ jbig2dec-libs                          x86_64  0.16-1.fc31                        fedora    70 k
+ jbigkit-libs                           x86_64  2.1-17.fc31                        fedora    53 k
+ lcms2                                  x86_64  2.9-6.fc31                         fedora   166 k
+ libICE                                 x86_64  1.0.10-2.fc31                      fedora    72 k
+ libSM                                  x86_64  1.2.3-4.fc31                       fedora    42 k
+ libX11                                 x86_64  1.6.9-2.fc31                       updates  659 k
+ libX11-common                          noarch  1.6.9-2.fc31                       updates  153 k
+ libXau                                 x86_64  1.0.9-2.fc31                       fedora    31 k
+ libXcursor                             x86_64  1.1.15-6.fc31                      fedora    30 k
+ libXext                                x86_64  1.3.4-2.fc31                       fedora    39 k
+ libXfixes                              x86_64  5.0.3-10.fc31                      fedora    19 k
+ libXi                                  x86_64  1.7.10-2.fc31                      fedora    39 k
+ libXinerama                            x86_64  1.1.4-4.fc31                       fedora    14 k
+ libXmu                                 x86_64  1.1.3-2.fc31                       fedora    77 k
+ libXrandr                              x86_64  1.5.2-2.fc31                       fedora    27 k
+ libXrender                             x86_64  0.9.10-10.fc31                     fedora    27 k
+ libXt                                  x86_64  1.1.5-12.20190424gitba4ec9376.fc31 fedora   183 k
+ libXxf86vm                             x86_64  1.1.4-12.fc31                      fedora    18 k
+ libdaemon                              x86_64  0.14-18.fc31                       fedora    32 k
+ liberation-fonts-common                noarch  1:2.00.5-6.fc31                    fedora    14 k
+ liberation-mono-fonts                  noarch  1:2.00.5-6.fc31                    fedora   503 k
+ libfontenc                             x86_64  1.1.3-11.fc31                      fedora    31 k
+ libgs                                  x86_64  9.27-3.fc31                        updates  3.0 M
+ libgudev                               x86_64  232-6.fc31                         fedora    34 k
+ libgusb                                x86_64  0.3.4-1.fc31                       updates   49 k
+ libidn                                 x86_64  1.35-6.fc31                        fedora   240 k
+ libijs                                 x86_64  0.35-10.fc31                       fedora    30 k
+ libjpeg-turbo                          x86_64  2.0.2-5.fc31                       updates  168 k
+ libmcpp                                x86_64  2.7.2-24.fc31                      fedora    79 k
+ libpaper                               x86_64  1.1.24-25.fc31                     fedora    42 k
+ libpkgconf                             x86_64  1.6.3-2.fc31                       fedora    37 k
+ libpng                                 x86_64  2:1.6.37-2.fc31                    fedora   114 k
+ libtiff                                x86_64  4.0.10-8.fc31                      updates  178 k
+ libuser                                x86_64  0.62-21.fc31                       fedora   384 k
+ libxcb                                 x86_64  1.13.1-3.fc31                      fedora   231 k
+ mcpp                                   x86_64  2.7.2-24.fc31                      fedora    27 k
+ nspr                                   x86_64  4.25.0-1.fc31                      updates  137 k
+ nss                                    x86_64  3.50.0-2.fc31                      updates  666 k
+ nss-mdns                               x86_64  0.14.1-7.fc31                      updates   44 k
+ nss-softokn                            x86_64  3.50.0-2.fc31                      updates  439 k
+ nss-softokn-freebl                     x86_64  3.50.0-2.fc31                      updates  242 k
+ nss-sysinit                            x86_64  3.50.0-2.fc31                      updates   20 k
+ nss-util                               x86_64  3.50.0-2.fc31                      updates   89 k
+ openjpeg2                              x86_64  2.3.1-6.fc31                       updates  154 k
+ pixman                                 x86_64  0.38.4-1.fc31                      fedora   260 k
+ pkgconf                                x86_64  1.6.3-2.fc31                       fedora    41 k
+ pkgconf-m4                             noarch  1.6.3-2.fc31                       fedora    15 k
+ pkgconf-pkg-config                     x86_64  1.6.3-2.fc31                       fedora    11 k
+ polkit-libs                            x86_64  0.116-4.fc31.1                     updates   67 k
+ poppler                                x86_64  0.73.0-16.fc31                     updates  1.1 M
+ poppler-cpp                            x86_64  0.73.0-16.fc31                     updates   55 k
+ poppler-data                           noarch  0.4.9-4.fc31                       fedora   1.9 M
+ poppler-utils                          x86_64  0.73.0-16.fc31                     updates  229 k
+ qpdf-libs                              x86_64  8.4.2-2.fc31                       fedora   511 k
+ urw-base35-bookman-fonts               noarch  20170801-13.fc31                   fedora   864 k
+ urw-base35-c059-fonts                  noarch  20170801-13.fc31                   fedora   892 k
+ urw-base35-d050000l-fonts              noarch  20170801-13.fc31                   fedora    80 k
+ urw-base35-fonts                       noarch  20170801-13.fc31                   fedora    11 k
+ urw-base35-fonts-common                noarch  20170801-13.fc31                   fedora    22 k
+ urw-base35-gothic-fonts                noarch  20170801-13.fc31                   fedora   660 k
+ urw-base35-nimbus-mono-ps-fonts        noarch  20170801-13.fc31                   fedora   810 k
+ urw-base35-nimbus-roman-fonts          noarch  20170801-13.fc31                   fedora   873 k
+ urw-base35-nimbus-sans-fonts           noarch  20170801-13.fc31                   fedora   1.3 M
+ urw-base35-p052-fonts                  noarch  20170801-13.fc31                   fedora   991 k
+ urw-base35-standard-symbols-ps-fonts   noarch  20170801-13.fc31                   fedora    43 k
+ urw-base35-z003-fonts                  noarch  20170801-13.fc31                   fedora   284 k
+ which                                  x86_64  2.21-15.fc31                       fedora    42 k
+ xorg-x11-font-utils                    x86_64  1:7.5-43.fc31                      updates  104 k
+ xorg-x11-server-utils                  x86_64  7.7-32.fc31                        fedora   197 k
+
+Transaction Summary
+=================================================================================================
+Install  95 Packages
+
+Total download size: 36 M
+Installed size: 115 M
+Downloading Packages:
+(1/95): cups-filesystem-2.2.12-6.fc31.noarch.rp 101 kB/s |  11 kB     00:00    
+[MIRROR] cups-filters-1.27.3-1.fc31.x86_64.rpm: Status code: 404 for http://packages.oit.ncsu.edu/fedora/linux/updates/31/Everything/x86_64/Packages/c/cups-filters-1.27.3-1.fc31.x86_64.rpm (IP: 152.7.106.23)
+(2/95): cups-client-2.2.12-6.fc31.x86_64.rpm    390 kB/s |  70 kB     00:00    
+[MIRROR] cups-filters-libs-1.27.3-1.fc31.x86_64.rpm: Status code: 404 for http://packages.oit.ncsu.edu/fedora/linux/updates/31/Everything/x86_64/Packages/c/cups-filters-libs-1.27.3-1.fc31.x86_64.rpm (IP: 152.7.106.23)
+(3/95): cups-2.2.12-6.fc31.x86_64.rpm           3.9 MB/s | 1.4 MB     00:00    
+(4/95): cups-filters-libs-1.27.3-1.fc31.x86_64. 572 kB/s | 136 kB     00:00    
+(5/95): cups-filters-1.27.3-1.fc31.x86_64.rpm   2.5 MB/s | 826 kB     00:00    
+(6/95): emacs-filesystem-26.3-1.fc31.noarch.rpm 225 kB/s | 8.5 kB     00:00    
+(7/95): cups-ipptool-2.2.12-6.fc31.x86_64.rpm    35 MB/s | 5.7 MB     00:00    
+(8/95): fonts-filesystem-2.0.3-1.fc31.noarch.rp 132 kB/s | 7.7 kB     00:00    
+(9/95): cups-libs-2.2.12-6.fc31.x86_64.rpm      1.8 MB/s | 275 kB     00:00    
+(10/95): ghostscript-9.27-3.fc31.x86_64.rpm     913 kB/s |  39 kB     00:00    
+(11/95): libX11-common-1.6.9-2.fc31.noarch.rpm  2.7 MB/s | 153 kB     00:00    
+(12/95): libgusb-0.3.4-1.fc31.x86_64.rpm        1.1 MB/s |  49 kB     00:00    
+(13/95): libgs-9.27-3.fc31.x86_64.rpm            27 MB/s | 3.0 MB     00:00    
+(14/95): libjpeg-turbo-2.0.2-5.fc31.x86_64.rpm  4.3 MB/s | 168 kB     00:00    
+(15/95): libtiff-4.0.10-8.fc31.x86_64.rpm       3.6 MB/s | 178 kB     00:00    
+(16/95): nspr-4.25.0-1.fc31.x86_64.rpm          2.8 MB/s | 137 kB     00:00    
+(17/95): libX11-1.6.9-2.fc31.x86_64.rpm         2.8 MB/s | 659 kB     00:00    
+(18/95): nss-mdns-0.14.1-7.fc31.x86_64.rpm      1.1 MB/s |  44 kB     00:00    
+(19/95): nss-3.50.0-2.fc31.x86_64.rpm            10 MB/s | 666 kB     00:00    
+(20/95): nss-sysinit-3.50.0-2.fc31.x86_64.rpm   551 kB/s |  20 kB     00:00    
+(21/95): nss-softokn-3.50.0-2.fc31.x86_64.rpm   5.2 MB/s | 439 kB     00:00    
+(22/95): nss-softokn-freebl-3.50.0-2.fc31.x86_6 4.6 MB/s | 242 kB     00:00    
+(23/95): nss-util-3.50.0-2.fc31.x86_64.rpm      2.4 MB/s |  89 kB     00:00    
+(24/95): passwd-0.80-7.fc31.x86_64.rpm          2.8 MB/s | 109 kB     00:00    
+(25/95): openjpeg2-2.3.1-6.fc31.x86_64.rpm      3.2 MB/s | 154 kB     00:00    
+(26/95): polkit-libs-0.116-4.fc31.1.x86_64.rpm  1.7 MB/s |  67 kB     00:00    
+(27/95): poppler-cpp-0.73.0-16.fc31.x86_64.rpm  1.5 MB/s |  55 kB     00:00    
+(28/95): poppler-utils-0.73.0-16.fc31.x86_64.rp 4.8 MB/s | 229 kB     00:00    
+(29/95): xorg-x11-font-utils-7.5-43.fc31.x86_64 2.7 MB/s | 104 kB     00:00    
+(30/95): poppler-0.73.0-16.fc31.x86_64.rpm      6.8 MB/s | 1.1 MB     00:00    
+(31/95): adobe-mappings-cmap-deprecated-2017120 627 kB/s | 118 kB     00:00    
+(32/95): avahi-0.7-20.fc31.x86_64.rpm           4.2 MB/s | 288 kB     00:00    
+(33/95): avahi-glib-0.7-20.fc31.x86_64.rpm      420 kB/s |  14 kB     00:00    
+(34/95): adobe-mappings-cmap-20171205-6.fc31.no 5.8 MB/s | 1.9 MB     00:00    
+(35/95): adobe-mappings-pdf-20180407-4.fc31.noa 2.7 MB/s | 668 kB     00:00    
+(36/95): avahi-libs-0.7-20.fc31.x86_64.rpm      1.8 MB/s |  63 kB     00:00    
+(37/95): bc-1.07.1-9.fc31.x86_64.rpm            3.4 MB/s | 121 kB     00:00    
+(38/95): color-filesystem-1-23.fc31.noarch.rpm  239 kB/s | 7.8 kB     00:00    
+(39/95): cairo-1.16.0-6.fc31.x86_64.rpm          10 MB/s | 707 kB     00:00    
+(40/95): colord-libs-1.4.4-2.fc31.x86_64.rpm    6.5 MB/s | 236 kB     00:00    
+(41/95): colord-1.4.4-2.fc31.x86_64.rpm          12 MB/s | 511 kB     00:00    
+(42/95): dbus-libs-1.12.16-3.fc31.x86_64.rpm    4.6 MB/s | 161 kB     00:00    
+(43/95): fontconfig-2.13.92-3.fc31.x86_64.rpm   7.5 MB/s | 263 kB     00:00    
+(44/95): freetype-2.10.0-3.fc31.x86_64.rpm       10 MB/s | 384 kB     00:00    
+(45/95): jbig2dec-libs-0.16-1.fc31.x86_64.rpm   2.1 MB/s |  70 kB     00:00    
+(46/95): jbigkit-libs-2.1-17.fc31.x86_64.rpm    1.6 MB/s |  53 kB     00:00    
+(47/95): lcms2-2.9-6.fc31.x86_64.rpm            4.8 MB/s | 166 kB     00:00    
+(48/95): google-droid-sans-fonts-20120715-16.fc  29 MB/s | 2.4 MB     00:00    
+(49/95): libICE-1.0.10-2.fc31.x86_64.rpm        1.7 MB/s |  72 kB     00:00    
+(50/95): libSM-1.2.3-4.fc31.x86_64.rpm          1.3 MB/s |  42 kB     00:00    
+(51/95): libXcursor-1.1.15-6.fc31.x86_64.rpm    944 kB/s |  30 kB     00:00    
+(52/95): libXau-1.0.9-2.fc31.x86_64.rpm         947 kB/s |  31 kB     00:00    
+(53/95): libXext-1.3.4-2.fc31.x86_64.rpm        1.2 MB/s |  39 kB     00:00    
+(54/95): libXfixes-5.0.3-10.fc31.x86_64.rpm     606 kB/s |  19 kB     00:00    
+(55/95): libXi-1.7.10-2.fc31.x86_64.rpm         1.2 MB/s |  39 kB     00:00    
+(56/95): libXinerama-1.1.4-4.fc31.x86_64.rpm    445 kB/s |  14 kB     00:00    
+(57/95): libXmu-1.1.3-2.fc31.x86_64.rpm         2.3 MB/s |  77 kB     00:00    
+(58/95): libXrandr-1.5.2-2.fc31.x86_64.rpm      852 kB/s |  27 kB     00:00    
+(59/95): libXrender-0.9.10-10.fc31.x86_64.rpm   824 kB/s |  27 kB     00:00    
+(60/95): libXt-1.1.5-12.20190424gitba4ec9376.fc 5.4 MB/s | 183 kB     00:00    
+(61/95): libXxf86vm-1.1.4-12.fc31.x86_64.rpm    544 kB/s |  18 kB     00:00    
+(62/95): libdaemon-0.14-18.fc31.x86_64.rpm      1.0 MB/s |  32 kB     00:00    
+(63/95): liberation-fonts-common-2.00.5-6.fc31. 283 kB/s |  14 kB     00:00    
+(64/95): libfontenc-1.1.3-11.fc31.x86_64.rpm    928 kB/s |  31 kB     00:00    
+(65/95): liberation-mono-fonts-2.00.5-6.fc31.no 8.6 MB/s | 503 kB     00:00    
+(66/95): libgudev-232-6.fc31.x86_64.rpm         1.0 MB/s |  34 kB     00:00    
+(67/95): libidn-1.35-6.fc31.x86_64.rpm          6.9 MB/s | 240 kB     00:00    
+(68/95): libijs-0.35-10.fc31.x86_64.rpm         939 kB/s |  30 kB     00:00    
+(69/95): libmcpp-2.7.2-24.fc31.x86_64.rpm       2.4 MB/s |  79 kB     00:00    
+(70/95): libpaper-1.1.24-25.fc31.x86_64.rpm     1.3 MB/s |  42 kB     00:00    
+(71/95): libpkgconf-1.6.3-2.fc31.x86_64.rpm     1.1 MB/s |  37 kB     00:00    
+(72/95): libpng-1.6.37-2.fc31.x86_64.rpm        3.4 MB/s | 114 kB     00:00    
+(73/95): libuser-0.62-21.fc31.x86_64.rpm         11 MB/s | 384 kB     00:00    
+(74/95): libxcb-1.13.1-3.fc31.x86_64.rpm        6.3 MB/s | 231 kB     00:00    
+(75/95): mcpp-2.7.2-24.fc31.x86_64.rpm          856 kB/s |  27 kB     00:00    
+(76/95): pkgconf-1.6.3-2.fc31.x86_64.rpm        1.3 MB/s |  41 kB     00:00    
+(77/95): pixman-0.38.4-1.fc31.x86_64.rpm        7.1 MB/s | 260 kB     00:00    
+(78/95): pkgconf-m4-1.6.3-2.fc31.noarch.rpm     483 kB/s |  15 kB     00:00    
+(79/95): pkgconf-pkg-config-1.6.3-2.fc31.x86_64 330 kB/s |  11 kB     00:00    
+(80/95): qpdf-libs-8.4.2-2.fc31.x86_64.rpm       14 MB/s | 511 kB     00:00    
+(81/95): poppler-data-0.4.9-4.fc31.noarch.rpm    28 MB/s | 1.9 MB     00:00    
+(82/95): urw-base35-c059-fonts-20170801-13.fc31  22 MB/s | 892 kB     00:00    
+(83/95): urw-base35-bookman-fonts-20170801-13.f  11 MB/s | 864 kB     00:00    
+(84/95): urw-base35-d050000l-fonts-20170801-13. 2.2 MB/s |  80 kB     00:00    
+(85/95): urw-base35-fonts-20170801-13.fc31.noar 348 kB/s |  11 kB     00:00    
+(86/95): urw-base35-fonts-common-20170801-13.fc 661 kB/s |  22 kB     00:00    
+(87/95): urw-base35-gothic-fonts-20170801-13.fc  16 MB/s | 660 kB     00:00    
+(88/95): urw-base35-nimbus-mono-ps-fonts-201708  20 MB/s | 810 kB     00:00    
+(89/95): urw-base35-nimbus-roman-fonts-20170801  22 MB/s | 873 kB     00:00    
+(90/95): urw-base35-nimbus-sans-fonts-20170801-  28 MB/s | 1.3 MB     00:00    
+(91/95): urw-base35-p052-fonts-20170801-13.fc31  23 MB/s | 991 kB     00:00    
+(92/95): urw-base35-standard-symbols-ps-fonts-2 1.3 MB/s |  43 kB     00:00    
+(93/95): urw-base35-z003-fonts-20170801-13.fc31 8.0 MB/s | 284 kB     00:00    
+(94/95): which-2.21-15.fc31.x86_64.rpm          1.3 MB/s |  42 kB     00:00    
+(95/95): xorg-x11-server-utils-7.7-32.fc31.x86_ 5.5 MB/s | 197 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            14 MB/s |  36 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lcms2-2.9-6.fc31.x86_64                               1/95 
+  Installing       : nspr-4.25.0-1.fc31.x86_64                             2/95 
+  Installing       : libpng-2:1.6.37-2.fc31.x86_64                         3/95 
+  Installing       : freetype-2.10.0-3.fc31.x86_64                         4/95 
+  Installing       : libjpeg-turbo-2.0.2-5.fc31.x86_64                     5/95 
+  Installing       : nss-util-3.50.0-2.fc31.x86_64                         6/95 
+  Installing       : dbus-libs-1:1.12.16-3.fc31.x86_64                     7/95 
+  Installing       : avahi-libs-0.7-20.fc31.x86_64                         8/95 
+  Installing       : cups-libs-1:2.2.12-6.fc31.x86_64                      9/95 
+  Installing       : fonts-filesystem-2.0.3-1.fc31.noarch                 10/95 
+  Installing       : urw-base35-fonts-common-20170801-13.fc31.noarch      11/95 
+  Installing       : libICE-1.0.10-2.fc31.x86_64                          12/95 
+  Installing       : google-droid-sans-fonts-20120715-16.fc31.noarch      13/95 
+  Installing       : fontconfig-2.13.92-3.fc31.x86_64                     14/95 
+  Running scriptlet: fontconfig-2.13.92-3.fc31.x86_64                     14/95 
+  Installing       : adobe-mappings-cmap-20171205-6.fc31.noarch           15/95 
+  Installing       : openjpeg2-2.3.1-6.fc31.x86_64                        16/95 
+  Installing       : libgusb-0.3.4-1.fc31.x86_64                          17/95 
+  Installing       : cups-filesystem-1:2.2.12-6.fc31.noarch               18/95 
+  Installing       : colord-libs-1.4.4-2.fc31.x86_64                      19/95 
+  Installing       : adobe-mappings-cmap-deprecated-20171205-6.fc31.noa   20/95 
+  Installing       : libSM-1.2.3-4.fc31.x86_64                            21/95 
+  Installing       : liberation-fonts-common-1:2.00.5-6.fc31.noarch       22/95 
+  Installing       : liberation-mono-fonts-1:2.00.5-6.fc31.noarch         23/95 
+  Installing       : cups-client-1:2.2.12-6.fc31.x86_64                   24/95 
+  Running scriptlet: cups-client-1:2.2.12-6.fc31.x86_64                   24/95 
+  Installing       : cups-ipptool-1:2.2.12-6.fc31.x86_64                  25/95 
+  Installing       : avahi-glib-0.7-20.fc31.x86_64                        26/95 
+  Installing       : nss-softokn-freebl-3.50.0-2.fc31.x86_64              27/95 
+  Installing       : nss-softokn-3.50.0-2.fc31.x86_64                     28/95 
+  Installing       : nss-3.50.0-2.fc31.x86_64                             29/95 
+  Running scriptlet: nss-3.50.0-2.fc31.x86_64                             29/95 
+  Installing       : nss-sysinit-3.50.0-2.fc31.x86_64                     30/95 
+  Installing       : qpdf-libs-8.4.2-2.fc31.x86_64                        31/95 
+  Installing       : which-2.21-15.fc31.x86_64                            32/95 
+  Installing       : poppler-data-0.4.9-4.fc31.noarch                     33/95 
+  Installing       : pkgconf-m4-1.6.3-2.fc31.noarch                       34/95 
+  Installing       : pixman-0.38.4-1.fc31.x86_64                          35/95 
+  Installing       : libuser-0.62-21.fc31.x86_64                          36/95 
+  Installing       : libpkgconf-1.6.3-2.fc31.x86_64                       37/95 
+  Installing       : pkgconf-1.6.3-2.fc31.x86_64                          38/95 
+  Installing       : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               39/95 
+  Installing       : libpaper-1.1.24-25.fc31.x86_64                       40/95 
+  Installing       : libmcpp-2.7.2-24.fc31.x86_64                         41/95 
+  Installing       : mcpp-2.7.2-24.fc31.x86_64                            42/95 
+  Installing       : libijs-0.35-10.fc31.x86_64                           43/95 
+  Installing       : libgudev-232-6.fc31.x86_64                           44/95 
+  Installing       : libfontenc-1.1.3-11.fc31.x86_64                      45/95 
+  Installing       : xorg-x11-font-utils-1:7.5-43.fc31.x86_64             46/95 
+  Installing       : libdaemon-0.14-18.fc31.x86_64                        47/95 
+  Running scriptlet: avahi-0.7-20.fc31.x86_64                             48/95 
+  Installing       : avahi-0.7-20.fc31.x86_64                             48/95 
+  Running scriptlet: avahi-0.7-20.fc31.x86_64                             48/95 
+Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket → /usr/lib/systemd/system/avahi-daemon.socket.
+Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service → /usr/lib/systemd/system/avahi-daemon.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service → /usr/lib/systemd/system/avahi-daemon.service.
+
+  Installing       : nss-mdns-0.14.1-7.fc31.x86_64                        49/95 
+  Running scriptlet: nss-mdns-0.14.1-7.fc31.x86_64                        49/95 
+  Installing       : libXau-1.0.9-2.fc31.x86_64                           50/95 
+  Installing       : libxcb-1.13.1-3.fc31.x86_64                          51/95 
+  Installing       : jbigkit-libs-2.1-17.fc31.x86_64                      52/95 
+  Installing       : libtiff-4.0.10-8.fc31.x86_64                         53/95 
+  Installing       : poppler-0.73.0-16.fc31.x86_64                        54/95 
+  Installing       : poppler-cpp-0.73.0-16.fc31.x86_64                    55/95 
+  Installing       : cups-filters-libs-1.27.3-1.fc31.x86_64               56/95 
+  Installing       : jbig2dec-libs-0.16-1.fc31.x86_64                     57/95 
+  Installing       : color-filesystem-1-23.fc31.noarch                    58/95 
+  Installing       : bc-1.07.1-9.fc31.x86_64                              59/95 
+  Installing       : adobe-mappings-pdf-20180407-4.fc31.noarch            60/95 
+  Installing       : polkit-libs-0.116-4.fc31.1.x86_64                    61/95 
+  Running scriptlet: colord-1.4.4-2.fc31.x86_64                           62/95 
+  Installing       : colord-1.4.4-2.fc31.x86_64                           62/95 
+  Running scriptlet: colord-1.4.4-2.fc31.x86_64                           62/95 
+  Installing       : libX11-common-1.6.9-2.fc31.noarch                    63/95 
+  Installing       : libX11-1.6.9-2.fc31.x86_64                           64/95 
+  Installing       : libXext-1.3.4-2.fc31.x86_64                          65/95 
+  Installing       : libXrender-0.9.10-10.fc31.x86_64                     66/95 
+  Installing       : cairo-1.16.0-6.fc31.x86_64                           67/95 
+  Installing       : poppler-utils-0.73.0-16.fc31.x86_64                  68/95 
+  Installing       : libXrandr-1.5.2-2.fc31.x86_64                        69/95 
+  Installing       : libXi-1.7.10-2.fc31.x86_64                           70/95 
+  Installing       : libXinerama-1.1.4-4.fc31.x86_64                      71/95 
+  Installing       : libXxf86vm-1.1.4-12.fc31.x86_64                      72/95 
+  Installing       : libXfixes-5.0.3-10.fc31.x86_64                       73/95 
+  Installing       : libXcursor-1.1.15-6.fc31.x86_64                      74/95 
+  Installing       : libXt-1.1.5-12.20190424gitba4ec9376.fc31.x86_64      75/95 
+  Installing       : libXmu-1.1.3-2.fc31.x86_64                           76/95 
+  Installing       : xorg-x11-server-utils-7.7-32.fc31.x86_64             77/95 
+  Installing       : urw-base35-bookman-fonts-20170801-13.fc31.noarch     78/95 
+  Running scriptlet: urw-base35-bookman-fonts-20170801-13.fc31.noarch     78/95 
+  Installing       : urw-base35-c059-fonts-20170801-13.fc31.noarch        79/95 
+  Running scriptlet: urw-base35-c059-fonts-20170801-13.fc31.noarch        79/95 
+  Installing       : urw-base35-d050000l-fonts-20170801-13.fc31.noarch    80/95 
+  Running scriptlet: urw-base35-d050000l-fonts-20170801-13.fc31.noarch    80/95 
+  Installing       : urw-base35-gothic-fonts-20170801-13.fc31.noarch      81/95 
+  Running scriptlet: urw-base35-gothic-fonts-20170801-13.fc31.noarch      81/95 
+  Installing       : urw-base35-nimbus-mono-ps-fonts-20170801-13.fc31.n   82/95 
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20170801-13.fc31.n   82/95 
+  Installing       : urw-base35-nimbus-roman-fonts-20170801-13.fc31.noa   83/95 
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20170801-13.fc31.noa   83/95 
+  Installing       : urw-base35-nimbus-sans-fonts-20170801-13.fc31.noar   84/95 
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20170801-13.fc31.noar   84/95 
+  Installing       : urw-base35-p052-fonts-20170801-13.fc31.noarch        85/95 
+  Running scriptlet: urw-base35-p052-fonts-20170801-13.fc31.noarch        85/95 
+  Installing       : urw-base35-standard-symbols-ps-fonts-20170801-13.f   86/95 
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20170801-13.f   86/95 
+  Installing       : urw-base35-z003-fonts-20170801-13.fc31.noarch        87/95 
+  Running scriptlet: urw-base35-z003-fonts-20170801-13.fc31.noarch        87/95 
+  Installing       : urw-base35-fonts-20170801-13.fc31.noarch             88/95 
+  Installing       : emacs-filesystem-1:26.3-1.fc31.noarch                89/95 
+  Installing       : libidn-1.35-6.fc31.x86_64                            90/95 
+  Installing       : libgs-9.27-3.fc31.x86_64                             91/95 
+  Installing       : ghostscript-9.27-3.fc31.x86_64                       92/95 
+  Installing       : cups-filters-1.27.3-1.fc31.x86_64                    93/95 
+  Running scriptlet: cups-filters-1.27.3-1.fc31.x86_64                    93/95 
+  Installing       : cups-1:2.2.12-6.fc31.x86_64                          94/95 
+  Running scriptlet: cups-1:2.2.12-6.fc31.x86_64                          94/95 
+Created symlink /etc/systemd/system/multi-user.target.wants/cups.path → /usr/lib/systemd/system/cups.path.
+Created symlink /etc/systemd/system/sockets.target.wants/cups.socket → /usr/lib/systemd/system/cups.socket.
+
+  Installing       : passwd-0.80-7.fc31.x86_64                            95/95 
+  Running scriptlet: nss-mdns-0.14.1-7.fc31.x86_64                        95/95 
+  Running scriptlet: urw-base35-bookman-fonts-20170801-13.fc31.noarch     95/95 
+  Running scriptlet: urw-base35-c059-fonts-20170801-13.fc31.noarch        95/95 
+  Running scriptlet: urw-base35-d050000l-fonts-20170801-13.fc31.noarch    95/95 
+  Running scriptlet: urw-base35-gothic-fonts-20170801-13.fc31.noarch      95/95 
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20170801-13.fc31.n   95/95 
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20170801-13.fc31.noa   95/95 
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20170801-13.fc31.noar   95/95 
+  Running scriptlet: urw-base35-p052-fonts-20170801-13.fc31.noarch        95/95 
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20170801-13.f   95/95 
+  Running scriptlet: urw-base35-z003-fonts-20170801-13.fc31.noarch        95/95 
+  Running scriptlet: passwd-0.80-7.fc31.x86_64                            95/95 
+  Verifying        : cups-1:2.2.12-6.fc31.x86_64                           1/95 
+  Verifying        : cups-client-1:2.2.12-6.fc31.x86_64                    2/95 
+  Verifying        : cups-filesystem-1:2.2.12-6.fc31.noarch                3/95 
+  Verifying        : cups-filters-1.27.3-1.fc31.x86_64                     4/95 
+  Verifying        : cups-filters-libs-1.27.3-1.fc31.x86_64                5/95 
+  Verifying        : cups-ipptool-1:2.2.12-6.fc31.x86_64                   6/95 
+  Verifying        : cups-libs-1:2.2.12-6.fc31.x86_64                      7/95 
+  Verifying        : emacs-filesystem-1:26.3-1.fc31.noarch                 8/95 
+  Verifying        : fonts-filesystem-2.0.3-1.fc31.noarch                  9/95 
+  Verifying        : ghostscript-9.27-3.fc31.x86_64                       10/95 
+  Verifying        : libX11-1.6.9-2.fc31.x86_64                           11/95 
+  Verifying        : libX11-common-1.6.9-2.fc31.noarch                    12/95 
+  Verifying        : libgs-9.27-3.fc31.x86_64                             13/95 
+  Verifying        : libgusb-0.3.4-1.fc31.x86_64                          14/95 
+  Verifying        : libjpeg-turbo-2.0.2-5.fc31.x86_64                    15/95 
+  Verifying        : libtiff-4.0.10-8.fc31.x86_64                         16/95 
+  Verifying        : nspr-4.25.0-1.fc31.x86_64                            17/95 
+  Verifying        : nss-3.50.0-2.fc31.x86_64                             18/95 
+  Verifying        : nss-mdns-0.14.1-7.fc31.x86_64                        19/95 
+  Verifying        : nss-softokn-3.50.0-2.fc31.x86_64                     20/95 
+  Verifying        : nss-softokn-freebl-3.50.0-2.fc31.x86_64              21/95 
+  Verifying        : nss-sysinit-3.50.0-2.fc31.x86_64                     22/95 
+  Verifying        : nss-util-3.50.0-2.fc31.x86_64                        23/95 
+  Verifying        : openjpeg2-2.3.1-6.fc31.x86_64                        24/95 
+  Verifying        : passwd-0.80-7.fc31.x86_64                            25/95 
+  Verifying        : polkit-libs-0.116-4.fc31.1.x86_64                    26/95 
+  Verifying        : poppler-0.73.0-16.fc31.x86_64                        27/95 
+  Verifying        : poppler-cpp-0.73.0-16.fc31.x86_64                    28/95 
+  Verifying        : poppler-utils-0.73.0-16.fc31.x86_64                  29/95 
+  Verifying        : xorg-x11-font-utils-1:7.5-43.fc31.x86_64             30/95 
+  Verifying        : adobe-mappings-cmap-20171205-6.fc31.noarch           31/95 
+  Verifying        : adobe-mappings-cmap-deprecated-20171205-6.fc31.noa   32/95 
+  Verifying        : adobe-mappings-pdf-20180407-4.fc31.noarch            33/95 
+  Verifying        : avahi-0.7-20.fc31.x86_64                             34/95 
+  Verifying        : avahi-glib-0.7-20.fc31.x86_64                        35/95 
+  Verifying        : avahi-libs-0.7-20.fc31.x86_64                        36/95 
+  Verifying        : bc-1.07.1-9.fc31.x86_64                              37/95 
+  Verifying        : cairo-1.16.0-6.fc31.x86_64                           38/95 
+  Verifying        : color-filesystem-1-23.fc31.noarch                    39/95 
+  Verifying        : colord-1.4.4-2.fc31.x86_64                           40/95 
+  Verifying        : colord-libs-1.4.4-2.fc31.x86_64                      41/95 
+  Verifying        : dbus-libs-1:1.12.16-3.fc31.x86_64                    42/95 
+  Verifying        : fontconfig-2.13.92-3.fc31.x86_64                     43/95 
+  Verifying        : freetype-2.10.0-3.fc31.x86_64                        44/95 
+  Verifying        : google-droid-sans-fonts-20120715-16.fc31.noarch      45/95 
+  Verifying        : jbig2dec-libs-0.16-1.fc31.x86_64                     46/95 
+  Verifying        : jbigkit-libs-2.1-17.fc31.x86_64                      47/95 
+  Verifying        : lcms2-2.9-6.fc31.x86_64                              48/95 
+  Verifying        : libICE-1.0.10-2.fc31.x86_64                          49/95 
+  Verifying        : libSM-1.2.3-4.fc31.x86_64                            50/95 
+  Verifying        : libXau-1.0.9-2.fc31.x86_64                           51/95 
+  Verifying        : libXcursor-1.1.15-6.fc31.x86_64                      52/95 
+  Verifying        : libXext-1.3.4-2.fc31.x86_64                          53/95 
+  Verifying        : libXfixes-5.0.3-10.fc31.x86_64                       54/95 
+  Verifying        : libXi-1.7.10-2.fc31.x86_64                           55/95 
+  Verifying        : libXinerama-1.1.4-4.fc31.x86_64                      56/95 
+  Verifying        : libXmu-1.1.3-2.fc31.x86_64                           57/95 
+  Verifying        : libXrandr-1.5.2-2.fc31.x86_64                        58/95 
+  Verifying        : libXrender-0.9.10-10.fc31.x86_64                     59/95 
+  Verifying        : libXt-1.1.5-12.20190424gitba4ec9376.fc31.x86_64      60/95 
+  Verifying        : libXxf86vm-1.1.4-12.fc31.x86_64                      61/95 
+  Verifying        : libdaemon-0.14-18.fc31.x86_64                        62/95 
+  Verifying        : liberation-fonts-common-1:2.00.5-6.fc31.noarch       63/95 
+  Verifying        : liberation-mono-fonts-1:2.00.5-6.fc31.noarch         64/95 
+  Verifying        : libfontenc-1.1.3-11.fc31.x86_64                      65/95 
+  Verifying        : libgudev-232-6.fc31.x86_64                           66/95 
+  Verifying        : libidn-1.35-6.fc31.x86_64                            67/95 
+  Verifying        : libijs-0.35-10.fc31.x86_64                           68/95 
+  Verifying        : libmcpp-2.7.2-24.fc31.x86_64                         69/95 
+  Verifying        : libpaper-1.1.24-25.fc31.x86_64                       70/95 
+  Verifying        : libpkgconf-1.6.3-2.fc31.x86_64                       71/95 
+  Verifying        : libpng-2:1.6.37-2.fc31.x86_64                        72/95 
+  Verifying        : libuser-0.62-21.fc31.x86_64                          73/95 
+  Verifying        : libxcb-1.13.1-3.fc31.x86_64                          74/95 
+  Verifying        : mcpp-2.7.2-24.fc31.x86_64                            75/95 
+  Verifying        : pixman-0.38.4-1.fc31.x86_64                          76/95 
+  Verifying        : pkgconf-1.6.3-2.fc31.x86_64                          77/95 
+  Verifying        : pkgconf-m4-1.6.3-2.fc31.noarch                       78/95 
+  Verifying        : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               79/95 
+  Verifying        : poppler-data-0.4.9-4.fc31.noarch                     80/95 
+  Verifying        : qpdf-libs-8.4.2-2.fc31.x86_64                        81/95 
+  Verifying        : urw-base35-bookman-fonts-20170801-13.fc31.noarch     82/95 
+  Verifying        : urw-base35-c059-fonts-20170801-13.fc31.noarch        83/95 
+  Verifying        : urw-base35-d050000l-fonts-20170801-13.fc31.noarch    84/95 
+  Verifying        : urw-base35-fonts-20170801-13.fc31.noarch             85/95 
+  Verifying        : urw-base35-fonts-common-20170801-13.fc31.noarch      86/95 
+  Verifying        : urw-base35-gothic-fonts-20170801-13.fc31.noarch      87/95 
+  Verifying        : urw-base35-nimbus-mono-ps-fonts-20170801-13.fc31.n   88/95 
+  Verifying        : urw-base35-nimbus-roman-fonts-20170801-13.fc31.noa   89/95 
+  Verifying        : urw-base35-nimbus-sans-fonts-20170801-13.fc31.noar   90/95 
+  Verifying        : urw-base35-p052-fonts-20170801-13.fc31.noarch        91/95 
+  Verifying        : urw-base35-standard-symbols-ps-fonts-20170801-13.f   92/95 
+  Verifying        : urw-base35-z003-fonts-20170801-13.fc31.noarch        93/95 
+  Verifying        : which-2.21-15.fc31.x86_64                            94/95 
+  Verifying        : xorg-x11-server-utils-7.7-32.fc31.x86_64             95/95 
+
+Installed:
+  adobe-mappings-cmap-20171205-6.fc31.noarch                                    
+  adobe-mappings-cmap-deprecated-20171205-6.fc31.noarch                         
+  adobe-mappings-pdf-20180407-4.fc31.noarch                                     
+  avahi-0.7-20.fc31.x86_64                                                      
+  avahi-glib-0.7-20.fc31.x86_64                                                 
+  avahi-libs-0.7-20.fc31.x86_64                                                 
+  bc-1.07.1-9.fc31.x86_64                                                       
+  cairo-1.16.0-6.fc31.x86_64                                                    
+  color-filesystem-1-23.fc31.noarch                                             
+  colord-1.4.4-2.fc31.x86_64                                                    
+  colord-libs-1.4.4-2.fc31.x86_64                                               
+  cups-1:2.2.12-6.fc31.x86_64                                                   
+  cups-client-1:2.2.12-6.fc31.x86_64                                            
+  cups-filesystem-1:2.2.12-6.fc31.noarch                                        
+  cups-filters-1.27.3-1.fc31.x86_64                                             
+  cups-filters-libs-1.27.3-1.fc31.x86_64                                        
+  cups-ipptool-1:2.2.12-6.fc31.x86_64                                           
+  cups-libs-1:2.2.12-6.fc31.x86_64                                              
+  dbus-libs-1:1.12.16-3.fc31.x86_64                                             
+  emacs-filesystem-1:26.3-1.fc31.noarch                                         
+  fontconfig-2.13.92-3.fc31.x86_64                                              
+  fonts-filesystem-2.0.3-1.fc31.noarch                                          
+  freetype-2.10.0-3.fc31.x86_64                                                 
+  ghostscript-9.27-3.fc31.x86_64                                                
+  google-droid-sans-fonts-20120715-16.fc31.noarch                               
+  jbig2dec-libs-0.16-1.fc31.x86_64                                              
+  jbigkit-libs-2.1-17.fc31.x86_64                                               
+  lcms2-2.9-6.fc31.x86_64                                                       
+  libICE-1.0.10-2.fc31.x86_64                                                   
+  libSM-1.2.3-4.fc31.x86_64                                                     
+  libX11-1.6.9-2.fc31.x86_64                                                    
+  libX11-common-1.6.9-2.fc31.noarch                                             
+  libXau-1.0.9-2.fc31.x86_64                                                    
+  libXcursor-1.1.15-6.fc31.x86_64                                               
+  libXext-1.3.4-2.fc31.x86_64                                                   
+  libXfixes-5.0.3-10.fc31.x86_64                                                
+  libXi-1.7.10-2.fc31.x86_64                                                    
+  libXinerama-1.1.4-4.fc31.x86_64                                               
+  libXmu-1.1.3-2.fc31.x86_64                                                    
+  libXrandr-1.5.2-2.fc31.x86_64                                                 
+  libXrender-0.9.10-10.fc31.x86_64                                              
+  libXt-1.1.5-12.20190424gitba4ec9376.fc31.x86_64                               
+  libXxf86vm-1.1.4-12.fc31.x86_64                                               
+  libdaemon-0.14-18.fc31.x86_64                                                 
+  liberation-fonts-common-1:2.00.5-6.fc31.noarch                                
+  liberation-mono-fonts-1:2.00.5-6.fc31.noarch                                  
+  libfontenc-1.1.3-11.fc31.x86_64                                               
+  libgs-9.27-3.fc31.x86_64                                                      
+  libgudev-232-6.fc31.x86_64                                                    
+  libgusb-0.3.4-1.fc31.x86_64                                                   
+  libidn-1.35-6.fc31.x86_64                                                     
+  libijs-0.35-10.fc31.x86_64                                                    
+  libjpeg-turbo-2.0.2-5.fc31.x86_64                                             
+  libmcpp-2.7.2-24.fc31.x86_64                                                  
+  libpaper-1.1.24-25.fc31.x86_64                                                
+  libpkgconf-1.6.3-2.fc31.x86_64                                                
+  libpng-2:1.6.37-2.fc31.x86_64                                                 
+  libtiff-4.0.10-8.fc31.x86_64                                                  
+  libuser-0.62-21.fc31.x86_64                                                   
+  libxcb-1.13.1-3.fc31.x86_64                                                   
+  mcpp-2.7.2-24.fc31.x86_64                                                     
+  nspr-4.25.0-1.fc31.x86_64                                                     
+  nss-3.50.0-2.fc31.x86_64                                                      
+  nss-mdns-0.14.1-7.fc31.x86_64                                                 
+  nss-softokn-3.50.0-2.fc31.x86_64                                              
+  nss-softokn-freebl-3.50.0-2.fc31.x86_64                                       
+  nss-sysinit-3.50.0-2.fc31.x86_64                                              
+  nss-util-3.50.0-2.fc31.x86_64                                                 
+  openjpeg2-2.3.1-6.fc31.x86_64                                                 
+  passwd-0.80-7.fc31.x86_64                                                     
+  pixman-0.38.4-1.fc31.x86_64                                                   
+  pkgconf-1.6.3-2.fc31.x86_64                                                   
+  pkgconf-m4-1.6.3-2.fc31.noarch                                                
+  pkgconf-pkg-config-1.6.3-2.fc31.x86_64                                        
+  polkit-libs-0.116-4.fc31.1.x86_64                                             
+  poppler-0.73.0-16.fc31.x86_64                                                 
+  poppler-cpp-0.73.0-16.fc31.x86_64                                             
+  poppler-data-0.4.9-4.fc31.noarch                                              
+  poppler-utils-0.73.0-16.fc31.x86_64                                           
+  qpdf-libs-8.4.2-2.fc31.x86_64                                                 
+  urw-base35-bookman-fonts-20170801-13.fc31.noarch                              
+  urw-base35-c059-fonts-20170801-13.fc31.noarch                                 
+  urw-base35-d050000l-fonts-20170801-13.fc31.noarch                             
+  urw-base35-fonts-20170801-13.fc31.noarch                                      
+  urw-base35-fonts-common-20170801-13.fc31.noarch                               
+  urw-base35-gothic-fonts-20170801-13.fc31.noarch                               
+  urw-base35-nimbus-mono-ps-fonts-20170801-13.fc31.noarch                       
+  urw-base35-nimbus-roman-fonts-20170801-13.fc31.noarch                         
+  urw-base35-nimbus-sans-fonts-20170801-13.fc31.noarch                          
+  urw-base35-p052-fonts-20170801-13.fc31.noarch                                 
+  urw-base35-standard-symbols-ps-fonts-20170801-13.fc31.noarch                  
+  urw-base35-z003-fonts-20170801-13.fc31.noarch                                 
+  which-2.21-15.fc31.x86_64                                                     
+  xorg-x11-font-utils-1:7.5-43.fc31.x86_64                                      
+  xorg-x11-server-utils-7.7-32.fc31.x86_64                                      
+
+Complete!
+33 files removed
+Removing intermediate container 3d3aea781554
+ ---> 48bc0fce7e5a
+Step 5/11 : ADD adjust-config.sh /adjust-config.sh
+ADD failed: stat /var/lib/docker/tmp/docker-builder521483795/adjust-config.sh: no such file or directory

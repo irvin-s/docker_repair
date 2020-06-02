@@ -1,0 +1,39 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/11 : FROM ubuntu:xenial
+xenial: Pulling from library/ubuntu
+fe703b657a32: Pulling fs layer
+f9df1fafd224: Pulling fs layer
+a645a4b887f9: Pulling fs layer
+57db7fe0b522: Pulling fs layer
+57db7fe0b522: Waiting
+f9df1fafd224: Download complete
+a645a4b887f9: Download complete
+57db7fe0b522: Verifying Checksum
+57db7fe0b522: Download complete
+fe703b657a32: Verifying Checksum
+fe703b657a32: Download complete
+fe703b657a32: Pull complete
+f9df1fafd224: Pull complete
+a645a4b887f9: Pull complete
+57db7fe0b522: Pull complete
+Digest: sha256:e9938f45e51d9ff46e2b05a62e0546d0f07489b7f22fbc5288defe760599e38a
+Status: Downloaded newer image for ubuntu:xenial
+ ---> 77be327e4b63
+Step 2/11 : MAINTAINER Tim Neumann <mail@timnn.me>
+ ---> Running in 26dcacfd55f5
+Removing intermediate container 26dcacfd55f5
+ ---> d3bb93bc5d72
+Step 3/11 : ARG DEBIAN_FRONTEND=noninteractive
+ ---> Running in af29d24448eb
+Removing intermediate container af29d24448eb
+ ---> 1dd23ba14041
+Step 4/11 : ENV LATEXENGINE=lualatex
+ ---> Running in af3c148e9f1e
+Removing intermediate container af3c148e9f1e
+ ---> ecac2560d965
+Step 5/11 : ENV PYTHONUNBUFFERED=1
+ ---> Running in 7ef7965caa25
+Removing intermediate container 7ef7965caa25
+ ---> 48c71ab5f6ee
+Step 6/11 : ADD 01-nodoc.conf /etc/dpkg/dpkg.cfg.d/01-nodoc
+ADD failed: stat /var/lib/docker/tmp/docker-builder351490607/01-nodoc.conf: no such file or directory

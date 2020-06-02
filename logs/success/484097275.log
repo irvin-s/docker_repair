@@ -1,0 +1,1239 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/9 : FROM oraclelinux:7
+7: Pulling from library/oraclelinux
+5f0a070aa70d: Pulling fs layer
+5f0a070aa70d: Verifying Checksum
+5f0a070aa70d: Download complete
+5f0a070aa70d: Pull complete
+Digest: sha256:d10d30eb036044f08b21c26fb92f7fc4e5b141ac5405260edc794d61a7db2723
+Status: Downloaded newer image for oraclelinux:7
+ ---> 0f4ffc192341
+Step 2/9 : RUN yum groupinstall -y "Development Tools"
+ ---> Running in 5d2141e0216c
+Loaded plugins: ovl, ulninfo
+[91mThere is no installed groups file.
+Maybe run: yum groups mark convert (see man yum)
+[0mResolving Dependencies
+--> Running transaction check
+---> Package autoconf.noarch 0:2.69-11.el7 will be installed
+--> Processing Dependency: perl >= 5.006 for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: m4 >= 1.4.14 for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(POSIX) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(DynaLoader) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Compare) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(vars) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Getopt::Long) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Exporter) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: /usr/bin/perl for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Spec) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(constant) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Data::Dumper) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Basename) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Carp) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Errno) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(strict) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Path) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(warnings) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(IO::File) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Text::ParseWords) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Copy) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Cwd) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::Find) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(Class::Struct) for package: autoconf-2.69-11.el7.noarch
+--> Processing Dependency: perl(File::stat) for package: autoconf-2.69-11.el7.noarch
+---> Package automake.noarch 0:1.13.4-3.el7 will be installed
+--> Processing Dependency: perl(TAP::Parser) for package: automake-1.13.4-3.el7.noarch
+--> Processing Dependency: perl(Thread::Queue) for package: automake-1.13.4-3.el7.noarch
+--> Processing Dependency: perl(threads) for package: automake-1.13.4-3.el7.noarch
+---> Package bison.x86_64 0:3.0.4-2.el7 will be installed
+---> Package byacc.x86_64 0:1.9.20130304-3.el7 will be installed
+---> Package cscope.x86_64 0:15.8-10.el7 will be installed
+--> Processing Dependency: emacs-filesystem for package: cscope-15.8-10.el7.x86_64
+---> Package ctags.x86_64 0:5.8-13.el7 will be installed
+---> Package diffstat.x86_64 0:1.57-4.el7 will be installed
+---> Package doxygen.x86_64 1:1.8.5-3.el7 will be installed
+---> Package elfutils.x86_64 0:0.176-2.el7 will be installed
+---> Package flex.x86_64 0:2.5.37-6.el7 will be installed
+---> Package gcc.x86_64 0:4.8.5-39.0.3.el7 will be installed
+--> Processing Dependency: libgomp = 4.8.5-39.0.3.el7 for package: gcc-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: cpp = 4.8.5-39.0.3.el7 for package: gcc-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libmpfr.so.4()(64bit) for package: gcc-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libmpc.so.3()(64bit) for package: gcc-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libgomp.so.1()(64bit) for package: gcc-4.8.5-39.0.3.el7.x86_64
+---> Package gcc-c++.x86_64 0:4.8.5-39.0.3.el7 will be installed
+--> Processing Dependency: libstdc++-devel = 4.8.5-39.0.3.el7 for package: gcc-c++-4.8.5-39.0.3.el7.x86_64
+---> Package gcc-gfortran.x86_64 0:4.8.5-39.0.3.el7 will be installed
+--> Processing Dependency: libquadmath = 4.8.5-39.0.3.el7 for package: gcc-gfortran-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libquadmath-devel = 4.8.5-39.0.3.el7 for package: gcc-gfortran-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libgfortran = 4.8.5-39.0.3.el7 for package: gcc-gfortran-4.8.5-39.0.3.el7.x86_64
+--> Processing Dependency: libgfortran.so.3()(64bit) for package: gcc-gfortran-4.8.5-39.0.3.el7.x86_64
+---> Package gettext.x86_64 0:0.19.8.1-2.el7 will be installed
+--> Processing Dependency: gettext-libs(x86-64) = 0.19.8.1-2.el7 for package: gettext-0.19.8.1-2.el7.x86_64
+--> Processing Dependency: libunistring.so.0()(64bit) for package: gettext-0.19.8.1-2.el7.x86_64
+--> Processing Dependency: libgettextsrc-0.19.8.1.so()(64bit) for package: gettext-0.19.8.1-2.el7.x86_64
+--> Processing Dependency: libgettextlib-0.19.8.1.so()(64bit) for package: gettext-0.19.8.1-2.el7.x86_64
+--> Processing Dependency: libcroco-0.6.so.3()(64bit) for package: gettext-0.19.8.1-2.el7.x86_64
+---> Package git.x86_64 0:1.8.3.1-21.el7_7 will be installed
+--> Processing Dependency: perl-Git = 1.8.3.1-21.el7_7 for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: rsync for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: perl(Error) for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: perl(Git) for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: perl(File::Temp) for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: less for package: git-1.8.3.1-21.el7_7.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-1.8.3.1-21.el7_7.x86_64
+---> Package indent.x86_64 0:2.2.11-13.el7 will be installed
+---> Package intltool.noarch 0:0.50.2-7.el7 will be installed
+--> Processing Dependency: gettext-devel for package: intltool-0.50.2-7.el7.noarch
+--> Processing Dependency: perl(XML::Parser) for package: intltool-0.50.2-7.el7.noarch
+--> Processing Dependency: perl(Encode) for package: intltool-0.50.2-7.el7.noarch
+---> Package libtool.x86_64 0:2.4.2-22.el7_3 will be installed
+---> Package make.x86_64 1:3.82-24.el7 will be installed
+---> Package patch.x86_64 0:2.7.1-12.el7_7 will be installed
+---> Package patchutils.x86_64 0:0.3.3-4.el7 will be installed
+---> Package rcs.x86_64 0:5.9.0-5.el7 will be installed
+---> Package redhat-rpm-config.noarch 0:9.1.0-88.0.1.el7 will be installed
+--> Processing Dependency: dwz >= 0.4 for package: redhat-rpm-config-9.1.0-88.0.1.el7.noarch
+--> Processing Dependency: zip for package: redhat-rpm-config-9.1.0-88.0.1.el7.noarch
+--> Processing Dependency: perl-srpm-macros for package: redhat-rpm-config-9.1.0-88.0.1.el7.noarch
+--> Processing Dependency: python-srpm-macros for package: redhat-rpm-config-9.1.0-88.0.1.el7.noarch
+---> Package rpm-build.x86_64 0:4.11.3-40.el7 will be installed
+--> Processing Dependency: /usr/bin/gdb-add-index for package: rpm-build-4.11.3-40.el7.x86_64
+--> Processing Dependency: bzip2 for package: rpm-build-4.11.3-40.el7.x86_64
+--> Processing Dependency: file for package: rpm-build-4.11.3-40.el7.x86_64
+--> Processing Dependency: unzip for package: rpm-build-4.11.3-40.el7.x86_64
+---> Package rpm-sign.x86_64 0:4.11.3-40.el7 will be installed
+---> Package subversion.x86_64 0:1.7.14-14.el7 will be installed
+--> Processing Dependency: subversion-libs(x86-64) = 1.7.14-14.el7 for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: systemd-sysv for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_fs_fs-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_fs_util-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_repos-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_ra_neon-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_wc-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_diff-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_subr-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_delta-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_ra-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_fs-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_ra_local-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_ra_svn-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libneon.so.27()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_fs_base-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+--> Processing Dependency: libsvn_client-1.so.0()(64bit) for package: subversion-1.7.14-14.el7.x86_64
+---> Package swig.x86_64 0:2.0.10-5.el7 will be installed
+---> Package systemtap.x86_64 0:4.0-10.0.1.el7_7 will be installed
+--> Processing Dependency: systemtap-devel = 4.0-10.0.1.el7_7 for package: systemtap-4.0-10.0.1.el7_7.x86_64
+--> Processing Dependency: systemtap-client = 4.0-10.0.1.el7_7 for package: systemtap-4.0-10.0.1.el7_7.x86_64
+--> Running transaction check
+---> Package apr.x86_64 0:1.4.8-5.el7 will be installed
+---> Package apr-util.x86_64 0:1.5.2-6.0.1.el7 will be installed
+---> Package bzip2.x86_64 0:1.0.6-13.el7 will be installed
+---> Package cpp.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package dwz.x86_64 0:0.11-3.el7 will be installed
+---> Package emacs-filesystem.noarch 1:24.3-22.el7 will be installed
+---> Package file.x86_64 0:5.11-35.el7 will be installed
+---> Package gdb.x86_64 0:7.6.1-115.el7 will be installed
+---> Package gettext-devel.x86_64 0:0.19.8.1-2.el7 will be installed
+--> Processing Dependency: gettext-common-devel = 0.19.8.1-2.el7 for package: gettext-devel-0.19.8.1-2.el7.x86_64
+---> Package gettext-libs.x86_64 0:0.19.8.1-2.el7 will be installed
+---> Package glibc-devel.x86_64 0:2.17-292.0.1.el7 will be installed
+--> Processing Dependency: glibc-headers = 2.17-292.0.1.el7 for package: glibc-devel-2.17-292.0.1.el7.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.17-292.0.1.el7.x86_64
+---> Package less.x86_64 0:458-9.el7 will be installed
+--> Processing Dependency: groff-base for package: less-458-9.el7.x86_64
+---> Package libcroco.x86_64 0:0.6.12-4.el7 will be installed
+---> Package libgfortran.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package libgomp.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package libmpc.x86_64 0:1.0.1-3.el7 will be installed
+---> Package libquadmath.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package libquadmath-devel.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package libstdc++-devel.x86_64 0:4.8.5-39.0.3.el7 will be installed
+---> Package libunistring.x86_64 0:0.9.3-9.el7 will be installed
+---> Package m4.x86_64 0:1.4.16-10.el7 will be installed
+---> Package mpfr.x86_64 0:3.1.1-4.el7 will be installed
+---> Package neon.x86_64 0:0.30.0-4.el7 will be installed
+--> Processing Dependency: libgnutls.so.28(GNUTLS_2_12)(64bit) for package: neon-0.30.0-4.el7.x86_64
+--> Processing Dependency: libgnutls.so.28(GNUTLS_3_0_0)(64bit) for package: neon-0.30.0-4.el7.x86_64
+--> Processing Dependency: libgnutls.so.28(GNUTLS_1_4)(64bit) for package: neon-0.30.0-4.el7.x86_64
+--> Processing Dependency: libgnutls.so.28()(64bit) for package: neon-0.30.0-4.el7.x86_64
+--> Processing Dependency: libpakchois.so.0()(64bit) for package: neon-0.30.0-4.el7.x86_64
+--> Processing Dependency: libproxy.so.1()(64bit) for package: neon-0.30.0-4.el7.x86_64
+---> Package perl.x86_64 4:5.16.3-294.el7_6 will be installed
+--> Processing Dependency: perl-libs = 4:5.16.3-294.el7_6 for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl-libs for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl-macros for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.16.3-294.el7_6.x86_64
+---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+---> Package perl-Data-Dumper.x86_64 0:2.145-3.el7 will be installed
+---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+---> Package perl-Error.noarch 1:0.17020-2.el7 will be installed
+---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+--> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+---> Package perl-Git.noarch 0:1.8.3.1-21.el7_7 will be installed
+---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+---> Package perl-Test-Harness.noarch 0:3.28-3.el7 will be installed
+---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+---> Package perl-Thread-Queue.noarch 0:3.02-2.el7 will be installed
+---> Package perl-XML-Parser.x86_64 0:2.41-10.0.1.el7 will be installed
+--> Processing Dependency: perl(URI) for package: perl-XML-Parser-2.41-10.0.1.el7.x86_64
+--> Processing Dependency: perl(LWP) for package: perl-XML-Parser-2.41-10.0.1.el7.x86_64
+--> Processing Dependency: perl(URI::file) for package: perl-XML-Parser-2.41-10.0.1.el7.x86_64
+---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+---> Package perl-srpm-macros.noarch 0:1-8.el7 will be installed
+---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+---> Package python-srpm-macros.noarch 0:3-32.el7 will be installed
+---> Package rsync.x86_64 0:3.1.2-6.el7_6.1 will be installed
+---> Package subversion-libs.x86_64 0:1.7.14-14.el7 will be installed
+---> Package systemd-sysv.x86_64 0:219-67.0.7.el7_7.4 will be installed
+--> Processing Dependency: systemd = 219-67.0.7.el7_7.4 for package: systemd-sysv-219-67.0.7.el7_7.4.x86_64
+---> Package systemtap-client.x86_64 0:4.0-10.0.1.el7_7 will be installed
+--> Processing Dependency: systemtap-runtime = 4.0-10.0.1.el7_7 for package: systemtap-client-4.0-10.0.1.el7_7.x86_64
+--> Processing Dependency: mokutil for package: systemtap-client-4.0-10.0.1.el7_7.x86_64
+--> Processing Dependency: libavahi-common.so.3()(64bit) for package: systemtap-client-4.0-10.0.1.el7_7.x86_64
+--> Processing Dependency: libavahi-client.so.3()(64bit) for package: systemtap-client-4.0-10.0.1.el7_7.x86_64
+---> Package systemtap-devel.x86_64 0:4.0-10.0.1.el7_7 will be installed
+--> Processing Dependency: kernel-devel-uname-r for package: systemtap-devel-4.0-10.0.1.el7_7.x86_64
+---> Package unzip.x86_64 0:6.0-20.el7 will be installed
+---> Package zip.x86_64 0:3.0-11.el7 will be installed
+--> Running transaction check
+---> Package avahi-libs.x86_64 0:0.6.31-19.el7 will be installed
+---> Package gettext-common-devel.noarch 0:0.19.8.1-2.el7 will be installed
+---> Package glibc-headers.x86_64 0:2.17-292.0.1.el7 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-292.0.1.el7.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.17-292.0.1.el7.x86_64
+---> Package gnutls.x86_64 0:3.3.29-9.el7_6 will be installed
+--> Processing Dependency: trousers >= 0.3.11.2 for package: gnutls-3.3.29-9.el7_6.x86_64
+--> Processing Dependency: libhogweed.so.2()(64bit) for package: gnutls-3.3.29-9.el7_6.x86_64
+--> Processing Dependency: libnettle.so.4()(64bit) for package: gnutls-3.3.29-9.el7_6.x86_64
+---> Package groff-base.x86_64 0:1.22.2-8.el7 will be installed
+---> Package kernel-debug-devel.x86_64 0:3.10.0-1062.18.1.el7 will be installed
+---> Package libproxy.x86_64 0:0.4.11-11.el7 will be installed
+--> Processing Dependency: libmodman.so.1()(64bit) for package: libproxy-0.4.11-11.el7.x86_64
+---> Package mokutil.x86_64 0:15-1.0.5.el7 will be installed
+--> Processing Dependency: libefivar.so.1(libefivar.so.0)(64bit) for package: mokutil-15-1.0.5.el7.x86_64
+--> Processing Dependency: libefivar.so.1(LIBEFIVAR_0.24)(64bit) for package: mokutil-15-1.0.5.el7.x86_64
+--> Processing Dependency: libefivar.so.1()(64bit) for package: mokutil-15-1.0.5.el7.x86_64
+---> Package pakchois.x86_64 0:0.4-10.el7 will be installed
+---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+--> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+--> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+--> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+---> Package perl-Socket.x86_64 0:2.010-4.el7 will be installed
+---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+---> Package perl-URI.noarch 0:1.60-9.el7 will be installed
+--> Processing Dependency: perl(Business::ISBN) for package: perl-URI-1.60-9.el7.noarch
+---> Package perl-libs.x86_64 4:5.16.3-294.el7_6 will be installed
+---> Package perl-libwww-perl.noarch 0:6.05-2.el7 will be installed
+--> Processing Dependency: perl(Net::HTTP) >= 6.04 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(WWW::RobotRules) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Status) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Negotiate) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(LWP::MediaTypes) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Daemon) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(File::Listing) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Request::Common) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Cookies) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Date) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Request) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTTP::Response) >= 6 for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(Digest::MD5) for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTML::Entities) for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(HTML::HeadParser) for package: perl-libwww-perl-6.05-2.el7.noarch
+--> Processing Dependency: perl(Encode::Locale) for package: perl-libwww-perl-6.05-2.el7.noarch
+---> Package perl-macros.x86_64 4:5.16.3-294.el7_6 will be installed
+---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+---> Package systemd.x86_64 0:219-67.0.5.el7_7.3 will be updated
+---> Package systemd.x86_64 0:219-67.0.7.el7_7.4 will be an update
+--> Processing Dependency: systemd-libs = 219-67.0.7.el7_7.4 for package: systemd-219-67.0.7.el7_7.4.x86_64
+---> Package systemtap-runtime.x86_64 0:4.0-10.0.1.el7_7 will be installed
+--> Processing Dependency: libsymtabAPI.so.9.3()(64bit) for package: systemtap-runtime-4.0-10.0.1.el7_7.x86_64
+--> Processing Dependency: libdyninstAPI.so.9.3()(64bit) for package: systemtap-runtime-4.0-10.0.1.el7_7.x86_64
+--> Running transaction check
+---> Package dyninst.x86_64 0:9.3.1-3.el7 will be installed
+--> Processing Dependency: libboost_thread-mt.so.1.53.0()(64bit) for package: dyninst-9.3.1-3.el7.x86_64
+--> Processing Dependency: libdwarf.so.0()(64bit) for package: dyninst-9.3.1-3.el7.x86_64
+--> Processing Dependency: libboost_system-mt.so.1.53.0()(64bit) for package: dyninst-9.3.1-3.el7.x86_64
+--> Processing Dependency: libboost_date_time-mt.so.1.53.0()(64bit) for package: dyninst-9.3.1-3.el7.x86_64
+---> Package efivar-libs.x86_64 0:36-12.el7 will be installed
+---> Package kernel-headers.x86_64 0:3.10.0-1062.18.1.el7 will be installed
+---> Package libmodman.x86_64 0:2.0.1-8.el7 will be installed
+---> Package nettle.x86_64 0:2.7.1-8.el7 will be installed
+---> Package perl-Business-ISBN.noarch 0:2.06-2.el7 will be installed
+--> Processing Dependency: perl(Business::ISBN::Data) >= 20120719.001 for package: perl-Business-ISBN-2.06-2.el7.noarch
+---> Package perl-Digest-MD5.x86_64 0:2.52-3.el7 will be installed
+--> Processing Dependency: perl(Digest::base) >= 1.00 for package: perl-Digest-MD5-2.52-3.el7.x86_64
+---> Package perl-Encode-Locale.noarch 0:1.03-5.el7 will be installed
+---> Package perl-File-Listing.noarch 0:6.04-7.el7 will be installed
+---> Package perl-HTML-Parser.x86_64 0:3.71-4.el7 will be installed
+--> Processing Dependency: perl(HTML::Tagset) >= 3 for package: perl-HTML-Parser-3.71-4.el7.x86_64
+---> Package perl-HTTP-Cookies.noarch 0:6.01-5.el7 will be installed
+---> Package perl-HTTP-Daemon.noarch 0:6.01-8.el7 will be installed
+--> Processing Dependency: perl(IO::Socket::IP) for package: perl-HTTP-Daemon-6.01-8.el7.noarch
+---> Package perl-HTTP-Date.noarch 0:6.02-8.el7 will be installed
+--> Processing Dependency: perl(Time::Zone) for package: perl-HTTP-Date-6.02-8.el7.noarch
+---> Package perl-HTTP-Message.noarch 0:6.06-6.el7 will be installed
+--> Processing Dependency: perl(IO::Uncompress::Bunzip2) >= 2.021 for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Compress::Bzip2) >= 2.021 for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::HTML) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Compress::Gzip) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Uncompress::Inflate) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Uncompress::Gunzip) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(Compress::Raw::Zlib) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Uncompress::RawInflate) for package: perl-HTTP-Message-6.06-6.el7.noarch
+--> Processing Dependency: perl(IO::Compress::Deflate) for package: perl-HTTP-Message-6.06-6.el7.noarch
+---> Package perl-HTTP-Negotiate.noarch 0:6.01-5.el7 will be installed
+---> Package perl-LWP-MediaTypes.noarch 0:6.02-2.el7 will be installed
+--> Processing Dependency: mailcap for package: perl-LWP-MediaTypes-6.02-2.el7.noarch
+---> Package perl-Net-HTTP.noarch 0:6.06-2.el7 will be installed
+--> Processing Dependency: perl(IO::Socket::SSL) >= 1.38 for package: perl-Net-HTTP-6.06-2.el7.noarch
+---> Package perl-Pod-Escapes.noarch 1:1.04-294.el7_6 will be installed
+---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+--> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+--> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+---> Package perl-WWW-RobotRules.noarch 0:6.02-5.el7 will be installed
+---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+---> Package systemd-libs.x86_64 0:219-67.0.5.el7_7.3 will be updated
+--> Processing Dependency: systemd-libs = 219-67.0.5.el7_7.3 for package: libgudev1-219-67.0.5.el7_7.3.x86_64
+---> Package systemd-libs.x86_64 0:219-67.0.7.el7_7.4 will be an update
+---> Package trousers.x86_64 0:0.3.14-2.el7 will be installed
+--> Running transaction check
+---> Package boost-date-time.x86_64 0:1.53.0-27.el7 will be installed
+---> Package boost-system.x86_64 0:1.53.0-27.el7 will be installed
+---> Package boost-thread.x86_64 0:1.53.0-27.el7 will be installed
+---> Package libdwarf.x86_64 0:20130207-4.el7 will be installed
+---> Package libgudev1.x86_64 0:219-67.0.5.el7_7.3 will be updated
+---> Package libgudev1.x86_64 0:219-67.0.7.el7_7.4 will be an update
+---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+---> Package perl-Business-ISBN-Data.noarch 0:20120719.001-2.el7 will be installed
+---> Package perl-Compress-Raw-Zlib.x86_64 1:2.061-4.el7 will be installed
+---> Package perl-Digest.noarch 0:1.17-245.el7 will be installed
+---> Package perl-HTML-Tagset.noarch 0:3.20-15.el7 will be installed
+---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+---> Package perl-IO-Compress.noarch 0:2.061-2.el7 will be installed
+--> Processing Dependency: perl(Compress::Raw::Bzip2) >= 2.061 for package: perl-IO-Compress-2.061-2.el7.noarch
+---> Package perl-IO-HTML.noarch 0:1.00-2.el7 will be installed
+---> Package perl-IO-Socket-IP.noarch 0:0.21-5.el7 will be installed
+---> Package perl-IO-Socket-SSL.noarch 0:1.94-7.el7 will be installed
+--> Processing Dependency: perl-Net-SSLeay >= 1.55-5 for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+--> Processing Dependency: openssl >= 0.9.8 for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+--> Processing Dependency: perl(Net::SSLeay) >= 1.21 for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+--> Processing Dependency: perl(Net::LibIDN) for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+--> Processing Dependency: perl(Net::SSLeay) for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+--> Processing Dependency: perl(Mozilla::CA) for package: perl-IO-Socket-SSL-1.94-7.el7.noarch
+---> Package perl-TimeDate.noarch 1:2.30-2.el7 will be installed
+---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+--> Running transaction check
+---> Package openssl.x86_64 1:1.0.2k-19.0.1.el7 will be installed
+---> Package perl-Compress-Raw-Bzip2.x86_64 0:2.061-3.el7 will be installed
+---> Package perl-Mozilla-CA.noarch 0:20130114-5.el7 will be installed
+---> Package perl-Net-LibIDN.x86_64 0:0.12-15.el7 will be installed
+---> Package perl-Net-SSLeay.x86_64 0:1.55-6.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                   Arch     Version                  Repository    Size
+================================================================================
+Installing for group install "Development Tools":
+ autoconf                  noarch   2.69-11.el7              ol7_latest   701 k
+ automake                  noarch   1.13.4-3.el7             ol7_latest   679 k
+ bison                     x86_64   3.0.4-2.el7              ol7_latest   674 k
+ byacc                     x86_64   1.9.20130304-3.el7       ol7_latest    64 k
+ cscope                    x86_64   15.8-10.el7              ol7_latest   203 k
+ ctags                     x86_64   5.8-13.el7               ol7_latest   155 k
+ diffstat                  x86_64   1.57-4.el7               ol7_latest    34 k
+ doxygen                   x86_64   1:1.8.5-3.el7            ol7_latest   3.4 M
+ elfutils                  x86_64   0.176-2.el7              ol7_latest   304 k
+ flex                      x86_64   2.5.37-6.el7             ol7_latest   292 k
+ gcc                       x86_64   4.8.5-39.0.3.el7         ol7_latest    16 M
+ gcc-c++                   x86_64   4.8.5-39.0.3.el7         ol7_latest   7.2 M
+ gcc-gfortran              x86_64   4.8.5-39.0.3.el7         ol7_latest   6.7 M
+ gettext                   x86_64   0.19.8.1-2.el7           ol7_latest   1.0 M
+ git                       x86_64   1.8.3.1-21.el7_7         ol7_latest   4.4 M
+ indent                    x86_64   2.2.11-13.el7            ol7_latest   149 k
+ intltool                  noarch   0.50.2-7.el7             ol7_latest    59 k
+ libtool                   x86_64   2.4.2-22.el7_3           ol7_latest   588 k
+ make                      x86_64   1:3.82-24.el7            ol7_latest   420 k
+ patch                     x86_64   2.7.1-12.el7_7           ol7_latest   110 k
+ patchutils                x86_64   0.3.3-4.el7              ol7_latest   103 k
+ rcs                       x86_64   5.9.0-5.el7              ol7_latest   229 k
+ redhat-rpm-config         noarch   9.1.0-88.0.1.el7         ol7_latest    81 k
+ rpm-build                 x86_64   4.11.3-40.el7            ol7_latest   148 k
+ rpm-sign                  x86_64   4.11.3-40.el7            ol7_latest    48 k
+ subversion                x86_64   1.7.14-14.el7            ol7_latest   1.0 M
+ swig                      x86_64   2.0.10-5.el7             ol7_latest   1.3 M
+ systemtap                 x86_64   4.0-10.0.1.el7_7         ol7_latest    14 k
+Installing for dependencies:
+ apr                       x86_64   1.4.8-5.el7              ol7_latest   103 k
+ apr-util                  x86_64   1.5.2-6.0.1.el7          ol7_latest    91 k
+ avahi-libs                x86_64   0.6.31-19.el7            ol7_latest    61 k
+ boost-date-time           x86_64   1.53.0-27.el7            ol7_latest    51 k
+ boost-system              x86_64   1.53.0-27.el7            ol7_latest    39 k
+ boost-thread              x86_64   1.53.0-27.el7            ol7_latest    57 k
+ bzip2                     x86_64   1.0.6-13.el7             ol7_latest    51 k
+ cpp                       x86_64   4.8.5-39.0.3.el7         ol7_latest   6.0 M
+ dwz                       x86_64   0.11-3.el7               ol7_latest    98 k
+ dyninst                   x86_64   9.3.1-3.el7              ol7_latest   3.5 M
+ efivar-libs               x86_64   36-12.el7                ol7_latest    88 k
+ emacs-filesystem          noarch   1:24.3-22.el7            ol7_latest    58 k
+ file                      x86_64   5.11-35.el7              ol7_latest    56 k
+ gdb                       x86_64   7.6.1-115.el7            ol7_latest   2.4 M
+ gettext-common-devel      noarch   0.19.8.1-2.el7           ol7_latest   409 k
+ gettext-devel             x86_64   0.19.8.1-2.el7           ol7_latest   320 k
+ gettext-libs              x86_64   0.19.8.1-2.el7           ol7_latest   500 k
+ glibc-devel               x86_64   2.17-292.0.1.el7         ol7_latest   1.1 M
+ glibc-headers             x86_64   2.17-292.0.1.el7         ol7_latest   689 k
+ gnutls                    x86_64   3.3.29-9.el7_6           ol7_latest   680 k
+ groff-base                x86_64   1.22.2-8.el7             ol7_latest   933 k
+ kernel-debug-devel        x86_64   3.10.0-1062.18.1.el7     ol7_latest    18 M
+ kernel-headers            x86_64   3.10.0-1062.18.1.el7     ol7_latest   8.8 M
+ less                      x86_64   458-9.el7                ol7_latest   119 k
+ libcroco                  x86_64   0.6.12-4.el7             ol7_latest   105 k
+ libdwarf                  x86_64   20130207-4.el7           ol7_latest   108 k
+ libgfortran               x86_64   4.8.5-39.0.3.el7         ol7_latest   301 k
+ libgomp                   x86_64   4.8.5-39.0.3.el7         ol7_latest   158 k
+ libmodman                 x86_64   2.0.1-8.el7              ol7_latest    28 k
+ libmpc                    x86_64   1.0.1-3.el7              ol7_latest    49 k
+ libproxy                  x86_64   0.4.11-11.el7            ol7_latest    64 k
+ libquadmath               x86_64   4.8.5-39.0.3.el7         ol7_latest   190 k
+ libquadmath-devel         x86_64   4.8.5-39.0.3.el7         ol7_latest    53 k
+ libstdc++-devel           x86_64   4.8.5-39.0.3.el7         ol7_latest   1.5 M
+ libunistring              x86_64   0.9.3-9.el7              ol7_latest   289 k
+ m4                        x86_64   1.4.16-10.el7            ol7_latest   254 k
+ mailcap                   noarch   2.1.41-2.el7             ol7_latest    30 k
+ mokutil                   x86_64   15-1.0.5.el7             ol7_latest    42 k
+ mpfr                      x86_64   3.1.1-4.el7              ol7_latest   198 k
+ neon                      x86_64   0.30.0-4.el7             ol7_latest   165 k
+ nettle                    x86_64   2.7.1-8.el7              ol7_latest   327 k
+ openssl                   x86_64   1:1.0.2k-19.0.1.el7      ol7_latest   493 k
+ pakchois                  x86_64   0.4-10.el7               ol7_latest    13 k
+ perl                      x86_64   4:5.16.3-294.el7_6       ol7_latest   8.0 M
+ perl-Business-ISBN        noarch   2.06-2.el7               ol7_latest    24 k
+ perl-Business-ISBN-Data   noarch   20120719.001-2.el7       ol7_latest    24 k
+ perl-Carp                 noarch   1.26-244.el7             ol7_latest    19 k
+ perl-Compress-Raw-Bzip2   x86_64   2.061-3.el7              ol7_latest    32 k
+ perl-Compress-Raw-Zlib    x86_64   1:2.061-4.el7            ol7_latest    57 k
+ perl-Data-Dumper          x86_64   2.145-3.el7              ol7_latest    47 k
+ perl-Digest               noarch   1.17-245.el7             ol7_latest    22 k
+ perl-Digest-MD5           x86_64   2.52-3.el7               ol7_latest    29 k
+ perl-Encode               x86_64   2.51-7.el7               ol7_latest   1.5 M
+ perl-Encode-Locale        noarch   1.03-5.el7               ol7_latest    15 k
+ perl-Error                noarch   1:0.17020-2.el7          ol7_latest    31 k
+ perl-Exporter             noarch   5.68-3.el7               ol7_latest    28 k
+ perl-File-Listing         noarch   6.04-7.el7               ol7_latest    13 k
+ perl-File-Path            noarch   2.09-2.el7               ol7_latest    26 k
+ perl-File-Temp            noarch   0.23.01-3.el7            ol7_latest    56 k
+ perl-Filter               x86_64   1.49-3.el7               ol7_latest    76 k
+ perl-Getopt-Long          noarch   2.40-3.el7               ol7_latest    55 k
+ perl-Git                  noarch   1.8.3.1-21.el7_7         ol7_latest    55 k
+ perl-HTML-Parser          x86_64   3.71-4.el7               ol7_latest   114 k
+ perl-HTML-Tagset          noarch   3.20-15.el7              ol7_latest    18 k
+ perl-HTTP-Cookies         noarch   6.01-5.el7               ol7_latest    25 k
+ perl-HTTP-Daemon          noarch   6.01-8.el7               ol7_latest    20 k
+ perl-HTTP-Date            noarch   6.02-8.el7               ol7_latest    14 k
+ perl-HTTP-Message         noarch   6.06-6.el7               ol7_latest    81 k
+ perl-HTTP-Negotiate       noarch   6.01-5.el7               ol7_latest    16 k
+ perl-HTTP-Tiny            noarch   0.033-3.el7              ol7_latest    38 k
+ perl-IO-Compress          noarch   2.061-2.el7              ol7_latest   259 k
+ perl-IO-HTML              noarch   1.00-2.el7               ol7_latest    22 k
+ perl-IO-Socket-IP         noarch   0.21-5.el7               ol7_latest    35 k
+ perl-IO-Socket-SSL        noarch   1.94-7.el7               ol7_latest   114 k
+ perl-LWP-MediaTypes       noarch   6.02-2.el7               ol7_latest    23 k
+ perl-Mozilla-CA           noarch   20130114-5.el7           ol7_latest    11 k
+ perl-Net-HTTP             noarch   6.06-2.el7               ol7_latest    28 k
+ perl-Net-LibIDN           x86_64   0.12-15.el7              ol7_latest    28 k
+ perl-Net-SSLeay           x86_64   1.55-6.el7               ol7_latest   285 k
+ perl-PathTools            x86_64   3.40-5.el7               ol7_latest    82 k
+ perl-Pod-Escapes          noarch   1:1.04-294.el7_6         ol7_latest    51 k
+ perl-Pod-Perldoc          noarch   3.20-4.el7               ol7_latest    86 k
+ perl-Pod-Simple           noarch   1:3.28-4.el7             ol7_latest   216 k
+ perl-Pod-Usage            noarch   1.63-3.el7               ol7_latest    26 k
+ perl-Scalar-List-Utils    x86_64   1.27-248.el7             ol7_latest    35 k
+ perl-Socket               x86_64   2.010-4.el7              ol7_latest    48 k
+ perl-Storable             x86_64   2.45-3.el7               ol7_latest    76 k
+ perl-TermReadKey          x86_64   2.30-20.el7              ol7_latest    30 k
+ perl-Test-Harness         noarch   3.28-3.el7               ol7_latest   302 k
+ perl-Text-ParseWords      noarch   3.29-4.el7               ol7_latest    13 k
+ perl-Thread-Queue         noarch   3.02-2.el7               ol7_latest    17 k
+ perl-Time-HiRes           x86_64   4:1.9725-3.el7           ol7_latest    44 k
+ perl-Time-Local           noarch   1.2300-2.el7             ol7_latest    24 k
+ perl-TimeDate             noarch   1:2.30-2.el7             ol7_latest    51 k
+ perl-URI                  noarch   1.60-9.el7               ol7_latest   106 k
+ perl-WWW-RobotRules       noarch   6.02-5.el7               ol7_latest    17 k
+ perl-XML-Parser           x86_64   2.41-10.0.1.el7          ol7_latest   222 k
+ perl-constant             noarch   1.27-2.el7               ol7_latest    18 k
+ perl-libs                 x86_64   4:5.16.3-294.el7_6       ol7_latest   688 k
+ perl-libwww-perl          noarch   6.05-2.el7               ol7_latest   205 k
+ perl-macros               x86_64   4:5.16.3-294.el7_6       ol7_latest    43 k
+ perl-parent               noarch   1:0.225-244.el7          ol7_latest    12 k
+ perl-podlators            noarch   2.5.1-3.el7              ol7_latest   111 k
+ perl-srpm-macros          noarch   1-8.el7                  ol7_latest   4.1 k
+ perl-threads              x86_64   1.87-4.el7               ol7_latest    48 k
+ perl-threads-shared       x86_64   1.43-6.el7               ol7_latest    38 k
+ python-srpm-macros        noarch   3-32.el7                 ol7_latest   7.9 k
+ rsync                     x86_64   3.1.2-6.el7_6.1          ol7_latest   403 k
+ subversion-libs           x86_64   1.7.14-14.el7            ol7_latest   921 k
+ systemd-sysv              x86_64   219-67.0.7.el7_7.4       ol7_latest    89 k
+ systemtap-client          x86_64   4.0-10.0.1.el7_7         ol7_latest   3.6 M
+ systemtap-devel           x86_64   4.0-10.0.1.el7_7         ol7_latest   2.2 M
+ systemtap-runtime         x86_64   4.0-10.0.1.el7_7         ol7_latest   443 k
+ trousers                  x86_64   0.3.14-2.el7             ol7_latest   289 k
+ unzip                     x86_64   6.0-20.el7               ol7_latest   169 k
+ zip                       x86_64   3.0-11.el7               ol7_latest   259 k
+Updating for dependencies:
+ libgudev1                 x86_64   219-67.0.7.el7_7.4       ol7_latest   102 k
+ systemd                   x86_64   219-67.0.7.el7_7.4       ol7_latest   5.1 M
+ systemd-libs              x86_64   219-67.0.7.el7_7.4       ol7_latest   412 k
+
+Transaction Summary
+================================================================================
+Install  28 Packages (+116 Dependent packages)
+Upgrade              (   3 Dependent packages)
+
+Total download size: 122 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+--------------------------------------------------------------------------------
+Total                                               36 MB/s | 122 MB  00:03     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : mpfr-3.1.1-4.el7.x86_64                                    1/150 
+  Installing : libmpc-1.0.1-3.el7.x86_64                                  2/150 
+  Installing : libquadmath-4.8.5-39.0.3.el7.x86_64                        3/150 
+  Installing : m4-1.4.16-10.el7.x86_64                                    4/150 
+  Installing : libgomp-4.8.5-39.0.3.el7.x86_64                            5/150 
+  Installing : apr-1.4.8-5.el7.x86_64                                     6/150 
+  Installing : apr-util-1.5.2-6.0.1.el7.x86_64                            7/150 
+  Installing : zip-3.0-11.el7.x86_64                                      8/150 
+  Installing : patch-2.7.1-12.el7_7.x86_64                                9/150 
+  Installing : libcroco-0.6.12-4.el7.x86_64                              10/150 
+  Installing : avahi-libs-0.6.31-19.el7.x86_64                           11/150 
+  Installing : libunistring-0.9.3-9.el7.x86_64                           12/150 
+  Installing : gettext-libs-0.19.8.1-2.el7.x86_64                        13/150 
+  Updating   : systemd-libs-219-67.0.7.el7_7.4.x86_64                    14/150 
+  Updating   : systemd-219-67.0.7.el7_7.4.x86_64                         15/150 
+Failed to get D-Bus connection: Operation not permitted
+  Installing : 1:make-3.82-24.el7.x86_64                                 16/150 
+  Installing : unzip-6.0-20.el7.x86_64                                   17/150 
+  Installing : boost-system-1.53.0-27.el7.x86_64                         18/150 
+  Installing : groff-base-1.22.2-8.el7.x86_64                            19/150 
+  Installing : 1:perl-parent-0.225-244.el7.noarch                        20/150 
+  Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                         21/150 
+  Installing : perl-podlators-2.5.1-3.el7.noarch                         22/150 
+  Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                        23/150 
+  Installing : 1:perl-Pod-Escapes-1.04-294.el7_6.noarch                  24/150 
+  Installing : perl-Text-ParseWords-3.29-4.el7.noarch                    25/150 
+  Installing : perl-Encode-2.51-7.el7.x86_64                             26/150 
+  Installing : perl-Pod-Usage-1.63-3.el7.noarch                          27/150 
+  Installing : 4:perl-libs-5.16.3-294.el7_6.x86_64                       28/150 
+  Installing : perl-Socket-2.010-4.el7.x86_64                            29/150 
+  Installing : perl-Storable-2.45-3.el7.x86_64                           30/150 
+  Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                     31/150 
+  Installing : perl-threads-1.87-4.el7.x86_64                            32/150 
+  Installing : perl-Carp-1.26-244.el7.noarch                             33/150 
+  Installing : perl-Filter-1.49-3.el7.x86_64                             34/150 
+  Installing : perl-Exporter-5.68-3.el7.noarch                           35/150 
+  Installing : perl-constant-1.27-2.el7.noarch                           36/150 
+  Installing : perl-Time-Local-1.2300-2.el7.noarch                       37/150 
+  Installing : 4:perl-macros-5.16.3-294.el7_6.x86_64                     38/150 
+  Installing : perl-threads-shared-1.43-6.el7.x86_64                     39/150 
+  Installing : perl-File-Temp-0.23.01-3.el7.noarch                       40/150 
+  Installing : perl-File-Path-2.09-2.el7.noarch                          41/150 
+  Installing : perl-PathTools-3.40-5.el7.x86_64                          42/150 
+  Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                43/150 
+  Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                       44/150 
+  Installing : perl-Getopt-Long-2.40-3.el7.noarch                        45/150 
+  Installing : 4:perl-5.16.3-294.el7_6.x86_64                            46/150 
+  Installing : perl-Data-Dumper-2.145-3.el7.x86_64                       47/150 
+  Installing : 1:perl-Compress-Raw-Zlib-2.061-4.el7.x86_64               48/150 
+  Installing : autoconf-2.69-11.el7.noarch                               49/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : perl-IO-Socket-IP-0.21-5.el7.noarch                       50/150 
+  Installing : perl-Thread-Queue-3.02-2.el7.noarch                       51/150 
+  Installing : perl-Encode-Locale-1.03-5.el7.noarch                      52/150 
+  Installing : 1:perl-Error-0.17020-2.el7.noarch                         53/150 
+  Installing : perl-TermReadKey-2.30-20.el7.x86_64                       54/150 
+  Installing : perl-Business-ISBN-Data-20120719.001-2.el7.noarch         55/150 
+  Installing : perl-Business-ISBN-2.06-2.el7.noarch                      56/150 
+  Installing : perl-URI-1.60-9.el7.noarch                                57/150 
+  Installing : perl-WWW-RobotRules-6.02-5.el7.noarch                     58/150 
+  Installing : perl-Net-SSLeay-1.55-6.el7.x86_64                         59/150 
+  Installing : perl-Mozilla-CA-20130114-5.el7.noarch                     60/150 
+  Installing : perl-HTML-Tagset-3.20-15.el7.noarch                       61/150 
+  Installing : perl-Compress-Raw-Bzip2-2.061-3.el7.x86_64                62/150 
+  Installing : perl-IO-Compress-2.061-2.el7.noarch                       63/150 
+  Installing : perl-Digest-1.17-245.el7.noarch                           64/150 
+  Installing : perl-Digest-MD5-2.52-3.el7.x86_64                         65/150 
+  Installing : perl-Test-Harness-3.28-3.el7.noarch                       66/150 
+  Installing : automake-1.13.4-3.el7.noarch                              67/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : perl-IO-HTML-1.00-2.el7.noarch                            68/150 
+  Installing : 1:perl-TimeDate-2.30-2.el7.noarch                         69/150 
+  Installing : perl-HTTP-Date-6.02-8.el7.noarch                          70/150 
+  Installing : perl-File-Listing-6.04-7.el7.noarch                       71/150 
+  Installing : kernel-debug-devel-3.10.0-1062.18.1.el7.x86_64            72/150 
+  Installing : perl-Net-LibIDN-0.12-15.el7.x86_64                        73/150 
+  Installing : less-458-9.el7.x86_64                                     74/150 
+  Installing : boost-thread-1.53.0-27.el7.x86_64                         75/150 
+  Installing : 1:openssl-1.0.2k-19.0.1.el7.x86_64                        76/150 
+  Installing : perl-IO-Socket-SSL-1.94-7.el7.noarch                      77/150 
+  Installing : perl-Net-HTTP-6.06-2.el7.noarch                           78/150 
+  Installing : trousers-0.3.14-2.el7.x86_64                              79/150 
+  Installing : systemd-sysv-219-67.0.7.el7_7.4.x86_64                    80/150 
+  Installing : rsync-3.1.2-6.el7_6.1.x86_64                              81/150 
+  Installing : perl-Git-1.8.3.1-21.el7_7.noarch                          82/150 
+  Installing : git-1.8.3.1-21.el7_7.x86_64                               83/150 
+  Installing : gettext-0.19.8.1-2.el7.x86_64                             84/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : libgfortran-4.8.5-39.0.3.el7.x86_64                       85/150 
+  Installing : cpp-4.8.5-39.0.3.el7.x86_64                               86/150 
+  Installing : gdb-7.6.1-115.el7.x86_64                                  87/150 
+  Installing : bzip2-1.0.6-13.el7.x86_64                                 88/150 
+  Installing : python-srpm-macros-3-32.el7.noarch                        89/150 
+  Installing : 1:emacs-filesystem-24.3-22.el7.noarch                     90/150 
+  Installing : pakchois-0.4-10.el7.x86_64                                91/150 
+  Installing : dwz-0.11-3.el7.x86_64                                     92/150 
+  Installing : efivar-libs-36-12.el7.x86_64                              93/150 
+  Installing : mokutil-15-1.0.5.el7.x86_64                               94/150 
+  Installing : libstdc++-devel-4.8.5-39.0.3.el7.x86_64                   95/150 
+  Installing : mailcap-2.1.41-2.el7.noarch                               96/150 
+  Installing : perl-LWP-MediaTypes-6.02-2.el7.noarch                     97/150 
+  Installing : perl-HTTP-Message-6.06-6.el7.noarch                       98/150 
+  Installing : perl-HTTP-Negotiate-6.01-5.el7.noarch                     99/150 
+  Installing : perl-HTML-Parser-3.71-4.el7.x86_64                       100/150 
+  Installing : perl-HTTP-Cookies-6.01-5.el7.noarch                      101/150 
+  Installing : perl-HTTP-Daemon-6.01-8.el7.noarch                       102/150 
+  Installing : perl-libwww-perl-6.05-2.el7.noarch                       103/150 
+  Installing : perl-XML-Parser-2.41-10.0.1.el7.x86_64                   104/150 
+  Installing : perl-srpm-macros-1-8.el7.noarch                          105/150 
+  Installing : redhat-rpm-config-9.1.0-88.0.1.el7.noarch                106/150 
+  Installing : libmodman-2.0.1-8.el7.x86_64                             107/150 
+  Installing : libproxy-0.4.11-11.el7.x86_64                            108/150 
+  Installing : elfutils-0.176-2.el7.x86_64                              109/150 
+  Installing : boost-date-time-1.53.0-27.el7.x86_64                     110/150 
+  Installing : file-5.11-35.el7.x86_64                                  111/150 
+  Installing : gettext-common-devel-0.19.8.1-2.el7.noarch               112/150 
+  Installing : gettext-devel-0.19.8.1-2.el7.x86_64                      113/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : kernel-headers-3.10.0-1062.18.1.el7.x86_64               114/150 
+  Installing : glibc-headers-2.17-292.0.1.el7.x86_64                    115/150 
+  Installing : glibc-devel-2.17-292.0.1.el7.x86_64                      116/150 
+  Installing : gcc-4.8.5-39.0.3.el7.x86_64                              117/150 
+  Installing : libquadmath-devel-4.8.5-39.0.3.el7.x86_64                118/150 
+  Installing : systemtap-devel-4.0-10.0.1.el7_7.x86_64                  119/150 
+  Installing : nettle-2.7.1-8.el7.x86_64                                120/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : gnutls-3.3.29-9.el7_6.x86_64                             121/150 
+  Installing : neon-0.30.0-4.el7.x86_64                                 122/150 
+  Installing : subversion-libs-1.7.14-14.el7.x86_64                     123/150 
+  Installing : libdwarf-20130207-4.el7.x86_64                           124/150 
+  Installing : dyninst-9.3.1-3.el7.x86_64                               125/150 
+  Installing : systemtap-runtime-4.0-10.0.1.el7_7.x86_64                126/150 
+  Installing : systemtap-client-4.0-10.0.1.el7_7.x86_64                 127/150 
+  Installing : systemtap-4.0-10.0.1.el7_7.x86_64                        128/150 
+  Installing : subversion-1.7.14-14.el7.x86_64                          129/150 
+  Installing : gcc-gfortran-4.8.5-39.0.3.el7.x86_64                     130/150 
+  Installing : libtool-2.4.2-22.el7_3.x86_64                            131/150 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : gcc-c++-4.8.5-39.0.3.el7.x86_64                          132/150 
+  Installing : intltool-0.50.2-7.el7.noarch                             133/150 
+  Installing : rpm-build-4.11.3-40.el7.x86_64                           134/150 
+  Installing : cscope-15.8-10.el7.x86_64                                135/150 
+  Installing : patchutils-0.3.3-4.el7.x86_64                            136/150 
+  Updating   : libgudev1-219-67.0.7.el7_7.4.x86_64                      137/150 
+  Installing : flex-2.5.37-6.el7.x86_64                                 138/150 
+  Installing : bison-3.0.4-2.el7.x86_64                                 139/150 
+  Installing : indent-2.2.11-13.el7.x86_64                              140/150 
+  Installing : ctags-5.8-13.el7.x86_64                                  141/150 
+  Installing : rpm-sign-4.11.3-40.el7.x86_64                            142/150 
+  Installing : byacc-1.9.20130304-3.el7.x86_64                          143/150 
+  Installing : rcs-5.9.0-5.el7.x86_64                                   144/150 
+  Installing : diffstat-1.57-4.el7.x86_64                               145/150 
+  Installing : swig-2.0.10-5.el7.x86_64                                 146/150 
+  Installing : 1:doxygen-1.8.5-3.el7.x86_64                             147/150 
+  Cleanup    : systemd-219-67.0.5.el7_7.3.x86_64                        148/150 
+  Cleanup    : libgudev1-219-67.0.5.el7_7.3.x86_64                      149/150 
+  Cleanup    : systemd-libs-219-67.0.5.el7_7.3.x86_64                   150/150 
+  Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                          1/150 
+  Verifying  : perl-Git-1.8.3.1-21.el7_7.noarch                           2/150 
+  Verifying  : apr-1.4.8-5.el7.x86_64                                     3/150 
+  Verifying  : libdwarf-20130207-4.el7.x86_64                             4/150 
+  Verifying  : nettle-2.7.1-8.el7.x86_64                                  5/150 
+  Verifying  : kernel-headers-3.10.0-1062.18.1.el7.x86_64                 6/150 
+  Verifying  : 1:doxygen-1.8.5-3.el7.x86_64                               7/150 
+  Verifying  : libgfortran-4.8.5-39.0.3.el7.x86_64                        8/150 
+  Verifying  : perl-LWP-MediaTypes-6.02-2.el7.noarch                      9/150 
+  Verifying  : perl-TermReadKey-2.30-20.el7.x86_64                       10/150 
+  Verifying  : groff-base-1.22.2-8.el7.x86_64                            11/150 
+  Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                       12/150 
+  Verifying  : boost-thread-1.53.0-27.el7.x86_64                         13/150 
+  Verifying  : perl-Business-ISBN-Data-20120719.001-2.el7.noarch         14/150 
+  Verifying  : libgomp-4.8.5-39.0.3.el7.x86_64                           15/150 
+  Verifying  : libquadmath-devel-4.8.5-39.0.3.el7.x86_64                 16/150 
+  Verifying  : swig-2.0.10-5.el7.x86_64                                  17/150 
+  Verifying  : gettext-common-devel-0.19.8.1-2.el7.noarch                18/150 
+  Verifying  : perl-Socket-2.010-4.el7.x86_64                            19/150 
+  Verifying  : perl-HTTP-Negotiate-6.01-5.el7.noarch                     20/150 
+  Verifying  : file-5.11-35.el7.x86_64                                   21/150 
+  Verifying  : boost-date-time-1.53.0-27.el7.x86_64                      22/150 
+  Verifying  : perl-Data-Dumper-2.145-3.el7.x86_64                       23/150 
+  Verifying  : rpm-build-4.11.3-40.el7.x86_64                            24/150 
+  Verifying  : perl-IO-Socket-IP-0.21-5.el7.noarch                       25/150 
+  Verifying  : perl-Storable-2.45-3.el7.x86_64                           26/150 
+  Verifying  : perl-Net-SSLeay-1.55-6.el7.x86_64                         27/150 
+  Verifying  : patchutils-0.3.3-4.el7.x86_64                             28/150 
+  Verifying  : dyninst-9.3.1-3.el7.x86_64                                29/150 
+  Verifying  : perl-Net-HTTP-6.06-2.el7.noarch                           30/150 
+  Verifying  : autoconf-2.69-11.el7.noarch                               31/150 
+  Verifying  : elfutils-0.176-2.el7.x86_64                               32/150 
+  Verifying  : perl-Mozilla-CA-20130114-5.el7.noarch                     33/150 
+  Verifying  : git-1.8.3.1-21.el7_7.x86_64                               34/150 
+  Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                    35/150 
+  Verifying  : diffstat-1.57-4.el7.x86_64                                36/150 
+  Verifying  : perl-File-Path-2.09-2.el7.noarch                          37/150 
+  Verifying  : perl-HTML-Tagset-3.20-15.el7.noarch                       38/150 
+  Verifying  : trousers-0.3.14-2.el7.x86_64                              39/150 
+  Verifying  : boost-system-1.53.0-27.el7.x86_64                         40/150 
+  Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                     41/150 
+  Verifying  : libgudev1-219-67.0.7.el7_7.4.x86_64                       42/150 
+  Verifying  : automake-1.13.4-3.el7.noarch                              43/150 
+  Verifying  : unzip-6.0-20.el7.x86_64                                   44/150 
+  Verifying  : mokutil-15-1.0.5.el7.x86_64                               45/150 
+  Verifying  : gcc-gfortran-4.8.5-39.0.3.el7.x86_64                      46/150 
+  Verifying  : perl-Compress-Raw-Bzip2-2.061-3.el7.x86_64                47/150 
+  Verifying  : subversion-1.7.14-14.el7.x86_64                           48/150 
+  Verifying  : glibc-devel-2.17-292.0.1.el7.x86_64                       49/150 
+  Verifying  : 4:perl-libs-5.16.3-294.el7_6.x86_64                       50/150 
+  Verifying  : perl-XML-Parser-2.41-10.0.1.el7.x86_64                    51/150 
+  Verifying  : 1:make-3.82-24.el7.x86_64                                 52/150 
+  Verifying  : rcs-5.9.0-5.el7.x86_64                                    53/150 
+  Verifying  : gnutls-3.3.29-9.el7_6.x86_64                              54/150 
+  Verifying  : libmodman-2.0.1-8.el7.x86_64                              55/150 
+  Verifying  : glibc-headers-2.17-292.0.1.el7.x86_64                     56/150 
+  Verifying  : 1:perl-parent-0.225-244.el7.noarch                        57/150 
+  Verifying  : systemd-libs-219-67.0.7.el7_7.4.x86_64                    58/150 
+  Verifying  : libmpc-1.0.1-3.el7.x86_64                                 59/150 
+  Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                          60/150 
+  Verifying  : perl-Encode-2.51-7.el7.x86_64                             61/150 
+  Verifying  : systemtap-4.0-10.0.1.el7_7.x86_64                         62/150 
+  Verifying  : perl-threads-1.87-4.el7.x86_64                            63/150 
+  Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                        64/150 
+  Verifying  : systemtap-client-4.0-10.0.1.el7_7.x86_64                  65/150 
+  Verifying  : perl-Digest-1.17-245.el7.noarch                           66/150 
+  Verifying  : perl-srpm-macros-1-8.el7.noarch                           67/150 
+  Verifying  : perl-URI-1.60-9.el7.noarch                                68/150 
+  Verifying  : perl-File-Listing-6.04-7.el7.noarch                       69/150 
+  Verifying  : perl-Business-ISBN-2.06-2.el7.noarch                      70/150 
+  Verifying  : mailcap-2.1.41-2.el7.noarch                               71/150 
+  Verifying  : perl-threads-shared-1.43-6.el7.x86_64                     72/150 
+  Verifying  : gettext-devel-0.19.8.1-2.el7.x86_64                       73/150 
+  Verifying  : 1:perl-Pod-Escapes-1.04-294.el7_6.noarch                  74/150 
+  Verifying  : gettext-0.19.8.1-2.el7.x86_64                             75/150 
+  Verifying  : libunistring-0.9.3-9.el7.x86_64                           76/150 
+  Verifying  : byacc-1.9.20130304-3.el7.x86_64                           77/150 
+  Verifying  : m4-1.4.16-10.el7.x86_64                                   78/150 
+  Verifying  : libstdc++-devel-4.8.5-39.0.3.el7.x86_64                   79/150 
+  Verifying  : gettext-libs-0.19.8.1-2.el7.x86_64                        80/150 
+  Verifying  : perl-HTML-Parser-3.71-4.el7.x86_64                        81/150 
+  Verifying  : avahi-libs-0.6.31-19.el7.x86_64                           82/150 
+  Verifying  : libcroco-0.6.12-4.el7.x86_64                              83/150 
+  Verifying  : perl-HTTP-Message-6.06-6.el7.noarch                       84/150 
+  Verifying  : systemd-219-67.0.7.el7_7.4.x86_64                         85/150 
+  Verifying  : perl-Test-Harness-3.28-3.el7.noarch                       86/150 
+  Verifying  : perl-WWW-RobotRules-6.02-5.el7.noarch                     87/150 
+  Verifying  : apr-util-1.5.2-6.0.1.el7.x86_64                           88/150 
+  Verifying  : 1:openssl-1.0.2k-19.0.1.el7.x86_64                        89/150 
+  Verifying  : libtool-2.4.2-22.el7_3.x86_64                             90/150 
+  Verifying  : patch-2.7.1-12.el7_7.x86_64                               91/150 
+  Verifying  : systemd-sysv-219-67.0.7.el7_7.4.x86_64                    92/150 
+  Verifying  : perl-Carp-1.26-244.el7.noarch                             93/150 
+  Verifying  : perl-Digest-MD5-2.52-3.el7.x86_64                         94/150 
+  Verifying  : perl-HTTP-Cookies-6.01-5.el7.noarch                       95/150 
+  Verifying  : flex-2.5.37-6.el7.x86_64                                  96/150 
+  Verifying  : redhat-rpm-config-9.1.0-88.0.1.el7.noarch                 97/150 
+  Verifying  : perl-HTTP-Daemon-6.01-8.el7.noarch                        98/150 
+  Verifying  : perl-IO-HTML-1.00-2.el7.noarch                            99/150 
+  Verifying  : perl-IO-Socket-SSL-1.94-7.el7.noarch                     100/150 
+  Verifying  : cscope-15.8-10.el7.x86_64                                101/150 
+  Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                       102/150 
+  Verifying  : 1:perl-TimeDate-2.30-2.el7.noarch                        103/150 
+  Verifying  : mpfr-3.1.1-4.el7.x86_64                                  104/150 
+  Verifying  : efivar-libs-36-12.el7.x86_64                             105/150 
+  Verifying  : perl-Filter-1.49-3.el7.x86_64                            106/150 
+  Verifying  : dwz-0.11-3.el7.x86_64                                    107/150 
+  Verifying  : 4:perl-5.16.3-294.el7_6.x86_64                           108/150 
+  Verifying  : pakchois-0.4-10.el7.x86_64                               109/150 
+  Verifying  : less-458-9.el7.x86_64                                    110/150 
+  Verifying  : rpm-sign-4.11.3-40.el7.x86_64                            111/150 
+  Verifying  : systemtap-runtime-4.0-10.0.1.el7_7.x86_64                112/150 
+  Verifying  : ctags-5.8-13.el7.x86_64                                  113/150 
+  Verifying  : systemtap-devel-4.0-10.0.1.el7_7.x86_64                  114/150 
+  Verifying  : kernel-debug-devel-3.10.0-1062.18.1.el7.x86_64           115/150 
+  Verifying  : perl-IO-Compress-2.061-2.el7.noarch                      116/150 
+  Verifying  : perl-Exporter-5.68-3.el7.noarch                          117/150 
+  Verifying  : perl-constant-1.27-2.el7.noarch                          118/150 
+  Verifying  : perl-PathTools-3.40-5.el7.x86_64                         119/150 
+  Verifying  : neon-0.30.0-4.el7.x86_64                                 120/150 
+  Verifying  : 1:emacs-filesystem-24.3-22.el7.noarch                    121/150 
+  Verifying  : rsync-3.1.2-6.el7_6.1.x86_64                             122/150 
+  Verifying  : perl-Thread-Queue-3.02-2.el7.noarch                      123/150 
+  Verifying  : perl-HTTP-Date-6.02-8.el7.noarch                         124/150 
+  Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                      125/150 
+  Verifying  : python-srpm-macros-3-32.el7.noarch                       126/150 
+  Verifying  : perl-Time-Local-1.2300-2.el7.noarch                      127/150 
+  Verifying  : intltool-0.50.2-7.el7.noarch                             128/150 
+  Verifying  : perl-Encode-Locale-1.03-5.el7.noarch                     129/150 
+  Verifying  : 4:perl-macros-5.16.3-294.el7_6.x86_64                    130/150 
+  Verifying  : gcc-c++-4.8.5-39.0.3.el7.x86_64                          131/150 
+  Verifying  : 1:perl-Error-0.17020-2.el7.noarch                        132/150 
+  Verifying  : indent-2.2.11-13.el7.x86_64                              133/150 
+  Verifying  : bzip2-1.0.6-13.el7.x86_64                                134/150 
+  Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64               135/150 
+  Verifying  : 1:perl-Compress-Raw-Zlib-2.061-4.el7.x86_64              136/150 
+  Verifying  : perl-libwww-perl-6.05-2.el7.noarch                       137/150 
+  Verifying  : libproxy-0.4.11-11.el7.x86_64                            138/150 
+  Verifying  : bison-3.0.4-2.el7.x86_64                                 139/150 
+  Verifying  : perl-podlators-2.5.1-3.el7.noarch                        140/150 
+  Verifying  : subversion-libs-1.7.14-14.el7.x86_64                     141/150 
+  Verifying  : zip-3.0-11.el7.x86_64                                    142/150 
+  Verifying  : libquadmath-4.8.5-39.0.3.el7.x86_64                      143/150 
+  Verifying  : gdb-7.6.1-115.el7.x86_64                                 144/150 
+  Verifying  : cpp-4.8.5-39.0.3.el7.x86_64                              145/150 
+  Verifying  : perl-Net-LibIDN-0.12-15.el7.x86_64                       146/150 
+  Verifying  : gcc-4.8.5-39.0.3.el7.x86_64                              147/150 
+  Verifying  : systemd-libs-219-67.0.5.el7_7.3.x86_64                   148/150 
+  Verifying  : systemd-219-67.0.5.el7_7.3.x86_64                        149/150 
+  Verifying  : libgudev1-219-67.0.5.el7_7.3.x86_64                      150/150 
+
+Installed:
+  autoconf.noarch 0:2.69-11.el7                                                 
+  automake.noarch 0:1.13.4-3.el7                                                
+  bison.x86_64 0:3.0.4-2.el7                                                    
+  byacc.x86_64 0:1.9.20130304-3.el7                                             
+  cscope.x86_64 0:15.8-10.el7                                                   
+  ctags.x86_64 0:5.8-13.el7                                                     
+  diffstat.x86_64 0:1.57-4.el7                                                  
+  doxygen.x86_64 1:1.8.5-3.el7                                                  
+  elfutils.x86_64 0:0.176-2.el7                                                 
+  flex.x86_64 0:2.5.37-6.el7                                                    
+  gcc.x86_64 0:4.8.5-39.0.3.el7                                                 
+  gcc-c++.x86_64 0:4.8.5-39.0.3.el7                                             
+  gcc-gfortran.x86_64 0:4.8.5-39.0.3.el7                                        
+  gettext.x86_64 0:0.19.8.1-2.el7                                               
+  git.x86_64 0:1.8.3.1-21.el7_7                                                 
+  indent.x86_64 0:2.2.11-13.el7                                                 
+  intltool.noarch 0:0.50.2-7.el7                                                
+  libtool.x86_64 0:2.4.2-22.el7_3                                               
+  make.x86_64 1:3.82-24.el7                                                     
+  patch.x86_64 0:2.7.1-12.el7_7                                                 
+  patchutils.x86_64 0:0.3.3-4.el7                                               
+  rcs.x86_64 0:5.9.0-5.el7                                                      
+  redhat-rpm-config.noarch 0:9.1.0-88.0.1.el7                                   
+  rpm-build.x86_64 0:4.11.3-40.el7                                              
+  rpm-sign.x86_64 0:4.11.3-40.el7                                               
+  subversion.x86_64 0:1.7.14-14.el7                                             
+  swig.x86_64 0:2.0.10-5.el7                                                    
+  systemtap.x86_64 0:4.0-10.0.1.el7_7                                           
+
+Dependency Installed:
+  apr.x86_64 0:1.4.8-5.el7                                                      
+  apr-util.x86_64 0:1.5.2-6.0.1.el7                                             
+  avahi-libs.x86_64 0:0.6.31-19.el7                                             
+  boost-date-time.x86_64 0:1.53.0-27.el7                                        
+  boost-system.x86_64 0:1.53.0-27.el7                                           
+  boost-thread.x86_64 0:1.53.0-27.el7                                           
+  bzip2.x86_64 0:1.0.6-13.el7                                                   
+  cpp.x86_64 0:4.8.5-39.0.3.el7                                                 
+  dwz.x86_64 0:0.11-3.el7                                                       
+  dyninst.x86_64 0:9.3.1-3.el7                                                  
+  efivar-libs.x86_64 0:36-12.el7                                                
+  emacs-filesystem.noarch 1:24.3-22.el7                                         
+  file.x86_64 0:5.11-35.el7                                                     
+  gdb.x86_64 0:7.6.1-115.el7                                                    
+  gettext-common-devel.noarch 0:0.19.8.1-2.el7                                  
+  gettext-devel.x86_64 0:0.19.8.1-2.el7                                         
+  gettext-libs.x86_64 0:0.19.8.1-2.el7                                          
+  glibc-devel.x86_64 0:2.17-292.0.1.el7                                         
+  glibc-headers.x86_64 0:2.17-292.0.1.el7                                       
+  gnutls.x86_64 0:3.3.29-9.el7_6                                                
+  groff-base.x86_64 0:1.22.2-8.el7                                              
+  kernel-debug-devel.x86_64 0:3.10.0-1062.18.1.el7                              
+  kernel-headers.x86_64 0:3.10.0-1062.18.1.el7                                  
+  less.x86_64 0:458-9.el7                                                       
+  libcroco.x86_64 0:0.6.12-4.el7                                                
+  libdwarf.x86_64 0:20130207-4.el7                                              
+  libgfortran.x86_64 0:4.8.5-39.0.3.el7                                         
+  libgomp.x86_64 0:4.8.5-39.0.3.el7                                             
+  libmodman.x86_64 0:2.0.1-8.el7                                                
+  libmpc.x86_64 0:1.0.1-3.el7                                                   
+  libproxy.x86_64 0:0.4.11-11.el7                                               
+  libquadmath.x86_64 0:4.8.5-39.0.3.el7                                         
+  libquadmath-devel.x86_64 0:4.8.5-39.0.3.el7                                   
+  libstdc++-devel.x86_64 0:4.8.5-39.0.3.el7                                     
+  libunistring.x86_64 0:0.9.3-9.el7                                             
+  m4.x86_64 0:1.4.16-10.el7                                                     
+  mailcap.noarch 0:2.1.41-2.el7                                                 
+  mokutil.x86_64 0:15-1.0.5.el7                                                 
+  mpfr.x86_64 0:3.1.1-4.el7                                                     
+  neon.x86_64 0:0.30.0-4.el7                                                    
+  nettle.x86_64 0:2.7.1-8.el7                                                   
+  openssl.x86_64 1:1.0.2k-19.0.1.el7                                            
+  pakchois.x86_64 0:0.4-10.el7                                                  
+  perl.x86_64 4:5.16.3-294.el7_6                                                
+  perl-Business-ISBN.noarch 0:2.06-2.el7                                        
+  perl-Business-ISBN-Data.noarch 0:20120719.001-2.el7                           
+  perl-Carp.noarch 0:1.26-244.el7                                               
+  perl-Compress-Raw-Bzip2.x86_64 0:2.061-3.el7                                  
+  perl-Compress-Raw-Zlib.x86_64 1:2.061-4.el7                                   
+  perl-Data-Dumper.x86_64 0:2.145-3.el7                                         
+  perl-Digest.noarch 0:1.17-245.el7                                             
+  perl-Digest-MD5.x86_64 0:2.52-3.el7                                           
+  perl-Encode.x86_64 0:2.51-7.el7                                               
+  perl-Encode-Locale.noarch 0:1.03-5.el7                                        
+  perl-Error.noarch 1:0.17020-2.el7                                             
+  perl-Exporter.noarch 0:5.68-3.el7                                             
+  perl-File-Listing.noarch 0:6.04-7.el7                                         
+  perl-File-Path.noarch 0:2.09-2.el7                                            
+  perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+  perl-Filter.x86_64 0:1.49-3.el7                                               
+  perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+  perl-Git.noarch 0:1.8.3.1-21.el7_7                                            
+  perl-HTML-Parser.x86_64 0:3.71-4.el7                                          
+  perl-HTML-Tagset.noarch 0:3.20-15.el7                                         
+  perl-HTTP-Cookies.noarch 0:6.01-5.el7                                         
+  perl-HTTP-Daemon.noarch 0:6.01-8.el7                                          
+  perl-HTTP-Date.noarch 0:6.02-8.el7                                            
+  perl-HTTP-Message.noarch 0:6.06-6.el7                                         
+  perl-HTTP-Negotiate.noarch 0:6.01-5.el7                                       
+  perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+  perl-IO-Compress.noarch 0:2.061-2.el7                                         
+  perl-IO-HTML.noarch 0:1.00-2.el7                                              
+  perl-IO-Socket-IP.noarch 0:0.21-5.el7                                         
+  perl-IO-Socket-SSL.noarch 0:1.94-7.el7                                        
+  perl-LWP-MediaTypes.noarch 0:6.02-2.el7                                       
+  perl-Mozilla-CA.noarch 0:20130114-5.el7                                       
+  perl-Net-HTTP.noarch 0:6.06-2.el7                                             
+  perl-Net-LibIDN.x86_64 0:0.12-15.el7                                          
+  perl-Net-SSLeay.x86_64 0:1.55-6.el7                                           
+  perl-PathTools.x86_64 0:3.40-5.el7                                            
+  perl-Pod-Escapes.noarch 1:1.04-294.el7_6                                      
+  perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+  perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+  perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+  perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+  perl-Socket.x86_64 0:2.010-4.el7                                              
+  perl-Storable.x86_64 0:2.45-3.el7                                             
+  perl-TermReadKey.x86_64 0:2.30-20.el7                                         
+  perl-Test-Harness.noarch 0:3.28-3.el7                                         
+  perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+  perl-Thread-Queue.noarch 0:3.02-2.el7                                         
+  perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+  perl-Time-Local.noarch 0:1.2300-2.el7                                         
+  perl-TimeDate.noarch 1:2.30-2.el7                                             
+  perl-URI.noarch 0:1.60-9.el7                                                  
+  perl-WWW-RobotRules.noarch 0:6.02-5.el7                                       
+  perl-XML-Parser.x86_64 0:2.41-10.0.1.el7                                      
+  perl-constant.noarch 0:1.27-2.el7                                             
+  perl-libs.x86_64 4:5.16.3-294.el7_6                                           
+  perl-libwww-perl.noarch 0:6.05-2.el7                                          
+  perl-macros.x86_64 4:5.16.3-294.el7_6                                         
+  perl-parent.noarch 1:0.225-244.el7                                            
+  perl-podlators.noarch 0:2.5.1-3.el7                                           
+  perl-srpm-macros.noarch 0:1-8.el7                                             
+  perl-threads.x86_64 0:1.87-4.el7                                              
+  perl-threads-shared.x86_64 0:1.43-6.el7                                       
+  python-srpm-macros.noarch 0:3-32.el7                                          
+  rsync.x86_64 0:3.1.2-6.el7_6.1                                                
+  subversion-libs.x86_64 0:1.7.14-14.el7                                        
+  systemd-sysv.x86_64 0:219-67.0.7.el7_7.4                                      
+  systemtap-client.x86_64 0:4.0-10.0.1.el7_7                                    
+  systemtap-devel.x86_64 0:4.0-10.0.1.el7_7                                     
+  systemtap-runtime.x86_64 0:4.0-10.0.1.el7_7                                   
+  trousers.x86_64 0:0.3.14-2.el7                                                
+  unzip.x86_64 0:6.0-20.el7                                                     
+  zip.x86_64 0:3.0-11.el7                                                       
+
+Dependency Updated:
+  libgudev1.x86_64 0:219-67.0.7.el7_7.4     systemd.x86_64 0:219-67.0.7.el7_7.4 
+  systemd-libs.x86_64 0:219-67.0.7.el7_7.4 
+
+Complete!
+Removing intermediate container 5d2141e0216c
+ ---> 31d42dbdd39e
+Step 3/9 : RUN yum install -y --enablerepo=ol7_optional_latest btrfs-progs-devel device-mapper-devel glibc-static libseccomp-devel libselinux-devel libtool-ltdl-devel pkgconfig selinux-policy selinux-policy-devel systemd-devel tar git cmake vim-common
+ ---> Running in db72ed330026
+Loaded plugins: ovl, ulninfo
+Package 1:pkgconfig-0.27.1-4.el7.x86_64 already installed and latest version
+Package 2:tar-1.26-35.el7.x86_64 already installed and latest version
+Package git-1.8.3.1-21.el7_7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package btrfs-progs-devel.x86_64 0:4.15.1-1.el7 will be installed
+--> Processing Dependency: btrfs-progs = 4.15.1-1.el7 for package: btrfs-progs-devel-4.15.1-1.el7.x86_64
+--> Processing Dependency: libbtrfs.so.0()(64bit) for package: btrfs-progs-devel-4.15.1-1.el7.x86_64
+---> Package cmake.x86_64 0:2.8.12.2-2.el7 will be installed
+--> Processing Dependency: libarchive.so.13()(64bit) for package: cmake-2.8.12.2-2.el7.x86_64
+---> Package device-mapper-devel.x86_64 7:1.02.158-2.0.1.el7_7.2 will be installed
+---> Package glibc-static.x86_64 0:2.17-292.0.1.el7 will be installed
+---> Package libseccomp-devel.x86_64 0:2.3.1-3.el7 will be installed
+--> Processing Dependency: libseccomp(x86-64) = 2.3.1-3.el7 for package: libseccomp-devel-2.3.1-3.el7.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: libseccomp-devel-2.3.1-3.el7.x86_64
+---> Package libselinux-devel.x86_64 0:2.5-14.1.el7 will be installed
+--> Processing Dependency: libsepol-devel(x86-64) >= 2.5-10 for package: libselinux-devel-2.5-14.1.el7.x86_64
+--> Processing Dependency: pkgconfig(libpcre) for package: libselinux-devel-2.5-14.1.el7.x86_64
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.5-14.1.el7.x86_64
+---> Package libtool-ltdl-devel.x86_64 0:2.4.2-22.el7_3 will be installed
+--> Processing Dependency: libtool-ltdl = 2.4.2-22.el7_3 for package: libtool-ltdl-devel-2.4.2-22.el7_3.x86_64
+--> Processing Dependency: libltdl.so.7()(64bit) for package: libtool-ltdl-devel-2.4.2-22.el7_3.x86_64
+---> Package selinux-policy.noarch 0:3.13.1-252.0.2.el7_7.6 will be installed
+---> Package selinux-policy-devel.noarch 0:3.13.1-252.0.2.el7_7.6 will be installed
+--> Processing Dependency: checkpolicy >= 2.5-8 for package: selinux-policy-devel-3.13.1-252.0.2.el7_7.6.noarch
+--> Processing Dependency: policycoreutils-devel >= 2.5-24 for package: selinux-policy-devel-3.13.1-252.0.2.el7_7.6.noarch
+---> Package systemd-devel.x86_64 0:219-67.0.7.el7_7.4 will be installed
+---> Package vim-common.x86_64 2:7.4.629-6.el7 will be installed
+--> Processing Dependency: vim-filesystem for package: 2:vim-common-7.4.629-6.el7.x86_64
+--> Running transaction check
+---> Package btrfs-progs.x86_64 0:4.15.1-1.el7 will be installed
+--> Processing Dependency: libzstd.so.1()(64bit) for package: btrfs-progs-4.15.1-1.el7.x86_64
+--> Processing Dependency: libext2fs.so.2()(64bit) for package: btrfs-progs-4.15.1-1.el7.x86_64
+--> Processing Dependency: liblzo2.so.2()(64bit) for package: btrfs-progs-4.15.1-1.el7.x86_64
+---> Package checkpolicy.x86_64 0:2.5-8.el7 will be installed
+---> Package libarchive.x86_64 0:3.1.2-14.el7_7 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-3.el7 will be installed
+---> Package libsepol-devel.x86_64 0:2.5-10.el7 will be installed
+---> Package libtool-ltdl.x86_64 0:2.4.2-22.el7_3 will be installed
+---> Package pcre-devel.x86_64 0:8.32-17.el7 will be installed
+---> Package policycoreutils-devel.x86_64 0:2.5-33.0.1.el7 will be installed
+--> Processing Dependency: policycoreutils-python = 2.5-33.0.1.el7 for package: policycoreutils-devel-2.5-33.0.1.el7.x86_64
+---> Package vim-filesystem.x86_64 2:7.4.629-6.el7 will be installed
+--> Running transaction check
+---> Package e2fsprogs-libs.x86_64 0:1.42.9-16.el7 will be installed
+---> Package libzstd.x86_64 0:1.3.4-1.el7 will be installed
+---> Package lzo.x86_64 0:2.06-8.el7 will be installed
+---> Package policycoreutils-python.x86_64 0:2.5-33.0.1.el7 will be installed
+--> Processing Dependency: audit-libs-python >= 2.1.3-4 for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: setools-libs >= 3.3.8-4 for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libsemanage-python >= 2.5-14 for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: python-IPy for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libqpol.so.1(VERS_1.2)(64bit) for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libcgroup for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libqpol.so.1(VERS_1.4)(64bit) for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libselinux-python for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libapol.so.4(VERS_4.0)(64bit) for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libapol.so.4()(64bit) for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Processing Dependency: libqpol.so.1()(64bit) for package: policycoreutils-python-2.5-33.0.1.el7.x86_64
+--> Running transaction check
+---> Package audit-libs-python.x86_64 0:2.8.5-4.el7 will be installed
+---> Package libcgroup.x86_64 0:0.41-21.el7 will be installed
+---> Package libselinux-python.x86_64 0:2.5-14.1.el7 will be installed
+---> Package libsemanage-python.x86_64 0:2.5-14.el7 will be installed
+---> Package python-IPy.noarch 0:0.75-6.el7 will be installed
+---> Package setools-libs.x86_64 0:3.3.8-4.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch   Version                Repository           Size
+================================================================================
+Installing:
+ btrfs-progs-devel      x86_64 4.15.1-1.el7           ol7_UEKR5            41 k
+ cmake                  x86_64 2.8.12.2-2.el7         ol7_latest          7.0 M
+ device-mapper-devel    x86_64 7:1.02.158-2.0.1.el7_7.2
+                                                      ol7_optional_latest 203 k
+ glibc-static           x86_64 2.17-292.0.1.el7       ol7_optional_latest 1.6 M
+ libseccomp-devel       x86_64 2.3.1-3.el7            ol7_optional_latest  63 k
+ libselinux-devel       x86_64 2.5-14.1.el7           ol7_latest          186 k
+ libtool-ltdl-devel     x86_64 2.4.2-22.el7_3         ol7_latest          167 k
+ selinux-policy         noarch 3.13.1-252.0.2.el7_7.6 ol7_latest          493 k
+ selinux-policy-devel   noarch 3.13.1-252.0.2.el7_7.6 ol7_latest          1.7 M
+ systemd-devel          x86_64 219-67.0.7.el7_7.4     ol7_latest          208 k
+ vim-common             x86_64 2:7.4.629-6.el7        ol7_latest          5.9 M
+Installing for dependencies:
+ audit-libs-python      x86_64 2.8.5-4.el7            ol7_latest           76 k
+ btrfs-progs            x86_64 4.15.1-1.el7           ol7_UEKR5           765 k
+ checkpolicy            x86_64 2.5-8.el7              ol7_latest          294 k
+ e2fsprogs-libs         x86_64 1.42.9-16.el7          ol7_latest          167 k
+ libarchive             x86_64 3.1.2-14.el7_7         ol7_latest          319 k
+ libcgroup              x86_64 0.41-21.el7            ol7_latest           66 k
+ libseccomp             x86_64 2.3.1-3.el7            ol7_latest           55 k
+ libselinux-python      x86_64 2.5-14.1.el7           ol7_latest          235 k
+ libsemanage-python     x86_64 2.5-14.el7             ol7_latest          112 k
+ libsepol-devel         x86_64 2.5-10.el7             ol7_latest           76 k
+ libtool-ltdl           x86_64 2.4.2-22.el7_3         ol7_latest           48 k
+ libzstd                x86_64 1.3.4-1.el7            ol7_UEKR5           212 k
+ lzo                    x86_64 2.06-8.el7             ol7_latest           58 k
+ pcre-devel             x86_64 8.32-17.el7            ol7_latest          479 k
+ policycoreutils-devel  x86_64 2.5-33.0.1.el7         ol7_latest          335 k
+ policycoreutils-python x86_64 2.5-33.0.1.el7         ol7_latest          457 k
+ python-IPy             noarch 0.75-6.el7             ol7_latest           32 k
+ setools-libs           x86_64 3.3.8-4.el7            ol7_latest          620 k
+ vim-filesystem         x86_64 2:7.4.629-6.el7        ol7_latest           10 k
+
+Transaction Summary
+================================================================================
+Install  11 Packages (+19 Dependent packages)
+
+Total download size: 22 M
+Installed size: 95 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               18 MB/s |  22 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : checkpolicy-2.5-8.el7.x86_64                                1/30 
+  Installing : lzo-2.06-8.el7.x86_64                                       2/30 
+  Installing : libarchive-3.1.2-14.el7_7.x86_64                            3/30 
+  Installing : libcgroup-0.41-21.el7.x86_64                                4/30 
+  Installing : e2fsprogs-libs-1.42.9-16.el7.x86_64                         5/30 
+  Installing : pcre-devel-8.32-17.el7.x86_64                               6/30 
+  Installing : 2:vim-filesystem-7.4.629-6.el7.x86_64                       7/30 
+  Installing : libselinux-python-2.5-14.1.el7.x86_64                       8/30 
+  Installing : libsepol-devel-2.5-10.el7.x86_64                            9/30 
+  Installing : libselinux-devel-2.5-14.1.el7.x86_64                       10/30 
+  Installing : audit-libs-python-2.8.5-4.el7.x86_64                       11/30 
+  Installing : libsemanage-python-2.5-14.el7.x86_64                       12/30 
+  Installing : setools-libs-3.3.8-4.el7.x86_64                            13/30 
+  Installing : selinux-policy-3.13.1-252.0.2.el7_7.6.noarch               14/30 
+  Installing : libzstd-1.3.4-1.el7.x86_64                                 15/30 
+  Installing : btrfs-progs-4.15.1-1.el7.x86_64                            16/30 
+  Installing : libtool-ltdl-2.4.2-22.el7_3.x86_64                         17/30 
+  Installing : python-IPy-0.75-6.el7.noarch                               18/30 
+  Installing : policycoreutils-python-2.5-33.0.1.el7.x86_64               19/30 
+  Installing : policycoreutils-devel-2.5-33.0.1.el7.x86_64                20/30 
+  Installing : selinux-policy-devel-3.13.1-252.0.2.el7_7.6.noarch         21/30 
+  Installing : systemd-devel-219-67.0.7.el7_7.4.x86_64                    22/30 
+  Installing : libseccomp-2.3.1-3.el7.x86_64                              23/30 
+  Installing : libseccomp-devel-2.3.1-3.el7.x86_64                        24/30 
+  Installing : 7:device-mapper-devel-1.02.158-2.0.1.el7_7.2.x86_64        25/30 
+  Installing : libtool-ltdl-devel-2.4.2-22.el7_3.x86_64                   26/30 
+  Installing : btrfs-progs-devel-4.15.1-1.el7.x86_64                      27/30 
+  Installing : 2:vim-common-7.4.629-6.el7.x86_64                          28/30 
+  Installing : cmake-2.8.12.2-2.el7.x86_64                                29/30 
+  Installing : glibc-static-2.17-292.0.1.el7.x86_64                       30/30 
+  Verifying  : btrfs-progs-4.15.1-1.el7.x86_64                             1/30 
+  Verifying  : libtool-ltdl-devel-2.4.2-22.el7_3.x86_64                    2/30 
+  Verifying  : libseccomp-2.3.1-3.el7.x86_64                               3/30 
+  Verifying  : systemd-devel-219-67.0.7.el7_7.4.x86_64                     4/30 
+  Verifying  : lzo-2.06-8.el7.x86_64                                       5/30 
+  Verifying  : selinux-policy-devel-3.13.1-252.0.2.el7_7.6.noarch          6/30 
+  Verifying  : checkpolicy-2.5-8.el7.x86_64                                7/30 
+  Verifying  : glibc-static-2.17-292.0.1.el7.x86_64                        8/30 
+  Verifying  : libseccomp-devel-2.3.1-3.el7.x86_64                         9/30 
+  Verifying  : python-IPy-0.75-6.el7.noarch                               10/30 
+  Verifying  : libtool-ltdl-2.4.2-22.el7_3.x86_64                         11/30 
+  Verifying  : policycoreutils-devel-2.5-33.0.1.el7.x86_64                12/30 
+  Verifying  : 7:device-mapper-devel-1.02.158-2.0.1.el7_7.2.x86_64        13/30 
+  Verifying  : libzstd-1.3.4-1.el7.x86_64                                 14/30 
+  Verifying  : selinux-policy-3.13.1-252.0.2.el7_7.6.noarch               15/30 
+  Verifying  : setools-libs-3.3.8-4.el7.x86_64                            16/30 
+  Verifying  : policycoreutils-python-2.5-33.0.1.el7.x86_64               17/30 
+  Verifying  : libarchive-3.1.2-14.el7_7.x86_64                           18/30 
+  Verifying  : libsemanage-python-2.5-14.el7.x86_64                       19/30 
+  Verifying  : audit-libs-python-2.8.5-4.el7.x86_64                       20/30 
+  Verifying  : libsepol-devel-2.5-10.el7.x86_64                           21/30 
+  Verifying  : 2:vim-common-7.4.629-6.el7.x86_64                          22/30 
+  Verifying  : libselinux-python-2.5-14.1.el7.x86_64                      23/30 
+  Verifying  : 2:vim-filesystem-7.4.629-6.el7.x86_64                      24/30 
+  Verifying  : pcre-devel-8.32-17.el7.x86_64                              25/30 
+  Verifying  : cmake-2.8.12.2-2.el7.x86_64                                26/30 
+  Verifying  : e2fsprogs-libs-1.42.9-16.el7.x86_64                        27/30 
+  Verifying  : btrfs-progs-devel-4.15.1-1.el7.x86_64                      28/30 
+  Verifying  : libselinux-devel-2.5-14.1.el7.x86_64                       29/30 
+  Verifying  : libcgroup-0.41-21.el7.x86_64                               30/30 
+
+Installed:
+  btrfs-progs-devel.x86_64 0:4.15.1-1.el7                                       
+  cmake.x86_64 0:2.8.12.2-2.el7                                                 
+  device-mapper-devel.x86_64 7:1.02.158-2.0.1.el7_7.2                           
+  glibc-static.x86_64 0:2.17-292.0.1.el7                                        
+  libseccomp-devel.x86_64 0:2.3.1-3.el7                                         
+  libselinux-devel.x86_64 0:2.5-14.1.el7                                        
+  libtool-ltdl-devel.x86_64 0:2.4.2-22.el7_3                                    
+  selinux-policy.noarch 0:3.13.1-252.0.2.el7_7.6                                
+  selinux-policy-devel.noarch 0:3.13.1-252.0.2.el7_7.6                          
+  systemd-devel.x86_64 0:219-67.0.7.el7_7.4                                     
+  vim-common.x86_64 2:7.4.629-6.el7                                             
+
+Dependency Installed:
+  audit-libs-python.x86_64 0:2.8.5-4.el7                                        
+  btrfs-progs.x86_64 0:4.15.1-1.el7                                             
+  checkpolicy.x86_64 0:2.5-8.el7                                                
+  e2fsprogs-libs.x86_64 0:1.42.9-16.el7                                         
+  libarchive.x86_64 0:3.1.2-14.el7_7                                            
+  libcgroup.x86_64 0:0.41-21.el7                                                
+  libseccomp.x86_64 0:2.3.1-3.el7                                               
+  libselinux-python.x86_64 0:2.5-14.1.el7                                       
+  libsemanage-python.x86_64 0:2.5-14.el7                                        
+  libsepol-devel.x86_64 0:2.5-10.el7                                            
+  libtool-ltdl.x86_64 0:2.4.2-22.el7_3                                          
+  libzstd.x86_64 0:1.3.4-1.el7                                                  
+  lzo.x86_64 0:2.06-8.el7                                                       
+  pcre-devel.x86_64 0:8.32-17.el7                                               
+  policycoreutils-devel.x86_64 0:2.5-33.0.1.el7                                 
+  policycoreutils-python.x86_64 0:2.5-33.0.1.el7                                
+  python-IPy.noarch 0:0.75-6.el7                                                
+  setools-libs.x86_64 0:3.3.8-4.el7                                             
+  vim-filesystem.x86_64 2:7.4.629-6.el7                                         
+
+Complete!
+Removing intermediate container db72ed330026
+ ---> 7c82b78f347d
+Step 4/9 : ENV GO_VERSION 1.7.5
+ ---> Running in c78fde1104e8
+Removing intermediate container c78fde1104e8
+ ---> 5cd76118be0c
+Step 5/9 : RUN curl -fSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar xzC /usr/local
+ ---> Running in f8e64c0a9508
+[91m  % Total    % Received % Xferd  Average Speed   Ti[0m[91mme    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Lef[0m[91mt  Speed
+  0     0 [0m[91m   0     0   [0m[91m 0     0      0      0 --:[0m[91m--:-- --:--:-- --:--:--     0[0m[91m100    74  100    74    0     0    459      0 --:--:-- --:--:-- --:--:--   462
+[0m[91m  0 80.2M    0   954    0     0   2373      0  9:51:12 --:--:--  9:51:12  2373[0m[91m 44 80.2M   44 35.3M    0     0  26.0M      0  0:[0m[91m00:03  0:00:01  0:00:02 37.0M[0m[91m 83 80.2M   83 67.1M    0     0  28.4M      0  0:00:02  0:00:02 --:--:-- 34.3M[0m[91m100 80.2M  100 80.2M    0     0  27.6M     [0m[91m 0  0:00:02  0:00:02 --:--:-- 32.1M
+[0mRemoving intermediate container f8e64c0a9508
+ ---> 6beda1957022
+Step 6/9 : ENV PATH $PATH:/usr/local/go/bin
+ ---> Running in f838dc6f738e
+Removing intermediate container f838dc6f738e
+ ---> 5b85178311cc
+Step 7/9 : ENV AUTO_GOPATH 1
+ ---> Running in 8538143f53cb
+Removing intermediate container 8538143f53cb
+ ---> a83061ceef54
+Step 8/9 : ENV DOCKER_BUILDTAGS pkcs11 seccomp selinux
+ ---> Running in bae0defd394d
+Removing intermediate container bae0defd394d
+ ---> 741ee5a687b8
+Step 9/9 : ENV RUNC_BUILDTAGS seccomp selinux
+ ---> Running in 9e26362e11f6
+Removing intermediate container 9e26362e11f6
+ ---> c38c0e529a46
+Successfully built c38c0e529a46
+Successfully tagged binacle:484097275

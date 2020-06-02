@@ -1,0 +1,68 @@
+Sending build context to Docker daemon  2.048kB
+[91m[WARNING]: Empty continuation line found in:
+    RUN echo hello this is some more useful stuff
+[WARNING]: Empty continuation lines will become errors in a future release.
+[0mStep 1/10 : FROM ubuntu:14.04
+14.04: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+b7a5bcc4a58a: Verifying Checksum
+b7a5bcc4a58a: Download complete
+30bb187ac3fc: Verifying Checksum
+30bb187ac3fc: Download complete
+2e6e20c8e2e6: Verifying Checksum
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:14.04
+ ---> 6e4f1fe62ff1
+Step 2/10 : RUN echo hello  world  goodnight    moon  lightning
+ ---> Running in 4e4c4a3cb1e9
+hello world goodnight moon lightning
+Removing intermediate container 4e4c4a3cb1e9
+ ---> bd1938d20aae
+Step 3/10 : RUN echo hello    world
+ ---> Running in 67ce1856be60
+hello world
+Removing intermediate container 67ce1856be60
+ ---> 9797cabf188d
+Step 4/10 : RUN echo hello  world
+ ---> Running in ec90f2aa84bd
+hello world
+Removing intermediate container ec90f2aa84bd
+ ---> 7186b1d23046
+Step 5/10 : RUN echo hello goodbyefrog
+ ---> Running in 3b010675f04a
+hello goodbyefrog
+Removing intermediate container 3b010675f04a
+ ---> c86481f56e9f
+Step 6/10 : RUN echo hello  world
+ ---> Running in 40b158f2102d
+hello world
+Removing intermediate container 40b158f2102d
+ ---> cbc6c12def39
+Step 7/10 : RUN echo hi   world  goodnight
+ ---> Running in 1ddd8b370f8d
+hi world goodnight
+Removing intermediate container 1ddd8b370f8d
+ ---> 2f06cc08279e
+Step 8/10 : RUN echo goodbyefrog
+ ---> Running in fa44ff1ece7d
+goodbyefrog
+Removing intermediate container fa44ff1ece7d
+ ---> 30db12aa9264
+Step 9/10 : RUN echo goodbyefrog
+ ---> Running in 0c1d07dbe505
+goodbyefrog
+Removing intermediate container 0c1d07dbe505
+ ---> 0b561b699484
+Step 10/10 : RUN echo hello this is some more useful stuff
+ ---> Running in 2a2244b3f220
+hello this is some more useful stuff
+Removing intermediate container 2a2244b3f220
+ ---> dbb7eb74609e
+Successfully built dbb7eb74609e
+Successfully tagged binacle:484096590

@@ -1,0 +1,16 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM centos
+latest: Pulling from library/centos
+8a29a15cefae: Pulling fs layer
+8a29a15cefae: Verifying Checksum
+8a29a15cefae: Download complete
+8a29a15cefae: Pull complete
+Digest: sha256:fe8d824220415eed5477b63addf40fb06c3b049404242b31982106ac204f6700
+Status: Downloaded newer image for centos:latest
+ ---> 470671670cac
+Step 2/3 : WORKDIR /opt
+ ---> Running in e60bafb46328
+Removing intermediate container e60bafb46328
+ ---> 9513464eb052
+Step 3/3 : ADD c .
+ADD failed: stat /var/lib/docker/tmp/docker-builder875306756/c: no such file or directory

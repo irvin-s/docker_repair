@@ -1,0 +1,109 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM ubuntu:14.04
+14.04: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+30bb187ac3fc: Verifying Checksum
+30bb187ac3fc: Download complete
+b7a5bcc4a58a: Download complete
+2e6e20c8e2e6: Verifying Checksum
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:14.04
+ ---> 6e4f1fe62ff1
+Step 2/7 : MAINTAINER James Turnbull "james@example.com"
+ ---> Running in 77f46d670c8c
+Removing intermediate container 77f46d670c8c
+ ---> 4433b133657a
+Step 3/7 : ENV REFRESHED_AT 2014-06-01
+ ---> Running in 1691ac556119
+Removing intermediate container 1691ac556119
+ ---> 57568f605f29
+Step 4/7 : RUN apt-get update
+ ---> Running in b067bcba1bf1
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:4 https://esm.ubuntu.com trusty-infra-updates InRelease
+Get:5 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Get:6 http://security.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Get:7 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Get:8 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:9 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:10 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:11 http://security.ubuntu.com trusty-security/universe amd64 Packages [377 kB]
+Get:12 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4730 B]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.1 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:17 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:18 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:20 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:21 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:22 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:23 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 13.7 MB in 3s (3952 kB/s)
+Reading package lists...
+Removing intermediate container b067bcba1bf1
+ ---> 65c2dbabd9c3
+Step 5/7 : RUN apt-get -y install redis-server redis-tools
+ ---> Running in e40f754eeca3
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libjemalloc1
+The following NEW packages will be installed:
+  libjemalloc1 redis-server redis-tools
+0 upgraded, 3 newly installed, 0 to remove and 1 not upgraded.
+Need to get 412 kB of archives.
+After this operation, 1272 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/universe libjemalloc1 amd64 3.5.1-2 [76.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe redis-tools amd64 2:2.8.4-2ubuntu0.2 [66.8 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe redis-server amd64 2:2.8.4-2ubuntu0.2 [269 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 412 kB in 0s (437 kB/s)
+Selecting previously unselected package libjemalloc1.
+(Reading database ... 12097 files and directories currently installed.)
+Preparing to unpack .../libjemalloc1_3.5.1-2_amd64.deb ...
+Unpacking libjemalloc1 (3.5.1-2) ...
+Selecting previously unselected package redis-tools.
+Preparing to unpack .../redis-tools_2%3a2.8.4-2ubuntu0.2_amd64.deb ...
+Unpacking redis-tools (2:2.8.4-2ubuntu0.2) ...
+Selecting previously unselected package redis-server.
+Preparing to unpack .../redis-server_2%3a2.8.4-2ubuntu0.2_amd64.deb ...
+Unpacking redis-server (2:2.8.4-2ubuntu0.2) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up libjemalloc1 (3.5.1-2) ...
+Setting up redis-tools (2:2.8.4-2ubuntu0.2) ...
+Setting up redis-server (2:2.8.4-2ubuntu0.2) ...
+[91minvoke-rc.d: policy-rc.d denied execution of start.
+[0mProcessing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Removing intermediate container e40f754eeca3
+ ---> 5e61d3cb885e
+Step 6/7 : EXPOSE 6379
+ ---> Running in ad78a3f72953
+Removing intermediate container ad78a3f72953
+ ---> ad28c86b45de
+Step 7/7 : ENTRYPOINT [ "/usr/bin/redis-server" ]
+ ---> Running in 2c50c3c429ee
+Removing intermediate container 2c50c3c429ee
+ ---> 997e75659b41
+Successfully built 997e75659b41
+Successfully tagged binacle:484096624

@@ -1,0 +1,40 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM ruby:2.2
+2.2: Pulling from library/ruby
+3d77ce4481b1: Pulling fs layer
+534514c83d69: Pulling fs layer
+d562b1c3ac3f: Pulling fs layer
+4b85e68dc01d: Pulling fs layer
+52134d825d3e: Pulling fs layer
+b2262ff3b75c: Pulling fs layer
+4d1332abe17f: Pulling fs layer
+4b85e68dc01d: Waiting
+52134d825d3e: Waiting
+b2262ff3b75c: Waiting
+4d1332abe17f: Waiting
+534514c83d69: Verifying Checksum
+534514c83d69: Download complete
+d562b1c3ac3f: Verifying Checksum
+d562b1c3ac3f: Download complete
+3d77ce4481b1: Verifying Checksum
+3d77ce4481b1: Download complete
+52134d825d3e: Verifying Checksum
+52134d825d3e: Download complete
+4d1332abe17f: Verifying Checksum
+4d1332abe17f: Download complete
+b2262ff3b75c: Verifying Checksum
+b2262ff3b75c: Download complete
+4b85e68dc01d: Verifying Checksum
+4b85e68dc01d: Download complete
+3d77ce4481b1: Pull complete
+534514c83d69: Pull complete
+d562b1c3ac3f: Pull complete
+4b85e68dc01d: Pull complete
+52134d825d3e: Pull complete
+b2262ff3b75c: Pull complete
+4d1332abe17f: Pull complete
+Digest: sha256:4987b5e2f03b7086c493208ef616b711fe73228391a80faf451975f9e0195236
+Status: Downloaded newer image for ruby:2.2
+ ---> 6c8e6f9667b2
+Step 2/4 : COPY ./ruby-cli-app /app
+COPY failed: stat /var/lib/docker/tmp/docker-builder357305243/ruby-cli-app: no such file or directory

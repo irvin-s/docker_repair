@@ -1,0 +1,15 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM scratch
+ ---> 
+Step 2/4 : COPY . /
+ ---> 35c64116c524
+Step 3/4 : EXPOSE 41017
+ ---> Running in fbabeb418d60
+Removing intermediate container fbabeb418d60
+ ---> 30a5defa7b97
+Step 4/4 : CMD [ "/idea-ls" ]
+ ---> Running in 77c4caba1831
+Removing intermediate container 77c4caba1831
+ ---> a761c5df3c86
+Successfully built a761c5df3c86
+Successfully tagged binacle:252782517

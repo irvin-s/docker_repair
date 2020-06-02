@@ -1,0 +1,3 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM base/archlinux
+manifest for base/archlinux:latest not found: manifest unknown: manifest unknown

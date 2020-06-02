@@ -1,0 +1,14 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM alpine:3.5
+3.5: Pulling from library/alpine
+8cae0e1ac61c: Pulling fs layer
+8cae0e1ac61c: Verifying Checksum
+8cae0e1ac61c: Download complete
+8cae0e1ac61c: Pull complete
+Digest: sha256:66952b313e51c3bd1987d7c4ddf5dba9bc0fb6e524eed2448fa660246b3e76ec
+Status: Downloaded newer image for alpine:3.5
+ ---> f80194ae2e0c
+Step 2/2 : RUN something
+ ---> Running in 101bcbb7cc7b
+[91m/bin/sh: something: not found
+[0mThe command '/bin/sh -c something' returned a non-zero code: 127

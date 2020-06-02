@@ -1,0 +1,53 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM node:6-onbuild
+6-onbuild: Pulling from library/node
+c5e155d5a1d1: Pulling fs layer
+221d80d00ae9: Pulling fs layer
+4250b3117dca: Pulling fs layer
+3b7ca19181b2: Pulling fs layer
+425d7b2a5bcc: Pulling fs layer
+69df12c70287: Pulling fs layer
+ea2f5386a42d: Pulling fs layer
+d421d2b3c5eb: Pulling fs layer
+825b9367d6be: Pulling fs layer
+3b7ca19181b2: Waiting
+425d7b2a5bcc: Waiting
+69df12c70287: Waiting
+ea2f5386a42d: Waiting
+d421d2b3c5eb: Waiting
+825b9367d6be: Waiting
+4250b3117dca: Verifying Checksum
+4250b3117dca: Download complete
+221d80d00ae9: Verifying Checksum
+221d80d00ae9: Download complete
+c5e155d5a1d1: Verifying Checksum
+c5e155d5a1d1: Download complete
+69df12c70287: Verifying Checksum
+69df12c70287: Download complete
+3b7ca19181b2: Verifying Checksum
+3b7ca19181b2: Download complete
+d421d2b3c5eb: Verifying Checksum
+d421d2b3c5eb: Download complete
+ea2f5386a42d: Verifying Checksum
+ea2f5386a42d: Download complete
+825b9367d6be: Verifying Checksum
+825b9367d6be: Download complete
+425d7b2a5bcc: Verifying Checksum
+425d7b2a5bcc: Download complete
+c5e155d5a1d1: Pull complete
+221d80d00ae9: Pull complete
+4250b3117dca: Pull complete
+3b7ca19181b2: Pull complete
+425d7b2a5bcc: Pull complete
+69df12c70287: Pull complete
+ea2f5386a42d: Pull complete
+d421d2b3c5eb: Pull complete
+825b9367d6be: Pull complete
+Digest: sha256:80428f1c53495856f8ed63040092402e9849b70a0e32a962de5f63938b39c4c6
+Status: Downloaded newer image for node:6-onbuild
+# Executing 5 build triggers
+ ---> Running in c7ff05ba0f70
+Removing intermediate container c7ff05ba0f70
+ ---> Running in 6665f0663709
+Removing intermediate container 6665f0663709
+COPY failed: stat /var/lib/docker/tmp/docker-builder673174728/package.json: no such file or directory

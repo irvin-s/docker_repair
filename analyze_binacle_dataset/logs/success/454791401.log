@@ -1,187 +1,0 @@
-Sending build context to Docker daemon  2.048kB
-Step 1/10 : FROM debian:jessie
-jessie: Pulling from library/debian
-34656812d18f: Pulling fs layer
-34656812d18f: Verifying Checksum
-34656812d18f: Download complete
-34656812d18f: Pull complete
-Digest: sha256:be49b17833279f2177dbaeef87226528af8a652595afc11dd85c8cd8ad7fcd26
-Status: Downloaded newer image for debian:jessie
- ---> 2bf11587e987
-Step 2/10 : RUN apt-get update
- ---> Running in be080fe9a98f
-Get:1 http://security.debian.org jessie/updates InRelease [44.9 kB]
-Ign http://deb.debian.org jessie InRelease
-Get:2 http://deb.debian.org jessie-updates InRelease [16.3 kB]
-Get:3 http://deb.debian.org jessie Release.gpg [1652 B]
-Get:4 http://deb.debian.org jessie Release [77.3 kB]
-Get:5 http://security.debian.org jessie/updates/main amd64 Packages [977 kB]
-Get:6 http://deb.debian.org jessie-updates/main amd64 Packages [20 B]
-Get:7 http://deb.debian.org jessie/main amd64 Packages [9098 kB]
-Fetched 10.2 MB in 8s (1255 kB/s)
-Reading package lists...
-Removing intermediate container be080fe9a98f
- ---> 64354719c35e
-Step 3/10 : RUN apt-get install -y curl
- ---> Running in c7fdc73ec1c6
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  ca-certificates krb5-locales libcurl3 libgssapi-krb5-2 libidn11 libk5crypto3
-  libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 librtmp1 libsasl2-2
-  libsasl2-modules libsasl2-modules-db libssh2-1 libssl1.0.0 openssl
-Suggested packages:
-  krb5-doc krb5-user libsasl2-modules-otp libsasl2-modules-ldap
-  libsasl2-modules-sql libsasl2-modules-gssapi-mit
-  libsasl2-modules-gssapi-heimdal
-The following NEW packages will be installed:
-  ca-certificates curl krb5-locales libcurl3 libgssapi-krb5-2 libidn11
-  libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 librtmp1
-  libsasl2-2 libsasl2-modules libsasl2-modules-db libssh2-1 libssl1.0.0
-  openssl
-0 upgraded, 18 newly installed, 0 to remove and 2 not upgraded.
-Need to get 6471 kB of archives.
-After this operation, 12.4 MB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian/ jessie/main libkeyutils1 amd64 1.5.9-5+b1 [12.0 kB]
-Get:2 http://security.debian.org/debian-security/ jessie/updates/main libssl1.0.0 amd64 1.0.1t-1+deb8u12 [1049 kB]
-Get:3 http://deb.debian.org/debian/ jessie/main librtmp1 amd64 2.4+20150115.gita107cef-1+deb8u1 [60.0 kB]
-Get:4 http://security.debian.org/debian-security/ jessie/updates/main libkrb5support0 amd64 1.12.1+dfsg-19+deb8u5 [59.5 kB]
-Get:5 http://security.debian.org/debian-security/ jessie/updates/main libk5crypto3 amd64 1.12.1+dfsg-19+deb8u5 [115 kB]
-Get:6 http://security.debian.org/debian-security/ jessie/updates/main libkrb5-3 amd64 1.12.1+dfsg-19+deb8u5 [303 kB]
-Get:7 http://security.debian.org/debian-security/ jessie/updates/main libgssapi-krb5-2 amd64 1.12.1+dfsg-19+deb8u5 [152 kB]
-Get:8 http://security.debian.org/debian-security/ jessie/updates/main libidn11 amd64 1.29-1+deb8u3 [137 kB]
-Get:9 http://security.debian.org/debian-security/ jessie/updates/main libsasl2-modules-db amd64 2.1.26.dfsg1-13+deb8u2 [67.3 kB]
-Get:10 http://security.debian.org/debian-security/ jessie/updates/main libsasl2-2 amd64 2.1.26.dfsg1-13+deb8u2 [105 kB]
-Get:11 http://security.debian.org/debian-security/ jessie/updates/main libldap-2.4-2 amd64 2.4.40+dfsg-1+deb8u6 [218 kB]
-Get:12 http://security.debian.org/debian-security/ jessie/updates/main libssh2-1 amd64 1.4.3-4.1+deb8u6 [128 kB]
-Get:13 http://security.debian.org/debian-security/ jessie/updates/main libcurl3 amd64 7.38.0-4+deb8u16 [261 kB]
-Get:14 http://security.debian.org/debian-security/ jessie/updates/main krb5-locales all 1.12.1+dfsg-19+deb8u5 [2649 kB]
-Get:15 http://security.debian.org/debian-security/ jessie/updates/main openssl amd64 1.0.1t-1+deb8u12 [666 kB]
-Get:16 http://security.debian.org/debian-security/ jessie/updates/main ca-certificates all 20141019+deb8u4 [185 kB]
-Get:17 http://security.debian.org/debian-security/ jessie/updates/main curl amd64 7.38.0-4+deb8u16 [202 kB]
-Get:18 http://security.debian.org/debian-security/ jessie/updates/main libsasl2-modules amd64 2.1.26.dfsg1-13+deb8u2 [102 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 6471 kB in 0s (17.0 MB/s)
-Selecting previously unselected package libssl1.0.0:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7621 files and directories currently installed.)
-Preparing to unpack .../libssl1.0.0_1.0.1t-1+deb8u12_amd64.deb ...
-Unpacking libssl1.0.0:amd64 (1.0.1t-1+deb8u12) ...
-Selecting previously unselected package libkeyutils1:amd64.
-Preparing to unpack .../libkeyutils1_1.5.9-5+b1_amd64.deb ...
-Unpacking libkeyutils1:amd64 (1.5.9-5+b1) ...
-Selecting previously unselected package libkrb5support0:amd64.
-Preparing to unpack .../libkrb5support0_1.12.1+dfsg-19+deb8u5_amd64.deb ...
-Unpacking libkrb5support0:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Selecting previously unselected package libk5crypto3:amd64.
-Preparing to unpack .../libk5crypto3_1.12.1+dfsg-19+deb8u5_amd64.deb ...
-Unpacking libk5crypto3:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Selecting previously unselected package libkrb5-3:amd64.
-Preparing to unpack .../libkrb5-3_1.12.1+dfsg-19+deb8u5_amd64.deb ...
-Unpacking libkrb5-3:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Selecting previously unselected package libgssapi-krb5-2:amd64.
-Preparing to unpack .../libgssapi-krb5-2_1.12.1+dfsg-19+deb8u5_amd64.deb ...
-Unpacking libgssapi-krb5-2:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Selecting previously unselected package libidn11:amd64.
-Preparing to unpack .../libidn11_1.29-1+deb8u3_amd64.deb ...
-Unpacking libidn11:amd64 (1.29-1+deb8u3) ...
-Selecting previously unselected package libsasl2-modules-db:amd64.
-Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-13+deb8u2_amd64.deb ...
-Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Selecting previously unselected package libsasl2-2:amd64.
-Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-13+deb8u2_amd64.deb ...
-Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Selecting previously unselected package libldap-2.4-2:amd64.
-Preparing to unpack .../libldap-2.4-2_2.4.40+dfsg-1+deb8u6_amd64.deb ...
-Unpacking libldap-2.4-2:amd64 (2.4.40+dfsg-1+deb8u6) ...
-Selecting previously unselected package librtmp1:amd64.
-Preparing to unpack .../librtmp1_2.4+20150115.gita107cef-1+deb8u1_amd64.deb ...
-Unpacking librtmp1:amd64 (2.4+20150115.gita107cef-1+deb8u1) ...
-Selecting previously unselected package libssh2-1:amd64.
-Preparing to unpack .../libssh2-1_1.4.3-4.1+deb8u6_amd64.deb ...
-Unpacking libssh2-1:amd64 (1.4.3-4.1+deb8u6) ...
-Selecting previously unselected package libcurl3:amd64.
-Preparing to unpack .../libcurl3_7.38.0-4+deb8u16_amd64.deb ...
-Unpacking libcurl3:amd64 (7.38.0-4+deb8u16) ...
-Selecting previously unselected package krb5-locales.
-Preparing to unpack .../krb5-locales_1.12.1+dfsg-19+deb8u5_all.deb ...
-Unpacking krb5-locales (1.12.1+dfsg-19+deb8u5) ...
-Selecting previously unselected package openssl.
-Preparing to unpack .../openssl_1.0.1t-1+deb8u12_amd64.deb ...
-Unpacking openssl (1.0.1t-1+deb8u12) ...
-Selecting previously unselected package ca-certificates.
-Preparing to unpack .../ca-certificates_20141019+deb8u4_all.deb ...
-Unpacking ca-certificates (20141019+deb8u4) ...
-Selecting previously unselected package curl.
-Preparing to unpack .../curl_7.38.0-4+deb8u16_amd64.deb ...
-Unpacking curl (7.38.0-4+deb8u16) ...
-Selecting previously unselected package libsasl2-modules:amd64.
-Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-13+deb8u2_amd64.deb ...
-Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Setting up libssl1.0.0:amd64 (1.0.1t-1+deb8u12) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (TERM is not set, so the dialog frontend is not usable.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/x86_64-linux-gnu/perl5/5.20 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
-debconf: falling back to frontend: Teletype
-Setting up libkeyutils1:amd64 (1.5.9-5+b1) ...
-Setting up libkrb5support0:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Setting up libk5crypto3:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Setting up libkrb5-3:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Setting up libgssapi-krb5-2:amd64 (1.12.1+dfsg-19+deb8u5) ...
-Setting up libidn11:amd64 (1.29-1+deb8u3) ...
-Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Setting up libsasl2-2:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Setting up libldap-2.4-2:amd64 (2.4.40+dfsg-1+deb8u6) ...
-Setting up librtmp1:amd64 (2.4+20150115.gita107cef-1+deb8u1) ...
-Setting up libssh2-1:amd64 (1.4.3-4.1+deb8u6) ...
-Setting up libcurl3:amd64 (7.38.0-4+deb8u16) ...
-Setting up krb5-locales (1.12.1+dfsg-19+deb8u5) ...
-Setting up openssl (1.0.1t-1+deb8u12) ...
-Setting up ca-certificates (20141019+deb8u4) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (TERM is not set, so the dialog frontend is not usable.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/x86_64-linux-gnu/perl5/5.20 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
-debconf: falling back to frontend: Teletype
-Updating certificates in /etc/ssl/certs... 152 added, 0 removed; done.
-Setting up curl (7.38.0-4+deb8u16) ...
-Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-13+deb8u2) ...
-Processing triggers for libc-bin (2.19-18+deb8u10) ...
-Processing triggers for ca-certificates (20141019+deb8u4) ...
-Updating certificates in /etc/ssl/certs... 0 added, 0 removed; done.
-Running hooks in /etc/ca-certificates/update.d....done.
-Removing intermediate container c7fdc73ec1c6
- ---> 6078c1c2379c
-Step 4/10 : ENV VANITY_VERSION 0.1.3
- ---> Running in 319738d9cdfa
-Removing intermediate container 319738d9cdfa
- ---> 8de03b709fb4
-Step 5/10 : ENV VANITY_URL https://github.com/xiam/vanity/releases/download/v${VANITY_VERSION}/vanity_linux_amd64.gz
- ---> Running in 89e34677bf0b
-Removing intermediate container 89e34677bf0b
- ---> 3bf8e7d49199
-Step 6/10 : RUN curl --silent -L ${VANITY_URL} | gzip -d > /bin/vanity
- ---> Running in d33d3470bcf7
-Removing intermediate container d33d3470bcf7
- ---> d298bf16d0ff
-Step 7/10 : RUN chmod +x /bin/vanity
- ---> Running in aa59b10ee045
-Removing intermediate container aa59b10ee045
- ---> 9f7424731dee
-Step 8/10 : RUN mkdir -p /var/run/vanity
- ---> Running in 919079a12720
-Removing intermediate container 919079a12720
- ---> 6543f9678533
-Step 9/10 : EXPOSE 8080
- ---> Running in 829c7c3be48f
-Removing intermediate container 829c7c3be48f
- ---> 90a0d6cb70ef
-Step 10/10 : ENTRYPOINT ["/bin/vanity"]
- ---> Running in ca67e22699d4
-Removing intermediate container ca67e22699d4
- ---> b8f06c658169
-Successfully built b8f06c658169
-Successfully tagged binacle:454791401

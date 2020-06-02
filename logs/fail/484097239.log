@@ -1,0 +1,29 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/9 : FROM aarch64/ubuntu:trusty
+trusty: Pulling from aarch64/ubuntu
+3f9a9bb8d312: Pulling fs layer
+20d074bcd252: Pulling fs layer
+1aaafa23c524: Pulling fs layer
+d016d0808f4a: Pulling fs layer
+b13b41ad0851: Pulling fs layer
+d016d0808f4a: Waiting
+b13b41ad0851: Waiting
+1aaafa23c524: Download complete
+d016d0808f4a: Verifying Checksum
+d016d0808f4a: Download complete
+20d074bcd252: Download complete
+b13b41ad0851: Download complete
+3f9a9bb8d312: Verifying Checksum
+3f9a9bb8d312: Download complete
+3f9a9bb8d312: Pull complete
+20d074bcd252: Pull complete
+1aaafa23c524: Pull complete
+d016d0808f4a: Pull complete
+b13b41ad0851: Pull complete
+Digest: sha256:c81ec69bb4ee1ec60be5cb321e9b8286c5f7b75755156714f22be03db9529d52
+Status: Downloaded newer image for aarch64/ubuntu:trusty
+ ---> d09ad4b628f1
+Step 2/9 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev golang-1.6-go --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in fe3b7567f810
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev pkg-config vim-common libsystemd-journal-dev golang-1.6-go --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

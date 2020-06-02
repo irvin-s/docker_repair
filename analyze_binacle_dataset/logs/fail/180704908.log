@@ -1,135 +1,0 @@
-Sending build context to Docker daemon   2.56kB
-Step 1/11 : FROM ubuntu
-latest: Pulling from library/ubuntu
-5bed26d33875: Pulling fs layer
-f11b29a9c730: Pulling fs layer
-930bda195c84: Pulling fs layer
-78bf9a5ad49e: Pulling fs layer
-f11b29a9c730: Verifying Checksum
-f11b29a9c730: Download complete
-930bda195c84: Verifying Checksum
-930bda195c84: Download complete
-78bf9a5ad49e: Verifying Checksum
-78bf9a5ad49e: Download complete
-5bed26d33875: Verifying Checksum
-5bed26d33875: Download complete
-5bed26d33875: Pull complete
-f11b29a9c730: Pull complete
-930bda195c84: Pull complete
-78bf9a5ad49e: Pull complete
-Digest: sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
-Status: Downloaded newer image for ubuntu:latest
- ---> 4e5021d210f6
-Step 2/11 : MAINTAINER Roberto Catini roberto.catini@gmail.com
- ---> Running in 27bde9cd68f8
-Removing intermediate container 27bde9cd68f8
- ---> de7ae005aa05
-Step 3/11 : RUN apt-get update
- ---> Running in 1b4f2be206a7
-Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
-Get:2 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-Get:3 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [889 kB]
-Get:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
-Get:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
-Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
-Get:7 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [839 kB]
-Get:8 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [8213 B]
-Get:9 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [44.6 kB]
-Get:10 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
-Get:11 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
-Get:12 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
-Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [59.0 kB]
-Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [12.6 kB]
-Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1183 kB]
-Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1371 kB]
-Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [2496 B]
-Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [4247 B]
-Fetched 17.8 MB in 3s (6238 kB/s)
-Reading package lists...
-Removing intermediate container 1b4f2be206a7
- ---> 2bd333422bf6
-Step 4/11 : RUN apt-get -y upgrade
- ---> Running in 5fd771025a57
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-The following packages will be upgraded:
-  bsdutils fdisk gcc-8-base libblkid1 libfdisk1 libgcc1 libmount1
-  libsmartcols1 libstdc++6 libuuid1 mount util-linux
-12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2165 kB of archives.
-After this operation, 1024 B of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 bsdutils amd64 1:2.31.1-0.4ubuntu3.6 [60.3 kB]
-Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libuuid1 amd64 2.31.1-0.4ubuntu3.6 [20.1 kB]
-Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libblkid1 amd64 2.31.1-0.4ubuntu3.6 [124 kB]
-Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libfdisk1 amd64 2.31.1-0.4ubuntu3.6 [164 kB]
-Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmount1 amd64 2.31.1-0.4ubuntu3.6 [136 kB]
-Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsmartcols1 amd64 2.31.1-0.4ubuntu3.6 [83.7 kB]
-Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 fdisk amd64 2.31.1-0.4ubuntu3.6 [108 kB]
-Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 util-linux amd64 2.31.1-0.4ubuntu3.6 [903 kB]
-Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 mount amd64 2.31.1-0.4ubuntu3.6 [107 kB]
-Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gcc-8-base amd64 8.4.0-1ubuntu1~18.04 [18.7 kB]
-Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libstdc++6 amd64 8.4.0-1ubuntu1~18.04 [400 kB]
-Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgcc1 amd64 1:8.4.0-1ubuntu1~18.04 [40.6 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 2165 kB in 1s (1907 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../bsdutils_1%3a2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking bsdutils (1:2.31.1-0.4ubuntu3.6) over (1:2.31.1-0.4ubuntu3.5) ...
-Setting up bsdutils (1:2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libuuid1_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking libuuid1:amd64 (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up libuuid1:amd64 (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libblkid1_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking libblkid1:amd64 (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up libblkid1:amd64 (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libfdisk1_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking libfdisk1:amd64 (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up libfdisk1:amd64 (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libmount1_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking libmount1:amd64 (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up libmount1:amd64 (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libsmartcols1_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking libsmartcols1:amd64 (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up libsmartcols1:amd64 (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../fdisk_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking fdisk (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up fdisk (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../util-linux_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking util-linux (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Setting up util-linux (2.31.1-0.4ubuntu3.6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../mount_2.31.1-0.4ubuntu3.6_amd64.deb ...
-Unpacking mount (2.31.1-0.4ubuntu3.6) over (2.31.1-0.4ubuntu3.5) ...
-Preparing to unpack .../gcc-8-base_8.4.0-1ubuntu1~18.04_amd64.deb ...
-Unpacking gcc-8-base:amd64 (8.4.0-1ubuntu1~18.04) over (8.3.0-26ubuntu1~18.04) ...
-Setting up gcc-8-base:amd64 (8.4.0-1ubuntu1~18.04) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libstdc++6_8.4.0-1ubuntu1~18.04_amd64.deb ...
-Unpacking libstdc++6:amd64 (8.4.0-1ubuntu1~18.04) over (8.3.0-26ubuntu1~18.04) ...
-Setting up libstdc++6:amd64 (8.4.0-1ubuntu1~18.04) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
-Preparing to unpack .../libgcc1_1%3a8.4.0-1ubuntu1~18.04_amd64.deb ...
-Unpacking libgcc1:amd64 (1:8.4.0-1ubuntu1~18.04) over (1:8.3.0-26ubuntu1~18.04) ...
-Setting up libgcc1:amd64 (1:8.4.0-1ubuntu1~18.04) ...
-Setting up mount (2.31.1-0.4ubuntu3.6) ...
-Processing triggers for libc-bin (2.27-3ubuntu1) ...
-Removing intermediate container 5fd771025a57
- ---> 91f18f2d7811
-Step 5/11 : RUN apt-get -y install git scons pkg-config protobuf-compiler libprotobuf-dev libssl-dev libboost1.55-all-dev
- ---> Running in b50e05eb7d4e
-Reading package lists...
-Building dependency tree...
-Reading state information...
-[91mE: Unable to locate package libboost1.55-all-dev
-E: Couldn't find any package by glob 'libboost1.55-all-dev'
-E: Couldn't find any package by regex 'libboost1.55-all-dev'
-[0mThe command '/bin/sh -c apt-get -y install git scons pkg-config protobuf-compiler libprotobuf-dev libssl-dev libboost1.55-all-dev' returned a non-zero code: 100

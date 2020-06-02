@@ -1,0 +1,37 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM vimagick/obfsproxy
+latest: Pulling from vimagick/obfsproxy
+cbdbe7a5bc2a: Pulling fs layer
+23e2f9b19bd0: Pulling fs layer
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+cbdbe7a5bc2a: Pull complete
+23e2f9b19bd0: Verifying Checksum
+23e2f9b19bd0: Download complete
+23e2f9b19bd0: Pull complete
+Digest: sha256:434cd79225d455bb9c4455ca40a9db14caea794212e3d4e3dddfe029e3f5c260
+Status: Downloaded newer image for vimagick/obfsproxy:latest
+ ---> f0ba30f5a6f5
+Step 2/2 : RUN ls
+ ---> Running in be21f2666619
+bin
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+Removing intermediate container be21f2666619
+ ---> 42f1ad400494
+Successfully built 42f1ad400494
+Successfully tagged binacle:201188364

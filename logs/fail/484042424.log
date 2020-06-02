@@ -1,0 +1,89 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/16 : FROM node:10
+10: Pulling from library/node
+56da78ce36e9: Pulling fs layer
+fbfe0f13ac45: Pulling fs layer
+6254ff6d0e60: Pulling fs layer
+e0e1e13bd9f6: Pulling fs layer
+b86b38b40a24: Pulling fs layer
+e357e1a6c1b2: Pulling fs layer
+26ead3dd6706: Pulling fs layer
+2a074406f86d: Pulling fs layer
+2bb91d5c5247: Pulling fs layer
+e0e1e13bd9f6: Waiting
+26ead3dd6706: Waiting
+2a074406f86d: Waiting
+2bb91d5c5247: Waiting
+b86b38b40a24: Waiting
+e357e1a6c1b2: Waiting
+6254ff6d0e60: Verifying Checksum
+6254ff6d0e60: Download complete
+fbfe0f13ac45: Verifying Checksum
+fbfe0f13ac45: Download complete
+56da78ce36e9: Verifying Checksum
+56da78ce36e9: Download complete
+e357e1a6c1b2: Verifying Checksum
+e357e1a6c1b2: Download complete
+e0e1e13bd9f6: Verifying Checksum
+e0e1e13bd9f6: Download complete
+26ead3dd6706: Verifying Checksum
+26ead3dd6706: Download complete
+2a074406f86d: Download complete
+2bb91d5c5247: Verifying Checksum
+2bb91d5c5247: Download complete
+b86b38b40a24: Verifying Checksum
+b86b38b40a24: Download complete
+56da78ce36e9: Pull complete
+fbfe0f13ac45: Pull complete
+6254ff6d0e60: Pull complete
+e0e1e13bd9f6: Pull complete
+b86b38b40a24: Pull complete
+e357e1a6c1b2: Pull complete
+26ead3dd6706: Pull complete
+2a074406f86d: Pull complete
+2bb91d5c5247: Pull complete
+Digest: sha256:816cfaee24dc2cea534e21d7f9c55f3b22c8bc6af61d8445f8d0178168ef3b28
+Status: Downloaded newer image for node:10
+ ---> 01b816051d34
+Step 2/16 : ARG NODE_MAJOR_VERSION=10
+ ---> Running in b7f4433b25a1
+Removing intermediate container b7f4433b25a1
+ ---> 419e3ad2cd9c
+Step 3/16 : ARG NODE_VERSION=10.15.3
+ ---> Running in d7f405034204
+Removing intermediate container d7f405034204
+ ---> 76a0a3df9af5
+Step 4/16 : ARG GIT_REF=0
+ ---> Running in ab623184b628
+Removing intermediate container ab623184b628
+ ---> 095314611815
+Step 5/16 : ENV SUMMARY="BC Gov DevHub "    DESCRIPTION="BC Gov DevHub web application running in nodejs version ${NODE_VERSION}"
+ ---> Running in a5209563489c
+Removing intermediate container a5209563489c
+ ---> f87fdd249214
+Step 6/16 : ENV LC_ALL=en_US.UTF-8   LANG=en_US.UTF-8
+ ---> Running in 97ebee182c63
+Removing intermediate container 97ebee182c63
+ ---> be8261fae060
+Step 7/16 : ENV INSTALL_PATH /site
+ ---> Running in 5b961ac3c21a
+Removing intermediate container 5b961ac3c21a
+ ---> 8334b0dc89eb
+Step 8/16 : ENV GIT_REF $GIT_REF
+ ---> Running in 7435efd00a3b
+Removing intermediate container 7435efd00a3b
+ ---> 80b919f6100c
+Step 9/16 : LABEL summary="$SUMMARY"   description="$DESCRIPTION"   git_ref="$GIT_REF"
+ ---> Running in 83c206c57c48
+Removing intermediate container 83c206c57c48
+ ---> 82f1623d47b2
+Step 10/16 : RUN mkdir -p $INSTALL_PATH
+ ---> Running in d314d73573ec
+Removing intermediate container d314d73573ec
+ ---> 16cd01564f8c
+Step 11/16 : WORKDIR $INSTALL_PATH
+ ---> Running in b2515eb9258e
+Removing intermediate container b2515eb9258e
+ ---> 2a31d30d797d
+Step 12/16 : COPY app-web/package.json $INSTALL_PATH
+COPY failed: stat /var/lib/docker/tmp/docker-builder203371986/app-web/package.json: no such file or directory

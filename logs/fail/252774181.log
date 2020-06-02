@@ -1,0 +1,16 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM nginx:mainline-alpine
+mainline-alpine: Pulling from library/nginx
+cbdbe7a5bc2a: Pulling fs layer
+c554c602ff32: Pulling fs layer
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+c554c602ff32: Verifying Checksum
+c554c602ff32: Download complete
+cbdbe7a5bc2a: Pull complete
+c554c602ff32: Pull complete
+Digest: sha256:763e7f0188e378fef0c761854552c70bbd817555dc4de029681a2e972e25e30e
+Status: Downloaded newer image for nginx:mainline-alpine
+ ---> 89ec9da68213
+Step 2/2 : COPY default.conf /etc/nginx/conf.d/
+COPY failed: stat /var/lib/docker/tmp/docker-builder405413728/default.conf: no such file or directory

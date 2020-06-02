@@ -1,0 +1,16 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM busybox
+latest: Pulling from library/busybox
+0669b0daf1fb: Pulling fs layer
+0669b0daf1fb: Verifying Checksum
+0669b0daf1fb: Download complete
+0669b0daf1fb: Pull complete
+Digest: sha256:b26cd013274a657b86e706210ddd5cc1f82f50155791199d29b9e86e935ce135
+Status: Downloaded newer image for busybox:latest
+ ---> 83aa35aa1c79
+Step 2/4 : EXPOSE 80/tcp
+ ---> Running in 62b602773085
+Removing intermediate container 62b602773085
+ ---> ac1d8c7db37c
+Step 3/4 : COPY httpserver .
+COPY failed: stat /var/lib/docker/tmp/docker-builder281928472/httpserver: no such file or directory

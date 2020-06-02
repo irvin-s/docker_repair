@@ -3,9 +3,9 @@
 #Log_dir
 HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-mkdir -p ${HERE}/analyze_binacle_dataset/logs/history
-mkdir -p ${HERE}/analyze_binacle_dataset/logs/success
-mkdir -p ${HERE}/analyze_binacle_dataset/logs/fail
+mkdir -p ${HERE}/logs/history
+mkdir -p ${HERE}/logs/success
+mkdir -p ${HERE}/logs/fail
 
 
 #File with  dockerfile names

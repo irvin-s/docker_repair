@@ -1,0 +1,19 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM gliderlabs/logspout:master
+master: Pulling from gliderlabs/logspout
+cbdbe7a5bc2a: Pulling fs layer
+26edc24fae6e: Pulling fs layer
+a8f98245caa1: Pulling fs layer
+26edc24fae6e: Verifying Checksum
+26edc24fae6e: Download complete
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+a8f98245caa1: Verifying Checksum
+a8f98245caa1: Download complete
+cbdbe7a5bc2a: Pull complete
+26edc24fae6e: Pull complete
+a8f98245caa1: Pull complete
+Digest: sha256:e3d9c894af372bf754010d2af0be0b739a29d6ebe5228dccadb78fc87cdfb178
+Status: Downloaded newer image for gliderlabs/logspout:master
+# Executing 3 build triggers
+COPY failed: stat /var/lib/docker/tmp/docker-builder174766499/build.sh: no such file or directory

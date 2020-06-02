@@ -1,0 +1,46 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM golang:1.7
+1.7: Pulling from library/golang
+ad74af05f5a2: Pulling fs layer
+2b032b8bbe8b: Pulling fs layer
+a9a5b35f6ead: Pulling fs layer
+25d9840c55bc: Pulling fs layer
+abeecada453e: Pulling fs layer
+98b5f0802231: Pulling fs layer
+aca2591b4a7e: Pulling fs layer
+abeecada453e: Waiting
+25d9840c55bc: Waiting
+98b5f0802231: Waiting
+aca2591b4a7e: Waiting
+2b032b8bbe8b: Verifying Checksum
+2b032b8bbe8b: Download complete
+a9a5b35f6ead: Verifying Checksum
+a9a5b35f6ead: Download complete
+ad74af05f5a2: Verifying Checksum
+ad74af05f5a2: Download complete
+98b5f0802231: Verifying Checksum
+98b5f0802231: Download complete
+25d9840c55bc: Verifying Checksum
+25d9840c55bc: Download complete
+aca2591b4a7e: Verifying Checksum
+aca2591b4a7e: Download complete
+abeecada453e: Verifying Checksum
+abeecada453e: Download complete
+ad74af05f5a2: Pull complete
+2b032b8bbe8b: Pull complete
+a9a5b35f6ead: Pull complete
+25d9840c55bc: Pull complete
+abeecada453e: Pull complete
+98b5f0802231: Pull complete
+aca2591b4a7e: Pull complete
+Digest: sha256:93b2b52f1212e97b6650bde1f20f6a359b08c117c57a848970d615fe88623a3d
+Status: Downloaded newer image for golang:1.7
+ ---> 225948c9a8b1
+Step 2/4 : ADD . /go/src/github.com/docker/docker/hack/integration-cli-on-swarm/agent
+ ---> 0d0591824645
+Step 3/4 : RUN go build -o /master github.com/docker/docker/hack/integration-cli-on-swarm/agent/master
+ ---> Running in 8566d808274c
+[91mcan't load package: package github.com/docker/docker/hack/integration-cli-on-swarm/agent/master: cannot find package "github.com/docker/docker/hack/integration-cli-on-swarm/agent/master" in any of:
+	/usr/local/go/src/github.com/docker/docker/hack/integration-cli-on-swarm/agent/master (from $GOROOT)
+	/go/src/github.com/docker/docker/hack/integration-cli-on-swarm/agent/master (from $GOPATH)
+[0mThe command '/bin/sh -c go build -o /master github.com/docker/docker/hack/integration-cli-on-swarm/agent/master' returned a non-zero code: 1

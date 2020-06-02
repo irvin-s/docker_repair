@@ -1,102 +1,0 @@
-Sending build context to Docker daemon   2.56kB
-Step 1/7 : FROM golang:1.12
-1.12: Pulling from library/golang
-dc65f448a2e2: Pulling fs layer
-346ffb2b67d7: Pulling fs layer
-dea4ecac934f: Pulling fs layer
-8ac92ddf84b3: Pulling fs layer
-7ca605383307: Pulling fs layer
-020f524b99dd: Pulling fs layer
-06036b0307c9: Pulling fs layer
-7ca605383307: Waiting
-020f524b99dd: Waiting
-06036b0307c9: Waiting
-8ac92ddf84b3: Waiting
-346ffb2b67d7: Verifying Checksum
-346ffb2b67d7: Download complete
-dea4ecac934f: Verifying Checksum
-dea4ecac934f: Download complete
-dc65f448a2e2: Verifying Checksum
-dc65f448a2e2: Download complete
-8ac92ddf84b3: Verifying Checksum
-8ac92ddf84b3: Download complete
-7ca605383307: Verifying Checksum
-7ca605383307: Download complete
-06036b0307c9: Verifying Checksum
-06036b0307c9: Download complete
-020f524b99dd: Verifying Checksum
-020f524b99dd: Download complete
-dc65f448a2e2: Pull complete
-346ffb2b67d7: Pull complete
-dea4ecac934f: Pull complete
-8ac92ddf84b3: Pull complete
-7ca605383307: Pull complete
-020f524b99dd: Pull complete
-06036b0307c9: Pull complete
-Digest: sha256:d0e79a9c39cdb3d71cc45fec929d1308d50420b79201467ec602b1b80cc314a8
-Status: Downloaded newer image for golang:1.12
- ---> ffcaee6f7d8b
-Step 2/7 : RUN echo "deb http://deb.debian.org/debian stretch-backports main" >> /etc/apt/sources.list &&         apt-get update &&         apt-get -y install libz-dev libbz2-dev libsnappy-dev &&         apt-get -y -t stretch-backports install librocksdb-dev
- ---> Running in ff3bf985c4b9
-Get:1 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
-Get:2 http://deb.debian.org/debian buster InRelease [122 kB]
-Get:3 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
-Get:4 http://deb.debian.org/debian stretch-backports InRelease [91.8 kB]
-Get:5 http://security.debian.org/debian-security buster/updates/main amd64 Packages [186 kB]
-Get:6 http://deb.debian.org/debian buster/main amd64 Packages [7907 kB]
-Get:7 http://deb.debian.org/debian buster-updates/main amd64 Packages [7380 B]
-Get:8 http://deb.debian.org/debian stretch-backports/main amd64 Packages [611 kB]
-Fetched 9039 kB in 2s (4396 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  bzip2-doc libsnappy1v5
-The following NEW packages will be installed:
-  bzip2-doc libbz2-dev libsnappy-dev libsnappy1v5 zlib1g-dev
-0 upgraded, 5 newly installed, 0 to remove and 14 not upgraded.
-Need to get 783 kB of archives.
-After this operation, 1318 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian buster/main amd64 bzip2-doc all 1.0.6-9.2~deb10u1 [493 kB]
-Get:2 http://deb.debian.org/debian buster/main amd64 libbz2-dev amd64 1.0.6-9.2~deb10u1 [30.2 kB]
-Get:3 http://deb.debian.org/debian buster/main amd64 libsnappy1v5 amd64 1.1.7-1 [17.0 kB]
-Get:4 http://deb.debian.org/debian buster/main amd64 libsnappy-dev amd64 1.1.7-1 [29.2 kB]
-Get:5 http://deb.debian.org/debian buster/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-1 [214 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 783 kB in 0s (5632 kB/s)
-Selecting previously unselected package bzip2-doc.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 15401 files and directories currently installed.)
-Preparing to unpack .../bzip2-doc_1.0.6-9.2~deb10u1_all.deb ...
-Unpacking bzip2-doc (1.0.6-9.2~deb10u1) ...
-Selecting previously unselected package libbz2-dev:amd64.
-Preparing to unpack .../libbz2-dev_1.0.6-9.2~deb10u1_amd64.deb ...
-Unpacking libbz2-dev:amd64 (1.0.6-9.2~deb10u1) ...
-Selecting previously unselected package libsnappy1v5:amd64.
-Preparing to unpack .../libsnappy1v5_1.1.7-1_amd64.deb ...
-Unpacking libsnappy1v5:amd64 (1.1.7-1) ...
-Selecting previously unselected package libsnappy-dev:amd64.
-Preparing to unpack .../libsnappy-dev_1.1.7-1_amd64.deb ...
-Unpacking libsnappy-dev:amd64 (1.1.7-1) ...
-Selecting previously unselected package zlib1g-dev:amd64.
-Preparing to unpack .../zlib1g-dev_1%3a1.2.11.dfsg-1_amd64.deb ...
-Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-1) ...
-Setting up bzip2-doc (1.0.6-9.2~deb10u1) ...
-Setting up libsnappy1v5:amd64 (1.1.7-1) ...
-Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-1) ...
-Setting up libbz2-dev:amd64 (1.0.6-9.2~deb10u1) ...
-Setting up libsnappy-dev:amd64 (1.1.7-1) ...
-Processing triggers for libc-bin (2.28-10) ...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Some packages could not be installed. This may mean that you have
-requested an impossible situation or if you are using the unstable
-distribution that some required packages have not yet been created
-or been moved out of Incoming.
-The following information may help to resolve the situation:
-
-The following packages have unmet dependencies:
- librocksdb-dev : Depends: librocksdb5.17 (= 5.17.2-3~bpo9+1) but it is not going to be installed
-[91mE: Unable to correct problems, you have held broken packages.
-[0mThe command '/bin/sh -c echo "deb http://deb.debian.org/debian stretch-backports main" >> /etc/apt/sources.list &&         apt-get update &&         apt-get -y install libz-dev libbz2-dev libsnappy-dev &&         apt-get -y -t stretch-backports install librocksdb-dev' returned a non-zero code: 100

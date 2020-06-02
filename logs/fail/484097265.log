@@ -1,0 +1,32 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/8 : FROM s390x/ubuntu:yakkety
+yakkety: Pulling from s390x/ubuntu
+859bde4b3402: Pulling fs layer
+fddf6a207a41: Pulling fs layer
+45a51d9ed8f5: Pulling fs layer
+f2b74f8d9c3a: Pulling fs layer
+ece52443ea5e: Pulling fs layer
+f2b74f8d9c3a: Waiting
+ece52443ea5e: Waiting
+fddf6a207a41: Verifying Checksum
+fddf6a207a41: Download complete
+45a51d9ed8f5: Verifying Checksum
+45a51d9ed8f5: Download complete
+f2b74f8d9c3a: Verifying Checksum
+f2b74f8d9c3a: Download complete
+859bde4b3402: Verifying Checksum
+859bde4b3402: Download complete
+ece52443ea5e: Verifying Checksum
+ece52443ea5e: Download complete
+859bde4b3402: Pull complete
+fddf6a207a41: Pull complete
+45a51d9ed8f5: Pull complete
+f2b74f8d9c3a: Pull complete
+ece52443ea5e: Pull complete
+Digest: sha256:d01f428beee4c29df593d5825038d1aff94442edfa39d062d72b938f6ee2f397
+Status: Downloaded newer image for s390x/ubuntu:yakkety
+ ---> b3a2c62bf6d4
+Step 2/8 : RUN apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config libsystemd-dev vim-common --no-install-recommends && rm -rf /var/lib/apt/lists/*
+ ---> Running in e8fd9a7e341f
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c apt-get update && apt-get install -y apparmor bash-completion btrfs-tools build-essential cmake curl ca-certificates debhelper dh-apparmor dh-systemd git libapparmor-dev libdevmapper-dev libltdl-dev libseccomp-dev pkg-config libsystemd-dev vim-common --no-install-recommends && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1

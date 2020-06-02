@@ -1,0 +1,66 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/16 : FROM fedora/systemd-systemd
+latest: Pulling from fedora/systemd-systemd
+Image docker.io/fedora/systemd-systemd:latest uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+a3ed95caeb02: Pulling fs layer
+eab78c34cf2f: Pulling fs layer
+e37fb68aa795: Pulling fs layer
+129a7a424ed4: Pulling fs layer
+e37fb68aa795: Waiting
+129a7a424ed4: Waiting
+a3ed95caeb02: Download complete
+a3ed95caeb02: Pull complete
+129a7a424ed4: Download complete
+e37fb68aa795: Verifying Checksum
+e37fb68aa795: Download complete
+eab78c34cf2f: Verifying Checksum
+eab78c34cf2f: Download complete
+eab78c34cf2f: Pull complete
+e37fb68aa795: Pull complete
+129a7a424ed4: Pull complete
+Digest: sha256:7b0d840bb08b18fe021a3f24100c46ec3b8db9d266a8be920218fa250d10fc9b
+Status: Downloaded newer image for fedora/systemd-systemd:latest
+ ---> bbc1d6f445f3
+Step 2/16 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in 8d54e7240ba0
+Removing intermediate container 8d54e7240ba0
+ ---> 93c0866b7a96
+Step 3/16 : VOLUME /var/lib/libvirt
+ ---> Running in 2429a66992f6
+Removing intermediate container 2429a66992f6
+ ---> c7fa55ebf1d6
+Step 4/16 : VOLUME /var/log
+ ---> Running in 1120d4be4562
+Removing intermediate container 1120d4be4562
+ ---> 1834ad44af1b
+Step 5/16 : VOLUME /run
+ ---> Running in 9030be353f7b
+Removing intermediate container 9030be353f7b
+ ---> 0e20fa373e7b
+Step 6/16 : EXPOSE 16509
+ ---> Running in 21702422d854
+Removing intermediate container 21702422d854
+ ---> 0feb9e5190bf
+Step 7/16 : RUN yum -y install 	libvirt 	qemu 	qemu-kvm 	virt-install 	pygobject3-base 	; yum clean all
+ ---> Running in 62bb71f293ab
+[91mYum command has been deprecated, redirecting to '/usr/bin/dnf -y install libvirt qemu qemu-kvm virt-install pygobject3-base'.
+See 'man dnf' and 'man yum2dnf' for more information.
+To transfer transaction metadata from yum to DNF, run:
+'dnf install python-dnf-plugins-extras-migrate && dnf-2 migrate'
+
+[0mLast metadata expiration check performed 0:00:41 ago on Sat Apr  4 01:28:59 2020.
+No package pygobject3-base available.
+[91mError: Unable to find a match.
+[0m[91mYum command has been deprecated, redirecting to '/usr/bin/dnf clean all'.
+See 'man dnf' and 'man yum2dnf' for more information.
+To transfer transaction metadata from yum to DNF, run:
+'dnf install python-dnf-plugins-extras-migrate && dnf-2 migrate'
+
+[0mCleaning repos: rawhide
+Cleaning up Everything
+Removing intermediate container 62bb71f293ab
+ ---> 0b6164be79a0
+Step 8/16 : RUN systemctl enable libvirtd
+ ---> Running in b1bb1e6548cc
+[91mOperation failed: No such file or directory
+[0mThe command '/bin/sh -c systemctl enable libvirtd' returned a non-zero code: 1

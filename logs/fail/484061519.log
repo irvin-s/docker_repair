@@ -1,0 +1,4 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/11 : ARG PHP_VERSION
+Step 2/11 : FROM php:${PHP_VERSION}-fpm-alpine
+invalid reference format

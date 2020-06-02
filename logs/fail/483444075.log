@@ -1,0 +1,52 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/11 : FROM golang:1.12beta1-stretch as builder
+1.12beta1-stretch: Pulling from library/golang
+cd8eada9c7bb: Pulling fs layer
+c2677faec825: Pulling fs layer
+fcce419a96b1: Pulling fs layer
+045b51e26e75: Pulling fs layer
+70a7003e9fe9: Pulling fs layer
+1328c6b789cc: Pulling fs layer
+c02a229a20e3: Pulling fs layer
+70a7003e9fe9: Waiting
+1328c6b789cc: Waiting
+c02a229a20e3: Waiting
+045b51e26e75: Waiting
+fcce419a96b1: Verifying Checksum
+fcce419a96b1: Download complete
+c2677faec825: Verifying Checksum
+c2677faec825: Download complete
+cd8eada9c7bb: Verifying Checksum
+cd8eada9c7bb: Download complete
+70a7003e9fe9: Verifying Checksum
+70a7003e9fe9: Download complete
+045b51e26e75: Verifying Checksum
+045b51e26e75: Download complete
+c02a229a20e3: Verifying Checksum
+c02a229a20e3: Download complete
+cd8eada9c7bb: Pull complete
+1328c6b789cc: Verifying Checksum
+1328c6b789cc: Download complete
+c2677faec825: Pull complete
+fcce419a96b1: Pull complete
+045b51e26e75: Pull complete
+70a7003e9fe9: Pull complete
+1328c6b789cc: Pull complete
+c02a229a20e3: Pull complete
+Digest: sha256:bba51a54b2ec515a53055a388b985bb3d2f4c8f1cdd6fe45629d67196e837356
+Status: Downloaded newer image for golang:1.12beta1-stretch
+ ---> 62c3cb756f2b
+Step 2/11 : ENV GO111MODULE=on
+ ---> Running in 0a1c149935f2
+Removing intermediate container 0a1c149935f2
+ ---> 7523d50d05be
+Step 3/11 : WORKDIR /module
+ ---> Running in 820baf20d013
+Removing intermediate container 820baf20d013
+ ---> 0b945ce9e777
+Step 4/11 : COPY . /module/
+ ---> b2ae048e29c3
+Step 5/11 : RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64     go build -a -tags netgo       -ldflags '-w -extldflags "-static"'       -mod vendor       -o env
+ ---> Running in f91cafc67dd8
+[91mgo: cannot find main module; see 'go help modules'
+[0mThe command '/bin/sh -c CGO_ENABLED=0 GOOS=linux GOARCH=amd64     go build -a -tags netgo       -ldflags '-w -extldflags "-static"'       -mod vendor       -o env' returned a non-zero code: 1

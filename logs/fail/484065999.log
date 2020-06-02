@@ -1,0 +1,33 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM node:alpine
+alpine: Pulling from library/node
+aad63a933944: Pulling fs layer
+a00bd932208e: Pulling fs layer
+c57f2c59b937: Pulling fs layer
+f3446470f297: Pulling fs layer
+f3446470f297: Waiting
+aad63a933944: Verifying Checksum
+aad63a933944: Download complete
+c57f2c59b937: Verifying Checksum
+c57f2c59b937: Download complete
+aad63a933944: Pull complete
+f3446470f297: Verifying Checksum
+f3446470f297: Download complete
+a00bd932208e: Verifying Checksum
+a00bd932208e: Download complete
+a00bd932208e: Pull complete
+c57f2c59b937: Pull complete
+f3446470f297: Pull complete
+Digest: sha256:a01be76692924db83442d93b3bfde3a0cd56ddcacf3047f583a0a98ddf7a31de
+Status: Downloaded newer image for node:alpine
+ ---> 483343d6c5f5
+Step 2/7 : RUN mkdir -p /usr/src/app
+ ---> Running in 86f9887a36dc
+Removing intermediate container 86f9887a36dc
+ ---> 8eab47855db4
+Step 3/7 : WORKDIR /usr/src/app
+ ---> Running in 6108a048c439
+Removing intermediate container 6108a048c439
+ ---> 4a841f31c75b
+Step 4/7 : COPY package.json .
+COPY failed: stat /var/lib/docker/tmp/docker-builder922676473/package.json: no such file or directory

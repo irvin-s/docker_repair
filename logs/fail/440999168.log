@@ -1,0 +1,29 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/14 : FROM node:lts-alpine AS builder
+lts-alpine: Pulling from library/node
+aad63a933944: Pulling fs layer
+1e6875f31a79: Pulling fs layer
+dee60dddbbe0: Pulling fs layer
+ea56792bc485: Pulling fs layer
+ea56792bc485: Waiting
+dee60dddbbe0: Verifying Checksum
+dee60dddbbe0: Download complete
+aad63a933944: Verifying Checksum
+aad63a933944: Download complete
+ea56792bc485: Verifying Checksum
+ea56792bc485: Download complete
+1e6875f31a79: Verifying Checksum
+1e6875f31a79: Download complete
+aad63a933944: Pull complete
+1e6875f31a79: Pull complete
+dee60dddbbe0: Pull complete
+ea56792bc485: Pull complete
+Digest: sha256:0354aa58867fb873ef47d8345d21dddef1309a36226a425217910bc19fde5fb5
+Status: Downloaded newer image for node:lts-alpine
+ ---> 90a1b235430e
+Step 2/14 : WORKDIR /app
+ ---> Running in 7accd69daa5a
+Removing intermediate container 7accd69daa5a
+ ---> f9a3a345f6cd
+Step 3/14 : COPY package*.json /app/
+COPY failed: no source files were specified

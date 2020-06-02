@@ -1,0 +1,16 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/6 : FROM mhart/alpine-node:4.2.1
+4.2.1: Pulling from mhart/alpine-node
+Image docker.io/mhart/alpine-node:4.2.1 uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+4f0d8789f3e0: Pulling fs layer
+4f0d8789f3e0: Download complete
+4f0d8789f3e0: Pull complete
+Digest: sha256:0e4ac3032d2d80ff13260d16fc6e0af0085835638613d57496f850d4a9d04ac9
+Status: Downloaded newer image for mhart/alpine-node:4.2.1
+ ---> b21f02145803
+Step 2/6 : ENV VERSION master
+ ---> Running in 3bdbdb4293f3
+Removing intermediate container 3bdbdb4293f3
+ ---> c512a1c3e065
+Step 3/6 : ADD start_daemon.sh /usr/local/bin/start_daemon
+ADD failed: stat /var/lib/docker/tmp/docker-builder416546578/start_daemon.sh: no such file or directory

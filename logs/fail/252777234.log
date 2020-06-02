@@ -1,0 +1,40 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM python:2-alpine3.7
+2-alpine3.7: Pulling from library/python
+48ecbb6b270e: Pulling fs layer
+81f9ab63a5a5: Pulling fs layer
+d11afbf926bd: Pulling fs layer
+502a70b94b66: Pulling fs layer
+502a70b94b66: Waiting
+81f9ab63a5a5: Verifying Checksum
+81f9ab63a5a5: Download complete
+48ecbb6b270e: Verifying Checksum
+48ecbb6b270e: Download complete
+d11afbf926bd: Verifying Checksum
+d11afbf926bd: Download complete
+502a70b94b66: Download complete
+48ecbb6b270e: Pull complete
+81f9ab63a5a5: Pull complete
+d11afbf926bd: Pull complete
+502a70b94b66: Pull complete
+Digest: sha256:95bdfc0e9fbf57ee252ede6fa3d81dc5d7739aab6b867558f22d06b1c1d9ad81
+Status: Downloaded newer image for python:2-alpine3.7
+ ---> ec0218200ad6
+Step 2/10 : ENTRYPOINT [ "certbot" ]
+ ---> Running in 1d4a9592531d
+Removing intermediate container 1d4a9592531d
+ ---> c9b413807e76
+Step 3/10 : EXPOSE 80 443
+ ---> Running in 70fdb22267f0
+Removing intermediate container 70fdb22267f0
+ ---> d01a440a07a4
+Step 4/10 : VOLUME /etc/letsencrypt /var/lib/letsencrypt
+ ---> Running in 40bb1eab1752
+Removing intermediate container 40bb1eab1752
+ ---> f2da0aea65b1
+Step 5/10 : WORKDIR /opt/certbot
+ ---> Running in 6271678bda01
+Removing intermediate container 6271678bda01
+ ---> 4d87cdb0209d
+Step 6/10 : COPY CHANGES.rst README.rst setup.py src/
+COPY failed: stat /var/lib/docker/tmp/docker-builder350941689/CHANGES.rst: no such file or directory

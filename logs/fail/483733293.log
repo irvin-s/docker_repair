@@ -1,0 +1,240 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM fedora:20
+20: Pulling from library/fedora
+4abd98c7489c: Pulling fs layer
+4abd98c7489c: Verifying Checksum
+4abd98c7489c: Download complete
+4abd98c7489c: Pull complete
+Digest: sha256:5d5a02b873d298da9bca4b84440c5cd698b0832560c850d92cf389cef58bc549
+Status: Downloaded newer image for fedora:20
+ ---> ba74bddb630e
+Step 2/8 : MAINTAINER http://fedoraproject.org/wiki/Cloud
+ ---> Running in b60f0b0902e8
+Removing intermediate container b60f0b0902e8
+ ---> cacb0dd70bc2
+Step 3/8 : RUN yum update -y &&  yum clean all
+ ---> Running in 4b6ff5871dac
+No packages marked for update
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container 4b6ff5871dac
+ ---> 6f86fc0d6500
+Step 4/8 : RUN yum install -y docker-registry && yum clean all
+ ---> Running in 2defabcf371a
+Resolving Dependencies
+--> Running transaction check
+---> Package docker-registry.noarch 0:0.9.0-1.fc20 will be installed
+--> Processing Dependency: python-docker-registry-core >= 2.0.1-2 for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-sqlalchemy for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-simplejson for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-rsa for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-requests for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-jinja2 for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-gunicorn for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-gevent for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-flask for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-blinker for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: python-backports-lzma for package: docker-registry-0.9.0-1.fc20.noarch
+--> Processing Dependency: PyYAML for package: docker-registry-0.9.0-1.fc20.noarch
+--> Running transaction check
+---> Package PyYAML.x86_64 0:3.10-11.fc20 will be installed
+--> Processing Dependency: libyaml-0.so.2()(64bit) for package: PyYAML-3.10-11.fc20.x86_64
+---> Package python-backports-lzma.x86_64 0:0.0.2-5.fc20 will be installed
+--> Processing Dependency: python-backports for package: python-backports-lzma-0.0.2-5.fc20.x86_64
+---> Package python-blinker.noarch 0:1.3-1.fc20 will be installed
+---> Package python-docker-registry-core.noarch 0:2.0.2-1.fc20 will be installed
+--> Processing Dependency: python-redis for package: python-docker-registry-core-2.0.2-1.fc20.noarch
+--> Processing Dependency: python-boto for package: python-docker-registry-core-2.0.2-1.fc20.noarch
+---> Package python-flask.noarch 1:0.10.1-3.fc20 will be installed
+--> Processing Dependency: python-werkzeug for package: 1:python-flask-0.10.1-3.fc20.noarch
+--> Processing Dependency: python-itsdangerous for package: 1:python-flask-0.10.1-3.fc20.noarch
+---> Package python-gevent.x86_64 0:0.13.8-4.fc20 will be installed
+--> Processing Dependency: python-greenlet for package: python-gevent-0.13.8-4.fc20.x86_64
+--> Processing Dependency: libevent-2.0.so.5()(64bit) for package: python-gevent-0.13.8-4.fc20.x86_64
+---> Package python-gunicorn.noarch 0:18.0-1.fc20 will be installed
+--> Processing Dependency: python-setuptools for package: python-gunicorn-18.0-1.fc20.noarch
+---> Package python-jinja2.noarch 0:2.7.3-2.fc20 will be installed
+--> Processing Dependency: python-babel >= 0.8 for package: python-jinja2-2.7.3-2.fc20.noarch
+--> Processing Dependency: python-markupsafe for package: python-jinja2-2.7.3-2.fc20.noarch
+---> Package python-requests.noarch 0:1.2.3-5.fc20 will be installed
+--> Processing Dependency: python-urllib3 >= 1.7 for package: python-requests-1.2.3-5.fc20.noarch
+--> Processing Dependency: python-chardet for package: python-requests-1.2.3-5.fc20.noarch
+---> Package python-rsa.noarch 0:3.1.1-4.fc20 will be installed
+---> Package python-simplejson.x86_64 0:3.5.3-1.fc20 will be installed
+---> Package python-sqlalchemy.x86_64 0:0.8.7-1.fc20 will be installed
+--> Running transaction check
+---> Package libevent.x86_64 0:2.0.21-3.fc20 will be installed
+---> Package libyaml.x86_64 0:0.1.6-2.fc20 will be installed
+---> Package python-babel.noarch 0:1.3-7.fc20 will be installed
+--> Processing Dependency: pytz for package: python-babel-1.3-7.fc20.noarch
+---> Package python-backports.x86_64 0:1.0-3.fc20 will be installed
+---> Package python-boto.noarch 0:2.38.0-1.fc20 will be installed
+---> Package python-chardet.noarch 0:2.0.1-7.fc20 will be installed
+---> Package python-greenlet.x86_64 0:0.4.5-1.fc20 will be installed
+---> Package python-itsdangerous.noarch 0:0.23-1.fc20 will be installed
+---> Package python-markupsafe.x86_64 0:0.18-1.fc20 will be installed
+---> Package python-redis.noarch 0:2.10.3-1.fc20 will be installed
+---> Package python-setuptools.noarch 0:1.4.2-1.fc20 will be installed
+--> Processing Dependency: python-backports-ssl_match_hostname for package: python-setuptools-1.4.2-1.fc20.noarch
+---> Package python-urllib3.noarch 0:1.8.2-1.fc20 will be installed
+---> Package python-werkzeug.noarch 0:0.9.4-1.fc20 will be installed
+--> Running transaction check
+---> Package python-backports-ssl_match_hostname.noarch 0:3.4.0.2-4.fc20 will be installed
+---> Package pytz.noarch 0:2012d-5.fc20 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                              Arch    Version            Repository
+                                                                           Size
+================================================================================
+Installing:
+ docker-registry                      noarch  0.9.0-1.fc20       updates  134 k
+Installing for dependencies:
+ PyYAML                               x86_64  3.10-11.fc20       updates  166 k
+ libevent                             x86_64  2.0.21-3.fc20      fedora   210 k
+ libyaml                              x86_64  0.1.6-2.fc20       updates   55 k
+ python-babel                         noarch  1.3-7.fc20         updates  2.4 M
+ python-backports                     x86_64  1.0-3.fc20         fedora   5.4 k
+ python-backports-lzma                x86_64  0.0.2-5.fc20       fedora    25 k
+ python-backports-ssl_match_hostname  noarch  3.4.0.2-4.fc20     updates   13 k
+ python-blinker                       noarch  1.3-1.fc20         fedora    93 k
+ python-boto                          noarch  2.38.0-1.fc20      updates  1.7 M
+ python-chardet                       noarch  2.0.1-7.fc20       fedora   222 k
+ python-docker-registry-core          noarch  2.0.2-1.fc20       updates   43 k
+ python-flask                         noarch  1:0.10.1-3.fc20    fedora   204 k
+ python-gevent                        x86_64  0.13.8-4.fc20      updates  190 k
+ python-greenlet                      x86_64  0.4.5-1.fc20       updates   29 k
+ python-gunicorn                      noarch  18.0-1.fc20        fedora   170 k
+ python-itsdangerous                  noarch  0.23-1.fc20        fedora    24 k
+ python-jinja2                        noarch  2.7.3-2.fc20       updates  515 k
+ python-markupsafe                    x86_64  0.18-1.fc20        fedora    27 k
+ python-redis                         noarch  2.10.3-1.fc20      updates   94 k
+ python-requests                      noarch  1.2.3-5.fc20       fedora    75 k
+ python-rsa                           noarch  3.1.1-4.fc20       fedora    59 k
+ python-setuptools                    noarch  1.4.2-1.fc20       updates  413 k
+ python-simplejson                    x86_64  3.5.3-1.fc20       updates  175 k
+ python-sqlalchemy                    x86_64  0.8.7-1.fc20       updates  2.6 M
+ python-urllib3                       noarch  1.8.2-1.fc20       updates   79 k
+ python-werkzeug                      noarch  0.9.4-1.fc20       fedora   565 k
+ pytz                                 noarch  2012d-5.fc20       fedora    38 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+27 Dependent packages)
+
+Total download size: 10 M
+Installed size: 51 M
+Downloading packages:
+[91mwarning: /var/cache/yum/x86_64/20/updates/packages/PyYAML-3.10-11.fc20.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 246110c1: NOKEY
+[0mPublic key for PyYAML-3.10-11.fc20.x86_64.rpm is not installed
+Public key for libevent-2.0.21-3.fc20.x86_64.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                              1.9 MB/s |  10 MB  00:05     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-20-x86_64
+[91mImporting GPG key 0x246110C1:
+ Userid     : "Fedora (20) <fedora@fedoraproject.org>"
+ Fingerprint: c7c9 a9c8 9153 f201 83ce 7cba 2eb1 61fa 2461 10c1
+ Package    : fedora-release-20-4.noarch (@fedora-updates/$releasever)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-20-x86_64
+[0mRunning transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : python-rsa-3.1.1-4.fc20.noarch                              1/28 
+  Installing : python-backports-1.0-3.fc20.x86_64                          2/28 
+  Installing : python-backports-ssl_match_hostname-3.4.0.2-4.fc20.noarc    3/28 
+  Installing : python-setuptools-1.4.2-1.fc20.noarch                       4/28 
+  Installing : python-gunicorn-18.0-1.fc20.noarch                          5/28 
+  Installing : python-urllib3-1.8.2-1.fc20.noarch                          6/28 
+  Installing : python-backports-lzma-0.0.2-5.fc20.x86_64                   7/28 
+  Installing : pytz-2012d-5.fc20.noarch                                    8/28 
+  Installing : python-babel-1.3-7.fc20.noarch                              9/28 
+  Installing : python-greenlet-0.4.5-1.fc20.x86_64                        10/28 
+  Installing : python-redis-2.10.3-1.fc20.noarch                          11/28 
+  Installing : libevent-2.0.21-3.fc20.x86_64                              12/28 
+  Installing : python-gevent-0.13.8-4.fc20.x86_64                         13/28 
+  Installing : python-markupsafe-0.18-1.fc20.x86_64                       14/28 
+  Installing : python-jinja2-2.7.3-2.fc20.noarch                          15/28 
+  Installing : python-werkzeug-0.9.4-1.fc20.noarch                        16/28 
+  Installing : python-simplejson-3.5.3-1.fc20.x86_64                      17/28 
+  Installing : python-chardet-2.0.1-7.fc20.noarch                         18/28 
+  Installing : python-requests-1.2.3-5.fc20.noarch                        19/28 
+  Installing : python-boto-2.38.0-1.fc20.noarch                           20/28 
+  Installing : python-docker-registry-core-2.0.2-1.fc20.noarch            21/28 
+  Installing : python-sqlalchemy-0.8.7-1.fc20.x86_64                      22/28 
+  Installing : python-itsdangerous-0.23-1.fc20.noarch                     23/28 
+  Installing : 1:python-flask-0.10.1-3.fc20.noarch                        24/28 
+  Installing : libyaml-0.1.6-2.fc20.x86_64                                25/28 
+  Installing : PyYAML-3.10-11.fc20.x86_64                                 26/28 
+  Installing : python-blinker-1.3-1.fc20.noarch                           27/28 
+  Installing : docker-registry-0.9.0-1.fc20.noarch                        28/28 
+  Verifying  : python-blinker-1.3-1.fc20.noarch                            1/28 
+  Verifying  : libyaml-0.1.6-2.fc20.x86_64                                 2/28 
+  Verifying  : python-gunicorn-18.0-1.fc20.noarch                          3/28 
+  Verifying  : python-backports-1.0-3.fc20.x86_64                          4/28 
+  Verifying  : python-rsa-3.1.1-4.fc20.noarch                              5/28 
+  Verifying  : python-babel-1.3-7.fc20.noarch                              6/28 
+  Verifying  : python-itsdangerous-0.23-1.fc20.noarch                      7/28 
+  Verifying  : python-setuptools-1.4.2-1.fc20.noarch                       8/28 
+  Verifying  : python-sqlalchemy-0.8.7-1.fc20.x86_64                       9/28 
+  Verifying  : python-chardet-2.0.1-7.fc20.noarch                         10/28 
+  Verifying  : python-simplejson-3.5.3-1.fc20.x86_64                      11/28 
+  Verifying  : python-backports-ssl_match_hostname-3.4.0.2-4.fc20.noarc   12/28 
+  Verifying  : python-werkzeug-0.9.4-1.fc20.noarch                        13/28 
+  Verifying  : python-markupsafe-0.18-1.fc20.x86_64                       14/28 
+  Verifying  : python-requests-1.2.3-5.fc20.noarch                        15/28 
+  Verifying  : libevent-2.0.21-3.fc20.x86_64                              16/28 
+  Verifying  : python-jinja2-2.7.3-2.fc20.noarch                          17/28 
+  Verifying  : docker-registry-0.9.0-1.fc20.noarch                        18/28 
+  Verifying  : python-redis-2.10.3-1.fc20.noarch                          19/28 
+  Verifying  : python-greenlet-0.4.5-1.fc20.x86_64                        20/28 
+  Verifying  : python-boto-2.38.0-1.fc20.noarch                           21/28 
+  Verifying  : PyYAML-3.10-11.fc20.x86_64                                 22/28 
+  Verifying  : python-gevent-0.13.8-4.fc20.x86_64                         23/28 
+  Verifying  : pytz-2012d-5.fc20.noarch                                   24/28 
+  Verifying  : python-backports-lzma-0.0.2-5.fc20.x86_64                  25/28 
+  Verifying  : python-docker-registry-core-2.0.2-1.fc20.noarch            26/28 
+  Verifying  : python-urllib3-1.8.2-1.fc20.noarch                         27/28 
+  Verifying  : 1:python-flask-0.10.1-3.fc20.noarch                        28/28 
+
+Installed:
+  docker-registry.noarch 0:0.9.0-1.fc20                                         
+
+Dependency Installed:
+  PyYAML.x86_64 0:3.10-11.fc20                                                  
+  libevent.x86_64 0:2.0.21-3.fc20                                               
+  libyaml.x86_64 0:0.1.6-2.fc20                                                 
+  python-babel.noarch 0:1.3-7.fc20                                              
+  python-backports.x86_64 0:1.0-3.fc20                                          
+  python-backports-lzma.x86_64 0:0.0.2-5.fc20                                   
+  python-backports-ssl_match_hostname.noarch 0:3.4.0.2-4.fc20                   
+  python-blinker.noarch 0:1.3-1.fc20                                            
+  python-boto.noarch 0:2.38.0-1.fc20                                            
+  python-chardet.noarch 0:2.0.1-7.fc20                                          
+  python-docker-registry-core.noarch 0:2.0.2-1.fc20                             
+  python-flask.noarch 1:0.10.1-3.fc20                                           
+  python-gevent.x86_64 0:0.13.8-4.fc20                                          
+  python-greenlet.x86_64 0:0.4.5-1.fc20                                         
+  python-gunicorn.noarch 0:18.0-1.fc20                                          
+  python-itsdangerous.noarch 0:0.23-1.fc20                                      
+  python-jinja2.noarch 0:2.7.3-2.fc20                                           
+  python-markupsafe.x86_64 0:0.18-1.fc20                                        
+  python-redis.noarch 0:2.10.3-1.fc20                                           
+  python-requests.noarch 0:1.2.3-5.fc20                                         
+  python-rsa.noarch 0:3.1.1-4.fc20                                              
+  python-setuptools.noarch 0:1.4.2-1.fc20                                       
+  python-simplejson.x86_64 0:3.5.3-1.fc20                                       
+  python-sqlalchemy.x86_64 0:0.8.7-1.fc20                                       
+  python-urllib3.noarch 0:1.8.2-1.fc20                                          
+  python-werkzeug.noarch 0:0.9.4-1.fc20                                         
+  pytz.noarch 0:2012d-5.fc20                                                    
+
+Complete!
+Cleaning repos: fedora updates
+Cleaning up everything
+Removing intermediate container 2defabcf371a
+ ---> 09ae8db271ba
+Step 5/8 : ADD run-registry.sh /opt/registry/run-registry.sh
+ADD failed: stat /var/lib/docker/tmp/docker-builder086860617/run-registry.sh: no such file or directory

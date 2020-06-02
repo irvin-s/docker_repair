@@ -1,0 +1,103 @@
+Sending build context to Docker daemon   5.12kB
+Step 1/44 : FROM phusion/baseimage
+latest: Pulling from phusion/baseimage
+Image docker.io/phusion/baseimage:latest uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+281a73dee007: Pulling fs layer
+2aea1b77cff7: Pulling fs layer
+59a714b7d8bf: Pulling fs layer
+0218064da0a9: Pulling fs layer
+ebac621dcea3: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+b580731643cc: Pulling fs layer
+faa5fbdba239: Pulling fs layer
+a3ed95caeb02: Waiting
+b580731643cc: Waiting
+faa5fbdba239: Waiting
+0218064da0a9: Waiting
+ebac621dcea3: Waiting
+59a714b7d8bf: Verifying Checksum
+2aea1b77cff7: Verifying Checksum
+2aea1b77cff7: Download complete
+ebac621dcea3: Verifying Checksum
+ebac621dcea3: Download complete
+0218064da0a9: Verifying Checksum
+0218064da0a9: Download complete
+281a73dee007: Verifying Checksum
+281a73dee007: Download complete
+a3ed95caeb02: Verifying Checksum
+a3ed95caeb02: Download complete
+b580731643cc: Download complete
+faa5fbdba239: Verifying Checksum
+faa5fbdba239: Download complete
+281a73dee007: Pull complete
+2aea1b77cff7: Pull complete
+59a714b7d8bf: Pull complete
+0218064da0a9: Pull complete
+ebac621dcea3: Pull complete
+a3ed95caeb02: Pull complete
+b580731643cc: Pull complete
+faa5fbdba239: Pull complete
+Digest: sha256:29479c37fcb28089eddd6619deed43bcdbcccf2185369e0199cc51a5ec78991b
+Status: Downloaded newer image for phusion/baseimage:latest
+ ---> 166cfc3f6974
+Step 2/44 : MAINTAINER Matthias Kuhn <matthias dot kuhn at gmx dot ch>
+ ---> Running in 9880b3c722a6
+Removing intermediate container 9880b3c722a6
+ ---> 5c6d9dfc0a43
+Step 3/44 : ENV HOME /root
+ ---> Running in a4aab2e79a63
+Removing intermediate container a4aab2e79a63
+ ---> 2c26e5de4f4b
+Step 4/44 : RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
+ ---> Running in b33304eb1870
+Removing intermediate container b33304eb1870
+ ---> f5dc0742d813
+Step 5/44 : RUN apt-get update
+ ---> Running in 61cece482a14
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:3 http://security.ubuntu.com/ubuntu xenial-security/main Sources [203 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,243 B]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [146 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [3,515 B]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1,075 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [621 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [6,282 B]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial/main Sources [1,103 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial/restricted Sources [5,179 B]
+Get:15 http://archive.ubuntu.com/ubuntu xenial/universe Sources [9,802 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial/multiverse Sources [215 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1,558 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9,827 kB]
+Get:20 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main Sources [438 kB]
+Get:22 http://archive.ubuntu.com/ubuntu xenial-updates/restricted Sources [2,696 B]
+Get:23 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [339 kB]
+Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse Sources [9,422 B]
+Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1,445 kB]
+Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
+Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1,027 kB]
+Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [19.3 kB]
+Get:29 http://archive.ubuntu.com/ubuntu xenial-backports/main Sources [5,073 B]
+Get:30 http://archive.ubuntu.com/ubuntu xenial-backports/universe Sources [7,665 B]
+Get:31 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7,942 B]
+Get:32 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8,807 B]
+Fetched 28.7 MB in 3s (8,122 kB/s)
+Reading package lists...
+Removing intermediate container 61cece482a14
+ ---> cba491ae634c
+Step 6/44 : RUN apt-get install --no-install-recommends -y ant wget git cmake bison flex unzip zip expect lib32stdc++6 libc6-i386 lib32z1 openjdk-7-jdk patch make rsync
+ ---> Running in 2624af58a94c
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package openjdk-7-jdk is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+[91mE: Package 'openjdk-7-jdk' has no installation candidate
+[0mThe command '/bin/sh -c apt-get install --no-install-recommends -y ant wget git cmake bison flex unzip zip expect lib32stdc++6 libc6-i386 lib32z1 openjdk-7-jdk patch make rsync' returned a non-zero code: 100

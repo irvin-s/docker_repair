@@ -1,0 +1,71 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : ARG ARCH=amd64
+Step 2/8 : FROM balenalib/${ARCH}-alpine
+latest: Pulling from balenalib/amd64-alpine
+aad63a933944: Pulling fs layer
+7643d7a4ee38: Pulling fs layer
+ea69ed2b7881: Pulling fs layer
+b0f8bbaa779c: Pulling fs layer
+b0f8bbaa779c: Waiting
+aad63a933944: Verifying Checksum
+aad63a933944: Download complete
+7643d7a4ee38: Verifying Checksum
+7643d7a4ee38: Download complete
+aad63a933944: Pull complete
+b0f8bbaa779c: Verifying Checksum
+7643d7a4ee38: Pull complete
+ea69ed2b7881: Pull complete
+b0f8bbaa779c: Pull complete
+Digest: sha256:49eb5b92fd0cf4f0fa357e7ec0eb52bd696d67b1cf0e87970803748fc75ece98
+Status: Downloaded newer image for balenalib/amd64-alpine:latest
+ ---> 144584471f8e
+Step 3/8 : LABEL maintainer="Julio Gutierrez <bubuntux@gmail.com>"
+ ---> Running in 5f9b30b4f8bb
+Removing intermediate container 5f9b30b4f8bb
+ ---> 888a6ab3985a
+Step 4/8 : RUN apk --no-cache --no-progress upgrade &&     apk --no-cache --no-progress add bash curl jq ip6tables iptables openvpn shadow tini tzdata &&     addgroup -S vpn &&     rm -rf /tmp/*
+ ---> Running in eddc9582651c
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+Upgrading critical system libraries and apk-tools:
+(1/1) Upgrading apk-tools (2.10.4-r3 -> 2.10.5-r0)
+Executing busybox-1.31.1-r9.trigger
+Continuing the upgrade transaction with new apk-tools:
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+OK: 32 MiB in 59 packages
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+(1/13) Installing libmnl (1.0.4-r0)
+(2/13) Installing libnftnl-libs (1.1.5-r0)
+(3/13) Installing iptables (1.8.3-r2)
+(4/13) Installing ip6tables (1.8.3-r2)
+(5/13) Installing oniguruma (6.9.4-r0)
+(6/13) Installing jq (1.6-r0)
+(7/13) Installing iproute2 (5.4.0-r1)
+Executing iproute2-5.4.0-r1.post-install
+(8/13) Installing lzo (2.10-r2)
+(9/13) Installing openvpn (2.4.8-r1)
+Executing openvpn-2.4.8-r1.pre-install
+(10/13) Installing linux-pam (1.3.1-r1)
+(11/13) Installing shadow (4.7-r1)
+(12/13) Installing tini (0.18.0-r0)
+(13/13) Installing tzdata (2019c-r0)
+Executing busybox-1.31.1-r9.trigger
+OK: 44 MiB in 72 packages
+Removing intermediate container eddc9582651c
+ ---> 6c83eed32655
+Step 5/8 : ENV NET_IFACE=eth0
+ ---> Running in 1c2d3180953c
+Removing intermediate container 1c2d3180953c
+ ---> 0d47f95e5ece
+Step 6/8 : VOLUME ["/vpn"]
+ ---> Running in 8d1f9a1ea535
+Removing intermediate container 8d1f9a1ea535
+ ---> 81e307b063f1
+Step 7/8 : ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/nordVpn.sh"]
+ ---> Running in 3cc2cfd49573
+Removing intermediate container 3cc2cfd49573
+ ---> 1e916e19e87b
+Step 8/8 : COPY nordVpn.sh /usr/bin
+COPY failed: stat /var/lib/docker/tmp/docker-builder666886924/nordVpn.sh: no such file or directory

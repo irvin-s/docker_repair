@@ -1,0 +1,48 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM meteorhacks/meteord:onbuild
+onbuild: Pulling from meteorhacks/meteord
+4d690fa98655: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+0638f01c6191: Pulling fs layer
+086f3bb36259: Pulling fs layer
+086f3bb36259: Waiting
+a3ed95caeb02: Verifying Checksum
+a3ed95caeb02: Download complete
+0638f01c6191: Verifying Checksum
+0638f01c6191: Download complete
+4d690fa98655: Verifying Checksum
+4d690fa98655: Download complete
+086f3bb36259: Verifying Checksum
+086f3bb36259: Download complete
+4d690fa98655: Pull complete
+a3ed95caeb02: Pull complete
+0638f01c6191: Pull complete
+086f3bb36259: Pull complete
+Digest: sha256:82742e8239de01588aa865aec6363b69e110ceb1a3860a109a9d00a61be5c9e2
+Status: Downloaded newer image for meteorhacks/meteord:onbuild
+# Executing 2 build triggers
+ ---> Running in 3a695b98e90f
+[91mDownloading Meteor distribution
+[0m[91m
+[0m[91mMeteor 1.10.2 has been installed in your home directory (~/.meteor).
+[0m[91mWriting a launcher script to /usr/local/bin/meteor for your convenience.
+[0m[91m
+To get started fast:
+
+  $ meteor create ~/my_cool_app
+  $ cd ~/my_cool_app
+  $ meteor
+
+Or see the docs at:
+
+  docs.meteor.com
+
+Deploy and host your app with Galaxy:
+
+  www.meteor.com/hosting
+
+[0m[91m/root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.18' not found (required by /root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node)
+[0m[91m/root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.16' not found (required by /root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node)
+[0m[91m/root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.17' not found (required by /root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node)
+[0m[91m/root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.14' not found (required by /root/.meteor/packages/meteor-tool/.1.10.2.121ry7f.gueme++os.linux.x86_64+web.browser+web.browser.legacy+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node)
+[0mThe command '/bin/sh -c bash $METEORD_DIR/on_build.sh' returned a non-zero code: 1

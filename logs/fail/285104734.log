@@ -1,0 +1,44 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM linukey/webserver
+latest: Pulling from linukey/webserver
+d5c6f90da05d: Pulling fs layer
+1300883d87d5: Pulling fs layer
+c220aa3cfc1b: Pulling fs layer
+2e9398f099dc: Pulling fs layer
+dc27a084064f: Pulling fs layer
+24706b3af1b9: Pulling fs layer
+cb169357575f: Pulling fs layer
+71d1d7d1c740: Pulling fs layer
+24706b3af1b9: Waiting
+cb169357575f: Waiting
+2e9398f099dc: Waiting
+dc27a084064f: Waiting
+71d1d7d1c740: Waiting
+1300883d87d5: Verifying Checksum
+1300883d87d5: Download complete
+c220aa3cfc1b: Download complete
+dc27a084064f: Verifying Checksum
+dc27a084064f: Download complete
+2e9398f099dc: Verifying Checksum
+2e9398f099dc: Download complete
+d5c6f90da05d: Verifying Checksum
+d5c6f90da05d: Download complete
+cb169357575f: Verifying Checksum
+cb169357575f: Download complete
+24706b3af1b9: Verifying Checksum
+24706b3af1b9: Download complete
+71d1d7d1c740: Verifying Checksum
+71d1d7d1c740: Download complete
+d5c6f90da05d: Pull complete
+1300883d87d5: Pull complete
+c220aa3cfc1b: Pull complete
+2e9398f099dc: Pull complete
+dc27a084064f: Pull complete
+24706b3af1b9: Pull complete
+cb169357575f: Pull complete
+71d1d7d1c740: Pull complete
+Digest: sha256:bfd2ae16d1253d64ea8ee09ecfb4466c4123038fd3b59c4f196fcd19eb06497c
+Status: Downloaded newer image for linukey/webserver:latest
+ ---> 709747286968
+Step 2/4 : COPY server-tool.tgz /
+COPY failed: stat /var/lib/docker/tmp/docker-builder592366757/server-tool.tgz: no such file or directory

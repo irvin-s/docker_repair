@@ -1,3 +1,0 @@
-Sending build context to Docker daemon  3.584kB
-Step 1/10 : FROM opensuse:42.2
-manifest for opensuse:42.2 not found: manifest unknown: manifest unknown

@@ -1,0 +1,49 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM python:2-onbuild
+2-onbuild: Pulling from library/python
+d660b1f15b9b: Pulling fs layer
+46dde23c37b3: Pulling fs layer
+6ebaeb074589: Pulling fs layer
+e7428f935583: Pulling fs layer
+0c3de61682aa: Pulling fs layer
+56f10ddf1173: Pulling fs layer
+4473537c621d: Pulling fs layer
+3106f7df3d1c: Pulling fs layer
+3de1c6ceef68: Pulling fs layer
+e7428f935583: Waiting
+0c3de61682aa: Waiting
+56f10ddf1173: Waiting
+4473537c621d: Waiting
+3106f7df3d1c: Waiting
+3de1c6ceef68: Waiting
+46dde23c37b3: Verifying Checksum
+46dde23c37b3: Download complete
+6ebaeb074589: Verifying Checksum
+6ebaeb074589: Download complete
+d660b1f15b9b: Verifying Checksum
+d660b1f15b9b: Download complete
+0c3de61682aa: Verifying Checksum
+0c3de61682aa: Download complete
+56f10ddf1173: Verifying Checksum
+56f10ddf1173: Download complete
+e7428f935583: Verifying Checksum
+e7428f935583: Download complete
+4473537c621d: Verifying Checksum
+4473537c621d: Download complete
+3106f7df3d1c: Verifying Checksum
+3106f7df3d1c: Download complete
+3de1c6ceef68: Verifying Checksum
+3de1c6ceef68: Download complete
+d660b1f15b9b: Pull complete
+46dde23c37b3: Pull complete
+6ebaeb074589: Pull complete
+e7428f935583: Pull complete
+0c3de61682aa: Pull complete
+56f10ddf1173: Pull complete
+4473537c621d: Pull complete
+3106f7df3d1c: Pull complete
+3de1c6ceef68: Pull complete
+Digest: sha256:5af88e1d011bf7e845e83813712d9f91be1a39e2ede092008fc53e0a0ce1333b
+Status: Downloaded newer image for python:2-onbuild
+# Executing 3 build triggers
+COPY failed: stat /var/lib/docker/tmp/docker-builder305411471/requirements.txt: no such file or directory

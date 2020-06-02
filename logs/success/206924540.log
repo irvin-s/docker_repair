@@ -1,0 +1,16 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM alpine:3.7
+3.7: Pulling from library/alpine
+5d20c808ce19: Pulling fs layer
+5d20c808ce19: Verifying Checksum
+5d20c808ce19: Download complete
+5d20c808ce19: Pull complete
+Digest: sha256:8421d9a84432575381bfabd248f1eb56f3aa21d9d7cd2511583c68c9b7511d10
+Status: Downloaded newer image for alpine:3.7
+ ---> 6d1ef012b567
+Step 2/2 : CMD echo "hello"
+ ---> Running in ed17e99c0bbc
+Removing intermediate container ed17e99c0bbc
+ ---> 8da3fc452e71
+Successfully built 8da3fc452e71
+Successfully tagged binacle:206924540

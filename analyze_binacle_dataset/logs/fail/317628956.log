@@ -1,3 +1,0 @@
-Sending build context to Docker daemon  2.048kB
-Step 1/2 : FROM bats-jenkins-install-plugins
-pull access denied for bats-jenkins-install-plugins, repository does not exist or may require 'docker login': denied: requested access to the resource is denied

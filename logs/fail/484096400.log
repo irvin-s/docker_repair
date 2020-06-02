@@ -1,0 +1,20 @@
+Sending build context to Docker daemon  11.26kB
+Step 1/53 : FROM debian:jessie
+jessie: Pulling from library/debian
+f27d6ed8cebc: Pulling fs layer
+f27d6ed8cebc: Verifying Checksum
+f27d6ed8cebc: Download complete
+f27d6ed8cebc: Pull complete
+Digest: sha256:a77aa078ad4769799286bba5fc198deda5bfd4d0144a24e6aa0c8dddf0a22833
+Status: Downloaded newer image for debian:jessie
+ ---> c1045f0373cd
+Step 2/53 : ARG APT_MIRROR=deb.debian.org
+ ---> Running in 66dc3e68e384
+Removing intermediate container 66dc3e68e384
+ ---> 4290646fc427
+Step 3/53 : RUN sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list
+ ---> Running in 2e7e09f3a36b
+Removing intermediate container 2e7e09f3a36b
+ ---> 6adf5ab3692a
+Step 4/53 : COPY keys/launchpad-ppa-zfs.asc /go/src/github.com/docker/docker/keys/
+COPY failed: stat /var/lib/docker/tmp/docker-builder187780608/keys/launchpad-ppa-zfs.asc: no such file or directory

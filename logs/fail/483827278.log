@@ -1,0 +1,1142 @@
+Sending build context to Docker daemon  4.096kB
+Step 1/29 : FROM alpine:latest as builder
+latest: Pulling from library/alpine
+aad63a933944: Pulling fs layer
+aad63a933944: Verifying Checksum
+aad63a933944: Download complete
+aad63a933944: Pull complete
+Digest: sha256:b276d875eeed9c7d3f1cfa7edb06b22ed22b14219a7d67c52c56612330348239
+Status: Downloaded newer image for alpine:latest
+ ---> a187dde48cd2
+Step 2/29 : RUN apk add --no-cache     autoconf     automake     bison     build-base     curl     flex     git     libmnl-dev     libtool     linux-headers     readline-dev     gdb pv strace valgrind vim  # for debug only
+ ---> Running in c105be23307c
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+(1/60) Installing m4 (1.4.18-r1)
+(2/60) Installing libbz2 (1.0.8-r1)
+(3/60) Installing perl (5.30.1-r0)
+(4/60) Installing autoconf (2.69-r2)
+(5/60) Installing automake (1.16.1-r0)
+(6/60) Installing bison (3.4.2-r0)
+(7/60) Installing libgcc (9.2.0-r4)
+(8/60) Installing libstdc++ (9.2.0-r4)
+(9/60) Installing binutils (2.33.1-r0)
+(10/60) Installing libmagic (5.37-r1)
+(11/60) Installing file (5.37-r1)
+(12/60) Installing gmp (6.1.2-r1)
+(13/60) Installing isl (0.18-r0)
+(14/60) Installing libgomp (9.2.0-r4)
+(15/60) Installing libatomic (9.2.0-r4)
+(16/60) Installing mpfr4 (4.0.2-r1)
+(17/60) Installing mpc1 (1.1.0-r1)
+(18/60) Installing gcc (9.2.0-r4)
+(19/60) Installing musl-dev (1.1.24-r2)
+(20/60) Installing libc-dev (0.7.2-r0)
+(21/60) Installing g++ (9.2.0-r4)
+(22/60) Installing make (4.2.1-r2)
+(23/60) Installing fortify-headers (1.1-r0)
+(24/60) Installing build-base (0.5-r1)
+(25/60) Installing ca-certificates (20191127-r1)
+(26/60) Installing nghttp2-libs (1.40.0-r0)
+(27/60) Installing libcurl (7.67.0-r0)
+(28/60) Installing curl (7.67.0-r0)
+(29/60) Installing flex (2.6.4-r2)
+(30/60) Installing expat (2.2.9-r1)
+(31/60) Installing ncurses-terminfo-base (6.1_p20200118-r2)
+(32/60) Installing ncurses-libs (6.1_p20200118-r2)
+(33/60) Installing libffi (3.2.1-r6)
+(34/60) Installing gdbm (1.13-r1)
+(35/60) Installing xz-libs (5.2.4-r0)
+(36/60) Installing readline (8.0.1-r0)
+(37/60) Installing sqlite-libs (3.30.1-r1)
+(38/60) Installing python3 (3.8.2-r0)
+(39/60) Installing gdb (8.3.1-r3)
+(40/60) Installing pcre2 (10.34-r1)
+(41/60) Installing git (2.24.1-r0)
+(42/60) Installing perl-error (0.17028-r0)
+(43/60) Installing perl-git (2.24.1-r0)
+(44/60) Installing git-perl (2.24.1-r0)
+(45/60) Installing linux-headers (4.19.36-r0)
+(46/60) Installing libmnl (1.0.4-r0)
+(47/60) Installing pkgconf (1.6.3-r0)
+(48/60) Installing libmnl-dev (1.0.4-r0)
+(49/60) Installing bash (5.0.11-r1)
+Executing bash-5.0.11-r1.post-install
+(50/60) Installing libltdl (2.4.6-r7)
+(51/60) Installing libtool (2.4.6-r7)
+(52/60) Installing pv (1.6.6-r1)
+(53/60) Installing libhistory (8.0.1-r0)
+(54/60) Installing ncurses-dev (6.1_p20200118-r2)
+(55/60) Installing readline-dev (8.0.1-r0)
+(56/60) Installing strace (5.3-r1)
+(57/60) Installing valgrind (3.15.0-r1)
+(58/60) Installing xxd (8.2.0-r0)
+(59/60) Installing lua5.3-libs (5.3.5-r2)
+(60/60) Installing vim (8.2.0-r0)
+Executing busybox-1.31.1-r9.trigger
+Executing ca-certificates-20191127-r1.trigger
+OK: 455 MiB in 74 packages
+Removing intermediate container c105be23307c
+ ---> 06d9be6391d3
+Step 3/29 : RUN mkdir -p     /baseroot/opt/wh/tools     /baseroot/usr/bin     /baseroot/usr/lib     /baseroot/usr/local/lib/lua/5.3     /baseroot/usr/share/bash-completion/completions
+ ---> Running in ebd6dd93f625
+Removing intermediate container ebd6dd93f625
+ ---> 6d0e7c8bcdaf
+Step 4/29 : WORKDIR /root
+ ---> Running in 08a38781ef2d
+Removing intermediate container 08a38781ef2d
+ ---> 4caf404bfb00
+Step 5/29 : RUN git clone https://github.com/jedisct1/libsodium &&     git clone  https://github.com/miniupnp/miniupnp &&     curl -R -O http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz &&     curl -R -O https://www.lua.org/ftp/lua-5.3.5.tar.gz &&     tar xfz libpcap-1.9.0.tar.gz && tar xfz lua-5.3.5.tar.gz
+ ---> Running in 0c6f503cc40d
+[91mCloning into 'libsodium'...
+[0m[91mCloning into 'miniupnp'...
+[0m[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0[0m[91m    0     0    0    [0m[91m 0      0      0 --:--:-- --:--:-- --:--:--  [0m[91m   0[0m[91m100  812k  100  812k    0     0  1682k      0 --:--:-- --:--:-- --:--:-- 1682k
+[0m[91m  % Total    % Received % Xferd  Average Speed   Time    Time [0m[91m    Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m 37  296k   37  112k    0     0   105k      0  0:00:02  0:00:01  0:00:01  105k[0m[91m100  296k  100  296k    0     0   253k      0  0:00:01  0:00:01 --:--:--  252k
+[0mRemoving intermediate container 0c6f503cc40d
+ ---> e80039fdf2fe
+Step 6/29 : WORKDIR /root/libpcap-1.9.0
+ ---> Running in 1e09a52893e8
+Removing intermediate container 1e09a52893e8
+ ---> 5d4ed51d4883
+Step 7/29 : RUN ./configure &&     make -j &&     make install
+ ---> Running in 9b4e96d4c190
+checking build system type... x86_64-pc-linux-musl
+checking host system type... x86_64-pc-linux-musl
+checking target system type... x86_64-pc-linux-musl
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gcc option to accept ISO C99... none needed
+checking whether the compiler supports the -fvisibility=hidden option... yes
+checking for inline... inline
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking sys/ioccom.h usability... no
+checking sys/ioccom.h presence... no
+checking for sys/ioccom.h... no
+checking sys/sockio.h usability... no
+checking sys/sockio.h presence... no
+checking for sys/sockio.h... no
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking netpacket/packet.h usability... yes
+checking netpacket/packet.h presence... yes
+checking for netpacket/packet.h... yes
+checking for net/pfvar.h... no
+checking for linux/sockios.h... yes
+checking for linux/if_bonding.h... yes
+checking for ANSI ioctl definitions... yes
+checking for strerror... yes
+checking for strerror_r... yes
+checking for strerror_s... no
+checking for strlcpy... yes
+checking for strlcat... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for strtok_r... yes
+checking for ffs... yes
+checking whether ffs is declared... no
+checking for getaddrinfo... yes
+checking for library containing putmsg... no
+checking whether getnetbyname_r is declared... no
+checking whether getprotobyname_r is declared... no
+checking for ether_hostton... yes
+checking whether ether_hostton is declared... no
+checking whether ether_hostton is declared... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_create... yes
+checking if --disable-protochain option is specified... enabled
+checking net/bpf.h usability... no
+checking net/bpf.h presence... no
+checking for net/bpf.h... no
+checking net/pfilt.h usability... no
+checking net/pfilt.h presence... no
+checking for net/pfilt.h... no
+checking net/enet.h usability... no
+checking net/enet.h presence... no
+checking for net/enet.h... no
+checking net/nit.h usability... no
+checking net/nit.h presence... no
+checking for net/nit.h... no
+checking sys/net/nit.h usability... no
+checking sys/net/nit.h presence... no
+checking for sys/net/nit.h... no
+checking linux/socket.h usability... yes
+checking linux/socket.h presence... yes
+checking for linux/socket.h... yes
+checking net/raw.h usability... no
+checking net/raw.h presence... no
+checking for net/raw.h... no
+checking sys/dlpi.h usability... no
+checking sys/dlpi.h presence... no
+checking for sys/dlpi.h... no
+checking packet capture type... linux
+checking for linux/wireless.h... yes
+checking for nl_socket_alloc in -lnl-3... no
+checking for nl_socket_alloc in -lnl... no
+checking for nl_handle_alloc in -lnl... no
+checking for linux/ethtool.h... yes
+checking for struct tpacket_stats... yes
+checking for struct tpacket_auxdata.tp_vlan_tci... yes
+checking for getifaddrs... yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking linux/net_tstamp.h usability... yes
+checking linux/net_tstamp.h presence... yes
+checking for linux/net_tstamp.h... yes
+checking for socklen_t... yes
+checking dagapi.h usability... no
+checking dagapi.h presence... no
+checking for dagapi.h... no
+checking whether we have Septel API headers... no
+checking whether we have Myricom Sniffer API... no
+checking whether TurboCap is supported... no
+checking whether to enable remote packet capture... no
+checking whether to build optimizer debugging code... no
+checking whether to build parser debugging code... no
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... none needed
+checking whether yytext is a pointer... no
+checking for capable lex... yes
+checking for bison... bison -y
+checking for capable yacc/bison... yes
+checking for ranlib... ranlib
+checking for ar... ar
+checking whether ln -s works... yes
+checking for struct sockaddr.sa_len... no
+checking for struct sockaddr_storage... yes
+checking for dl_hp_ppa_info_t.dl_module_id_1... no
+checking if unaligned accesses fail... no
+checking for USB sniffing support... yes
+configure: Device for USB sniffing is /dev/usbmon
+checking linux/compiler.h usability... no
+checking linux/compiler.h presence... no
+checking for linux/compiler.h... no
+checking linux/usbdevice_fs.h usability... yes
+checking linux/usbdevice_fs.h presence... yes
+checking for linux/usbdevice_fs.h... yes
+checking for struct usbdevfs_ctrltransfer.bRequestType... yes
+checking whether the platform could support netfilter sniffing... yes
+checking whether we can compile the netfilter support... yes
+checking whether we can compile the netmap support... no
+checking bluetooth/bluetooth.h usability... no
+checking bluetooth/bluetooth.h presence... no
+checking for bluetooth/bluetooth.h... no
+configure: Bluetooth sniffing is not supported; install bluez-lib devel to enable it
+checking for pkg-config... pkg-config
+checking for D-Bus... no
+checking for ibv_get_device_list in -libverbs... no
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating pcap-filter.manmisc
+config.status: creating pcap-linktype.manmisc
+config.status: creating pcap-tstamp.manmisc
+config.status: creating pcap-savefile.manfile
+config.status: creating pcap.3pcap
+config.status: creating pcap_compile.3pcap
+config.status: creating pcap_datalink.3pcap
+config.status: creating pcap_dump_open.3pcap
+config.status: creating pcap_get_tstamp_precision.3pcap
+config.status: creating pcap_list_datalinks.3pcap
+config.status: creating pcap_list_tstamp_types.3pcap
+config.status: creating pcap_open_dead.3pcap
+config.status: creating pcap_open_offline.3pcap
+config.status: creating pcap_set_tstamp_precision.3pcap
+config.status: creating pcap_set_tstamp_type.3pcap
+config.status: creating rpcapd/Makefile
+config.status: creating rpcapd/rpcapd.manadmin
+config.status: creating testprogs/Makefile
+config.status: creating config.h
+config.status: executing default-1 commands
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-linux.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-usb-linux.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-netfilter-linux.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./fad-getad.c
+bison -y -p pcap_ -o grammar.c -d grammar.y
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap.c
+[91mgrammar.y:4[0m[91m.1[0m[91m-12[0m[91m: [0m[91mwarning:[0m[91m [0m[91mPOSIX Yacc does not support %pure-parser[0m[91m [[0m[91m-Wyacc[0m[91m][0m[91m
+[0m[91m    4 | [0m[91m%[0m[91mp[0m[91mu[0m[91mr[0m[91me[0m[91m-[0m[91mp[0m[91ma[0m[91mr[0m[91ms[0m[91me[0m[91mr[0m[91m
+[0m[91m      | [0m[91m^[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m
+[0m[91mgrammar.y[0m[91m:4[0m[91m.1[0m[91m-12[0m[91m: [0m[91mwarning:[0m[91m [0m[91mdeprecated directive, use ‘%define api.pure’[0m[91m [[0m[91m-Wdeprecated[0m[91m][0m[91m
+[0m[91m    4 | [0m[91m%[0m[91mp[0m[91mu[0m[91mr[0m[91me[0m[91m-[0m[91mp[0m[91ma[0m[91mr[0m[91ms[0m[91me[0m[91mr[0m[91m
+[0m[91m      | [0m[91m^[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m~[0m[91m
+[0mflex -P pcap_ --header-file=scanner.h --nounput -o scanner.c scanner.l
+[91mgrammar.y: warning: 38 shift/reduce conflicts [-Wconflicts-sr]
+[0mgcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./optimize.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./nametoaddr.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./etherent.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./fmtutils.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./savefile.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcap.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcapng.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-common.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_image.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_filter.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_dump.c
+./config.status --file=libpcap.pc.tmp:./libpcap.pc.in
+./config.status --file=pcap-config.tmp:./pcap-config.in
+config.status: creating pcap-config.tmp
+config.status: creating libpcap.pc.tmp
+mv pcap-config.tmp pcap-config
+chmod a+x pcap-config
+mv libpcap.pc.tmp libpcap.pc
+chmod a+x libpcap.pc
+[91mgrammar.y[0m[91m: warning: fix-its can be applied.  Rerun with option '--update'. [[0m[91m-Wother[0m[91m][0m[91m
+[0mgcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c grammar.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./gencode.c
+gcc -fvisibility=hidden -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c scanner.c
+ar rc libpcap.a pcap-linux.o pcap-usb-linux.o pcap-netfilter-linux.o fad-getad.o pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o  scanner.o grammar.o  
+VER=`cat ./VERSION`; \
+MAJOR_VER=`sed 's/\([0-9][0-9]*\)\..*/\1/' ./VERSION`; \
+gcc  -shared -Wl,-soname,libpcap.so.$MAJOR_VER \
+    -o libpcap.so.$VER pcap-linux.o pcap-usb-linux.o pcap-netfilter-linux.o fad-getad.o pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o  scanner.o grammar.o   
+ranlib libpcap.a
+VER=`cat ./VERSION`; \
+MAJOR_VER=`sed 's/\([0-9][0-9]*\)\..*/\1/' ./VERSION`; \
+gcc  -shared -Wl,-soname,libpcap.so.$MAJOR_VER \
+    -o libpcap.so.$VER pcap-linux.o pcap-usb-linux.o pcap-netfilter-linux.o fad-getad.o pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o  scanner.o grammar.o   
+[ -d /usr/local/lib ] || \
+    (mkdir -p /usr/local/lib; chmod 755 /usr/local/lib)
+VER=`cat ./VERSION`; \
+MAJOR_VER=`sed 's/\([0-9][0-9]*\)\..*/\1/' ./VERSION`; \
+/usr/bin/install -c libpcap.so.$VER /usr/local/lib/libpcap.so.$VER; \
+ln -sf libpcap.so.$VER /usr/local/lib/libpcap.so.$MAJOR_VER; \
+ln -sf libpcap.so.$MAJOR_VER /usr/local/lib/libpcap.so
+#
+# Most platforms have separate suffixes for shared and
+# archive libraries, so we install both.
+#
+[ -d /usr/local/lib ] || \
+    (mkdir -p /usr/local/lib; chmod 755 /usr/local/lib)
+/usr/bin/install -c -m 644 libpcap.a /usr/local/lib/libpcap.a
+ranlib /usr/local/lib/libpcap.a
+[ -d /usr/local/lib ] || \
+    (mkdir -p /usr/local/lib; chmod 755 /usr/local/lib)
+[ -d /usr/local/include ] || \
+    (mkdir -p /usr/local/include; chmod 755 /usr/local/include)
+[ -d /usr/local/include/pcap ] || \
+    (mkdir -p /usr/local/include/pcap; chmod 755 /usr/local/include/pcap)
+[ -d /usr/local/share/man/man1 ] || \
+    (mkdir -p /usr/local/share/man/man1; chmod 755 /usr/local/share/man/man1)
+[ -d /usr/local/share/man/man3 ] || \
+    (mkdir -p /usr/local/share/man/man3; chmod 755 /usr/local/share/man/man3)
+[ -d /usr/local/share/man/man5 ] || \
+    (mkdir -p /usr/local/share/man/man5; chmod 755 /usr/local/share/man/man5)
+[ -d /usr/local/share/man/man7 ] || \
+    (mkdir -p /usr/local/share/man/man7; chmod 755 /usr/local/share/man/man7)
+for i in pcap.h pcap-bpf.h pcap-namedb.h pcap/bpf.h pcap/bluetooth.h pcap/can_socketcan.h pcap/compiler-tests.h pcap/dlt.h pcap/funcattrs.h pcap/pcap-inttypes.h pcap/ipnet.h pcap/namedb.h pcap/nflog.h pcap/pcap.h pcap/sll.h pcap/vlan.h pcap/usb.h; do \
+	/usr/bin/install -c -m 644 ./$i \
+	    /usr/local/include/$i; done
+[ -d /usr/local/bin ] || \
+    (mkdir -p /usr/local/bin; chmod 755 /usr/local/bin)
+/usr/bin/install -c pcap-config /usr/local/bin/pcap-config
+[ -d /usr/local/lib/pkgconfig ] || \
+    (mkdir -p /usr/local/lib/pkgconfig; chmod 755 /usr/local/lib/pkgconfig)
+/usr/bin/install -c -m 644 libpcap.pc /usr/local/lib/pkgconfig/libpcap.pc
+for i in pcap-config.1; do \
+	/usr/bin/install -c -m 644 ./$i \
+	    /usr/local/share/man/man1/$i; done
+for i in pcap_activate.3pcap pcap_breakloop.3pcap pcap_can_set_rfmon.3pcap pcap_close.3pcap pcap_create.3pcap pcap_datalink_name_to_val.3pcap pcap_datalink_val_to_name.3pcap pcap_dump.3pcap pcap_dump_close.3pcap pcap_dump_file.3pcap pcap_dump_flush.3pcap pcap_dump_ftell.3pcap pcap_file.3pcap pcap_fileno.3pcap pcap_findalldevs.3pcap pcap_freecode.3pcap pcap_get_required_select_timeout.3pcap pcap_get_selectable_fd.3pcap pcap_geterr.3pcap pcap_inject.3pcap pcap_is_swapped.3pcap pcap_lib_version.3pcap pcap_lookupdev.3pcap pcap_lookupnet.3pcap pcap_loop.3pcap pcap_major_version.3pcap pcap_next_ex.3pcap pcap_offline_filter.3pcap pcap_open_live.3pcap pcap_set_buffer_size.3pcap pcap_set_datalink.3pcap pcap_set_immediate_mode.3pcap pcap_set_promisc.3pcap pcap_set_protocol_linux.3pcap pcap_set_rfmon.3pcap pcap_set_snaplen.3pcap pcap_set_timeout.3pcap pcap_setdirection.3pcap pcap_setfilter.3pcap pcap_setnonblock.3pcap pcap_snapshot.3pcap pcap_stats.3pcap pcap_statustostr.3pcap pcap_strerror.3pcap pcap_tstamp_type_name_to_val.3pcap pcap_tstamp_type_val_to_name.3pcap; do \
+	/usr/bin/install -c -m 644 ./$i \
+	    /usr/local/share/man/man3/$i; done
+for i in pcap.3pcap pcap_compile.3pcap pcap_datalink.3pcap pcap_dump_open.3pcap pcap_get_tstamp_precision.3pcap pcap_list_datalinks.3pcap pcap_list_tstamp_types.3pcap pcap_open_dead.3pcap pcap_open_offline.3pcap pcap_set_tstamp_precision.3pcap pcap_set_tstamp_type.3pcap; do \
+	/usr/bin/install -c -m 644 $i \
+	    /usr/local/share/man/man3/$i; done
+(cd /usr/local/share/man/man3 && \
+rm -f pcap_datalink_val_to_description.3pcap && \
+ln -s pcap_datalink_val_to_name.3pcap \
+	 pcap_datalink_val_to_description.3pcap && \
+rm -f pcap_dump_fopen.3pcap && \
+ln -s pcap_dump_open.3pcap pcap_dump_fopen.3pcap && \
+rm -f pcap_freealldevs.3pcap && \
+ln -s pcap_findalldevs.3pcap pcap_freealldevs.3pcap && \
+rm -f pcap_perror.3pcap && \
+ln -s pcap_geterr.3pcap pcap_perror.3pcap && \
+rm -f pcap_sendpacket.3pcap && \
+ln -s pcap_inject.3pcap pcap_sendpacket.3pcap && \
+rm -f pcap_free_datalinks.3pcap && \
+ln -s pcap_list_datalinks.3pcap pcap_free_datalinks.3pcap && \
+rm -f pcap_free_tstamp_types.3pcap && \
+ln -s pcap_list_tstamp_types.3pcap pcap_free_tstamp_types.3pcap && \
+rm -f pcap_dispatch.3pcap && \
+ln -s pcap_loop.3pcap pcap_dispatch.3pcap && \
+rm -f pcap_minor_version.3pcap && \
+ln -s pcap_major_version.3pcap pcap_minor_version.3pcap && \
+rm -f pcap_next.3pcap && \
+ln -s pcap_next_ex.3pcap pcap_next.3pcap && \
+rm -f pcap_open_dead_with_tstamp_precision.3pcap && \
+ln -s pcap_open_dead.3pcap \
+	 pcap_open_dead_with_tstamp_precision.3pcap && \
+rm -f pcap_open_offline_with_tstamp_precision.3pcap && \
+ln -s pcap_open_offline.3pcap pcap_open_offline_with_tstamp_precision.3pcap && \
+rm -f pcap_fopen_offline.3pcap && \
+ln -s pcap_open_offline.3pcap pcap_fopen_offline.3pcap && \
+rm -f pcap_fopen_offline_with_tstamp_precision.3pcap && \
+ln -s pcap_open_offline.3pcap pcap_fopen_offline_with_tstamp_precision.3pcap && \
+rm -f pcap_tstamp_type_val_to_description.3pcap && \
+ln -s pcap_tstamp_type_val_to_name.3pcap pcap_tstamp_type_val_to_description.3pcap && \
+rm -f pcap_getnonblock.3pcap && \
+ln -s pcap_setnonblock.3pcap pcap_getnonblock.3pcap)
+for i in pcap-savefile.manfile.in; do \
+	/usr/bin/install -c -m 644 `echo $i | sed 's/.manfile.in/.manfile/'` \
+	    /usr/local/share/man/man5/`echo $i | sed 's/.manfile.in/.5/'`; done
+for i in pcap-filter.manmisc.in pcap-linktype.manmisc.in pcap-tstamp.manmisc.in; do \
+	/usr/bin/install -c -m 644 `echo $i | sed 's/.manmisc.in/.manmisc/'` \
+	    /usr/local/share/man/man7/`echo $i | sed 's/.manmisc.in/.7/'`; done
+Removing intermediate container 9b4e96d4c190
+ ---> d10822689b17
+Step 8/29 : WORKDIR /root/libsodium
+ ---> Running in 9ff4b50dc672
+Removing intermediate container 9ff4b50dc672
+ ---> 7239fc7fa0c2
+Step 9/29 : RUN git checkout stable &&     ./autogen.sh &&     ./configure &&     make -j &&     make install
+ ---> Running in d7ae49d64a51
+Branch 'stable' set up to track remote branch 'stable' from 'origin'.
+[91mSwitched to a new branch 'stable'
+[0m[91mautoreconf: Entering directory `.'
+[0m[91mautoreconf: configure.ac: not using Gettext
+[0m[91mautoreconf: running: aclocal --force -I m4
+[0m[91mautoreconf: configure.ac: tracing
+[0m[91mautoreconf: running: libtoolize --copy --force
+[0mlibtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+[91mautoreconf: running: /usr/bin/autoconf --force
+[0m[91mautoreconf: configure.ac: not using Autoheader
+autoreconf: running: automake --add-missing --copy --force-missing
+[0m[91mconfigure.ac:75: installing 'build-aux/compile'
+[0m[91mconfigure.ac:10: installing 'build-aux/missing'
+[0m[91msrc/libsodium/Makefile.am: installing 'build-aux/depcomp'
+[0m[91mautoreconf: Leaving directory `.'
+[0mDownloading config.guess and config.sub...
+Done.
+checking build system type... x86_64-pc-linux-musl
+checking host system type... x86_64-pc-linux-musl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... build-aux/install-sh -c -d
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... none
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking whether gcc is Clang... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for gcc option to accept ISO C99... none needed
+checking dependency style of gcc... gcc3
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for variable-length arrays... yes
+checking for __wasi__ defined... no
+checking whether C compiler accepts -fvisibility=hidden... yes
+checking whether C compiler accepts -fPIC... yes
+checking whether C compiler accepts -fPIE... yes
+checking whether the linker accepts -pie... yes
+checking whether C compiler accepts -fno-strict-aliasing... yes
+checking whether C compiler accepts -fno-strict-overflow... yes
+checking for a broken Xcode version... no
+checking whether C compiler accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wall... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra... yes
+checking for clang... no
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wshorten-64-to-32... no
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wsometimes-uninitialized... no
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wstrict-prototypes... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wstrict-prototypes -Wswitch-enum... yes
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wstrict-prototypes -Wswitch-enum -Wvariable-decl... no
+checking whether C compiler accepts -g -O2 -pthread -fvisibility=hidden -fPIC -fPIE -fno-strict-aliasing -fno-strict-overflow -fstack-protector -Wextra -Wbad-function-cast -Wcast-qual -Wdiv-by-zero -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wformat=2 -Wlogical-op -Wmaybe-uninitialized -Wmisleading-indentation -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-type-limits -Wno-unknown-pragmas -Wnormalized=id -Wnull-dereference -Wold-style-declaration -Wpointer-arith -Wredundant-decls -Wrestrict -Wstrict-prototypes -Wswitch-enum -Wwrite-strings... yes
+checking whether the linker accepts -Wl,-z,relro... yes
+checking whether the linker accepts -Wl,-z,now... yes
+checking whether the linker accepts -Wl,-z,noexecstack... yes
+checking whether segmentation violations can be caught when using the C compiler... yes
+checking whether SIGABRT can be caught when using the C compiler... no
+[91mconfigure: WARNING: On this platform, SIGABRT cannot be caught using signal handlers.
+[0mchecking for thread local storage (TLS) class... _Thread_local
+thread local storage is supported
+checking whether C compiler accepts -ftls-model=local-dynamic... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/x86_64-alpine-linux-musl/bin/ld
+checking if the linker (/usr/x86_64-alpine-linux-musl/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 98304
+checking how to convert x86_64-pc-linux-musl file names to x86_64-pc-linux-musl format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-musl file names to toolchain format... func_convert_file_noop
+checking for /usr/x86_64-alpine-linux-musl/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/x86_64-alpine-linux-musl/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for ar... (cached) ar
+checking whether C compiler accepts -mmmx... yes
+checking for MMX instructions set... yes
+checking whether C compiler accepts -mmmx... (cached) yes
+checking whether C compiler accepts -msse2... yes
+checking for SSE2 instructions set... yes
+checking whether C compiler accepts -msse2... (cached) yes
+checking whether C compiler accepts -msse3... yes
+checking for SSE3 instructions set... yes
+checking whether C compiler accepts -msse3... (cached) yes
+checking whether C compiler accepts -mssse3... yes
+checking for SSSE3 instructions set... yes
+checking whether C compiler accepts -mssse3... (cached) yes
+checking whether C compiler accepts -msse4.1... yes
+checking for SSE4.1 instructions set... yes
+checking whether C compiler accepts -msse4.1... (cached) yes
+checking whether C compiler accepts -mavx... yes
+checking for AVX instructions set... yes
+checking whether C compiler accepts -mavx... (cached) yes
+checking whether C compiler accepts -mavx2... yes
+checking for AVX2 instructions set... yes
+checking whether C compiler accepts -mavx2... (cached) yes
+checking if _mm256_broadcastsi128_si256 is correctly defined... yes
+checking whether C compiler accepts -mavx512f... yes
+checking for AVX512F instructions set... yes
+checking whether C compiler accepts -mavx512f... (cached) yes
+checking whether C compiler accepts -maes... yes
+checking whether C compiler accepts -mpclmul... yes
+checking for AESNI instructions set and PCLMULQDQ... yes
+checking whether C compiler accepts -maes... (cached) yes
+checking whether C compiler accepts -mpclmul... (cached) yes
+checking whether C compiler accepts -mrdrnd... yes
+checking for RDRAND... yes
+checking whether C compiler accepts -mrdrnd... (cached) yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/random.h usability... yes
+checking sys/random.h presence... yes
+checking for sys/random.h... yes
+checking intrin.h usability... no
+checking intrin.h presence... no
+checking for intrin.h... no
+checking if _xgetbv() is available... no
+checking for inline... inline
+checking whether byte ordering is bigendian... (cached) no
+checking whether __STDC_LIMIT_MACROS is required... no
+checking whether we can use inline asm code... yes
+no
+checking whether we can use x86_64 asm code... yes
+checking whether we can assemble AVX opcodes... yes
+checking for 128-bit arithmetic... yes
+checking for cpuid instruction... yes
+checking if the .private_extern asm directive is supported... no
+checking if the .hidden asm directive is supported... yes
+checking if weak symbols are supported... yes
+checking if data alignment is required... no
+checking if atomic operations are supported... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for arc4random... no
+checking for arc4random_buf... no
+checking for mmap... yes
+checking for mlock... yes
+checking for madvise... yes
+checking for mprotect... yes
+checking for getrandom with a standard API... yes
+checking for getrandom... yes
+checking for getentropy with a standard API... yes
+checking for getentropy... yes
+checking for posix_memalign... yes
+checking for getpid... yes
+checking for nanosleep... yes
+checking for memset_s... no
+checking for explicit_bzero... yes
+checking for explicit_memset... no
+checking if gcc/ld supports -Wl,--output-def... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating builds/Makefile
+config.status: creating contrib/Makefile
+config.status: creating dist-build/Makefile
+config.status: creating libsodium.pc
+config.status: creating libsodium-uninstalled.pc
+config.status: creating msvc-scripts/Makefile
+config.status: creating src/Makefile
+config.status: creating src/libsodium/Makefile
+config.status: creating src/libsodium/include/Makefile
+config.status: creating src/libsodium/include/sodium/version.h
+config.status: creating test/default/Makefile
+config.status: creating test/Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+Making all in builds
+make[1]: Entering directory '/root/libsodium/builds'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/root/libsodium/builds'
+Making all in contrib
+make[1]: Entering directory '/root/libsodium/contrib'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/root/libsodium/contrib'
+Making all in dist-build
+make[1]: Entering directory '/root/libsodium/dist-build'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/root/libsodium/dist-build'
+Making all in msvc-scripts
+make[1]: Entering directory '/root/libsodium/msvc-scripts'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/root/libsodium/msvc-scripts'
+Making all in src
+make[1]: Entering directory '/root/libsodium/src'
+Making all in libsodium
+make[2]: Entering directory '/root/libsodium/src/libsodium'
+Making all in include
+make[3]: Entering directory '/root/libsodium/src/libsodium/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/root/libsodium/src/libsodium/include'
+make[3]: Entering directory '/root/libsodium/src/libsodium'
+  CC       crypto_shorthash/siphash24/libsodium_la-shorthash_siphashx24.lo
+  CC       crypto_shorthash/siphash24/ref/libsodium_la-shorthash_siphashx24_ref.lo
+  CC       crypto_sign/ed25519/ref10/libsodium_la-obsolete.lo
+  CC       crypto_generichash/blake2b/ref/libssse3_la-blake2b-compress-ssse3.lo
+  CC       crypto_pwhash/argon2/libssse3_la-argon2-fill-block-ssse3.lo
+  CC       crypto_generichash/blake2b/ref/libsse41_la-blake2b-compress-sse41.lo
+  CC       crypto_generichash/blake2b/ref/libavx2_la-blake2b-compress-avx2.lo
+  CC       crypto_pwhash/argon2/libavx2_la-argon2-fill-block-avx2.lo
+  CC       crypto_pwhash/argon2/libavx512f_la-argon2-fill-block-avx512f.lo
+  CC       crypto_aead/chacha20poly1305/sodium/libsodium_la-aead_chacha20poly1305.lo
+  CC       crypto_aead/xchacha20poly1305/sodium/libsodium_la-aead_xchacha20poly1305.lo
+  CC       crypto_auth/libsodium_la-crypto_auth.lo
+  CC       crypto_auth/hmacsha256/libsodium_la-auth_hmacsha256.lo
+  CC       crypto_auth/hmacsha512/libsodium_la-auth_hmacsha512.lo
+  CC       crypto_auth/hmacsha512256/libsodium_la-auth_hmacsha512256.lo
+  CC       crypto_box/libsodium_la-crypto_box.lo
+  CC       crypto_box/libsodium_la-crypto_box_easy.lo
+  CC       crypto_box/curve25519xsalsa20poly1305/libsodium_la-box_curve25519xsalsa20poly1305.lo
+  CC       crypto_box/libsodium_la-crypto_box_seal.lo
+  CC       crypto_core/ed25519/ref10/libsodium_la-ed25519_ref10.lo
+  CC       crypto_core/hchacha20/libsodium_la-core_hchacha20.lo
+  CC       crypto_core/hsalsa20/ref2/libsodium_la-core_hsalsa20_ref2.lo
+  CC       crypto_core/hsalsa20/libsodium_la-core_hsalsa20.lo
+  CC       crypto_core/salsa/ref/libsodium_la-core_salsa_ref.lo
+  CC       crypto_generichash/libsodium_la-crypto_generichash.lo
+  CC       crypto_generichash/blake2b/libsodium_la-generichash_blake2.lo
+  CC       crypto_generichash/blake2b/ref/libsodium_la-blake2b-compress-ref.lo
+  CC       crypto_generichash/blake2b/ref/libsodium_la-blake2b-ref.lo
+  CC       crypto_generichash/blake2b/ref/libsodium_la-generichash_blake2b.lo
+  CC       crypto_hash/libsodium_la-crypto_hash.lo
+  CC       crypto_hash/sha256/libsodium_la-hash_sha256.lo
+  CC       crypto_hash/sha256/cp/libsodium_la-hash_sha256_cp.lo
+  CC       crypto_hash/sha512/libsodium_la-hash_sha512.lo
+  CC       crypto_hash/sha512/cp/libsodium_la-hash_sha512_cp.lo
+  CC       crypto_kdf/blake2b/libsodium_la-kdf_blake2b.lo
+  CC       crypto_kdf/libsodium_la-crypto_kdf.lo
+  CC       crypto_kx/libsodium_la-crypto_kx.lo
+  CC       crypto_onetimeauth/libsodium_la-crypto_onetimeauth.lo
+  CC       crypto_onetimeauth/poly1305/donna/libsodium_la-poly1305_donna.lo
+  CC       crypto_scalarmult/libsodium_la-crypto_scalarmult.lo
+  CC       crypto_onetimeauth/poly1305/libsodium_la-onetimeauth_poly1305.lo
+  CC       crypto_pwhash/argon2/libsodium_la-argon2.lo
+  CC       crypto_pwhash/argon2/libsodium_la-argon2-core.lo
+  CC       crypto_pwhash/argon2/libsodium_la-blake2b-long.lo
+  CC       crypto_pwhash/argon2/libsodium_la-pwhash_argon2i.lo
+  CC       crypto_pwhash/argon2/libsodium_la-pwhash_argon2id.lo
+  CC       crypto_pwhash/libsodium_la-crypto_pwhash.lo
+  CC       crypto_secretbox/libsodium_la-crypto_secretbox_easy.lo
+  CC       crypto_secretbox/xsalsa20poly1305/libsodium_la-secretbox_xsalsa20poly1305.lo
+  CC       crypto_secretbox/libsodium_la-crypto_secretbox.lo
+  CC       crypto_pwhash/argon2/libsodium_la-argon2-fill-block-ref.lo
+  CC       crypto_shorthash/libsodium_la-crypto_shorthash.lo
+  CC       crypto_secretstream/xchacha20poly1305/libsodium_la-secretstream_xchacha20poly1305.lo
+  CC       crypto_scalarmult/curve25519/ref10/libsodium_la-x25519_ref10.lo
+  CC       crypto_pwhash/argon2/libsodium_la-argon2-encoding.lo
+  CC       crypto_scalarmult/curve25519/libsodium_la-scalarmult_curve25519.lo
+  CC       crypto_shorthash/siphash24/libsodium_la-shorthash_siphash24.lo
+  CC       crypto_shorthash/siphash24/ref/libsodium_la-shorthash_siphash24_ref.lo
+  CC       crypto_sign/libsodium_la-crypto_sign.lo
+  CC       crypto_sign/ed25519/libsodium_la-sign_ed25519.lo
+  CC       crypto_sign/ed25519/ref10/libsodium_la-keypair.lo
+  CC       crypto_sign/ed25519/ref10/libsodium_la-open.lo
+  CC       crypto_sign/ed25519/ref10/libsodium_la-sign.lo
+  CC       crypto_stream/chacha20/libsodium_la-stream_chacha20.lo
+  CC       crypto_stream/chacha20/ref/libsodium_la-chacha20_ref.lo
+  CC       crypto_stream/libsodium_la-crypto_stream.lo
+  CC       crypto_stream/salsa20/libsodium_la-stream_salsa20.lo
+  CC       crypto_stream/xsalsa20/libsodium_la-stream_xsalsa20.lo
+  CC       crypto_verify/sodium/libsodium_la-verify.lo
+  CC       randombytes/libsodium_la-randombytes.lo
+  CC       sodium/libsodium_la-codecs.lo
+  CC       sodium/libsodium_la-core.lo
+  CC       sodium/libsodium_la-runtime.lo
+  CC       sodium/libsodium_la-utils.lo
+  CC       sodium/libsodium_la-version.lo
+  CPPAS    crypto_stream/salsa20/xmm6/libsodium_la-salsa20_xmm6-asm.lo
+  CC       crypto_stream/salsa20/xmm6/libsodium_la-salsa20_xmm6.lo
+  CC       crypto_scalarmult/curve25519/sandy2x/libsodium_la-curve25519_sandy2x.lo
+  CC       crypto_scalarmult/curve25519/sandy2x/libsodium_la-fe51_invert.lo
+  CC       crypto_scalarmult/curve25519/sandy2x/libsodium_la-fe_frombytes_sandy2x.lo
+  CPPAS    crypto_scalarmult/curve25519/sandy2x/libsodium_la-sandy2x.lo
+  CC       crypto_box/curve25519xchacha20poly1305/libsodium_la-box_curve25519xchacha20poly1305.lo
+  CC       crypto_box/curve25519xchacha20poly1305/libsodium_la-box_seal_curve25519xchacha20poly1305.lo
+  CC       crypto_core/ed25519/libsodium_la-core_ed25519.lo
+  CC       crypto_core/ed25519/libsodium_la-core_ristretto255.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/libsodium_la-crypto_scrypt-common.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/libsodium_la-scrypt_platform.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/libsodium_la-pbkdf2-sha256.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/libsodium_la-pwhash_scryptsalsa208sha256.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/nosse/libsodium_la-pwhash_scryptsalsa208sha256_nosse.lo
+  CC       crypto_scalarmult/ed25519/ref10/libsodium_la-scalarmult_ed25519_ref10.lo
+  CC       crypto_scalarmult/ristretto255/ref10/libsodium_la-scalarmult_ristretto255_ref10.lo
+  CC       crypto_secretbox/xchacha20poly1305/libsodium_la-secretbox_xchacha20poly1305.lo
+  CC       crypto_stream/salsa2012/ref/libsodium_la-stream_salsa2012_ref.lo
+  CC       crypto_stream/salsa2012/libsodium_la-stream_salsa2012.lo
+  CC       crypto_stream/salsa208/ref/libsodium_la-stream_salsa208_ref.lo
+  CC       crypto_stream/salsa208/libsodium_la-stream_salsa208.lo
+  CC       crypto_stream/xchacha20/libsodium_la-stream_xchacha20.lo
+  CC       randombytes/sysrandom/libsodium_la-randombytes_sysrandom.lo
+  CC       crypto_aead/aes256gcm/aesni/libaesni_la-aead_aes256gcm_aesni.lo
+  CC       crypto_onetimeauth/poly1305/sse2/libsse2_la-poly1305_sse2.lo
+  CC       crypto_pwhash/scryptsalsa208sha256/sse/libsse2_la-pwhash_scryptsalsa208sha256_sse.lo
+  CC       crypto_stream/chacha20/dolbeau/libssse3_la-chacha20_dolbeau-ssse3.lo
+  CC       crypto_stream/chacha20/dolbeau/libavx2_la-chacha20_dolbeau-avx2.lo
+  CC       crypto_stream/salsa20/xmm6int/libavx2_la-salsa20_xmm6int-avx2.lo
+  CC       randombytes/internal/librdrand_la-randombytes_internal_random.lo
+  CCLD     librdrand.la
+  CCLD     libsse41.la
+  CCLD     libssse3.la
+[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m  CCLD     libavx512f.la
+[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m  CCLD     libavx2.la
+  CCLD     libsse2.la
+[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m  CCLD     libaesni.la
+[91mlibtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+[0m[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m  CCLD     libsodium.la
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmake[3]: Leaving directory '/root/libsodium/src/libsodium'
+make[2]: Leaving directory '/root/libsodium/src/libsodium'
+make[2]: Entering directory '/root/libsodium/src'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/root/libsodium/src'
+make[1]: Leaving directory '/root/libsodium/src'
+Making all in test
+make[1]: Entering directory '/root/libsodium/test'
+Making all in default
+make[2]: Entering directory '/root/libsodium/test/default'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/root/libsodium/test/default'
+make[2]: Entering directory '/root/libsodium/test'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/root/libsodium/test'
+make[1]: Leaving directory '/root/libsodium/test'
+make[1]: Entering directory '/root/libsodium'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/root/libsodium'
+Making install in builds
+make[1]: Entering directory '/root/libsodium/builds'
+make[2]: Entering directory '/root/libsodium/builds'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/root/libsodium/builds'
+make[1]: Leaving directory '/root/libsodium/builds'
+Making install in contrib
+make[1]: Entering directory '/root/libsodium/contrib'
+make[2]: Entering directory '/root/libsodium/contrib'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/root/libsodium/contrib'
+make[1]: Leaving directory '/root/libsodium/contrib'
+Making install in dist-build
+make[1]: Entering directory '/root/libsodium/dist-build'
+make[2]: Entering directory '/root/libsodium/dist-build'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/root/libsodium/dist-build'
+make[1]: Leaving directory '/root/libsodium/dist-build'
+Making install in msvc-scripts
+make[1]: Entering directory '/root/libsodium/msvc-scripts'
+make[2]: Entering directory '/root/libsodium/msvc-scripts'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/root/libsodium/msvc-scripts'
+make[1]: Leaving directory '/root/libsodium/msvc-scripts'
+Making install in src
+make[1]: Entering directory '/root/libsodium/src'
+Making install in libsodium
+make[2]: Entering directory '/root/libsodium/src/libsodium'
+Making install in include
+make[3]: Entering directory '/root/libsodium/src/libsodium/include'
+make[4]: Entering directory '/root/libsodium/src/libsodium/include'
+make[4]: Nothing to be done for 'install-exec-am'.
+ ../../../build-aux/install-sh -c -d '/usr/local/include'
+ ../../../build-aux/install-sh -c -d '/usr/local/include/sodium'
+ /usr/bin/install -c -m 644  sodium/core.h sodium/crypto_aead_aes256gcm.h sodium/crypto_aead_chacha20poly1305.h sodium/crypto_aead_xchacha20poly1305.h sodium/crypto_auth.h sodium/crypto_auth_hmacsha256.h sodium/crypto_auth_hmacsha512.h sodium/crypto_auth_hmacsha512256.h sodium/crypto_box.h sodium/crypto_box_curve25519xchacha20poly1305.h sodium/crypto_box_curve25519xsalsa20poly1305.h sodium/crypto_core_ed25519.h sodium/crypto_core_ristretto255.h sodium/crypto_core_hchacha20.h sodium/crypto_core_hsalsa20.h sodium/crypto_core_salsa20.h sodium/crypto_core_salsa2012.h sodium/crypto_core_salsa208.h sodium/crypto_generichash.h sodium/crypto_generichash_blake2b.h sodium/crypto_hash.h sodium/crypto_hash_sha256.h sodium/crypto_hash_sha512.h sodium/crypto_kdf.h sodium/crypto_kdf_blake2b.h sodium/crypto_kx.h sodium/crypto_onetimeauth.h sodium/crypto_onetimeauth_poly1305.h sodium/crypto_pwhash.h sodium/crypto_pwhash_argon2i.h sodium/crypto_pwhash_argon2id.h sodium/crypto_pwhash_scryptsalsa208sha256.h sodium/crypto_scalarmult.h sodium/crypto_scalarmult_curve25519.h sodium/crypto_scalarmult_ed25519.h sodium/crypto_scalarmult_ristretto255.h sodium/crypto_secretbox.h sodium/crypto_secretbox_xchacha20poly1305.h sodium/crypto_secretbox_xsalsa20poly1305.h sodium/crypto_secretstream_xchacha20poly1305.h '/usr/local/include/sodium'
+ /usr/bin/install -c -m 644  sodium.h '/usr/local/include/.'
+ ../../../build-aux/install-sh -c -d '/usr/local/include/sodium'
+ /usr/bin/install -c -m 644  sodium/crypto_shorthash.h sodium/crypto_shorthash_siphash24.h sodium/crypto_sign.h sodium/crypto_sign_ed25519.h sodium/crypto_sign_edwards25519sha512batch.h sodium/crypto_stream.h sodium/crypto_stream_chacha20.h sodium/crypto_stream_salsa20.h sodium/crypto_stream_salsa2012.h sodium/crypto_stream_salsa208.h sodium/crypto_stream_xchacha20.h sodium/crypto_stream_xsalsa20.h sodium/crypto_verify_16.h sodium/crypto_verify_32.h sodium/crypto_verify_64.h sodium/export.h sodium/randombytes.h sodium/randombytes_internal_random.h sodium/randombytes_sysrandom.h sodium/runtime.h sodium/utils.h '/usr/local/include/sodium'
+ ../../../build-aux/install-sh -c -d '/usr/local/include'
+ ../../../build-aux/install-sh -c -d '/usr/local/include/sodium'
+ /usr/bin/install -c -m 644  sodium/version.h '/usr/local/include/sodium'
+make[4]: Leaving directory '/root/libsodium/src/libsodium/include'
+make[3]: Leaving directory '/root/libsodium/src/libsodium/include'
+make[3]: Entering directory '/root/libsodium/src/libsodium'
+make[4]: Entering directory '/root/libsodium/src/libsodium'
+ ../../build-aux/install-sh -c -d '/usr/local/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libsodium.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libsodium.so.23.3.0 /usr/local/lib/libsodium.so.23.3.0
+libtool: install: (cd /usr/local/lib && { ln -s -f libsodium.so.23.3.0 libsodium.so.23 || { rm -f libsodium.so.23 && ln -s libsodium.so.23.3.0 libsodium.so.23; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libsodium.so.23.3.0 libsodium.so || { rm -f libsodium.so && ln -s libsodium.so.23.3.0 libsodium.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsodium.lai /usr/local/lib/libsodium.la
+libtool: install: /usr/bin/install -c .libs/libsodium.a /usr/local/lib/libsodium.a
+libtool: install: chmod 644 /usr/local/lib/libsodium.a
+libtool: install: ranlib /usr/local/lib/libsodium.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/root/libsodium/src/libsodium'
+make[3]: Leaving directory '/root/libsodium/src/libsodium'
+make[2]: Leaving directory '/root/libsodium/src/libsodium'
+make[2]: Entering directory '/root/libsodium/src'
+make[3]: Entering directory '/root/libsodium/src'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/root/libsodium/src'
+make[2]: Leaving directory '/root/libsodium/src'
+make[1]: Leaving directory '/root/libsodium/src'
+Making install in test
+make[1]: Entering directory '/root/libsodium/test'
+Making install in default
+make[2]: Entering directory '/root/libsodium/test/default'
+make[3]: Entering directory '/root/libsodium/test/default'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/root/libsodium/test/default'
+make[2]: Leaving directory '/root/libsodium/test/default'
+make[2]: Entering directory '/root/libsodium/test'
+make[3]: Entering directory '/root/libsodium/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/root/libsodium/test'
+make[2]: Leaving directory '/root/libsodium/test'
+make[1]: Leaving directory '/root/libsodium/test'
+make[1]: Entering directory '/root/libsodium'
+make[2]: Entering directory '/root/libsodium'
+make[2]: Nothing to be done for 'install-exec-am'.
+ build-aux/install-sh -c -d '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsodium.pc '/usr/local/lib/pkgconfig'
+make[2]: Leaving directory '/root/libsodium'
+make[1]: Leaving directory '/root/libsodium'
+Removing intermediate container d7ae49d64a51
+ ---> 02fda192454b
+Step 10/29 : WORKDIR /root/lua-5.3.5
+ ---> Running in 940599106d95
+Removing intermediate container 940599106d95
+ ---> 5c1094ca046b
+Step 11/29 : RUN make -j linux &&     make install
+ ---> Running in 8bd7a626a27a
+cd src && make linux
+make[1]: Entering directory '/root/lua-5.3.5/src'
+make all SYSCFLAGS="-DLUA_USE_LINUX" SYSLIBS="-Wl,-E -ldl -lreadline"
+make[2]: Entering directory '/root/lua-5.3.5/src'
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lapi.o lapi.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lcode.o lcode.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lctype.o lctype.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ldebug.o ldebug.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ldo.o ldo.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ldump.o ldump.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lfunc.o lfunc.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lgc.o lgc.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o llex.o llex.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lmem.o lmem.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lobject.o lobject.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lopcodes.o lopcodes.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lparser.o lparser.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lstate.o lstate.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lstring.o lstring.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ltable.o ltable.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ltm.o ltm.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lundump.o lundump.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lvm.o lvm.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lzio.o lzio.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lauxlib.o lauxlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lbaselib.o lbaselib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lbitlib.o lbitlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lcorolib.o lcorolib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ldblib.o ldblib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o liolib.o liolib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lmathlib.o lmathlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o loslib.o loslib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lstrlib.o lstrlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o ltablib.o ltablib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lutf8lib.o lutf8lib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o loadlib.o loadlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o linit.o linit.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o lua.o lua.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_2 -DLUA_USE_LINUX    -c -o luac.o luac.c
+ar rcu liblua.a lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lbitlib.o lcorolib.o ldblib.o liolib.o lmathlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o loadlib.o linit.o 
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mranlib liblua.a
+gcc -std=gnu99 -o lua   lua.o liblua.a -lm -Wl,-E -ldl -lreadline 
+gcc -std=gnu99 -o luac   luac.o liblua.a -lm -Wl,-E -ldl -lreadline 
+make[2]: Leaving directory '/root/lua-5.3.5/src'
+make[1]: Leaving directory '/root/lua-5.3.5/src'
+cd src && mkdir -p /usr/local/bin /usr/local/include /usr/local/lib /usr/local/man/man1 /usr/local/share/lua/5.3 /usr/local/lib/lua/5.3
+cd src && install -p -m 0755 lua luac /usr/local/bin
+cd src && install -p -m 0644 lua.h luaconf.h lualib.h lauxlib.h lua.hpp /usr/local/include
+cd src && install -p -m 0644 liblua.a /usr/local/lib
+cd doc && install -p -m 0644 lua.1 luac.1 /usr/local/man/man1
+Removing intermediate container 8bd7a626a27a
+ ---> d30f1f17a8b5
+Step 12/29 : WORKDIR /root/miniupnp/miniupnpc
+ ---> Running in 15c3174de03f
+Removing intermediate container 15c3174de03f
+ ---> 99122dcbdff4
+Step 13/29 : RUN git checkout miniupnpc_2_1 &&     make -j &&     make install &&     make install DESTDIR=/baseroot
+ ---> Running in 98c89dc4ff82
+[91mNote: switching to 'miniupnpc_2_1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at bd83693 miniupnpc: VERSION 2.1
+[0m/bin/sh updateminiupnpcstrings.sh
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o minixml.o minixml.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o igd_desc_parse.o igd_desc_parse.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o miniupnpc.o miniupnpc.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpreplyparse.o upnpreplyparse.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpcommands.o upnpcommands.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnperrors.o upnperrors.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o connecthostport.o connecthostport.c
+Detected OS [Linux] version [5.0.0-1033-gcp]
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o portlistingparse.o portlistingparse.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o receivedata.o receivedata.c
+MiniUPnPc version [2.1]
+setting OS_STRING macro value to Linux/5.0.0-1033-gcp in miniupnpcstrings.h.
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpdev.o upnpdev.c
+setting MINIUPNPC_VERSION_STRING macro value to 2.1 in miniupnpcstrings.h.
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o minissdpc.o minissdpc.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o listdevices.o listdevices.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o miniwget.o miniwget.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o minisoap.o minisoap.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpc.o upnpc.c
+ar crs libminiupnpc.a miniwget.o minixml.o igd_desc_parse.o minisoap.o miniupnpc.o upnpreplyparse.o upnpcommands.o upnperrors.o connecthostport.o portlistingparse.o receivedata.o upnpdev.o minissdpc.o
+cc -shared  -Wl,-soname,libminiupnpc.so.17 -o libminiupnpc.so miniwget.o minixml.o igd_desc_parse.o minisoap.o miniupnpc.o upnpreplyparse.o upnpcommands.o upnperrors.o connecthostport.o portlistingparse.o receivedata.o upnpdev.o minissdpc.o
+cc   listdevices.o libminiupnpc.a   -o listdevices
+cc  -o upnpc-static upnpc.o libminiupnpc.a  
+cc  -o upnpc-shared upnpc.o libminiupnpc.so  
+cp miniupnpc.h miniupnpc.h.bak
+sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\117/' < miniupnpc.h.bak > miniupnpc.h
+rm -f miniupnpc.pc
+echo "prefix=/usr" >> miniupnpc.pc
+echo "exec_prefix=\${prefix}" >> miniupnpc.pc
+echo "libdir=\${exec_prefix}/lib" >> miniupnpc.pc
+echo "includedir=\${prefix}/include/miniupnpc" >> miniupnpc.pc
+echo "" >> miniupnpc.pc
+echo "Name: miniUPnPc" >> miniupnpc.pc
+echo "Description: UPnP IGD client lightweight library" >> miniupnpc.pc
+echo "Version: 2.1" >> miniupnpc.pc
+echo "Libs: -L\${libdir} -lminiupnpc" >> miniupnpc.pc
+echo "Cflags: -I\${includedir}" >> miniupnpc.pc
+install -d /usr/include/miniupnpc
+install -m 644 miniupnpc.h miniwget.h upnpcommands.h igd_desc_parse.h upnpreplyparse.h upnperrors.h miniupnpctypes.h portlistingparse.h upnpdev.h miniupnpc_declspec.h /usr/include/miniupnpc
+install -d /usr/lib
+install -m 644 libminiupnpc.a /usr/lib
+install -m 644 libminiupnpc.so /usr/lib/libminiupnpc.so.17
+ln -fs libminiupnpc.so.17 /usr/lib/libminiupnpc.so
+install -d /usr/lib/pkgconfig
+install -m 644 miniupnpc.pc /usr/lib/pkgconfig
+install -d /usr/bin
+install -m 755 upnpc-shared /usr/bin/upnpc
+install -m 755 external-ip.sh /usr/bin/external-ip
+install -d /usr/share/man/man3
+install -m 644 man3/miniupnpc.3 /usr/share/man/man3/miniupnpc.3
+gzip -f /usr/share/man/man3/miniupnpc.3
+cp miniupnpc.h miniupnpc.h.bak
+sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\117/' < miniupnpc.h.bak > miniupnpc.h
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o miniupnpc.o miniupnpc.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpcommands.o upnpcommands.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnperrors.o upnperrors.c
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o minissdpc.o minissdpc.c
+ar crs libminiupnpc.a miniupnpc.o upnpcommands.o upnperrors.o minissdpc.o
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o upnpc.o upnpc.c
+cc  -o upnpc-static upnpc.o libminiupnpc.a  
+cc -fPIC -O -Wall -W -Wstrict-prototypes -fno-common -DMINIUPNPC_SET_SOCKET_TIMEOUT -DMINIUPNPC_GET_SRC_ADDR -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600   -c -o listdevices.o listdevices.c
+cc   listdevices.o libminiupnpc.a   -o listdevices
+cc -shared  -Wl,-soname,libminiupnpc.so.17 -o libminiupnpc.so miniwget.o minixml.o igd_desc_parse.o minisoap.o miniupnpc.o upnpreplyparse.o upnpcommands.o upnperrors.o connecthostport.o portlistingparse.o receivedata.o upnpdev.o minissdpc.o
+cc  -o upnpc-shared upnpc.o libminiupnpc.so  
+install -d /baseroot/usr/include/miniupnpc
+install -m 644 miniupnpc.h miniwget.h upnpcommands.h igd_desc_parse.h upnpreplyparse.h upnperrors.h miniupnpctypes.h portlistingparse.h upnpdev.h miniupnpc_declspec.h /baseroot/usr/include/miniupnpc
+install -d /baseroot/usr/lib
+install -m 644 libminiupnpc.a /baseroot/usr/lib
+install -m 644 libminiupnpc.so /baseroot/usr/lib/libminiupnpc.so.17
+ln -fs libminiupnpc.so.17 /baseroot/usr/lib/libminiupnpc.so
+install -d /baseroot/usr/lib/pkgconfig
+install -m 644 miniupnpc.pc /baseroot/usr/lib/pkgconfig
+install -d /baseroot/usr/bin
+install -m 755 upnpc-shared /baseroot/usr/bin/upnpc
+install -m 755 external-ip.sh /baseroot/usr/bin/external-ip
+install -d /baseroot/usr/share/man/man3
+install -m 644 man3/miniupnpc.3 /baseroot/usr/share/man/man3/miniupnpc.3
+gzip -f /baseroot/usr/share/man/man3/miniupnpc.3
+Removing intermediate container 98c89dc4ff82
+ ---> 212b323a1bf5
+Step 14/29 : WORKDIR /root/wh/
+ ---> Running in 82632e1059e5
+Removing intermediate container 82632e1059e5
+ ---> f6678b56f37a
+Step 15/29 : COPY deps deps
+COPY failed: stat /var/lib/docker/tmp/docker-builder541578848/deps: no such file or directory

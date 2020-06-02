@@ -1,0 +1,30 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM sonarqube:5.6.6-alpine
+5.6.6-alpine: Pulling from library/sonarqube
+88286f41530e: Pulling fs layer
+720349d0916a: Pulling fs layer
+42a4b3080d3c: Pulling fs layer
+90e32b90cbc7: Pulling fs layer
+f604d28f32a7: Pulling fs layer
+90e32b90cbc7: Waiting
+f604d28f32a7: Waiting
+720349d0916a: Verifying Checksum
+720349d0916a: Download complete
+88286f41530e: Verifying Checksum
+88286f41530e: Download complete
+f604d28f32a7: Verifying Checksum
+f604d28f32a7: Download complete
+88286f41530e: Pull complete
+720349d0916a: Pull complete
+42a4b3080d3c: Verifying Checksum
+42a4b3080d3c: Download complete
+90e32b90cbc7: Verifying Checksum
+90e32b90cbc7: Download complete
+42a4b3080d3c: Pull complete
+90e32b90cbc7: Pull complete
+f604d28f32a7: Pull complete
+Digest: sha256:2769eaddd02d8d4a256a4f2accad4fac29641eb46b473fa9b0780fc9aa720804
+Status: Downloaded newer image for sonarqube:5.6.6-alpine
+ ---> e99d83031278
+Step 2/2 : COPY sonar-puppet-plugin/build/libs/* /opt/sonarqube/extensions/plugins/
+COPY failed: no source files were specified

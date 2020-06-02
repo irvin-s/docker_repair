@@ -1,0 +1,190 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/16 : FROM ubuntu:trusty
+trusty: Pulling from library/ubuntu
+2e6e20c8e2e6: Pulling fs layer
+30bb187ac3fc: Pulling fs layer
+b7a5bcc4a58a: Pulling fs layer
+b7a5bcc4a58a: Verifying Checksum
+b7a5bcc4a58a: Download complete
+30bb187ac3fc: Download complete
+2e6e20c8e2e6: Verifying Checksum
+2e6e20c8e2e6: Download complete
+2e6e20c8e2e6: Pull complete
+30bb187ac3fc: Pull complete
+b7a5bcc4a58a: Pull complete
+Digest: sha256:ffc76f71dd8be8c9e222d420dc96901a07b61616689a44c7b3ef6a10b7213de4
+Status: Downloaded newer image for ubuntu:trusty
+ ---> 6e4f1fe62ff1
+Step 2/16 : RUN groupadd -r mysql && useradd -r -g mysql mysql
+ ---> Running in c5558db26c40
+Removing intermediate container c5558db26c40
+ ---> 07eb820d3ffb
+Step 3/16 : RUN apt-get update &&     apt-get install -y curl binutils
+ ---> Running in 6ffdc0d102b6
+Ign http://archive.ubuntu.com trusty InRelease
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 http://security.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Get:4 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:5 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:6 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:7 https://esm.ubuntu.com trusty-infra-updates InRelease
+Get:8 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Get:9 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:10 http://security.ubuntu.com trusty-security/universe amd64 Packages [377 kB]
+Get:11 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4730 B]
+Get:12 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:13 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.1 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:17 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:18 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:20 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:21 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:22 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:23 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 13.7 MB in 3s (3991 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libcurl3
+Suggested packages:
+  binutils-doc
+The following NEW packages will be installed:
+  binutils curl libcurl3
+0 upgraded, 3 newly installed, 0 to remove and 1 not upgraded.
+Need to get 2372 kB of archives.
+After this operation, 12.6 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3 amd64 7.35.0-1ubuntu2.20 [173 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main binutils amd64 2.24-5ubuntu14.2 [2076 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main curl amd64 7.35.0-1ubuntu2.20 [123 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 2372 kB in 1s (1899 kB/s)
+Selecting previously unselected package libcurl3:amd64.
+(Reading database ... 12097 files and directories currently installed.)
+Preparing to unpack .../libcurl3_7.35.0-1ubuntu2.20_amd64.deb ...
+Unpacking libcurl3:amd64 (7.35.0-1ubuntu2.20) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../binutils_2.24-5ubuntu14.2_amd64.deb ...
+Unpacking binutils (2.24-5ubuntu14.2) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.35.0-1ubuntu2.20_amd64.deb ...
+Unpacking curl (7.35.0-1ubuntu2.20) ...
+Setting up libcurl3:amd64 (7.35.0-1ubuntu2.20) ...
+Setting up binutils (2.24-5ubuntu14.2) ...
+Setting up curl (7.35.0-1ubuntu2.20) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Removing intermediate container 6ffdc0d102b6
+ ---> 0b41e5b9ce64
+Step 4/16 : RUN gpg --keyserver pgp.mit.edu --recv-keys A4A9406876FCBD3C456770C88C718D3B5072E1F5
+ ---> Running in d673daeb0279
+[91mgpg: directory `/root/.gnupg' created
+[0m[91mgpg: new configuration file `/root/.gnupg/gpg.conf' created
+gpg: WARNING: options in `/root/.gnupg/gpg.conf' are not yet active during this run
+gpg: keyring `/root/.gnupg/secring.gpg' created
+[0m[91mgpg: keyring `/root/.gnupg/pubring.gpg' created
+gpg: requesting key 5072E1F5 from hkp server pgp.mit.edu
+[0m[91mgpg: /root/.gnupg/trustdb.gpg: trustdb created
+[0m[91mgpg: key 5072E1F5: public key "MySQL Release Engineering <mysql-build@oss.oracle.com>" imported
+[0m[91mgpg: no ultimately trusted keys found
+gpg: Total number processed: 1
+gpg:               imported: 1
+[0mRemoving intermediate container d673daeb0279
+ ---> dc31e2f24db5
+Step 5/16 : RUN locale-gen en_US.UTF-8 &&    update-locale
+ ---> Running in 169e9f654d31
+Generating locales...
+  en_US.UTF-8... done
+Generation complete.
+Removing intermediate container 169e9f654d31
+ ---> 649730982b66
+Step 6/16 : ENV LANG en_US.UTF-8
+ ---> Running in 043e1b8cabca
+Removing intermediate container 043e1b8cabca
+ ---> 7fbaa255d71c
+Step 7/16 : ENV LANGUAGE en_US:en
+ ---> Running in e499db619adc
+Removing intermediate container e499db619adc
+ ---> 4d8e4ef30d13
+Step 8/16 : ENV LC_ALL en_US.UTF-8
+ ---> Running in a560c391e1db
+Removing intermediate container a560c391e1db
+ ---> 08018558edd9
+Step 9/16 : RUN curl -SL "http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.73-linux-x86_64-glibc23.tar.gz" -o mysql.tar.gz &&     curl -SL "http://mysql.he.net/Downloads/MySQL-5.1/mysql-5.1.73-linux-x86_64-glibc23.tar.gz.asc" -o mysql.tar.gz.asc &&     gpg --verify mysql.tar.gz.asc &&     mkdir /usr/local/mysql &&     tar -xzf mysql.tar.gz -C /usr/local/mysql --strip-components=1 &&     rm mysql.tar.gz* &&     rm -rf /usr/local/mysql/mysql-test /usr/local/mysql/sql-bench &&     rm -rf /usr/local/mysql/bin/*-debug /usr/local/mysql/bin/*_embedded &&     find /usr/local/mysql -type f -name "*.a" -delete &&     { find /usr/local/mysql -type f -executable -exec strip --strip-all '{}' + || true; } &&     apt-get purge -y --auto-remove binutils &&     rm -rf /var/lib/apt/lists/*
+ ---> Running in 20774001f09f
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0     [0m[91m 0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100   294  100   294    0     0   2095      0 --:--:-- --:--:-- --:--:--  2100
+[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+[0m[91m  0  127M    0  1436    0     0   1148      0 32:20:02  0:00:01 32:20:01  1148[0m[91m  1  127M    1 2049k    0     0  1046k      0  0:02:04  0:00:01  0:02:03 2888k[0m[91m  5  127M    5 7453k    0     0  2571k      0  0:00:50  0:00:02  0:00:48 4521k[0m[91m  9  127M    9 12.0M    0     0  3135k      0  0:00:41  0:00:03  0:00:38 4602k[0m[91m 13  127M   13 17.1M    0     0  3603k      0  0:00:36  0:00:04  0:00:32 4843k[0m[91m 17  127M   17 22.0M    0     0  3821k      0  0:00:34  0:00:05  0:00:29 4849k[0m[91m 21  127M   21 28.0M    0     0  4072k      0  0:00:32  0:00:07  0:00:25 5239k[0m[91m 25  127M   25 32.4M    0     0  4203k      0  0:00:31  0:00:07  0:00:24 5149k[0m[91m 29  127M   29 38.0M    0     0  4349k      0  0:00:30  0:00:08  0:00:22 5296k[0m[91m 34  127M   34 43.5M    0     0  4507k      0  0:00:28  0:00:09  0:00:19 5389k[0m[91m 38  127M   38 48.8M    0     0  4592k      0  0:00:28  0:00:10  0:00:18 5501k[0m[91m 42  127M   42 54.0M    0     0  4648k      0  0:00:28  0:00:11  0:00:17 5484k[0m[91m 47  127M   47 59.9M    0     0  4765k      0  0:00:27  0:00:12  0:00:15 5652k[0m[91m 50  127M   50 64.8M    0     0  4785k      0  0:00:27  0:00:13  0:00:14 5575k[0m[91m 54  127M   54 70.0M    0     0  4802k      0  0:00:27  0:00:14  0:00:13 5380k[0m[91m 59  127M   59 75.9M    0     0  4894k      0  0:00:26  0:00:15  0:00:11 5551k[0m[91m 63  127M   63 81.0M    0     0  4895k      0  0:00:26  0:00:16  0:00:10 5474k[0m[91m 67  127M   67 86.3M    0     0  4946k      0  0:00:26  0:00:17  0:00:09 5413k[0m[91m 72  127M   72 92.0M    0     0  4971k      0  0:00:26  0:00:18  0:00:08 5481k[0m[91m 76  127M   76 98.0M    0     0  5014k      0  0:00:26  0:00:20  0:00:06 5640k[0m[91m 81  127M   81  103M    0     0  5064k      0  0:00:25  0:00:20  0:00:05 5605k[0m[91m 84  127M   84  108M    0     0  5051k      0  0:00:25  0:00:21  0:00:04 5587k[0m[91m 89  127M   89  114M    0     0  5078k      0  0:00:25  0:00:22  0:00:03 5544k[0m[91m 93  127M   93  119M    0     0  5126k      0  0:00:25  0:00:23  0:00:02 5720k[0m[91m 97  127M   97  124M    0     0  5099k      0  0:00:25  0:00:24  0:00:01 5445k[0m[91m100  127M  100  127M    0     0  5132k      0  0:00:25  0:00:25 --:--:-- 5447k
+[0m[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0   [0m[91m  0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100   185  100   185    0     0    460      0 --:--:-- --:--:-- --:--:--   476
+[0m[91mgpg: Signature made Sun 10 Nov 2013 06:50:11 AM UTC using DSA key ID 5072E1F5
+[0m[91mgpg: Good signature from "MySQL Release Engineering <mysql-build@oss.oracle.com>"
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: A4A9 4068 76FC BD3C 4567  70C8 8C71 8D3B 5072 E1F5
+[0m[91mstrip:/usr/local/mysql/bin/mysql_zap: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysql_find_rows: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysql_secure_installation: File format not recognized
+strip:/usr/local/mysql/bin/mysqld_multi: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysqlhotcopy: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysql_config: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysqlbug: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysqld_safe: File format not recognized
+strip:/usr/local/mysql/bin/mysql_setpermission: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysql_fix_extensions: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysqlaccess: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/msql2mysql: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysql_convert_table_format: File format not recognized
+strip:/usr/local/mysql/bin/mysql_fix_privilege_tables: File format not recognized
+[0m[91mstrip:/usr/local/mysql/bin/mysqldumpslow: File format not recognized
+[0m[91mstrip:/usr/local/mysql/lib/libmysqlclient.la: File format not recognized
+[0m[91mstrip:/usr/local/mysql/lib/libz.la: File format not recognized
+strip:/usr/local/mysql/lib/libmysqlclient_r.la: File format not recognized
+[0m[91mstrip:/usr/local/mysql/lib/plugin/ha_innodb_plugin.la: File format not recognized
+[0m[91mstrip:/usr/local/mysql/lib/plugin/mypluglib.la: File format not recognized
+[0m[91mstrip:/usr/local/mysql/lib/plugin/libdaemon_example.la: File format not recognized
+[0m[91mstrip:/usr/local/mysql/scripts/mysql_install_db: File format not recognized
+[0m[91mstrip:/usr/local/mysql/support-files/mysqld_multi.server: File format not recognized
+[0m[91mstrip:/usr/local/mysql/support-files/mysql.server: File format not recognized
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  binutils*
+0 upgraded, 0 newly installed, 1 to remove and 1 not upgraded.
+After this operation, 11.7 MB disk space will be freed.
+(Reading database ... 12298 files and directories currently installed.)
+Removing binutils (2.24-5ubuntu14.2) ...
+Purging configuration files for binutils (2.24-5ubuntu14.2) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Removing intermediate container 20774001f09f
+ ---> 531684becaa4
+Step 10/16 : ENV PATH $PATH:/usr/local/mysql/bin:/usr/local/mysql/scripts
+ ---> Running in fadee0438205
+Removing intermediate container fadee0438205
+ ---> 68bb33d68cd4
+Step 11/16 : WORKDIR /usr/local/mysql
+ ---> Running in 84f9a9f4518f
+Removing intermediate container 84f9a9f4518f
+ ---> f23eba187c90
+Step 12/16 : VOLUME /var/lib/mysql
+ ---> Running in 65c0a4d3a228
+Removing intermediate container 65c0a4d3a228
+ ---> ee290b4a1813
+Step 13/16 : COPY docker-entrypoint.sh /entrypoint.sh
+COPY failed: stat /var/lib/docker/tmp/docker-builder365792637/docker-entrypoint.sh: no such file or directory

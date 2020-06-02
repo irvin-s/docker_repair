@@ -1,0 +1,93 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM friendica/server:fpm
+fpm: Pulling from friendica/server
+804555ee0376: Pulling fs layer
+ca16ca5e3c0b: Pulling fs layer
+7e6a3b58c8d6: Pulling fs layer
+7696bcd03bee: Pulling fs layer
+6768b7d3aa6b: Pulling fs layer
+721e9f54c64c: Pulling fs layer
+816f55800414: Pulling fs layer
+edeb0c322b57: Pulling fs layer
+5914beaac434: Pulling fs layer
+cbefbabe3fd9: Pulling fs layer
+f13908506e96: Pulling fs layer
+ccc8f63fb7bd: Pulling fs layer
+7fcec83f28b9: Pulling fs layer
+9214870a2837: Pulling fs layer
+1fb91502b229: Pulling fs layer
+369f123df872: Pulling fs layer
+7696bcd03bee: Waiting
+6768b7d3aa6b: Waiting
+721e9f54c64c: Waiting
+816f55800414: Waiting
+edeb0c322b57: Waiting
+5914beaac434: Waiting
+cbefbabe3fd9: Waiting
+f13908506e96: Waiting
+ccc8f63fb7bd: Waiting
+7fcec83f28b9: Waiting
+9214870a2837: Waiting
+1fb91502b229: Waiting
+369f123df872: Waiting
+ca16ca5e3c0b: Verifying Checksum
+ca16ca5e3c0b: Download complete
+7696bcd03bee: Verifying Checksum
+7696bcd03bee: Download complete
+804555ee0376: Verifying Checksum
+804555ee0376: Download complete
+721e9f54c64c: Verifying Checksum
+721e9f54c64c: Download complete
+7e6a3b58c8d6: Verifying Checksum
+7e6a3b58c8d6: Download complete
+6768b7d3aa6b: Verifying Checksum
+6768b7d3aa6b: Download complete
+edeb0c322b57: Verifying Checksum
+edeb0c322b57: Download complete
+5914beaac434: Verifying Checksum
+5914beaac434: Download complete
+cbefbabe3fd9: Verifying Checksum
+cbefbabe3fd9: Download complete
+804555ee0376: Pull complete
+ca16ca5e3c0b: Pull complete
+f13908506e96: Verifying Checksum
+f13908506e96: Download complete
+816f55800414: Verifying Checksum
+816f55800414: Download complete
+ccc8f63fb7bd: Verifying Checksum
+ccc8f63fb7bd: Download complete
+7fcec83f28b9: Verifying Checksum
+7fcec83f28b9: Download complete
+1fb91502b229: Verifying Checksum
+1fb91502b229: Download complete
+369f123df872: Verifying Checksum
+369f123df872: Download complete
+9214870a2837: Verifying Checksum
+9214870a2837: Download complete
+7e6a3b58c8d6: Pull complete
+7696bcd03bee: Pull complete
+6768b7d3aa6b: Pull complete
+721e9f54c64c: Pull complete
+816f55800414: Pull complete
+edeb0c322b57: Pull complete
+5914beaac434: Pull complete
+cbefbabe3fd9: Pull complete
+f13908506e96: Pull complete
+ccc8f63fb7bd: Pull complete
+7fcec83f28b9: Pull complete
+9214870a2837: Pull complete
+1fb91502b229: Pull complete
+369f123df872: Pull complete
+Digest: sha256:3a9ec52db3d0655f19d200482a9e6bedc8be91cf69074f411b8781f933686bca
+Status: Downloaded newer image for friendica/server:fpm
+ ---> 72f81046bbf7
+Step 2/6 : ENV SMTP_TYPE simple
+ ---> Running in d542ae4194da
+Removing intermediate container d542ae4194da
+ ---> 4f54743c9efe
+Step 3/6 : ENV SMTP_HOST smtp.example.org
+ ---> Running in fb69a4953488
+Removing intermediate container fb69a4953488
+ ---> 5c91ade34e40
+Step 4/6 : COPY *.sh /
+COPY failed: no source files were specified

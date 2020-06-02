@@ -1,0 +1,123 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/12 : FROM oraclelinux:6
+6: Pulling from library/oraclelinux
+c74daa97e4c7: Pulling fs layer
+c74daa97e4c7: Verifying Checksum
+c74daa97e4c7: Download complete
+c74daa97e4c7: Pull complete
+Digest: sha256:ed66f7c8f7c324f18ed4d88b59d2085b956606a68c9087702f8a4e014742d504
+Status: Downloaded newer image for oraclelinux:6
+ ---> d9e9428f8cbc
+Step 2/12 : RUN yum install -y yum-utils && curl -o /etc/yum.repos.d/public-yum-ol6.repo http://yum.oracle.com/public-yum-ol6.repo && yum-config-manager -q --enable ol6_UEKR4
+ ---> Running in 2c685dea1cd6
+Loaded plugins: ovl, security, ulninfo
+Setting up Install Process
+Package yum-utils-1.1.30-42.0.1.el6_10.noarch already installed and latest version
+Nothing to do
+[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0   [0m[91m  0    0     0    0     0      0      0 --:--:-- [0m[91m--:--:-- --:--:--[0m[91m     [0m[91m0[0m[91m100 12045  100 12045    0     0  24896      0 --:--:-- --:--:-- --:--:-- 26946
+[0m[91mRepository ol6_latest is listed more than once in the configuration
+[0m[91mRepository ol6_addons is listed more than once in the configuration
+[0m[91mRepository ol6_ga_base is listed more than once in the configuration
+[0m[91mRepository ol6_u1_base is listed more than once in the configuration
+[0m[91mRepository ol6_u2_base is listed more than once in the configuration
+[0m[91mRepository ol6_u3_base is listed more than once in the configuration
+[0m[91mRepository ol6_u4_base is listed more than once in the configuration
+[0m[91mRepository ol6_u5_base is listed more than once in the configuration
+[0m[91mRepository ol6_u6_base is listed more than once in the configuration
+[0m[91mRepository ol6_u7_base is listed more than once in the configuration
+[0m[91mRepository ol6_u8_base is listed more than once in the configuration
+[0m[91mRepository ol6_u9_base is listed more than once in the configuration
+[0m[91mRepository ol6_u10_base is listed more than once in the configuration
+[0m[91mRepository ol6_gdm_multiseat is listed more than once in the configuration
+[0m[91mRepository ol6_MODRHCK is listed more than once in the configuration
+[0m[91mRepository ol6_latest_archive is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4 is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR3_latest is listed more than once in the configuration
+[0m[91mRepository ol6_UEK_latest is listed more than once in the configuration
+[0m[91mRepository ol6_UEK_base is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4_archive is listed more than once in the configuration
+[0m[91mRepository ol6_ofed_UEK is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4_OFED is listed more than once in the configuration
+[0m=============================== repo: ol6_UEKR4 ================================
+[ol6_UEKR4]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6Server
+baseurl = https://yum.oracle.com/repo/OracleLinux/OL6/UEKR4/x86_64/
+cache = 0
+cachedir = /var/cache/yum/x86_64/6Server/ol6_UEKR4
+cost = 1000
+enabled = 1
+enablegroups = True
+exclude = 
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6Server/ol6_UEKR4/gpgcadir
+gpgcakey = 
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6Server/ol6_UEKR4/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+hdrdir = /var/cache/yum/x86_64/6Server/ol6_UEKR4/headers
+http_caching = all
+includepkgs = 
+keepalive = True
+mdpolicy = group:primary
+mediaid = 
+metadata_expire = 21600
+metalink = 
+mirrorlist = 
+mirrorlist_expire = 86400
+name = Latest Unbreakable Enterprise Kernel Release 4 for Oracle Linux 6Server (x86_64)
+old_base_cache_dir = 
+password = 
+persistdir = /var/lib/yum/repos/x86_64/6Server/ol6_UEKR4
+pkgdir = /var/cache/yum/x86_64/6Server/ol6_UEKR4/packages
+proxy = False
+proxy_dict = 
+proxy_password = 
+proxy_username = 
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert = 
+sslclientcert = 
+sslclientkey = 
+sslverify = True
+throttle = 0
+timeout = 30.0
+username = 
+
+Removing intermediate container 2c685dea1cd6
+ ---> f98e73b6f9b4
+Step 3/12 : RUN yum install -y kernel-uek-devel-4.1.12-32.el6uek
+ ---> Running in 423c1ba6d9f0
+Loaded plugins: ovl, security, ulninfo
+Setting up Install Process
+[91mRepository ol6_latest is listed more than once in the configuration
+[0m[91mRepository ol6_addons is listed more than once in the configuration
+[0m[91mRepository ol6_ga_base is listed more than once in the configuration
+[0m[91mRepository ol6_u1_base is listed more than once in the configuration
+[0m[91mRepository ol6_u2_base is listed more than once in the configuration
+[0m[91mRepository ol6_u3_base is listed more than once in the configuration
+[0m[91mRepository ol6_u4_base is listed more than once in the configuration
+[0m[91mRepository ol6_u5_base is listed more than once in the configuration
+[0m[91mRepository ol6_u6_base is listed more than once in the configuration
+[0m[91mRepository ol6_u7_base is listed more than once in the configuration
+[0m[91mRepository ol6_u8_base is listed more than once in the configuration
+[0m[91mRepository ol6_u9_base is listed more than once in the configuration
+[0m[91mRepository ol6_u10_base is listed more than once in the configuration
+[0m[91mRepository ol6_gdm_multiseat is listed more than once in the configuration
+[0m[91mRepository ol6_MODRHCK is listed more than once in the configuration
+[0m[91mRepository ol6_latest_archive is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4 is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR3_latest is listed more than once in the configuration
+[0m[91mRepository ol6_UEK_latest is listed more than once in the configuration
+[0m[91mRepository ol6_UEK_base is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4_archive is listed more than once in the configuration
+[0m[91mRepository ol6_ofed_UEK is listed more than once in the configuration
+[0m[91mRepository ol6_UEKR4_OFED is listed more than once in the configuration
+[0mNo package kernel-uek-devel-4.1.12-32.el6uek available.
+[91mError: Nothing to do
+[0mThe command '/bin/sh -c yum install -y kernel-uek-devel-4.1.12-32.el6uek' returned a non-zero code: 1

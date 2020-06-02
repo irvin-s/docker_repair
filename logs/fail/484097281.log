@@ -1,0 +1,14 @@
+Sending build context to Docker daemon   2.56kB
+Step 1/10 : FROM ppc64le/fedora:24
+24: Pulling from ppc64le/fedora
+bc63ced25054: Pulling fs layer
+bc63ced25054: Verifying Checksum
+bc63ced25054: Download complete
+bc63ced25054: Pull complete
+Digest: sha256:39802c318296612879c4e61e389966bd51f159f7bcaedc1f3f272d98adb0f423
+Status: Downloaded newer image for ppc64le/fedora:24
+ ---> 3741bb6b8700
+Step 2/10 : RUN dnf -y upgrade
+ ---> Running in 7e11ab975d18
+[91mstandard_init_linux.go:211: exec user process caused "exec format error"
+[0mThe command '/bin/sh -c dnf -y upgrade' returned a non-zero code: 1
