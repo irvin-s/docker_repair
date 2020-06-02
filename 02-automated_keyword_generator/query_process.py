@@ -21,7 +21,7 @@ url_white_lst = open("query_url_white_list.txt","r")
 url_white_lst = url_white_lst.read().splitlines()
 
 #File to store query_log
-query_log = open("analyzed_query.json", "a")
+query_log = open("../results/analyzed_query.json", "a")
 
 #Function to read log file last lines
 def lastNlines(f,n):
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     #filename="logs/fail/484144517.log"
     if (len(sys.argv)<2):
-        print("Please, provide a file on input.\nExample format: python query_process.py logs/fail/484144517.log")
+        print("Please, provide a file on input.\nExample format: python query_process.py ../logs/fail/484144517.log")
         sys.exit(0)
     filename=sys.argv[1]        
     print("Processing file {}".format(filename))
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     #If the url doesn't match the searching criteria
     if not url:
         url.append("")
-    print("Process finished, for log check analyzed_query.json")
+    print("Process finished, for log check results/analyzed_query.json")
 
 #Write query_log
 dataJ['Hash: '+n_hash[10:-4]] = []
