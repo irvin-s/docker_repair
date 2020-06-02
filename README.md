@@ -37,7 +37,7 @@ To use the automatic Dockerfiles repair, use Linux, and install the following re
 
 - Check the created keyword and the URLs for a possible repair at: `results/analyzed_query.json`
 
-### 3. Proccess the keywords
+### 3. Process the keywords
 
  ## Pre-results
 
