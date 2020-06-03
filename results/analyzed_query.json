@@ -619,3 +619,42 @@
 }
 
 
+{
+    "Hash: il/154176094": [
+        {
+            "Log fragment": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get update -qq -y' returned a non-zero code: 100 ",
+            "Query": "ubuntu release a e the repository http archive",
+            "URLs": {
+                "0": "https://askubuntu.com/questions/1120194/e-the-repository-http-archive-canonical-com-precise-release-is-not-signed",
+                "1": "https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubuntu-com-ubuntu-bionic-old-releases-rel"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: il/154176094": [
+        {
+            "Log fragment": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get update -qq -y' returned a non-zero code: 100 ",
+            "Query": "ubuntu release a e the repository http archive",
+            "URLs": {
+                "0": "https://askubuntu.com/questions/1120194/e-the-repository-http-archive-canonical-com-precise-release-is-not-signed",
+                "1": "https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubuntu-com-ubuntu-bionic-old-releases-rel"
+            }
+        }
+    ]
+}
+
+{
+    "Hash: il/154176094": [
+        {
+            "Log fragment": "E: The repository 'http://archive.ubuntu.com/ubuntu artful-updates Release' does not have a Release file.  E: The repository 'http://archive.ubuntu.com/ubuntu artful-backports Release' does not have a Release file.  \u001b[0mThe command '/bin/sh -c apt-get update -qq -y' returned a non-zero code: 100 ",
+            "Query": "ubuntu release a e the repository http archive",
+            "URLs": {
+                "0": "https://askubuntu.com/questions/1120194/e-the-repository-http-archive-canonical-com-precise-release-is-not-signed",
+                "1": "https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubuntu-com-ubuntu-bionic-old-releases-rel"
+            }
+        }
+    ]
+}
+

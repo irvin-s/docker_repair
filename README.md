@@ -1,4 +1,5 @@
-The goal of this project is to localize posts on discussion forums with answers to build problems in Dockerfiles.
+The goal of this project is to localize posts on discussion forums
+with answers to build problems in Dockerfiles.
 
 ## Requirements.
 Recent version of the following:
@@ -26,19 +27,32 @@ dockerfiles you can use (from binacle).
 
 ### 2. Generate Keywords from logs
 
-- Before using the scripts install the requirements located in the `02_automated_keyword_generator/requirements.txt`
-    - To install run this: `pip3 install -r requirements.txt`
+- cd to directory `keyword_gen` 
 
-- To automatic verify the failed logs run python script located at `02_automated_keyword_generator/`
+- install requirements
 
-- Run the python script using the following syntax:
-    `python3 query_process.py ../logs/fail/228568839.log`
+```
+pip3 install -r requirements.txt
+```
 
-- Check the created keyword and the URLs for a possible repair at: `results/analyzed_query.json`
+- The following script processes a given log file generating results
+  at `results/analyzed_query.json`.
+
+```
+python3 query_process.py ../logs/fail/228568839.log
+```
+
+For example:
+
+```
+python3 query_process.py ../logs/fail/228568839.log
+```
+
+- Check the created keyword and the URLs for a possible repair at: 
 
 ### 3. Process the keywords
 
- ## Pre-results
+## Pre-results
 
 This repository work is in-flux, at this time there are only a few pre-results. The dataset of Dockerfiles must be in Context to avoid misconfiguration errors.
 We are using TF-IDF to generate the keywords, first, we tried to use the RAKE algorithm, but we can't get good results.
