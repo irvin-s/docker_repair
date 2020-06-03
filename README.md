@@ -35,7 +35,7 @@ dockerfiles you can use (from binacle).
 pip3 install -r requirements.txt
 ```
 
-- The following script processes a given log file generating results
+- The following script processes a given log file, generating results
   at `results/analyzed_query.json`.
 
 ```
