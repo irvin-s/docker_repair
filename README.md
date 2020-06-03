@@ -1,5 +1,4 @@
-# docker_repair
- Script's for automated Dockerfiles repair
+The goal of this project is to localize posts on discussion forums with answers to build problems in Dockerfiles.
 
 ## Requirements.
 Recent version of the following:
