@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#Log_dir
+# variales
 HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-BINACLE_DIR="${HERE}/01_analyze_binacle_dataset"
+BINACLE_DIR="${HERE}/binacle_data"
 
 mkdir -p ${HERE}/logs/history
 mkdir -p ${HERE}/logs/success
