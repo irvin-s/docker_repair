@@ -1,29 +1,29 @@
 # docker_repair
  Script's for automated Dockerfiles repair
 
- ## Usage / Setup
-To use the automatic Dockerfiles repair, use Linux, and install the following requirements.
+## Requirements.
+Recent version of the following:
 
-- Latest version of `Docker`
-- Latest version of `Python3`
-- Latest vervion of `Python3 pip`
-- Latest version of `Linux OS`
+- `Docker`
+- `Python3`
+- `pip3`
+- `Linux`
 
 ### 1. Build Dockerfiles
 
-- Before executing the building, insert the Dockerfiles in:
-    `image_list.txt`
+- Update the file `image_list.txt` with the Dockerfiles of your
+interest. For reference, the file
+`notes/sizesortedlist-dockerfiles.txt` contains the list of all
+dockerfiles you can use (from binacle).
 
-- To select what Dockerfiles to build see:
-    `notes/sizesortedlist-dockerfiles.txt`
-    - The filename must have this format `sources/228568839.Dockerfile`
+- Use the command below to build the dockerfiles. The generated logs
+  will be located under directory `logs/`. Logs for build failures
+  will be at `logs/fail` and logs of successful builds will be at
+  `logs/success`.
 
-- To build Dockerfiles run the script:
-    `./build_test.sh`
-
-- After run the script see Logs at:
-    `logs/`
-    - Logs for build failure `logs/fail`, and success `logs/success`
+```
+  $>./build_test.sh
+```
 
 ### 2. Generate Keywords from logs
 
