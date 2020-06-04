@@ -1,5 +1,5 @@
 #Before execute the script, see requirements.txt
-#This script reads a log file from a dockerfile build, and then use logs from failure build
+
 #Get the error from the log and search on google to find URL's that contain the bug fix  
 #Script usage: python query_process.py log_to_analyze
 
@@ -8,13 +8,11 @@ from googlesearch import search
 import sys
 import json
 import re
-import keyword_creator
 
 #Initializing variables
 url = []
-lines = []
 dataJ = {}
-i = 0
+
 
 #File to read url white list
 url_white_lst = open("query_url_white_list.txt","r")
@@ -22,18 +20,6 @@ url_white_lst = url_white_lst.read().splitlines()
 
 #File to store query_log
 query_log = open("../results/analyzed_query.json", "a")
-
-#Function to read log file last lines
-def lastNlines(f,n):
-    with f as file:
-        for line in (file.readlines()[-n:]):
-            lines.append(line)
-    return lines
-
-#Function to convert list to string
-def listToString(s):
-    str1 = " "
-    return (str1.join(s))
 
 #Function to conver list to dict
 def listToDict(lst):
@@ -50,29 +36,21 @@ def checkURL(wUrl):
             result = False
     return result
 
-if __name__ == "__main__":
+#Function to convert list to string
+def listToString(s):
+    str1 = " "
+    return (str1.join(s))
 
-    #filename="logs/fail/484144517.log"
-    if (len(sys.argv)<2):
-        print("Please, provide a file on input.\nExample format: python query_process.py ../logs/fail/484144517.log")
-        sys.exit(0)
-    filename=sys.argv[1]        
-    print("Processing file {}".format(filename))
+def getAllKeyWords():
+    file = open('../results/generated_keywords.txt','r')
+    lines = []
+    with file as f :
+        line = f.readline().split(', ')
+        lines.append(line)
+    return lines
 
-    #Read log file
-    n_hash = (filename)
-    log_file = open(filename,"r")
-    query = lastNlines(log_file,3)
-    #for p in query:
-    #    print(p)
-    
-    #Googling error log and show de results, convert lines from list to string before use the query
-    query_s = listToString(query)
-    query_s = query_s.replace("\n"," ")
-
-    #Gerenating keyword
-    keyword = keyword_creator.keyGen(query_s)
-    
+def process(n_hash, keyword):
+    i = 0
     #Testing query seach on google
     while not url:
         keyword_s = listToString(keyword[:6 + i])
@@ -88,14 +66,21 @@ if __name__ == "__main__":
         url.append("")
     print("Process finished, for log check results/analyzed_query.json")
 
-#Write query_log
-dataJ['Hash: '+n_hash[10:-4]] = []
-dataJ['Hash: '+n_hash[10:-4]].append({
-    'Log fragment': query_s,
-    'Query': keyword_s,
-    'URLs': ( listToDict(url) )
-}) 
-json.dump(dataJ, query_log, indent=4)
-query_log.write("\n")
-query_log.write("\n")
-query_log.close
+    #Write query_log
+    dataJ['Hash: '+n_hash[10:-4]] = []
+    dataJ['Hash: '+n_hash[10:-4]].append({
+        'Log fragment': query_s,
+        'Query': keyword_s,
+        'URLs': ( listToDict(url) )
+    }) 
+    json.dump(dataJ, query_log, indent=4)
+    query_log.write("\n")
+    query_log.write("\n")
+    query_log.close
+
+
+if __name__ == "__main__":
+    lines = getAllKeyWords()
+
+    for line in lines:
+        process(line[0], line[1:])
