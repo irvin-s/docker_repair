@@ -13,7 +13,7 @@ Recent version of the following:
 
 - Update the file `image_list.txt` with the Dockerfiles of your
 interest. For reference, the file
-`notes/sizesortedlist-dockerfiles.txt` contains the list of all
+`${ROOT_DIR}/notes/sizesortedlist-dockerfiles.txt` contains the list of all
 dockerfiles you can use (from binacle).
 
 - Use the command below to build the dockerfiles. The generated logs
@@ -36,7 +36,7 @@ pip3 install -r requirements.txt
 ```
 
 - The following script processes a given log file, generating results
-  at `../results/analyzed_query.json`.
+  at `${ROOT_DIR}/results/analyzed_query.json`.
 
 ```
 python3 query_process.py <log-file-of-failing-build>
@@ -45,7 +45,7 @@ python3 query_process.py <log-file-of-failing-build>
 For example:
 
 ```
-python3 query_process.py ../logs/fail/228568839.log
+python3 query_process.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
 - Check the created keyword and the URLs for a possible repair at: 
