@@ -69,7 +69,7 @@ def process(n_hash, keyword):
     #Write query_log
     dataJ['Hash: '+n_hash[10:-4]] = []
     dataJ['Hash: '+n_hash[10:-4]].append({
-        'Log fragment': query_s,
+        #FIXME @Irvin #'Log fragment': query_s, 
         'Query': keyword_s,
         'URLs': ( listToDict(url) )
     }) 
