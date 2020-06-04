@@ -15,7 +15,7 @@ images_file="images_list.txt"
 while read line; do
 	 # parse hashcode
     hash=$(echo $line | cut -f2 -d" " | cut -f2 -d"/" | cut -f1 -d\.)
-    logfile=${BINACLE_DIR}/logs/history/$hash.log
+    logfile=${HERE}/logs/history/$hash.log
     
 	 ## log file exists -> skip
     if [ -f ${logfile} ];
@@ -35,10 +35,10 @@ while read line; do
 	  ## removes all images and test the built was successfully or failed
 	  if [[ $msg_log == *"Successfully tagged"* ]];
      then
-       	echo "$msg_log" > ${BINACLE_DIR}/logs/success/$hash.log 
+       	echo "$msg_log" > ${HERE}/logs/success/$hash.log 
        	docker system prune -af
      else
-       	echo "$msg_log" > ${BINACLE_DIR}/logs/fail/$hash.log
+       	echo "$msg_log" > ${HERE}/logs/fail/$hash.log
        	docker system prune -af
      fi
 	 )
