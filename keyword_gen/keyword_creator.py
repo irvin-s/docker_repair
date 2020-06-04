@@ -5,6 +5,8 @@
 import nltk
 import re
 import heapq
+import sys
+import re
 from nltk.corpus import stopwords
 
 ##Creating a list of custom stopwords and adding to stop words
@@ -32,6 +34,7 @@ def listToString(s):
 
 #Function to read log file last lines
 def lastNlines(f,n):
+    lines = []
     with f as file:
         for line in (file.readlines()[-n:]):
             lines.append(line)
