@@ -12,6 +12,6 @@ script:
 notifications:
   email:
     recipients:
-      - docker-fix-finders@googlegroups.com
-    on_success: always
+      - docker-fix-finders@googlegroups.com    
+    on_success: never
     on_failure: always
