@@ -47,7 +47,7 @@ For example:
 python3 query_process.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
-- Check the output at `${ROOT_DIR}/results/analyzed_query.json`. FIX: It should report a list of keywords and another processor should prepara a query
+- Check the output at `${ROOT_DIR}/results/analyzed_query.json`. FIX: It should report a list of keywords and another processor should prepare a query
 
 ### 3. Process the keywords
 
