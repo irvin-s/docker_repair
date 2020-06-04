@@ -39,7 +39,7 @@ pip3 install -r requirements.txt
   at `results/analyzed_query.json`.
 
 ```
-python3 query_process.py ../logs/fail/228568839.log
+python3 query_process.py <log-file-of-failing-build>
 ```
 
 For example:
