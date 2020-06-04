@@ -35,8 +35,7 @@ dockerfiles you can use (from binacle).
 pip3 install -r requirements.txt
 ```
 
-- The following script processes a given log file, generating results
-  at `${ROOT_DIR}/results/analyzed_query.json`.
+- The following script processes a log file to generate keywords
 
 ```
 python3 query_process.py <log-file-of-failing-build>
@@ -48,7 +47,7 @@ For example:
 python3 query_process.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
-- Check the created keyword and the URLs for a possible repair at: 
+- Check the output at `${ROOT_DIR}/results/analyzed_query.json`. FIX: It should report a list of keywords and another processor should prepara a query
 
 ### 3. Process the keywords
 
