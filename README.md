@@ -17,9 +17,9 @@ interest. For reference, the file
 dockerfiles you can use (from binacle).
 
 - Use the command below to build the dockerfiles. The generated logs
-  will be located under directory `logs/`. Logs for build failures
-  will be at `logs/fail` and logs of successful builds will be at
-  `logs/success`.
+  will be located under directory `${ROOT_DIR}logs/`. Logs for build failures
+  will be at `${ROOT_DIR}logs/fail` and logs of successful builds will be at
+  `${ROOT_DIR}logs/success`.
 
 ```
   $>./build_test.sh
