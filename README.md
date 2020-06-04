@@ -47,7 +47,7 @@ For example:
 python3 keyword_creator.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
-- Check the output at `${ROOT_DIR}/results/keyword_generated.json`.
+- Check the output at `${ROOT_DIR}/results/generated_keywords.txt`.
 
 ### 3. Process the keywords
 
