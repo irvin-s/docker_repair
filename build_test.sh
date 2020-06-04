@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# variales
+# Variables
 HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 BINACLE_DIR="${HERE}/binacle_data"
 
@@ -11,7 +11,7 @@ mkdir -p ${HERE}/logs/fail
 # File with dockerfile names
 images_file="images_list.txt"
 
-#Read the file with dockerfile names and try to execute
+# Read the file with dockerfile names and try to execute
 while read line; do
 	 # parse hashcode
     hash=$(echo $line | cut -f2 -d" " | cut -f2 -d"/" | cut -f1 -d\.)
@@ -43,5 +43,5 @@ while read line; do
      fi
 	 )
 	 rm -rf ${HERE}/$hash
-	 #sqlite3 db_docker_test.db "insert into tb_docker_tests_results (nm_image, error_msg) values ($line, $msg);"
+	 
 done<$images_file
