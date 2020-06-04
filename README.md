@@ -29,13 +29,13 @@ dockerfiles you can use (from binacle).
 
 - cd to directory `${ROOT_DIR}/keyword_gen` 
 
-- install requirements
+- Install requirements
 
 ```
 pip3 install -r requirements.txt
 ```
 
-- The following script processes a log file to generate keywords
+- Extract the keywords. The following script processes a log file to generate a list of keywords.
 
 ```
 python3 query_process.py <log-file-of-failing-build>
