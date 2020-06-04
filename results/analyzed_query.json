@@ -703,3 +703,18 @@
     ]
 }
 
+{
+    "Hash: il/484144517": [
+        {
+            "Query": "apt get 91mbash not found 0merror",
+            "URLs": {
+                "0": "https://stackoverflow.com/questions/45142855/bin-sh-apt-get-not-found",
+                "1": "https://stackoverflow.com/questions/32486779/apt-add-repository-command-not-found-error-in-dockerfile",
+                "2": "https://stackoverflow.com/questions/39901311/docker-ubuntu-bash-ping-command-not-found",
+                "3": "https://stackoverflow.com/questions/26982274/ps-command-doesnt-work-in-docker-container",
+                "4": "https://stackoverflow.com/questions/30379381/docker-command-not-found-even-though-installed-with-apt-get"
+            }
+        }
+    ]
+}
+
