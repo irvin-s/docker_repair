@@ -36,7 +36,7 @@ pip3 install -r requirements.txt
 ```
 
 - The following script processes a given log file, generating results
-  at `results/analyzed_query.json`.
+  at `../results/analyzed_query.json`.
 
 ```
 python3 query_process.py <log-file-of-failing-build>
