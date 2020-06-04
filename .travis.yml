@@ -12,6 +12,8 @@ script:
 notifications:
   email:
     recipients:
-      - docker-fix-finders@googlegroups.com    
-    on_success: never
+      - damorim@cin.ufpe.br
+      - isb@cin.ufpe.br
+      - dgs@cin.ufpe.br      
+    on_success: always
     on_failure: always
