@@ -1,0 +1,10 @@
+stackoverflow.com
+issues
+reddit.com
+askubuntu.com
+ubuntuforums.org
+gitlab.com
+medium.com
+devops.stackexchange.com
+unix.stackexchange.com
+forums.centos.org
