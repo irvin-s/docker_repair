@@ -59,13 +59,11 @@ def keyGen(mytext):
         
     return mytext
 
-if __name__ == "__main__":
+def printOutput(nameFile,arr):
+    file = open('keywords.txt','a')
+    file.write('%s, %s' % (nameFile, ', '.join(map(str, arr))))
 
-     #filename="logs/fail/484144517.log"
-    if (len(sys.argv)<2):
-        print("Please, provide a file on input.\nExample format: python keyword_creator.py ../logs/fail/484144517.log")
-        sys.exit(-1)
-    filename=sys.argv[1]        
+def main(filename):
     print("Processing file {}".format(filename))
 
     #Read log file
@@ -79,5 +77,12 @@ if __name__ == "__main__":
     query_s = query_s.replace("\n"," ")
 
     keyword = keyGen(query_s)
+    printOutput(filename,keyword)
 
-    print(keyword)
+if __name__ == "__main__":
+    
+    #filename="../logs/fail/484144517.log"
+    if (len(sys.argv)<2):
+        print("Please, provide a file on input.\nExample format: python keyword_creator.py ../logs/fail/484144517.log")
+        sys.exit(-1)
+    main(sys.argv[1])
