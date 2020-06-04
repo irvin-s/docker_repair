@@ -25,7 +25,7 @@ dockerfiles you can use (from binacle).
   $>./build_test.sh
 ```
 
-### 2. Generate Keywords from logs
+### 2. Generate keywords
 
 - cd to directory `${ROOT_DIR}/keyword_gen/` 
 
@@ -49,7 +49,7 @@ python3 keyword_creator.py ${ROOT_DIR}/logs/fail/228568839.log
 
 - Check the output at `${ROOT_DIR}/results/generated_keywords.txt`.
 
-### 3. Process the keywords
+### 3. Generate query (from keywords) and process results
 
 - cd to directory `${ROOT_DIR}/query_proc/`
 
@@ -60,8 +60,3 @@ python3 query_process.py
 ```
 
 - Check the output at `${ROOT_DIR}/results/analyzed_query.json`.
-
-## Pre-results
-
-This repository work is in-flux, at this time there are only a few pre-results. The dataset of Dockerfiles must be in Context to avoid misconfiguration errors.
-We are using TF-IDF to generate the keywords, first, we tried to use the RAKE algorithm, but we can't get good results.
