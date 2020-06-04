@@ -9,6 +9,8 @@ import sys
 import re
 from nltk.corpus import stopwords
 
+nltk.download('punkt')
+
 ##Creating a list of custom stopwords and adding to stop words
 stop_words = ["step", "bin", "sh", "returned", "non", "zero", "code", "manifest", "unknown", "pull", "access", "denied", "invalid", "reference", "format", "failed", "process", "command", "me", "mthe", "for", "from", "0mthe", "91me"]
 
