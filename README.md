@@ -27,7 +27,7 @@ dockerfiles you can use (from binacle).
 
 ### 2. Generate Keywords from logs
 
-- cd to directory `keyword_gen` 
+- cd to directory `${ROOT_DIR}/keyword_gen` 
 
 - install requirements
 
