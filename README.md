@@ -27,7 +27,7 @@ dockerfiles you can use (from binacle).
 
 ### 2. Generate Keywords from logs
 
-- cd to directory `${ROOT_DIR}/keyword_gen` 
+- cd to directory `${ROOT_DIR}/keyword_gen/` 
 
 - Install requirements
 
@@ -38,18 +38,28 @@ pip3 install -r requirements.txt
 - Extract the keywords. The following script processes a log file to generate a list of keywords.
 
 ```
-python3 query_process.py <log-file-of-failing-build>
+python3 keyword_creator.py <log-file-of-failing-build>
 ```
 
 For example:
 
 ```
-python3 query_process.py ${ROOT_DIR}/logs/fail/228568839.log
+python3 keyword_creator.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
-- Check the output at `${ROOT_DIR}/results/analyzed_query.json`. FIX: It should report a list of keywords and another processor should prepare a query
+- Check the output at `${ROOT_DIR}/results/keyword_generated.json`.
 
 ### 3. Process the keywords
+
+- cd to directory `${ROOT_DIR}/query_proc/`
+
+- Process the keywords. The following script search the web for URLs.
+
+```
+python3 query_process.py 
+```
+
+- Check the output at `${ROOT_DIR}/results/analyzed_query.json`.
 
 ## Pre-results
 
