@@ -1,13 +1,13 @@
-language: java
+language: python
 
 python:
  - 3.6
 
-before_install:
+install:
  - pip install -r requirements.txt
 
 script:
- - sh run
+ - bash run.sh
 
 notifications:
   email:
