@@ -9,13 +9,15 @@ import sys
 import json
 import re
 import time
+import os
 
+OUTPUT_FILE = '../results/analyzed_query.json'
+
+logs=[]
 #File to read url white list
 url_white_lst = open("query_url_white_list.txt","r")
 url_white_lst = url_white_lst.read().splitlines()
 
-#File to store query_log
-query_log = open("../results/analyzed_query.json", "a")
 
 #Function to convert list to string
 def listToString(s):
@@ -44,11 +46,40 @@ def checkURL(wUrl):
             result = False
     return result
 
+#used to read all json file and return
+def readLog():
+    if os.path.exists(OUTPUT_FILE):
+        read_create = 'r' # read if already exists
+        print('creating outuput file')
+    else:
+        read_create = 'w' # make a new file if not
+        print('nao')
+    with open(OUTPUT_FILE, read_create) as json_file:
+        try:
+            data = json.load(json_file)
+        except Exception as _:
+            data = []
+    return data
+
+#used to add a new log, first read the previous logs then append a new log and salve all logs in file
+def addLog(n_hash, url, keyword_s):
+    #File to store query_log
+    logs = readLog()
+    dataJ = {}
+    #Write query_log
+    dataJ['hash'] = n_hash[13:-5]
+    dataJ['query'] = keyword_s
+    dataJ['URLs'] = listToDict(url)
+    
+    logs.append(dataJ)
+
+    query_log = open(OUTPUT_FILE, "w")
+    json.dump(logs, query_log, indent=2)
+
 # Process the keyword
 def process(n_hash, keyword):
     i = 0
     url = []
-    dataJ = {}
 
     #Testing query seach on google
     while not url:
@@ -65,17 +96,7 @@ def process(n_hash, keyword):
     if not url:
         url.append("")
     
-    #Write query_log
-    dataJ['Hash: '+n_hash[13:-5]] = []
-    dataJ['Hash: '+n_hash[13:-5]].append({
-        #FIXME @Irvin #'Log fragment': query_s, 
-        'Query': keyword_s,
-        'URLs': ( listToDict(url) )
-    }) 
-    json.dump(dataJ, query_log, indent=4)
-    query_log.write("\n")
-    query_log.write("\n")
-    query_log.close
+    addLog(n_hash, url, keyword_s)
 
 if __name__ == "__main__":
     keywords = getAllKeyWords()
