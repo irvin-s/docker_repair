@@ -1,3 +1,0 @@
-../logs/fail/395127788.log, pip, apt, 1, install, version, get, 0m, 91myou, are, using, 8, however, 20, 0, 2, is, available, you, should, consider, upgrading, via, the, upgrade, bin, sh, c, update, yes, build_packages, python, ont, fast5, api, package_version, clean, rm, rf, var, lib, lists, a, non, zero
-../logs/fail/340529927.log, pywps, flask, alpine, latest, 1, 10, not, found
-../logs/fail/299061624.log, iproute, apt, get, package, has, no, installation, candidate, bin, sh, c, update, y, install, curl, jq, netcat, net, tools, dnsutils, graphviz, a, non, zero, 100
