@@ -52,6 +52,7 @@ def getAllKeyWords():
 def process(n_hash, keywords):
     i = 0
     #Testing query seach on google
+    keyword_s = ''
     while not url:
         keyword_s = listToString(keywords[:6 + i])
         for g in search(keyword_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
@@ -76,7 +77,7 @@ def process(n_hash, keywords):
     json.dump(dataJ, query_log, indent=4)
     query_log.write("\n")
     query_log.write("\n")
-    query_log.close
+    query_log.close()
 
 
 if __name__ == "__main__":
