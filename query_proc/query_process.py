@@ -77,7 +77,6 @@ def process(n_hash, keywords):
     json.dump(dataJ, query_log, indent=4)
     query_log.write("\n")
     query_log.write("\n")
-    query_log.close()
 
 
 if __name__ == "__main__":
