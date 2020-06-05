@@ -8,6 +8,11 @@ Recent version of the following:
 - `Python3`
 - `pip3`
 - `Linux`
+- Install our requirements:
+
+```
+pip3 install -r requirements.txt
+```
 
 ### 1. Build Dockerfiles
 
@@ -29,12 +34,6 @@ dockerfiles you can use (from binacle).
 
 - cd to directory `${ROOT_DIR}/keyword_gen/` 
 
-- Install requirements
-
-```
-pip3 install -r requirements.txt
-```
-
 - Extract the keywords. The following script processes a log file to generate a list of keywords.
 
 ```
@@ -47,7 +46,7 @@ For example:
 python3 keyword_creator.py ${ROOT_DIR}/logs/fail/228568839.log
 ```
 
-- Check the output at `${ROOT_DIR}/results/generated_keywords.txt`.
+- Check the output at `${ROOT_DIR}/results/keywords.txt`.
 
 ### 3. Generate query (from keywords) and process results
 
