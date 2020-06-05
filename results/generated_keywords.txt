@@ -1,1 +1,0 @@
-../logs/fail/484144517.log, apt, get, 91mbash, not, found, 0merror, executing, exiting, the, bin, sh, c, curl, sl, https, deb, nodesource, com, setup_9, x, bash, install, y, nodejs, a, non, zero, 1

@@ -1,0 +1,88 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM gcr.io/istio-release/proxyv2:release-1.1-20190315-09-16
+release-1.1-20190315-09-16: Pulling from istio-release/proxyv2
+34667c7e4631: Pulling fs layer
+d18d76a881a4: Pulling fs layer
+119c7358fbfc: Pulling fs layer
+2aaf13f3eff0: Pulling fs layer
+dae4ea8e6f93: Pulling fs layer
+b79daf0b4d82: Pulling fs layer
+297a3a31d784: Pulling fs layer
+e46b6f1e8e95: Pulling fs layer
+45f86a037836: Pulling fs layer
+69f5c78ce1b3: Pulling fs layer
+3f96e273a9db: Pulling fs layer
+b504e1b21899: Pulling fs layer
+d816ea311883: Pulling fs layer
+b1aa23d6da1b: Pulling fs layer
+a319e0344ff5: Pulling fs layer
+23873df3ab72: Pulling fs layer
+d0a788da9137: Pulling fs layer
+000fb029f743: Pulling fs layer
+2aaf13f3eff0: Waiting
+b504e1b21899: Waiting
+d816ea311883: Waiting
+dae4ea8e6f93: Waiting
+b1aa23d6da1b: Waiting
+b79daf0b4d82: Waiting
+297a3a31d784: Waiting
+69f5c78ce1b3: Waiting
+45f86a037836: Waiting
+a319e0344ff5: Waiting
+d0a788da9137: Waiting
+23873df3ab72: Waiting
+e46b6f1e8e95: Waiting
+000fb029f743: Waiting
+d18d76a881a4: Verifying Checksum
+d18d76a881a4: Download complete
+119c7358fbfc: Verifying Checksum
+119c7358fbfc: Download complete
+2aaf13f3eff0: Verifying Checksum
+2aaf13f3eff0: Download complete
+b79daf0b4d82: Verifying Checksum
+b79daf0b4d82: Download complete
+34667c7e4631: Verifying Checksum
+34667c7e4631: Download complete
+34667c7e4631: Pull complete
+d18d76a881a4: Pull complete
+119c7358fbfc: Pull complete
+2aaf13f3eff0: Pull complete
+e46b6f1e8e95: Verifying Checksum
+e46b6f1e8e95: Download complete
+dae4ea8e6f93: Download complete
+297a3a31d784: Verifying Checksum
+297a3a31d784: Download complete
+dae4ea8e6f93: Pull complete
+3f96e273a9db: Download complete
+69f5c78ce1b3: Download complete
+45f86a037836: Verifying Checksum
+45f86a037836: Download complete
+b79daf0b4d82: Pull complete
+b504e1b21899: Verifying Checksum
+b504e1b21899: Download complete
+b1aa23d6da1b: Download complete
+d816ea311883: Download complete
+297a3a31d784: Pull complete
+d0a788da9137: Verifying Checksum
+d0a788da9137: Download complete
+a319e0344ff5: Verifying Checksum
+a319e0344ff5: Download complete
+e46b6f1e8e95: Pull complete
+45f86a037836: Pull complete
+23873df3ab72: Verifying Checksum
+23873df3ab72: Download complete
+69f5c78ce1b3: Pull complete
+000fb029f743: Download complete
+3f96e273a9db: Pull complete
+b504e1b21899: Pull complete
+d816ea311883: Pull complete
+b1aa23d6da1b: Pull complete
+a319e0344ff5: Pull complete
+23873df3ab72: Pull complete
+d0a788da9137: Pull complete
+000fb029f743: Pull complete
+Digest: sha256:564add17bc7a09eb7415aa37a06de66365018b9df8b68f874f7508781ed2456b
+Status: Downloaded newer image for gcr.io/istio-release/proxyv2:release-1.1-20190315-09-16
+ ---> 06fc3277b6a5
+Successfully built 06fc3277b6a5
+Successfully tagged binacle:300457049

@@ -9,6 +9,8 @@ import sys
 import re
 from nltk.corpus import stopwords
 
+nltk.download('punkt')
+
 ##Creating a list of custom stopwords and adding to stop words
 stop_words = ["step", "bin", "sh", "returned", "non", "zero", "code", "manifest", "unknown", "pull", "access", "denied", "invalid", "reference", "format", "failed", "process", "command", "me", "mthe", "for", "from", "0mthe", "91me"]
 
@@ -61,7 +63,7 @@ def keyGen(mytext):
 
 def printOutput(nameFile,arr):
     file = open('../results/keywords.txt','a')
-    file.write('%s, %s' % (nameFile, ', '.join(map(str, arr))))
+    file.write('%s, %s\n' % (nameFile, ', '.join(map(str, arr))))
 
 def main(filename):
     print("Processing file {}".format(filename))
