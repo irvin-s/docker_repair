@@ -27,14 +27,12 @@ def listToDict(lst):
     return lst
 
 #Function to white listing URLs
+# returns True if was in whiteList else, False
 def checkURL(wUrl):
     for white_lst in url_white_lst:
         if re.search(white_lst, wUrl):
-            result = True
-            break
-        else:
-            result = False
-    return result
+            return True
+    return False
 
 #Function to convert list to string
 def listToString(s):
@@ -42,18 +40,20 @@ def listToString(s):
     return (str1.join(s))
 
 def getAllKeyWords():
-    file = open('../results/keywords.txt','r')
+    file = '../results/keywords.txt'
     lines = []
-    with file as f :
-        line = f.readline().split(', ')
-        lines.append(line)
+    with open(file, 'r') as reader:
+        for line in reader:
+            line = line.strip().split(', ')
+            lines.append(line)
     return lines
 
-def process(n_hash, keyword):
+# n_hash is the name of file in hash.
+def process(n_hash, keywords):
     i = 0
     #Testing query seach on google
     while not url:
-        keyword_s = listToString(keyword[:6 + i])
+        keyword_s = listToString(keywords[:6 + i])
         for g in search(keyword_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
             if checkURL(g):
                 url.append(g)
@@ -82,5 +82,4 @@ def process(n_hash, keyword):
 if __name__ == "__main__":
     lines = getAllKeyWords()
     for line in lines:
-        #FIXME @Denini Reads only one line...#
         process(line[0], line[1:])
