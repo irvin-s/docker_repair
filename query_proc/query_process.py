@@ -42,7 +42,7 @@ def listToString(s):
     return (str1.join(s))
 
 def getAllKeyWords():
-    file = open('../results/generated_keywords.txt','r')
+    file = open('../results/keywords.txt','r')
     lines = []
     with file as f :
         line = f.readline().split(', ')
@@ -64,11 +64,11 @@ def process(n_hash, keyword):
     #If the url doesn't match the searching criteria
     if not url:
         url.append("")
-    print("Process finished, for log check results/analyzed_query.json")
+    print("Process finished, for log check ../results/analyzed_query.json")
 
     #Write query_log
-    dataJ['Hash: '+n_hash[10:-4]] = []
-    dataJ['Hash: '+n_hash[10:-4]].append({
+    dataJ['Hash: '+n_hash[13:-4]] = []
+    dataJ['Hash: '+n_hash[13:-4]].append({
         #FIXME @Irvin #'Log fragment': query_s, 
         'Query': keyword_s,
         'URLs': ( listToDict(url) )
@@ -81,6 +81,9 @@ def process(n_hash, keyword):
 
 if __name__ == "__main__":
     lines = getAllKeyWords()
-
+    print (*lines, sep="\n")
+    c = 0
     for line in lines:
+        print (line[c])
         process(line[0], line[1:])
+        c+1
