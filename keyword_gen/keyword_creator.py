@@ -40,7 +40,6 @@ def lastNlines(f,n):
     with f as file:
         for line in (file.readlines()[-n:]):
             lines.append(line)
-    n_hash = filename
     return lines
 
 
