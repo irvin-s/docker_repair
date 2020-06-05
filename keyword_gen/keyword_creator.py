@@ -61,15 +61,14 @@ def keyGen(mytext):
         
     return mytext
 
-def printOutput(nameFile,arr):
+def saveKeywords(nameFile,arr):
     file = open('../results/keywords.txt','a')
-    file.write('%s, %s' % (nameFile, ', '.join(map(str, arr))))
+    file.write('%s, %s\n' % (nameFile, ', '.join(map(str, arr))))
 
 def main(filename):
     print("Processing file {}".format(filename))
 
     #Read log file
-    n_hash = (filename)
     log_file = open(filename,"r")
     query = lastNlines(log_file,3)
     #for p in query:
@@ -79,7 +78,7 @@ def main(filename):
     query_s = query_s.replace("\n"," ")
 
     keyword = keyGen(query_s)
-    printOutput(filename,keyword)
+    saveKeywords(filename,keyword)
 
 if __name__ == "__main__":
     

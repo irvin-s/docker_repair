@@ -27,14 +27,12 @@ def listToDict(lst):
     return lst
 
 #Function to white listing URLs
+# returns True if was in whiteList else, False
 def checkURL(wUrl):
     for white_lst in url_white_lst:
         if re.search(white_lst, wUrl):
-            result = True
-            break
-        else:
-            result = False
-    return result
+            return True
+    return False
 
 #Function to convert list to string
 def listToString(s):
@@ -42,18 +40,21 @@ def listToString(s):
     return (str1.join(s))
 
 def getAllKeyWords():
-    file = open('../results/generated_keywords.txt','r')
+    file = '../results/keywords.txt'
     lines = []
-    with file as f :
-        line = f.readline().split(', ')
-        lines.append(line)
+    with open(file, 'r') as reader:
+        for line in reader:
+            line = line.strip().split(', ')
+            lines.append(line)
     return lines
 
-def process(n_hash, keyword):
+# n_hash is the name of file in hash.
+def process(n_hash, keywords):
     i = 0
     #Testing query seach on google
+    keyword_s = ''
     while not url:
-        keyword_s = listToString(keyword[:6 + i])
+        keyword_s = listToString(keywords[:6 + i])
         for g in search(keyword_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
             if checkURL(g):
                 url.append(g)
@@ -64,11 +65,11 @@ def process(n_hash, keyword):
     #If the url doesn't match the searching criteria
     if not url:
         url.append("")
-    print("Process finished, for log check results/analyzed_query.json")
+    print("Process finished, for log check ../results/analyzed_query.json")
 
     #Write query_log
-    dataJ['Hash: '+n_hash[10:-4]] = []
-    dataJ['Hash: '+n_hash[10:-4]].append({
+    dataJ['Hash: '+n_hash[13:-4]] = []
+    dataJ['Hash: '+n_hash[13:-4]].append({
         #FIXME @Irvin #'Log fragment': query_s, 
         'Query': keyword_s,
         'URLs': ( listToDict(url) )
@@ -76,11 +77,9 @@ def process(n_hash, keyword):
     json.dump(dataJ, query_log, indent=4)
     query_log.write("\n")
     query_log.write("\n")
-    query_log.close
 
 
 if __name__ == "__main__":
     lines = getAllKeyWords()
-
     for line in lines:
         process(line[0], line[1:])
