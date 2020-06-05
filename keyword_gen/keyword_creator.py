@@ -63,7 +63,7 @@ def keyGen(mytext):
 
 def printOutput(nameFile,arr):
     file = open('../results/keywords.txt','a')
-    file.write('%s, %s' % (nameFile, ', '.join(map(str, arr))))
+    file.write('%s, %s\n' % (nameFile, ', '.join(map(str, arr))))
 
 def main(filename):
     print("Processing file {}".format(filename))
