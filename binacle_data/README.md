@@ -1,7 +1,8 @@
-1. change value of variable NUM in script "s"
+# Directory Structure
 
-2. run the script
+This directory contains the Dockerfiles dataset.
 
-  $> ./s
-
-3. check the output logs under directory "logs"
+- To download the dataset run:
+```
+./download.sh
+```
