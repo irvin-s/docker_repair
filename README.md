@@ -12,7 +12,7 @@ To use the automatic Dockerfiles repair, use Linux, and install the following re
 - `pip3`
 - `Linux`
 
-- Install our requirements:
+Install our requirements:
 
 ```
 pip3 install -r requirements.txt
@@ -26,7 +26,10 @@ pip3 install -r requirements.txt
     - The filename must have this format `sources/228568839.Dockerfile`
 
 - To build Dockerfiles run the script:
-    `./build_test.sh`
+
+```
+./build_test.sh
+```
 
 - After run the script see Logs at: `${ROOT_DIR}/logs/`
     - Logs for build failure `${ROOT_DIR}/logs/fail` and success `${ROOT_DIR}/logs/success`
