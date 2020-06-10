@@ -1,43 +1,60 @@
-# Automatic Docker repair
- This tool try to suggest possible repairs for broken Dockerfiles using NLP.
+# Automatic Dockerfiles repair
+ This tool tries to localize posts on discussion forums
+with answers to build problems in Dockerfiles.
 
  ## Usage / Setup
 To use the automatic Dockerfiles repair, use Linux, and install the following requirements.
 
 - Latest version: 
 
-`Docker`
-`Python3`
-`pip3`
-`Linux`
+- `Docker`
+- `Python3`
+- `pip3`
+- `Linux`
+
+- Install our requirements:
+
+```
+pip3 install -r requirements.txt
+```
 
 ### 01 - Build Dockerfiles
 
 - Before executing the building, insert the Dockerfiles names in: `image_list.txt`
 
-- To select what Dockerfiles to build see: `notes/sizesortedlist-dockerfiles.txt`
+- To select what Dockerfiles to build see: `${ROOT_DIR}/notes/sizesortedlist-dockerfiles.txt`
     - The filename must have this format `sources/228568839.Dockerfile`
 
 - To build Dockerfiles run the script:
     `./build_test.sh`
 
-- After run the script see Logs at:
-    `logs/`
-    - Logs for build failure `logs/fail`, and success `logs/success`
+- After run the script see Logs at: `${ROOT_DIR}/logs/`
+    - Logs for build failure `${ROOT_DIR}/logs/fail` and success `${ROOT_DIR}/logs/success`
 
 ### 02 - Generate Keywords from logs
 
-- Before using the scripts install the requirements located in the `requirements.txt`
-    - To install run this: `pip3 install -r requirements.txt`
+- cd to directory `${ROOT_DIR}/query_proc`
 
-- To automatic verify the failed logs run python script located at `keywords_gen/`
+- The following script processes a log file to generate a list of keywords and URLs 
+that contains fix recommendations.
 
-- Run the python script using the following syntax:
-    `python3 query_process.py ../logs/fail/228568839.log`
+```
+python3 keyword_creator.py <log-file-of-failing-build>
+```
+
+For example:
+
+```
+python3 keyword_creator.py ${ROOT_DIR}/logs/fail/228568839.log
+```
 
 ### 03 - Check query results
 
-- Check the created keyword and the URLs for a possible fix recommendation at: `results/analyzed_query.json`
+- Check the output at: 
+
+```
+${ROOT_DIR}/results/analyzed_query.json.
+```
 
  ## Preliminaries
 
