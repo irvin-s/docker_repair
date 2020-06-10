@@ -8,7 +8,8 @@ from googlesearch import search
 import sys
 import json
 import re
-import ../keyword_gen/keyword_creator
+sys.path.append('../keyword_gen')
+import keyword_creator
 
 #Initializing variables
 url = []
