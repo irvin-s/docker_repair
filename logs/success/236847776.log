@@ -1,0 +1,61 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM node:10
+10: Pulling from library/node
+81fc19181915: Pulling fs layer
+ee49ee6a23d1: Pulling fs layer
+828510924538: Pulling fs layer
+a8f58c4fcca0: Pulling fs layer
+33699d7df21e: Pulling fs layer
+923705ffa8f8: Pulling fs layer
+667ab65c1289: Pulling fs layer
+9c3f7667ed73: Pulling fs layer
+03e9677c0489: Pulling fs layer
+a8f58c4fcca0: Waiting
+33699d7df21e: Waiting
+923705ffa8f8: Waiting
+667ab65c1289: Waiting
+9c3f7667ed73: Waiting
+03e9677c0489: Waiting
+828510924538: Verifying Checksum
+828510924538: Download complete
+ee49ee6a23d1: Verifying Checksum
+ee49ee6a23d1: Download complete
+81fc19181915: Verifying Checksum
+81fc19181915: Download complete
+923705ffa8f8: Verifying Checksum
+923705ffa8f8: Download complete
+a8f58c4fcca0: Verifying Checksum
+a8f58c4fcca0: Download complete
+667ab65c1289: Verifying Checksum
+667ab65c1289: Download complete
+9c3f7667ed73: Verifying Checksum
+9c3f7667ed73: Download complete
+03e9677c0489: Download complete
+33699d7df21e: Verifying Checksum
+33699d7df21e: Download complete
+81fc19181915: Pull complete
+ee49ee6a23d1: Pull complete
+828510924538: Pull complete
+a8f58c4fcca0: Pull complete
+33699d7df21e: Pull complete
+923705ffa8f8: Pull complete
+667ab65c1289: Pull complete
+9c3f7667ed73: Pull complete
+03e9677c0489: Pull complete
+Digest: sha256:f9e66964ec6e9a78693929b58b3d95aadf03cc70e47f6d276d1e0943853c2bb5
+Status: Downloaded newer image for node:10
+ ---> e7671d9424c2
+Step 2/4 : LABEL maintainer "Ives van Hoorne"
+ ---> Running in 0c70f2a9b606
+Removing intermediate container 0c70f2a9b606
+ ---> d92964cb7195
+Step 3/4 : RUN mkdir /usr/src/app
+ ---> Running in 4827ca3fdb26
+Removing intermediate container 4827ca3fdb26
+ ---> c66d23d892d5
+Step 4/4 : WORKDIR /usr/src/app
+ ---> Running in 46fe9dc194d0
+Removing intermediate container 46fe9dc194d0
+ ---> a7750aae957d
+Successfully built a7750aae957d
+Successfully tagged binacle:236847776

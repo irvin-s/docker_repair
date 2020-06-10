@@ -1,0 +1,50 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM microsoft/dotnet:2.1-sdk
+2.1-sdk: Pulling from microsoft/dotnet
+81fc19181915: Pulling fs layer
+ee49ee6a23d1: Pulling fs layer
+828510924538: Pulling fs layer
+a8f58c4fcca0: Pulling fs layer
+52e1eb63868e: Pulling fs layer
+620b2bf481ff: Pulling fs layer
+f87d7acdfa0c: Pulling fs layer
+a8f58c4fcca0: Waiting
+620b2bf481ff: Waiting
+f87d7acdfa0c: Waiting
+52e1eb63868e: Waiting
+828510924538: Verifying Checksum
+828510924538: Download complete
+ee49ee6a23d1: Verifying Checksum
+ee49ee6a23d1: Download complete
+81fc19181915: Verifying Checksum
+81fc19181915: Download complete
+52e1eb63868e: Verifying Checksum
+52e1eb63868e: Download complete
+a8f58c4fcca0: Verifying Checksum
+a8f58c4fcca0: Download complete
+620b2bf481ff: Verifying Checksum
+620b2bf481ff: Download complete
+f87d7acdfa0c: Verifying Checksum
+f87d7acdfa0c: Download complete
+81fc19181915: Pull complete
+ee49ee6a23d1: Pull complete
+828510924538: Pull complete
+a8f58c4fcca0: Pull complete
+52e1eb63868e: Pull complete
+620b2bf481ff: Pull complete
+f87d7acdfa0c: Pull complete
+Digest: sha256:c1b6674e8ae3a43e1e02961e586c279a98d9db0291f2d9cb6052b4859f87ed33
+Status: Downloaded newer image for microsoft/dotnet:2.1-sdk
+ ---> ce6f84062d3c
+Step 2/4 : WORKDIR /app
+ ---> Running in 6d96e9a05d2f
+Removing intermediate container 6d96e9a05d2f
+ ---> 1ce9a9bce9d0
+Step 3/4 : COPY . /app
+ ---> fad6c078866c
+Step 4/4 : ENTRYPOINT ["dotnet","Project1.dll"]
+ ---> Running in 27a87cb5882a
+Removing intermediate container 27a87cb5882a
+ ---> 52580e039993
+Successfully built 52580e039993
+Successfully tagged binacle:244772519

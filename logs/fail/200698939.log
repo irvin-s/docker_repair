@@ -1,0 +1,30 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM nginx:1.9.14
+1.9.14: Pulling from library/nginx
+Image docker.io/library/nginx:1.9.14 uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/
+efd26ecc9548: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+83f52fbfa5f8: Pulling fs layer
+fa664caa1402: Pulling fs layer
+83f52fbfa5f8: Waiting
+fa664caa1402: Waiting
+a3ed95caeb02: Download complete
+83f52fbfa5f8: Verifying Checksum
+83f52fbfa5f8: Download complete
+fa664caa1402: Verifying Checksum
+fa664caa1402: Download complete
+efd26ecc9548: Verifying Checksum
+efd26ecc9548: Download complete
+efd26ecc9548: Pull complete
+a3ed95caeb02: Pull complete
+83f52fbfa5f8: Pull complete
+fa664caa1402: Pull complete
+Digest: sha256:fb6ef98e60c85a2291ce1d033ff051b6ed0db31ac7c65ff760bf06bf0fa6e40c
+Status: Downloaded newer image for nginx:1.9.14
+ ---> eb4a127a1188
+Step 2/3 : RUN rm /etc/nginx/conf.d/default.conf
+ ---> Running in d009b19c4215
+Removing intermediate container d009b19c4215
+ ---> 520c5eb955fd
+Step 3/3 : COPY frontend.conf /etc/nginx/conf.d
+COPY failed: stat /var/lib/docker/tmp/docker-builder535513206/frontend.conf: no such file or directory

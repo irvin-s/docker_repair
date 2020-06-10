@@ -1,0 +1,84 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM openjdk:9-jdk
+9-jdk: Pulling from library/openjdk
+e7cb83f94a46: Pulling fs layer
+e2af7c2bd543: Pulling fs layer
+3b5286ee17a3: Pulling fs layer
+7cd74685af84: Pulling fs layer
+3f971e46f30b: Pulling fs layer
+4ef6c2ba70ca: Pulling fs layer
+21d6caaade02: Pulling fs layer
+82654790da96: Pulling fs layer
+7cd74685af84: Waiting
+3f971e46f30b: Waiting
+4ef6c2ba70ca: Waiting
+21d6caaade02: Waiting
+82654790da96: Waiting
+e2af7c2bd543: Verifying Checksum
+e2af7c2bd543: Download complete
+3b5286ee17a3: Verifying Checksum
+3b5286ee17a3: Download complete
+e7cb83f94a46: Verifying Checksum
+e7cb83f94a46: Download complete
+3f971e46f30b: Download complete
+4ef6c2ba70ca: Verifying Checksum
+4ef6c2ba70ca: Download complete
+21d6caaade02: Verifying Checksum
+21d6caaade02: Download complete
+7cd74685af84: Verifying Checksum
+7cd74685af84: Download complete
+e7cb83f94a46: Pull complete
+82654790da96: Verifying Checksum
+82654790da96: Download complete
+e2af7c2bd543: Pull complete
+3b5286ee17a3: Pull complete
+7cd74685af84: Pull complete
+3f971e46f30b: Pull complete
+4ef6c2ba70ca: Pull complete
+21d6caaade02: Pull complete
+82654790da96: Pull complete
+Digest: sha256:0e48e7e79d9e5637ee5d9c4a4fa2615c7bde69390aab06f7105eb4a8ebec8383
+Status: Downloaded newer image for openjdk:9-jdk
+ ---> 5adaf00da2a3
+Step 2/4 : RUN apt-get update
+ ---> Running in d39a801c3b9a
+Get:1 http://deb.debian.org/debian sid InRelease [146 kB]
+Get:2 http://deb.debian.org/debian sid/main amd64 Packages [11.2 MB]
+Fetched 11.3 MB in 1s (8311 kB/s)
+Reading package lists...
+Removing intermediate container d39a801c3b9a
+ ---> 17f87ba0d560
+Step 3/4 : RUN apt-get install -y
+ ---> Running in ce031d58c199
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 291 not upgraded.
+Removing intermediate container ce031d58c199
+ ---> fae80811bc56
+Step 4/4 : RUN apt-get install -y bash
+ ---> Running in fb70a6f4a642
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  bash-doc
+Recommended packages:
+  bash-completion
+The following packages will be upgraded:
+  bash
+1 upgraded, 0 newly installed, 0 to remove and 290 not upgraded.
+Need to get 1379 kB of archives.
+After this operation, 648 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian sid/main amd64 bash amd64 5.0-6 [1379 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 1379 kB in 0s (6244 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22634 files and directories currently installed.)
+Preparing to unpack .../archives/bash_5.0-6_amd64.deb ...
+Unpacking bash (5.0-6) over (4.4.18-2) ...
+Setting up bash (5.0-6) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
+Removing intermediate container fb70a6f4a642
+ ---> 5246aa7885c2
+Successfully built 5246aa7885c2
+Successfully tagged binacle:245606093

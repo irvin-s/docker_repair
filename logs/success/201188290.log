@@ -1,0 +1,29 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM gcr.io/google_containers/kube-proxy-amd64:v1.4.1
+v1.4.1: Pulling from google_containers/kube-proxy-amd64
+fdd5d7827f33: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+34ef44151ea5: Pulling fs layer
+55c7e919d0a8: Pulling fs layer
+55c7e919d0a8: Waiting
+a3ed95caeb02: Verifying Checksum
+a3ed95caeb02: Download complete
+34ef44151ea5: Verifying Checksum
+34ef44151ea5: Download complete
+55c7e919d0a8: Verifying Checksum
+55c7e919d0a8: Download complete
+fdd5d7827f33: Verifying Checksum
+fdd5d7827f33: Download complete
+fdd5d7827f33: Pull complete
+a3ed95caeb02: Pull complete
+34ef44151ea5: Pull complete
+55c7e919d0a8: Pull complete
+Digest: sha256:24ef66d239213690e55de5d95dc389270478676c80a8ab8aba5d9cac69180ae8
+Status: Downloaded newer image for gcr.io/google_containers/kube-proxy-amd64:v1.4.1
+ ---> b47199222245
+Step 2/2 : MAINTAINER Weiforce <weiforce@126.com>
+ ---> Running in 639063cdb9f4
+Removing intermediate container 639063cdb9f4
+ ---> 43e7bfa7957e
+Successfully built 43e7bfa7957e
+Successfully tagged binacle:201188290

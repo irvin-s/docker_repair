@@ -1,0 +1,56 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM java:8
+8: Pulling from library/java
+5040bd298390: Pulling fs layer
+fce5728aad85: Pulling fs layer
+76610ec20bf5: Pulling fs layer
+60170fec2151: Pulling fs layer
+e98f73de8f0d: Pulling fs layer
+11f7af24ed9c: Pulling fs layer
+49e2d6393f32: Pulling fs layer
+bb9cdec9c7f3: Pulling fs layer
+60170fec2151: Waiting
+e98f73de8f0d: Waiting
+11f7af24ed9c: Waiting
+49e2d6393f32: Waiting
+bb9cdec9c7f3: Waiting
+fce5728aad85: Verifying Checksum
+fce5728aad85: Download complete
+76610ec20bf5: Verifying Checksum
+76610ec20bf5: Download complete
+60170fec2151: Verifying Checksum
+60170fec2151: Download complete
+5040bd298390: Verifying Checksum
+5040bd298390: Download complete
+e98f73de8f0d: Verifying Checksum
+e98f73de8f0d: Download complete
+11f7af24ed9c: Verifying Checksum
+11f7af24ed9c: Download complete
+bb9cdec9c7f3: Download complete
+49e2d6393f32: Verifying Checksum
+49e2d6393f32: Download complete
+5040bd298390: Pull complete
+fce5728aad85: Pull complete
+76610ec20bf5: Pull complete
+60170fec2151: Pull complete
+e98f73de8f0d: Pull complete
+11f7af24ed9c: Pull complete
+49e2d6393f32: Pull complete
+bb9cdec9c7f3: Pull complete
+Digest: sha256:c1ff613e8ba25833d2e1940da0940c3824f03f802c449f3d1815a66b7f8c0e9d
+Status: Downloaded newer image for java:8
+ ---> d23bdf5b1b1b
+Step 2/4 : RUN mkdir /app
+ ---> Running in e494176eea52
+Removing intermediate container e494176eea52
+ ---> dd18a59bb65d
+Step 3/4 : WORKDIR /app
+ ---> Running in 36f7dc1857f1
+Removing intermediate container 36f7dc1857f1
+ ---> b97d624b95ae
+Step 4/4 : CMD java $IAM_CLIENT_JAVA_OPTS -jar $IAM_CLIENT_JAR
+ ---> Running in 289ff4e4e95b
+Removing intermediate container 289ff4e4e95b
+ ---> 1ddcd4b0395d
+Successfully built 1ddcd4b0395d
+Successfully tagged binacle:199830274

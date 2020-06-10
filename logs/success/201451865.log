@@ -1,0 +1,28 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM tommymuehle/docker-alpine-php-nightly
+latest: Pulling from tommymuehle/docker-alpine-php-nightly
+169185f82c45: Pulling fs layer
+c89ef508a399: Pulling fs layer
+a3bbcfb1e58d: Pulling fs layer
+169185f82c45: Verifying Checksum
+169185f82c45: Download complete
+169185f82c45: Pull complete
+c89ef508a399: Verifying Checksum
+c89ef508a399: Download complete
+c89ef508a399: Pull complete
+a3bbcfb1e58d: Verifying Checksum
+a3bbcfb1e58d: Download complete
+a3bbcfb1e58d: Pull complete
+Digest: sha256:7530c1f468c453711d89d8285e85f355a2c0c1fc1670eefb026d5e9371abde43
+Status: Downloaded newer image for tommymuehle/docker-alpine-php-nightly:latest
+ ---> 09c2ea4e092f
+Step 2/3 : WORKDIR "/home/vector"
+ ---> Running in 045fa308bb5c
+Removing intermediate container 045fa308bb5c
+ ---> b4a613cc6c5e
+Step 3/3 : CMD ["./vendor/bin/phpunit"]
+ ---> Running in a92bffbd46d4
+Removing intermediate container a92bffbd46d4
+ ---> dd7d9c265966
+Successfully built dd7d9c265966
+Successfully tagged binacle:201451865
