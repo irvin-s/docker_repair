@@ -45,16 +45,18 @@ while read line; do
 	  ## removes all images and test the built was successfully or failed
 	  if [[ $msg_log == *"Successfully tagged"* ]];
      then
-        if [[$msg_log ==*"returned a non-zero code"*]];
-        then
-            echo "../logs/fail/$hash.log" > ${HERE}/results/broken_files.log
-        fi
        	echo "$msg_log" > ${HERE}/logs/success/$hash.log 
        	docker system prune -af
      else
        	echo "$msg_log" > ${HERE}/logs/fail/$hash.log
        	docker system prune -af
      fi
+     
+     # logs the files with returned a non-zero code to extract the log fragment
+     if [[ $msg_log == *"returned a non-zero code"* ]];
+    then
+    echo "../logs/fail/$hash.log" >> ${HERE}/results/broken_files.log 
+    fi
 	 )
 	 rm -rf ${HERE}/$hash
 	 
