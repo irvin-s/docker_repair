@@ -89,7 +89,7 @@ def geturl(keyword):
 if __name__ == "__main__":
 
     # No Dockerfiles to analyze -> Skip
-    if not log_files == "0":
+    if not log_files:
         print("No Dockerfiles log to analyze, please check ../results/files_to_analyze.log")
         sys.exit(0)
         
