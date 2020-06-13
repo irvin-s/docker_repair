@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 
 - Before executing the building, insert the Dockerfiles names in: `image_list.txt`
 
-- To select what Dockerfiles to build see: `${ROOT_DIR}/notes/sizesortedlist-dockerfiles.txt`
+- To select what Dockerfiles to build `${ROOT_DIR}/notes/sizesortedlist-dockerfiles.txt`
     - The filename must have this format `sources/228568839.Dockerfile`
 
 - To build Dockerfiles run the script:
@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 - The generated logs will be located under directory `${ROOT_DIR}/logs/`. Logs for build failures
   will be at `${ROOT_DIR}/logs/fail` and logs of successful builds will be at `${ROOT_DIR}/logs/success`.
 
-- Files that contais "returned a non-zero code" will be in `${ROOT_DIR}/results/files_to_analyze.log`
+- Files that contain "returned a non-zero code" will be in `${ROOT_DIR}/results/files_to_analyze.log`
 
 ### 02 - Generate Keywords from logs
 
@@ -57,8 +57,8 @@ python3 keyword_creator.py
 ${ROOT_DIR}/results/analyzed_query.json.
 ```
 
- - Analyzed query exemple:
- 
+ - Analyzed query example:
+
  ```
  {
     "Hash: 154176094": [
