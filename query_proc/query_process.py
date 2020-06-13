@@ -8,6 +8,7 @@ from googlesearch import search
 import sys
 import json
 import re
+import os
 sys.path.append('../keyword_gen')
 import keyword_creator
 
@@ -22,7 +23,7 @@ url_white_lst = url_white_lst.read().splitlines()
 query_log = open("../results/analyzed_query.json", "a")
 
 #File to read log files
-log_files = open("../results/broken_files.log","r")
+log_files = open("../results/files_to_analyze.log","r")
 log_files = log_files.read().splitlines()
 
 #Function to read log file last lines
@@ -87,13 +88,14 @@ def geturl(keyword):
 
 if __name__ == "__main__":
 
-    #filename="logs/fail/484144517.log"
+    # No Dockerfiles to analyze -> Skip
+    if not log_files == "0":
+        print("No Dockerfiles log to analyze, please check ../results/files_to_analyze.log")
+        sys.exit(0)
+        
+    #Process the Dockerfiles to log
     for logprocess in log_files:
-      filename = logprocess  
-      #if (len(sys.argv)<2):
-      #  print("Please, provide a file on input.\nExample format: python query_process.py ../logs/fail/484144517.log")
-      #  sys.exit(0)
-      #filename=sys.argv[1]        
+      filename = logprocess        
       print("Processing file {}".format(filename))
 
       #Read log file
@@ -116,4 +118,4 @@ if __name__ == "__main__":
       #Write results to log
       writetolog(n_hash, query_s, url[0], url[1])
 
-print ("Process finished, for log check results/analyzed_query.json")
+print ("Process finished, for log check ../results/analyzed_query.json")
