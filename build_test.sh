@@ -8,7 +8,7 @@ mkdir -p ${HERE}/logs/history
 mkdir -p ${HERE}/logs/success
 mkdir -p ${HERE}/logs/fail
 
-# File with dockerfile names
+# File with Dockerfile names
 images_file="images_list.txt"
 
 # Verify the sources direcotry
@@ -55,7 +55,7 @@ while read line; do
      # logs the files with returned a non-zero code to extract the log fragment
      if [[ $msg_log == *"returned a non-zero code"* ]];
     then
-    echo "../logs/fail/$hash.log" >> ${HERE}/results/broken_files.log 
+    echo "../logs/fail/$hash.log" >> ${HERE}/results/files_to_analyze.log 
     fi
 	 )
 	 rm -rf ${HERE}/$hash
