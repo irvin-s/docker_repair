@@ -9,11 +9,9 @@ import sys
 import json
 import re
 import os
+import time
 sys.path.append('../keyword_gen')
-import keyword_creator
-
-#Initializing variables
-
+import keyword_creator 
 
 #File to read url white list
 url_white_lst = open("query_url_white_list.txt","r")
@@ -39,10 +37,17 @@ def listToString(s):
     str1 = " "
     return (str1.join(s))
 
-#Function to conver list to dict
+#Function to convert list to dict
 def listToDict(lst):
     lst = { i : lst[i] for i in range(0, len(lst) ) }
     return lst
+
+#Function to convert dict to list
+def dictToList(keyword_dict):
+    keyword_list = []
+    for i in keyword_dict:
+        keyword_list.append(listToString(keyword_dict[i]))
+    return keyword_list
 
 #Function to white listing URLs
 def checkURL(wUrl):
@@ -54,13 +59,13 @@ def checkURL(wUrl):
             result = False
     return result
 
-#Function to write a query_logjson
-def writetolog(hash, fragment, keyword, url):
+#Function to write a query_log.json
+def writetolog(hash, fragment, keyword_log, url):
     dataJ = {} 
     dataJ['Hash: '+n_hash[13:-4]] = []
     dataJ['Hash: '+n_hash[13:-4]].append({
     'Log fragment': fragment,
-    'Query': keyword,
+    'Query': keyword_log,
     'URLs': ( listToDict(url) )
     }) 
     json.dump(dataJ, query_log, indent=4)
@@ -69,11 +74,11 @@ def writetolog(hash, fragment, keyword, url):
     query_log.close
 
 #Function to query search on google
-def geturl(keyword):
+def geturl(keyword_url):
     url = []
     i = 0
     while not url:
-        keyword_s = listToString(keyword[:6 + i])
+        keyword_s = listToString(keyword_url[:6 + i])
         for g in search(keyword_s, tld="com", lang="en", num=5, start=0, stop=6, pause=2):
             if checkURL(g):
                 url.append(g)
@@ -102,8 +107,6 @@ if __name__ == "__main__":
       n_hash = (filename)
       log_file = open(filename,"r")
       query = lastNlines(log_file,3)
-      #for p in query:
-      #    print(p)
     
       #Convert lines from list to string before use the query
       query_s = listToString(query)
@@ -111,11 +114,15 @@ if __name__ == "__main__":
 
       #Gerenating keyword
       keyword = keyword_creator.keyGen(query_s)
-    
+      keyword = dictToList(keyword)
+
       #Testing query search on google
       url = geturl(keyword)
       
       #Write results to log
       writetolog(n_hash, query_s, url[0], url[1])
+
+      #Waits 3 seconds between each search to avoid HTTP error 429
+      time.sleep(3.0)
 
 print ("Process finished, for log check ../results/analyzed_query.json")
